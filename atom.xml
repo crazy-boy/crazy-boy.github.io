@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-03-29T09:39:43.070Z</updated>
+  <updated>2018-03-29T09:42:25.335Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -18,19 +18,19 @@
   
   <entry>
     <title>MySQL函数</title>
-    <link href="https://crazy-boy.github.io/2018-03-29/20180329/"/>
-    <id>https://crazy-boy.github.io/2018-03-29/20180329/</id>
+    <link href="https://crazy-boy.github.io/2018-03-29/2018032917/"/>
+    <id>https://crazy-boy.github.io/2018-03-29/2018032917/</id>
     <published>2018-03-29T09:28:00.000Z</published>
-    <updated>2018-03-29T09:39:43.070Z</updated>
+    <updated>2018-03-29T09:42:25.335Z</updated>
     
-    <content type="html"><![CDATA[<p>记录几个常用的MySQL函数：</p><h3 id="1、LAST-INSERT-ID"><a href="#1、LAST-INSERT-ID" class="headerlink" title="1、LAST_INSERT_ID()"></a>1、LAST_INSERT_ID()</h3><p>LAST_INSERT_ID() LAST_INSERT_ID(expr)<br>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个 发生的值。</p><p>如果一次性insert多条数据，只返回第一个数据的主键。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+| id | name |</span><br><span class="line">+----+------+|  1 | Bob  |</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO t VALUES  (NULL, <span class="string">'Mary'</span>), (NULL, <span class="string">'Jane'</span>), (NULL, <span class="string">'Lisa'</span>);</span><br><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+</span><br><span class="line">| id | name |</span><br><span class="line">|  1 | Bob  |</span><br><span class="line">|  2 | Mary |</span><br><span class="line">|  3 | Jane |</span><br><span class="line">|  4 | Lisa |</span><br><span class="line">+----+------+</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">-&gt;2;</span><br></pre></td></tr></table></figure></p><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p><p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE sequence (id INT NOT NULL);</span><br><span class="line">mysql&gt; INSERT INTO sequence VALUES (0);</span><br><span class="line">mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">     -&gt;1;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>记录几个常用的MySQL函数：</p><h3 id="1、LAST-INSERT-ID-或LAST-INSERT-ID-expr"><a href="#1、LAST-INSERT-ID-或LAST-INSERT-ID-expr" class="headerlink" title="1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)"></a>1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)</h3><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个 发生的值。</p><p>如果一次性insert多条数据，只返回第一个数据的主键。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+| id | name |</span><br><span class="line">+----+------+|  1 | Bob  |</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO t VALUES  (NULL, <span class="string">'Mary'</span>), (NULL, <span class="string">'Jane'</span>), (NULL, <span class="string">'Lisa'</span>);</span><br><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+</span><br><span class="line">| id | name |</span><br><span class="line">|  1 | Bob  |</span><br><span class="line">|  2 | Mary |</span><br><span class="line">|  3 | Jane |</span><br><span class="line">|  4 | Lisa |</span><br><span class="line">+----+------+</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">-&gt;2;</span><br></pre></td></tr></table></figure></p><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p><p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE sequence (id INT NOT NULL);</span><br><span class="line">mysql&gt; INSERT INTO sequence VALUES (0);</span><br><span class="line">mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">     -&gt;1;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;记录几个常用的MySQL函数：&lt;/p&gt;
-&lt;h3 id=&quot;1、LAST-INSERT-ID&quot;&gt;&lt;a href=&quot;#1、LAST-INSERT-ID&quot; class=&quot;headerlink&quot; title=&quot;1、LAST_INSERT_ID()&quot;&gt;&lt;/a&gt;1、LAST_INSERT
+&lt;h3 id=&quot;1、LAST-INSERT-ID-或LAST-INSERT-ID-expr&quot;&gt;&lt;a href=&quot;#1、LAST-INSERT-ID-或LAST-INSERT-ID-expr&quot; class=&quot;headerlink&quot; ti
       
     
     </summary>
@@ -41,9 +41,33 @@
   </entry>
   
   <entry>
+    <title>2018-03-29杂谈</title>
+    <link href="https://crazy-boy.github.io/2018-03-29/2018032914/"/>
+    <id>https://crazy-boy.github.io/2018-03-29/2018032914/</id>
+    <published>2018-03-29T06:00:00.000Z</published>
+    <updated>2018-03-29T09:49:13.583Z</updated>
+    
+    <content type="html"><![CDATA[<p>哈哈，木仓车神附体，科目一96！<br><img src="/2018-03-29/2018032914/happy.jpg" alt="测试一下"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;哈哈，木仓车神附体，科目一96！&lt;br&gt;&lt;img src=&quot;/2018-03-29/2018032914/happy.jpg&quot; alt=&quot;测试一下&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="杂谈" scheme="https://crazy-boy.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常用工具</title>
-    <link href="https://crazy-boy.github.io/2018-03-28/20180328/"/>
-    <id>https://crazy-boy.github.io/2018-03-28/20180328/</id>
+    <link href="https://crazy-boy.github.io/2018-03-28/2018032816/"/>
+    <id>https://crazy-boy.github.io/2018-03-28/2018032816/</id>
     <published>2018-03-28T08:00:00.000Z</published>
     <updated>2018-03-29T09:27:52.688Z</updated>
     
@@ -61,48 +85,6 @@
     
     
       <category term="文件搜索" scheme="https://crazy-boy.github.io/tags/%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>a</title>
-    <link href="https://crazy-boy.github.io/2018-02-27/a/"/>
-    <id>https://crazy-boy.github.io/2018-02-27/a/</id>
-    <published>2018-02-27T08:47:22.000Z</published>
-    <updated>2018-02-27T09:53:24.197Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2018-02-27/a/homepage_icon_attendance_brand_yellow.png" alt="测试一下"><br>ertertertert rete<br>I strongly recommend against using any <code>&lt;blink&gt;</code> tags.</p><p>I wish SmartyPants used named entities like <code>&amp;mdash;</code><br>instead of decimal-encoded entites like <code>&amp;#8212;</code>.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/2018-02-27/a/homepage_icon_attendance_brand_yellow.png&quot; alt=&quot;测试一下&quot;&gt;&lt;br&gt;ertertertert rete&lt;br&gt;I strongly recommend against using
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://crazy-boy.github.io/2018-02-27/hello-world/"/>
-    <id>https://crazy-boy.github.io/2018-02-27/hello-world/</id>
-    <published>2018-02-27T06:54:49.609Z</published>
-    <updated>2018-02-27T06:54:49.610Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   

@@ -4,8 +4,25 @@
 
     
   <url>
-    <loc>https://crazy-boy.github.io/2018-03-29/20180329/</loc>
-    <lastmod>2018-03-29T09:39:43.070Z</lastmod>
+    <loc>https://crazy-boy.github.io/2018-03-29/2018032914/</loc>
+    <lastmod>2018-03-29T09:49:13.583Z</lastmod>
+    <data>
+        <display>
+        <title>2018-03-29杂谈</title>
+        <pubTime>2018-03-29T06:00:00.000Z</pubTime>
+        
+        <tag>杂谈</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://crazy-boy.github.io/2018-03-29/2018032917/</loc>
+    <lastmod>2018-03-29T09:42:25.335Z</lastmod>
     <data>
         <display>
         <title>MySQL函数</title>
@@ -21,7 +38,7 @@
 
     
   <url>
-    <loc>https://crazy-boy.github.io/2018-03-28/20180328/</loc>
+    <loc>https://crazy-boy.github.io/2018-03-28/2018032816/</loc>
     <lastmod>2018-03-29T09:27:52.688Z</lastmod>
     <data>
         <display>
@@ -39,34 +56,4 @@
     
     
     
-    
-  <url>
-    <loc>https://crazy-boy.github.io/2018-02-27/a/</loc>
-    <lastmod>2018-02-27T09:53:24.197Z</lastmod>
-    <data>
-        <display>
-        <title>a</title>
-        <pubTime>2018-02-27T08:47:22.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://crazy-boy.github.io/2018-02-27/hello-world/</loc>
-    <lastmod>2018-02-27T06:54:49.610Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-02-27T06:54:49.609Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
 </urlset>
