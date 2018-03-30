@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-03-29T09:42:25.335Z</updated>
+  <updated>2018-03-30T03:12:36.278Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://crazy-boy.github.io/2018-03-29/2018032917/"/>
     <id>https://crazy-boy.github.io/2018-03-29/2018032917/</id>
     <published>2018-03-29T09:28:00.000Z</published>
-    <updated>2018-03-29T09:42:25.335Z</updated>
+    <updated>2018-03-30T03:12:36.278Z</updated>
     
     <content type="html"><![CDATA[<p>记录几个常用的MySQL函数：</p><h3 id="1、LAST-INSERT-ID-或LAST-INSERT-ID-expr"><a href="#1、LAST-INSERT-ID-或LAST-INSERT-ID-expr" class="headerlink" title="1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)"></a>1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)</h3><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个 发生的值。</p><p>如果一次性insert多条数据，只返回第一个数据的主键。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+| id | name |</span><br><span class="line">+----+------+|  1 | Bob  |</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO t VALUES  (NULL, <span class="string">'Mary'</span>), (NULL, <span class="string">'Jane'</span>), (NULL, <span class="string">'Lisa'</span>);</span><br><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+</span><br><span class="line">| id | name |</span><br><span class="line">|  1 | Bob  |</span><br><span class="line">|  2 | Mary |</span><br><span class="line">|  3 | Jane |</span><br><span class="line">|  4 | Lisa |</span><br><span class="line">+----+------+</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">-&gt;2;</span><br></pre></td></tr></table></figure></p><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p><p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE sequence (id INT NOT NULL);</span><br><span class="line">mysql&gt; INSERT INTO sequence VALUES (0);</span><br><span class="line">mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">     -&gt;1;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -35,8 +35,12 @@
     
     </summary>
     
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
     
       <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+      <category term="函数" scheme="https://crazy-boy.github.io/tags/%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
@@ -45,7 +49,7 @@
     <link href="https://crazy-boy.github.io/2018-03-29/2018032914/"/>
     <id>https://crazy-boy.github.io/2018-03-29/2018032914/</id>
     <published>2018-03-29T06:00:00.000Z</published>
-    <updated>2018-03-29T09:49:13.583Z</updated>
+    <updated>2018-03-30T03:12:59.510Z</updated>
     
     <content type="html"><![CDATA[<p>哈哈，木仓车神附体，科目一96！<br><img src="/2018-03-29/2018032914/happy.jpg" alt="测试一下"></p>]]></content>
     
@@ -59,6 +63,8 @@
     
     </summary>
     
+      <category term="其他" scheme="https://crazy-boy.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
     
       <category term="杂谈" scheme="https://crazy-boy.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
@@ -69,7 +75,7 @@
     <link href="https://crazy-boy.github.io/2018-03-28/2018032816/"/>
     <id>https://crazy-boy.github.io/2018-03-28/2018032816/</id>
     <published>2018-03-28T08:00:00.000Z</published>
-    <updated>2018-03-29T09:27:52.688Z</updated>
+    <updated>2018-03-30T03:13:50.790Z</updated>
     
     <content type="html"><![CDATA[<p>给大家推荐一款文件搜索工具——Everything，下载地址：<a href="http://www.voidtools.com/" target="_blank" rel="noopener">http://www.voidtools.com/</a></p>]]></content>
     
@@ -83,8 +89,12 @@
     
     </summary>
     
+      <category term="windows工具" scheme="https://crazy-boy.github.io/categories/windows%E5%B7%A5%E5%85%B7/"/>
+    
     
       <category term="文件搜索" scheme="https://crazy-boy.github.io/tags/%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="工具" scheme="https://crazy-boy.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

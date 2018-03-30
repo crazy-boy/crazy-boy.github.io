@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://crazy-boy.github.io/2018-03-28/2018032816/</loc>
+    <lastmod>2018-03-30T03:13:50.790Z</lastmod>
+    <data>
+        <display>
+        <title>常用工具</title>
+        <pubTime>2018-03-28T08:00:00.000Z</pubTime>
+        
+        <tag>文件搜索</tag>
+         
+        <tag>工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="windows工具" url="https://crazy-boy.github.io/categories/windows%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://crazy-boy.github.io/2018-03-29/2018032914/</loc>
-    <lastmod>2018-03-29T09:49:13.583Z</lastmod>
+    <lastmod>2018-03-30T03:12:59.510Z</lastmod>
     <data>
         <display>
         <title>2018-03-29杂谈</title>
@@ -15,6 +37,9 @@
          
          
            
+             
+              <breadCrumb title="其他" url="https://crazy-boy.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+          
         </display>
     </data>
     </url>
@@ -22,7 +47,7 @@
     
   <url>
     <loc>https://crazy-boy.github.io/2018-03-29/2018032917/</loc>
-    <lastmod>2018-03-29T09:42:25.335Z</lastmod>
+    <lastmod>2018-03-30T03:12:36.278Z</lastmod>
     <data>
         <display>
         <title>MySQL函数</title>
@@ -30,25 +55,13 @@
         
         <tag>MySQL</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://crazy-boy.github.io/2018-03-28/2018032816/</loc>
-    <lastmod>2018-03-29T09:27:52.688Z</lastmod>
-    <data>
-        <display>
-        <title>常用工具</title>
-        <pubTime>2018-03-28T08:00:00.000Z</pubTime>
-        
-        <tag>文件搜索</tag>
+        <tag>函数</tag>
          
          
            
+             
+              <breadCrumb title="MySQL" url="https://crazy-boy.github.io/categories/MySQL/"/>
+          
         </display>
     </data>
     </url>
