@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[MySQL函数]]></title>
+    <url>%2FMySQL%2FMySQL%E5%87%BD%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[记录几个常用的MySQL函数： 1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。 如果一次性insert多条数据，只返回第一个数据的主键。1234567891011121314151617mysql&gt; SELECT * FROM t; +----+------+ | id | name | | 1 | Bob | +----+------+mysql&gt; INSERT INTO t VALUES (NULL, 'Mary'), (NULL, 'Jane'), (NULL, 'Lisa');mysql&gt; SELECT * FROM t; +----+------+ | id | name | | 1 | Bob | | 2 | Mary | | 3 | Jane | | 4 | Lisa | +----+------+mysql&gt; SELECT LAST_INSERT_ID(); -&gt;2; 注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。 若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列： 12345mysql&gt; CREATE TABLE sequence (id INT NOT NULL);mysql&gt; INSERT INTO sequence VALUES (0);mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);mysql&gt; SELECT LAST_INSERT_ID(); -&gt;1;]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2018-03-29杂谈]]></title>
+    <url>%2F%E5%85%B6%E4%BB%96%2F2018-03-29%E6%9D%82%E8%B0%88%2F</url>
+    <content type="text"><![CDATA[哈哈，木仓车神附体，科目一96！]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用工具]]></title>
+    <url>%2Fwindows%E5%B7%A5%E5%85%B7%2F%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%2F</url>
+    <content type="text"><![CDATA[给大家推荐一款文件搜索工具——Everything，下载地址：http://www.voidtools.com/]]></content>
+      <categories>
+        <category>windows工具</category>
+      </categories>
+      <tags>
+        <tag>文件搜索</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+</search>
