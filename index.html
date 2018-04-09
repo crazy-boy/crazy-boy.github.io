@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/MySQL/MySQL函数/">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/MySQL函数.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crazy Boy">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/MySQL/MySQL函数/" itemprop="url">MySQL函数</a></h1>
+                <a class="post-title-link" href="/archives/MySQL函数.html" itemprop="url">MySQL函数</a></h1>
         
 
         <div class="post-meta">
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  232
+                  230
                 </span>
               
 
@@ -414,7 +414,7 @@
         
           
             <p>记录几个常用的MySQL函数：</p>
-<h3 id="1、LAST-INSERT-ID-或LAST-INSERT-ID-expr"><a href="#1、LAST-INSERT-ID-或LAST-INSERT-ID-expr" class="headerlink" title="1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)"></a>1、LAST_INSERT_ID()或LAST_INSERT_ID(expr)</h3><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。</p>
+<h3 id="1、LAST-INSERT-ID-expr"><a href="#1、LAST-INSERT-ID-expr" class="headerlink" title="1、LAST_INSERT_ID([expr])"></a>1、LAST_INSERT_ID([expr])</h3><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。</p>
 <p>如果一次性insert多条数据，只返回第一个数据的主键。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">	+----+------+</span><br><span class="line">	| id | name |</span><br><span class="line">	|  1 | Bob  |</span><br><span class="line">	+----+------+</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO t VALUES  (NULL, <span class="string">'Mary'</span>), (NULL, <span class="string">'Jane'</span>), (NULL, <span class="string">'Lisa'</span>);</span><br><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">	+----+------+</span><br><span class="line">	| id | name |</span><br><span class="line">	|  1 | Bob  |</span><br><span class="line">	|  2 | Mary |</span><br><span class="line">	|  3 | Jane |</span><br><span class="line">	|  4 | Lisa |</span><br><span class="line">	+----+------+</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">	-&gt;2;</span><br></pre></td></tr></table></figure></p>
 <p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p>
 <p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p>
@@ -471,7 +471,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/其他/2018-03-29杂谈/">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/2018-03-29杂谈.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crazy Boy">
@@ -490,7 +490,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/其他/2018-03-29杂谈/" itemprop="url">2018-03-29杂谈</a></h1>
+                <a class="post-title-link" href="/archives/2018-03-29杂谈.html" itemprop="url">2018-03-29杂谈</a></h1>
         
 
         <div class="post-meta">
@@ -607,7 +607,7 @@
       
         
           
-            <p>哈哈，木仓车神附体，科目一96！<br><img src="/其他/2018-03-29杂谈/happy.jpg" alt="测试一下"></p>
+            <p>哈哈，木仓车神附体，科目一96！<br><img src="/archives/2018-03-29杂谈/happy.jpg" alt="测试一下"></p>
 
           
         
@@ -660,7 +660,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/windows工具/常用工具/">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/常用工具.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Crazy Boy">
@@ -679,7 +679,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/windows工具/常用工具/" itemprop="url">常用工具</a></h1>
+                <a class="post-title-link" href="/archives/常用工具.html" itemprop="url">常用工具</a></h1>
         
 
         <div class="post-meta">
@@ -992,7 +992,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共266字</span>
+  <span class="post-count">博客全站共264字</span>
 </div>
 
         
