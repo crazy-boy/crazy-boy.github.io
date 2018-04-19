@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JQuery面向对象写法]]></title>
+    <url>%2Farchives%2FJQuery%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%86%99%E6%B3%95.html</url>
+    <content type="text"><![CDATA[书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748&lt;html&gt; &lt;head&gt; &lt;script src="jquery.min.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;button data-event="list"&gt;列表&lt;/button&gt; &lt;button data-event="search" data-name="大班"&gt;搜索&lt;/button&gt; &lt;button data-event="add"&gt;添加&lt;/button&gt; &lt;button data-event="update"&gt;修改&lt;/button&gt; &lt;button data-event="del"&gt;删除&lt;/button&gt; &lt;/body&gt;&lt;/html&gt;&lt;script&gt;var clickAct = &#123; btn: $('button'), init: function()&#123; var that = this; this.btn.click(function()&#123; var func = $(this).attr('data-event'); that[func]($(this).attr('data-name')); &#125;) &#125;, list: function(param)&#123; console.log('1'); &#125;, search: function(param)&#123; console.log(param); &#125;, add: function(param)&#123; console.log('3'); &#125;, update: function(param)&#123; console.log('4'); &#125;, del: function(param)&#123; console.log('5'); &#125;&#125;clickAct.init();&lt;/script&gt;]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JQuery</tag>
+        <tag>JavaScript</tag>
+        <tag>面向对象</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL函数]]></title>
     <url>%2Farchives%2FMySQL%E5%87%BD%E6%95%B0.html</url>
     <content type="text"><![CDATA[记录几个常用的MySQL函数： 1、LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。 如果一次性insert多条数据，只返回第一个数据的主键。1234567891011121314151617mysql&gt; SELECT * FROM t; +----+------+ | id | name | | 1 | Bob | +----+------+mysql&gt; INSERT INTO t VALUES (NULL, 'Mary'), (NULL, 'Jane'), (NULL, 'Lisa');mysql&gt; SELECT * FROM t; +----+------+ | id | name | | 1 | Bob | | 2 | Mary | | 3 | Jane | | 4 | Lisa | +----+------+mysql&gt; SELECT LAST_INSERT_ID(); -&gt;2; 注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。 若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列： 12345mysql&gt; CREATE TABLE sequence (id INT NOT NULL);mysql&gt; INSERT INTO sequence VALUES (0);mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);mysql&gt; SELECT LAST_INSERT_ID(); -&gt;1;]]></content>

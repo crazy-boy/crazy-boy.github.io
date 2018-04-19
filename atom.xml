@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-04-03T09:28:00.000Z</updated>
+  <updated>2018-04-19T01:52:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JQuery面向对象写法</title>
+    <link href="https://crazy-boy.github.io/archives/JQuery%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%86%99%E6%B3%95.html"/>
+    <id>https://crazy-boy.github.io/archives/JQuery面向对象写法.html</id>
+    <published>2018-04-19T01:52:00.000Z</published>
+    <updated>2018-04-19T01:52:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script src=<span class="string">"jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;button data-event=<span class="string">"list"</span>&gt;列表&lt;/button&gt;</span><br><span class="line">&lt;button data-event=<span class="string">"search"</span> data-name=<span class="string">"大班"</span>&gt;搜索&lt;/button&gt;</span><br><span class="line">&lt;button data-event=<span class="string">"add"</span>&gt;添加&lt;/button&gt;</span><br><span class="line">&lt;button data-event=<span class="string">"update"</span>&gt;修改&lt;/button&gt;</span><br><span class="line">&lt;button data-event=<span class="string">"del"</span>&gt;删除&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var clickAct = &#123;</span><br><span class="line">btn: $(<span class="string">'button'</span>),</span><br><span class="line">init: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">var that = this;</span><br><span class="line">this.btn.click(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">var func = $(this).attr(<span class="string">'data-event'</span>);</span><br><span class="line">that[func]($(this).attr(<span class="string">'data-name'</span>));</span><br><span class="line">&#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">list: <span class="keyword">function</span>(param)&#123;</span><br><span class="line">console.log(<span class="string">'1'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">search: <span class="keyword">function</span>(param)&#123;</span><br><span class="line">console.log(param);</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">add: <span class="keyword">function</span>(param)&#123;</span><br><span class="line">console.log(<span class="string">'3'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">update: <span class="keyword">function</span>(param)&#123;</span><br><span class="line">console.log(<span class="string">'4'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">del: <span class="keyword">function</span>(param)&#123;</span><br><span class="line">console.log(<span class="string">'5'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">clickAct.init();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="JQuery" scheme="https://crazy-boy.github.io/tags/JQuery/"/>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
+    
+      <category term="面向对象" scheme="https://crazy-boy.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL函数</title>
