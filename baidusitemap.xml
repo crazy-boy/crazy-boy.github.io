@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>https://crazy-boy.github.io/archives/PHP%E5%AE%9E%E7%8E%B0AES%E5%8A%A0%E8%A7%A3%E5%AF%86.html</loc>
+    <lastmod>2018-04-20T02:51:37.677Z</lastmod>
+    <data>
+        <display>
+        <title>PHP实现AES加解密</title>
+        <pubTime>2018-04-20T02:05:00.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>AES</tag>
+         
+        <tag>加解密</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="https://crazy-boy.github.io/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://crazy-boy.github.io/archives/Windows%E7%8E%AF%E5%A2%83%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7.html</loc>
+    <lastmod>2018-04-20T02:02:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Windows环境常用工具</title>
+        <pubTime>2018-03-28T08:00:00.000Z</pubTime>
+        
+        <tag>文件搜索</tag>
+         
+        <tag>工具</tag>
+         
+         
+           
+             
+              <breadCrumb title="windows工具" url="https://crazy-boy.github.io/categories/windows%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://crazy-boy.github.io/archives/JQuery%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%86%99%E6%B3%95.html</loc>
     <lastmod>2018-04-19T01:52:00.000Z</lastmod>
     <data>
@@ -45,28 +91,6 @@
            
              
               <breadCrumb title="MySQL" url="https://crazy-boy.github.io/categories/MySQL/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://crazy-boy.github.io/archives/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7.html</loc>
-    <lastmod>2018-04-03T05:00:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>常用工具</title>
-        <pubTime>2018-03-28T08:00:00.000Z</pubTime>
-        
-        <tag>文件搜索</tag>
-         
-        <tag>工具</tag>
-         
-         
-           
-             
-              <breadCrumb title="windows工具" url="https://crazy-boy.github.io/categories/windows%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>

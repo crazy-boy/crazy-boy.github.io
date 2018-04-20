@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="PHP,AES,加解密," />
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞奔的蜗牛">
-<meta property="og:url" content="https://crazy-boy.github.io/tags/面向对象/index.html">
+<meta name="description" content="系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。 下面介绍一下以PHP实现AES加密解密： 1、AES加密解密类123456789101112131415161718192021222">
+<meta name="keywords" content="PHP,AES,加解密">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP实现AES加解密">
+<meta property="og:url" content="https://crazy-boy.github.io/archives/PHP实现AES加解密.html">
 <meta property="og:site_name" content="飞奔的蜗牛">
+<meta property="og:description" content="系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。 下面介绍一下以PHP实现AES加密解密： 1、AES加密解密类123456789101112131415161718192021222">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-20T02:51:37.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞奔的蜗牛">
+<meta name="twitter:title" content="PHP实现AES加解密">
+<meta name="twitter:description" content="系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。 下面介绍一下以PHP实现AES加密解密： 1、AES加密解密类123456789101112131415161718192021222">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://crazy-boy.github.io/tags/面向对象/"/>
+  <link rel="canonical" href="https://crazy-boy.github.io/archives/PHP实现AES加解密.html"/>
 
 
 
 
 
-  <title>标签: 面向对象 | 飞奔的蜗牛</title>
+  <title>PHP实现AES加解密 | 飞奔的蜗牛</title>
   
 
 
@@ -142,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/crazy-boy"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
@@ -262,54 +267,230 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>面向对象<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/PHP实现AES加解密.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/archives/JQuery面向对象写法.html" itemprop="url">
-              
-                <span itemprop="name">JQuery面向对象写法</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">PHP实现AES加解密</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-19T09:52:00+08:00"
-              content="2018-04-19" >
-          04-19
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T10:05:00+08:00">
+                2018-04-20
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-20T10:51:37+08:00">
+                2018-04-20
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  507
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。</p>
+<p>下面介绍一下以PHP实现AES加密解密：</p>
+<p>1、AES加密解密类<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">namespace libs;</span><br><span class="line">/**</span><br><span class="line">* 利用mcrypt做AES加密解密</span><br><span class="line">* 支持密钥：64bit（字节长度8）</span><br><span class="line">* 支持算法：DES</span><br><span class="line">* 支持模式：ECB</span><br><span class="line">* 填充方式：PKCS5</span><br><span class="line">*/</span><br><span class="line">class Aes&#123;</span><br><span class="line">    const CIPHER = MCRYPT_DES;</span><br><span class="line">    const MODE = MCRYPT_MODE_ECB;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 加密</span><br><span class="line">     * @param string <span class="variable">$str</span>	需加密的字符串</span><br><span class="line">     * @param string <span class="variable">$key</span>	密钥(8位)</span><br><span class="line">     * @<span class="built_in">return</span> string   密文</span><br><span class="line">     */</span><br><span class="line">    public static <span class="keyword">function</span> encode(<span class="variable">$str</span>,<span class="variable">$key</span>)&#123;</span><br><span class="line">        <span class="variable">$size</span> = mcrypt_get_block_size ( MCRYPT_DES, <span class="string">'ecb'</span> );</span><br><span class="line">        <span class="variable">$str</span> = self::pkcs5_pad(<span class="variable">$str</span>, <span class="variable">$size</span>);</span><br><span class="line">        <span class="variable">$iv</span> = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND);</span><br><span class="line">        <span class="variable">$result</span> = mcrypt_encrypt(self::CIPHER, <span class="variable">$key</span>, <span class="variable">$str</span>, self::MODE, <span class="variable">$iv</span>);</span><br><span class="line">        <span class="built_in">return</span> base64_encode(<span class="variable">$result</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 解密</span><br><span class="line">     * @param string <span class="variable">$str</span>   密文</span><br><span class="line">     * @param string <span class="variable">$key</span>   密钥(8位)</span><br><span class="line">     * @<span class="built_in">return</span> string   明文</span><br><span class="line">     */</span><br><span class="line">    public static <span class="keyword">function</span> decode(<span class="variable">$str</span>,<span class="variable">$key</span>)&#123;</span><br><span class="line">        <span class="variable">$str</span> = base64_decode(<span class="variable">$str</span>);</span><br><span class="line">        <span class="variable">$iv</span> = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND);</span><br><span class="line">        <span class="variable">$str</span> = trim(mcrypt_decrypt(self::CIPHER, <span class="variable">$key</span>, <span class="variable">$str</span>, self::MODE, <span class="variable">$iv</span>));</span><br><span class="line">        <span class="built_in">return</span>  self::pkcs5_unpad(<span class="variable">$str</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * PKCS5填充</span><br><span class="line">     * @param <span class="variable">$text</span></span><br><span class="line">     * @param <span class="variable">$blocksize</span></span><br><span class="line">     * @<span class="built_in">return</span> string</span><br><span class="line">     */</span><br><span class="line">    private static <span class="keyword">function</span> pkcs5_pad(<span class="variable">$text</span>, <span class="variable">$blocksize</span>) &#123;</span><br><span class="line">        <span class="variable">$pad</span> = <span class="variable">$blocksize</span> - (strlen(<span class="variable">$text</span>) % <span class="variable">$blocksize</span>);</span><br><span class="line">        <span class="built_in">return</span> <span class="variable">$text</span> . str_repeat(chr(<span class="variable">$pad</span>), <span class="variable">$pad</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *</span><br><span class="line">     * @param <span class="variable">$text</span></span><br><span class="line">     * @<span class="built_in">return</span> bool|string</span><br><span class="line">     */</span><br><span class="line">    private static <span class="keyword">function</span> pkcs5_unpad(<span class="variable">$text</span>) &#123;</span><br><span class="line">        <span class="variable">$pad</span> = ord(<span class="variable">$text</span>&#123;strlen(<span class="variable">$text</span>) - 1&#125;);</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$pad</span> &gt; strlen(<span class="variable">$text</span>)) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (strspn(<span class="variable">$text</span>, chr(<span class="variable">$pad</span>), strlen(<span class="variable">$text</span>)-<span class="variable">$pad</span>) != <span class="variable">$pad</span>) &#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> substr(<span class="variable">$text</span>, 0, -1 * <span class="variable">$pad</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、调用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace app\modules\demo\controllers;</span><br><span class="line"></span><br><span class="line">use app\common\components\Controller;</span><br><span class="line">use libs\Aes;</span><br><span class="line"></span><br><span class="line">class TestController extends Controller&#123;</span><br><span class="line"></span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">actionTest</span></span>()&#123;</span><br><span class="line">        <span class="variable">$key</span> = <span class="string">'WGiSP3UQ'</span>;</span><br><span class="line">        <span class="variable">$str</span> = <span class="string">'18958019299'</span>;</span><br><span class="line">        <span class="variable">$enStr</span> = Aes::encode(<span class="variable">$str</span>,<span class="variable">$key</span>);</span><br><span class="line">        <span class="variable">$deStr</span> = Aes::decode(<span class="variable">$enStr</span>,<span class="variable">$key</span>);</span><br><span class="line">        var_dump(<span class="variable">$str</span>,<span class="variable">$enStr</span>,<span class="variable">$deStr</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、访问<a href="http://127.0.0.1/web/demo/test/test" target="_blank" rel="noopener">http://127.0.0.1/web/demo/test/test</a> ，运行结果如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string(11) <span class="string">"18958019299"</span> </span><br><span class="line">string(24) <span class="string">"WiBZggO/DRaczJ3wSirvEw=="</span> </span><br><span class="line">string(11) <span class="string">"18958019299"</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
+    
+    
+    
 
+    
+	
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------亲^_^，本文结束<i class="fa fa-paw"></i>感谢您的阅读!-------------</div>
+    
+</div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"><i class="fa fa-hand-o-right"></i> PHP <i class="fa fa-hand-o-left"></i></a>
+          
+            <a href="/tags/AES/" rel="tag"><i class="fa fa-hand-o-right"></i> AES <i class="fa fa-hand-o-left"></i></a>
+          
+            <a href="/tags/加解密/" rel="tag"><i class="fa fa-hand-o-right"></i> 加解密 <i class="fa fa-hand-o-left"></i></a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/archives/JQuery面向对象写法.html" rel="next" title="JQuery面向对象写法">
+                <i class="fa fa-chevron-left"></i> JQuery面向对象写法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -317,6 +498,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -571,6 +756,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

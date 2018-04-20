@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHP实现AES加解密]]></title>
+    <url>%2Farchives%2FPHP%E5%AE%9E%E7%8E%B0AES%E5%8A%A0%E8%A7%A3%E5%AF%86.html</url>
+    <content type="text"><![CDATA[系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。 下面介绍一下以PHP实现AES加密解密： 1、AES加密解密类1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768&lt;?phpnamespace libs;/*** 利用mcrypt做AES加密解密* 支持密钥：64bit（字节长度8）* 支持算法：DES* 支持模式：ECB* 填充方式：PKCS5*/class Aes&#123; const CIPHER = MCRYPT_DES; const MODE = MCRYPT_MODE_ECB; /** * 加密 * @param string $str 需加密的字符串 * @param string $key 密钥(8位) * @return string 密文 */ public static function encode($str,$key)&#123; $size = mcrypt_get_block_size ( MCRYPT_DES, 'ecb' ); $str = self::pkcs5_pad($str, $size); $iv = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND); $result = mcrypt_encrypt(self::CIPHER, $key, $str, self::MODE, $iv); return base64_encode($result); &#125; /** * 解密 * @param string $str 密文 * @param string $key 密钥(8位) * @return string 明文 */ public static function decode($str,$key)&#123; $str = base64_decode($str); $iv = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND); $str = trim(mcrypt_decrypt(self::CIPHER, $key, $str, self::MODE, $iv)); return self::pkcs5_unpad($str); &#125; /** * PKCS5填充 * @param $text * @param $blocksize * @return string */ private static function pkcs5_pad($text, $blocksize) &#123; $pad = $blocksize - (strlen($text) % $blocksize); return $text . str_repeat(chr($pad), $pad); &#125; /** * * @param $text * @return bool|string */ private static function pkcs5_unpad($text) &#123; $pad = ord($text&#123;strlen($text) - 1&#125;); if ($pad &gt; strlen($text)) &#123; return false; &#125; if (strspn($text, chr($pad), strlen($text)-$pad) != $pad) &#123; return false; &#125; return substr($text, 0, -1 * $pad); &#125;&#125; 2、调用12345678910111213141516&lt;?phpnamespace app\modules\demo\controllers;use app\common\components\Controller;use libs\Aes;class TestController extends Controller&#123; public function actionTest()&#123; $key = 'WGiSP3UQ'; $str = '18958019299'; $enStr = Aes::encode($str,$key); $deStr = Aes::decode($enStr,$key); var_dump($str,$enStr,$deStr); &#125;&#125; 3、访问http://127.0.0.1/web/demo/test/test ，运行结果如下：123string(11) "18958019299" string(24) "WiBZggO/DRaczJ3wSirvEw==" string(11) "18958019299"]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>AES</tag>
+        <tag>加解密</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JQuery面向对象写法]]></title>
     <url>%2Farchives%2FJQuery%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%86%99%E6%B3%95.html</url>
     <content type="text"><![CDATA[书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748&lt;html&gt; &lt;head&gt; &lt;script src="jquery.min.js"&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;button data-event="list"&gt;列表&lt;/button&gt; &lt;button data-event="search" data-name="大班"&gt;搜索&lt;/button&gt; &lt;button data-event="add"&gt;添加&lt;/button&gt; &lt;button data-event="update"&gt;修改&lt;/button&gt; &lt;button data-event="del"&gt;删除&lt;/button&gt; &lt;/body&gt;&lt;/html&gt;&lt;script&gt;var clickAct = &#123; btn: $('button'), init: function()&#123; var that = this; this.btn.click(function()&#123; var func = $(this).attr('data-event'); that[func]($(this).attr('data-name')); &#125;) &#125;, list: function(param)&#123; console.log('1'); &#125;, search: function(param)&#123; console.log(param); &#125;, add: function(param)&#123; console.log('3'); &#125;, update: function(param)&#123; console.log('4'); &#125;, del: function(param)&#123; console.log('5'); &#125;&#125;clickAct.init();&lt;/script&gt;]]></content>
@@ -37,9 +50,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[常用工具]]></title>
-    <url>%2Farchives%2F%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7.html</url>
-    <content type="text"><![CDATA[给大家推荐一款文件搜索工具——Everything，下载地址：http://www.voidtools.com/]]></content>
+    <title><![CDATA[Windows环境常用工具]]></title>
+    <url>%2Farchives%2FWindows%E7%8E%AF%E5%A2%83%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7.html</url>
+    <content type="text"><![CDATA[给大家推荐一款windows下的文件搜索工具——Everything，下载地址：http://www.voidtools.com/]]></content>
       <categories>
         <category>windows工具</category>
       </categories>
