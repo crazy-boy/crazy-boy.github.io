@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-04-20T02:51:37.677Z</updated>
+  <updated>2018-04-25T06:04:03.806Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git忽略文件</title>
+    <link href="https://crazy-boy.github.io/archives/Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6.html"/>
+    <id>https://crazy-boy.github.io/archives/Git忽略文件.html</id>
+    <published>2018-04-25T05:55:00.000Z</published>
+    <updated>2018-04-25T06:04:03.806Z</updated>
+    
+    <content type="html"><![CDATA[<p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p><p>如下为Yii2下的.gitignore文件内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.idea/</span><br><span class="line">.project</span><br><span class="line">.settings</span><br><span class="line">/vendor</span><br><span class="line">assets/</span><br><span class="line">/runtime</span><br><span class="line">/Runtime</span><br><span class="line">.idea/workspace.xml</span><br><span class="line">/upload</span><br></pre></td></tr></table></figure></p><p>但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。<br>解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。&lt;/p&gt;
+&lt;p&gt;如下为Yii2下的.gitignore文件内容：&lt;br&gt;&lt;figure class=&quot;h
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="https://crazy-boy.github.io/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://crazy-boy.github.io/tags/Git/"/>
+    
+      <category term="文件忽略" scheme="https://crazy-boy.github.io/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP实现AES加解密</title>
