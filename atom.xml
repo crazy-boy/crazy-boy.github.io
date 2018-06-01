@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-04-25T06:04:03.806Z</updated>
+  <updated>2018-06-01T01:42:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>书单心愿墙</title>
+    <link href="https://crazy-boy.github.io/archives/%E4%B9%A6%E5%8D%95%E5%BF%83%E6%84%BF%E5%A2%99.html"/>
+    <id>https://crazy-boy.github.io/archives/书单心愿墙.html</id>
+    <published>2018-06-01T01:42:00.000Z</published>
+    <updated>2018-06-01T01:42:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="罗列一些自己后续要读的书籍或者文章："><a href="#罗列一些自己后续要读的书籍或者文章：" class="headerlink" title="罗列一些自己后续要读的书籍或者文章："></a>罗列一些自己后续要读的书籍或者文章：</h3><ul><li>《黑客与画家》</li><li>《UNIX编程艺术》</li><li>《异类》</li><li>《羊皮卷》——《选择的力量》</li><li>《优秀到不能被忽视》</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;罗列一些自己后续要读的书籍或者文章：&quot;&gt;&lt;a href=&quot;#罗列一些自己后续要读的书籍或者文章：&quot; class=&quot;headerlink&quot; title=&quot;罗列一些自己后续要读的书籍或者文章：&quot;&gt;&lt;/a&gt;罗列一些自己后续要读的书籍或者文章：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+      
+    
+    </summary>
+    
+      <category term="书籍" scheme="https://crazy-boy.github.io/categories/%E4%B9%A6%E7%B1%8D/"/>
+    
+    
+      <category term="书籍" scheme="https://crazy-boy.github.io/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>Git忽略文件</title>

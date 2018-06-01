@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[书单心愿墙]]></title>
+    <url>%2Farchives%2F%E4%B9%A6%E5%8D%95%E5%BF%83%E6%84%BF%E5%A2%99.html</url>
+    <content type="text"><![CDATA[罗列一些自己后续要读的书籍或者文章： 《黑客与画家》 《UNIX编程艺术》 《异类》 《羊皮卷》——《选择的力量》 《优秀到不能被忽视》]]></content>
+      <categories>
+        <category>书籍</category>
+      </categories>
+      <tags>
+        <tag>书籍</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git忽略文件]]></title>
     <url>%2Farchives%2FGit%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6.html</url>
     <content type="text"><![CDATA[软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。 如下为Yii2下的.gitignore文件内容：123456789.idea/.project.settings/vendorassets//runtime/Runtime.idea/workspace.xml/upload 但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。]]></content>
