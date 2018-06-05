@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-05T02:05:00.000Z</updated>
+  <updated>2018-06-05T02:07:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
     <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
     <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:05:00.000Z</updated>
+    <updated>2018-06-05T02:07:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式：<br> 如：<style>.amap-marker-label{height:40px;width:120px;background-color: red;border: solid 1px black;}</style></p></li><li><p>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<br> var markers = [];    map.remove(markers);     markers.push(marker);</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li></ol><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var markers = [];</span><br><span class="line">map.remove(markers);</span><br><span class="line">markers.push(marker);</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式：&lt;br&gt; 如：&lt;style&gt;.amap-marker-label{height:40px;width:120px;backgrou
+&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
       
     
     </summary>
@@ -165,6 +165,36 @@
   </entry>
   
   <entry>
+    <title>Jquery笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age
+      
+    
+    </summary>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS笔记</title>
     <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
@@ -193,36 +223,6 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jquery笔记</title>
-    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age
-      
-    
-    </summary>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
