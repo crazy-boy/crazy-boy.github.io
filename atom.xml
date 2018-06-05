@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-04T05:36:00.000Z</updated>
+  <updated>2018-06-05T02:05:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高德地图API使用</title>
+    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:05:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式：<br> 如：<style>.amap-marker-label{height:40px;width:120px;background-color: red;border: solid 1px black;}</style></p></li><li><p>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<br> var markers = [];    map.remove(markers);     markers.push(marker);</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式：&lt;br&gt; 如：&lt;style&gt;.amap-marker-label{height:40px;width:120px;backgrou
+      
+    
+    </summary>
+    
+      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+    
+    
+      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>架构学习</title>
+    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:05:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优
+      
+    
+    </summary>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker使用</title>
+    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:02:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
+    
+      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>富文本编辑器</title>
@@ -45,32 +135,32 @@
   </entry>
   
   <entry>
-    <title>Jquery笔记</title>
-    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
+    <updated>2018-06-04T03:36:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</p></li><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;ol&gt;
-&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age
+&lt;li&gt;&lt;p&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;删除表数据的时候，如果表使用
       
     
     </summary>
     
-      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
     
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -107,32 +197,32 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <title>Jquery笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
+    <updated>2018-06-04T03:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</p></li><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;删除表数据的时候，如果表使用
+&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age
       
     
     </summary>
     
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
     
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
@@ -143,17 +233,17 @@
     <published>2018-06-04T03:15:00.000Z</published>
     <updated>2018-06-04T03:32:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> 编程多年，一直对Linux操作不熟练，主要是命令行不熟悉，为方便记忆，现罗列一些常用的命令：</strong></p><ol><li>创建文件夹： mkdir dir</li><li>删除文件夹： rm -rf dir</li><li>创建文件：touch a.txt</li><li>追加内容到文件：echo sssss &gt;&gt; a.txt</li><li>插入内容：vi text.txt =》按i =》插入内容 =》按Esc =》:wq</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><strong> 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：</strong></p><ol><li>创建文件夹： mkdir dir</li><li>删除文件夹： rm -rf dir</li><li>创建文件：touch a.txt</li><li>追加内容到文件：echo sssss &gt;&gt; a.txt</li><li>插入内容：vi text.txt =》按i =》插入内容 =》按Esc =》:wq</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;strong&gt; 编程多年，一直对Linux操作不熟练，主要是命令行不熟悉，为方便记忆，现罗列一些常用的命令：&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;strong&gt; 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;创建文件夹： mkdir dir&lt;/li&gt;
 &lt;li&gt;删除文件夹： rm -rf dir&lt;/li&gt;
-&lt;li&gt;创建文件：t
+&lt;li&gt;创建文件：
       
     
     </summary>
@@ -340,7 +430,7 @@
     <published>2018-03-28T08:00:00.000Z</published>
     <updated>2018-06-04T03:19:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1、windows文件搜索工具"><a href="#1、windows文件搜索工具" class="headerlink" title="1、windows文件搜索工具"></a>1、windows文件搜索工具</h3><p>给大家推荐一款windows下的文件搜索工具——Everything，下载地址：<a href="http://www.voidtools.com/" target="_blank" rel="noopener">http://www.voidtools.com/</a></p><h3 id="2、文档搜索工具"><a href="#2、文档搜索工具" class="headerlink" title="2、文档搜索工具"></a>2、文档搜索工具</h3><p>安利一个文档搜索工具——鸠摩搜索，各种格式的电子书、文档都可以下载，比如PDF、TXT、MOBI、DOC等，地址：<a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">鸠摩搜索</a></p><h3 id="3、API接口文档管理工具——小幺鸡"><a href="#3、API接口文档管理工具——小幺鸡" class="headerlink" title="3、API接口文档管理工具——小幺鸡"></a>3、API接口文档管理工具——<a href="http://www.xiaoyaoji.cn" target="_blank" rel="noopener">小幺鸡</a></h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="1、windows文件搜索工具"><a href="#1、windows文件搜索工具" class="headerlink" title="1、windows文件搜索工具"></a>1、windows文件搜索工具</h3><p>给大家推荐一款windows下的文件搜索工具——Everything，下载地址：<a href="http://www.voidtools.com/" target="_blank" rel="noopener">http://www.voidtools.com/</a></p><h3 id="2、文档搜索工具"><a href="#2、文档搜索工具" class="headerlink" title="2、文档搜索工具"></a>2、文档搜索工具</h3><p>安利一个文档搜索工具——鸠摩搜索，各种格式的电子书、文档都可以下载，比如PDF、TXT、MOBI、DOC等，地址：<a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">鸠摩搜索</a></p><h3 id="3、API接口文档管理工具——小幺鸡"><a href="#3、API接口文档管理工具——小幺鸡" class="headerlink" title="3、API接口文档管理工具——小幺鸡"></a>3、API接口文档管理工具——<a href="http://www.xiaoyaoji.cn" target="_blank" rel="noopener">小幺鸡</a></h3><h3 id="4、Git项目搜索工具——BitHubLab"><a href="#4、Git项目搜索工具——BitHubLab" class="headerlink" title="4、Git项目搜索工具——BitHubLab"></a>4、Git项目搜索工具——BitHubLab</h3><p><a href="https://bithublab.org/" target="_blank" rel="noopener">BitHubLab</a>，可以搜索所有Git平台上的公开项目，包括GitHub、GitLab和BitBucket等的项目。</p>]]></content>
     
     <summary type="html">
     

@@ -4,6 +4,72 @@
 
     
   <url>
+    <loc>https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</loc>
+    <lastmod>2018-06-05T02:05:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>高德地图API使用</title>
+        <pubTime>2018-06-05T01:44:00.000Z</pubTime>
+        
+        <tag>高德地图</tag>
+         
+        <tag>JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="地图API" url="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</loc>
+    <lastmod>2018-06-05T02:05:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>架构学习</title>
+        <pubTime>2018-06-05T01:44:00.000Z</pubTime>
+        
+        <tag>软件架构</tag>
+         
+        <tag>架构</tag>
+         
+         
+           
+             
+              <breadCrumb title="架构" url="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html</loc>
+    <lastmod>2018-06-05T02:02:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Docker使用</title>
+        <pubTime>2018-06-05T01:44:00.000Z</pubTime>
+        
+        <tag>Docker</tag>
+         
+        <tag>Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Docker" url="https://crazy-boy.github.io/categories/Docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://crazy-boy.github.io/archives/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html</loc>
     <lastmod>2018-06-04T05:36:00.000Z</lastmod>
     <data>
@@ -19,30 +85,6 @@
            
              
               <breadCrumb title="插件" url="https://crazy-boy.github.io/categories/%E6%8F%92%E4%BB%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html</loc>
-    <lastmod>2018-06-04T03:43:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Jquery笔记</title>
-        <pubTime>2018-06-04T03:19:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>前端</tag>
-         
-        <tag>Jquery</tag>
-         
-         
-           
-             
-              <breadCrumb title="Jquery" url="https://crazy-boy.github.io/categories/Jquery/"/>
           
         </display>
     </data>
@@ -67,6 +109,30 @@
            
              
               <breadCrumb title="CSS" url="https://crazy-boy.github.io/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2018-06-04T03:43:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jquery笔记</title>
+        <pubTime>2018-06-04T03:19:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>Jquery</tag>
+         
+         
+           
+             
+              <breadCrumb title="Jquery" url="https://crazy-boy.github.io/categories/Jquery/"/>
           
         </display>
     </data>
