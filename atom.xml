@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-05T02:07:00.000Z</updated>
+  <updated>2018-06-05T06:07:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -21,16 +21,17 @@
     <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
     <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
     <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:07:00.000Z</updated>
+    <updated>2018-06-05T06:07:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li></ol><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var markers = [];</span><br><span class="line">map.remove(markers);</span><br><span class="line">markers.push(marker);</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</p> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li><li><p>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：</p><pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;ol&gt;
-&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+&lt;li&gt;&lt;p&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/p&gt;
+ &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
       
     
     </summary>
@@ -135,36 +136,6 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</p></li><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;删除表数据的时候，如果表使用
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Jquery笔记</title>
     <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
@@ -191,6 +162,36 @@
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:36:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</p></li><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;删除表数据的时候，如果表使用
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   

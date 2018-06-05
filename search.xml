@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[高德地图API使用]]></title>
     <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： 123var markers = []; map.remove(markers); markers.push(marker);]]></content>
+    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： var markers = []; map.remove(markers); markers.push(marker);]]></content>
       <categories>
         <category>地图API</category>
       </categories>
@@ -49,18 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL笔记]]></title>
-    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Jquery笔记]]></title>
     <url>%2Farchives%2FJquery%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[jquery获取json的长度： 一维：var JsonTemp = {‘id’:5,’name’:’lilei’}; length = JsonTemp.length; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]}; length = Object.keys(JsonTemp).length;]]></content>
@@ -71,6 +59,18 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>Jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL笔记]]></title>
+    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>

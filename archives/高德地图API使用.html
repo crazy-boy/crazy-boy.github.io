@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&amp;lt;style&amp;gt;	.amap-marker-label&amp;#123;		height:40px;		width:120px;		background-color: red;		border: solid 1px black;	&amp;#125;&amp;l">
+<meta name="description" content="高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：  12345678&amp;lt;style&amp;gt;	.amap-marker-label&amp;#123;		height:40px;		width:120px;		background-color: red;		border: solid 1px black;	&amp;#125;&amp;">
 <meta name="keywords" content="高德地图,JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="高德地图API使用">
 <meta property="og:url" content="https://crazy-boy.github.io/archives/高德地图API使用.html">
 <meta property="og:site_name" content="飞奔的蜗牛">
-<meta property="og:description" content="高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&amp;lt;style&amp;gt;	.amap-marker-label&amp;#123;		height:40px;		width:120px;		background-color: red;		border: solid 1px black;	&amp;#125;&amp;l">
+<meta property="og:description" content="高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：  12345678&amp;lt;style&amp;gt;	.amap-marker-label&amp;#123;		height:40px;		width:120px;		background-color: red;		border: solid 1px black;	&amp;#125;&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-05T02:07:00.000Z">
+<meta property="og:updated_time" content="2018-06-05T06:07:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高德地图API使用">
-<meta name="twitter:description" content="高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&amp;lt;style&amp;gt;	.amap-marker-label&amp;#123;		height:40px;		width:120px;		background-color: red;		border: solid 1px black;	&amp;#125;&amp;l">
+<meta name="twitter:description" content="高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：  12345678&amp;lt;style&amp;gt;	.amap-marker-label&amp;#123;		height:40px;		width:120px;		background-color: red;		border: solid 1px black;	&amp;#125;&amp;">
 
 
 
@@ -326,7 +326,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T10:07:00+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T14:07:00+08:00">
                 2018-06-05
               </time>
             
@@ -376,7 +376,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  92
+                  89
                 </span>
               
 
@@ -414,11 +414,15 @@
 
       
         <ol>
-<li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.amap-marker-label&#123;</span><br><span class="line">		height:40px;</span><br><span class="line">		width:120px;</span><br><span class="line">		background-color: red;</span><br><span class="line">		border: solid 1px black;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<li><p>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	.amap-marker-label&#123;</span><br><span class="line">		height:40px;</span><br><span class="line">		width:120px;</span><br><span class="line">		background-color: red;</span><br><span class="line">		border: solid 1px black;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
-<li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var markers = [];	</span><br><span class="line">map.remove(markers);	</span><br><span class="line">markers.push(marker);</span><br></pre></td></tr></table></figure></li>
+<li><p>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：</p>
+<pre><code class="bash">var markers = [];    
+map.remove(markers);    
+markers.push(marker);
+</code></pre>
+</li>
 </ol>
 
       
