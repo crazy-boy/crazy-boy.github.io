@@ -41,37 +41,6 @@
   </entry>
   
   <entry>
-    <title>架构学习</title>
-    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
-    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:05:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
-    
-    
-      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>高德地图API使用</title>
     <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
     <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
@@ -124,6 +93,37 @@
   </entry>
   
   <entry>
+    <title>架构学习</title>
+    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:05:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>富文本编辑器</title>
     <link href="https://crazy-boy.github.io/archives/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html"/>
     <id>https://crazy-boy.github.io/archives/富文本编辑器.html</id>
@@ -151,28 +151,30 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <title>Jquery笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
+    <updated>2018-06-04T03:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol><a id="more"></a>    ]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/li&gt;
+&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
     
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
     
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
@@ -208,30 +210,28 @@
   </entry>
   
   <entry>
-    <title>Jquery笔记</title>
-    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
+    <updated>2018-06-04T03:36:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol><a id="more"></a>    ]]></content>
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;&lt;/li&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
     
-      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
     
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -249,7 +249,7 @@
       &lt;p&gt;&lt;strong&gt; 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;创建文件夹： mkdir dir&lt;/li&gt;
-&lt;li&gt;删除文件夹： rm -rf dir&lt;/li&gt;&lt;/ol&gt;
+&lt;li&gt;删除文件夹： rm -rf dir
     
     </summary>
     
@@ -275,7 +275,7 @@
 &lt;li&gt;《黑客与画家》&lt;/li&gt;
 &lt;li&gt;《UNIX编程艺术》&lt;/li&gt;
 &lt;li&gt;《异类》&lt;/li&gt;
-&lt;li&gt;《羊皮卷》——《选择的力量》&lt;/li&gt;&lt;/ul&gt;
+&lt;li&gt;《羊皮卷》——《选择的力量》
     
     </summary>
     
@@ -374,7 +374,7 @@
     <summary type="html">
     
       &lt;p&gt;记录几个常用的MySQL函数：&lt;/p&gt;
-&lt;h3 id=&quot;1、LAST-INSERT-ID-expr&quot;&gt;&lt;a href=&quot;#1、LAST-INSERT-ID-expr&quot; class=&quot;headerlink&quot; title=&quot;1、LAST_INSERT_ID([expr])&quot;&gt;&lt;/a&gt;1、LAST_INSERT_ID([expr])&lt;/h3&gt;&lt;p&gt;自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1、LAST-INSERT-ID-expr&quot;&gt;&lt;a href=&quot;#1、LAST-INSERT-ID-expr&quot; class=&quot;headerlink&quot; title=&quot;1、LAST_INSERT_ID([expr])&quot;&gt;&lt;/a&gt;1、LAST_INSERT_ID([expr])&lt;/h3&gt;&lt;p&gt;自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。&lt;br&gt;
     
     </summary>
     
@@ -394,11 +394,11 @@
     <published>2018-03-29T06:00:00.000Z</published>
     <updated>2018-03-29T08:00:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>哈哈，木仓车神附体，科目一96！<br><a id="more"></a><br><img src="/archives/images/happy.jpg" alt="I&#39;m very happy."></p>]]></content>
+    <content type="html"><![CDATA[<p>哈哈，木仓车神附体，科目一96！<br><a id="more"></a><br><img src="/images/happy.jpg" alt="I&#39;m very happy."></p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;哈哈，木仓车神附体，科目一96！&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;哈哈，木仓车神附体，科目一96！&lt;br&gt;
     
     </summary>
     
