@@ -49,6 +49,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[CSS笔记]]></title>
+    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>前端</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Jquery笔记]]></title>
     <url>%2Farchives%2FJquery%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[jquery获取json的长度： 一维：var JsonTemp = {‘id’:5,’name’:’lilei’}; length = JsonTemp.length; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]}; length = Object.keys(JsonTemp).length;]]></content>
@@ -56,9 +69,9 @@
         <category>Jquery</category>
       </categories>
       <tags>
+        <tag>Jquery</tag>
         <tag>笔记</tag>
         <tag>前端</tag>
-        <tag>Jquery</tag>
       </tags>
   </entry>
   <entry>
@@ -71,19 +84,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSS笔记]]></title>
-    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>笔记</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
