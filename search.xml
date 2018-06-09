@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Docker使用]]></title>
+    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[高德地图API使用]]></title>
     <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
     <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： var markers = []; map.remove(markers); markers.push(marker);]]></content>
@@ -25,18 +37,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker使用]]></title>
-    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[富文本编辑器]]></title>
     <url>%2Farchives%2F%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html</url>
     <content type="text"><![CDATA[解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false 即：,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false]]></content>
@@ -46,6 +46,19 @@
       <tags>
         <tag>富文本编辑器</tag>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS笔记]]></title>
+    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>笔记</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -71,19 +84,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSS笔记]]></title>
-    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>笔记</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
