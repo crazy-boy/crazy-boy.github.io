@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://crazy-boy.github.io/schedule/index.html</loc>
-    
-    <lastmod>2018-06-09T05:26:05.602Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.github.io/sitemap/index.html</loc>
-    
-    <lastmod>2018-06-09T05:25:50.898Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://crazy-boy.github.io/tags/index.html</loc>
     
     <lastmod>2018-06-09T05:14:45.592Z</lastmod>
@@ -58,14 +44,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html</loc>
+    <loc>https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html</loc>
     
     <lastmod>2018-06-04T03:43:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html</loc>
+    <loc>https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html</loc>
     
     <lastmod>2018-06-04T03:43:00.000Z</lastmod>
     

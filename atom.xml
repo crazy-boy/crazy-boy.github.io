@@ -136,38 +136,6 @@
   </entry>
   
   <entry>
-    <title>CSS笔记</title>
-    <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}</p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：.cntck{p
-      
-    
-    </summary>
-    
-      <category term="CSS" scheme="https://crazy-boy.github.io/categories/CSS/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="CSS" scheme="https://crazy-boy.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Jquery笔记</title>
     <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
@@ -189,11 +157,11 @@
       <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
     
     
-      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
-    
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
@@ -224,6 +192,38 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS笔记</title>
+    <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}</p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：.cntck{p
+      
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://crazy-boy.github.io/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://crazy-boy.github.io/tags/CSS/"/>
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
