@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://crazy-boy.github.io/archives/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2018-06-09T07:20:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo使用笔记</title>
+        <pubTime>2018-06-09T07:12:00.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>NexT</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="https://crazy-boy.github.io/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://crazy-boy.github.io/archives/PHP%E5%AE%9E%E7%8E%B0AES%E5%8A%A0%E8%A7%A3%E5%AF%86.html</loc>
     <lastmod>2018-06-09T06:46:31.639Z</lastmod>
     <data>
@@ -142,30 +164,6 @@
 
     
   <url>
-    <loc>https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html</loc>
-    <lastmod>2018-06-04T03:43:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Jquery笔记</title>
-        <pubTime>2018-06-04T03:19:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>前端</tag>
-         
-        <tag>Jquery</tag>
-         
-         
-           
-             
-              <breadCrumb title="Jquery" url="https://crazy-boy.github.io/categories/Jquery/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html</loc>
     <lastmod>2018-06-04T03:43:00.000Z</lastmod>
     <data>
@@ -183,6 +181,30 @@
            
              
               <breadCrumb title="CSS" url="https://crazy-boy.github.io/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2018-06-04T03:43:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jquery笔记</title>
+        <pubTime>2018-06-04T03:19:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>Jquery</tag>
+         
+         
+           
+             
+              <breadCrumb title="Jquery" url="https://crazy-boy.github.io/categories/Jquery/"/>
           
         </display>
     </data>

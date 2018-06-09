@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[高德地图API使用]]></title>
-    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
+    <title><![CDATA[Hexo使用笔记]]></title>
+    <url>%2Farchives%2FHexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。 常用命令 清除当前缓存 $ hexo clean 重新生成并部署到github上 $ hexo g -d 启动服务 $ hexo s 新建页面 $ hexo new page categories 常用设置 如何在首页设置「阅读全文」? 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式： (1)、在文章中使用 手动进行截断，Hexo 提供的方式(推荐 ) (2)、在文章的 front-matter 中添加 description，并提供文章摘录 (3)、自动形成摘要，在 主题配置文件_config.yml 中添加： 123auto_excerpt: enable: true length: 150 默认截取的长度为 150 字符，可以根据需要自行设定。 建议使用 &lt;!-- more --&gt;方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。]]></content>
       <categories>
-        <category>地图API</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>高德地图</tag>
-        <tag>JS</tag>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -22,6 +22,18 @@
       <tags>
         <tag>软件架构</tag>
         <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[高德地图API使用]]></title>
+    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
+      <categories>
+        <category>地图API</category>
+      </categories>
+      <tags>
+        <tag>高德地图</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -49,6 +61,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[CSS笔记]]></title>
+    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>笔记</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Jquery笔记]]></title>
     <url>%2Farchives%2FJquery%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[jquery获取json的长度： 一维：var JsonTemp = {‘id’:5,’name’:’lilei’}; length = JsonTemp.length; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]}; length = Object.keys(JsonTemp).length;]]></content>
@@ -71,19 +96,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSS笔记]]></title>
-    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>笔记</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>

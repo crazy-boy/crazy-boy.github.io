@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-05T06:07:00.000Z</updated>
+  <updated>2018-06-09T07:20:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -17,28 +17,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>高德地图API使用</title>
-    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T06:07:00.000Z</updated>
+    <title>Hexo使用笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Hexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Hexo使用笔记.html</id>
+    <published>2018-06-09T07:12:00.000Z</published>
+    <updated>2018-06-09T07:20:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</p><a id="more"></a><h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol><li>清除当前缓存        <code>$ hexo clean</code></li><li>重新生成并部署到github上        <code>$ hexo g -d</code></li><li>启动服务        <code>$ hexo s</code></li><li>新建页面        <code>$ hexo new page categories</code></li></ol><h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol><li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p><p> (1)、在文章中使用 <!-- more --> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )<br> (2)、在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 description，并提供文章摘录<br> (3)、自动形成摘要，在 主题配置文件_config.yml 中添加：</p><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure></code></pre></li></ol><pre><code>    默认截取的长度为 150 字符，可以根据需要自行设定。建议使用 &lt;!-- more --&gt;方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;ol&gt;
-&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;p&gt;这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。&lt;/p&gt;
     
     </summary>
     
-      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+      <category term="Hexo" scheme="https://crazy-boy.github.io/categories/Hexo/"/>
     
     
-      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+      <category term="Hexo" scheme="https://crazy-boy.github.io/tags/Hexo/"/>
     
-      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
+      <category term="NexT" scheme="https://crazy-boy.github.io/tags/NexT/"/>
     
   </entry>
   
@@ -70,6 +68,32 @@
       <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
     
       <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高德地图API使用</title>
+    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T06:07:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+    
+    
+      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
     
   </entry>
   
@@ -127,6 +151,37 @@
   </entry>
   
   <entry>
+    <title>CSS笔记</title>
+    <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}</p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}</p></li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="https://crazy-boy.github.io/categories/CSS/"/>
+    
+    
+      <category term="CSS" scheme="https://crazy-boy.github.io/tags/CSS/"/>
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jquery笔记</title>
     <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
@@ -177,37 +232,6 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS笔记</title>
-    <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}</p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}</p></li></ol><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="CSS" scheme="https://crazy-boy.github.io/categories/CSS/"/>
-    
-    
-      <category term="CSS" scheme="https://crazy-boy.github.io/tags/CSS/"/>
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
