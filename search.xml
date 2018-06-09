@@ -3,25 +3,13 @@
   <entry>
     <title><![CDATA[Hexo使用笔记]]></title>
     <url>%2Farchives%2FHexo%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。 常用命令 清除当前缓存 $ hexo clean 重新生成并部署到github上 $ hexo g -d 启动服务 $ hexo s 新建页面 $ hexo new page categories 常用设置 如何在首页设置「阅读全文」? 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式： (1)、在文章中使用 手动进行截断，Hexo 提供的方式(推荐 ) (2)、在文章的 front-matter 中添加 description，并提供文章摘录 (3)、自动形成摘要，在 主题配置文件_config.yml 中添加： 123auto_excerpt: enable: true length: 150 默认截取的长度为 150 字符，可以根据需要自行设定。 建议使用 &lt;!-- more --&gt;方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。]]></content>
+    <content type="text"><![CDATA[这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。 常用命令 清除当前缓存 $ hexo clean 重新生成并部署到github上 $ hexo g -d 启动服务 $ hexo s 新建页面 $ hexo new page categories 常用设置 如何在首页设置「阅读全文」? 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式： (1)、在文章中使用 手动进行截断，Hexo 提供的方式(推荐 ) (2)、在文章的 front-matter 中添加 description，并提供文章摘录 (3)、自动形成摘要，在 主题配置文件_config.yml 中添加： 123auto_excerpt: enable: true length: 150 默认截取的长度为 150 字符，可以根据需要自行设定。 建议使用 方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[架构学习]]></title>
-    <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
-    <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
-      <categories>
-        <category>架构</category>
-      </categories>
-      <tags>
-        <tag>软件架构</tag>
-        <tag>架构</tag>
       </tags>
   </entry>
   <entry>
@@ -49,6 +37,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[架构学习]]></title>
+    <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>软件架构</tag>
+        <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[富文本编辑器]]></title>
     <url>%2Farchives%2F%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html</url>
     <content type="text"><![CDATA[解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false 即：,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false]]></content>
@@ -58,19 +58,6 @@
       <tags>
         <tag>富文本编辑器</tag>
         <tag>插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSS笔记]]></title>
-    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>笔记</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -84,6 +71,19 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>Jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS笔记]]></title>
+    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>笔记</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>

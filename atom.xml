@@ -23,7 +23,7 @@
     <published>2018-06-09T07:12:00.000Z</published>
     <updated>2018-06-09T07:20:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</p><a id="more"></a><h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol><li>清除当前缓存        <code>$ hexo clean</code></li><li>重新生成并部署到github上        <code>$ hexo g -d</code></li><li>启动服务        <code>$ hexo s</code></li><li>新建页面        <code>$ hexo new page categories</code></li></ol><h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol><li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p><p> (1)、在文章中使用 <!-- more --> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )<br> (2)、在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 description，并提供文章摘录<br> (3)、自动形成摘要，在 主题配置文件_config.yml 中添加：</p><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure></code></pre></li></ol><pre><code>    默认截取的长度为 150 字符，可以根据需要自行设定。建议使用 &lt;!-- more --&gt;方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </code></pre>]]></content>
+    <content type="html"><![CDATA[<p>这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</p><a id="more"></a><h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol><li>清除当前缓存        <code>$ hexo clean</code></li><li>重新生成并部署到github上        <code>$ hexo g -d</code></li><li>启动服务        <code>$ hexo s</code></li><li>新建页面        <code>$ hexo new page categories</code></li></ol><h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol><li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p><p> (1)、在文章中使用 <!-- more --> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )<br> (2)、在文章的 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">front-matter</a> 中添加 description，并提供文章摘录<br> (3)、自动形成摘要，在 主题配置文件_config.yml 中添加：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  length: 150</span><br></pre></td></tr></table></figure></li></ol><p>默认截取的长度为 150 字符，可以根据需要自行设定。</p><p>建议使用 <!-- more -->方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>]]></content>
     
     <summary type="html">
     
@@ -37,37 +37,6 @@
       <category term="Hexo" scheme="https://crazy-boy.github.io/tags/Hexo/"/>
     
       <category term="NexT" scheme="https://crazy-boy.github.io/tags/NexT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>架构学习</title>
-    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
-    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:05:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
-    
-    
-      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
     
   </entry>
   
@@ -124,6 +93,37 @@
   </entry>
   
   <entry>
+    <title>架构学习</title>
+    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:05:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>富文本编辑器</title>
     <link href="https://crazy-boy.github.io/archives/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html"/>
     <id>https://crazy-boy.github.io/archives/富文本编辑器.html</id>
@@ -147,6 +147,34 @@
       <category term="富文本编辑器" scheme="https://crazy-boy.github.io/tags/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
       <category term="插件" scheme="https://crazy-boy.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jquery笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol><a id="more"></a>    ]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
@@ -178,34 +206,6 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jquery笔记</title>
-    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol><a id="more"></a>    ]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
