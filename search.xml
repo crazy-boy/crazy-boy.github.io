@@ -3,25 +3,13 @@
   <entry>
     <title><![CDATA[高德地图API使用]]></title>
     <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物： var markers = []; map.remove(markers); markers.push(marker);]]></content>
+    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
       <categories>
         <category>地图API</category>
       </categories>
       <tags>
         <tag>高德地图</tag>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Docker使用]]></title>
-    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -34,6 +22,18 @@
       <tags>
         <tag>软件架构</tag>
         <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker使用]]></title>
+    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>

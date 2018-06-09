@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。 如下为Yii2下的.gitignore文件内容：123456789.idea/.project.settings/vendorassets//runtime/Runtime.idea/workspace.xml/upload 但">
+<meta name="description" content="软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。">
 <meta name="keywords" content="Git,文件忽略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git忽略文件">
 <meta property="og:url" content="https://crazy-boy.github.io/archives/Git忽略文件.html">
 <meta property="og:site_name" content="飞奔的蜗牛">
-<meta property="og:description" content="软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。 如下为Yii2下的.gitignore文件内容：123456789.idea/.project.settings/vendorassets//runtime/Runtime.idea/workspace.xml/upload 但">
+<meta property="og:description" content="软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T06:04:03.806Z">
+<meta property="og:updated_time" content="2018-06-09T06:44:49.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git忽略文件">
-<meta name="twitter:description" content="软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。 如下为Yii2下的.gitignore文件内容：123456789.idea/.project.settings/vendorassets//runtime/Runtime.idea/workspace.xml/upload 但">
+<meta name="twitter:description" content="软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。">
 
 
 
@@ -346,8 +346,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-25T14:04:03+08:00">
-                2018-04-25
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-09T14:44:49+08:00">
+                2018-06-09
               </time>
             
           </span>
@@ -434,6 +434,7 @@
 
       
         <p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p>
+<a id="more"></a>
 <p>如下为Yii2下的.gitignore文件内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.idea/</span><br><span class="line">.project</span><br><span class="line">.settings</span><br><span class="line">/vendor</span><br><span class="line">assets/</span><br><span class="line">/runtime</span><br><span class="line">/Runtime</span><br><span class="line">.idea/workspace.xml</span><br><span class="line">/upload</span><br></pre></td></tr></table></figure></p>
 <p>但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。<br>解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。</p>
 
