@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /fancybox/
+
+Sitemap: https://crazy-boy.github.io/sitemap.xml
+
+User-agent:sogou spider
+Disallow: /
+
+User-agent:Sosospider
+Disallow: /
+
+User-agent: Sogou web spider
+Disallow: /
+
+User-agent:sosospider
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: baiduspider
+Disallow: /
