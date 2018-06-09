@@ -13,18 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[架构学习]]></title>
-    <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
-    <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
-      <categories>
-        <category>架构</category>
-      </categories>
-      <tags>
-        <tag>软件架构</tag>
-        <tag>架构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Docker使用]]></title>
     <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
     <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
@@ -34,6 +22,18 @@
       <tags>
         <tag>Docker</tag>
         <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[架构学习]]></title>
+    <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>软件架构</tag>
+        <tag>架构</tag>
       </tags>
   </entry>
   <entry>
