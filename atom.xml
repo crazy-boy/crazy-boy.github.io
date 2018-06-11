@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-09T07:20:00.000Z</updated>
+  <updated>2018-06-09T15:38:32.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SEO——权重转移</title>
+    <link href="https://crazy-boy.github.io/archives/SEO%E2%80%94%E2%80%94%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB.html"/>
+    <id>https://crazy-boy.github.io/archives/SEO——权重转移.html</id>
+    <published>2018-06-09T15:38:26.000Z</published>
+    <updated>2018-06-09T15:38:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"主页url"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p><p>Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。</p><p>如：<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4</a><br>……<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45</a></p><p>就可以在每个页面的head标签内添加代码：</p><link rel="canonical" href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt; 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
+      
+    
+    </summary>
+    
+      <category term="SEO" scheme="https://crazy-boy.github.io/categories/SEO/"/>
+    
+    
+      <category term="SEO" scheme="https://crazy-boy.github.io/tags/SEO/"/>
+    
+      <category term="权重转移" scheme="https://crazy-boy.github.io/tags/%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go语言基础</title>
+    <link href="https://crazy-boy.github.io/archives/Go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html"/>
+    <id>https://crazy-boy.github.io/archives/Go语言基础.html</id>
+    <published>2018-06-09T13:57:06.000Z</published>
+    <updated>2018-06-09T13:57:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 自学Go语言的过程漫长而坎坷，先记录一些基础知识：</strong></p><ol><li>执行go文件：<code>E:\Go_WorkSpace&gt;go run test.go</code></li><li>把go程序编译成exe文件：<code>E:\Go_WorkSpace&gt;go build test.go</code><a id="more"></a></li><li>打印内容：<code>fmt.Printf(&quot;Hello,World!&quot;)</code></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 自学Go语言的过程漫长而坎坷，先记录一些基础知识：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;执行go文件：&lt;code&gt;E:\Go_WorkSpace&amp;gt;go run test.go&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;把go程序编译成exe文件：&lt;code&gt;E:\Go_WorkSpace&amp;gt;go build test.go&lt;/code&gt;
+    
+    </summary>
+    
+      <category term="Go" scheme="https://crazy-boy.github.io/categories/Go/"/>
+    
+    
+      <category term="Go" scheme="https://crazy-boy.github.io/tags/Go/"/>
+    
+      <category term="语言基础" scheme="https://crazy-boy.github.io/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo使用笔记</title>
@@ -37,58 +91,6 @@
       <category term="Hexo" scheme="https://crazy-boy.github.io/tags/Hexo/"/>
     
       <category term="NexT" scheme="https://crazy-boy.github.io/tags/NexT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高德地图API使用</title>
-    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T06:07:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
-    
-    
-      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
-    
-      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker使用</title>
-    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:02:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
-    
-      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
     
   </entry>
   
@@ -124,18 +126,70 @@
   </entry>
   
   <entry>
+    <title>Docker使用</title>
+    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:02:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
+    
+      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高德地图API使用</title>
+    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T06:07:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+    
+    
+      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>富文本编辑器</title>
     <link href="https://crazy-boy.github.io/archives/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html"/>
     <id>https://crazy-boy.github.io/archives/富文本编辑器.html</id>
     <published>2018-06-04T05:36:00.000Z</published>
     <updated>2018-06-04T05:36:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false    <pre><code>即：,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false</code></pre></li></ol><a id="more"></a>        ]]></content>
+    <content type="html"><![CDATA[<ol><li>解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false    <pre><code>即：`,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false`</code></pre></li></ol><a id="more"></a>        ]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false    &lt;pre&gt;&lt;code&gt;即：,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false
+&lt;li&gt;解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false    &lt;pre&gt;&lt;code&gt;即：`,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false`
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
     
@@ -157,12 +211,12 @@
     <published>2018-06-04T03:19:00.000Z</published>
     <updated>2018-06-04T03:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;<br> 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;</li></ol><a id="more"></a>    ]]></content>
+    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：<code>var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;};  length = JsonTemp.length;</code><br> 二维：<code>var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]};  length = Object.keys(JsonTemp).length;</code></li></ol><a id="more"></a>    ]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：var JsonTemp = {‘id’:5,’name’:’lilei’};  length = JsonTemp.length;&lt;br&gt; 二维：var JsonTemp = {[“name”:”张三”,”age”:18],[“name”:”李四”,”age”:19]};  length = Object.keys(JsonTemp).length;&lt;/li&gt;
+&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：&lt;code&gt;var JsonTemp = {&amp;#39;id&amp;#39;:5,&amp;#39;name&amp;#39;:&amp;#39;lilei&amp;#39;};  length = JsonTemp.length;&lt;/code&gt;&lt;br&gt; 二维：&lt;code&gt;var JsonTemp = {[&amp;quot;name&amp;quot;:&amp;quot;张三&amp;quot;,&amp;quot;age&amp;quot;:18],[&amp;quot;name&amp;quot;:&amp;quot;李四&amp;quot;,&amp;quot;age&amp;quot;:19]};  length = Object.keys(JsonTemp).length;&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
@@ -179,20 +233,46 @@
   </entry>
   
   <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:36:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS笔记</title>
     <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
     <updated>2018-06-04T03:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}</p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}</p></li></ol><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：<code>.cntck{ margin-right: 5px!important;}</code></p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：<code>.cntck{position: relative; bottom: -2px;}</code></p></li></ol><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：&lt;code&gt;.cntck{ margin-right: 5px!important;}&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：&lt;code&gt;.cntck{position: relative; bottom: -2px;}&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
     
@@ -210,46 +290,20 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：select * from t_school order by convert(name using gbk);</li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a;</p></li><li><p>不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：select * from t_school order by convert(name using gbk);&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux常用命令</title>
     <link href="https://crazy-boy.github.io/archives/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html"/>
     <id>https://crazy-boy.github.io/archives/Linux常用命令.html</id>
     <published>2018-06-04T03:15:00.000Z</published>
     <updated>2018-06-04T03:32:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：</strong></p><ol><li>创建文件夹： mkdir dir</li><li>删除文件夹： rm -rf dir<a id="more"></a></li><li>创建文件：touch a.txt</li><li>追加内容到文件：echo sssss &gt;&gt; a.txt</li><li>插入内容：vi text.txt =》按i =》插入内容 =》按Esc =》:wq</li></ol>]]></content>
+    <content type="html"><![CDATA[<p><strong> 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：</strong></p><ol><li>创建文件夹： <code>mkdir dir</code></li><li>删除文件夹： <code>rm -rf dir</code><a id="more"></a></li><li>创建文件：<code>touch a.txt</code></li><li>追加内容到文件：<code>echo sssss &gt;&gt; a.txt</code></li><li>插入内容：vi text.txt =》按i =》插入内容 =》按Esc =》:wq</li></ol>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;strong&gt; 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;创建文件夹： mkdir dir&lt;/li&gt;
-&lt;li&gt;删除文件夹： rm -rf dir
+&lt;li&gt;创建文件夹： &lt;code&gt;mkdir dir&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除文件夹： &lt;code&gt;rm -rf dir&lt;/code&gt;
     
     </summary>
     
@@ -267,7 +321,7 @@
     <published>2018-06-01T01:42:00.000Z</published>
     <updated>2018-06-01T01:42:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="罗列一些自己后续要读的书籍或者文章："><a href="#罗列一些自己后续要读的书籍或者文章：" class="headerlink" title="罗列一些自己后续要读的书籍或者文章："></a>罗列一些自己后续要读的书籍或者文章：</h3><ul><li>《黑客与画家》</li><li>《UNIX编程艺术》</li><li>《异类》</li><li>《羊皮卷》——《选择的力量》<a id="more"></a></li><li>《优秀到不能被忽视》</li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="罗列一些自己后续要读的书籍或者文章："><a href="#罗列一些自己后续要读的书籍或者文章：" class="headerlink" title="罗列一些自己后续要读的书籍或者文章："></a>罗列一些自己后续要读的书籍或者文章：</h3><ul><li>《黑客与画家》</li><li>《UNIX编程艺术》</li><li>《异类》</li><li>《羊皮卷》——《选择的力量》</li><li>《优秀到不能被忽视》<a id="more"></a></li></ul>]]></content>
     
     <summary type="html">
     
@@ -275,7 +329,8 @@
 &lt;li&gt;《黑客与画家》&lt;/li&gt;
 &lt;li&gt;《UNIX编程艺术》&lt;/li&gt;
 &lt;li&gt;《异类》&lt;/li&gt;
-&lt;li&gt;《羊皮卷》——《选择的力量》
+&lt;li&gt;《羊皮卷》——《选择的力量》&lt;/li&gt;
+&lt;li&gt;《优秀到不能被忽视》
     
     </summary>
     
@@ -291,7 +346,7 @@
     <link href="https://crazy-boy.github.io/archives/Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6.html"/>
     <id>https://crazy-boy.github.io/archives/Git忽略文件.html</id>
     <published>2018-04-25T05:55:00.000Z</published>
-    <updated>2018-06-09T06:44:49.640Z</updated>
+    <updated>2018-06-09T06:44:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p><a id="more"></a><p>如下为Yii2下的.gitignore文件内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.idea/</span><br><span class="line">.project</span><br><span class="line">.settings</span><br><span class="line">/vendor</span><br><span class="line">assets/</span><br><span class="line">/runtime</span><br><span class="line">/Runtime</span><br><span class="line">.idea/workspace.xml</span><br><span class="line">/upload</span><br></pre></td></tr></table></figure></p><p>但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。<br>解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。</p>]]></content>
     
@@ -315,7 +370,7 @@
     <link href="https://crazy-boy.github.io/archives/PHP%E5%AE%9E%E7%8E%B0AES%E5%8A%A0%E8%A7%A3%E5%AF%86.html"/>
     <id>https://crazy-boy.github.io/archives/PHP实现AES加解密.html</id>
     <published>2018-04-20T02:05:00.000Z</published>
-    <updated>2018-06-09T06:46:31.639Z</updated>
+    <updated>2018-06-09T06:46:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。</p><a id="more"></a><p>下面介绍一下以PHP实现AES加密解密：</p><p>1、AES加密解密类<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">libs</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 利用mcrypt做AES加密解密</span></span><br><span class="line"><span class="comment">* 支持密钥：64bit（字节长度8）</span></span><br><span class="line"><span class="comment">* 支持算法：DES</span></span><br><span class="line"><span class="comment">* 支持模式：ECB</span></span><br><span class="line"><span class="comment">* 填充方式：PKCS5</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Aes</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> CIPHER = MCRYPT_DES;</span><br><span class="line">    <span class="keyword">const</span> MODE = MCRYPT_MODE_ECB;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 加密</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $str需加密的字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $key密钥(8位)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string   密文</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">encode</span><span class="params">($str,$key)</span></span>&#123;</span><br><span class="line">        $size = mcrypt_get_block_size ( MCRYPT_DES, <span class="string">'ecb'</span> );</span><br><span class="line">        $str = <span class="keyword">self</span>::pkcs5_pad($str, $size);</span><br><span class="line">        $iv = mcrypt_create_iv(mcrypt_get_iv_size(<span class="keyword">self</span>::CIPHER,<span class="keyword">self</span>::MODE),MCRYPT_RAND);</span><br><span class="line">        $result = mcrypt_encrypt(<span class="keyword">self</span>::CIPHER, $key, $str, <span class="keyword">self</span>::MODE, $iv);</span><br><span class="line">        <span class="keyword">return</span> base64_encode($result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解密</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $str   密文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $key   密钥(8位)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string   明文</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">decode</span><span class="params">($str,$key)</span></span>&#123;</span><br><span class="line">        $str = base64_decode($str);</span><br><span class="line">        $iv = mcrypt_create_iv(mcrypt_get_iv_size(<span class="keyword">self</span>::CIPHER,<span class="keyword">self</span>::MODE),MCRYPT_RAND);</span><br><span class="line">        $str = trim(mcrypt_decrypt(<span class="keyword">self</span>::CIPHER, $key, $str, <span class="keyword">self</span>::MODE, $iv));</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">self</span>::pkcs5_unpad($str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * PKCS5填充</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $text</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $blocksize</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">pkcs5_pad</span><span class="params">($text, $blocksize)</span> </span>&#123;</span><br><span class="line">        $pad = $blocksize - (strlen($text) % $blocksize);</span><br><span class="line">        <span class="keyword">return</span> $text . str_repeat(chr($pad), $pad);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $text</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> bool|string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">pkcs5_unpad</span><span class="params">($text)</span> </span>&#123;</span><br><span class="line">        $pad = ord($text&#123;strlen($text) - <span class="number">1</span>&#125;);</span><br><span class="line">        <span class="keyword">if</span> ($pad &gt; strlen($text)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (strspn($text, chr($pad), strlen($text)-$pad) != $pad) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> substr($text, <span class="number">0</span>, <span class="number">-1</span> * $pad);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>2、调用<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">modules</span>\<span class="title">demo</span>\<span class="title">controllers</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">common</span>\<span class="title">components</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">libs</span>\<span class="title">Aes</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $key = <span class="string">'WGiSP3UQ'</span>;</span><br><span class="line">        $str = <span class="string">'18958019299'</span>;</span><br><span class="line">        $enStr = Aes::encode($str,$key);</span><br><span class="line">        $deStr = Aes::decode($enStr,$key);</span><br><span class="line">        var_dump($str,$enStr,$deStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>3、访问<a href="http://127.0.0.1/web/demo/test/test" target="_blank" rel="noopener">http://127.0.0.1/web/demo/test/test</a> ，运行结果如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string(<span class="number">11</span>) <span class="string">"18958019299"</span> </span><br><span class="line">string(<span class="number">24</span>) <span class="string">"WiBZggO/DRaczJ3wSirvEw=="</span> </span><br><span class="line">string(<span class="number">11</span>) <span class="string">"18958019299"</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
