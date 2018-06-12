@@ -23,14 +23,12 @@
     <published>2018-06-09T15:38:26.000Z</published>
     <updated>2018-06-09T15:38:32.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"主页url"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p><p>Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。</p><p>如：<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4</a><br>……<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45</a></p><p>就可以在每个页面的head标签内添加代码：</p><link rel="canonical" href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html">]]></content>
+    <content type="html"><![CDATA[<p><strong> 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"主页url"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p><p>Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。<br><a id="more"></a><br>如：<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4</a><br>……<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45" target="_blank" rel="noopener">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45</a></p><p>就可以在每个页面的head标签内添加代码：</p><link rel="canonical" href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html">]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;&lt;strong&gt; 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;
-      
+      &lt;p&gt;&lt;strong&gt; 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;canonical&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;主页url&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。&lt;br&gt;
     
     </summary>
     
@@ -95,6 +93,32 @@
   </entry>
   
   <entry>
+    <title>高德地图API使用</title>
+    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T06:07:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+    
+    
+      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>架构学习</title>
     <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
     <id>https://crazy-boy.github.io/archives/架构学习.html</id>
@@ -152,32 +176,6 @@
   </entry>
   
   <entry>
-    <title>高德地图API使用</title>
-    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T06:07:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
-    
-    
-      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
-    
-      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>富文本编辑器</title>
     <link href="https://crazy-boy.github.io/archives/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html"/>
     <id>https://crazy-boy.github.io/archives/富文本编辑器.html</id>
@@ -201,6 +199,32 @@
       <category term="富文本编辑器" scheme="https://crazy-boy.github.io/tags/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
       <category term="插件" scheme="https://crazy-boy.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:36:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -229,32 +253,6 @@
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   

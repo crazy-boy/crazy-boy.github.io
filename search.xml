@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[SEO——权重转移]]></title>
     <url>%2Farchives%2FSEO%E2%80%94%E2%80%94%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB.html</url>
-    <content type="text"><![CDATA[产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：1&lt;link rel="canonical" href="主页url"/&gt; Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。 如：https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4……https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45 就可以在每个页面的head标签内添加代码：]]></content>
+    <content type="text"><![CDATA[产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：1&lt;link rel="canonical" href="主页url"/&gt; Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。如：https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4……https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45 就可以在每个页面的head标签内添加代码：]]></content>
       <categories>
         <category>SEO</category>
       </categories>
@@ -37,6 +37,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[高德地图API使用]]></title>
+    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
+      <categories>
+        <category>地图API</category>
+      </categories>
+      <tags>
+        <tag>高德地图</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[架构学习]]></title>
     <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
     <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
@@ -61,18 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[高德地图API使用]]></title>
-    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
-      <categories>
-        <category>地图API</category>
-      </categories>
-      <tags>
-        <tag>高德地图</tag>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[富文本编辑器]]></title>
     <url>%2Farchives%2F%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html</url>
     <content type="text"><![CDATA[解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false 即：`,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false`]]></content>
@@ -82,6 +82,18 @@
       <tags>
         <tag>富文本编辑器</tag>
         <tag>插件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL笔记]]></title>
+    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -95,18 +107,6 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>Jquery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MySQL笔记]]></title>
-    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
