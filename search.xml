@@ -85,18 +85,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL笔记]]></title>
-    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Jquery笔记]]></title>
     <url>%2Farchives%2FJquery%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[jquery获取json的长度： 一维：var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;}; length = JsonTemp.length; 二维：var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]}; length = Object.keys(JsonTemp).length;]]></content>
@@ -120,6 +108,18 @@
         <tag>CSS</tag>
         <tag>笔记</tag>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL笔记]]></title>
+    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb;]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
