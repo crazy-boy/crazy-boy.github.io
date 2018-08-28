@@ -297,6 +297,1168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/PHP生成数据字典.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/PHP生成数据字典.html" itemprop="url">PHP生成数据字典</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-21T22:37:00+08:00">
+                2018-06-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-21T22:37:00+08:00">
+                2018-06-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  754
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>通过php代码生成MySQL数据字典，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 生成mysql数据字典</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">header(<span class="string">"Content-type: text/html; charset=utf-8"</span>);</span><br><span class="line"><span class="comment">//配置数据库</span></span><br><span class="line">$dbserver   = <span class="string">"127.0.0.1"</span>;</span><br><span class="line">$dbusername = <span class="string">"root"</span>;</span><br><span class="line">$dbpassword = <span class="string">"root"</span>;</span><br><span class="line">$database   = <span class="string">"demodb"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//其他配置</span></span><br><span class="line">$mysql_conn = @mysql_connect(<span class="string">"$dbserver"</span>, <span class="string">"$dbusername"</span>, <span class="string">"$dbpassword"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Mysql connect is error."</span>);</span><br><span class="line">mysql_select_db($database, $mysql_conn);</span><br><span class="line">mysql_query(<span class="string">'SET NAMES utf8'</span>, $mysql_conn);</span><br><span class="line">$table_result = mysql_query(<span class="string">'show tables'</span>, $mysql_conn);</span><br><span class="line"></span><br><span class="line">$no_show_table = <span class="keyword">array</span>();    <span class="comment">//不需要显示的表</span></span><br><span class="line">$no_show_field = <span class="keyword">array</span>();   <span class="comment">//不需要显示的字段</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//取得所有的表名</span></span><br><span class="line"><span class="keyword">while</span>($row = mysql_fetch_array($table_result))&#123;</span><br><span class="line">	<span class="keyword">if</span>(!in_array($row[<span class="number">0</span>],$no_show_table))&#123;</span><br><span class="line">		$tables[][<span class="string">'TABLE_NAME'</span>] = $row[<span class="number">0</span>];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//替换所以表的表前缀</span></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">empty</span>($_GET[<span class="string">'prefix'</span>]))&#123; </span><br><span class="line">	$prefix = <span class="string">'czzj'</span>;</span><br><span class="line">	<span class="keyword">foreach</span>($tables <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">		$tableName = $val[<span class="string">'TABLE_NAME'</span>];</span><br><span class="line">		$string = explode(<span class="string">'_'</span>,$tableName);</span><br><span class="line">		<span class="keyword">if</span>($string[<span class="number">0</span>] != $prefix)&#123;  </span><br><span class="line">			$string[<span class="number">0</span>] = $prefix;  </span><br><span class="line">			$newTableName = implode(<span class="string">'_'</span>, $string);  </span><br><span class="line">			mysql_query(<span class="string">'rename table '</span>.$tableName.<span class="string">' TO '</span>.$newTableName);  </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">"替换成功！"</span>;<span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环取得所有表的备注及表中列消息</span></span><br><span class="line"><span class="keyword">foreach</span> ($tables <span class="keyword">as</span> $k=&gt;$v) &#123;</span><br><span class="line">    $sql  = <span class="string">'SELECT * FROM '</span>;</span><br><span class="line">    $sql .= <span class="string">'INFORMATION_SCHEMA.TABLES '</span>;</span><br><span class="line">    $sql .= <span class="string">'WHERE '</span>;</span><br><span class="line">    $sql .= <span class="string">"table_name = '&#123;$v['TABLE_NAME']&#125;'  AND table_schema = '&#123;$database&#125;'"</span>;</span><br><span class="line">    $table_result = mysql_query($sql, $mysql_conn);</span><br><span class="line">    <span class="keyword">while</span> ($t = mysql_fetch_array($table_result) ) &#123;</span><br><span class="line">        $tables[$k][<span class="string">'TABLE_COMMENT'</span>] = $t[<span class="string">'TABLE_COMMENT'</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $sql  = <span class="string">'SELECT * FROM '</span>;</span><br><span class="line">    $sql .= <span class="string">'INFORMATION_SCHEMA.COLUMNS '</span>;</span><br><span class="line">    $sql .= <span class="string">'WHERE '</span>;</span><br><span class="line">    $sql .= <span class="string">"table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'"</span>;</span><br><span class="line"></span><br><span class="line">    $fields = <span class="keyword">array</span>();</span><br><span class="line">    $field_result = mysql_query($sql, $mysql_conn);</span><br><span class="line">    <span class="keyword">while</span> ($t = mysql_fetch_array($field_result) ) &#123;</span><br><span class="line">        $fields[] = $t;</span><br><span class="line">    &#125;</span><br><span class="line">    $tables[$k][<span class="string">'COLUMN'</span>] = $fields;</span><br><span class="line">&#125;</span><br><span class="line">mysql_close($mysql_conn);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$html = <span class="string">''</span>;</span><br><span class="line"><span class="comment">//循环所有表</span></span><br><span class="line"><span class="keyword">foreach</span> ($tables <span class="keyword">as</span> $k=&gt;$v) &#123;</span><br><span class="line">    $html .= <span class="string">'	&lt;h3&gt;'</span> . ($k + <span class="number">1</span>) . <span class="string">'、'</span> . $v[<span class="string">'TABLE_COMMENT'</span>] .<span class="string">'  （'</span>. $v[<span class="string">'TABLE_NAME'</span>]. <span class="string">'）&lt;/h3&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">    $html .= <span class="string">'	&lt;table border="1" cellspacing="0" cellpadding="0" width="100%"&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">    $html .= <span class="string">'		&lt;tbody&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'			&lt;tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'				&lt;th&gt;字段名&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'				&lt;th&gt;数据类型&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'				&lt;th&gt;默认值&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'				&lt;th&gt;允许非空&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'				&lt;th&gt;自动递增&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'				&lt;th&gt;备注&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'			&lt;/tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span> ($v[<span class="string">'COLUMN'</span>] <span class="keyword">as</span> $f) &#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">empty</span>($no_show_field[$v[<span class="string">'TABLE_NAME'</span>]]) || !is_array($no_show_field[$v[<span class="string">'TABLE_NAME'</span>]]))&#123; </span><br><span class="line">			$no_show_field[$v[<span class="string">'TABLE_NAME'</span>]] = <span class="keyword">array</span>();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!in_array($f[<span class="string">'COLUMN_NAME'</span>],$no_show_field[$v[<span class="string">'TABLE_NAME'</span>]]))&#123;</span><br><span class="line">			$html .= <span class="string">'			&lt;tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'				&lt;td class="c1"&gt;'</span> . $f[<span class="string">'COLUMN_NAME'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'				&lt;td class="c2"&gt;'</span> . $f[<span class="string">'COLUMN_TYPE'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'				&lt;td class="c3"&gt;'</span> . $f[<span class="string">'COLUMN_DEFAULT'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'				&lt;td class="c4"&gt;'</span> . $f[<span class="string">'IS_NULLABLE'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'				&lt;td class="c5"&gt;'</span> . ($f[<span class="string">'EXTRA'</span>]==<span class="string">'auto_increment'</span>?<span class="string">'是'</span>:<span class="string">'&amp;nbsp;'</span>) . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'				&lt;td class="c6"&gt;'</span> . $f[<span class="string">'COLUMN_COMMENT'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">			$html .= <span class="string">'			&lt;/tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $html .= <span class="string">'		&lt;/tbody&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">	$html .= <span class="string">'	&lt;/table&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;XX系统数据字典&lt;/title&gt;</span><br><span class="line">&lt;meta name=<span class="string">"generator"</span> content=<span class="string">"ThinkDb V1.0"</span> /&gt;</span><br><span class="line">&lt;meta name=<span class="string">"author"</span> content=<span class="string">"Crazy_boy"</span> /&gt;</span><br><span class="line">&lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"2014-208 zotuo.com"</span> /&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">body, td, th &#123; font-family: <span class="string">"微软雅黑"</span>; font-size: <span class="number">14</span>px; &#125;</span><br><span class="line">.warp&#123;margin:auto; width:<span class="number">900</span>px;&#125;</span><br><span class="line">.warp h3&#123;margin:<span class="number">0</span>px; padding:<span class="number">0</span>px; line-height:<span class="number">30</span>px; margin-top:<span class="number">10</span>px;&#125;</span><br><span class="line">table &#123; border-collapse: collapse; border: <span class="number">1</span>px solid <span class="comment">#CCC; background: #efefef; &#125;</span></span><br><span class="line">table th &#123; text-align: left; font-weight: bold; height: <span class="number">26</span>px; line-height: <span class="number">26</span>px; font-size: <span class="number">14</span>px; text-align:center; border: <span class="number">1</span>px solid <span class="comment">#CCC; padding:5px;&#125;</span></span><br><span class="line">table td &#123; height: <span class="number">20</span>px; font-size: <span class="number">14</span>px; border: <span class="number">1</span>px solid <span class="comment">#CCC; background-color: #fff; padding:5px;&#125;</span></span><br><span class="line">.c1 &#123; width: <span class="number">120</span>px; &#125;</span><br><span class="line">.c2 &#123; width: <span class="number">120</span>px; &#125;</span><br><span class="line">.c3 &#123; width: <span class="number">150</span>px; &#125;</span><br><span class="line">.c4 &#123; width: <span class="number">80</span>px; text-align:center;&#125;</span><br><span class="line">.c5 &#123; width: <span class="number">80</span>px; text-align:center;&#125;</span><br><span class="line">.c6 &#123; width: <span class="number">270</span>px; &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class="warp"&gt;</span><br><span class="line">	&lt;h1 style=<span class="string">"text-align:center;"</span>&gt;XX系统数据字典&lt;/h1&gt;</span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> $html; <span class="meta">?&gt;</span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>其中$dbserver、$dbusername、$dbpassword、$database需配置为相应的数据库IP地址、用户名、密码、数据库名。<br>代码下载：<a href="/code/dictionary.php">dictionary.php</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/心跳包机制.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/心跳包机制.html" itemprop="url">心跳包机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T22:39:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-19T22:45:00+08:00">
+                2018-06-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/心跳/" itemprop="url" rel="index">
+                    <span itemprop="name">心跳</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  24
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ol>
+<li>心跳包机制：主要也就是用于长连接的保活和断线处理。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/心跳包机制.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/Oracle笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/Oracle笔记.html" itemprop="url">Oracle笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T22:39:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-19T22:45:00+08:00">
+                2018-06-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  412
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ol>
+<li>强制并行处理：<code>/*+ monitor parallel(8)*/</code></li>
+<li>plsql查看sql性能：F5
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/Oracle笔记.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/JavaScript笔记.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/JavaScript笔记.html" itemprop="url">JavaScript笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T22:39:00+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-19T22:45:00+08:00">
+                2018-06-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  17
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ol>
+<li>如果想获取ajax里的function返回值，可用同步ajax。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/JavaScript笔记.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/Excel使用小技巧.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/Excel使用小技巧.html" itemprop="url">Excel使用小技巧</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T22:02:03+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-19T22:17:54+08:00">
+                2018-06-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Excel/" itemprop="url" rel="index">
+                    <span itemprop="name">Excel</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  24
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>excel固定第一行：选择第二行，点击视图里的冻结窗口即可。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/R语言学习.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Crazy Boy">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞奔的蜗牛">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/archives/R语言学习.html" itemprop="url">R语言学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T22:02:03+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-19T22:07:54+08:00">
+                2018-06-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/R/" itemprop="url" rel="index">
+                    <span itemprop="name">R</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  66
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong> 之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：</strong></p>
+<ol>
+<li>&lt;- 是赋值的意思</li>
+<li>向量是下标以1开始的</li>
+<li>区分大小写
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/archives/R语言学习.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+	
+	<div>
+	  
+	</div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/SEO——权重转移.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -880,401 +2042,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/高德地图API使用.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crazy Boy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞奔的蜗牛">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/高德地图API使用.html" itemprop="url">高德地图API使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T09:44:00+08:00">
-                2018-06-05
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T14:07:00+08:00">
-                2018-06-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/地图API/" itemprop="url" rel="index">
-                    <span itemprop="name">地图API</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  89
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/高德地图API使用.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/架构学习.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crazy Boy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞奔的蜗牛">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/架构学习.html" itemprop="url">架构学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-05T09:44:00+08:00">
-                2018-06-05
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-05T10:05:00+08:00">
-                2018-06-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/架构/" itemprop="url" rel="index">
-                    <span itemprop="name">架构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  87
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p>
-</li>
-<li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p>
-</li>
-<li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/架构学习.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/Docker使用.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1457,795 +2224,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/富文本编辑器.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crazy Boy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞奔的蜗牛">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/富文本编辑器.html" itemprop="url">富文本编辑器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T13:36:00+08:00">
-                2018-06-04
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-04T13:36:00+08:00">
-                2018-06-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/插件/" itemprop="url" rel="index">
-                    <span itemprop="name">插件</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  34
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false    <pre><code>即：`,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false`
-</code></pre></li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/富文本编辑器.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/Jquery笔记.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crazy Boy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞奔的蜗牛">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/Jquery笔记.html" itemprop="url">Jquery笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T11:19:00+08:00">
-                2018-06-04
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-04T11:43:00+08:00">
-                2018-06-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">Jquery</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  37
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>jquery获取json的长度：<br> 一维：<code>var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;};  length = JsonTemp.length;</code><br> 二维：<code>var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]};  length = Object.keys(JsonTemp).length;</code></li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/Jquery笔记.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/CSS笔记.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crazy Boy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞奔的蜗牛">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/CSS笔记.html" itemprop="url">CSS笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T11:19:00+08:00">
-                2018-06-04
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-04T11:43:00+08:00">
-                2018-06-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  51
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：<code>.cntck{ margin-right: 5px!important;}</code></p>
-</li>
-<li><p>如果css希望两个标签对齐，可以用position来处理，如：<code>.cntck{position: relative; bottom: -2px;}</code></p>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/CSS笔记.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://crazy-boy.github.io/archives/MySQL笔记.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crazy Boy">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/my.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞奔的蜗牛">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/archives/MySQL笔记.html" itemprop="url">MySQL笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T11:19:00+08:00">
-                2018-06-04
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-04T11:36:00+08:00">
-                2018-06-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  72
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <ol>
-<li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/archives/MySQL笔记.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	
-	<div>
-	  
-	</div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2295,7 +2278,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2306,7 +2289,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2317,7 +2300,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2413,7 +2396,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.3k字</span>
+  <span class="post-count">博客全站共3.7k字</span>
 </div>
 
         

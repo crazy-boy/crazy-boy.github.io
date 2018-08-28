@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-09T15:38:32.000Z</updated>
+  <updated>2018-06-21T14:37:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,170 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP生成数据字典</title>
+    <link href="https://crazy-boy.github.io/archives/PHP%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8.html"/>
+    <id>https://crazy-boy.github.io/archives/PHP生成数据字典.html</id>
+    <published>2018-06-21T14:37:00.000Z</published>
+    <updated>2018-06-21T14:37:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过php代码生成MySQL数据字典，代码如下：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 生成mysql数据字典</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">header(<span class="string">"Content-type: text/html; charset=utf-8"</span>);</span><br><span class="line"><span class="comment">//配置数据库</span></span><br><span class="line">$dbserver   = <span class="string">"127.0.0.1"</span>;</span><br><span class="line">$dbusername = <span class="string">"root"</span>;</span><br><span class="line">$dbpassword = <span class="string">"root"</span>;</span><br><span class="line">$database   = <span class="string">"demodb"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//其他配置</span></span><br><span class="line">$mysql_conn = @mysql_connect(<span class="string">"$dbserver"</span>, <span class="string">"$dbusername"</span>, <span class="string">"$dbpassword"</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">"Mysql connect is error."</span>);</span><br><span class="line">mysql_select_db($database, $mysql_conn);</span><br><span class="line">mysql_query(<span class="string">'SET NAMES utf8'</span>, $mysql_conn);</span><br><span class="line">$table_result = mysql_query(<span class="string">'show tables'</span>, $mysql_conn);</span><br><span class="line"></span><br><span class="line">$no_show_table = <span class="keyword">array</span>();    <span class="comment">//不需要显示的表</span></span><br><span class="line">$no_show_field = <span class="keyword">array</span>();   <span class="comment">//不需要显示的字段</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//取得所有的表名</span></span><br><span class="line"><span class="keyword">while</span>($row = mysql_fetch_array($table_result))&#123;</span><br><span class="line"><span class="keyword">if</span>(!in_array($row[<span class="number">0</span>],$no_show_table))&#123;</span><br><span class="line">$tables[][<span class="string">'TABLE_NAME'</span>] = $row[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//替换所以表的表前缀</span></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">empty</span>($_GET[<span class="string">'prefix'</span>]))&#123; </span><br><span class="line">$prefix = <span class="string">'czzj'</span>;</span><br><span class="line"><span class="keyword">foreach</span>($tables <span class="keyword">as</span> $key =&gt; $val)&#123;</span><br><span class="line">$tableName = $val[<span class="string">'TABLE_NAME'</span>];</span><br><span class="line">$string = explode(<span class="string">'_'</span>,$tableName);</span><br><span class="line"><span class="keyword">if</span>($string[<span class="number">0</span>] != $prefix)&#123;  </span><br><span class="line">$string[<span class="number">0</span>] = $prefix;  </span><br><span class="line">$newTableName = implode(<span class="string">'_'</span>, $string);  </span><br><span class="line">mysql_query(<span class="string">'rename table '</span>.$tableName.<span class="string">' TO '</span>.$newTableName);  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"替换成功！"</span>;<span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环取得所有表的备注及表中列消息</span></span><br><span class="line"><span class="keyword">foreach</span> ($tables <span class="keyword">as</span> $k=&gt;$v) &#123;</span><br><span class="line">    $sql  = <span class="string">'SELECT * FROM '</span>;</span><br><span class="line">    $sql .= <span class="string">'INFORMATION_SCHEMA.TABLES '</span>;</span><br><span class="line">    $sql .= <span class="string">'WHERE '</span>;</span><br><span class="line">    $sql .= <span class="string">"table_name = '&#123;$v['TABLE_NAME']&#125;'  AND table_schema = '&#123;$database&#125;'"</span>;</span><br><span class="line">    $table_result = mysql_query($sql, $mysql_conn);</span><br><span class="line">    <span class="keyword">while</span> ($t = mysql_fetch_array($table_result) ) &#123;</span><br><span class="line">        $tables[$k][<span class="string">'TABLE_COMMENT'</span>] = $t[<span class="string">'TABLE_COMMENT'</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $sql  = <span class="string">'SELECT * FROM '</span>;</span><br><span class="line">    $sql .= <span class="string">'INFORMATION_SCHEMA.COLUMNS '</span>;</span><br><span class="line">    $sql .= <span class="string">'WHERE '</span>;</span><br><span class="line">    $sql .= <span class="string">"table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'"</span>;</span><br><span class="line"></span><br><span class="line">    $fields = <span class="keyword">array</span>();</span><br><span class="line">    $field_result = mysql_query($sql, $mysql_conn);</span><br><span class="line">    <span class="keyword">while</span> ($t = mysql_fetch_array($field_result) ) &#123;</span><br><span class="line">        $fields[] = $t;</span><br><span class="line">    &#125;</span><br><span class="line">    $tables[$k][<span class="string">'COLUMN'</span>] = $fields;</span><br><span class="line">&#125;</span><br><span class="line">mysql_close($mysql_conn);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$html = <span class="string">''</span>;</span><br><span class="line"><span class="comment">//循环所有表</span></span><br><span class="line"><span class="keyword">foreach</span> ($tables <span class="keyword">as</span> $k=&gt;$v) &#123;</span><br><span class="line">    $html .= <span class="string">'&lt;h3&gt;'</span> . ($k + <span class="number">1</span>) . <span class="string">'、'</span> . $v[<span class="string">'TABLE_COMMENT'</span>] .<span class="string">'  （'</span>. $v[<span class="string">'TABLE_NAME'</span>]. <span class="string">'）&lt;/h3&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">    $html .= <span class="string">'&lt;table border="1" cellspacing="0" cellpadding="0" width="100%"&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">    $html .= <span class="string">'&lt;tbody&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;th&gt;字段名&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;th&gt;数据类型&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;th&gt;默认值&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;th&gt;允许非空&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;th&gt;自动递增&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;th&gt;备注&lt;/th&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;/tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">foreach</span> ($v[<span class="string">'COLUMN'</span>] <span class="keyword">as</span> $f) &#123;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>($no_show_field[$v[<span class="string">'TABLE_NAME'</span>]]) || !is_array($no_show_field[$v[<span class="string">'TABLE_NAME'</span>]]))&#123; </span><br><span class="line">$no_show_field[$v[<span class="string">'TABLE_NAME'</span>]] = <span class="keyword">array</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(!in_array($f[<span class="string">'COLUMN_NAME'</span>],$no_show_field[$v[<span class="string">'TABLE_NAME'</span>]]))&#123;</span><br><span class="line">$html .= <span class="string">'&lt;tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;td class="c1"&gt;'</span> . $f[<span class="string">'COLUMN_NAME'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;td class="c2"&gt;'</span> . $f[<span class="string">'COLUMN_TYPE'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;td class="c3"&gt;'</span> . $f[<span class="string">'COLUMN_DEFAULT'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;td class="c4"&gt;'</span> . $f[<span class="string">'IS_NULLABLE'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;td class="c5"&gt;'</span> . ($f[<span class="string">'EXTRA'</span>]==<span class="string">'auto_increment'</span>?<span class="string">'是'</span>:<span class="string">'&amp;nbsp;'</span>) . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;td class="c6"&gt;'</span> . $f[<span class="string">'COLUMN_COMMENT'</span>] . <span class="string">'&lt;/td&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;/tr&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $html .= <span class="string">'&lt;/tbody&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">$html .= <span class="string">'&lt;/table&gt;'</span>.<span class="string">"\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;XX系统数据字典&lt;/title&gt;</span><br><span class="line">&lt;meta name=<span class="string">"generator"</span> content=<span class="string">"ThinkDb V1.0"</span> /&gt;</span><br><span class="line">&lt;meta name=<span class="string">"author"</span> content=<span class="string">"Crazy_boy"</span> /&gt;</span><br><span class="line">&lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"2014-208 zotuo.com"</span> /&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">body, td, th &#123; font-family: <span class="string">"微软雅黑"</span>; font-size: <span class="number">14</span>px; &#125;</span><br><span class="line">.warp&#123;margin:auto; width:<span class="number">900</span>px;&#125;</span><br><span class="line">.warp h3&#123;margin:<span class="number">0</span>px; padding:<span class="number">0</span>px; line-height:<span class="number">30</span>px; margin-top:<span class="number">10</span>px;&#125;</span><br><span class="line">table &#123; border-collapse: collapse; border: <span class="number">1</span>px solid <span class="comment">#CCC; background: #efefef; &#125;</span></span><br><span class="line">table th &#123; text-align: left; font-weight: bold; height: <span class="number">26</span>px; line-height: <span class="number">26</span>px; font-size: <span class="number">14</span>px; text-align:center; border: <span class="number">1</span>px solid <span class="comment">#CCC; padding:5px;&#125;</span></span><br><span class="line">table td &#123; height: <span class="number">20</span>px; font-size: <span class="number">14</span>px; border: <span class="number">1</span>px solid <span class="comment">#CCC; background-color: #fff; padding:5px;&#125;</span></span><br><span class="line">.c1 &#123; width: <span class="number">120</span>px; &#125;</span><br><span class="line">.c2 &#123; width: <span class="number">120</span>px; &#125;</span><br><span class="line">.c3 &#123; width: <span class="number">150</span>px; &#125;</span><br><span class="line">.c4 &#123; width: <span class="number">80</span>px; text-align:center;&#125;</span><br><span class="line">.c5 &#123; width: <span class="number">80</span>px; text-align:center;&#125;</span><br><span class="line">.c6 &#123; width: <span class="number">270</span>px; &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class="warp"&gt;</span><br><span class="line">&lt;h1 style=<span class="string">"text-align:center;"</span>&gt;XX系统数据字典&lt;/h1&gt;</span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> $html; <span class="meta">?&gt;</span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>其中$dbserver、$dbusername、$dbpassword、$database需配置为相应的数据库IP地址、用户名、密码、数据库名。<br>代码下载：<a href="/code/dictionary.php">dictionary.php</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;通过php代码生成MySQL数据字典，代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://crazy-boy.github.io/categories/PHP/"/>
+    
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+      <category term="PHP" scheme="https://crazy-boy.github.io/tags/PHP/"/>
+    
+      <category term="数据字典" scheme="https://crazy-boy.github.io/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心跳包机制</title>
+    <link href="https://crazy-boy.github.io/archives/%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html"/>
+    <id>https://crazy-boy.github.io/archives/心跳包机制.html</id>
+    <published>2018-06-19T14:39:00.000Z</published>
+    <updated>2018-06-19T14:45:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>心跳包机制：主要也就是用于长连接的保活和断线处理。<a id="more"></a>    </li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;心跳包机制：主要也就是用于长连接的保活和断线处理。
+    
+    </summary>
+    
+      <category term="心跳" scheme="https://crazy-boy.github.io/categories/%E5%BF%83%E8%B7%B3/"/>
+    
+    
+      <category term="心跳" scheme="https://crazy-boy.github.io/tags/%E5%BF%83%E8%B7%B3/"/>
+    
+      <category term="心跳包" scheme="https://crazy-boy.github.io/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Oracle%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Oracle笔记.html</id>
+    <published>2018-06-19T14:39:00.000Z</published>
+    <updated>2018-06-19T14:45:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>强制并行处理：<code>/*+ monitor parallel(8)*/</code></li><li>plsql查看sql性能：F5<a id="more"></a>    </li><li><p>在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := <span class="string">','</span>)</span><br><span class="line">RETURN NUMBER IS</span><br><span class="line">  l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置</span><br><span class="line">  str      varchar2(500);  -- 根据分隔符截取的子字符串</span><br><span class="line">  piv_str  varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str</span><br><span class="line">  res      number:=0; -- 返回结果</span><br><span class="line">BEGIN</span><br><span class="line">-- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1</span><br><span class="line">IF instr(piv_str, p_sep, 1) = 0 THEN</span><br><span class="line">   IF piv_str = piv_str1 THEN</span><br><span class="line">  res:= 1;</span><br><span class="line">   END IF;</span><br><span class="line">ELSE</span><br><span class="line">-- 循环按分隔符截取piv_str</span><br><span class="line">LOOP</span><br><span class="line">l_idx := instr(piv_str,p_sep);</span><br><span class="line">-- 当piv_str中还有分隔符时</span><br><span class="line">  IF l_idx &gt; 0 THEN</span><br><span class="line">   -- 截取第一个分隔符前的字段str</span><br><span class="line"> str:= substr(piv_str,1,l_idx-1);</span><br><span class="line">   -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断</span><br><span class="line"> IF str = piv_str1 THEN</span><br><span class="line">   res:= 1;</span><br><span class="line">   EXIT;</span><br><span class="line"> END IF;</span><br><span class="line">piv_str := substr(piv_str,l_idx+length(p_sep));</span><br><span class="line">  ELSE</span><br><span class="line">   -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1</span><br><span class="line">IF piv_str = piv_str1 THEN</span><br><span class="line">   res:= 1;</span><br><span class="line">END IF;</span><br><span class="line">-- 无论最后是否相等，都跳出循环</span><br><span class="line">EXIT;</span><br><span class="line">  END IF;</span><br><span class="line">END LOOP;</span><br><span class="line">-- 结束循环</span><br><span class="line">END IF;</span><br><span class="line">-- 返回res</span><br><span class="line">RETURN res;</span><br><span class="line">END FIND_IN_SET;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">4. 日期转时间戳函数</span><br><span class="line"></span><br><span class="line">``` bash </span><br><span class="line">create or replace <span class="keyword">function</span> oracle_to_unix(in_date IN DATE) <span class="built_in">return</span> number is</span><br><span class="line">    begin </span><br><span class="line"><span class="built_in">return</span>( (in_date -TO_DATE(<span class="string">'19700101'</span>,<span class="string">'yyyymmdd'</span>))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);</span><br><span class="line">    end oracle_to_unix;</span><br></pre></td></tr></table></figure></li><li><p>时间戳转日期函数</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create or replace <span class="keyword">function</span> unix_to_oracle(in_number NUMBER) <span class="built_in">return</span> date is</span><br><span class="line">    begin</span><br><span class="line">        <span class="built_in">return</span>(TO_DATE(<span class="string">'19700101'</span>,<span class="string">'yyyymmdd'</span>) + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);</span><br><span class="line">    end unix_to_oracle;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;强制并行处理：&lt;code&gt;/*+ monitor parallel(8)*/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;plsql查看sql性能：F5
+    
+    </summary>
+    
+      <category term="Oracle" scheme="https://crazy-boy.github.io/categories/Oracle/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Oracle" scheme="https://crazy-boy.github.io/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript笔记</title>
+    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
+    <published>2018-06-19T14:39:00.000Z</published>
+    <updated>2018-06-19T14:45:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>如果想获取ajax里的function返回值，可用同步ajax。<a id="more"></a>    </li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;如果想获取ajax里的function返回值，可用同步ajax。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Excel使用小技巧</title>
+    <link href="https://crazy-boy.github.io/archives/Excel%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7.html"/>
+    <id>https://crazy-boy.github.io/archives/Excel使用小技巧.html</id>
+    <published>2018-06-19T14:02:03.000Z</published>
+    <updated>2018-06-19T14:17:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>excel固定第一行：选择第二行，点击视图里的冻结窗口即可。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;excel固定第一行：选择第二行，点击视图里的冻结窗口即可。&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Excel" scheme="https://crazy-boy.github.io/categories/Excel/"/>
+    
+    
+      <category term="Excel" scheme="https://crazy-boy.github.io/tags/Excel/"/>
+    
+      <category term="使用技巧" scheme="https://crazy-boy.github.io/tags/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R语言学习</title>
+    <link href="https://crazy-boy.github.io/archives/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://crazy-boy.github.io/archives/R语言学习.html</id>
+    <published>2018-06-19T14:02:03.000Z</published>
+    <updated>2018-06-19T14:07:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：</strong></p><ol><li>&lt;- 是赋值的意思</li><li>向量是下标以1开始的</li><li>区分大小写<a id="more"></a></li><li>路径：<code>C://a.txt</code></li><li>round：四舍五入</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;lt;- 是赋值的意思&lt;/li&gt;
+&lt;li&gt;向量是下标以1开始的&lt;/li&gt;
+&lt;li&gt;区分大小写
+    
+    </summary>
+    
+      <category term="R" scheme="https://crazy-boy.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://crazy-boy.github.io/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>SEO——权重转移</title>
@@ -93,28 +257,28 @@
   </entry>
   
   <entry>
-    <title>高德地图API使用</title>
-    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
+    <title>Docker使用</title>
+    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
     <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T06:07:00.000Z</updated>
+    <updated>2018-06-05T02:02:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
+&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
     
-      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
     
     
-      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
     
-      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
+      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
     
   </entry>
   
@@ -150,28 +314,28 @@
   </entry>
   
   <entry>
-    <title>Docker使用</title>
-    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
+    <title>高德地图API使用</title>
+    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
     <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:02:00.000Z</updated>
+    <updated>2018-06-05T06:07:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
+&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
     
-      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
+      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
     
     
-      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
+      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
     
-      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
+      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
     
   </entry>
   
@@ -231,6 +395,32 @@
   </entry>
   
   <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:36:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS笔记</title>
     <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
@@ -258,32 +448,6 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -386,102 +550,6 @@
       <category term="AES" scheme="https://crazy-boy.github.io/tags/AES/"/>
     
       <category term="加解密" scheme="https://crazy-boy.github.io/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JQuery面向对象写法</title>
-    <link href="https://crazy-boy.github.io/archives/JQuery%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%86%99%E6%B3%95.html"/>
-    <id>https://crazy-boy.github.io/archives/JQuery面向对象写法.html</id>
-    <published>2018-04-19T01:52:00.000Z</published>
-    <updated>2018-04-19T01:52:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p><a id="more"></a><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-event</span>=<span class="string">"list"</span>&gt;</span>列表<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-event</span>=<span class="string">"search"</span> <span class="attr">data-name</span>=<span class="string">"大班"</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-event</span>=<span class="string">"add"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-event</span>=<span class="string">"update"</span>&gt;</span>修改<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">data-event</span>=<span class="string">"del"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> clickAct = &#123;</span><br><span class="line">btn: $(<span class="string">'button'</span>),</span><br><span class="line">init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line"><span class="keyword">this</span>.btn.click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> func = $(<span class="keyword">this</span>).attr(<span class="string">'data-event'</span>);</span><br><span class="line">that[func]($(<span class="keyword">this</span>).attr(<span class="string">'data-name'</span>));</span><br><span class="line">&#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">list: <span class="function"><span class="keyword">function</span>(<span class="params">param</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">search: <span class="function"><span class="keyword">function</span>(<span class="params">param</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(param);</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">add: <span class="function"><span class="keyword">function</span>(<span class="params">param</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'3'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">update: <span class="function"><span class="keyword">function</span>(<span class="params">param</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'4'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">del: <span class="function"><span class="keyword">function</span>(<span class="params">param</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'5'</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">clickAct.init();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="JQuery" scheme="https://crazy-boy.github.io/tags/JQuery/"/>
-    
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
-    
-      <category term="面向对象" scheme="https://crazy-boy.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL函数</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E5%87%BD%E6%95%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL函数.html</id>
-    <published>2018-03-29T09:28:00.000Z</published>
-    <updated>2018-04-03T09:28:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>记录几个常用的MySQL函数：</p><h3 id="1、LAST-INSERT-ID-expr"><a href="#1、LAST-INSERT-ID-expr" class="headerlink" title="1、LAST_INSERT_ID([expr])"></a>1、LAST_INSERT_ID([expr])</h3><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。<br><a id="more"></a></p><p>如果一次性insert多条数据，只返回第一个数据的主键。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+</span><br><span class="line">| id | name |</span><br><span class="line">|  1 | Bob  |</span><br><span class="line">+----+------+</span><br><span class="line"></span><br><span class="line">mysql&gt; INSERT INTO t VALUES  (NULL, <span class="string">'Mary'</span>), (NULL, <span class="string">'Jane'</span>), (NULL, <span class="string">'Lisa'</span>);</span><br><span class="line">mysql&gt; SELECT * FROM t;</span><br><span class="line">+----+------+</span><br><span class="line">| id | name |</span><br><span class="line">|  1 | Bob  |</span><br><span class="line">|  2 | Mary |</span><br><span class="line">|  3 | Jane |</span><br><span class="line">|  4 | Lisa |</span><br><span class="line">+----+------+</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">-&gt;2;</span><br></pre></td></tr></table></figure></p><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p><p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE sequence (id INT NOT NULL);</span><br><span class="line">mysql&gt; INSERT INTO sequence VALUES (0);</span><br><span class="line">mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);</span><br><span class="line">mysql&gt; SELECT LAST_INSERT_ID();</span><br><span class="line">     -&gt;1;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记录几个常用的MySQL函数：&lt;/p&gt;
-&lt;h3 id=&quot;1、LAST-INSERT-ID-expr&quot;&gt;&lt;a href=&quot;#1、LAST-INSERT-ID-expr&quot; class=&quot;headerlink&quot; title=&quot;1、LAST_INSERT_ID([expr])&quot;&gt;&lt;/a&gt;1、LAST_INSERT_ID([expr])&lt;/h3&gt;&lt;p&gt;自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
-    
-      <category term="函数" scheme="https://crazy-boy.github.io/tags/%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018-03-29杂谈</title>
-    <link href="https://crazy-boy.github.io/archives/2018-03-29%E6%9D%82%E8%B0%88.html"/>
-    <id>https://crazy-boy.github.io/archives/2018-03-29杂谈.html</id>
-    <published>2018-03-29T06:00:00.000Z</published>
-    <updated>2018-03-29T08:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>哈哈，木仓车神附体，科目一96！<br><a id="more"></a><br><img src="/images/happy.jpg" alt="I&#39;m very happy."></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;哈哈，木仓车神附体，科目一96！&lt;br&gt;
-    
-    </summary>
-    
-      <category term="其他" scheme="https://crazy-boy.github.io/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="杂谈" scheme="https://crazy-boy.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用工具推荐</title>
-    <link href="https://crazy-boy.github.io/archives/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90.html"/>
-    <id>https://crazy-boy.github.io/archives/常用工具推荐.html</id>
-    <published>2018-03-28T08:00:00.000Z</published>
-    <updated>2018-06-04T03:19:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1、windows文件搜索工具"><a href="#1、windows文件搜索工具" class="headerlink" title="1、windows文件搜索工具"></a>1、windows文件搜索工具</h3><p>给大家推荐一款windows下的文件搜索工具——Everything，下载地址：<a href="http://www.voidtools.com/" target="_blank" rel="noopener">http://www.voidtools.com/</a></p><h3 id="2、文档搜索工具"><a href="#2、文档搜索工具" class="headerlink" title="2、文档搜索工具"></a>2、文档搜索工具</h3><p>安利一个文档搜索工具——鸠摩搜索，各种格式的电子书、文档都可以下载，比如PDF、TXT、MOBI、DOC等，地址：<a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">鸠摩搜索</a></p><a id="more"></a><h3 id="3、API接口文档管理工具——小幺鸡"><a href="#3、API接口文档管理工具——小幺鸡" class="headerlink" title="3、API接口文档管理工具——小幺鸡"></a>3、API接口文档管理工具——<a href="http://www.xiaoyaoji.cn" target="_blank" rel="noopener">小幺鸡</a></h3><h3 id="4、Git项目搜索工具——BitHubLab"><a href="#4、Git项目搜索工具——BitHubLab" class="headerlink" title="4、Git项目搜索工具——BitHubLab"></a>4、Git项目搜索工具——BitHubLab</h3><p><a href="https://bithublab.org/" target="_blank" rel="noopener">BitHubLab</a>，可以搜索所有Git平台上的公开项目，包括GitHub、GitLab和BitBucket等的项目。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1、windows文件搜索工具&quot;&gt;&lt;a href=&quot;#1、windows文件搜索工具&quot; class=&quot;headerlink&quot; title=&quot;1、windows文件搜索工具&quot;&gt;&lt;/a&gt;1、windows文件搜索工具&lt;/h3&gt;&lt;p&gt;给大家推荐一款windows下的文件搜索工具——Everything，下载地址：&lt;a href=&quot;http://www.voidtools.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.voidtools.com/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;2、文档搜索工具&quot;&gt;&lt;a href=&quot;#2、文档搜索工具&quot; class=&quot;headerlink&quot; title=&quot;2、文档搜索工具&quot;&gt;&lt;/a&gt;2、文档搜索工具&lt;/h3&gt;&lt;p&gt;安利一个文档搜索工具——鸠摩搜索，各种格式的电子书、文档都可以下载，比如PDF、TXT、MOBI、DOC等，地址：&lt;a href=&quot;https://www.jiumodiary.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;鸠摩搜索&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="工具" scheme="https://crazy-boy.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="工具" scheme="https://crazy-boy.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
