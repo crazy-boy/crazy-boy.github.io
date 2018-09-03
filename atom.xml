@@ -47,27 +47,29 @@
   </entry>
   
   <entry>
-    <title>心跳包机制</title>
-    <link href="https://crazy-boy.github.io/archives/%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html"/>
-    <id>https://crazy-boy.github.io/archives/心跳包机制.html</id>
+    <title>JavaScript笔记</title>
+    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-06-19T14:45:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>心跳包机制：主要也就是用于长连接的保活和断线处理。<a id="more"></a>    </li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>如果想获取ajax里的function返回值，可用同步ajax。<a id="more"></a>    </li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;心跳包机制：主要也就是用于长连接的保活和断线处理。
+&lt;li&gt;如果想获取ajax里的function返回值，可用同步ajax。
     
     </summary>
     
-      <category term="心跳" scheme="https://crazy-boy.github.io/categories/%E5%BF%83%E8%B7%B3/"/>
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
     
     
-      <category term="心跳" scheme="https://crazy-boy.github.io/tags/%E5%BF%83%E8%B7%B3/"/>
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="心跳包" scheme="https://crazy-boy.github.io/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/"/>
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -98,29 +100,27 @@
   </entry>
   
   <entry>
-    <title>JavaScript笔记</title>
-    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
+    <title>心跳包机制</title>
+    <link href="https://crazy-boy.github.io/archives/%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html"/>
+    <id>https://crazy-boy.github.io/archives/心跳包机制.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-06-19T14:45:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>如果想获取ajax里的function返回值，可用同步ajax。<a id="more"></a>    </li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>心跳包机制：主要也就是用于长连接的保活和断线处理。<a id="more"></a>    </li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;如果想获取ajax里的function返回值，可用同步ajax。
+&lt;li&gt;心跳包机制：主要也就是用于长连接的保活和断线处理。
     
     </summary>
     
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
+      <category term="心跳" scheme="https://crazy-boy.github.io/categories/%E5%BF%83%E8%B7%B3/"/>
     
     
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="心跳" scheme="https://crazy-boy.github.io/tags/%E5%BF%83%E8%B7%B3/"/>
     
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
+      <category term="心跳包" scheme="https://crazy-boy.github.io/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/"/>
     
   </entry>
   
@@ -129,18 +129,20 @@
     <link href="https://crazy-boy.github.io/archives/Excel%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7.html"/>
     <id>https://crazy-boy.github.io/archives/Excel使用小技巧.html</id>
     <published>2018-06-19T14:02:03.000Z</published>
-    <updated>2018-06-19T14:17:54.000Z</updated>
+    <updated>2018-09-02T07:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>excel固定第一行：选择第二行，点击视图里的冻结窗口即可。</li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>excel固定第一行：选择第二行，点击视图里的冻结窗口即可。</p></li><li><p>excel分列：</p><pre><code>如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：公式为：=left(A1,2) &amp; &quot;:&quot; &amp; mid(A1,3,2) &amp; &quot;:&quot; &amp; mid(A1,5,2) &amp; &quot;:&quot; &amp; mid(A1,7,2) &amp; &quot;:&quot; &amp; mid(A1,9,2) &amp; &quot;:&quot; &amp; right(A1,2)</code></pre></li></ol>]]></content>
     
     <summary type="html">
     
       
       
         &lt;ol&gt;
-&lt;li&gt;excel固定第一行：选择第二行，点击视图里的冻结窗口即可。&lt;/li&gt;
-&lt;/ol&gt;
-
+&lt;li&gt;&lt;p&gt;excel固定第一行：选择第二行，点击视图里的冻结窗口即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;excel分列：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：
+公式为：=left(A1
       
     
     </summary>
@@ -257,37 +259,6 @@
   </entry>
   
   <entry>
-    <title>架构学习</title>
-    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
-    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:05:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
-    
-    
-      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
-    
-      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Docker使用</title>
     <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
     <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
@@ -340,6 +311,37 @@
   </entry>
   
   <entry>
+    <title>架构学习</title>
+    <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
+    <id>https://crazy-boy.github.io/archives/架构学习.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:05:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;架构设计的主要目的是为了解决软件系统复杂度带来的问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>富文本编辑器</title>
     <link href="https://crazy-boy.github.io/archives/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html"/>
     <id>https://crazy-boy.github.io/archives/富文本编辑器.html</id>
@@ -367,28 +369,33 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <title>CSS笔记</title>
+    <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
+    <updated>2018-06-04T03:43:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：<code>.cntck{ margin-right: 5px!important;}</code></p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：<code>.cntck{position: relative; bottom: -2px;}</code></p></li></ol><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：&lt;code&gt;.cntck{ margin-right: 5px!important;}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：&lt;code&gt;.cntck{position: relative; bottom: -2px;}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
     
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+      <category term="CSS" scheme="https://crazy-boy.github.io/categories/CSS/"/>
     
+    
+      <category term="CSS" scheme="https://crazy-boy.github.io/tags/CSS/"/>
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -421,33 +428,28 @@
   </entry>
   
   <entry>
-    <title>CSS笔记</title>
-    <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
     <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
+    <updated>2018-06-04T03:36:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>如果希望css样式不被覆盖，可以在后面加上!important，如：<code>.cntck{ margin-right: 5px!important;}</code></p></li><li><p>如果css希望两个标签对齐，可以用position来处理，如：<code>.cntck{position: relative; bottom: -2px;}</code></p></li></ol><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果希望css样式不被覆盖，可以在后面加上!important，如：&lt;code&gt;.cntck{ margin-right: 5px!important;}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果css希望两个标签对齐，可以用position来处理，如：&lt;code&gt;.cntck{position: relative; bottom: -2px;}&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
     
     </summary>
     
-      <category term="CSS" scheme="https://crazy-boy.github.io/categories/CSS/"/>
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
     
-    
-      <category term="CSS" scheme="https://crazy-boy.github.io/tags/CSS/"/>
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   

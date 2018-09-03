@@ -14,15 +14,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[心跳包机制]]></title>
-    <url>%2Farchives%2F%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html</url>
-    <content type="text"><![CDATA[心跳包机制：主要也就是用于长连接的保活和断线处理。]]></content>
+    <title><![CDATA[JavaScript笔记]]></title>
+    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。]]></content>
       <categories>
-        <category>心跳</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>心跳</tag>
-        <tag>心跳包</tag>
+        <tag>笔记</tag>
+        <tag>前端</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -38,22 +39,21 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaScript笔记]]></title>
-    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。]]></content>
+    <title><![CDATA[心跳包机制]]></title>
+    <url>%2Farchives%2F%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html</url>
+    <content type="text"><![CDATA[心跳包机制：主要也就是用于长连接的保活和断线处理。]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>心跳</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>前端</tag>
-        <tag>JavaScript</tag>
+        <tag>心跳</tag>
+        <tag>心跳包</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[Excel使用小技巧]]></title>
     <url>%2Farchives%2FExcel%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7.html</url>
-    <content type="text"><![CDATA[excel固定第一行：选择第二行，点击视图里的冻结窗口即可。]]></content>
+    <content type="text"><![CDATA[excel固定第一行：选择第二行，点击视图里的冻结窗口即可。 excel分列： 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式： 公式为：=left(A1,2) &amp; &quot;:&quot; &amp; mid(A1,3,2) &amp; &quot;:&quot; &amp; mid(A1,5,2) &amp; &quot;:&quot; &amp; mid(A1,7,2) &amp; &quot;:&quot; &amp; mid(A1,9,2) &amp; &quot;:&quot; &amp; right(A1,2)]]></content>
       <categories>
         <category>Excel</category>
       </categories>
@@ -110,18 +110,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[架构学习]]></title>
-    <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
-    <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
-      <categories>
-        <category>架构</category>
-      </categories>
-      <tags>
-        <tag>软件架构</tag>
-        <tag>架构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Docker使用]]></title>
     <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
     <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
@@ -146,6 +134,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[架构学习]]></title>
+    <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
+      <categories>
+        <category>架构</category>
+      </categories>
+      <tags>
+        <tag>软件架构</tag>
+        <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[富文本编辑器]]></title>
     <url>%2Farchives%2F%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8.html</url>
     <content type="text"><![CDATA[解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false 即：`,xssFilterRules: false,inputXssFilter: false,outputXssFilter: false`]]></content>
@@ -158,15 +158,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL笔记]]></title>
-    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。]]></content>
+    <title><![CDATA[CSS笔记]]></title>
+    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
       <categories>
-        <category>MySQL</category>
+        <category>CSS</category>
       </categories>
       <tags>
+        <tag>CSS</tag>
         <tag>笔记</tag>
-        <tag>MySQL</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -183,16 +184,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[CSS笔记]]></title>
-    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
+    <title><![CDATA[MySQL笔记]]></title>
+    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。]]></content>
       <categories>
-        <category>CSS</category>
+        <category>MySQL</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>笔记</tag>
-        <tag>前端</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -250,8 +250,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JQuery</tag>
         <tag>JavaScript</tag>
+        <tag>JQuery</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
