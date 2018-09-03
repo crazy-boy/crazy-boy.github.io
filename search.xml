@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[PHP生成数据字典]]></title>
     <url>%2Farchives%2FPHP%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8.html</url>
-    <content type="text"><![CDATA[通过php代码生成MySQL数据字典，代码如下： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135&lt;?php/** * 生成mysql数据字典 */header("Content-type: text/html; charset=utf-8");//配置数据库$dbserver = "127.0.0.1";$dbusername = "root";$dbpassword = "root";$database = "demodb";//其他配置$mysql_conn = @mysql_connect("$dbserver", "$dbusername", "$dbpassword") or die("Mysql connect is error.");mysql_select_db($database, $mysql_conn);mysql_query('SET NAMES utf8', $mysql_conn);$table_result = mysql_query('show tables', $mysql_conn);$no_show_table = array(); //不需要显示的表$no_show_field = array(); //不需要显示的字段//取得所有的表名while($row = mysql_fetch_array($table_result))&#123; if(!in_array($row[0],$no_show_table))&#123; $tables[]['TABLE_NAME'] = $row[0]; &#125;&#125;//替换所以表的表前缀if(!empty($_GET['prefix']))&#123; $prefix = 'czzj'; foreach($tables as $key =&gt; $val)&#123; $tableName = $val['TABLE_NAME']; $string = explode('_',$tableName); if($string[0] != $prefix)&#123; $string[0] = $prefix; $newTableName = implode('_', $string); mysql_query('rename table '.$tableName.' TO '.$newTableName); &#125; &#125; echo "替换成功！";exit();&#125;//循环取得所有表的备注及表中列消息foreach ($tables as $k=&gt;$v) &#123; $sql = 'SELECT * FROM '; $sql .= 'INFORMATION_SCHEMA.TABLES '; $sql .= 'WHERE '; $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'"; $table_result = mysql_query($sql, $mysql_conn); while ($t = mysql_fetch_array($table_result) ) &#123; $tables[$k]['TABLE_COMMENT'] = $t['TABLE_COMMENT']; &#125; $sql = 'SELECT * FROM '; $sql .= 'INFORMATION_SCHEMA.COLUMNS '; $sql .= 'WHERE '; $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'"; $fields = array(); $field_result = mysql_query($sql, $mysql_conn); while ($t = mysql_fetch_array($field_result) ) &#123; $fields[] = $t; &#125; $tables[$k]['COLUMN'] = $fields;&#125;mysql_close($mysql_conn);$html = '';//循环所有表foreach ($tables as $k=&gt;$v) &#123; $html .= ' &lt;h3&gt;' . ($k + 1) . '、' . $v['TABLE_COMMENT'] .' （'. $v['TABLE_NAME']. '）&lt;/h3&gt;'."\n"; $html .= ' &lt;table border="1" cellspacing="0" cellpadding="0" width="100%"&gt;'."\n"; $html .= ' &lt;tbody&gt;'."\n"; $html .= ' &lt;tr&gt;'."\n"; $html .= ' &lt;th&gt;字段名&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;数据类型&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;默认值&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;允许非空&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;自动递增&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;备注&lt;/th&gt;'."\n"; $html .= ' &lt;/tr&gt;'."\n"; foreach ($v['COLUMN'] as $f) &#123; if(empty($no_show_field[$v['TABLE_NAME']]) || !is_array($no_show_field[$v['TABLE_NAME']]))&#123; $no_show_field[$v['TABLE_NAME']] = array(); &#125; if(!in_array($f['COLUMN_NAME'],$no_show_field[$v['TABLE_NAME']]))&#123; $html .= ' &lt;tr&gt;'."\n"; $html .= ' &lt;td class="c1"&gt;' . $f['COLUMN_NAME'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c2"&gt;' . $f['COLUMN_TYPE'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c3"&gt;' . $f['COLUMN_DEFAULT'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c4"&gt;' . $f['IS_NULLABLE'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c5"&gt;' . ($f['EXTRA']=='auto_increment'?'是':'&amp;nbsp;') . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c6"&gt;' . $f['COLUMN_COMMENT'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;/tr&gt;'."\n"; &#125; &#125; $html .= ' &lt;/tbody&gt;'."\n"; $html .= ' &lt;/table&gt;'."\n";&#125;?&gt;&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;XX系统数据字典&lt;/title&gt;&lt;meta name="generator" content="ThinkDb V1.0" /&gt;&lt;meta name="author" content="Crazy_boy" /&gt;&lt;meta name="copyright" content="2014-208 zotuo.com" /&gt;&lt;style&gt;body, td, th &#123; font-family: "微软雅黑"; font-size: 14px; &#125;.warp&#123;margin:auto; width:900px;&#125;.warp h3&#123;margin:0px; padding:0px; line-height:30px; margin-top:10px;&#125;table &#123; border-collapse: collapse; border: 1px solid #CCC; background: #efefef; &#125;table th &#123; text-align: left; font-weight: bold; height: 26px; line-height: 26px; font-size: 14px; text-align:center; border: 1px solid #CCC; padding:5px;&#125;table td &#123; height: 20px; font-size: 14px; border: 1px solid #CCC; background-color: #fff; padding:5px;&#125;.c1 &#123; width: 120px; &#125;.c2 &#123; width: 120px; &#125;.c3 &#123; width: 150px; &#125;.c4 &#123; width: 80px; text-align:center;&#125;.c5 &#123; width: 80px; text-align:center;&#125;.c6 &#123; width: 270px; &#125;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class="warp"&gt; &lt;h1 style="text-align:center;"&gt;XX系统数据字典&lt;/h1&gt;&lt;?php echo $html; ?&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 其中$dbserver、$dbusername、$dbpassword、$database需配置为相应的数据库IP地址、用户名、密码、数据库名。代码下载：dictionary.php]]></content>
+    <content type="text"><![CDATA[通过php代码生成MySQL数据字典，代码如下：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135&lt;?php/** * 生成mysql数据字典 */header("Content-type: text/html; charset=utf-8");//配置数据库$dbserver = "127.0.0.1";$dbusername = "root";$dbpassword = "root";$database = "demodb";//其他配置$mysql_conn = @mysql_connect("$dbserver", "$dbusername", "$dbpassword") or die("Mysql connect is error.");mysql_select_db($database, $mysql_conn);mysql_query('SET NAMES utf8', $mysql_conn);$table_result = mysql_query('show tables', $mysql_conn);$no_show_table = array(); //不需要显示的表$no_show_field = array(); //不需要显示的字段//取得所有的表名while($row = mysql_fetch_array($table_result))&#123; if(!in_array($row[0],$no_show_table))&#123; $tables[]['TABLE_NAME'] = $row[0]; &#125;&#125;//替换所以表的表前缀if(!empty($_GET['prefix']))&#123; $prefix = 'czzj'; foreach($tables as $key =&gt; $val)&#123; $tableName = $val['TABLE_NAME']; $string = explode('_',$tableName); if($string[0] != $prefix)&#123; $string[0] = $prefix; $newTableName = implode('_', $string); mysql_query('rename table '.$tableName.' TO '.$newTableName); &#125; &#125; echo "替换成功！";exit();&#125;//循环取得所有表的备注及表中列消息foreach ($tables as $k=&gt;$v) &#123; $sql = 'SELECT * FROM '; $sql .= 'INFORMATION_SCHEMA.TABLES '; $sql .= 'WHERE '; $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'"; $table_result = mysql_query($sql, $mysql_conn); while ($t = mysql_fetch_array($table_result) ) &#123; $tables[$k]['TABLE_COMMENT'] = $t['TABLE_COMMENT']; &#125; $sql = 'SELECT * FROM '; $sql .= 'INFORMATION_SCHEMA.COLUMNS '; $sql .= 'WHERE '; $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'"; $fields = array(); $field_result = mysql_query($sql, $mysql_conn); while ($t = mysql_fetch_array($field_result) ) &#123; $fields[] = $t; &#125; $tables[$k]['COLUMN'] = $fields;&#125;mysql_close($mysql_conn);$html = '';//循环所有表foreach ($tables as $k=&gt;$v) &#123; $html .= ' &lt;h3&gt;' . ($k + 1) . '、' . $v['TABLE_COMMENT'] .' （'. $v['TABLE_NAME']. '）&lt;/h3&gt;'."\n"; $html .= ' &lt;table border="1" cellspacing="0" cellpadding="0" width="100%"&gt;'."\n"; $html .= ' &lt;tbody&gt;'."\n"; $html .= ' &lt;tr&gt;'."\n"; $html .= ' &lt;th&gt;字段名&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;数据类型&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;默认值&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;允许非空&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;自动递增&lt;/th&gt;'."\n"; $html .= ' &lt;th&gt;备注&lt;/th&gt;'."\n"; $html .= ' &lt;/tr&gt;'."\n"; foreach ($v['COLUMN'] as $f) &#123; if(empty($no_show_field[$v['TABLE_NAME']]) || !is_array($no_show_field[$v['TABLE_NAME']]))&#123; $no_show_field[$v['TABLE_NAME']] = array(); &#125; if(!in_array($f['COLUMN_NAME'],$no_show_field[$v['TABLE_NAME']]))&#123; $html .= ' &lt;tr&gt;'."\n"; $html .= ' &lt;td class="c1"&gt;' . $f['COLUMN_NAME'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c2"&gt;' . $f['COLUMN_TYPE'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c3"&gt;' . $f['COLUMN_DEFAULT'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c4"&gt;' . $f['IS_NULLABLE'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c5"&gt;' . ($f['EXTRA']=='auto_increment'?'是':'&amp;nbsp;') . '&lt;/td&gt;'."\n"; $html .= ' &lt;td class="c6"&gt;' . $f['COLUMN_COMMENT'] . '&lt;/td&gt;'."\n"; $html .= ' &lt;/tr&gt;'."\n"; &#125; &#125; $html .= ' &lt;/tbody&gt;'."\n"; $html .= ' &lt;/table&gt;'."\n";&#125;?&gt;&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;XX系统数据字典&lt;/title&gt;&lt;meta name="generator" content="ThinkDb V1.0" /&gt;&lt;meta name="author" content="Crazy_boy" /&gt;&lt;meta name="copyright" content="2014-208 zotuo.com" /&gt;&lt;style&gt;body, td, th &#123; font-family: "微软雅黑"; font-size: 14px; &#125;.warp&#123;margin:auto; width:900px;&#125;.warp h3&#123;margin:0px; padding:0px; line-height:30px; margin-top:10px;&#125;table &#123; border-collapse: collapse; border: 1px solid #CCC; background: #efefef; &#125;table th &#123; text-align: left; font-weight: bold; height: 26px; line-height: 26px; font-size: 14px; text-align:center; border: 1px solid #CCC; padding:5px;&#125;table td &#123; height: 20px; font-size: 14px; border: 1px solid #CCC; background-color: #fff; padding:5px;&#125;.c1 &#123; width: 120px; &#125;.c2 &#123; width: 120px; &#125;.c3 &#123; width: 150px; &#125;.c4 &#123; width: 80px; text-align:center;&#125;.c5 &#123; width: 80px; text-align:center;&#125;.c6 &#123; width: 270px; &#125;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class="warp"&gt; &lt;h1 style="text-align:center;"&gt;XX系统数据字典&lt;/h1&gt;&lt;?php echo $html; ?&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt; 其中$dbserver、$dbusername、$dbpassword、$database需配置为相应的数据库IP地址、用户名、密码、数据库名。代码下载：dictionary.php]]></content>
       <categories>
         <category>PHP</category>
       </categories>
@@ -11,19 +11,6 @@
         <tag>MySQL</tag>
         <tag>PHP</tag>
         <tag>数据字典</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[JavaScript笔记]]></title>
-    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>前端</tag>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -48,6 +35,19 @@
       <tags>
         <tag>心跳</tag>
         <tag>心跳包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript笔记]]></title>
+    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>前端</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -110,18 +110,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker使用]]></title>
-    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
-      <categories>
-        <category>Docker</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[高德地图API使用]]></title>
     <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
     <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
@@ -143,6 +131,18 @@
       <tags>
         <tag>软件架构</tag>
         <tag>架构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker使用]]></title>
+    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -171,6 +171,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[MySQL笔记]]></title>
+    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Jquery笔记]]></title>
     <url>%2Farchives%2FJquery%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[jquery获取json的长度： 一维：var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;}; length = JsonTemp.length; 二维：var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]}; length = Object.keys(JsonTemp).length;]]></content>
@@ -181,18 +193,6 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>Jquery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[MySQL笔记]]></title>
-    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -250,8 +250,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>JQuery</tag>
+        <tag>JavaScript</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
