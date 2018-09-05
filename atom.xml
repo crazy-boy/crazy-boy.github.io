@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-06-21T14:37:00.000Z</updated>
+  <updated>2018-09-05T04:27:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL自定义函数</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL自定义函数.html</id>
+    <published>2018-09-05T04:27:00.000Z</published>
+    <updated>2018-09-05T04:27:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：</p><a id="more"></a><ol><li>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</li></ol><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">DROP <span class="function"><span class="keyword">FUNCTION</span> <span class="title">IF</span> <span class="title">EXISTS</span> `<span class="title">SPLIT_STR</span>`;</span> </span><br><span class="line">delimiter $$</span><br><span class="line"><span class="keyword">CREATE</span> <span class="function"><span class="keyword">FUNCTION</span> <span class="title">SPLIT_STR</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  x VARCHAR(255)</span>,</span></span><br><span class="line"><span class="function">  <span class="title">delim</span> <span class="title">VARCHAR</span><span class="params">(12)</span>,</span></span><br><span class="line"><span class="function">  <span class="title">pos</span> <span class="title">INT</span></span></span><br><span class="line"><span class="function">)</span></span><br><span class="line"><span class="function"><span class="title">RETURNS</span> <span class="title">VARCHAR</span><span class="params">(255)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">BEGIN</span></span></span><br><span class="line"><span class="function"><span class="title">DECLARE</span> <span class="title">i</span> <span class="title">INT</span> <span class="title">DEFAULT</span> 0;</span></span><br><span class="line">DECLARE s text <span class="keyword">DEFAULT</span> <span class="string">''</span>;</span><br><span class="line">myloop: <span class="keyword">LOOP</span></span><br><span class="line"><span class="keyword">SET</span> i = i+pos;</span><br><span class="line"><span class="keyword">SET</span> s = <span class="keyword">CONCAT</span>(s,delim,left(x,pos));</span><br><span class="line"><span class="keyword">SET</span> x = right(x,length(x)-pos);</span><br><span class="line"><span class="keyword">if</span> pos&gt;length(x) <span class="keyword">then</span></span><br><span class="line"><span class="keyword">if</span> length(x)&gt;<span class="number">0</span> <span class="keyword">then</span></span><br><span class="line"><span class="keyword">SET</span> s = <span class="keyword">CONCAT</span>(s,delim,x);</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">leave myloop;</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line"><span class="keyword">END</span> <span class="keyword">LOOP</span> myloop;</span><br><span class="line">RETURN right(s,length(s)-length(delim));</span><br><span class="line"><span class="keyword">END</span> $$</span><br></pre></td></tr></table></figure><p>调用：<code>SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);</code></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+      <category term="自定义函数" scheme="https://crazy-boy.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP生成数据字典</title>
@@ -275,32 +299,6 @@
   </entry>
   
   <entry>
-    <title>高德地图API使用</title>
-    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T06:07:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
-    
-    
-      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
-    
-      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
-    
-  </entry>
-  
-  <entry>
     <title>架构学习</title>
     <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
     <id>https://crazy-boy.github.io/archives/架构学习.html</id>
@@ -328,6 +326,32 @@
       <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
     
       <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高德地图API使用</title>
+    <link href="https://crazy-boy.github.io/archives/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/高德地图API使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T06:07:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</li></ol><a id="more"></a><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.amap-marker-label&#123;</span><br><span class="line">height:40px;</span><br><span class="line">width:120px;</span><br><span class="line">background-color: red;</span><br><span class="line">border: solid 1px black;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></code></pre><ol><li>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：<pre><code class="bash">var markers = [];    map.remove(markers);    markers.push(marker);</code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="地图API" scheme="https://crazy-boy.github.io/categories/%E5%9C%B0%E5%9B%BEAPI/"/>
+    
+    
+      <category term="高德地图" scheme="https://crazy-boy.github.io/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="JS" scheme="https://crazy-boy.github.io/tags/JS/"/>
     
   </entry>
   
@@ -387,32 +411,6 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:36:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CSS笔记</title>
     <link href="https://crazy-boy.github.io/archives/CSS%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/CSS笔记.html</id>
@@ -440,6 +438,32 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:36:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：<br><code>DROP FUNCTION IF EXISTS `函数名`;</code></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   
@@ -516,32 +540,6 @@
       <category term="Git" scheme="https://crazy-boy.github.io/tags/Git/"/>
     
       <category term="文件忽略" scheme="https://crazy-boy.github.io/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP实现AES加解密</title>
-    <link href="https://crazy-boy.github.io/archives/PHP%E5%AE%9E%E7%8E%B0AES%E5%8A%A0%E8%A7%A3%E5%AF%86.html"/>
-    <id>https://crazy-boy.github.io/archives/PHP实现AES加解密.html</id>
-    <published>2018-04-20T02:05:00.000Z</published>
-    <updated>2018-06-09T06:46:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。</p><a id="more"></a><p>下面介绍一下以PHP实现AES加密解密：</p><p>1、AES加密解密类<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">libs</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 利用mcrypt做AES加密解密</span></span><br><span class="line"><span class="comment">* 支持密钥：64bit（字节长度8）</span></span><br><span class="line"><span class="comment">* 支持算法：DES</span></span><br><span class="line"><span class="comment">* 支持模式：ECB</span></span><br><span class="line"><span class="comment">* 填充方式：PKCS5</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Aes</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> CIPHER = MCRYPT_DES;</span><br><span class="line">    <span class="keyword">const</span> MODE = MCRYPT_MODE_ECB;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 加密</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $str需加密的字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $key密钥(8位)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string   密文</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">encode</span><span class="params">($str,$key)</span></span>&#123;</span><br><span class="line">        $size = mcrypt_get_block_size ( MCRYPT_DES, <span class="string">'ecb'</span> );</span><br><span class="line">        $str = <span class="keyword">self</span>::pkcs5_pad($str, $size);</span><br><span class="line">        $iv = mcrypt_create_iv(mcrypt_get_iv_size(<span class="keyword">self</span>::CIPHER,<span class="keyword">self</span>::MODE),MCRYPT_RAND);</span><br><span class="line">        $result = mcrypt_encrypt(<span class="keyword">self</span>::CIPHER, $key, $str, <span class="keyword">self</span>::MODE, $iv);</span><br><span class="line">        <span class="keyword">return</span> base64_encode($result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解密</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $str   密文</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $key   密钥(8位)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string   明文</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">decode</span><span class="params">($str,$key)</span></span>&#123;</span><br><span class="line">        $str = base64_decode($str);</span><br><span class="line">        $iv = mcrypt_create_iv(mcrypt_get_iv_size(<span class="keyword">self</span>::CIPHER,<span class="keyword">self</span>::MODE),MCRYPT_RAND);</span><br><span class="line">        $str = trim(mcrypt_decrypt(<span class="keyword">self</span>::CIPHER, $key, $str, <span class="keyword">self</span>::MODE, $iv));</span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">self</span>::pkcs5_unpad($str);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * PKCS5填充</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $text</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $blocksize</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">pkcs5_pad</span><span class="params">($text, $blocksize)</span> </span>&#123;</span><br><span class="line">        $pad = $blocksize - (strlen($text) % $blocksize);</span><br><span class="line">        <span class="keyword">return</span> $text . str_repeat(chr($pad), $pad);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $text</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> bool|string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">pkcs5_unpad</span><span class="params">($text)</span> </span>&#123;</span><br><span class="line">        $pad = ord($text&#123;strlen($text) - <span class="number">1</span>&#125;);</span><br><span class="line">        <span class="keyword">if</span> ($pad &gt; strlen($text)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (strspn($text, chr($pad), strlen($text)-$pad) != $pad) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> substr($text, <span class="number">0</span>, <span class="number">-1</span> * $pad);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>2、调用<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">app</span>\<span class="title">modules</span>\<span class="title">demo</span>\<span class="title">controllers</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">app</span>\<span class="title">common</span>\<span class="title">components</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">libs</span>\<span class="title">Aes</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">actionTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $key = <span class="string">'WGiSP3UQ'</span>;</span><br><span class="line">        $str = <span class="string">'18958019299'</span>;</span><br><span class="line">        $enStr = Aes::encode($str,$key);</span><br><span class="line">        $deStr = Aes::decode($enStr,$key);</span><br><span class="line">        var_dump($str,$enStr,$deStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>3、访问<a href="http://127.0.0.1/web/demo/test/test" target="_blank" rel="noopener">http://127.0.0.1/web/demo/test/test</a> ，运行结果如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string(<span class="number">11</span>) <span class="string">"18958019299"</span> </span><br><span class="line">string(<span class="number">24</span>) <span class="string">"WiBZggO/DRaczJ3wSirvEw=="</span> </span><br><span class="line">string(<span class="number">11</span>) <span class="string">"18958019299"</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="PHP" scheme="https://crazy-boy.github.io/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="https://crazy-boy.github.io/tags/PHP/"/>
-    
-      <category term="AES" scheme="https://crazy-boy.github.io/tags/AES/"/>
-    
-      <category term="加解密" scheme="https://crazy-boy.github.io/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/"/>
     
   </entry>
   
