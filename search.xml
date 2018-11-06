@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PHPExcel笔记]]></title>
+    <url>%2Farchives%2FPHPExcel%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[phpExcel设置多个单元格字体加粗：$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('A1:GL1')-&gt;applyFromArray(['font'=&gt;['bold'=&gt;true]]); //设置单元格A1-GL1字体加粗]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>Excel</tag>
+        <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL自定义函数]]></title>
     <url>%2Farchives%2FMySQL%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0.html</url>
     <content type="text"><![CDATA[有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数： 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式： 12345678910111213141516171819202122232425DROP FUNCTION IF EXISTS `SPLIT_STR`; delimiter $$CREATE FUNCTION SPLIT_STR( x VARCHAR(255), delim VARCHAR(12), pos INT)RETURNS VARCHAR(255)BEGIN DECLARE i INT DEFAULT 0; DECLARE s text DEFAULT ''; myloop: LOOP SET i = i+pos; SET s = CONCAT(s,delim,left(x,pos)); SET x = right(x,length(x)-pos); if pos&gt;length(x) then if length(x)&gt;0 then SET s = CONCAT(s,delim,x); end if; leave myloop; end if; END LOOP myloop;RETURN right(s,length(s)-length(delim));END $$ 调用：SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);]]></content>
@@ -26,18 +39,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[心跳包机制]]></title>
-    <url>%2Farchives%2F%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html</url>
-    <content type="text"><![CDATA[心跳包机制：主要也就是用于长连接的保活和断线处理。]]></content>
-      <categories>
-        <category>心跳</category>
-      </categories>
-      <tags>
-        <tag>心跳</tag>
-        <tag>心跳包</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[JavaScript笔记]]></title>
     <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。]]></content>
@@ -48,6 +49,18 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[心跳包机制]]></title>
+    <url>%2Farchives%2F%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html</url>
+    <content type="text"><![CDATA[心跳包机制：主要也就是用于长连接的保活和断线处理。]]></content>
+      <categories>
+        <category>心跳</category>
+      </categories>
+      <tags>
+        <tag>心跳</tag>
+        <tag>心跳包</tag>
       </tags>
   </entry>
   <entry>
@@ -63,17 +76,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[R语言学习]]></title>
-    <url>%2Farchives%2FR%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0.html</url>
-    <content type="text"><![CDATA[之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记： &lt;- 是赋值的意思 向量是下标以1开始的 区分大小写 路径：C://a.txt round：四舍五入]]></content>
-      <categories>
-        <category>R</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Excel使用小技巧]]></title>
     <url>%2Farchives%2FExcel%E4%BD%BF%E7%94%A8%E5%B0%8F%E6%8A%80%E5%B7%A7.html</url>
     <content type="text"><![CDATA[excel固定第一行：选择第二行，点击视图里的冻结窗口即可。 excel分列： 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：公式为：=left(A1,2) &amp; &quot;:&quot; &amp; mid(A1,3,2) &amp; &quot;:&quot; &amp; mid(A1,5,2) &amp; &quot;:&quot; &amp; mid(A1,7,2) &amp; &quot;:&quot; &amp; mid(A1,9,2) &amp; &quot;:&quot; &amp; right(A1,2)]]></content>
@@ -83,6 +85,17 @@
       <tags>
         <tag>Excel</tag>
         <tag>使用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[R语言学习]]></title>
+    <url>%2Farchives%2FR%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记： &lt;- 是赋值的意思 向量是下标以1开始的 区分大小写 路径：C://a.txt round：四舍五入]]></content>
+      <categories>
+        <category>R</category>
+      </categories>
+      <tags>
+        <tag>R</tag>
       </tags>
   </entry>
   <entry>
@@ -122,6 +135,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[高德地图API使用]]></title>
+    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
+      <categories>
+        <category>地图API</category>
+      </categories>
+      <tags>
+        <tag>高德地图</tag>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[架构学习]]></title>
     <url>%2Farchives%2F%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html</url>
     <content type="text"><![CDATA[架构设计的主要目的是为了解决软件系统复杂度带来的问题。 架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。 架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。]]></content>
@@ -143,18 +168,6 @@
       <tags>
         <tag>Docker</tag>
         <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[高德地图API使用]]></title>
-    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
-      <categories>
-        <category>地图API</category>
-      </categories>
-      <tags>
-        <tag>高德地图</tag>
-        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -183,18 +196,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySQL笔记]]></title>
-    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。 mysql删除自定义函数：DROP FUNCTION IF EXISTS `函数名`; 插入数据： insert into tb (field1,field2,field3……) value (val1,val2,val3……); insert into tb (field1,field2,field3……) values (val1,val2,val3……); insert into tb set field1=val1,field2=val2,field3=val3; insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);]]></content>
-      <categories>
-        <category>MySQL</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Jquery笔记]]></title>
     <url>%2Farchives%2FJquery%E7%AC%94%E8%AE%B0.html</url>
     <content type="text"><![CDATA[jquery获取json的长度： 一维：var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;}; length = JsonTemp.length; 二维：var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]}; length = Object.keys(JsonTemp).length;]]></content>
@@ -205,6 +206,18 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>Jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL笔记]]></title>
+    <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。 mysql删除自定义函数：DROP FUNCTION IF EXISTS `函数名`; 插入数据： insert into tb (field1,field2,field3……) value (val1,val2,val3……); insert into tb (field1,field2,field3……) values (val1,val2,val3……); insert into tb set field1=val1,field2=val2,field3=val3; insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
