@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.github.io/"/>
-  <updated>2018-11-06T03:55:00.000Z</updated>
+  <updated>2018-11-06T05:52:00.000Z</updated>
   <id>https://crazy-boy.github.io/</id>
   
   <author>
@@ -21,17 +21,17 @@
     <link href="https://crazy-boy.github.io/archives/PHPExcel%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/PHPExcel笔记.html</id>
     <published>2018-11-06T03:55:00.000Z</published>
-    <updated>2018-11-06T03:55:00.000Z</updated>
+    <updated>2018-11-06T05:52:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>phpExcel设置多个单元格字体加粗：<pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1:GL1'</span>)-&gt;applyFromArray([<span class="string">'font'</span>=&gt;[<span class="string">'bold'</span>=&gt;<span class="literal">true</span>]]);        //设置单元格A1-GL1字体加粗</code></pre></li></ol><a id="more"></a>    ]]></content>
+    <content type="html"><![CDATA[<ol><li>设置字体和样式：<pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1'</span>)-&gt;applyFromArray([<span class="string">'font'</span>=&gt;[<span class="string">'bold'</span>=&gt;<span class="literal">true</span>]]);            //设置单元格A1字体加粗<span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1:GL1'</span>)-&gt;applyFromArray([<span class="string">'font'</span>=&gt;[<span class="string">'bold'</span>=&gt;<span class="literal">true</span>]]);        //设置单元格A1-GL1字体加粗<span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1:B3'</span>)-&gt;getFont()-&gt;setBold(<span class="literal">true</span>);                        //设置A1-B3之间的单元格字体加粗</code></pre><a id="more"></a>    </li><li><p>设置行高：</p><pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getDefaultRowDimension()-&gt;setRowHeight(20);                            //设置默认行高<span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getRowDimension(<span class="string">'1'</span>)-&gt;setRowHeight(30);                                //设置第一行行高</code></pre></li><li><p>设置列宽：</p><pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getColumnDimension(<span class="string">'A'</span>)-&gt;setWidth(20);                                //设置A列列宽</code></pre></li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;phpExcel设置多个单元格字体加粗：&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$objPHPExcel&lt;/span&gt;-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&lt;span class=&quot;string&quot;&gt;&#39;A1:GL1&#39;&lt;/span&gt;)-&amp;gt;applyFromArray([&lt;span class=&quot;string&quot;&gt;&#39;font&#39;&lt;/span&gt;=&amp;gt;[&lt;span class=&quot;string&quot;&gt;&#39;bold&#39;&lt;/span&gt;=&amp;gt;&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;]]);        //设置单元格A1-GL1字体加粗
+&lt;li&gt;设置字体和样式：&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$objPHPExcel&lt;/span&gt;-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&lt;span class=&quot;string&quot;&gt;&#39;A1&#39;&lt;/span&gt;)-&amp;gt;applyFromArray([&lt;span class=&quot;string&quot;&gt;&#39;font&#39;&lt;/span&gt;=&amp;gt;[&lt;span class=&quot;string&quot;&gt;&#39;bold&#39;&lt;/span&gt;=&amp;gt;&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;]]);            //设置单元格A1字体加粗
+&lt;span class=&quot;variable&quot;&gt;$objPHPExcel&lt;/span&gt;-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&lt;span class=&quot;string&quot;&gt;&#39;A1:GL1&#39;&lt;/span&gt;)-&amp;gt;applyFromArray([&lt;span class=&quot;string&quot;&gt;&#39;font&#39;&lt;/span&gt;=&amp;gt;[&lt;span class=&quot;string&quot;&gt;&#39;bold&#39;&lt;/span&gt;=&amp;gt;&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;]]);        //设置单元格A1-GL1字体加粗
+&lt;span class=&quot;variable&quot;&gt;$objPHPExcel&lt;/span&gt;-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&lt;span class=&quot;string&quot;&gt;&#39;A1:B3&#39;&lt;/span&gt;)-&amp;gt;getFont()-&amp;gt;setBold(&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;);                        //设置A1-B3之间的单元格字体加粗
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
     
     </summary>
     
@@ -97,33 +97,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript笔记</title>
-    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
-    <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-06-19T14:45:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>如果想获取ajax里的function返回值，可用同步ajax。<a id="more"></a>    </li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;如果想获取ajax里的function返回值，可用同步ajax。
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>心跳包机制</title>
     <link href="https://crazy-boy.github.io/archives/%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html"/>
     <id>https://crazy-boy.github.io/archives/心跳包机制.html</id>
@@ -171,6 +144,33 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="Oracle" scheme="https://crazy-boy.github.io/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript笔记</title>
+    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
+    <published>2018-06-19T14:39:00.000Z</published>
+    <updated>2018-06-19T14:45:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>如果想获取ajax里的function返回值，可用同步ajax。<a id="more"></a>    </li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;如果想获取ajax里的function返回值，可用同步ajax。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -329,6 +329,32 @@
   </entry>
   
   <entry>
+    <title>Docker使用</title>
+    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
+    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
+    <published>2018-06-05T01:44:00.000Z</published>
+    <updated>2018-06-05T02:02:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
+    
+      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title>架构学习</title>
     <link href="https://crazy-boy.github.io/archives/%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0.html"/>
     <id>https://crazy-boy.github.io/archives/架构学习.html</id>
@@ -356,32 +382,6 @@
       <category term="软件架构" scheme="https://crazy-boy.github.io/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"/>
     
       <category term="架构" scheme="https://crazy-boy.github.io/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker使用</title>
-    <link href="https://crazy-boy.github.io/archives/Docker%E4%BD%BF%E7%94%A8.html"/>
-    <id>https://crazy-boy.github.io/archives/Docker使用.html</id>
-    <published>2018-06-05T01:44:00.000Z</published>
-    <updated>2018-06-05T02:02:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>windows7 安装docker，需要利用 docker toolbox 来安装。</li></ol><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;windows7 安装docker，需要利用 docker toolbox 来安装。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Docker" scheme="https://crazy-boy.github.io/categories/Docker/"/>
-    
-    
-      <category term="Docker" scheme="https://crazy-boy.github.io/tags/Docker/"/>
-    
-      <category term="Windows" scheme="https://crazy-boy.github.io/tags/Windows/"/>
     
   </entry>
   
@@ -444,6 +444,32 @@
   </entry>
   
   <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-10-25T01:41:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：<br><code>DROP FUNCTION IF EXISTS `函数名`;</code></p></li><li><p>插入数据：</p><pre><code>insert into tb (field1,field2,field3……) value (val1,val2,val3……);insert into tb (field1,field2,field3……) values (val1,val2,val3……);insert into tb set field1=val1,field2=val2,field3=val3;insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);</code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Jquery笔记</title>
     <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
@@ -468,32 +494,6 @@
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-10-25T01:41:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：<br><code>DROP FUNCTION IF EXISTS `函数名`;</code></p></li><li><p>插入数据：</p><pre><code>insert into tb (field1,field2,field3……) value (val1,val2,val3……);insert into tb (field1,field2,field3……) values (val1,val2,val3……);insert into tb set field1=val1,field2=val2,field3=val3;insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);</code></pre></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   

@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://crazy-boy.github.io/archives/PHPExcel%E7%AC%94%E8%AE%B0.html</loc>
-    <lastmod>2018-11-06T03:55:00.000Z</lastmod>
+    <lastmod>2018-11-06T05:52:00.000Z</lastmod>
     <data>
         <display>
         <title>PHPExcel笔记</title>
@@ -118,6 +118,30 @@
 
     
   <url>
+    <loc>https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2018-06-19T14:45:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript笔记</title>
+        <pubTime>2018-06-19T14:39:00.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>前端</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="https://crazy-boy.github.io/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://crazy-boy.github.io/archives/Oracle%E7%AC%94%E8%AE%B0.html</loc>
     <lastmod>2018-06-19T14:45:00.000Z</lastmod>
     <data>
@@ -155,30 +179,6 @@
            
              
               <breadCrumb title="心跳" url="https://crazy-boy.github.io/categories/%E5%BF%83%E8%B7%B3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html</loc>
-    <lastmod>2018-06-19T14:45:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript笔记</title>
-        <pubTime>2018-06-19T14:39:00.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>前端</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="https://crazy-boy.github.io/categories/JavaScript/"/>
           
         </display>
     </data>
@@ -525,9 +525,9 @@
         <title>JQuery面向对象写法</title>
         <pubTime>2018-04-19T01:52:00.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>JQuery</tag>
+         
+        <tag>JavaScript</tag>
          
         <tag>面向对象</tag>
          
