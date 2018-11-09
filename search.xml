@@ -51,6 +51,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[JavaScript笔记]]></title>
+    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。 JavaScript不定参数 1234567891011121314151617&lt;html&gt;&lt;head&gt;&lt;title&gt;JavaScript不定参数&lt;/title&gt;&lt;script type="text/javascript"&gt; function test()&#123; console.log(arguments); for( var i = 0; i &lt; arguments.length; i++ )&#123; console.log(arguments[i]); &#125;&#125; &lt;/script&gt;&lt;/head&gt;&lt;body onload="test('one','two','three','four');"&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>前端</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[心跳包机制]]></title>
     <url>%2Farchives%2F%E5%BF%83%E8%B7%B3%E5%8C%85%E6%9C%BA%E5%88%B6.html</url>
     <content type="text"><![CDATA[心跳包机制：主要也就是用于长连接的保活和断线处理。]]></content>
@@ -63,16 +76,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaScript笔记]]></title>
-    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。]]></content>
+    <title><![CDATA[R语言学习]]></title>
+    <url>%2Farchives%2FR%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0.html</url>
+    <content type="text"><![CDATA[之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记： &lt;- 是赋值的意思 向量是下标以1开始的 区分大小写 路径：C://a.txt round：四舍五入]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>R</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>前端</tag>
-        <tag>JavaScript</tag>
+        <tag>R</tag>
       </tags>
   </entry>
   <entry>
@@ -85,17 +96,6 @@
       <tags>
         <tag>Excel</tag>
         <tag>使用技巧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[R语言学习]]></title>
-    <url>%2Farchives%2FR%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0.html</url>
-    <content type="text"><![CDATA[之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记： &lt;- 是赋值的意思 向量是下标以1开始的 区分大小写 路径：C://a.txt round：四舍五入]]></content>
-      <categories>
-        <category>R</category>
-      </categories>
-      <tags>
-        <tag>R</tag>
       </tags>
   </entry>
   <entry>
@@ -135,15 +135,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[高德地图API使用]]></title>
-    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
+    <title><![CDATA[Docker使用]]></title>
+    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
       <categories>
-        <category>地图API</category>
+        <category>Docker</category>
       </categories>
       <tags>
-        <tag>高德地图</tag>
-        <tag>JS</tag>
+        <tag>Docker</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -159,15 +159,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Docker使用]]></title>
-    <url>%2Farchives%2FDocker%E4%BD%BF%E7%94%A8.html</url>
-    <content type="text"><![CDATA[windows7 安装docker，需要利用 docker toolbox 来安装。]]></content>
+    <title><![CDATA[高德地图API使用]]></title>
+    <url>%2Farchives%2F%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BEAPI%E4%BD%BF%E7%94%A8.html</url>
+    <content type="text"><![CDATA[高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如： 12345678&lt;style&gt; .amap-marker-label&#123; height:40px; width:120px; background-color: red; border: solid 1px black; &#125;&lt;/style&gt; 高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：var markers = []; map.remove(markers); markers.push(marker);]]></content>
       <categories>
-        <category>Docker</category>
+        <category>地图API</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
-        <tag>Windows</tag>
+        <tag>高德地图</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -275,8 +275,8 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>JQuery</tag>
         <tag>JavaScript</tag>
+        <tag>JQuery</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
