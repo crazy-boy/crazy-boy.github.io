@@ -97,29 +97,28 @@
   </entry>
   
   <entry>
-    <title>JavaScript笔记</title>
-    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
+    <title>Oracle笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Oracle%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Oracle笔记.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-11-09T01:49:00.000Z</updated>
+    <updated>2018-06-19T14:45:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>如果想获取ajax里的function返回值，可用同步ajax。</p><a id="more"></a>    </li><li><p>JavaScript不定参数</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>JavaScript不定参数<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span></span><br><span class="line"><span class="javascript"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++ )&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>[i]);</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"test('one','two','three','four');"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>强制并行处理：<code>/*+ monitor parallel(8)*/</code></li><li>plsql查看sql性能：F5<a id="more"></a>    </li><li><p>在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := <span class="string">','</span>)</span><br><span class="line">RETURN NUMBER IS</span><br><span class="line">  l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置</span><br><span class="line">  str      varchar2(500);  -- 根据分隔符截取的子字符串</span><br><span class="line">  piv_str  varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str</span><br><span class="line">  res      number:=0; -- 返回结果</span><br><span class="line">BEGIN</span><br><span class="line">-- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1</span><br><span class="line">IF instr(piv_str, p_sep, 1) = 0 THEN</span><br><span class="line">   IF piv_str = piv_str1 THEN</span><br><span class="line">  res:= 1;</span><br><span class="line">   END IF;</span><br><span class="line">ELSE</span><br><span class="line">-- 循环按分隔符截取piv_str</span><br><span class="line">LOOP</span><br><span class="line">l_idx := instr(piv_str,p_sep);</span><br><span class="line">-- 当piv_str中还有分隔符时</span><br><span class="line">  IF l_idx &gt; 0 THEN</span><br><span class="line">   -- 截取第一个分隔符前的字段str</span><br><span class="line"> str:= substr(piv_str,1,l_idx-1);</span><br><span class="line">   -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断</span><br><span class="line"> IF str = piv_str1 THEN</span><br><span class="line">   res:= 1;</span><br><span class="line">   EXIT;</span><br><span class="line"> END IF;</span><br><span class="line">piv_str := substr(piv_str,l_idx+length(p_sep));</span><br><span class="line">  ELSE</span><br><span class="line">   -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1</span><br><span class="line">IF piv_str = piv_str1 THEN</span><br><span class="line">   res:= 1;</span><br><span class="line">END IF;</span><br><span class="line">-- 无论最后是否相等，都跳出循环</span><br><span class="line">EXIT;</span><br><span class="line">  END IF;</span><br><span class="line">END LOOP;</span><br><span class="line">-- 结束循环</span><br><span class="line">END IF;</span><br><span class="line">-- 返回res</span><br><span class="line">RETURN res;</span><br><span class="line">END FIND_IN_SET;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">4. 日期转时间戳函数</span><br><span class="line"></span><br><span class="line">``` bash </span><br><span class="line">create or replace <span class="keyword">function</span> oracle_to_unix(in_date IN DATE) <span class="built_in">return</span> number is</span><br><span class="line">    begin </span><br><span class="line"><span class="built_in">return</span>( (in_date -TO_DATE(<span class="string">'19700101'</span>,<span class="string">'yyyymmdd'</span>))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);</span><br><span class="line">    end oracle_to_unix;</span><br></pre></td></tr></table></figure></li><li><p>时间戳转日期函数</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create or replace <span class="keyword">function</span> unix_to_oracle(in_number NUMBER) <span class="built_in">return</span> date is</span><br><span class="line">    begin</span><br><span class="line">        <span class="built_in">return</span>(TO_DATE(<span class="string">'19700101'</span>,<span class="string">'yyyymmdd'</span>) + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);</span><br><span class="line">    end unix_to_oracle;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果想获取ajax里的function返回值，可用同步ajax。&lt;/p&gt;
+&lt;li&gt;强制并行处理：&lt;code&gt;/*+ monitor parallel(8)*/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;plsql查看sql性能：F5
     
     </summary>
     
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
+      <category term="Oracle" scheme="https://crazy-boy.github.io/categories/Oracle/"/>
     
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
+      <category term="Oracle" scheme="https://crazy-boy.github.io/tags/Oracle/"/>
     
   </entry>
   
@@ -149,28 +148,29 @@
   </entry>
   
   <entry>
-    <title>Oracle笔记</title>
-    <link href="https://crazy-boy.github.io/archives/Oracle%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/Oracle笔记.html</id>
+    <title>JavaScript笔记</title>
+    <link href="https://crazy-boy.github.io/archives/JavaScript%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/JavaScript笔记.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-06-19T14:45:00.000Z</updated>
+    <updated>2018-11-09T01:49:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>强制并行处理：<code>/*+ monitor parallel(8)*/</code></li><li>plsql查看sql性能：F5<a id="more"></a>    </li><li><p>在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := <span class="string">','</span>)</span><br><span class="line">RETURN NUMBER IS</span><br><span class="line">  l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置</span><br><span class="line">  str      varchar2(500);  -- 根据分隔符截取的子字符串</span><br><span class="line">  piv_str  varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str</span><br><span class="line">  res      number:=0; -- 返回结果</span><br><span class="line">BEGIN</span><br><span class="line">-- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1</span><br><span class="line">IF instr(piv_str, p_sep, 1) = 0 THEN</span><br><span class="line">   IF piv_str = piv_str1 THEN</span><br><span class="line">  res:= 1;</span><br><span class="line">   END IF;</span><br><span class="line">ELSE</span><br><span class="line">-- 循环按分隔符截取piv_str</span><br><span class="line">LOOP</span><br><span class="line">l_idx := instr(piv_str,p_sep);</span><br><span class="line">-- 当piv_str中还有分隔符时</span><br><span class="line">  IF l_idx &gt; 0 THEN</span><br><span class="line">   -- 截取第一个分隔符前的字段str</span><br><span class="line"> str:= substr(piv_str,1,l_idx-1);</span><br><span class="line">   -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断</span><br><span class="line"> IF str = piv_str1 THEN</span><br><span class="line">   res:= 1;</span><br><span class="line">   EXIT;</span><br><span class="line"> END IF;</span><br><span class="line">piv_str := substr(piv_str,l_idx+length(p_sep));</span><br><span class="line">  ELSE</span><br><span class="line">   -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1</span><br><span class="line">IF piv_str = piv_str1 THEN</span><br><span class="line">   res:= 1;</span><br><span class="line">END IF;</span><br><span class="line">-- 无论最后是否相等，都跳出循环</span><br><span class="line">EXIT;</span><br><span class="line">  END IF;</span><br><span class="line">END LOOP;</span><br><span class="line">-- 结束循环</span><br><span class="line">END IF;</span><br><span class="line">-- 返回res</span><br><span class="line">RETURN res;</span><br><span class="line">END FIND_IN_SET;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">4. 日期转时间戳函数</span><br><span class="line"></span><br><span class="line">``` bash </span><br><span class="line">create or replace <span class="keyword">function</span> oracle_to_unix(in_date IN DATE) <span class="built_in">return</span> number is</span><br><span class="line">    begin </span><br><span class="line"><span class="built_in">return</span>( (in_date -TO_DATE(<span class="string">'19700101'</span>,<span class="string">'yyyymmdd'</span>))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);</span><br><span class="line">    end oracle_to_unix;</span><br></pre></td></tr></table></figure></li><li><p>时间戳转日期函数</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create or replace <span class="keyword">function</span> unix_to_oracle(in_number NUMBER) <span class="built_in">return</span> date is</span><br><span class="line">    begin</span><br><span class="line">        <span class="built_in">return</span>(TO_DATE(<span class="string">'19700101'</span>,<span class="string">'yyyymmdd'</span>) + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);</span><br><span class="line">    end unix_to_oracle;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>如果想获取ajax里的function返回值，可用同步ajax。</p><a id="more"></a>    </li><li><p>JavaScript不定参数</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>JavaScript不定参数<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span></span><br><span class="line"><span class="javascript"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++ )&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>[i]);</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"test('one','two','three','four');"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;强制并行处理：&lt;code&gt;/*+ monitor parallel(8)*/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;plsql查看sql性能：F5
+&lt;li&gt;&lt;p&gt;如果想获取ajax里的function返回值，可用同步ajax。&lt;/p&gt;
     
     </summary>
     
-      <category term="Oracle" scheme="https://crazy-boy.github.io/categories/Oracle/"/>
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/categories/JavaScript/"/>
     
     
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Oracle" scheme="https://crazy-boy.github.io/tags/Oracle/"/>
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="https://crazy-boy.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -419,7 +419,7 @@
     <published>2018-06-04T03:19:00.000Z</published>
     <updated>2018-12-11T11:10:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：</p><figure class="highlight plain"><figcaption><span>FUNCTION IF EXISTS `函数名`;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8. 插入数据：</span><br></pre></td></tr></table></figure><p> insert into tb (field1,field2,field3……) value (val1,val2,val3……);<br> insert into tb (field1,field2,field3……) values (val1,val2,val3……);<br> insert into tb set field1=val1,field2=val2,field3=val3;<br> insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);<br> insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">9. </span>查询数据库中每个表的记录数</span><br></pre></td></tr></table></figure><p> use information_schema;<br> select table_name,table_rows from tables where TABLE_SCHEMA = ‘dataBase’ order by table_rows desc;<br><code>`</code></p></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：</p><figure class="highlight plain"><figcaption><span>FUNCTION IF EXISTS `函数名`;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8. 插入数据：</span><br></pre></td></tr></table></figure><p> insert into tb (field1,field2,field3……) value (val1,val2,val3……);<br> insert into tb (field1,field2,field3……) values (val1,val2,val3……);<br> insert into tb set field1=val1,field2=val2,field3=val3;<br> insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);<br> insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">9. </span>查询数据库中每个表的记录数</span><br></pre></td></tr></table></figure><p> use information_schema;<br> select table_name,table_rows from tables where TABLE_SCHEMA = ‘dataBase’ order by table_rows desc;  </p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">10. mysql查询主键字段名：</span><br><span class="line">```<span class="keyword">SELECT</span> column_name <span class="keyword">FROM</span> INFORMATION_SCHEMA.<span class="string">`KEY_COLUMN_USAGE`</span> <span class="keyword">WHERE</span> table_name=<span class="string">'表名'</span> <span class="keyword">AND</span> constraint_name=<span class="string">'PRIMARY'</span>;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
@@ -435,6 +435,34 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jquery笔记</title>
+    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-06-04T03:43:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：<code>var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;};  length = JsonTemp.length;</code><br> 二维：<code>var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]};  length = Object.keys(JsonTemp).length;</code></li></ol><a id="more"></a>    ]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：&lt;code&gt;var JsonTemp = {&amp;#39;id&amp;#39;:5,&amp;#39;name&amp;#39;:&amp;#39;lilei&amp;#39;};  length = JsonTemp.length;&lt;/code&gt;&lt;br&gt; 二维：&lt;code&gt;var JsonTemp = {[&amp;quot;name&amp;quot;:&amp;quot;张三&amp;quot;,&amp;quot;age&amp;quot;:18],[&amp;quot;name&amp;quot;:&amp;quot;李四&amp;quot;,&amp;quot;age&amp;quot;:19]};  length = Object.keys(JsonTemp).length;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   
@@ -466,34 +494,6 @@
       <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jquery笔记</title>
-    <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-06-04T03:43:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>jquery获取json的长度：<br> 一维：<code>var JsonTemp = {&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;};  length = JsonTemp.length;</code><br> 二维：<code>var JsonTemp = {[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]};  length = Object.keys(JsonTemp).length;</code></li></ol><a id="more"></a>    ]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;jquery获取json的长度：&lt;br&gt; 一维：&lt;code&gt;var JsonTemp = {&amp;#39;id&amp;#39;:5,&amp;#39;name&amp;#39;:&amp;#39;lilei&amp;#39;};  length = JsonTemp.length;&lt;/code&gt;&lt;br&gt; 二维：&lt;code&gt;var JsonTemp = {[&amp;quot;name&amp;quot;:&amp;quot;张三&amp;quot;,&amp;quot;age&amp;quot;:18],[&amp;quot;name&amp;quot;:&amp;quot;李四&amp;quot;,&amp;quot;age&amp;quot;:19]};  length = Object.keys(JsonTemp).length;&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/categories/Jquery/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
     
   </entry>
   

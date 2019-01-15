@@ -39,16 +39,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaScript笔记]]></title>
-    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。 JavaScript不定参数 1234567891011121314151617&lt;html&gt;&lt;head&gt;&lt;title&gt;JavaScript不定参数&lt;/title&gt;&lt;script type="text/javascript"&gt; function test()&#123; console.log(arguments); for( var i = 0; i &lt; arguments.length; i++ )&#123; console.log(arguments[i]); &#125;&#125; &lt;/script&gt;&lt;/head&gt;&lt;body onload="test('one','two','three','four');"&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+    <title><![CDATA[Oracle笔记]]></title>
+    <url>%2Farchives%2FOracle%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[强制并行处理：/*+ monitor parallel(8)*/ plsql查看sql性能：F5 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849 CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := ',') RETURN NUMBER IS l_idx number:=0; -- 用于计算piv_str2中分隔符的位置 str varchar2(500); -- 根据分隔符截取的子字符串 piv_str varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str res number:=0; -- 返回结果 BEGIN -- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1 IF instr(piv_str, p_sep, 1) = 0 THEN IF piv_str = piv_str1 THEN res:= 1; END IF; ELSE -- 循环按分隔符截取piv_str LOOP l_idx := instr(piv_str,p_sep); -- 当piv_str中还有分隔符时 IF l_idx &gt; 0 THEN -- 截取第一个分隔符前的字段str str:= substr(piv_str,1,l_idx-1); -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断 IF str = piv_str1 THEN res:= 1; EXIT; END IF; piv_str := substr(piv_str,l_idx+length(p_sep)); ELSE -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1 IF piv_str = piv_str1 THEN res:= 1; END IF; -- 无论最后是否相等，都跳出循环 EXIT; END IF; END LOOP; -- 结束循环 END IF; -- 返回res RETURN res; END FIND_IN_SET;``` 4. 日期转时间戳函数``` bash create or replace function oracle_to_unix(in_date IN DATE) return number is begin return( (in_date -TO_DATE('19700101','yyyymmdd'))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600); end oracle_to_unix; 时间戳转日期函数 1234create or replace function unix_to_oracle(in_number NUMBER) return date is begin return(TO_DATE('19700101','yyyymmdd') + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24); end unix_to_oracle;]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>Oracle</category>
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>前端</tag>
-        <tag>JavaScript</tag>
+        <tag>Oracle</tag>
       </tags>
   </entry>
   <entry>
@@ -64,15 +63,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Oracle笔记]]></title>
-    <url>%2Farchives%2FOracle%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[强制并行处理：/*+ monitor parallel(8)*/ plsql查看sql性能：F5 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849 CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := ',') RETURN NUMBER IS l_idx number:=0; -- 用于计算piv_str2中分隔符的位置 str varchar2(500); -- 根据分隔符截取的子字符串 piv_str varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str res number:=0; -- 返回结果 BEGIN -- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1 IF instr(piv_str, p_sep, 1) = 0 THEN IF piv_str = piv_str1 THEN res:= 1; END IF; ELSE -- 循环按分隔符截取piv_str LOOP l_idx := instr(piv_str,p_sep); -- 当piv_str中还有分隔符时 IF l_idx &gt; 0 THEN -- 截取第一个分隔符前的字段str str:= substr(piv_str,1,l_idx-1); -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断 IF str = piv_str1 THEN res:= 1; EXIT; END IF; piv_str := substr(piv_str,l_idx+length(p_sep)); ELSE -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1 IF piv_str = piv_str1 THEN res:= 1; END IF; -- 无论最后是否相等，都跳出循环 EXIT; END IF; END LOOP; -- 结束循环 END IF; -- 返回res RETURN res; END FIND_IN_SET;``` 4. 日期转时间戳函数``` bash create or replace function oracle_to_unix(in_date IN DATE) return number is begin return( (in_date -TO_DATE('19700101','yyyymmdd'))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600); end oracle_to_unix; 时间戳转日期函数 1234create or replace function unix_to_oracle(in_number NUMBER) return date is begin return(TO_DATE('19700101','yyyymmdd') + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24); end unix_to_oracle;]]></content>
+    <title><![CDATA[JavaScript笔记]]></title>
+    <url>%2Farchives%2FJavaScript%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果想获取ajax里的function返回值，可用同步ajax。 JavaScript不定参数 1234567891011121314151617&lt;html&gt;&lt;head&gt;&lt;title&gt;JavaScript不定参数&lt;/title&gt;&lt;script type="text/javascript"&gt; function test()&#123; console.log(arguments); for( var i = 0; i &lt; arguments.length; i++ )&#123; console.log(arguments[i]); &#125;&#125; &lt;/script&gt;&lt;/head&gt;&lt;body onload="test('one','two','three','four');"&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
       <categories>
-        <category>Oracle</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
         <tag>笔记</tag>
-        <tag>Oracle</tag>
+        <tag>前端</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -185,26 +185,13 @@
   <entry>
     <title><![CDATA[MySQL笔记]]></title>
     <url>%2Farchives%2FMySQL%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。 mysql删除自定义函数： FUNCTION IF EXISTS `函数名`;```128. 插入数据： insert into tb (field1,field2,field3……) value (val1,val2,val3……); insert into tb (field1,field2,field3……) values (val1,val2,val3……); insert into tb set field1=val1,field2=val2,field3=val3; insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……); insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……); //使用ignore关键字忽略错误 129. 查询数据库中每个表的记录数 use information_schema; select table_name,table_rows from tables where TABLE_SCHEMA = ‘dataBase’ order by table_rows desc;`]]></content>
+    <content type="text"><![CDATA[mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from t_school order by convert(name using gbk); 删除表数据的时候，如果表使用了别名，应该这样写：DELETE a FROM table a; 不使用缓存执行某个查询sql：SELECT SQL_NO_CACHE xx, xx from tb; MySql中Blob与Text的区别 BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。 MyISAM和InnoDB的区别 Innodb 支持事务处理与外键和行级锁； MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。 数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。 mysql删除自定义函数： FUNCTION IF EXISTS `函数名`;```128. 插入数据： insert into tb (field1,field2,field3……) value (val1,val2,val3……); insert into tb (field1,field2,field3……) values (val1,val2,val3……); insert into tb set field1=val1,field2=val2,field3=val3; insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……); insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……); //使用ignore关键字忽略错误 129. 查询数据库中每个表的记录数 use information_schema; select table_name,table_rows from tables where TABLE_SCHEMA = ‘dataBase’ order by table_rows desc; 12310. mysql查询主键字段名：```SELECT column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name='表名' AND constraint_name='PRIMARY';]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
       <tags>
         <tag>笔记</tag>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[CSS笔记]]></title>
-    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
-    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>笔记</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -218,6 +205,19 @@
         <tag>笔记</tag>
         <tag>前端</tag>
         <tag>Jquery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS笔记]]></title>
+    <url>%2Farchives%2FCSS%E7%AC%94%E8%AE%B0.html</url>
+    <content type="text"><![CDATA[如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;} 如果css希望两个标签对齐，可以用position来处理，如：.cntck{position: relative; bottom: -2px;}]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>笔记</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
