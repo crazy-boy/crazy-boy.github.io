@@ -154,7 +154,7 @@
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-11-09T01:49:00.000Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>如果想获取ajax里的function返回值，可用同步ajax。</p><a id="more"></a>    </li><li><p>JavaScript不定参数</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>JavaScript不定参数<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span></span><br><span class="line"><span class="javascript"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++ )&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>[i]);</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"test('one','two','three','four');"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>如果想获取ajax里的function返回值，可用同步ajax。</p><a id="more"></a></li><li><p>JavaScript不定参数</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>JavaScript不定参数<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span></span><br><span class="line"><span class="javascript"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++ )&#123;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="built_in">arguments</span>[i]);</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"> </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"test('one','two','three','four');"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
     
     <summary type="html">
     
@@ -413,32 +413,6 @@
   </entry>
   
   <entry>
-    <title>MySQL笔记</title>
-    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
-    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
-    <published>2018-06-04T03:19:00.000Z</published>
-    <updated>2018-12-11T11:10:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></li></ol><a id="more"></a><ol><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：</p><figure class="highlight plain"><figcaption><span>FUNCTION IF EXISTS `函数名`;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8. 插入数据：</span><br></pre></td></tr></table></figure><p> insert into tb (field1,field2,field3……) value (val1,val2,val3……);<br> insert into tb (field1,field2,field3……) values (val1,val2,val3……);<br> insert into tb set field1=val1,field2=val2,field3=val3;<br> insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);<br> insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="bullet">9. </span>查询数据库中每个表的记录数</span><br></pre></td></tr></table></figure><p> use information_schema;<br> select table_name,table_rows from tables where TABLE_SCHEMA = ‘dataBase’ order by table_rows desc;  </p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">10. mysql查询主键字段名：</span><br><span class="line">```<span class="keyword">SELECT</span> column_name <span class="keyword">FROM</span> INFORMATION_SCHEMA.<span class="string">`KEY_COLUMN_USAGE`</span> <span class="keyword">WHERE</span> table_name=<span class="string">'表名'</span> <span class="keyword">AND</span> constraint_name=<span class="string">'PRIMARY'</span>;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
-    
-    
-      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Jquery笔记</title>
     <link href="https://crazy-boy.github.io/archives/Jquery%E7%AC%94%E8%AE%B0.html"/>
     <id>https://crazy-boy.github.io/archives/Jquery笔记.html</id>
@@ -463,6 +437,31 @@
       <category term="前端" scheme="https://crazy-boy.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Jquery" scheme="https://crazy-boy.github.io/tags/Jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL笔记</title>
+    <link href="https://crazy-boy.github.io/archives/MySQL%E7%AC%94%E8%AE%B0.html"/>
+    <id>https://crazy-boy.github.io/archives/MySQL笔记.html</id>
+    <published>2018-06-04T03:19:00.000Z</published>
+    <updated>2018-12-11T11:10:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>mysql根据汉字首字母排序的方法<br> utf8_general_ci编码：<code>select * from t_school order by convert(name using gbk);</code></p><a id="more"></a></li><li><p>删除表数据的时候，如果表使用了别名，应该这样写：<code>DELETE a FROM table a;</code></p></li><li><p>不使用缓存执行某个查询sql：<code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p></li><li><p>MySql中Blob与Text的区别<br> BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p></li><li><p>MyISAM和InnoDB的区别<br> Innodb 支持事务处理与外键和行级锁；<br> MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p></li><li><p>数据库恢复是指通过技术手段，将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p></li><li><p>mysql删除自定义函数：</p><figure class="highlight plain"><figcaption><span>FUNCTION IF EXISTS `函数名`;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">8. 插入数据：</span><br><span class="line">``` insert into tb (field1,field2,field3……) value (val1,val2,val3……);</span><br><span class="line">insert into tb (field1,field2,field3……) values (val1,val2,val3……);</span><br><span class="line">insert into tb set field1=val1,field2=val2,field3=val3;</span><br><span class="line">insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);</span><br><span class="line">insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);//使用ignore关键字忽略错误</span><br></pre></td></tr></table></figure></li><li><p>查询数据库中每个表的记录数：</p><figure class="highlight plain"><figcaption><span>information_schema;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select table_name,table_rows from tables where TABLE_SCHEMA = &apos;dataBase&apos; order by table_rows desc;</span><br></pre></td></tr></table></figure></li><li><p>mysql查询主键字段名：</p><figure class="highlight plain"><figcaption><span>column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">11. mysql查询所有字段名：</span><br><span class="line">``` SELECT column_name FROM information_schema.columns WHERE table_name=&apos;表名&apos;;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;mysql根据汉字首字母排序的方法&lt;br&gt; utf8_general_ci编码：&lt;code&gt;select * from t_school order by convert(name using gbk);&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/categories/MySQL/"/>
+    
+    
+      <category term="笔记" scheme="https://crazy-boy.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="MySQL" scheme="https://crazy-boy.github.io/tags/MySQL/"/>
     
   </entry>
   
