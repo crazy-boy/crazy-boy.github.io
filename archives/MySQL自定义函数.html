@@ -436,9 +436,10 @@
         <p>有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：</p>
 <a id="more"></a>
 <ol>
-<li>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</li>
+<li><p>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</p>
+ <figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">DROP <span class="function"><span class="keyword">FUNCTION</span> <span class="title">IF</span> <span class="title">EXISTS</span> `<span class="title">SPLIT_STR</span>`;</span> </span><br><span class="line">delimiter $$</span><br><span class="line"><span class="keyword">CREATE</span> <span class="function"><span class="keyword">FUNCTION</span> <span class="title">SPLIT_STR</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  x VARCHAR(255)</span>,</span></span><br><span class="line"><span class="function">  <span class="title">delim</span> <span class="title">VARCHAR</span><span class="params">(12)</span>,</span></span><br><span class="line"><span class="function">  <span class="title">pos</span> <span class="title">INT</span></span></span><br><span class="line"><span class="function">)</span></span><br><span class="line"><span class="function"><span class="title">RETURNS</span> <span class="title">VARCHAR</span><span class="params">(255)</span></span></span><br><span class="line"><span class="function">    </span></span><br><span class="line"><span class="function"><span class="title">BEGIN</span></span></span><br><span class="line"><span class="function">    <span class="title">DECLARE</span> <span class="title">i</span> <span class="title">INT</span> <span class="title">DEFAULT</span> 0;</span></span><br><span class="line">    DECLARE s text <span class="keyword">DEFAULT</span> <span class="string">''</span>;</span><br><span class="line">    myloop: <span class="keyword">LOOP</span></span><br><span class="line">        <span class="keyword">SET</span> i = i+pos;</span><br><span class="line">        <span class="keyword">SET</span> s = <span class="keyword">CONCAT</span>(s,delim,left(x,pos));</span><br><span class="line">        <span class="keyword">SET</span> x = right(x,length(x)-pos);</span><br><span class="line">        <span class="keyword">if</span> pos&gt;length(x) <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">if</span> length(x)&gt;<span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">                <span class="keyword">SET</span> s = <span class="keyword">CONCAT</span>(s,delim,x);</span><br><span class="line">            <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">            leave myloop;</span><br><span class="line">        <span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">    <span class="keyword">END</span> <span class="keyword">LOOP</span> myloop;</span><br><span class="line">RETURN right(s,length(s)-length(delim));</span><br><span class="line"><span class="keyword">END</span> $$</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">DROP <span class="function"><span class="keyword">FUNCTION</span> <span class="title">IF</span> <span class="title">EXISTS</span> `<span class="title">SPLIT_STR</span>`;</span> </span><br><span class="line">delimiter $$</span><br><span class="line"><span class="keyword">CREATE</span> <span class="function"><span class="keyword">FUNCTION</span> <span class="title">SPLIT_STR</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">  x VARCHAR(255)</span>,</span></span><br><span class="line"><span class="function">  <span class="title">delim</span> <span class="title">VARCHAR</span><span class="params">(12)</span>,</span></span><br><span class="line"><span class="function">  <span class="title">pos</span> <span class="title">INT</span></span></span><br><span class="line"><span class="function">)</span></span><br><span class="line"><span class="function"><span class="title">RETURNS</span> <span class="title">VARCHAR</span><span class="params">(255)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">BEGIN</span></span></span><br><span class="line"><span class="function">	<span class="title">DECLARE</span> <span class="title">i</span> <span class="title">INT</span> <span class="title">DEFAULT</span> 0;</span></span><br><span class="line">	DECLARE s text <span class="keyword">DEFAULT</span> <span class="string">''</span>;</span><br><span class="line">	myloop: <span class="keyword">LOOP</span></span><br><span class="line">		<span class="keyword">SET</span> i = i+pos;</span><br><span class="line">		<span class="keyword">SET</span> s = <span class="keyword">CONCAT</span>(s,delim,left(x,pos));</span><br><span class="line">		<span class="keyword">SET</span> x = right(x,length(x)-pos);</span><br><span class="line">		<span class="keyword">if</span> pos&gt;length(x) <span class="keyword">then</span></span><br><span class="line">			<span class="keyword">if</span> length(x)&gt;<span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">				<span class="keyword">SET</span> s = <span class="keyword">CONCAT</span>(s,delim,x);</span><br><span class="line">			<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">			leave myloop;</span><br><span class="line">		<span class="keyword">end</span> <span class="keyword">if</span>;</span><br><span class="line">	<span class="keyword">END</span> <span class="keyword">LOOP</span> myloop;</span><br><span class="line">RETURN right(s,length(s)-length(delim));</span><br><span class="line"><span class="keyword">END</span> $$</span><br></pre></td></tr></table></figure>
 <p>调用：<code>SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);</code></p>
 
       
@@ -566,7 +567,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -577,7 +578,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -588,7 +589,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -690,7 +691,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.3k字</span>
+  <span class="post-count">博客全站共4.4k字</span>
 </div>
 
         

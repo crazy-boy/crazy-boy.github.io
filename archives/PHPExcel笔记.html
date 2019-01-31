@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="设置字体和样式：$objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&apos;A1&apos;)-&amp;gt;applyFromArray([&apos;font&apos;=&amp;gt;[&apos;bold&apos;=&amp;gt;true]]);            //设置单元格A1字体加粗 $objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&apos;A1:GL1&apos;)-&amp;gt;">
+<meta name="description" content="设置字体和样式： ` bash $objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&amp;apos;A1&amp;apos;)-&amp;gt;applyFromArray([&amp;apos;font&amp;apos;=&amp;gt;[&amp;apos;bold&amp;apos;=&amp;gt;true]]);            //设置单元格A1字体加粗 $objPHPExcel-&amp;gt;getAct">
 <meta name="keywords" content="笔记,Excel,PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHPExcel笔记">
 <meta property="og:url" content="https://crazy-boy.github.io/archives/PHPExcel笔记.html">
 <meta property="og:site_name" content="飞奔的蜗牛">
-<meta property="og:description" content="设置字体和样式：$objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&apos;A1&apos;)-&amp;gt;applyFromArray([&apos;font&apos;=&amp;gt;[&apos;bold&apos;=&amp;gt;true]]);            //设置单元格A1字体加粗 $objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&apos;A1:GL1&apos;)-&amp;gt;">
+<meta property="og:description" content="设置字体和样式： ` bash $objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&amp;apos;A1&amp;apos;)-&amp;gt;applyFromArray([&amp;apos;font&amp;apos;=&amp;gt;[&amp;apos;bold&amp;apos;=&amp;gt;true]]);            //设置单元格A1字体加粗 $objPHPExcel-&amp;gt;getAct">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-11-06T05:52:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHPExcel笔记">
-<meta name="twitter:description" content="设置字体和样式：$objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&apos;A1&apos;)-&amp;gt;applyFromArray([&apos;font&apos;=&amp;gt;[&apos;bold&apos;=&amp;gt;true]]);            //设置单元格A1字体加粗 $objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&apos;A1:GL1&apos;)-&amp;gt;">
+<meta name="twitter:description" content="设置字体和样式： ` bash $objPHPExcel-&amp;gt;getActiveSheet()-&amp;gt;getStyle(&amp;apos;A1&amp;apos;)-&amp;gt;applyFromArray([&amp;apos;font&amp;apos;=&amp;gt;[&amp;apos;bold&amp;apos;=&amp;gt;true]]);            //设置单元格A1字体加粗 $objPHPExcel-&amp;gt;getAct">
 
 
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  114
+                  115
                 </span>
               
 
@@ -434,11 +434,12 @@
 
       
         <ol>
-<li>设置字体和样式：<pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1'</span>)-&gt;applyFromArray([<span class="string">'font'</span>=&gt;[<span class="string">'bold'</span>=&gt;<span class="literal">true</span>]]);            //设置单元格A1字体加粗
-<span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1:GL1'</span>)-&gt;applyFromArray([<span class="string">'font'</span>=&gt;[<span class="string">'bold'</span>=&gt;<span class="literal">true</span>]]);        //设置单元格A1-GL1字体加粗
-<span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A1:B3'</span>)-&gt;getFont()-&gt;setBold(<span class="literal">true</span>);                        //设置A1-B3之间的单元格字体加粗
-</code></pre>
-<a id="more"></a>    </li>
+<li><p>设置字体和样式：<br> <code>`</code> bash</p>
+<pre><code>$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1&apos;)-&gt;applyFromArray([&apos;font&apos;=&gt;[&apos;bold&apos;=&gt;true]]);            //设置单元格A1字体加粗
+$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:GL1&apos;)-&gt;applyFromArray([&apos;font&apos;=&gt;[&apos;bold&apos;=&gt;true]]);        //设置单元格A1-GL1字体加粗
+$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:B3&apos;)-&gt;getFont()-&gt;setBold(true);                        //设置A1-B3之间的单元格字体加粗
+</code></pre><p> <code>`</code> <a id="more"></a>    </p>
+</li>
 <li><p>设置行高：</p>
 <pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getDefaultRowDimension()-&gt;setRowHeight(20);                            //设置默认行高
 <span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getRowDimension(<span class="string">'1'</span>)-&gt;setRowHeight(30);                                //设置第一行行高
@@ -502,6 +503,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/Prolog笔记.html" rel="prev" title="Prolog笔记">
+                Prolog笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -573,7 +578,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +589,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -595,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -697,7 +702,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.3k字</span>
+  <span class="post-count">博客全站共4.4k字</span>
 </div>
 
         
