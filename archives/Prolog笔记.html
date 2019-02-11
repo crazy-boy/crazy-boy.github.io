@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  119
+                  296
                 </span>
               
 
@@ -444,12 +444,31 @@
 <li><p>CLP（约束逻辑编程）库的使用：求解方程，CLP只能处理整数运算</p>
  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?- use_module(library(clpfd)).</span><br><span class="line">?- Y #= <span class="number">3</span>+<span class="number">4.</span>                    %Y = <span class="number">7.</span></span><br><span class="line">?- <span class="number">5</span> #= <span class="number">4</span>+W.                    %W = <span class="number">1.</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果有多个解答结果时，可以通过输入分号获取下一组结果，输入点号结束获取结果</p>
-</li>
 <li><p>单行注释使用”%”</p>
 </li>
+<li><p>事实 + 规则 = 知识库。       事实是我们对这个世界直接观察的结果。规则是关于现实世界的逻辑推论。</p>
+</li>
+<li><p>合一（unification）：找出那些使规则匹配的值。<br>合一有时候不是唯一的，可以通过“;”来进行追问，有时候我们可能不满足于一个答案。</p>
+</li>
+<li><p>程序 = 算法 + 数据结构。      列表是变长的容器，元组是定长的容器。</p>
+ <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?- (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).               %元组</span><br><span class="line">yes</span><br><span class="line"></span><br><span class="line">?- [A,B,C] = [A,B,C].               %列表</span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内置谓词</p>
+<ol>
+<li><p>length：获取列表的长度   <code>?- length([1,2,3],L).      %L = 3.</code></p>
+</li>
+<li><p>append：可以用来合并两个列表   </p>
+ <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?- append([<span class="number">1</span>],[<span class="number">2</span>],What).      %What = [<span class="number">1</span>, <span class="number">2</span>].</span><br><span class="line">?- append([<span class="number">1</span>],W,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]).      %W = [<span class="number">2</span>, <span class="number">3</span>].</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-
+</li>
+</ol>
+<pre><code>3. member：检查某一个值是否在一个列表内  
+    ```
+    ?- member(1,[1,2]).      %true.
+    ?-  member(3,[1,2]).      %false.
+    ``` 
+</code></pre>
       
     </div>
     
@@ -699,7 +718,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.5k字</span>
+  <span class="post-count">博客全站共4.7k字</span>
 </div>
 
         
