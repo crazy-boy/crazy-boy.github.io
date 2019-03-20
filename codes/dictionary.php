@@ -10,7 +10,7 @@ $dbpassword = "root";
 $database   = "demodb";
 
 //其他配置
-$mysql_conn = @mysql_connect("$dbserver", "$dbusername", "$dbpassword") or die("Mysql connect is error.");
+$mysql_conn = @mysql_connect($dbserver, $dbusername, $dbpassword) or die("Mysql connect is error.");
 mysql_select_db($database, $mysql_conn);
 mysql_query('SET NAMES utf8', $mysql_conn);
 $table_result = mysql_query('show tables', $mysql_conn);
@@ -26,7 +26,7 @@ while($row = mysql_fetch_array($table_result)){
 }
 //替换所以表的表前缀
 if(!empty($_GET['prefix'])){ 
-	$prefix = 'czzj';
+	$prefix = 'wxaj';
 	foreach($tables as $key => $val){
 		$tableName = $val['TABLE_NAME'];
 		$string = explode('_',$tableName);
@@ -50,12 +50,23 @@ foreach ($tables as $k=>$v) {
         $tables[$k]['TABLE_COMMENT'] = $t['TABLE_COMMENT'];
     }
 
+    $sql  = 'SELECT column_name FROM ';
+    $sql .= 'INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` ';
+    $sql .= 'WHERE ';
+    $sql .= "table_name = '{$v['TABLE_NAME']}'  AND constraint_name = 'PRIMARY'";
+    $pk_result = mysql_query($sql, $mysql_conn);
+    $pks = [];
+    while ($t = mysql_fetch_array($pk_result) ) {
+        $pks[] = $t['column_name'];
+    }
+    $tables[$k]['PRIMARY_KEY'] = $pks;
+
     $sql  = 'SELECT * FROM ';
     $sql .= 'INFORMATION_SCHEMA.COLUMNS ';
     $sql .= 'WHERE ';
     $sql .= "table_name = '{$v['TABLE_NAME']}' AND table_schema = '{$database}'";
 
-    $fields = array();
+    $fields = [];
     $field_result = mysql_query($sql, $mysql_conn);
     while ($t = mysql_fetch_array($field_result) ) {
         $fields[] = $t;
@@ -77,6 +88,7 @@ foreach ($tables as $k=>$v) {
 	$html .= '				<th>默认值</th>'."\n";
 	$html .= '				<th>允许非空</th>'."\n";
 	$html .= '				<th>自动递增</th>'."\n";
+	$html .= '				<th>是否主键</th>'."\n";
 	$html .= '				<th>备注</th>'."\n";
 	$html .= '			</tr>'."\n";
 
@@ -91,7 +103,8 @@ foreach ($tables as $k=>$v) {
 			$html .= '				<td class="c3">' . $f['COLUMN_DEFAULT'] . '</td>'."\n";
 			$html .= '				<td class="c4">' . $f['IS_NULLABLE'] . '</td>'."\n";
 			$html .= '				<td class="c5">' . ($f['EXTRA']=='auto_increment'?'是':'&nbsp;') . '</td>'."\n";
-			$html .= '				<td class="c6">' . $f['COLUMN_COMMENT'] . '</td>'."\n";
+			$html .= '				<td class="c6">' . (in_array($f['COLUMN_NAME'],$v['PRIMARY_KEY'])?'是':'&nbsp;') . '</td>'."\n";
+			$html .= '				<td class="c7">' . $f['COLUMN_COMMENT'] . '</td>'."\n";
 			$html .= '			</tr>'."\n";
 		}
     }
@@ -107,7 +120,7 @@ foreach ($tables as $k=>$v) {
 <html>
 <head>
 <meta charset="utf-8">
-<title>XX系统数据字典</title>
+<title>数据字典</title>
 <meta name="generator" content="ThinkDb V1.0" />
 <meta name="author" content="Crazy_boy" />
 <meta name="copyright" content="2014-208 zotuo.com" />
@@ -123,12 +136,13 @@ table td { height: 20px; font-size: 14px; border: 1px solid #CCC; background-col
 .c3 { width: 150px; }
 .c4 { width: 80px; text-align:center;}
 .c5 { width: 80px; text-align:center;}
-.c6 { width: 270px; }
+.c6 { width: 80px; text-align:center;}
+.c7 { width: 270px; }
 </style>
 </head>
 <body>
 <div class="warp">
-	<h1 style="text-align:center;">XX系统数据字典</h1>
+	<h1 style="text-align:center;">数据字典</h1>
 <?php echo $html; ?>
 </div>
 </body>
