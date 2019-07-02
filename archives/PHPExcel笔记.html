@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  115
+                  151
                 </span>
               
 
@@ -447,6 +447,11 @@ $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:B3&apos;)-&gt;getFont()-
 </li>
 <li><p>设置列宽：</p>
 <pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getColumnDimension(<span class="string">'A'</span>)-&gt;setWidth(20);                                //设置A列列宽
+</code></pre>
+</li>
+<li><p>单元格内容特定位置换行：</p>
+<pre><code class="bash"><span class="variable">$objPHPExcel</span>-&gt;setActiveSheetIndex(0)-&gt;setCellValue(<span class="string">'A3'</span>, <span class="string">"第三节\n11:00-12:00"</span>);   //注意双引号
+<span class="variable">$objPHPExcel</span>-&gt;getActiveSheet()-&gt;getStyle(<span class="string">'A3'</span>)-&gt;getAlignment()-&gt;setWrapText(<span class="literal">true</span>);
 </code></pre>
 </li>
 </ol>
@@ -578,7 +583,7 @@ $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:B3&apos;)-&gt;getFont()-
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +594,7 @@ $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:B3&apos;)-&gt;getFont()-
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -600,7 +605,7 @@ $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:B3&apos;)-&gt;getFont()-
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -702,7 +707,7 @@ $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle(&apos;A1:B3&apos;)-&gt;getFont()-
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.9k字</span>
+  <span class="post-count">博客全站共5.5k字</span>
 </div>
 
         
