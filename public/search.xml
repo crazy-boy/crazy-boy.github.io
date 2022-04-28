@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>代码规范建议</title>
+      <link href="/2022/04/28/dai-ma-gui-fan-jian-yi/"/>
+      <url>/2022/04/28/dai-ma-gui-fan-jian-yi/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：</p> <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">        <span class="token keyword">function</span> test<span class="token punctuation">(</span><span class="token variable">$age</span> <span class="token operator">=</span> <span class="token number">21</span>, <span class="token variable">$id</span>, <span class="token variable">$options</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             print_r<span class="token punctuation">(</span>func_get_args<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span>    ``<span class="token variable"><span class="token variable">`</span> <span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token function">more</span> --<span class="token operator">&gt;</span>上述代码在IDE中会对$age<span class="token operator">=</span><span class="token number">21</span>，提示“Optional parameter is provided before required”，应改为：    <span class="token variable">`</span></span>`` <span class="token function">bash</span>        <span class="token keyword">function</span> test<span class="token punctuation">(</span><span class="token variable">$id</span>, <span class="token variable">$age</span> <span class="token operator">=</span> <span class="token number">21</span>, <span class="token variable">$options</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>             print_r<span class="token punctuation">(</span>func_get_args<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>         <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>常用的四种命名格式：驼峰、帕斯卡、蛇形、串形，主要是为了解决多个单词之间的空格问题。<br>驼峰命名（Camel Case），又叫小驼峰，除了第一个单词，其他单词首字母大写：<br>原始：last login time<br>驼峰：lastLoginTime<br>帕斯卡（Pascal Case），又叫大驼峰，跟驼峰命名很像，只不过所有单词首字母都需要大写：<br>原始：last login time<br>帕斯卡：LastLoginTime<br>蛇形（Snake Case），全由小写字母和下划线组成，是指用下划线(_)作用单词间的分隔符：<br>原始：last login time<br>蛇形：last_login_time<br>串行（Kebab Case），又叫脊柱命名法（spinal case），是指用短横线(-)作用单词间的分隔符：<br>原始：last login time<br>串行：last-login-time<br>一般而言，函数名或方法名采用小驼峰，类名采用大驼峰，数据库字段名采用蛇形。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 代码规范 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/04/28/hello-world/"/>
       <url>/2022/04/28/hello-world/</url>
@@ -563,33 +590,6 @@
     
     
     <entry>
-      <title>架构学习</title>
-      <link href="/2018/06/05/jia-gou-xue-xi/"/>
-      <url>/2018/06/05/jia-gou-xue-xi/</url>
-      
-        <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><span id="more"></span>]]></content>
-      
-      
-      <categories>
-          
-          <category> 架构 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 软件架构 </tag>
-            
-            <tag> 架构 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>高德地图API使用</title>
       <link href="/2018/06/05/gao-de-di-tu-api-shi-yong/"/>
       <url>/2018/06/05/gao-de-di-tu-api-shi-yong/</url>
@@ -609,6 +609,33 @@
             <tag> 高德地图 </tag>
             
             <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>架构学习</title>
+      <link href="/2018/06/05/jia-gou-xue-xi/"/>
+      <url>/2018/06/05/jia-gou-xue-xi/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>架构设计的主要目的是为了解决软件系统复杂度带来的问题。</p></li><li><p>架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。</p></li><li><p>架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。</p></li></ol><span id="more"></span>]]></content>
+      
+      
+      <categories>
+          
+          <category> 架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件架构 </tag>
+            
+            <tag> 架构 </tag>
             
         </tags>
       
