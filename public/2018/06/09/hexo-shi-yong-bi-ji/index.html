@@ -9,8 +9,9 @@
 
 
 常用命令
-清除当前缓存        $ hexo clean
-重新生成并部署到github上        $ hexo">
+清除当前缓存		$ hexo clean
+重新生成并部署到github上		$ hexo g -d
+启动服务		">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -108,20 +109,9 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -261,20 +251,9 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -607,24 +586,24 @@
 <span id="more"></span>
 
 <h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol>
-<li>清除当前缓存        <code>$ hexo clean</code></li>
-<li>重新生成并部署到github上        <code>$ hexo g -d</code></li>
-<li>启动服务        <code> $ hexo s</code></li>
-<li>新建页面        <code>$ hexo new page categories</code></li>
+<li>清除当前缓存		<code>$ hexo clean</code></li>
+<li>重新生成并部署到github上		<code>$ hexo g -d</code></li>
+<li>启动服务		<code> $ hexo s</code></li>
+<li>新建页面		<code>$ hexo new page categories</code></li>
 </ol>
 <h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol>
 <li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p>
 <ol>
 <li>在文章中使用 <!-- more --> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li>
 <li>在文章的 <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">front-matter</a> 中添加 description，并提供文章摘录</li>
-<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">auto_excerpt:
+<li>自动形成摘要，在 主题配置文件_config.yml 中添加： <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">auto_excerpt:
   enable: <span class="token boolean">true</span>
-  length: <span class="token number">150</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-默认截取的长度为 150 字符，可以根据需要自行设定。</li>
+  length: <span class="token number">150</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 </li>
 </ol>
-<p>建议使用 <!-- more -->方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>
+<p>默认截取的长度为 150 字符，可以根据需要自行设定。</p>
+<p>建议使用 <!-- more -->方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。	</p>
 
                 
             </div>
@@ -1334,7 +1313,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

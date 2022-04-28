@@ -106,20 +106,9 @@ mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from 
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -259,20 +248,9 @@ mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from 
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -620,9 +598,11 @@ mysql根据汉字首字母排序的方法 utf8_general_ci编码：select * from 
  <pre class="line-numbers language-insert" data-language="insert"><div class="caption"><span>into tb (field1,field2,field3……) value (val1,val2,val3……);</span></div><code class="language-insert">insert into tb (field1,field2,field3……) values (val1,val2,val3……);
 insert into tb set field1=val1,field2=val2,field3=val3;
 insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);
-insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);		//使用ignore关键字忽略错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);		//使用ignore关键字忽略错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>查询数据库中每个表的记录数：</p>
- <pre class="line-numbers language-use" data-language="use"><div class="caption"><span>information_schema;</span></div><code class="language-use">select table_name,table_rows from tables where TABLE_SCHEMA = 'dataBase' order by table_rows desc;  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-use" data-language="use"><div class="caption"><span>information_schema;</span></div><code class="language-use">select table_name,table_rows from tables where TABLE_SCHEMA = 'dataBase' order by table_rows desc;  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>mysql查询主键字段名：<br><code> SELECT column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name='表名' AND constraint_name='PRIMARY';</code></p>
 </li>
 <li><p>mysql查询所有字段名：<br><code> SELECT column_name FROM information_schema.columns WHERE table_name='表名';</code></p>
@@ -1349,7 +1329,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

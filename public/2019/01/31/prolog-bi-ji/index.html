@@ -108,20 +108,9 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -261,20 +250,9 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -613,7 +591,8 @@
 <li><p>CLP（约束逻辑编程）库的使用：求解方程，CLP只能处理整数运算</p>
  <pre class="line-numbers language-none"><code class="language-none">?- use_module(library(clpfd)).
 ?- Y #= 3+4.                    %Y = 7.
-?- 5 #= 4+W.                    %W = 1.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+?- 5 #= 4+W.                    %W = 1.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>单行注释使用”%”</p>
 </li>
 <li><p>事实 + 规则 = 知识库。       事实是我们对这个世界直接观察的结果。规则是关于现实世界的逻辑推论。</p>
@@ -625,13 +604,18 @@
 yes
 
 ?- [A,B,C] = [A,B,C].               %列表
-yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>内置谓词</p>
 <ol>
-<li>length：获取列表的长度   <code>?- length([1,2,3],L).      %L = 3.</code></li>
-<li>append：可以用来合并两个列表    <pre class="line-numbers language-none"><code class="language-none">?- append([1],[2],What).      %What = [1, 2].
-?- append([1],W,[1,2,3]).      %W = [2, 3].<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>member：检查某一个值是否在一个列表内   <pre class="line-numbers language-none"><code class="language-none">?- member(1,[1,2]).      %true.
+<li><p>length：获取列表的长度   <code>?- length([1,2,3],L).      %L = 3.</code></p>
+</li>
+<li><p>append：可以用来合并两个列表   </p>
+ <pre class="line-numbers language-none"><code class="language-none">?- append([1],[2],What).      %What = [1, 2].
+?- append([1],W,[1,2,3]).      %W = [2, 3].<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>member：检查某一个值是否在一个列表内  </p>
+ <pre class="line-numbers language-none"><code class="language-none">?- member(1,[1,2]).      %true.
 ?-  member(3,[1,2]).      %false.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ol>
 </li>
@@ -1352,7 +1336,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

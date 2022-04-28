@@ -8,7 +8,8 @@
     <meta name="description" content="有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：
 
 
-批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式： ">
+批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -106,20 +107,9 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -259,20 +249,9 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -604,7 +583,8 @@
                 <p>有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：</p>
 <span id="more"></span>
 <ol>
-<li>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式： <pre class="line-numbers language-none"><code class="language-none">DROP FUNCTION IF EXISTS `SPLIT_STR`; 
+<li><p>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</p>
+ <pre class="line-numbers language-none"><code class="language-none">DROP FUNCTION IF EXISTS `SPLIT_STR`; 
 delimiter $$
 CREATE FUNCTION SPLIT_STR(
   x VARCHAR(255),
@@ -628,9 +608,9 @@ BEGIN
         end if;
     END LOOP myloop;
 RETURN right(s,length(s)-length(delim));
-END $$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-调用：<code>SELECT SPLIT_STR('FEEED305904B', ':', 2);</code></li>
+END $$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
+<p>调用：<code>SELECT SPLIT_STR('FEEED305904B', ':', 2);</code></p>
 
                 
             </div>
@@ -1350,7 +1330,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

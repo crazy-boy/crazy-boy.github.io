@@ -9,8 +9,9 @@
 
 如果服务器不支持rz命令，需安装：
  sudo yum -y install lrzsz
+
 从客户端上传文件(可多选)到服务器：
- su">
+ s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -108,20 +109,9 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -261,20 +251,9 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -610,12 +589,15 @@
                 <p>我们常常需要在客户端和服务器(windows和linux)之间互传文件，这就可以使用rz(sz)命令。<br><escape><span id="more"></span></escape></p>
 <ol>
 <li><p>如果服务器不支持rz命令，需安装：</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> yum -y <span class="token function">install</span> lrzsz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> yum -y <span class="token function">install</span> lrzsz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>从客户端上传文件(可多选)到服务器：</p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> rz
-<span class="token function">sudo</span> rz -be<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<span class="token function">sudo</span> rz -be<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 <li><p>从服务端发送文件到客户端：</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> sz filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> sz filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>卸载rz：</p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum remove lrzsz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
@@ -1334,7 +1316,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

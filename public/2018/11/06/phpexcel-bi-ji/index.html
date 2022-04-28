@@ -105,20 +105,9 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -258,20 +247,9 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -614,9 +592,11 @@
 <span class="token number">2</span>. 设置行高：
     <span class="token variable">`</span></span>`` <span class="token function">bash</span>
         <span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>getActiveSheet<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getDefaultRowDimension<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setRowHeight<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>							//设置默认行高
-        <span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>getActiveSheet<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getRowDimension<span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setRowHeight<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>								//设置第一行行高<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+        <span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>getActiveSheet<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getRowDimension<span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setRowHeight<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>								//设置第一行行高<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>设置列宽：</p>
- <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>getActiveSheet<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getColumnDimension<span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setWidth<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>								//设置A列列宽<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>getActiveSheet<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getColumnDimension<span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setWidth<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>								//设置A列列宽<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
 <li><p>单元格内容特定位置换行：</p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>setActiveSheetIndex<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setCellValue<span class="token punctuation">(</span><span class="token string">'A3'</span>, <span class="token string">"第三节<span class="token entity" title="\n">\n</span>11:00-12:00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   //注意双引号
 <span class="token variable">$objPHPExcel</span>-<span class="token operator">&gt;</span>getActiveSheet<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getStyle<span class="token punctuation">(</span><span class="token string">'A3'</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>getAlignment<span class="token punctuation">(</span><span class="token punctuation">)</span>-<span class="token operator">&gt;</span>setWrapText<span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
@@ -1337,7 +1317,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

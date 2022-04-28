@@ -103,20 +103,9 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -256,20 +245,9 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -665,7 +643,8 @@
                                     有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：
 
 
-批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式： 
+批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：
+
                                 
                             </div>
                             <div class="publish-info">
@@ -732,14 +711,14 @@
                             <div class="summary block-with-text">
                                 
                                     通过php代码生成MySQL数据字典，代码如下：
-    
+	
 &lt;?php
 /**
  * 生成mysql数据字典
  */
 header("Content-type: text/html; charset=utf-8");
 //配置数据库
-
+$db
                                 
                             </div>
                             <div class="publish-info">
@@ -940,8 +919,9 @@ plsql查看sql性能：F5
                             <div class="summary block-with-text">
                                 
                                     
-心跳包机制：主要也就是用于长连接的保活和断线处理。    
+心跳包机制：主要也就是用于长连接的保活和断线处理。
 
+	
 
                                 
                             </div>
@@ -1265,8 +1245,9 @@ Google 等搜索引擎最终都会
 
 
 常用命令
-编译文件生成网页        gitbook build
-启动服务         gitbook
+编译文件生成网页		gitbook build
+启动服务		 gitbook serve
+安装可以参
                                 
                             </div>
                             <div class="publish-info">
@@ -1329,8 +1310,9 @@ Google 等搜索引擎最终都会
 
 
 常用命令
-清除当前缓存        $ hexo clean
-重新生成并部署到github上        $ hexo
+清除当前缓存		$ hexo clean
+重新生成并部署到github上		$ hexo g -d
+启动服务		
                                 
                             </div>
                             <div class="publish-info">
@@ -1646,7 +1628,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 

@@ -109,20 +109,9 @@ plsql查看sql性能：F5
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
       
       <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
     </a>
     
   </li>
@@ -262,20 +251,9 @@ plsql查看sql性能：F5
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-user-circle-o"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -649,12 +627,14 @@ END LOOP<span class="token punctuation">;</span>
 END IF<span class="token punctuation">;</span>
 -- 返回res
 RETURN res<span class="token punctuation">;</span>
-END FIND_IN_SET<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+END FIND_IN_SET<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>日期转时间戳函数</p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">create or replace <span class="token keyword">function</span> oracle_to_unix<span class="token punctuation">(</span>in_date IN DATE<span class="token punctuation">)</span> <span class="token builtin class-name">return</span> number is
     begin 
         return<span class="token punctuation">(</span> <span class="token punctuation">(</span>in_date -TO_DATE<span class="token punctuation">(</span><span class="token string">'19700101'</span>,<span class="token string">'yyyymmdd'</span><span class="token punctuation">))</span>*86400 - TO_NUMBER<span class="token punctuation">(</span>SUBSTR<span class="token punctuation">(</span>TZ_OFFSET<span class="token punctuation">(</span>sessiontimezone<span class="token punctuation">)</span>,1,3<span class="token punctuation">))</span>*3600<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    end oracle_to_unix<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+    end oracle_to_unix<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 <li><p>时间戳转日期函数</p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">create or replace <span class="token keyword">function</span> unix_to_oracle<span class="token punctuation">(</span>in_number NUMBER<span class="token punctuation">)</span> <span class="token builtin class-name">return</span> <span class="token function">date</span> is
     begin
@@ -1379,7 +1359,6 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="/js/FunnyTitle.js"></script>
 
     
 
