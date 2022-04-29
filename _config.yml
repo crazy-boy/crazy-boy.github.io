@@ -106,7 +106,9 @@ theme: matery
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:crazy-boy/crazy-boy.github.io.git
+  repo: 
+    github: https://github.com/crazy-boy/crazy-boy.github.io.git
+    gitee: https://gitee.com/crazy-pb/blog.git
   branch: master
 
 search:
