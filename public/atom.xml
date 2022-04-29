@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-04-28T15:28:13.111Z</updated>
+  <updated>2022-04-28T09:21:00.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://crazy-boy.com/2022/04/28/hello-world/"/>
-    <id>https://crazy-boy.com/2022/04/28/hello-world/</id>
-    <published>2022-04-28T15:28:13.111Z</published>
-    <updated>2022-04-28T15:28:13.111Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>代码规范建议</title>
@@ -63,6 +42,27 @@
     <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="代码规范" scheme="https://crazy-boy.com/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://crazy-boy.com/2022/04/28/hello-world/"/>
+    <id>https://crazy-boy.com/2022/04/28/hello-world/</id>
+    <published>2022-04-28T02:48:49.409Z</published>
+    <updated>2022-04-28T02:47:48.460Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
     
   </entry>
   

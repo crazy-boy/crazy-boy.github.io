@@ -103,9 +103,20 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle-o" style="zoom: 0.6;"></i>
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
       <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
     </a>
     
   </li>
@@ -245,9 +256,20 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle-o"></i>
+			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -687,7 +709,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"其他","value":1},{"name":"CSS","value":1},{"name":"Docker","value":1},{"name":"Excel","value":1},{"name":"GitBook","value":1},{"name":"Git","value":1},{"name":"Go","value":1},{"name":"Hexo","value":1},{"name":"JavaScript","value":3},{"name":"Jquery","value":1},{"name":"Linux","value":2},{"name":"Markdown","value":1},{"name":"MySQL","value":4},{"name":"Oracle","value":1},{"name":"PHP","value":4},{"name":"Prolog","value":1},{"name":"R","value":1},{"name":"SEO","value":1},{"name":"安全","value":1},{"name":"书籍","value":1},{"name":"编程","value":1},{"name":"插件","value":1},{"name":"工具","value":1},{"name":"心跳","value":1},{"name":"架构","value":1},{"name":"地图API","value":1}],
+                data: [{"name":"其他","value":1},{"name":"CSS","value":1},{"name":"Docker","value":1},{"name":"Excel","value":1},{"name":"Git","value":1},{"name":"GitBook","value":1},{"name":"Go","value":1},{"name":"Hexo","value":1},{"name":"JavaScript","value":3},{"name":"Jquery","value":1},{"name":"Linux","value":2},{"name":"Markdown","value":1},{"name":"MySQL","value":4},{"name":"Oracle","value":1},{"name":"PHP","value":4},{"name":"Prolog","value":1},{"name":"R","value":1},{"name":"SEO","value":1},{"name":"书籍","value":1},{"name":"安全","value":1},{"name":"编程","value":1},{"name":"插件","value":1},{"name":"工具","value":1},{"name":"心跳","value":1},{"name":"架构","value":1},{"name":"地图API","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -938,12 +960,6 @@
             
             
             
-            <a href="/tags/GitBook/">
-                <span class="chip center-align waves-effect waves-light chip-default">GitBook</span>
-            </a>
-            
-            
-            
             <a href="/tags/Git/">
                 <span class="chip center-align waves-effect waves-light chip-default">Git</span>
             </a>
@@ -952,6 +968,12 @@
             
             <a href="/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/">
                 <span class="chip center-align waves-effect waves-light chip-default">文件忽略</span>
+            </a>
+            
+            
+            
+            <a href="/tags/GitBook/">
+                <span class="chip center-align waves-effect waves-light chip-default">GitBook</span>
             </a>
             
             
@@ -994,14 +1016,14 @@
             
             
             
-            <a href="/tags/%E5%A4%8D%E5%88%B6/">
-                <span class="chip center-align waves-effect waves-light chip-default">复制</span>
+            <a href="/tags/Jquery/">
+                <span class="chip center-align waves-effect waves-light chip-default">Jquery</span>
             </a>
             
             
             
-            <a href="/tags/Jquery/">
-                <span class="chip center-align waves-effect waves-light chip-default">Jquery</span>
+            <a href="/tags/%E5%A4%8D%E5%88%B6/">
+                <span class="chip center-align waves-effect waves-light chip-default">复制</span>
             </a>
             
             
@@ -1084,14 +1106,14 @@
             
             
             
-            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                <span class="chip center-align waves-effect waves-light chip-default">运维</span>
+            <a href="/tags/Prolog/">
+                <span class="chip center-align waves-effect waves-light chip-default">Prolog</span>
             </a>
             
             
             
-            <a href="/tags/Prolog/">
-                <span class="chip center-align waves-effect waves-light chip-default">Prolog</span>
+            <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                <span class="chip center-align waves-effect waves-light chip-default">运维</span>
             </a>
             
             
@@ -1114,6 +1136,12 @@
             
             
             
+            <a href="/tags/%E4%B9%A6%E7%B1%8D/">
+                <span class="chip center-align waves-effect waves-light chip-default">书籍</span>
+            </a>
+            
+            
+            
             <a href="/tags/Web/">
                 <span class="chip center-align waves-effect waves-light chip-default">Web</span>
             </a>
@@ -1122,12 +1150,6 @@
             
             <a href="/tags/%E5%AE%89%E5%85%A8/">
                 <span class="chip center-align waves-effect waves-light chip-default">安全</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E4%B9%A6%E7%B1%8D/">
-                <span class="chip center-align waves-effect waves-light chip-default">书籍</span>
             </a>
             
             
@@ -1502,6 +1524,7 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
+    <script src="/js/FunnyTitle.js"></script>
 
     
 
