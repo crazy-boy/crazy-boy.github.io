@@ -19,6 +19,9 @@ menu:
   Contact:
     url: /contact
     icon: fas fa-comments
+  Guestbook: 
+    url: /guestbook 
+    icon: fa fa-book
   Friends:
     url: /friends
     icon: fas fa-address-book
@@ -391,16 +394,21 @@ tcaptcha:
 # To use it, activate the configuration item and set appId and appKey.
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
-  enable: false
-  appId:
-  appKey:
+  enable: true
+  appId: jygVc7kCct35AgO5DeO7G7xs-gzGzoHsz
+  appKey: kXHEdworb9xXQzVob33wuXEu
   notify: false
   verify: false
   visitor: true
-  avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
-  pageSize: 10
+  avatar: monsterid # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
+  pageSize: 10      # 每页显示条数
+  lang: zh-CN 
   placeholder: 'just go go' # Comment Box placeholder
-  background: /medias/comment_bg.png
+  background: /medias/comment_bg.png    # 背景图片
+  guest_info: nick,mail,link
+  recordIP: true
+  serverURLs: '' 
+  count: true 
   coolpushkey:
 
 # The configuration of the MiniValine comment module is not activated by default.
@@ -522,7 +530,7 @@ libs:
     crypto: /libs/cryptojs/crypto-js.min.js
     echarts: /libs/echarts/echarts.min.js
     gitalk: /libs/gitalk/gitalk.min.js
-    valine: /libs/valine/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
+    valine: https://unpkg.com/valine/dist/Valine.min.js # 若想保持最新版，请替换为 https://unpkg.com/valine/dist/Valine.min.js  默认为 /libs/valine/Valine.min.js
     minivaline: /libs/minivaline/MiniValine.js # latest
     waline: /libs/waline/Waline.min.js # 若想保持最新版，请替换为 https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js 默认为(1.5.2版本) /libs/valine/Valine.min.js
     twikoo: /libs/twikoo/twikoo.all.min.js # 若想保持最新版，请替换为 https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js  默认为 /libs/twikoo/twikoo.all.min.js
