@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 编程 </category>
+          <category> PHP </category>
           
       </categories>
       
@@ -213,9 +213,9 @@
       
         <tags>
             
-            <tag> Markdown </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> Markdown </tag>
             
         </tags>
       
@@ -701,9 +701,9 @@
       
         <tags>
             
-            <tag> 笔记 </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> 笔记 </tag>
             
         </tags>
       

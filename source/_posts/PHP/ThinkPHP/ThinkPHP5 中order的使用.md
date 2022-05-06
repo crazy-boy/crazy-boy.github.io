@@ -3,7 +3,7 @@ title: ThinkPHP5 中order的使用
 tags:
   - ThinkPHP
   - MySQL
-categories: 编程
+categories: PHP
 date: 2022-5-6 20:49:19
 updated: 2022-5-6 20:49:19
 ---

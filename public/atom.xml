@@ -35,7 +35,7 @@
     
     
     
-    <category term="编程" scheme="https://crazy-boy.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
     
     
     <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
@@ -231,9 +231,9 @@
     <category term="Markdown" scheme="https://crazy-boy.com/categories/Markdown/"/>
     
     
-    <category term="Markdown" scheme="https://crazy-boy.com/tags/Markdown/"/>
-    
     <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Markdown" scheme="https://crazy-boy.com/tags/Markdown/"/>
     
   </entry>
   
