@@ -112,17 +112,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/guestbook" class="waves-effect waves-light">
       
       <i class="fa fa-book" style="zoom: 0.6;"></i>
@@ -270,17 +259,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -693,7 +671,61 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/04/28/dai-ma-gui-fan-jian-yi/">
+                    <a href="/2022/05/06/php/thinkphp/thinkphp5-zhong-order-de-shi-yong/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="ThinkPHP5 中order的使用">
+                            
+                            <span class="card-title">ThinkPHP5 中order的使用</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。下面这个查询没有得到预期的结果：
+ $list = Db::name('tb')-&gt;where(['sta
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/MySQL/">
+                            <span class="chip bg-color">MySQL</span>
+                        </a>
+                        
+                        <a href="/tags/ThinkPHP/">
+                            <span class="chip bg-color">ThinkPHP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/04/28/ruan-jian-guan-li/dai-ma-gui-fan-jian-yi/">
                         <div class="card-image">
                             
                             
@@ -706,10 +738,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：
-         function test($age = 21, $id, $options = []){
-             print_r(func_get_ar
+                                1. 参数规范 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：
+function test($age = 21, $id, $options = []){
+     print_r(func_get_args());
+ }
                             
                         </div>
                         <div class="publish-info">
@@ -749,44 +781,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/04/28/hello-world/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                            
-                            <span class="card-title">Hello World</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Crazy Boy
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/07/02/js-dian-ji-fu-zhi-zhi-ding-nei-rong/">
+                    <a href="/2019/07/02/html/js/js-dian-ji-fu-zhi-zhi-ding-nei-rong/">
                         <div class="card-image">
                             
                             
@@ -800,6 +795,9 @@
                         <div class="summary block-with-text">
                             
                                 点击按钮，复制指定文本框内容，代码如下：
+&lt;script type="text/javascript"&gt;
+function copy(){
+    var str = document.getElementById("my-da
                             
                         </div>
                         <div class="publish-info">
@@ -839,7 +837,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/07/02/linux-zhong-rz-de-shi-yong/">
+                    <a href="/2019/07/02/linux/linux-zhong-rz-de-shi-yong/">
                         <div class="card-image">
                             
                             
@@ -853,6 +851,12 @@
                         <div class="summary block-with-text">
                             
                                 我们常常需要在客户端和服务器(windows和linux)之间互传文件，这就可以使用rz(sz)命令。
+
+如果服务器不支持rz命令，需安装：
+ sudo yum -y install lrzsz
+
+从客户端上传文件(可多选)到服务器：
+ s
                             
                         </div>
                         <div class="publish-info">
@@ -896,7 +900,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/05/29/web-an-quan/">
+                    <a href="/2019/05/29/ruan-jian-an-quan/web-an-quan/">
                         <div class="card-image">
                             
                             
@@ -947,7 +951,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/03/20/mysql-chang-jian-bao-cuo-wen-ti/">
+                    <a href="/2019/03/20/mysql/mysql-chang-jian-bao-cuo-wen-ti/">
                         <div class="card-image">
                             
                             
@@ -961,7 +965,11 @@
                         <div class="summary block-with-text">
                             
                                 
-问题：[Err] 1066 - Not unique table/alias: 's' 原因：SQL语句中存在多个表的别名为’s’
+[Err] 1066 - Not unique table/alias: ‘s’
+原因：SQL语句中存在多个表的别名为’s’
+
+
+
                             
                         </div>
                         <div class="publish-info">
@@ -1001,7 +1009,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/03/20/php-yun-wei-bi-ji/">
+                    <a href="/2019/03/20/yun-wei/php-yun-wei-bi-ji/">
                         <div class="card-image">
                             
                             
@@ -1016,6 +1024,8 @@
                             
                                 
 常见命令： 查看PHP扩展：php -m 查看扩展的版本信息：php -ri 扩展名  如：php -ri redis
+
+
                             
                         </div>
                         <div class="publish-info">
@@ -1059,7 +1069,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/01/31/markdown-bi-ji/">
+                    <a href="/2019/01/31/markdown/markdown-bi-ji/">
                         <div class="card-image">
                             
                             
@@ -1073,7 +1083,12 @@
                         <div class="summary block-with-text">
                             
                                 
-解决有序列表排序失败的问题，格式如下：
+解决有序列表排序失败的问题，格式如下： 1.[空格]测试文字1 
+[Tab]-[空格]测试文字1-1 
+[Tab]-[空格]测试文字1-2 
+2.[空格]测试文字2 
+[Tab]-[空格]测试文字2-1 
+[Tab][Tab]-[空格]测
                             
                         </div>
                         <div class="publish-info">
@@ -1096,12 +1111,12 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                            <span class="chip bg-color">笔记</span>
-                        </a>
-                        
                         <a href="/tags/Markdown/">
                             <span class="chip bg-color">Markdown</span>
+                        </a>
+                        
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                            <span class="chip bg-color">笔记</span>
                         </a>
                         
                     </div>
@@ -1113,7 +1128,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/01/31/prolog-bi-ji/">
+                    <a href="/2019/01/31/prolog/prolog-bi-ji/">
                         <div class="card-image">
                             
                             
@@ -1126,8 +1141,9 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-加载脚本 ?- ['E:/SWI-Prolog/test/friend.pl'].       %true
+                                1. 加载脚本?- ['E:/SWI-Prolog/test/friend.pl'].       %true
+2. 教程https://riptutorial.com/zh-CN/prolog
+3. 简单的计算求解：?- X is 3*7
                             
                         </div>
                         <div class="publish-info">
@@ -1156,65 +1172,6 @@
                         
                         <a href="/tags/Prolog/">
                             <span class="chip bg-color">Prolog</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/11/06/phpexcel-bi-ji/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="PHPExcel笔记">
-                            
-                            <span class="card-title">PHPExcel笔记</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-设置字体和样式：
-         $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('A1')-&gt;applyFromArray(['font'=&gt;['bold'=&gt;true]
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                            <span class="chip bg-color">笔记</span>
-                        </a>
-                        
-                        <a href="/tags/Excel/">
-                            <span class="chip bg-color">Excel</span>
-                        </a>
-                        
-                        <a href="/tags/PHP/">
-                            <span class="chip bg-color">PHP</span>
                         </a>
                         
                     </div>
@@ -1325,7 +1282,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.4k</span>
+                        class="white-color">5.5k</span>
             
             
             

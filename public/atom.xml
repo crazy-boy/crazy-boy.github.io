@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-04-28T09:21:00.000Z</updated>
+  <updated>2022-05-06T12:49:19.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -17,9 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ThinkPHP5 中order的使用</title>
+    <link href="https://crazy-boy.com/2022/05/06/php/thinkphp/thinkphp5-zhong-order-de-shi-yong/"/>
+    <id>https://crazy-boy.com/2022/05/06/php/thinkphp/thinkphp5-zhong-order-de-shi-yong/</id>
+    <published>2022-05-06T12:49:19.000Z</published>
+    <updated>2022-05-06T12:49:19.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。&lt;br&gt;下面这个查询没有得到预期的结果：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://crazy-boy.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
+    
+    <category term="ThinkPHP" scheme="https://crazy-boy.com/tags/ThinkPHP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>代码规范建议</title>
-    <link href="https://crazy-boy.com/2022/04/28/dai-ma-gui-fan-jian-yi/"/>
-    <id>https://crazy-boy.com/2022/04/28/dai-ma-gui-fan-jian-yi/</id>
+    <link href="https://crazy-boy.com/2022/04/28/ruan-jian-guan-li/dai-ma-gui-fan-jian-yi/"/>
+    <id>https://crazy-boy.com/2022/04/28/ruan-jian-guan-li/dai-ma-gui-fan-jian-yi/</id>
     <published>2022-04-28T09:21:00.000Z</published>
     <updated>2022-04-28T09:21:00.000Z</updated>
     
@@ -28,9 +56,8 @@
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：&lt;/p&gt;
- &lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt; </summary>
+    <summary type="html">&lt;h2 id=&quot;1-参数规范&quot;&gt;&lt;a href=&quot;#1-参数规范&quot; class=&quot;headerlink&quot; title=&quot;1. 参数规范&quot;&gt;&lt;/a&gt;1. 参数规范&lt;/h2&gt;&lt;p&gt; 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：&lt;/p&gt;
+&lt;pre</summary>
         
       
     
@@ -46,35 +73,21 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://crazy-boy.com/2022/04/28/hello-world/"/>
-    <id>https://crazy-boy.com/2022/04/28/hello-world/</id>
-    <published>2022-04-28T02:48:49.409Z</published>
-    <updated>2022-04-28T02:47:48.460Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>JS点击复制指定内容</title>
-    <link href="https://crazy-boy.com/2019/07/02/js-dian-ji-fu-zhi-zhi-ding-nei-rong/"/>
-    <id>https://crazy-boy.com/2019/07/02/js-dian-ji-fu-zhi-zhi-ding-nei-rong/</id>
+    <link href="https://crazy-boy.com/2019/07/02/html/js/js-dian-ji-fu-zhi-zhi-ding-nei-rong/"/>
+    <id>https://crazy-boy.com/2019/07/02/html/js/js-dian-ji-fu-zhi-zhi-ding-nei-rong/</id>
     <published>2019-07-02T11:41:00.000Z</published>
     <updated>2019-07-02T11:45:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;点击按钮，复制指定文本框内容，代码如下：&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;点击按钮，复制指定文本框内容，代码如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token</summary>
+        
+      
     
     
     
@@ -89,13 +102,22 @@
   
   <entry>
     <title>Linux中rz的使用</title>
-    <link href="https://crazy-boy.com/2019/07/02/linux-zhong-rz-de-shi-yong/"/>
-    <id>https://crazy-boy.com/2019/07/02/linux-zhong-rz-de-shi-yong/</id>
+    <link href="https://crazy-boy.com/2019/07/02/linux/linux-zhong-rz-de-shi-yong/"/>
+    <id>https://crazy-boy.com/2019/07/02/linux/linux-zhong-rz-de-shi-yong/</id>
     <published>2019-07-02T11:20:00.000Z</published>
     <updated>2019-07-02T11:20:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;我们常常需要在客户端和服务器(windows和linux)之间互传文件，这就可以使用rz(sz)命令。&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我们常常需要在客户端和服务器(windows和linux)之间互传文件，这就可以使用rz(sz)命令。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;如果服务器不支持rz命令，需安装：&lt;/p&gt;
+ &lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
     
     
     
@@ -112,8 +134,8 @@
   
   <entry>
     <title>Web安全</title>
-    <link href="https://crazy-boy.com/2019/05/29/web-an-quan/"/>
-    <id>https://crazy-boy.com/2019/05/29/web-an-quan/</id>
+    <link href="https://crazy-boy.com/2019/05/29/ruan-jian-an-quan/web-an-quan/"/>
+    <id>https://crazy-boy.com/2019/05/29/ruan-jian-an-quan/web-an-quan/</id>
     <published>2019-05-29T07:18:00.000Z</published>
     <updated>2019-05-29T07:18:00.000Z</updated>
     
@@ -131,14 +153,20 @@
   
   <entry>
     <title>MySQL常见报错问题</title>
-    <link href="https://crazy-boy.com/2019/03/20/mysql-chang-jian-bao-cuo-wen-ti/"/>
-    <id>https://crazy-boy.com/2019/03/20/mysql-chang-jian-bao-cuo-wen-ti/</id>
+    <link href="https://crazy-boy.com/2019/03/20/mysql/mysql-chang-jian-bao-cuo-wen-ti/"/>
+    <id>https://crazy-boy.com/2019/03/20/mysql/mysql-chang-jian-bao-cuo-wen-ti/</id>
     <published>2019-03-20T09:37:00.000Z</published>
     <updated>2019-03-20T09:40:00.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;问题：&lt;code&gt;[Err] 1066 - Not unique table/alias: &#39;s&#39;&lt;/code&gt;&lt;br&gt; 原因：SQL语句中存在多个表的别名为’s’&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;&lt;p&gt;[Err] 1066 - Not unique table/alias:</summary>
+        
+      
     
     
     
@@ -153,14 +181,20 @@
   
   <entry>
     <title>PHP运维笔记</title>
-    <link href="https://crazy-boy.com/2019/03/20/php-yun-wei-bi-ji/"/>
-    <id>https://crazy-boy.com/2019/03/20/php-yun-wei-bi-ji/</id>
+    <link href="https://crazy-boy.com/2019/03/20/yun-wei/php-yun-wei-bi-ji/"/>
+    <id>https://crazy-boy.com/2019/03/20/yun-wei/php-yun-wei-bi-ji/</id>
     <published>2019-03-20T09:37:00.000Z</published>
     <updated>2019-03-20T09:40:00.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;常见命令：&lt;br&gt; 查看PHP扩展：&lt;code&gt;php -m&lt;/code&gt;&lt;br&gt; 查看扩展的版本信息：&lt;code&gt;php -ri 扩展名&lt;/code&gt;  如：&lt;code&gt;php -ri redis&lt;/code&gt;&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;常见命令：&lt;br&gt; 查看PHP扩展：&lt;code&gt;php -m&lt;/code&gt;&lt;br&gt; 查看扩展的版本信息：&lt;code&gt;php -ri 扩展名&lt;/code&gt;  如：&lt;code&gt;php -ri</summary>
+        
+      
     
     
     
@@ -177,36 +211,47 @@
   
   <entry>
     <title>Markdown笔记</title>
-    <link href="https://crazy-boy.com/2019/01/31/markdown-bi-ji/"/>
-    <id>https://crazy-boy.com/2019/01/31/markdown-bi-ji/</id>
+    <link href="https://crazy-boy.com/2019/01/31/markdown/markdown-bi-ji/"/>
+    <id>https://crazy-boy.com/2019/01/31/markdown/markdown-bi-ji/</id>
     <published>2019-01-31T05:36:00.000Z</published>
     <updated>2019-01-31T06:36:00.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;解决有序列表排序失败的问题，格式如下：&lt;escape&gt;&lt;/escape&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;解决有序列表排序失败的问题，格式如下： &lt;pre class=&quot;line-numbers language-angular2html&quot; data-language=&quot;angular2html&quot;&gt;&lt;code</summary>
+        
+      
     
     
     
     <category term="Markdown" scheme="https://crazy-boy.com/categories/Markdown/"/>
     
     
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="Markdown" scheme="https://crazy-boy.com/tags/Markdown/"/>
+    
+    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>Prolog笔记</title>
-    <link href="https://crazy-boy.com/2019/01/31/prolog-bi-ji/"/>
-    <id>https://crazy-boy.com/2019/01/31/prolog-bi-ji/</id>
+    <link href="https://crazy-boy.com/2019/01/31/prolog/prolog-bi-ji/"/>
+    <id>https://crazy-boy.com/2019/01/31/prolog/prolog-bi-ji/</id>
     <published>2019-01-31T03:36:00.000Z</published>
     <updated>2019-01-31T03:36:00.000Z</updated>
     
     
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;加载脚本&lt;br&gt; &lt;code&gt;?- [&#39;E:/SWI-Prolog/test/friend.pl&#39;].       %true&lt;/code&gt;&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-加载脚本&quot;&gt;&lt;a href=&quot;#1-加载脚本&quot; class=&quot;headerlink&quot; title=&quot;1. 加载脚本&quot;&gt;&lt;/a&gt;1. 加载脚本&lt;/h2&gt;&lt;p&gt;&lt;code&gt;?- [&#39;E:/SWI-Prolog/test/friend.pl&#39;].      </summary>
+        
+      
     
     
     
@@ -221,8 +266,8 @@
   
   <entry>
     <title>PHPExcel笔记</title>
-    <link href="https://crazy-boy.com/2018/11/06/phpexcel-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/11/06/phpexcel-bi-ji/</id>
+    <link href="https://crazy-boy.com/2018/11/06/php/qi-ta/phpexcel-bi-ji/"/>
+    <id>https://crazy-boy.com/2018/11/06/php/qi-ta/phpexcel-bi-ji/</id>
     <published>2018-11-06T03:55:00.000Z</published>
     <updated>2018-11-06T05:52:00.000Z</updated>
     
@@ -233,7 +278,7 @@
         
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;设置字体和样式：&lt;/p&gt;
- &lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;        &lt;span</summary>
+ &lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token</summary>
         
       
     
@@ -252,13 +297,21 @@
   
   <entry>
     <title>MySQL自定义函数</title>
-    <link href="https://crazy-boy.com/2018/09/05/mysql-zi-ding-yi-han-shu/"/>
-    <id>https://crazy-boy.com/2018/09/05/mysql-zi-ding-yi-han-shu/</id>
+    <link href="https://crazy-boy.com/2018/09/05/mysql/mysql-zi-ding-yi-han-shu/"/>
+    <id>https://crazy-boy.com/2018/09/05/mysql/mysql-zi-ding-yi-han-shu/</id>
     <published>2018-09-05T04:27:00.000Z</published>
     <updated>2018-09-05T04:27:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：&lt;/p&gt;</summary>
+        
+      
     
     
     
@@ -273,13 +326,20 @@
   
   <entry>
     <title>PHP生成数据字典</title>
-    <link href="https://crazy-boy.com/2018/06/21/php-sheng-cheng-shu-ju-zi-dian/"/>
-    <id>https://crazy-boy.com/2018/06/21/php-sheng-cheng-shu-ju-zi-dian/</id>
+    <link href="https://crazy-boy.com/2018/06/21/php/qi-ta/php-sheng-cheng-shu-ju-zi-dian/"/>
+    <id>https://crazy-boy.com/2018/06/21/php/qi-ta/php-sheng-cheng-shu-ju-zi-dian/</id>
     <published>2018-06-21T14:37:00.000Z</published>
     <updated>2018-06-21T14:37:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;通过php代码生成MySQL数据字典，代码如下：&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;通过php代码生成MySQL数据字典，代码如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-php&quot; data-language=&quot;php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span class=&quot;token</summary>
+        
+      
     
     
     
@@ -295,15 +355,82 @@
   </entry>
   
   <entry>
+    <title>Oracle笔记</title>
+    <link href="https://crazy-boy.com/2018/06/19/oracle/oracle-bi-ji/"/>
+    <id>https://crazy-boy.com/2018/06/19/oracle/oracle-bi-ji/</id>
+    <published>2018-06-19T14:39:00.000Z</published>
+    <updated>2018-06-19T14:45:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;强制并行处理：&lt;code&gt;/*+ monitor</summary>
+        
+      
+    
+    
+    
+    <category term="Oracle" scheme="https://crazy-boy.com/categories/Oracle/"/>
+    
+    
+    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Oracle" scheme="https://crazy-boy.com/tags/Oracle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心跳包机制</title>
+    <link href="https://crazy-boy.com/2018/06/19/qi-ta/xin-tiao-bao-ji-zhi/"/>
+    <id>https://crazy-boy.com/2018/06/19/qi-ta/xin-tiao-bao-ji-zhi/</id>
+    <published>2018-06-19T14:39:00.000Z</published>
+    <updated>2018-06-19T14:45:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;心跳包机制：主要也就是用于长连接的保活和断线处理。&lt;/li&gt;
+&lt;/ol&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="心跳" scheme="https://crazy-boy.com/categories/%E5%BF%83%E8%B7%B3/"/>
+    
+    
+    <category term="心跳" scheme="https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3/"/>
+    
+    <category term="心跳包" scheme="https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript笔记</title>
-    <link href="https://crazy-boy.com/2018/06/19/javascript-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/06/19/javascript-bi-ji/</id>
+    <link href="https://crazy-boy.com/2018/06/19/html/js/javascript-bi-ji/"/>
+    <id>https://crazy-boy.com/2018/06/19/html/js/javascript-bi-ji/</id>
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-11-09T01:49:00.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果想获取ajax里的function返回值，可用同步ajax。&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;&lt;p&gt;如果想获取ajax里的function返回值，可用同步ajax。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;JavaScript不定参数&lt;/p&gt;
+ &lt;pre class=&quot;line-numbers language-html&quot;</summary>
+        
+      
     
     
     
@@ -319,61 +446,23 @@
   </entry>
   
   <entry>
-    <title>Oracle笔记</title>
-    <link href="https://crazy-boy.com/2018/06/19/oracle-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/06/19/oracle-bi-ji/</id>
-    <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-06-19T14:45:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;强制并行处理：&lt;code&gt;/*+ monitor parallel(8)*/&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;plsql查看sql性能：F5&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Oracle" scheme="https://crazy-boy.com/categories/Oracle/"/>
-    
-    
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="Oracle" scheme="https://crazy-boy.com/tags/Oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>心跳包机制</title>
-    <link href="https://crazy-boy.com/2018/06/19/xin-tiao-bao-ji-zhi/"/>
-    <id>https://crazy-boy.com/2018/06/19/xin-tiao-bao-ji-zhi/</id>
-    <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-06-19T14:45:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;心跳包机制：主要也就是用于长连接的保活和断线处理。&lt;/li&gt;&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="心跳" scheme="https://crazy-boy.com/categories/%E5%BF%83%E8%B7%B3/"/>
-    
-    
-    <category term="心跳" scheme="https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3/"/>
-    
-    <category term="心跳包" scheme="https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Excel使用小技巧</title>
-    <link href="https://crazy-boy.com/2018/06/19/excel-shi-yong-xiao-ji-qiao/"/>
-    <id>https://crazy-boy.com/2018/06/19/excel-shi-yong-xiao-ji-qiao/</id>
+    <link href="https://crazy-boy.com/2018/06/19/office/excel-shi-yong-xiao-ji-qiao/"/>
+    <id>https://crazy-boy.com/2018/06/19/office/excel-shi-yong-xiao-ji-qiao/</id>
     <published>2018-06-19T14:02:03.000Z</published>
     <updated>2018-09-02T07:43:00.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;excel固定第一行：选择第二行，点击视图里的冻结窗口即可。&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;&lt;p&gt;excel固定第一行：选择第二行，点击视图里的冻结窗口即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;excel分列：&lt;br&gt; 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：&lt;br&gt;</summary>
+        
+      
     
     
     
@@ -388,17 +477,21 @@
   
   <entry>
     <title>R语言学习</title>
-    <link href="https://crazy-boy.com/2018/06/19/r-yu-yan-xue-xi/"/>
-    <id>https://crazy-boy.com/2018/06/19/r-yu-yan-xue-xi/</id>
+    <link href="https://crazy-boy.com/2018/06/19/r/r-yu-yan-xue-xi/"/>
+    <id>https://crazy-boy.com/2018/06/19/r/r-yu-yan-xue-xi/</id>
     <published>2018-06-19T14:02:03.000Z</published>
     <updated>2018-06-19T14:07:54.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;p&gt;** 之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：**&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&amp;lt;- 是赋值的意思&lt;/li&gt;
-&lt;li&gt;向量是下标以1开始的&lt;/li&gt;
-&lt;li&gt;区分大小写&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;&amp;lt;-</summary>
+        
+      
     
     
     
@@ -411,15 +504,20 @@
   
   <entry>
     <title>SEO——权重转移</title>
-    <link href="https://crazy-boy.com/2018/06/09/seo-quan-chong-zhuan-yi/"/>
-    <id>https://crazy-boy.com/2018/06/09/seo-quan-chong-zhuan-yi/</id>
+    <link href="https://crazy-boy.com/2018/06/09/seo/seo-quan-chong-zhuan-yi/"/>
+    <id>https://crazy-boy.com/2018/06/09/seo/seo-quan-chong-zhuan-yi/</id>
     <published>2018-06-09T15:38:26.000Z</published>
     <updated>2018-06-09T15:38:32.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;p&gt;** 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：**&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;link&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;canonical&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation attr-equals&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;主页url&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。&lt;/p&gt;</summary>
+&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code</summary>
+        
+      
     
     
     
@@ -434,16 +532,21 @@
   
   <entry>
     <title>Go语言基础</title>
-    <link href="https://crazy-boy.com/2018/06/09/go-yu-yan-ji-chu/"/>
-    <id>https://crazy-boy.com/2018/06/09/go-yu-yan-ji-chu/</id>
+    <link href="https://crazy-boy.com/2018/06/09/golang/go-yu-yan-ji-chu/"/>
+    <id>https://crazy-boy.com/2018/06/09/golang/go-yu-yan-ji-chu/</id>
     <published>2018-06-09T13:57:06.000Z</published>
     <updated>2018-06-09T13:57:32.000Z</updated>
     
     
+      
+      
+        
+        
     <summary type="html">&lt;p&gt;** 自学Go语言的过程漫长而坎坷，先记录一些基础知识：**&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;执行go文件：&lt;code&gt;E:\Go_WorkSpace&amp;gt;go run test.go&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;把go程序编译成exe文件：&lt;code&gt;E:\Go_WorkSpace&amp;gt;go build test.go&lt;/code&gt;&lt;br&gt;&lt;escape&gt;&lt;/escape&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;执行go文件：&lt;code&gt;E:\Go_WorkSpace&amp;gt;go run</summary>
+        
+      
     
     
     
@@ -458,13 +561,20 @@
   
   <entry>
     <title>GitBook使用笔记</title>
-    <link href="https://crazy-boy.com/2018/06/09/gitbook-shi-yong-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/06/09/gitbook-shi-yong-bi-ji/</id>
+    <link href="https://crazy-boy.com/2018/06/09/gitbook/gitbook-shi-yong-bi-ji/"/>
+    <id>https://crazy-boy.com/2018/06/09/gitbook/gitbook-shi-yong-bi-ji/</id>
     <published>2018-06-09T07:12:00.000Z</published>
     <updated>2018-06-09T07:20:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。&lt;/p&gt;
+&lt;h5 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     

@@ -112,17 +112,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/guestbook" class="waves-effect waves-light">
       
       <i class="fa fa-book" style="zoom: 0.6;"></i>
@@ -270,17 +259,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -500,7 +478,66 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/09/05/mysql-zi-ding-yi-han-shu/">
+                    <a href="/2018/11/06/php/qi-ta/phpexcel-bi-ji/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="PHPExcel笔记">
+                            
+                            <span class="card-title">PHPExcel笔记</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+设置字体和样式：
+ $objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('A1')-&gt;applyFromArray(['font'=&gt;['bold'=&gt;true]]);			//
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                            <span class="chip bg-color">笔记</span>
+                        </a>
+                        
+                        <a href="/tags/Excel/">
+                            <span class="chip bg-color">Excel</span>
+                        </a>
+                        
+                        <a href="/tags/PHP/">
+                            <span class="chip bg-color">PHP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/09/05/mysql/mysql-zi-ding-yi-han-shu/">
                         <div class="card-image">
                             
                             
@@ -514,6 +551,9 @@
                         <div class="summary block-with-text">
                             
                                 有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：
+
+批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：
+ 
                             
                         </div>
                         <div class="publish-info">
@@ -553,7 +593,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/06/21/php-sheng-cheng-shu-ju-zi-dian/">
+                    <a href="/2018/06/21/php/qi-ta/php-sheng-cheng-shu-ju-zi-dian/">
                         <div class="card-image">
                             
                             
@@ -567,6 +607,13 @@
                         <div class="summary block-with-text">
                             
                                 通过php代码生成MySQL数据字典，代码如下：
+&lt;?php
+/**
+ * 生成mysql数据字典
+ */
+header("Content-type: text/html; charset=utf-8");
+//配置数据库
+$dbse
                             
                         </div>
                         <div class="publish-info">
@@ -610,7 +657,122 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/06/19/javascript-bi-ji/">
+                    <a href="/2018/06/19/oracle/oracle-bi-ji/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Oracle笔记">
+                            
+                            <span class="card-title">Oracle笔记</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+强制并行处理：/*+ monitor parallel(8)*/
+
+plsql查看sql性能：F5
+
+在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：
+ CREATE OR REPLACE FUN
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Oracle/" class="post-category">
+                                    Oracle
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                            <span class="chip bg-color">笔记</span>
+                        </a>
+                        
+                        <a href="/tags/Oracle/">
+                            <span class="chip bg-color">Oracle</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/06/19/qi-ta/xin-tiao-bao-ji-zhi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="心跳包机制">
+                            
+                            <span class="card-title">心跳包机制</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                
+心跳包机制：主要也就是用于长连接的保活和断线处理。
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%BF%83%E8%B7%B3/" class="post-category">
+                                    心跳
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%BF%83%E8%B7%B3/">
+                            <span class="chip bg-color">心跳</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/">
+                            <span class="chip bg-color">心跳包</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/06/19/html/js/javascript-bi-ji/">
                         <div class="card-image">
                             
                             
@@ -625,6 +787,12 @@
                             
                                 
 如果想获取ajax里的function返回值，可用同步ajax。
+
+JavaScript不定参数
+ &lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;JavaScript不定参数&lt;/title&gt;
+&
                             
                         </div>
                         <div class="publish-info">
@@ -668,117 +836,7 @@
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/06/19/oracle-bi-ji/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Oracle笔记">
-                            
-                            <span class="card-title">Oracle笔记</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-强制并行处理：/*+ monitor parallel(8)*/
-
-plsql查看sql性能：F5
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Oracle/" class="post-category">
-                                    Oracle
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                            <span class="chip bg-color">笔记</span>
-                        </a>
-                        
-                        <a href="/tags/Oracle/">
-                            <span class="chip bg-color">Oracle</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/06/19/xin-tiao-bao-ji-zhi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="心跳包机制">
-                            
-                            <span class="card-title">心跳包机制</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-心跳包机制：主要也就是用于长连接的保活和断线处理。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%BF%83%E8%B7%B3/" class="post-category">
-                                    心跳
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%BF%83%E8%B7%B3/">
-                            <span class="chip bg-color">心跳</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/">
-                            <span class="chip bg-color">心跳包</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/06/19/excel-shi-yong-xiao-ji-qiao/">
+                    <a href="/2018/06/19/office/excel-shi-yong-xiao-ji-qiao/">
                         <div class="card-image">
                             
                             
@@ -793,6 +851,8 @@ plsql查看sql性能：F5
                             
                                 
 excel固定第一行：选择第二行，点击视图里的冻结窗口即可。
+
+excel分列： 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式： 公式为：=left(A1,2) &amp; ":" &amp; mi
                             
                         </div>
                         <div class="publish-info">
@@ -832,7 +892,7 @@ excel固定第一行：选择第二行，点击视图里的冻结窗口即可。
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/06/19/r-yu-yan-xue-xi/">
+                    <a href="/2018/06/19/r/r-yu-yan-xue-xi/">
                         <div class="card-image">
                             
                             
@@ -850,6 +910,10 @@ excel固定第一行：选择第二行，点击视图里的冻结窗口即可。
 &lt;- 是赋值的意思
 向量是下标以1开始的
 区分大小写
+路径：C://a.txt
+round：四舍五入
+
+
                             
                         </div>
                         <div class="publish-info">
@@ -885,7 +949,7 @@ excel固定第一行：选择第二行，点击视图里的冻结窗口即可。
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/06/09/seo-quan-chong-zhuan-yi/">
+                    <a href="/2018/06/09/seo/seo-quan-chong-zhuan-yi/">
                         <div class="card-image">
                             
                             
@@ -929,111 +993,6 @@ Google 等搜索引擎最终都会
                         
                         <a href="/tags/%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB/">
                             <span class="chip bg-color">权重转移</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/06/09/go-yu-yan-ji-chu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Go语言基础">
-                            
-                            <span class="card-title">Go语言基础</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ** 自学Go语言的过程漫长而坎坷，先记录一些基础知识：**
-
-执行go文件：E:\Go_WorkSpace&gt;go run test.go
-把go程序编译成exe文件：E:\Go_WorkSpace&gt;go build test.
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Go/" class="post-category">
-                                    Go
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Go/">
-                            <span class="chip bg-color">Go</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
-                            <span class="chip bg-color">语言基础</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/06/09/gitbook-shi-yong-bi-ji/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="GitBook使用笔记">
-                            
-                            <span class="card-title">GitBook使用笔记</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/GitBook/" class="post-category">
-                                    GitBook
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/GitBook/">
-                            <span class="chip bg-color">GitBook</span>
                         </a>
                         
                     </div>
@@ -1145,7 +1104,7 @@ Google 等搜索引擎最终都会
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.4k</span>
+                        class="white-color">5.5k</span>
             
             
             
