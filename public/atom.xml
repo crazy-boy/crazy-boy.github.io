@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>飞奔的蜗牛</title>
   
-  
+  <subtitle>键舞人生</subtitle>
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>ThinkPHP5 中order的使用</title>
-    <link href="https://crazy-boy.com/2022/05/06/php/thinkphp/thinkphp5-zhong-order-de-shi-yong/"/>
-    <id>https://crazy-boy.com/2022/05/06/php/thinkphp/thinkphp5-zhong-order-de-shi-yong/</id>
+    <link href="https://crazy-boy.com/archives/9a9f5736.html"/>
+    <id>https://crazy-boy.com/archives/9a9f5736.html</id>
     <published>2022-05-06T12:49:19.000Z</published>
     <updated>2022-05-06T12:49:19.000Z</updated>
     
@@ -46,8 +46,8 @@
   
   <entry>
     <title>代码规范建议</title>
-    <link href="https://crazy-boy.com/2022/04/28/ruan-jian-guan-li/dai-ma-gui-fan-jian-yi/"/>
-    <id>https://crazy-boy.com/2022/04/28/ruan-jian-guan-li/dai-ma-gui-fan-jian-yi/</id>
+    <link href="https://crazy-boy.com/archives/1294.html"/>
+    <id>https://crazy-boy.com/archives/1294.html</id>
     <published>2022-04-28T09:21:00.000Z</published>
     <updated>2022-04-28T09:21:00.000Z</updated>
     
@@ -74,8 +74,8 @@
   
   <entry>
     <title>JS点击复制指定内容</title>
-    <link href="https://crazy-boy.com/2019/07/02/html/js/js-dian-ji-fu-zhi-zhi-ding-nei-rong/"/>
-    <id>https://crazy-boy.com/2019/07/02/html/js/js-dian-ji-fu-zhi-zhi-ding-nei-rong/</id>
+    <link href="https://crazy-boy.com/archives/3652.html"/>
+    <id>https://crazy-boy.com/archives/3652.html</id>
     <published>2019-07-02T11:41:00.000Z</published>
     <updated>2019-07-02T11:45:00.000Z</updated>
     
@@ -102,8 +102,8 @@
   
   <entry>
     <title>Linux中rz的使用</title>
-    <link href="https://crazy-boy.com/2019/07/02/linux/linux-zhong-rz-de-shi-yong/"/>
-    <id>https://crazy-boy.com/2019/07/02/linux/linux-zhong-rz-de-shi-yong/</id>
+    <link href="https://crazy-boy.com/archives/34450.html"/>
+    <id>https://crazy-boy.com/archives/34450.html</id>
     <published>2019-07-02T11:20:00.000Z</published>
     <updated>2019-07-02T11:20:00.000Z</updated>
     
@@ -134,8 +134,8 @@
   
   <entry>
     <title>Web安全</title>
-    <link href="https://crazy-boy.com/2019/05/29/ruan-jian-an-quan/web-an-quan/"/>
-    <id>https://crazy-boy.com/2019/05/29/ruan-jian-an-quan/web-an-quan/</id>
+    <link href="https://crazy-boy.com/archives/35576.html"/>
+    <id>https://crazy-boy.com/archives/35576.html</id>
     <published>2019-05-29T07:18:00.000Z</published>
     <updated>2019-05-29T07:18:00.000Z</updated>
     
@@ -153,8 +153,8 @@
   
   <entry>
     <title>MySQL常见报错问题</title>
-    <link href="https://crazy-boy.com/2019/03/20/mysql/mysql-chang-jian-bao-cuo-wen-ti/"/>
-    <id>https://crazy-boy.com/2019/03/20/mysql/mysql-chang-jian-bao-cuo-wen-ti/</id>
+    <link href="https://crazy-boy.com/archives/19794.html"/>
+    <id>https://crazy-boy.com/archives/19794.html</id>
     <published>2019-03-20T09:37:00.000Z</published>
     <updated>2019-03-20T09:40:00.000Z</updated>
     
@@ -181,8 +181,8 @@
   
   <entry>
     <title>PHP运维笔记</title>
-    <link href="https://crazy-boy.com/2019/03/20/yun-wei/php-yun-wei-bi-ji/"/>
-    <id>https://crazy-boy.com/2019/03/20/yun-wei/php-yun-wei-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/35292.html"/>
+    <id>https://crazy-boy.com/archives/35292.html</id>
     <published>2019-03-20T09:37:00.000Z</published>
     <updated>2019-03-20T09:40:00.000Z</updated>
     
@@ -211,8 +211,8 @@
   
   <entry>
     <title>Markdown笔记</title>
-    <link href="https://crazy-boy.com/2019/01/31/markdown/markdown-bi-ji/"/>
-    <id>https://crazy-boy.com/2019/01/31/markdown/markdown-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/45387.html"/>
+    <id>https://crazy-boy.com/archives/45387.html</id>
     <published>2019-01-31T05:36:00.000Z</published>
     <updated>2019-01-31T06:36:00.000Z</updated>
     
@@ -231,16 +231,16 @@
     <category term="Markdown" scheme="https://crazy-boy.com/categories/Markdown/"/>
     
     
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="Markdown" scheme="https://crazy-boy.com/tags/Markdown/"/>
+    
+    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>Prolog笔记</title>
-    <link href="https://crazy-boy.com/2019/01/31/prolog/prolog-bi-ji/"/>
-    <id>https://crazy-boy.com/2019/01/31/prolog/prolog-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/45387.html"/>
+    <id>https://crazy-boy.com/archives/45387.html</id>
     <published>2019-01-31T03:36:00.000Z</published>
     <updated>2019-01-31T03:36:00.000Z</updated>
     
@@ -266,8 +266,8 @@
   
   <entry>
     <title>PHPExcel笔记</title>
-    <link href="https://crazy-boy.com/2018/11/06/php/qi-ta/phpexcel-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/11/06/php/qi-ta/phpexcel-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/10294.html"/>
+    <id>https://crazy-boy.com/archives/10294.html</id>
     <published>2018-11-06T03:55:00.000Z</published>
     <updated>2018-11-06T05:52:00.000Z</updated>
     
@@ -297,8 +297,8 @@
   
   <entry>
     <title>MySQL自定义函数</title>
-    <link href="https://crazy-boy.com/2018/09/05/mysql/mysql-zi-ding-yi-han-shu/"/>
-    <id>https://crazy-boy.com/2018/09/05/mysql/mysql-zi-ding-yi-han-shu/</id>
+    <link href="https://crazy-boy.com/archives/1366.html"/>
+    <id>https://crazy-boy.com/archives/1366.html</id>
     <published>2018-09-05T04:27:00.000Z</published>
     <updated>2018-09-05T04:27:00.000Z</updated>
     
@@ -326,8 +326,8 @@
   
   <entry>
     <title>PHP生成数据字典</title>
-    <link href="https://crazy-boy.com/2018/06/21/php/qi-ta/php-sheng-cheng-shu-ju-zi-dian/"/>
-    <id>https://crazy-boy.com/2018/06/21/php/qi-ta/php-sheng-cheng-shu-ju-zi-dian/</id>
+    <link href="https://crazy-boy.com/archives/20269.html"/>
+    <id>https://crazy-boy.com/archives/20269.html</id>
     <published>2018-06-21T14:37:00.000Z</published>
     <updated>2018-06-21T14:37:00.000Z</updated>
     
@@ -356,8 +356,8 @@
   
   <entry>
     <title>Oracle笔记</title>
-    <link href="https://crazy-boy.com/2018/06/19/oracle/oracle-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/06/19/oracle/oracle-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/48959.html"/>
+    <id>https://crazy-boy.com/archives/48959.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-06-19T14:45:00.000Z</updated>
     
@@ -384,8 +384,8 @@
   
   <entry>
     <title>心跳包机制</title>
-    <link href="https://crazy-boy.com/2018/06/19/qi-ta/xin-tiao-bao-ji-zhi/"/>
-    <id>https://crazy-boy.com/2018/06/19/qi-ta/xin-tiao-bao-ji-zhi/</id>
+    <link href="https://crazy-boy.com/archives/37766.html"/>
+    <id>https://crazy-boy.com/archives/37766.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-06-19T14:45:00.000Z</updated>
     
@@ -414,8 +414,8 @@
   
   <entry>
     <title>JavaScript笔记</title>
-    <link href="https://crazy-boy.com/2018/06/19/html/js/javascript-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/06/19/html/js/javascript-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/59091.html"/>
+    <id>https://crazy-boy.com/archives/59091.html</id>
     <published>2018-06-19T14:39:00.000Z</published>
     <updated>2018-11-09T01:49:00.000Z</updated>
     
@@ -447,8 +447,8 @@
   
   <entry>
     <title>Excel使用小技巧</title>
-    <link href="https://crazy-boy.com/2018/06/19/office/excel-shi-yong-xiao-ji-qiao/"/>
-    <id>https://crazy-boy.com/2018/06/19/office/excel-shi-yong-xiao-ji-qiao/</id>
+    <link href="https://crazy-boy.com/archives/9067.html"/>
+    <id>https://crazy-boy.com/archives/9067.html</id>
     <published>2018-06-19T14:02:03.000Z</published>
     <updated>2018-09-02T07:43:00.000Z</updated>
     
@@ -477,8 +477,8 @@
   
   <entry>
     <title>R语言学习</title>
-    <link href="https://crazy-boy.com/2018/06/19/r/r-yu-yan-xue-xi/"/>
-    <id>https://crazy-boy.com/2018/06/19/r/r-yu-yan-xue-xi/</id>
+    <link href="https://crazy-boy.com/archives/62863.html"/>
+    <id>https://crazy-boy.com/archives/62863.html</id>
     <published>2018-06-19T14:02:03.000Z</published>
     <updated>2018-06-19T14:07:54.000Z</updated>
     
@@ -504,8 +504,8 @@
   
   <entry>
     <title>SEO——权重转移</title>
-    <link href="https://crazy-boy.com/2018/06/09/seo/seo-quan-chong-zhuan-yi/"/>
-    <id>https://crazy-boy.com/2018/06/09/seo/seo-quan-chong-zhuan-yi/</id>
+    <link href="https://crazy-boy.com/archives/16774.html"/>
+    <id>https://crazy-boy.com/archives/16774.html</id>
     <published>2018-06-09T15:38:26.000Z</published>
     <updated>2018-06-09T15:38:32.000Z</updated>
     
@@ -532,8 +532,8 @@
   
   <entry>
     <title>Go语言基础</title>
-    <link href="https://crazy-boy.com/2018/06/09/golang/go-yu-yan-ji-chu/"/>
-    <id>https://crazy-boy.com/2018/06/09/golang/go-yu-yan-ji-chu/</id>
+    <link href="https://crazy-boy.com/archives/33631.html"/>
+    <id>https://crazy-boy.com/archives/33631.html</id>
     <published>2018-06-09T13:57:06.000Z</published>
     <updated>2018-06-09T13:57:32.000Z</updated>
     
@@ -561,8 +561,8 @@
   
   <entry>
     <title>GitBook使用笔记</title>
-    <link href="https://crazy-boy.com/2018/06/09/gitbook/gitbook-shi-yong-bi-ji/"/>
-    <id>https://crazy-boy.com/2018/06/09/gitbook/gitbook-shi-yong-bi-ji/</id>
+    <link href="https://crazy-boy.com/archives/7888.html"/>
+    <id>https://crazy-boy.com/archives/7888.html</id>
     <published>2018-06-09T07:12:00.000Z</published>
     <updated>2018-06-09T07:20:00.000Z</updated>
     

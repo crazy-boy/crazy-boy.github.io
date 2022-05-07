@@ -7,7 +7,7 @@ title: 飞奔的蜗牛
 favicon:
   small: /images/favicon_16x16.png
   medium: /images/favicon.ico
-subtitle: ''
+subtitle: '键舞人生'
 description: ''
 keywords:
 author: Crazy Boy
@@ -17,7 +17,11 @@ timezone: ''
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://crazy-boy.com
-permalink: :year/:month/:day/:title/
+root: /
+permalink: archives/:abbrlink.html
+abbrlink:
+  alg: crc32  # 算法：crc16(default) and crc32
+  rep: hex    # 进制：dec(default) and hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -116,7 +120,7 @@ search:
   field: post
 
 permalink_pinyin:
-  enable: true
+  enable: false
   separator: '-' # default: '-'
 
 githubEmojis:

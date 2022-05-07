@@ -4,8 +4,9 @@ tags:
   - ThinkPHP
   - MySQL
 categories: PHP
-date: 2022-5-6 20:49:19
-updated: 2022-5-6 20:49:19
+abbrlink: 9a9f5736
+date: 2022-05-06 20:49:19
+updated: 2022-05-06 20:49:19
 ---
 之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。
 下面这个查询没有得到预期的结果：
