@@ -69,7 +69,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 9     # 每页条数
+  per_page: 12     # 每页条数 建议为6的倍数
   order_by: -date   # 文章列表排序 -为倒序
 
 # Category & Tag
