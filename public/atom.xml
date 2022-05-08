@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-05-06T12:49:19.000Z</updated>
+  <updated>2022-05-08T09:07:22.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,6 +15,119 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ThinkPHP5框架where条件中含有or的使用方法</title>
+    <link href="https://crazy-boy.com/archives/435769.html"/>
+    <id>https://crazy-boy.com/archives/435769.html</id>
+    <published>2022-05-08T09:07:22.000Z</published>
+    <updated>2022-05-08T09:07:22.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-直接whereOr&quot;&gt;&lt;a href=&quot;#1-直接whereOr&quot; class=&quot;headerlink&quot; title=&quot;1. 直接whereOr&quot;&gt;&lt;/a&gt;1. 直接whereOr&lt;/h3&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="ThinkPHP" scheme="https://crazy-boy.com/tags/ThinkPHP/"/>
+    
+    <category term="数据库查询" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP中数组内容依次赋值给变量</title>
+    <link href="https://crazy-boy.com/archives/43827.html"/>
+    <id>https://crazy-boy.com/archives/43827.html</id>
+    <published>2022-05-08T08:59:22.000Z</published>
+    <updated>2022-05-08T08:59:22.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在日常开发过程中，经常需要把数组中的内容依次赋值给变量，可以使用list、[]、extract来处理。&lt;/p&gt;
+&lt;h3 id=&quot;1-list-var1-var2…-x3D-arr&quot;&gt;&lt;a href=&quot;#1-list-var1-var2…-x3D-arr&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="数组" scheme="https://crazy-boy.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下快速拆分txt文件</title>
+    <link href="https://crazy-boy.com/archives/53g$Y3441.html"/>
+    <id>https://crazy-boy.com/archives/53g$Y3441.html</id>
+    <published>2022-05-08T08:37:12.000Z</published>
+    <updated>2022-05-08T08:37:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。&lt;/p&gt;
+&lt;p&gt;现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://crazy-boy.com/categories/Windows/"/>
+    
+    
+    <category term="Windows" scheme="https://crazy-boy.com/tags/Windows/"/>
+    
+    <category term="文件拆分" scheme="https://crazy-boy.com/tags/%E6%96%87%E4%BB%B6%E6%8B%86%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP中不太常用的函数</title>
+    <link href="https://crazy-boy.com/archives/128Te3.html"/>
+    <id>https://crazy-boy.com/archives/128Te3.html</id>
+    <published>2022-05-08T08:28:55.000Z</published>
+    <updated>2022-05-08T08:28:55.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-constant&quot;&gt;&lt;a href=&quot;#1-constant&quot; class=&quot;headerlink&quot; title=&quot;1. constant()&quot;&gt;&lt;/a&gt;1. constant()&lt;/h3&gt;&lt;p&gt;   返回常量的值&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="函数" scheme="https://crazy-boy.com/tags/%E5%87%BD%E6%95%B0/"/>
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+  </entry>
   
   <entry>
     <title>ThinkPHP5 中order的使用</title>
@@ -52,14 +165,7 @@
     <updated>2022-04-28T09:21:00.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-参数规范&quot;&gt;&lt;a href=&quot;#1-参数规范&quot; class=&quot;headerlink&quot; title=&quot;1. 参数规范&quot;&gt;&lt;/a&gt;1. 参数规范&lt;/h2&gt;&lt;p&gt; 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：&lt;/p&gt;
-&lt;pre</summary>
-        
-      
+    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
     
     
     
@@ -69,6 +175,133 @@
     <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="代码规范" scheme="https://crazy-boy.com/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式六大原则</title>
+    <link href="https://crazy-boy.com/archives/27856.html"/>
+    <id>https://crazy-boy.com/archives/27856.html</id>
+    <published>2022-02-28T01:12:40.000Z</published>
+    <updated>2022-02-28T01:12:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、单一职责原则&quot;&gt;&lt;a href=&quot;#1、单一职责原则&quot; class=&quot;headerlink&quot; title=&quot;1、单一职责原则&quot;&gt;&lt;/a&gt;1、单一职责原则&lt;/h2&gt;&lt;h2 id=&quot;2、开闭原则&quot;&gt;&lt;a href=&quot;#2、开闭原则&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="编程" scheme="https://crazy-boy.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>目标管理</title>
+    <link href="https://crazy-boy.com/archives/78421.html"/>
+    <id>https://crazy-boy.com/archives/78421.html</id>
+    <published>2021-12-31T04:10:00.000Z</published>
+    <updated>2021-12-31T04:10:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;目标管理&quot;&gt;&lt;a href=&quot;#目标管理&quot; class=&quot;headerlink&quot; title=&quot;目标管理&quot;&gt;&lt;/a&gt;目标管理&lt;/h2&gt;&lt;h2 id=&quot;向上管理&quot;&gt;&lt;a href=&quot;#向上管理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术管理" scheme="https://crazy-boy.com/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/"/>
+    
+    
+    <category term="目标管理" scheme="https://crazy-boy.com/tags/%E7%9B%AE%E6%A0%87%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL数据库优化</title>
+    <link href="https://crazy-boy.com/archives/34713.html"/>
+    <id>https://crazy-boy.com/archives/34713.html</id>
+    <published>2021-08-07T07:56:16.000Z</published>
+    <updated>2021-08-07T07:56:16.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、优化思路&quot;&gt;&lt;a href=&quot;#1、优化思路&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
+    
+    <category term="数据库优化" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统设计</title>
+    <link href="https://crazy-boy.com/archives/76532.html"/>
+    <id>https://crazy-boy.com/archives/76532.html</id>
+    <published>2021-04-26T02:14:20.000Z</published>
+    <updated>2021-04-26T02:14:20.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1、对于初期单一系统的产品来说，一个数据库➕一个平台程序即可；&lt;/p&gt;
+&lt;p&gt;2、对于含有两个及以上平台的初期产品来说，系统结构应该是：多个平台程序➕一个服务中心➕一个或多个数据库；&lt;/p&gt;
+&lt;p&gt;3、对于多平台且需与第三方交互的产品来说，系统结构应该是：多个平台程序➕一个</summary>
+        
+      
+    
+    
+    
+    <category term="架构" scheme="https://crazy-boy.com/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="架构" scheme="https://crazy-boy.com/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL脚本执行中，预防误处理数据的方法</title>
+    <link href="https://crazy-boy.com/archives/83475.html"/>
+    <id>https://crazy-boy.com/archives/83475.html</id>
+    <published>2020-08-05T10:04:16.000Z</published>
+    <updated>2020-08-05T10:04:16.000Z</updated>
+    
+    
+    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
+    
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
+    
+    <category term="脚本执行" scheme="https://crazy-boy.com/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/"/>
     
   </entry>
   
@@ -276,9 +509,7 @@
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;设置字体和样式：&lt;/p&gt;
- &lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token</summary>
+    <summary type="html">&lt;h3 id=&quot;1-设置字体和样式&quot;&gt;&lt;a href=&quot;#1-设置字体和样式&quot; class=&quot;headerlink&quot; title=&quot;1. 设置字体和样式&quot;&gt;&lt;/a&gt;1. 设置字体和样式&lt;/h3&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
         
       
     
@@ -321,267 +552,6 @@
     <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
     
     <category term="自定义函数" scheme="https://crazy-boy.com/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP生成数据字典</title>
-    <link href="https://crazy-boy.com/archives/20269.html"/>
-    <id>https://crazy-boy.com/archives/20269.html</id>
-    <published>2018-06-21T14:37:00.000Z</published>
-    <updated>2018-06-21T14:37:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;通过php代码生成MySQL数据字典，代码如下：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-php&quot; data-language=&quot;php&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;&lt;span class=&quot;token</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="数据字典" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle笔记</title>
-    <link href="https://crazy-boy.com/archives/48959.html"/>
-    <id>https://crazy-boy.com/archives/48959.html</id>
-    <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-06-19T14:45:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;强制并行处理：&lt;code&gt;/*+ monitor</summary>
-        
-      
-    
-    
-    
-    <category term="Oracle" scheme="https://crazy-boy.com/categories/Oracle/"/>
-    
-    
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="Oracle" scheme="https://crazy-boy.com/tags/Oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>心跳包机制</title>
-    <link href="https://crazy-boy.com/archives/37766.html"/>
-    <id>https://crazy-boy.com/archives/37766.html</id>
-    <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-06-19T14:45:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;心跳包机制：主要也就是用于长连接的保活和断线处理。&lt;/li&gt;
-&lt;/ol&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="心跳" scheme="https://crazy-boy.com/categories/%E5%BF%83%E8%B7%B3/"/>
-    
-    
-    <category term="心跳" scheme="https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3/"/>
-    
-    <category term="心跳包" scheme="https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript笔记</title>
-    <link href="https://crazy-boy.com/archives/59091.html"/>
-    <id>https://crazy-boy.com/archives/59091.html</id>
-    <published>2018-06-19T14:39:00.000Z</published>
-    <updated>2018-11-09T01:49:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果想获取ajax里的function返回值，可用同步ajax。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;JavaScript不定参数&lt;/p&gt;
- &lt;pre class=&quot;line-numbers language-html&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://crazy-boy.com/categories/JavaScript/"/>
-    
-    
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="前端" scheme="https://crazy-boy.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JavaScript" scheme="https://crazy-boy.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Excel使用小技巧</title>
-    <link href="https://crazy-boy.com/archives/9067.html"/>
-    <id>https://crazy-boy.com/archives/9067.html</id>
-    <published>2018-06-19T14:02:03.000Z</published>
-    <updated>2018-09-02T07:43:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;excel固定第一行：选择第二行，点击视图里的冻结窗口即可。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;excel分列：&lt;br&gt; 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：&lt;br&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Excel" scheme="https://crazy-boy.com/categories/Excel/"/>
-    
-    
-    <category term="Excel" scheme="https://crazy-boy.com/tags/Excel/"/>
-    
-    <category term="使用技巧" scheme="https://crazy-boy.com/tags/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>R语言学习</title>
-    <link href="https://crazy-boy.com/archives/62863.html"/>
-    <id>https://crazy-boy.com/archives/62863.html</id>
-    <published>2018-06-19T14:02:03.000Z</published>
-    <updated>2018-06-19T14:07:54.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;** 之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：**&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&amp;lt;-</summary>
-        
-      
-    
-    
-    
-    <category term="R" scheme="https://crazy-boy.com/categories/R/"/>
-    
-    
-    <category term="R" scheme="https://crazy-boy.com/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SEO——权重转移</title>
-    <link href="https://crazy-boy.com/archives/16774.html"/>
-    <id>https://crazy-boy.com/archives/16774.html</id>
-    <published>2018-06-09T15:38:26.000Z</published>
-    <updated>2018-06-09T15:38:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;** 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：**&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="SEO" scheme="https://crazy-boy.com/categories/SEO/"/>
-    
-    
-    <category term="SEO" scheme="https://crazy-boy.com/tags/SEO/"/>
-    
-    <category term="权重转移" scheme="https://crazy-boy.com/tags/%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Go语言基础</title>
-    <link href="https://crazy-boy.com/archives/33631.html"/>
-    <id>https://crazy-boy.com/archives/33631.html</id>
-    <published>2018-06-09T13:57:06.000Z</published>
-    <updated>2018-06-09T13:57:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;** 自学Go语言的过程漫长而坎坷，先记录一些基础知识：**&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;执行go文件：&lt;code&gt;E:\Go_WorkSpace&amp;gt;go run</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="https://crazy-boy.com/categories/Go/"/>
-    
-    
-    <category term="Go" scheme="https://crazy-boy.com/tags/Go/"/>
-    
-    <category term="语言基础" scheme="https://crazy-boy.com/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitBook使用笔记</title>
-    <link href="https://crazy-boy.com/archives/7888.html"/>
-    <id>https://crazy-boy.com/archives/7888.html</id>
-    <published>2018-06-09T07:12:00.000Z</published>
-    <updated>2018-06-09T07:20:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。&lt;/p&gt;
-&lt;h5 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="GitBook" scheme="https://crazy-boy.com/categories/GitBook/"/>
-    
-    
-    <category term="GitBook" scheme="https://crazy-boy.com/tags/GitBook/"/>
     
   </entry>
   
