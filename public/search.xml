@@ -222,6 +222,33 @@
     
     
     <entry>
+      <title>Windows下电脑截图</title>
+      <link href="/archives/547689.html"/>
+      <url>/archives/547689.html</url>
+      
+        <content type="html"><![CDATA[<p>1、QQ截图：<code>ctrl+alt+A</code><br>2、花式截图：<code>Win+shift+S</code>  可截任意形状<br>3、微信截图：<code>Alt+A</code><br>4、浏览器截图：<code>Ctrl+shift+X</code><br>5、WPS截图：<code>Ctrl+Alt+X </code> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> 电脑截图 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>设计模式六大原则</title>
       <link href="/archives/27856.html"/>
       <url>/archives/27856.html</url>
@@ -380,6 +407,33 @@
     
     
     <entry>
+      <title>Linux下网络相关的命令</title>
+      <link href="/archives/94592.html"/>
+      <url>/archives/94592.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、检测IP-x2F-域名是否连通："><a href="#1、检测IP-x2F-域名是否连通：" class="headerlink" title="1、检测IP/域名是否连通："></a>1、检测IP/域名是否连通：</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ping</span> -c <span class="token number">4</span> <span class="token number">192.168</span>.10.8  <span class="token comment">#指定ping的次数  -c times</span><span class="token function">ping</span> -q -c <span class="token number">4</span> www.baidu.com  <span class="token comment">#只显示结果  -q</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="2、测试端口的连通性："><a href="#2、测试端口的连通性：" class="headerlink" title="2、测试端口的连通性："></a>2、测试端口的连通性：</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">telnet <span class="token function">ip</span> port  <span class="token comment">#如果未安装telnet，需执行yum install telnet进行安装</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL脚本执行中，预防误处理数据的方法</title>
       <link href="/archives/83475.html"/>
       <url>/archives/83475.html</url>
@@ -399,6 +453,33 @@
             <tag> MySQL </tag>
             
             <tag> 脚本执行 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>七牛云图片</title>
+      <link href="/archives/50933.html"/>
+      <url>/archives/50933.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1、七牛云图片地址："><a href="#1、七牛云图片地址：" class="headerlink" title="1、七牛云图片地址："></a>1、七牛云图片地址：</h2><p><code>域名/hash值</code><br>如：<a href="https://qiniu.xx.com/FroIL5_7Yx8cY901eZJk_vgtJko4">https://qiniu.xx.com/FroIL5_7Yx8cY901eZJk_vgtJko4</a></p><h2 id="2、按指定尺寸显示图片："><a href="#2、按指定尺寸显示图片：" class="headerlink" title="2、按指定尺寸显示图片："></a>2、按指定尺寸显示图片：</h2><p><code>域名/hash值?imageMogr2/auto-orient/thumbnail/!宽x高r/gravity/Center/crop/宽x高/interlace/1/blur/1x0/quality/80|imageslim</code><br>如：<a href="https://qiniu.xx.com/FroIL5_7Yx8cY901eZJk_vgtJko4?imageMogr2/auto-orient/thumbnail/!100x200r/gravity/Center/crop/100x200/interlace/1/blur/1x0/quality/80%7Cimageslim">https://qiniu.xx.com/FroIL5_7Yx8cY901eZJk_vgtJko4?imageMogr2/auto-orient/thumbnail/!100x200r/gravity/Center/crop/100x200/interlace/1/blur/1x0/quality/80|imageslim</a></p><h2 id="3、资源下载："><a href="#3、资源下载：" class="headerlink" title="3、资源下载："></a>3、资源下载：</h2><p><code>域名/hash值?attname=文件名.扩展名</code><br>如：<a href="https://qiniu.xx.com/FpGbwMwJR4mqRIbBIDCy2ZNbpvA9?attname=a.jpg">https://qiniu.xx.com/FpGbwMwJR4mqRIbBIDCy2ZNbpvA9?attname=a.jpg</a></p><h2 id="4、图片等比例缩放："><a href="#4、图片等比例缩放：" class="headerlink" title="4、图片等比例缩放："></a>4、图片等比例缩放：</h2><p><code>域名/hash值?imageView2/&lt;mode&gt;/w/&lt;Width&gt;/h/&lt;Height&gt;</code><br>如：<a href="https://qiniu.xx.com/FpGbwMwJR4mqRIbBIDCy2ZNbpvA9?imageView2/2/w/450/h/450">https://qiniu.xx.com/FpGbwMwJR4mqRIbBIDCy2ZNbpvA9?imageView2/2/w/450/h/450</a></p><h2 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h2><p><a href="https://developer.qiniu.com/dora/api/1279/basic-processing-images-imageview2">https://developer.qiniu.com/dora/api/1279/basic-processing-images-imageview2</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 第三方 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 七牛云 </tag>
+            
+            <tag> 图片 </tag>
             
         </tags>
       
@@ -1123,7 +1204,7 @@
       <link href="/archives/48230.html"/>
       <url>/archives/48230.html</url>
       
-        <content type="html"><![CDATA[<p>** 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：**</p><ol><li>创建文件夹： <code> mkdir dir</code></li><li>删除文件夹(-r向下递归，-f强制删除)： <code> rm -rf dir</code></li><li>创建文件：<code> touch a.txt</code></li><li>删除文件：<code> rm -f /var/log/a.txt</code></li><li>追加内容到文件：<code> echo sssss &gt;&gt; a.txt</code></li><li>插入内容：vi text.txt =》按i =》插入内容 =》按Esc =》:wq</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：</p><ol><li>创建文件夹： <code> mkdir dir</code></li><li>删除文件夹(-r向下递归，-f强制删除)： <code> rm -rf dir</code></li><li>创建文件：<code> touch a.txt</code></li><li>删除文件：<code> rm -f /var/log/a.txt</code></li><li>追加内容到文件：<code> echo sssss &gt;&gt; a.txt</code></li><li>插入内容：vi text.txt =》按i =》插入内容 =》按Esc =》:wq</li></ol>]]></content>
       
       
       <categories>

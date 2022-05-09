@@ -235,6 +235,33 @@
   </entry>
   
   <entry>
+    <title>Windows下电脑截图</title>
+    <link href="https://crazy-boy.com/archives/547689.html"/>
+    <id>https://crazy-boy.com/archives/547689.html</id>
+    <published>2022-03-20T01:25:08.000Z</published>
+    <updated>2022-03-20T01:25:08.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1、QQ截图：&lt;code&gt;ctrl+alt+A&lt;/code&gt;&lt;br&gt;2、花式截图：&lt;code&gt;Win+shift+S&lt;/code&gt; </summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://crazy-boy.com/categories/Windows/"/>
+    
+    
+    <category term="Windows" scheme="https://crazy-boy.com/tags/Windows/"/>
+    
+    <category term="电脑截图" scheme="https://crazy-boy.com/tags/%E7%94%B5%E8%84%91%E6%88%AA%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式六大原则</title>
     <link href="https://crazy-boy.com/archives/27856.html"/>
     <id>https://crazy-boy.com/archives/27856.html</id>
@@ -397,6 +424,33 @@
   </entry>
   
   <entry>
+    <title>Linux下网络相关的命令</title>
+    <link href="https://crazy-boy.com/archives/94592.html"/>
+    <id>https://crazy-boy.com/archives/94592.html</id>
+    <published>2021-01-07T01:20:00.000Z</published>
+    <updated>2021-01-07T01:20:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、检测IP-x2F-域名是否连通：&quot;&gt;&lt;a href=&quot;#1、检测IP-x2F-域名是否连通：&quot; class=&quot;headerlink&quot; title=&quot;1、检测IP/域名是否连通：&quot;&gt;&lt;/a&gt;1、检测IP/域名是否连通：&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="网络" scheme="https://crazy-boy.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL脚本执行中，预防误处理数据的方法</title>
     <link href="https://crazy-boy.com/archives/83475.html"/>
     <id>https://crazy-boy.com/archives/83475.html</id>
@@ -414,6 +468,33 @@
     <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
     
     <category term="脚本执行" scheme="https://crazy-boy.com/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>七牛云图片</title>
+    <link href="https://crazy-boy.com/archives/50933.html"/>
+    <id>https://crazy-boy.com/archives/50933.html</id>
+    <published>2019-12-04T01:28:56.000Z</published>
+    <updated>2019-12-04T01:28:56.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1、七牛云图片地址：&quot;&gt;&lt;a href=&quot;#1、七牛云图片地址：&quot; class=&quot;headerlink&quot; title=&quot;1、七牛云图片地址：&quot;&gt;&lt;/a&gt;1、七牛云图片地址：&lt;/h2&gt;&lt;p&gt;&lt;code&gt;域名/hash值&lt;/code&gt;&lt;br&gt;如：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="第三方" scheme="https://crazy-boy.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9/"/>
+    
+    
+    <category term="七牛云" scheme="https://crazy-boy.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+    <category term="图片" scheme="https://crazy-boy.com/tags/%E5%9B%BE%E7%89%87/"/>
     
   </entry>
   
@@ -474,83 +555,6 @@
     <category term="rz" scheme="https://crazy-boy.com/tags/rz/"/>
     
     <category term="sz" scheme="https://crazy-boy.com/tags/sz/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web安全</title>
-    <link href="https://crazy-boy.com/archives/35576.html"/>
-    <id>https://crazy-boy.com/archives/35576.html</id>
-    <published>2019-05-29T07:18:00.000Z</published>
-    <updated>2019-05-29T07:18:00.000Z</updated>
-    
-    
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="Web" scheme="https://crazy-boy.com/tags/Web/"/>
-    
-    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL常见报错问题</title>
-    <link href="https://crazy-boy.com/archives/19794.html"/>
-    <id>https://crazy-boy.com/archives/19794.html</id>
-    <published>2019-03-20T09:37:00.000Z</published>
-    <updated>2019-03-20T09:40:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;[Err] 1066 - Not unique table/alias:</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
-    
-    <category term="报错" scheme="https://crazy-boy.com/tags/%E6%8A%A5%E9%94%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP运维笔记</title>
-    <link href="https://crazy-boy.com/archives/35292.html"/>
-    <id>https://crazy-boy.com/archives/35292.html</id>
-    <published>2019-03-20T09:37:00.000Z</published>
-    <updated>2019-03-20T09:40:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;常见命令：&lt;br&gt; 查看PHP扩展：&lt;code&gt;php -m&lt;/code&gt;&lt;br&gt; 查看扩展的版本信息：&lt;code&gt;php -ri 扩展名&lt;/code&gt;  如：&lt;code&gt;php -ri</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="运维" scheme="https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
