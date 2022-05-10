@@ -22,6 +22,14 @@ permalink: archives/:abbrlink.html
 abbrlink:
   alg: crc32  # 算法：crc16(default) and crc32
   rep: hex    # 进制：dec(default) and hex
+  drafts: true
+  auto_category: 
+    enable: true
+    depth: 3
+    over_write: false
+  auto_title: false
+  auto_date: false
+  force: false
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
