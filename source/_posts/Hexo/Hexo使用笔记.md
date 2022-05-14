@@ -4,7 +4,7 @@ tags:
   - Hexo
   - NexT
 categories: Hexo
-abbrlink: 3280
+abbrlink: c1d2e7ba
 date: 2018-06-09 15:12:00
 updated: 2018-06-09 15:20:00
 ---

@@ -3,7 +3,7 @@ title: R语言学习
 tags:
   - R
 categories: R
-abbrlink: 62863
+abbrlink: 8d4c12d3
 date: 2018-06-19 22:02:03
 updated: 2018-06-19 22:07:54
 ---

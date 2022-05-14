@@ -3,7 +3,7 @@ title: GitBook使用笔记
 tags:
   - GitBook
 categories: GitBook
-abbrlink: 7888
+abbrlink: a85900e2
 date: 2018-06-09 15:12:00
 updated: 2018-06-09 15:20:00
 ---

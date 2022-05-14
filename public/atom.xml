@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-05-08T09:07:22.000Z</updated>
+  <updated>2022-05-12T09:17:55.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -17,9 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>phpStorm显示当前文件的所有函数和方法</title>
+    <link href="https://crazy-boy.com/archives/4aed7067.html"/>
+    <id>https://crazy-boy.com/archives/4aed7067.html</id>
+    <published>2022-05-12T09:17:55.000Z</published>
+    <updated>2022-05-12T09:17:55.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;phpStorm显示类的函数或方法列表， 点击左下方的Structure即可。&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="php" scheme="https://crazy-boy.com/tags/php/"/>
+    
+    <category term="phpStorm" scheme="https://crazy-boy.com/tags/phpStorm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DOS命令进入MySQL</title>
+    <link href="https://crazy-boy.com/archives/88ecfff4.html"/>
+    <id>https://crazy-boy.com/archives/88ecfff4.html</id>
+    <published>2022-05-11T09:08:36.000Z</published>
+    <updated>2022-05-11T09:08:36.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-先进入mysql安装目录下的bin目录中&quot;&gt;&lt;a href=&quot;#1-先进入mysql安装目录下的bin目录中&quot; class=&quot;headerlink&quot; title=&quot;1. 先进入mysql安装目录下的bin目录中&quot;&gt;&lt;/a&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
+    
+    
+    <category term="DOS命令" scheme="https://crazy-boy.com/tags/DOS%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ThinkPHP5框架where条件中含有or的使用方法</title>
-    <link href="https://crazy-boy.com/archives/435769.html"/>
-    <id>https://crazy-boy.com/archives/435769.html</id>
+    <link href="https://crazy-boy.com/archives/521b47c8.html"/>
+    <id>https://crazy-boy.com/archives/521b47c8.html</id>
     <published>2022-05-08T09:07:22.000Z</published>
     <updated>2022-05-08T09:07:22.000Z</updated>
     
@@ -75,8 +129,8 @@
   
   <entry>
     <title>Windows下快速拆分txt文件</title>
-    <link href="https://crazy-boy.com/archives/53g$Y3441.html"/>
-    <id>https://crazy-boy.com/archives/53g$Y3441.html</id>
+    <link href="https://crazy-boy.com/archives/56475516.html"/>
+    <id>https://crazy-boy.com/archives/56475516.html</id>
     <published>2022-05-08T08:37:12.000Z</published>
     <updated>2022-05-08T08:37:12.000Z</updated>
     
@@ -103,8 +157,8 @@
   
   <entry>
     <title>PHP中不太常用的函数</title>
-    <link href="https://crazy-boy.com/archives/128Te3.html"/>
-    <id>https://crazy-boy.com/archives/128Te3.html</id>
+    <link href="https://crazy-boy.com/archives/28294742.html"/>
+    <id>https://crazy-boy.com/archives/28294742.html</id>
     <published>2022-05-08T08:28:55.000Z</published>
     <updated>2022-05-08T08:28:55.000Z</updated>
     
@@ -123,9 +177,9 @@
     <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
     
     
-    <category term="函数" scheme="https://crazy-boy.com/tags/%E5%87%BD%E6%95%B0/"/>
-    
     <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="函数" scheme="https://crazy-boy.com/tags/%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
@@ -158,9 +212,37 @@
   </entry>
   
   <entry>
+    <title>性能测试——ab.exe</title>
+    <link href="https://crazy-boy.com/archives/5081417f.html"/>
+    <id>https://crazy-boy.com/archives/5081417f.html</id>
+    <published>2022-05-06T09:28:37.000Z</published>
+    <updated>2022-05-06T09:28:37.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ab.exe是apache server下的一个性能检测小组件，使用方便简单。&lt;br&gt;使用方法：&lt;/p&gt;
+&lt;h3 id=&quot;1-找到ab-exe的位置&quot;&gt;&lt;a href=&quot;#1-找到ab-exe的位置&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+        
+      
+    
+    
+    
+    <category term="测试" scheme="https://crazy-boy.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="Apache" scheme="https://crazy-boy.com/tags/Apache/"/>
+    
+    <category term="ab.exe" scheme="https://crazy-boy.com/tags/ab-exe/"/>
+    
+  </entry>
+  
+  <entry>
     <title>代码规范建议</title>
-    <link href="https://crazy-boy.com/archives/1294.html"/>
-    <id>https://crazy-boy.com/archives/1294.html</id>
+    <link href="https://crazy-boy.com/archives/6541028b.html"/>
+    <id>https://crazy-boy.com/archives/6541028b.html</id>
     <published>2022-04-28T09:21:00.000Z</published>
     <updated>2022-04-28T09:21:00.000Z</updated>
     
@@ -180,8 +262,8 @@
   
   <entry>
     <title>phpStorm查找指定文件的修改历史</title>
-    <link href="https://crazy-boy.com/archives/57521.html"/>
-    <id>https://crazy-boy.com/archives/57521.html</id>
+    <link href="https://crazy-boy.com/archives/aca1f155.html"/>
+    <id>https://crazy-boy.com/archives/aca1f155.html</id>
     <published>2022-04-27T01:53:23.000Z</published>
     <updated>2022-04-27T01:53:23.000Z</updated>
     
@@ -207,8 +289,8 @@
   
   <entry>
     <title>ThinkPHP5 中clone Query对象</title>
-    <link href="https://crazy-boy.com/archives/54284.html"/>
-    <id>https://crazy-boy.com/archives/54284.html</id>
+    <link href="https://crazy-boy.com/archives/edd59bca.html"/>
+    <id>https://crazy-boy.com/archives/edd59bca.html</id>
     <published>2022-04-26T13:18:26.000Z</published>
     <updated>2022-04-26T13:18:26.000Z</updated>
     
@@ -236,8 +318,8 @@
   
   <entry>
     <title>Windows下电脑截图</title>
-    <link href="https://crazy-boy.com/archives/547689.html"/>
-    <id>https://crazy-boy.com/archives/547689.html</id>
+    <link href="https://crazy-boy.com/archives/ead2d66c.html"/>
+    <id>https://crazy-boy.com/archives/ead2d66c.html</id>
     <published>2022-03-20T01:25:08.000Z</published>
     <updated>2022-03-20T01:25:08.000Z</updated>
     
@@ -263,8 +345,8 @@
   
   <entry>
     <title>设计模式六大原则</title>
-    <link href="https://crazy-boy.com/archives/27856.html"/>
-    <id>https://crazy-boy.com/archives/27856.html</id>
+    <link href="https://crazy-boy.com/archives/96cd7416.html"/>
+    <id>https://crazy-boy.com/archives/96cd7416.html</id>
     <published>2022-02-28T01:12:40.000Z</published>
     <updated>2022-02-28T01:12:40.000Z</updated>
     
@@ -287,9 +369,59 @@
   </entry>
   
   <entry>
+    <title>自己封装的一些常用的PHP函数</title>
+    <link href="https://crazy-boy.com/archives/61e2bcf6.html"/>
+    <id>https://crazy-boy.com/archives/61e2bcf6.html</id>
+    <published>2022-02-27T13:26:25.000Z</published>
+    <updated>2022-02-27T13:26:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-将字符串每隔n位显示一个指定字符&quot;&gt;&lt;a href=&quot;#1-将字符串每隔n位显示一个指定字符&quot; class=&quot;headerlink&quot; title=&quot;1. 将字符串每隔n位显示一个指定字符&quot;&gt;&lt;/a&gt;1. 将字符串每隔n位显示一个指定字符&lt;/h3&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="PHP函数" scheme="https://crazy-boy.com/tags/PHP%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见颜色值</title>
+    <link href="https://crazy-boy.com/archives/606b6d50.html"/>
+    <id>https://crazy-boy.com/archives/606b6d50.html</id>
+    <published>2022-02-25T14:06:16.000Z</published>
+    <updated>2022-02-25T14:06:16.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;RGB(255,255,255)：白色   #FFFFFF&lt;br&gt;RGB(0,0,0)：黑色  #000000&lt;br&gt;RGB(255,0,0)：红色 </summary>
+        
+      
+    
+    
+    
+    <category term="HTML" scheme="https://crazy-boy.com/categories/HTML/"/>
+    
+    
+    <category term="颜色值" scheme="https://crazy-boy.com/tags/%E9%A2%9C%E8%89%B2%E5%80%BC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>锚定效应</title>
-    <link href="https://crazy-boy.com/archives/56274.html"/>
-    <id>https://crazy-boy.com/archives/56274.html</id>
+    <link href="https://crazy-boy.com/archives/2207b087.html"/>
+    <id>https://crazy-boy.com/archives/2207b087.html</id>
     <published>2022-02-22T07:23:47.000Z</published>
     <updated>2022-02-22T07:23:47.000Z</updated>
     
@@ -316,8 +448,8 @@
   
   <entry>
     <title>目标管理</title>
-    <link href="https://crazy-boy.com/archives/78421.html"/>
-    <id>https://crazy-boy.com/archives/78421.html</id>
+    <link href="https://crazy-boy.com/archives/4c19b56c.html"/>
+    <id>https://crazy-boy.com/archives/4c19b56c.html</id>
     <published>2021-12-31T04:10:00.000Z</published>
     <updated>2021-12-31T04:10:00.000Z</updated>
     
@@ -341,8 +473,8 @@
   
   <entry>
     <title>产品设计</title>
-    <link href="https://crazy-boy.com/archives/73480.html"/>
-    <id>https://crazy-boy.com/archives/73480.html</id>
+    <link href="https://crazy-boy.com/archives/c7205d17.html"/>
+    <id>https://crazy-boy.com/archives/c7205d17.html</id>
     <published>2021-12-30T22:25:58.000Z</published>
     <updated>2021-12-30T22:25:58.000Z</updated>
     
@@ -369,8 +501,8 @@
   
   <entry>
     <title>MySQL数据库优化</title>
-    <link href="https://crazy-boy.com/archives/34713.html"/>
-    <id>https://crazy-boy.com/archives/34713.html</id>
+    <link href="https://crazy-boy.com/archives/bc18f661.html"/>
+    <id>https://crazy-boy.com/archives/bc18f661.html</id>
     <published>2021-08-07T07:56:16.000Z</published>
     <updated>2021-08-07T07:56:16.000Z</updated>
     
@@ -396,8 +528,8 @@
   
   <entry>
     <title>系统设计</title>
-    <link href="https://crazy-boy.com/archives/76532.html"/>
-    <id>https://crazy-boy.com/archives/76532.html</id>
+    <link href="https://crazy-boy.com/archives/c5e566f2.html"/>
+    <id>https://crazy-boy.com/archives/c5e566f2.html</id>
     <published>2021-04-26T02:14:20.000Z</published>
     <updated>2021-04-26T02:14:20.000Z</updated>
     
@@ -420,141 +552,6 @@
     <category term="架构" scheme="https://crazy-boy.com/tags/%E6%9E%B6%E6%9E%84/"/>
     
     <category term="系统设计" scheme="https://crazy-boy.com/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下网络相关的命令</title>
-    <link href="https://crazy-boy.com/archives/94592.html"/>
-    <id>https://crazy-boy.com/archives/94592.html</id>
-    <published>2021-01-07T01:20:00.000Z</published>
-    <updated>2021-01-07T01:20:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、检测IP-x2F-域名是否连通：&quot;&gt;&lt;a href=&quot;#1、检测IP-x2F-域名是否连通：&quot; class=&quot;headerlink&quot; title=&quot;1、检测IP/域名是否连通：&quot;&gt;&lt;/a&gt;1、检测IP/域名是否连通：&lt;/h2&gt;&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
-    
-    <category term="网络" scheme="https://crazy-boy.com/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL脚本执行中，预防误处理数据的方法</title>
-    <link href="https://crazy-boy.com/archives/83475.html"/>
-    <id>https://crazy-boy.com/archives/83475.html</id>
-    <published>2020-08-05T10:04:16.000Z</published>
-    <updated>2020-08-05T10:04:16.000Z</updated>
-    
-    
-    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
-    
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
-    
-    <category term="脚本执行" scheme="https://crazy-boy.com/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>七牛云图片</title>
-    <link href="https://crazy-boy.com/archives/50933.html"/>
-    <id>https://crazy-boy.com/archives/50933.html</id>
-    <published>2019-12-04T01:28:56.000Z</published>
-    <updated>2019-12-04T01:28:56.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、七牛云图片地址：&quot;&gt;&lt;a href=&quot;#1、七牛云图片地址：&quot; class=&quot;headerlink&quot; title=&quot;1、七牛云图片地址：&quot;&gt;&lt;/a&gt;1、七牛云图片地址：&lt;/h2&gt;&lt;p&gt;&lt;code&gt;域名/hash值&lt;/code&gt;&lt;br&gt;如：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="第三方" scheme="https://crazy-boy.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9/"/>
-    
-    
-    <category term="七牛云" scheme="https://crazy-boy.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
-    
-    <category term="图片" scheme="https://crazy-boy.com/tags/%E5%9B%BE%E7%89%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS点击复制指定内容</title>
-    <link href="https://crazy-boy.com/archives/3652.html"/>
-    <id>https://crazy-boy.com/archives/3652.html</id>
-    <published>2019-07-02T11:41:00.000Z</published>
-    <updated>2019-07-02T11:45:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;点击按钮，复制指定文本框内容，代码如下：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://crazy-boy.com/categories/JavaScript/"/>
-    
-    
-    <category term="JavaScript" scheme="https://crazy-boy.com/tags/JavaScript/"/>
-    
-    <category term="复制" scheme="https://crazy-boy.com/tags/%E5%A4%8D%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux中rz的使用</title>
-    <link href="https://crazy-boy.com/archives/34450.html"/>
-    <id>https://crazy-boy.com/archives/34450.html</id>
-    <published>2019-07-02T11:20:00.000Z</published>
-    <updated>2019-07-02T11:20:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;我们常常需要在客户端和服务器(windows和linux)之间互传文件，这就可以使用rz(sz)命令。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果服务器不支持rz命令，需安装：&lt;/p&gt;
- &lt;pre class=&quot;line-numbers language-bash&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
-    
-    <category term="rz" scheme="https://crazy-boy.com/tags/rz/"/>
-    
-    <category term="sz" scheme="https://crazy-boy.com/tags/sz/"/>
     
   </entry>
   

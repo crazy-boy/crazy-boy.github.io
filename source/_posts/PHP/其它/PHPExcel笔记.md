@@ -1,13 +1,12 @@
 ---
 title: PHPExcel笔记
 tags:
-  - PHP
-  - Excel
+  - PHPExcel
   - 笔记
 categories: PHP
-abbrlink: 10294
+abbrlink: e9763d3
 date: 2018-11-06 11:55:00
-updated: 2018-11-06 13:52:00
+updated: 2022-05-11 17:03:22
 ---
 
 ### 1. 设置字体和样式

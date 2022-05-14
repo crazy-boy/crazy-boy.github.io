@@ -5,7 +5,7 @@ tags:
   - MySQL
   - 数据字典
 categories: PHP
-abbrlink: 20269
+abbrlink: '15513092'
 date: 2018-06-21 22:37:00
 updated: 2018-06-21 22:37:00
 ---

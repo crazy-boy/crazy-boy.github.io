@@ -5,9 +5,9 @@ tags:
   - 笔记
   - 前端
 categories: JavaScript
-abbrlink: 59091
+abbrlink: e803913a
 date: 2018-06-19 22:39:00
-updated: 2018-11-09 9:49:00
+updated: 2018-11-09 09:49:00
 ---
 
 1. 如果想获取ajax里的function返回值，可用同步ajax。

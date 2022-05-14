@@ -4,7 +4,7 @@ tags:
   - Oracle
   - 笔记
 categories: Oracle
-abbrlink: 48959
+abbrlink: 4acd8de8
 date: 2018-06-19 22:39:00
 updated: 2018-06-19 22:45:00
 ---

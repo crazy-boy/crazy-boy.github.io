@@ -4,7 +4,7 @@ tags:
   - Git
   - 文件忽略
 categories: Git
-abbrlink: 21943
+abbrlink: f00bf8aa
 date: 2018-04-25 13:55:00
 ---
 软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。

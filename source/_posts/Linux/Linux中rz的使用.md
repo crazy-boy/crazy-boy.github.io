@@ -5,7 +5,7 @@ tags:
   - rz
   - sz
 categories: Linux
-abbrlink: 34450
+abbrlink: a1146ed7
 date: 2019-07-02 19:20:00
 updated: 2019-07-02 19:20:00
 ---

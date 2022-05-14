@@ -4,7 +4,7 @@ tags:
   - Prolog
   - 笔记
 categories: Prolog
-abbrlink: 45387
+abbrlink: ec2116cd
 date: 2019-01-31 11:36:00
 updated: 2019-01-31 11:36:00
 ---
