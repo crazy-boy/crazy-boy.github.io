@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-05-12T09:17:55.000Z</updated>
+  <updated>2022-05-15T03:33:50.065Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次高并发迭代之路</title>
+    <link href="https://crazy-boy.com/archives/8f013979.html"/>
+    <id>https://crazy-boy.com/archives/8f013979.html</id>
+    <published>2022-05-15T03:29:51.309Z</published>
+    <updated>2022-05-15T03:33:50.065Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前因&quot;&gt;&lt;a href=&quot;#前因&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="架构" scheme="https://crazy-boy.com/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+    <category term="高并发" scheme="https://crazy-boy.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+    <category term="性能优化" scheme="https://crazy-boy.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>phpStorm显示当前文件的所有函数和方法</title>
@@ -317,6 +344,89 @@
   </entry>
   
   <entry>
+    <title>phpStorm实现保存后，代码自动格式化</title>
+    <link href="https://crazy-boy.com/archives/16aefd1.html"/>
+    <id>https://crazy-boy.com/archives/16aefd1.html</id>
+    <published>2022-04-26T09:51:46.000Z</published>
+    <updated>2022-04-26T09:51:46.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;鉴于个人编程风格的不同，为了保证团队开发能更好地开展，需要进行代码统一格式化。我们可以在ctrl+s的时候让IED来自动格式化保存。&lt;br&gt;下面介绍下设置步骤：&lt;/p&gt;
+&lt;h3 id=&quot;1-点击File-》Settings-》Keymap&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="php" scheme="https://crazy-boy.com/tags/php/"/>
+    
+    <category term="phpStorm" scheme="https://crazy-boy.com/tags/phpStorm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows下快捷键使用</title>
+    <link href="https://crazy-boy.com/archives/e939ff3c.html"/>
+    <id>https://crazy-boy.com/archives/e939ff3c.html</id>
+    <published>2022-04-25T09:29:40.000Z</published>
+    <updated>2022-04-25T09:29:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ol&gt;
+&lt;li&gt;通过Tab键可以在当前界面将光标向下切换，Tab+Shift是向上切换。&lt;/li&gt;
+&lt;/ol&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Windows" scheme="https://crazy-boy.com/categories/Windows/"/>
+    
+    
+    <category term="Windows" scheme="https://crazy-boy.com/tags/Windows/"/>
+    
+    <category term="快捷键" scheme="https://crazy-boy.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ThinkPHP5使用笔记</title>
+    <link href="https://crazy-boy.com/archives/d21f50bb.html"/>
+    <id>https://crazy-boy.com/archives/d21f50bb.html</id>
+    <published>2022-04-25T03:32:32.000Z</published>
+    <updated>2022-04-25T03:32:32.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-报错：Request-php中-variable-type-error-array&quot;&gt;&lt;a href=&quot;#1-报错：Request-php中-variable-type-error-array&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="ThinkPHP" scheme="https://crazy-boy.com/tags/ThinkPHP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows下电脑截图</title>
     <link href="https://crazy-boy.com/archives/ead2d66c.html"/>
     <id>https://crazy-boy.com/archives/ead2d66c.html</id>
@@ -443,115 +553,6 @@
     <category term="产品" scheme="https://crazy-boy.com/tags/%E4%BA%A7%E5%93%81/"/>
     
     <category term="锚定效应" scheme="https://crazy-boy.com/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>目标管理</title>
-    <link href="https://crazy-boy.com/archives/4c19b56c.html"/>
-    <id>https://crazy-boy.com/archives/4c19b56c.html</id>
-    <published>2021-12-31T04:10:00.000Z</published>
-    <updated>2021-12-31T04:10:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;目标管理&quot;&gt;&lt;a href=&quot;#目标管理&quot; class=&quot;headerlink&quot; title=&quot;目标管理&quot;&gt;&lt;/a&gt;目标管理&lt;/h2&gt;&lt;h2 id=&quot;向上管理&quot;&gt;&lt;a href=&quot;#向上管理&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="技术管理" scheme="https://crazy-boy.com/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/"/>
-    
-    
-    <category term="目标管理" scheme="https://crazy-boy.com/tags/%E7%9B%AE%E6%A0%87%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>产品设计</title>
-    <link href="https://crazy-boy.com/archives/c7205d17.html"/>
-    <id>https://crazy-boy.com/archives/c7205d17.html</id>
-    <published>2021-12-30T22:25:58.000Z</published>
-    <updated>2021-12-30T22:25:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1、我们的手机上都装了很多APP，而现在的APP基本上都需要账号登录。那么问题来了，如果手机丢了，你最关心的是什么呢，是这些APP的账号信息泄露被不法份子使用，还是这个应用里的个人隐私数据泄露呢？个人感觉可以从以下几个方面提高产品的安全性：&lt;/p&gt;
-&lt;p&gt; </summary>
-        
-      
-    
-    
-    
-    <category term="产品" scheme="https://crazy-boy.com/categories/%E4%BA%A7%E5%93%81/"/>
-    
-    
-    <category term="产品设计" scheme="https://crazy-boy.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
-    
-    <category term="产品" scheme="https://crazy-boy.com/tags/%E4%BA%A7%E5%93%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL数据库优化</title>
-    <link href="https://crazy-boy.com/archives/bc18f661.html"/>
-    <id>https://crazy-boy.com/archives/bc18f661.html</id>
-    <published>2021-08-07T07:56:16.000Z</published>
-    <updated>2021-08-07T07:56:16.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、优化思路&quot;&gt;&lt;a href=&quot;#1、优化思路&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
-    
-    <category term="数据库优化" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>系统设计</title>
-    <link href="https://crazy-boy.com/archives/c5e566f2.html"/>
-    <id>https://crazy-boy.com/archives/c5e566f2.html</id>
-    <published>2021-04-26T02:14:20.000Z</published>
-    <updated>2021-04-26T02:14:20.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1、对于初期单一系统的产品来说，一个数据库➕一个平台程序即可；&lt;/p&gt;
-&lt;p&gt;2、对于含有两个及以上平台的初期产品来说，系统结构应该是：多个平台程序➕一个服务中心➕一个或多个数据库；&lt;/p&gt;
-&lt;p&gt;3、对于多平台且需与第三方交互的产品来说，系统结构应该是：多个平台程序➕一个</summary>
-        
-      
-    
-    
-    
-    <category term="架构" scheme="https://crazy-boy.com/categories/%E6%9E%B6%E6%9E%84/"/>
-    
-    
-    <category term="架构" scheme="https://crazy-boy.com/tags/%E6%9E%B6%E6%9E%84/"/>
-    
-    <category term="系统设计" scheme="https://crazy-boy.com/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   

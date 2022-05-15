@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>记一次高并发迭代之路</title>
+      <link href="/archives/8f013979.html"/>
+      <url>/archives/8f013979.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h3><p>2020年之初，新冠肺炎突然来势汹汹，在全国人民的团结努力下，抗疫战进入了僵持阶段，2月24日我公司一复工，就接到了成都市XX区领导的需求，需要在一周内开发上线一个针对全区师生(10万人左右)疫情每日打卡平台。</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>其实就是需要做一个用户每日登陆填报问卷的功能。此平台需要有一个管理后台，一个h5打卡填报及其附属页面。</p><h3 id="雏形"><a href="#雏形" class="headerlink" title="雏形"></a>雏形</h3><p>由于时间紧，对项目进行简单分析后，确定功能(后台：用户信息管理、打卡记录、数据统计，前台：用户登陆、打卡、快速打卡、打卡记录)后，我们就着手开发。功能很快开发开发完成并上线。</p><h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>上线前的测试阶段，我们发现有些信息是固定的但每个人都需要查询，比如省市区信息，于是我们进行了redis缓存。由于后台的统计过于复杂，于是使用golang开发了计划任务，每两分钟统计一次数据。<br>领导验收时又提了一些功能改进，在改进时，我们发现用户数有10万左右，单一的打卡接口可能会堵塞，于是进行了优化，打卡接口只进行普通的填报信息校验，校验通过后，异步调用golang接口进行打卡信息保存，这样有一个坏处就是数据保存延迟，可能会出现打卡后看不到记录。为防止用户多次打卡，在填报信息校验通过后，将当天打卡人的唯一标识存入redis，如果存在redis中就不让再次打卡，当然如果打卡信息保存失败，go程序需删除该人当日的打卡缓存。<br>上线试运行期间，发现用户打卡打卡页面很慢，经分析，服务器带宽只有10M，前端页面图片未压缩，于是进行图片、js、css等资源文件压缩，单纯压测前端页面(压缩后未425k)，明显带宽不够，加大到100M，前端页面图片CND加速后，压测1000并发无问题。压测打卡接口，1000并发连接超时失败率20%，800并发连接超时失败率10%。<br>压测一个通宵后，本以为平安无事了，结果第二天一早上就卡得不行，原来是后台查询过慢，导致cpu飙升，前台用户查询不到数据，看慢查询发现，时不时有几个查询sql消耗时间过长，show preocesslist也看到异常。先加索引优化，但效果不明显，结果发现是在进行联表查询的时候，大表联了大表，大表牵引本来就是问题，于是对业务表进行了合并，5张表合成一张表，并添加索引，后台查询立马飞快。更新程序后，暂时一切正常了。<br>没想到第二天一早上服务器有出问题了，并发飙升到2万多，有很多insert 语句造成了锁表，而很多的select语句有无法执行。突然意识到myisam使用insert的时候会造成锁表，需要支持并发插入，得修改concurrent_insert=2,；另一方面有个在慢查询中有两个select语句出现很频繁，但耗时不高(0.60s左右)，explain发现居然没有使用索引，立马加上索引，查询耗时降低到0.02s。在无法kill sql进程的情况下，只能进行停止Nginx，重启数据库，重启后一切正常。<br>由于可能并发过高，我们选择了服务器升级，单台数据库可能扛不住。全迁移到阿里云，使用阿里云的数据库，读写分离，一主多从，弹性伸缩。一切ok，监控两日后发现并发在8000左右。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>架构设计的原则：简单、合适高于一切。<br>高并发需考虑带宽，页面缓存压缩、静态数据缓存、接口异步多线程处理。<br>慢查询除了关注耗时过长的sql，还得注意使用频繁的sql。<br>高并发当程序优化到极致后，需考虑服务器优化，读写分离，redis集群等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高并发 </tag>
+            
+            <tag> 性能优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>phpStorm显示当前文件的所有函数和方法</title>
       <link href="/archives/4aed7067.html"/>
       <url>/archives/4aed7067.html</url>
@@ -303,6 +330,85 @@
     
     
     <entry>
+      <title>phpStorm实现保存后，代码自动格式化</title>
+      <link href="/archives/16aefd1.html"/>
+      <url>/archives/16aefd1.html</url>
+      
+        <content type="html"><![CDATA[<p>鉴于个人编程风格的不同，为了保证团队开发能更好地开展，需要进行代码统一格式化。我们可以在ctrl+s的时候让IED来自动格式化保存。<br>下面介绍下设置步骤：</p><h3 id="1-点击File-》Settings-》Keymap"><a href="#1-点击File-》Settings-》Keymap" class="headerlink" title="1. 点击File-》Settings-》Keymap"></a>1. 点击File-》Settings-》Keymap</h3><p><img src="/images/phpstorm_auth_format_1.png"></p><h3 id="2-在右侧搜索save-ALL"><a href="#2-在右侧搜索save-ALL" class="headerlink" title="2. 在右侧搜索save ALL"></a>2. 在右侧搜索save ALL</h3><p><img src="/images/phpstorm_auth_format_2.png"></p><h3 id="3-右键点击Save-All，选择Remove-Ctrl-S"><a href="#3-右键点击Save-All，选择Remove-Ctrl-S" class="headerlink" title="3. 右键点击Save All，选择Remove Ctrl+S"></a>3. 右键点击Save All，选择Remove Ctrl+S</h3><p><img src="/images/phpstorm_auth_format_3.png"></p><h3 id="4-右键点击Save-All，选择Add-Keyboard-Shortcut，然后按键盘shift-ctrl-alt-s，然后保存。"><a href="#4-右键点击Save-All，选择Add-Keyboard-Shortcut，然后按键盘shift-ctrl-alt-s，然后保存。" class="headerlink" title="4. 右键点击Save All，选择Add Keyboard Shortcut，然后按键盘shift+ctrl+alt+s，然后保存。"></a>4. 右键点击Save All，选择Add Keyboard Shortcut，然后按键盘shift+ctrl+alt+s，然后保存。</h3><p><img src="/images/phpstorm_auth_format_4.png"><br>PS:shift+ctrl+alt+s这个可以自己随便设置，但是不能和其他的快捷键冲突，而且要记住，一会我们会用得到。</p><h3 id="5-点击Edit-编辑-gt-Macros-宏-gt-Start-Macro-Recording-开始录制宏-。"><a href="#5-点击Edit-编辑-gt-Macros-宏-gt-Start-Macro-Recording-开始录制宏-。" class="headerlink" title="5. 点击Edit(编辑)->Macros(宏)->Start Macro Recording(开始录制宏)。"></a>5. 点击Edit(编辑)-&gt;Macros(宏)-&gt;Start Macro Recording(开始录制宏)。</h3><p>右下角会出现这样一个图标<br><img src="/images/phpstorm_auth_format_5.png"><br>然后先按ctrl+alt+l，再按我们刚刚吧save  all设置的快捷键shift+ctrl+alt+s，最后点击红色的小方块结束录制宏<br><img src="/images/phpstorm_auth_format_6.png"><br>保存宏：名称设置为：Format And Save（这个名字随意啦，自己记得就好）<br><img src="/images/phpstorm_auth_format_7.png"></p><h3 id="6-点击File-》Settings-》Keymap-搜索Format-And-Save"><a href="#6-点击File-》Settings-》Keymap-搜索Format-And-Save" class="headerlink" title="6. 点击File-》Settings-》Keymap  搜索Format And Save"></a>6. 点击File-》Settings-》Keymap  搜索Format And Save</h3><h3 id="7-右键点击Format-And-Save，选择Add-Keyboard-Shortcut-设置为command-s，保存就可以了"><a href="#7-右键点击Format-And-Save，选择Add-Keyboard-Shortcut-设置为command-s，保存就可以了" class="headerlink" title="7. 右键点击Format And Save，选择Add Keyboard Shortcut,设置为command+s，保存就可以了"></a>7. 右键点击Format And Save，选择Add Keyboard Shortcut,设置为command+s，保存就可以了</h3><p><img src="/images/phpstorm_auth_format_8.png"><br>最后试一下吧，ctrl+s 就实现了 保存+代码格式化</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
+            
+            <tag> phpStorm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows下快捷键使用</title>
+      <link href="/archives/e939ff3c.html"/>
+      <url>/archives/e939ff3c.html</url>
+      
+        <content type="html"><![CDATA[<ol><li>通过Tab键可以在当前界面将光标向下切换，Tab+Shift是向上切换。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> 快捷键 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ThinkPHP5使用笔记</title>
+      <link href="/archives/d21f50bb.html"/>
+      <url>/archives/d21f50bb.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-报错：Request-php中-variable-type-error-array"><a href="#1-报错：Request-php中-variable-type-error-array" class="headerlink" title="1. 报错：Request.php中 variable type error: array"></a>1. 报错：Request.php中 variable type error: array</h3><ul><li><p>描述：如果在post请求的时候，raw内容中某个参数的值为数组，直接使用$this-&gt;request-&gt;post(‘field’);，会报错<br><img src="/images/thinkphp_note_1.png"></p></li><li><p>原因：TP5之后，默认的变量修饰符为/s，转为字符串了。</p></li><li><p>解决办法：在变量名后加/a，转为数组：$this-&gt;request-&gt;post(‘field/a’);</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ThinkPHP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows下电脑截图</title>
       <link href="/archives/ead2d66c.html"/>
       <url>/archives/ead2d66c.html</url>
@@ -515,7 +621,7 @@
       <link href="/archives/c5e566f2.html"/>
       <url>/archives/c5e566f2.html</url>
       
-        <content type="html"><![CDATA[<p>1、对于初期单一系统的产品来说，一个数据库➕一个平台程序即可；</p><p>2、对于含有两个及以上平台的初期产品来说，系统结构应该是：多个平台程序➕一个服务中心➕一个或多个数据库；</p><p>3、对于多平台且需与第三方交互的产品来说，系统结构应该是：多个平台程序➕一个开放平台（含接口及订阅）➕一个服务中台（一个服务中心➕一个socket服务器➕一个异步数据处理中心）➕多个数据库；</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="1-系统分析"><a href="#1-系统分析" class="headerlink" title="1. 系统分析"></a>1. 系统分析</h3><ul><li><p>对于初期单一系统的产品来说，一个数据库➕一个平台程序即可；</p></li><li><p>对于含有两个及以上平台的初期产品来说，系统结构应该是：多个平台程序➕一个服务中心➕一个或多个数据库；</p></li><li><p>对于多平台且需与第三方交互的产品来说，系统结构应该是：多个平台程序➕一个开放平台（含接口及订阅）➕一个服务中台（一个服务中心➕一个socket服务器➕一个异步数据处理中心）➕多个数据库；</p></li></ul><h3 id="2-如何设计一个高并发、高可用的系统"><a href="#2-如何设计一个高并发、高可用的系统" class="headerlink" title="2. 如何设计一个高并发、高可用的系统"></a>2. 如何设计一个高并发、高可用的系统</h3><p><img src="/images/soft_design_1.png"></p>]]></content>
       
       
       <categories>
@@ -611,6 +717,31 @@
             <tag> 七牛云 </tag>
             
             <tag> 图片 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Excel使用小技巧</title>
+      <link href="/archives/e939ff3c.html"/>
+      <url>/archives/e939ff3c.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-excel固定第一行："><a href="#1-excel固定第一行：" class="headerlink" title="1. excel固定第一行："></a>1. excel固定第一行：</h3><p>选择第二行，点击视图里的冻结窗口即可。</p><h3 id="2-excel分列："><a href="#2-excel分列：" class="headerlink" title="2. excel分列："></a>2. excel分列：</h3><pre><code>如：将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：</code></pre><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 公式为</span><span class="token operator">=</span>left<span class="token punctuation">(</span>A1,2<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">":"</span> <span class="token operator">&amp;</span> mid<span class="token punctuation">(</span>A1,3,2<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">":"</span> <span class="token operator">&amp;</span> mid<span class="token punctuation">(</span>A1,5,2<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">":"</span> <span class="token operator">&amp;</span> mid<span class="token punctuation">(</span>A1,7,2<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">":"</span> <span class="token operator">&amp;</span> mid<span class="token punctuation">(</span>A1,9,2<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token string">":"</span> <span class="token operator">&amp;</span> right<span class="token punctuation">(</span>A1,2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="3-删除重复项："><a href="#3-删除重复项：" class="headerlink" title="3. 删除重复项："></a>3. 删除重复项：</h3><pre><code>选中数据区域-&gt;数据-&gt;删除重复项-&gt;确定</code></pre><h3 id="4-VLOOKUP函数的使用"><a href="#4-VLOOKUP函数的使用" class="headerlink" title="4. VLOOKUP函数的使用"></a>4. VLOOKUP函数的使用</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Excel </tag>
             
         </tags>
       
@@ -723,33 +854,6 @@
             <tag> rz </tag>
             
             <tag> sz </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Web安全</title>
-      <link href="/archives/5c07ccea.html"/>
-      <url>/archives/5c07ccea.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 安全 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Web </tag>
-            
-            <tag> 安全 </tag>
             
         </tags>
       
@@ -1065,7 +1169,7 @@
       <link href="/archives/8d4c12d3.html"/>
       <url>/archives/8d4c12d3.html</url>
       
-        <content type="html"><![CDATA[<p>** 之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：**</p><ol><li>&lt;- 是赋值的意思</li><li>向量是下标以1开始的</li><li>区分大小写</li><li>路径：<code>C://a.txt</code></li><li>round：四舍五入</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：</p><ol><li>&lt;- 是赋值的意思</li><li>向量是下标以1开始的</li><li>区分大小写</li><li>路径：<code>C://a.txt</code></li><li>round：四舍五入</li></ol>]]></content>
       
       
       <categories>
@@ -1117,7 +1221,7 @@
       <link href="/archives/4dbff8ff.html"/>
       <url>/archives/4dbff8ff.html</url>
       
-        <content type="html"><![CDATA[<p>** 自学Go语言的过程漫长而坎坷，先记录一些基础知识：**</p><h3 id="1-执行go文件"><a href="#1-执行go文件" class="headerlink" title="1. 执行go文件"></a>1. 执行go文件</h3><p><code>E:\Go_WorkSpace&gt;go run test.go</code></p><h3 id="2-把go程序编译成exe文件"><a href="#2-把go程序编译成exe文件" class="headerlink" title="2. 把go程序编译成exe文件"></a>2. 把go程序编译成exe文件</h3><p><code>E:\Go_WorkSpace&gt;go build test.go</code></p><h3 id="3-打印内容"><a href="#3-打印内容" class="headerlink" title="3. 打印内容"></a>3. 打印内容</h3><p><code>fmt.Printf("Hello,World!")</code></p><h3 id="4-switch语句中，多个case共用一组执行语句"><a href="#4-switch语句中，多个case共用一组执行语句" class="headerlink" title="4. switch语句中，多个case共用一组执行语句"></a>4. switch语句中，多个case共用一组执行语句</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">switch A<span class="token punctuation">{</span><span class="token keyword">case</span> a,b,c:<span class="token punctuation">..</span>.<span class="token keyword">case</span> d:<span class="token punctuation">..</span>.default <span class="token builtin class-name">:</span><span class="token punctuation">..</span>.<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="5-GoLand使用"><a href="#5-GoLand使用" class="headerlink" title="5. GoLand使用"></a>5. GoLand使用</h3><p>新部署项目后，需通过<code>go mod download</code> 下载第三方依赖包，如果报错，需设置Go Modules中的Proxy为：<code>https://goproxy.cn</code></p>]]></content>
+        <content type="html"><![CDATA[<p>自学Go语言的过程漫长而坎坷，先记录一些基础知识。</p><h3 id="1-执行go文件"><a href="#1-执行go文件" class="headerlink" title="1. 执行go文件"></a>1. 执行go文件</h3><p><code>E:\Go_WorkSpace&gt;go run test.go</code></p><h3 id="2-把go程序编译成exe文件"><a href="#2-把go程序编译成exe文件" class="headerlink" title="2. 把go程序编译成exe文件"></a>2. 把go程序编译成exe文件</h3><p><code>E:\Go_WorkSpace&gt;go build test.go</code></p><h3 id="3-打印内容"><a href="#3-打印内容" class="headerlink" title="3. 打印内容"></a>3. 打印内容</h3><p><code>fmt.Printf("Hello,World!")</code></p><h3 id="4-switch语句中，多个case共用一组执行语句"><a href="#4-switch语句中，多个case共用一组执行语句" class="headerlink" title="4. switch语句中，多个case共用一组执行语句"></a>4. switch语句中，多个case共用一组执行语句</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">switch A<span class="token punctuation">{</span><span class="token keyword">case</span> a,b,c:<span class="token punctuation">..</span>.<span class="token keyword">case</span> d:<span class="token punctuation">..</span>.default <span class="token builtin class-name">:</span><span class="token punctuation">..</span>.<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="5-GoLand使用"><a href="#5-GoLand使用" class="headerlink" title="5. GoLand使用"></a>5. GoLand使用</h3><p>新部署项目后，需通过<code>go mod download</code> 下载第三方依赖包，如果报错，需设置Go Modules中的Proxy为：<code>https://goproxy.cn</code></p>]]></content>
       
       
       <categories>
@@ -1291,7 +1395,7 @@
             
             <tag> 富文本编辑器 </tag>
             
-            <tag> 插件 </tag>
+            <tag> umeditor </tag>
             
         </tags>
       
