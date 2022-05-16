@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>飞奔的蜗牛</title>
   
-  <subtitle>键舞人生</subtitle>
+  
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
@@ -18,9 +18,9 @@
   
   <entry>
     <title>记一次高并发迭代之路</title>
-    <link href="https://crazy-boy.com/archives/8f013979.html"/>
-    <id>https://crazy-boy.com/archives/8f013979.html</id>
-    <published>2022-05-15T03:29:51.309Z</published>
+    <link href="https://crazy-boy.com/posts/8f013979.html"/>
+    <id>https://crazy-boy.com/posts/8f013979.html</id>
+    <published>2022-05-16T14:43:12.784Z</published>
     <updated>2022-05-15T03:33:50.065Z</updated>
     
     
@@ -28,7 +28,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;前因&quot;&gt;&lt;a href=&quot;#前因&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>phpStorm显示当前文件的所有函数和方法</title>
-    <link href="https://crazy-boy.com/archives/4aed7067.html"/>
-    <id>https://crazy-boy.com/archives/4aed7067.html</id>
+    <link href="https://crazy-boy.com/posts/4aed7067.html"/>
+    <id>https://crazy-boy.com/posts/4aed7067.html</id>
     <published>2022-05-12T09:17:55.000Z</published>
     <updated>2022-05-12T09:17:55.000Z</updated>
     
@@ -55,7 +55,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;phpStorm显示类的函数或方法列表， 点击左下方的Structure即可。&lt;br&gt;&lt;img</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -72,8 +72,8 @@
   
   <entry>
     <title>DOS命令进入MySQL</title>
-    <link href="https://crazy-boy.com/archives/88ecfff4.html"/>
-    <id>https://crazy-boy.com/archives/88ecfff4.html</id>
+    <link href="https://crazy-boy.com/posts/88ecfff4.html"/>
+    <id>https://crazy-boy.com/posts/88ecfff4.html</id>
     <published>2022-05-11T09:08:36.000Z</published>
     <updated>2022-05-11T09:08:36.000Z</updated>
     
@@ -82,7 +82,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-先进入mysql安装目录下的bin目录中&quot;&gt;&lt;a href=&quot;#1-先进入mysql安装目录下的bin目录中&quot; class=&quot;headerlink&quot; title=&quot;1. 先进入mysql安装目录下的bin目录中&quot;&gt;&lt;/a&gt;1.</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -99,8 +99,8 @@
   
   <entry>
     <title>ThinkPHP5框架where条件中含有or的使用方法</title>
-    <link href="https://crazy-boy.com/archives/521b47c8.html"/>
-    <id>https://crazy-boy.com/archives/521b47c8.html</id>
+    <link href="https://crazy-boy.com/posts/521b47c8.html"/>
+    <id>https://crazy-boy.com/posts/521b47c8.html</id>
     <published>2022-05-08T09:07:22.000Z</published>
     <updated>2022-05-08T09:07:22.000Z</updated>
     
@@ -109,7 +109,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-直接whereOr&quot;&gt;&lt;a href=&quot;#1-直接whereOr&quot; class=&quot;headerlink&quot; title=&quot;1. 直接whereOr&quot;&gt;&lt;/a&gt;1. 直接whereOr&lt;/h3&gt;&lt;pre class=&quot;line-numbers</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -128,8 +128,8 @@
   
   <entry>
     <title>PHP中数组内容依次赋值给变量</title>
-    <link href="https://crazy-boy.com/archives/a1b63ab8.html"/>
-    <id>https://crazy-boy.com/archives/a1b63ab8.html</id>
+    <link href="https://crazy-boy.com/posts/a1b63ab8.html"/>
+    <id>https://crazy-boy.com/posts/a1b63ab8.html</id>
     <published>2022-05-08T08:59:22.000Z</published>
     <updated>2022-05-08T08:59:22.000Z</updated>
     
@@ -138,8 +138,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;在日常开发过程中，经常需要把数组中的内容依次赋值给变量，可以使用list、[]、extract来处理。&lt;/p&gt;
-&lt;h3 id=&quot;1-list-var1-var2…-x3D-arr&quot;&gt;&lt;a href=&quot;#1-list-var1-var2…-x3D-arr&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -156,8 +155,8 @@
   
   <entry>
     <title>Windows下快速拆分txt文件</title>
-    <link href="https://crazy-boy.com/archives/56475516.html"/>
-    <id>https://crazy-boy.com/archives/56475516.html</id>
+    <link href="https://crazy-boy.com/posts/56475516.html"/>
+    <id>https://crazy-boy.com/posts/56475516.html</id>
     <published>2022-05-08T08:37:12.000Z</published>
     <updated>2022-05-08T08:37:12.000Z</updated>
     
@@ -166,8 +165,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。&lt;/p&gt;
-&lt;p&gt;现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件&lt;br&gt;&lt;img</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -184,8 +182,8 @@
   
   <entry>
     <title>PHP中不太常用的函数</title>
-    <link href="https://crazy-boy.com/archives/28294742.html"/>
-    <id>https://crazy-boy.com/archives/28294742.html</id>
+    <link href="https://crazy-boy.com/posts/28294742.html"/>
+    <id>https://crazy-boy.com/posts/28294742.html</id>
     <published>2022-05-08T08:28:55.000Z</published>
     <updated>2022-05-08T08:28:55.000Z</updated>
     
@@ -194,8 +192,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-constant&quot;&gt;&lt;a href=&quot;#1-constant&quot; class=&quot;headerlink&quot; title=&quot;1. constant()&quot;&gt;&lt;/a&gt;1. constant()&lt;/h3&gt;&lt;p&gt;   返回常量的值&lt;/p&gt;
-&lt;pre</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -212,8 +209,8 @@
   
   <entry>
     <title>ThinkPHP5 中order的使用</title>
-    <link href="https://crazy-boy.com/archives/9a9f5736.html"/>
-    <id>https://crazy-boy.com/archives/9a9f5736.html</id>
+    <link href="https://crazy-boy.com/posts/9a9f5736.html"/>
+    <id>https://crazy-boy.com/posts/9a9f5736.html</id>
     <published>2022-05-06T12:49:19.000Z</published>
     <updated>2022-05-06T12:49:19.000Z</updated>
     
@@ -222,8 +219,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。&lt;br&gt;下面这个查询没有得到预期的结果：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -240,8 +236,8 @@
   
   <entry>
     <title>性能测试——ab.exe</title>
-    <link href="https://crazy-boy.com/archives/5081417f.html"/>
-    <id>https://crazy-boy.com/archives/5081417f.html</id>
+    <link href="https://crazy-boy.com/posts/5081417f.html"/>
+    <id>https://crazy-boy.com/posts/5081417f.html</id>
     <published>2022-05-06T09:28:37.000Z</published>
     <updated>2022-05-06T09:28:37.000Z</updated>
     
@@ -250,8 +246,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;ab.exe是apache server下的一个性能检测小组件，使用方便简单。&lt;br&gt;使用方法：&lt;/p&gt;
-&lt;h3 id=&quot;1-找到ab-exe的位置&quot;&gt;&lt;a href=&quot;#1-找到ab-exe的位置&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -268,13 +263,19 @@
   
   <entry>
     <title>代码规范建议</title>
-    <link href="https://crazy-boy.com/archives/6541028b.html"/>
-    <id>https://crazy-boy.com/archives/6541028b.html</id>
+    <link href="https://crazy-boy.com/posts/6541028b.html"/>
+    <id>https://crazy-boy.com/posts/6541028b.html</id>
     <published>2022-04-28T09:21:00.000Z</published>
     <updated>2022-04-28T09:21:00.000Z</updated>
     
     
-    <summary type="html">有东西被加密了, 请输入密码查看.</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
     
     
     
@@ -289,8 +290,8 @@
   
   <entry>
     <title>phpStorm查找指定文件的修改历史</title>
-    <link href="https://crazy-boy.com/archives/aca1f155.html"/>
-    <id>https://crazy-boy.com/archives/aca1f155.html</id>
+    <link href="https://crazy-boy.com/posts/aca1f155.html"/>
+    <id>https://crazy-boy.com/posts/aca1f155.html</id>
     <published>2022-04-27T01:53:23.000Z</published>
     <updated>2022-04-27T01:53:23.000Z</updated>
     
@@ -299,7 +300,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;打开需要查找的文件，对着文件右击选择Local History=&amp;gt;Show History&lt;br&gt;&lt;img src=&quot;/images/phpstorm_show_history_1.png&quot;&gt;&lt;br&gt;&lt;img</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -316,8 +317,8 @@
   
   <entry>
     <title>ThinkPHP5 中clone Query对象</title>
-    <link href="https://crazy-boy.com/archives/edd59bca.html"/>
-    <id>https://crazy-boy.com/archives/edd59bca.html</id>
+    <link href="https://crazy-boy.com/posts/edd59bca.html"/>
+    <id>https://crazy-boy.com/posts/edd59bca.html</id>
     <published>2022-04-26T13:18:26.000Z</published>
     <updated>2022-04-26T13:18:26.000Z</updated>
     
@@ -326,9 +327,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;当我们在给前端提供列表接口的时候，经常需要根据条件返回总条数和当页列表数据；这时，我们就需要复用共同的查询条件对数据库执行多次查询操作。&lt;/p&gt;
-&lt;p&gt;在Yii2里，可以通过clone处理：&lt;/p&gt;
-&lt;pre class=&quot;line-numbers</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -345,8 +344,8 @@
   
   <entry>
     <title>phpStorm实现保存后，代码自动格式化</title>
-    <link href="https://crazy-boy.com/archives/16aefd1.html"/>
-    <id>https://crazy-boy.com/archives/16aefd1.html</id>
+    <link href="https://crazy-boy.com/posts/16aefd1.html"/>
+    <id>https://crazy-boy.com/posts/16aefd1.html</id>
     <published>2022-04-26T09:51:46.000Z</published>
     <updated>2022-04-26T09:51:46.000Z</updated>
     
@@ -355,8 +354,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;鉴于个人编程风格的不同，为了保证团队开发能更好地开展，需要进行代码统一格式化。我们可以在ctrl+s的时候让IED来自动格式化保存。&lt;br&gt;下面介绍下设置步骤：&lt;/p&gt;
-&lt;h3 id=&quot;1-点击File-》Settings-》Keymap&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -373,8 +371,8 @@
   
   <entry>
     <title>Windows下快捷键使用</title>
-    <link href="https://crazy-boy.com/archives/e939ff3c.html"/>
-    <id>https://crazy-boy.com/archives/e939ff3c.html</id>
+    <link href="https://crazy-boy.com/posts/e939ff3c.html"/>
+    <id>https://crazy-boy.com/posts/e939ff3c.html</id>
     <published>2022-04-25T09:29:40.000Z</published>
     <updated>2022-04-25T09:29:40.000Z</updated>
     
@@ -383,10 +381,7 @@
       
         
         
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;通过Tab键可以在当前界面将光标向下切换，Tab+Shift是向上切换。&lt;/li&gt;
-&lt;/ol&gt;
-</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -403,8 +398,8 @@
   
   <entry>
     <title>ThinkPHP5使用笔记</title>
-    <link href="https://crazy-boy.com/archives/d21f50bb.html"/>
-    <id>https://crazy-boy.com/archives/d21f50bb.html</id>
+    <link href="https://crazy-boy.com/posts/d21f50bb.html"/>
+    <id>https://crazy-boy.com/posts/d21f50bb.html</id>
     <published>2022-04-25T03:32:32.000Z</published>
     <updated>2022-04-25T03:32:32.000Z</updated>
     
@@ -413,7 +408,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-报错：Request-php中-variable-type-error-array&quot;&gt;&lt;a href=&quot;#1-报错：Request-php中-variable-type-error-array&quot; class=&quot;headerlink&quot; title=&quot;1.</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -428,8 +423,8 @@
   
   <entry>
     <title>Windows下电脑截图</title>
-    <link href="https://crazy-boy.com/archives/ead2d66c.html"/>
-    <id>https://crazy-boy.com/archives/ead2d66c.html</id>
+    <link href="https://crazy-boy.com/posts/ead2d66c.html"/>
+    <id>https://crazy-boy.com/posts/ead2d66c.html</id>
     <published>2022-03-20T01:25:08.000Z</published>
     <updated>2022-03-20T01:25:08.000Z</updated>
     
@@ -438,7 +433,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;1、QQ截图：&lt;code&gt;ctrl+alt+A&lt;/code&gt;&lt;br&gt;2、花式截图：&lt;code&gt;Win+shift+S&lt;/code&gt; </summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -455,8 +450,8 @@
   
   <entry>
     <title>设计模式六大原则</title>
-    <link href="https://crazy-boy.com/archives/96cd7416.html"/>
-    <id>https://crazy-boy.com/archives/96cd7416.html</id>
+    <link href="https://crazy-boy.com/posts/96cd7416.html"/>
+    <id>https://crazy-boy.com/posts/96cd7416.html</id>
     <published>2022-02-28T01:12:40.000Z</published>
     <updated>2022-02-28T01:12:40.000Z</updated>
     
@@ -465,7 +460,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;1、单一职责原则&quot;&gt;&lt;a href=&quot;#1、单一职责原则&quot; class=&quot;headerlink&quot; title=&quot;1、单一职责原则&quot;&gt;&lt;/a&gt;1、单一职责原则&lt;/h2&gt;&lt;h2 id=&quot;2、开闭原则&quot;&gt;&lt;a href=&quot;#2、开闭原则&quot;</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -480,8 +475,8 @@
   
   <entry>
     <title>自己封装的一些常用的PHP函数</title>
-    <link href="https://crazy-boy.com/archives/61e2bcf6.html"/>
-    <id>https://crazy-boy.com/archives/61e2bcf6.html</id>
+    <link href="https://crazy-boy.com/posts/61e2bcf6.html"/>
+    <id>https://crazy-boy.com/posts/61e2bcf6.html</id>
     <published>2022-02-27T13:26:25.000Z</published>
     <updated>2022-02-27T13:26:25.000Z</updated>
     
@@ -490,7 +485,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;1-将字符串每隔n位显示一个指定字符&quot;&gt;&lt;a href=&quot;#1-将字符串每隔n位显示一个指定字符&quot; class=&quot;headerlink&quot; title=&quot;1. 将字符串每隔n位显示一个指定字符&quot;&gt;&lt;/a&gt;1. 将字符串每隔n位显示一个指定字符&lt;/h3&gt;&lt;pre</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -505,8 +500,8 @@
   
   <entry>
     <title>常见颜色值</title>
-    <link href="https://crazy-boy.com/archives/606b6d50.html"/>
-    <id>https://crazy-boy.com/archives/606b6d50.html</id>
+    <link href="https://crazy-boy.com/posts/606b6d50.html"/>
+    <id>https://crazy-boy.com/posts/606b6d50.html</id>
     <published>2022-02-25T14:06:16.000Z</published>
     <updated>2022-02-25T14:06:16.000Z</updated>
     
@@ -515,7 +510,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;RGB(255,255,255)：白色   #FFFFFF&lt;br&gt;RGB(0,0,0)：黑色  #000000&lt;br&gt;RGB(255,0,0)：红色 </summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     
@@ -530,8 +525,8 @@
   
   <entry>
     <title>锚定效应</title>
-    <link href="https://crazy-boy.com/archives/2207b087.html"/>
-    <id>https://crazy-boy.com/archives/2207b087.html</id>
+    <link href="https://crazy-boy.com/posts/2207b087.html"/>
+    <id>https://crazy-boy.com/posts/2207b087.html</id>
     <published>2022-02-22T07:23:47.000Z</published>
     <updated>2022-02-22T07:23:47.000Z</updated>
     
@@ -540,8 +535,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;沉锚效应，心理学名词，指的是人们在对某人某事做出判断时，易受第一印象或第一信息支配，就像沉入海底的锚一样把人们的思想固定在某处。&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
         
       
     

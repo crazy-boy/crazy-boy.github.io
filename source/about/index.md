@@ -1,8 +1,6 @@
 ---
-title: 关于
-date: 2022-04-28 13:38:23
+title: about
+date: 2020-08-17 17:08:05
 type: "about"
 layout: "about"
 ---
-
-大家好，我是飞奔的蜗牛！
