@@ -3,11 +3,11 @@ title: GitBook使用笔记
 tags:
   - GitBook
 categories: GitBook
-abbrlink: a85900e2
+abbrlink: 'gitbook-note'
 date: 2018-06-09 15:12:00
 updated: 2018-06-09 15:20:00
 ---
-使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
+<div class="note info">使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</div>
 
 
 ##### 常用命令

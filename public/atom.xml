@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-05-16T02:35:59.470Z</updated>
+  <updated>2022-05-19T13:53:34.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>软件的设计模式</title>
+    <link href="https://crazy-boy.com/posts/design-patterns.html"/>
+    <id>https://crazy-boy.com/posts/design-patterns.html</id>
+    <published>2022-05-19T13:53:34.000Z</published>
+    <updated>2022-05-19T13:53:34.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次高并发迭代之路</title>
@@ -520,33 +545,6 @@
     
     
     <category term="颜色值" scheme="https://crazy-boy.com/tags/%E9%A2%9C%E8%89%B2%E5%80%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>锚定效应</title>
-    <link href="https://crazy-boy.com/posts/2207b087.html"/>
-    <id>https://crazy-boy.com/posts/2207b087.html</id>
-    <published>2022-02-22T07:23:47.000Z</published>
-    <updated>2022-02-22T07:23:47.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="产品" scheme="https://crazy-boy.com/categories/%E4%BA%A7%E5%93%81/"/>
-    
-    
-    <category term="产品" scheme="https://crazy-boy.com/tags/%E4%BA%A7%E5%93%81/"/>
-    
-    <category term="锚定效应" scheme="https://crazy-boy.com/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/"/>
     
   </entry>
   

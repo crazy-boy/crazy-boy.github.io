@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Docker使用, 这里是网站关键词">
+    <meta name="keywords" content="Go语言基础, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Docker使用 | 飞奔的蜗牛</title>
+    <title>Go语言基础 | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -895,12 +895,12 @@ class="themespring" -->
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Docker使用</h1>
+                    <h1 class="description center-align post-title">Go语言基础</h1>
                 </div>
             </div>
         </div>
@@ -1018,7 +1018,7 @@ class="themespring" -->
 <div class="row">
     
     
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="Docker">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="Go">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -1185,12 +1185,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Docker/">
-                                <span class="chip bg-color">Docker</span>
+                            <a href="/tags/Go/">
+                                <span class="chip bg-color">Go</span>
                             </a>
                         
-                            <a href="/tags/Windows/">
-                                <span class="chip bg-color">Windows</span>
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">语言基础</span>
                             </a>
                         
                     </div>
@@ -1201,8 +1201,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Docker/" class="post-category">
-                                Docker
+                            <a href="/categories/Go/" class="post-category">
+                                Go
                             </a>
                         
                     </div>
@@ -1214,7 +1214,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-06-05
+                    2018-06-09
                 </div>
                 
 
@@ -1223,7 +1223,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13
+                    199
                 </div>
                 
 
@@ -1240,9 +1240,21 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li>windows7 安装docker，需要利用 docker toolbox 来安装。</li>
-</ol>
+                <p>自学Go语言的过程漫长而坎坷，先记录一些基础知识。</p>
+<h3 id="执行go文件"><a href="#执行go文件" class="headerlink" title="执行go文件"></a>执行go文件</h3><p><code>E:\Go_WorkSpace&gt;go run test.go</code></p>
+<h3 id="把go程序编译成exe文件"><a href="#把go程序编译成exe文件" class="headerlink" title="把go程序编译成exe文件"></a>把go程序编译成exe文件</h3><p><code>E:\Go_WorkSpace&gt;go build test.go</code></p>
+<h3 id="打印内容"><a href="#打印内容" class="headerlink" title="打印内容"></a>打印内容</h3><p><code>fmt.Printf(&quot;Hello,World!&quot;)</code></p>
+<h3 id="switch语句中，多个case共用一组执行语句"><a href="#switch语句中，多个case共用一组执行语句" class="headerlink" title="switch语句中，多个case共用一组执行语句"></a>switch语句中，多个case共用一组执行语句</h3><pre class=" language-lang-shell"><code class="language-lang-shell">switch A&#123;
+    case a,b,c:
+        ...
+    case d:
+        ...
+    default :
+        ...
+&#125;
+</code></pre>
+<h3 id="GoLand使用"><a href="#GoLand使用" class="headerlink" title="GoLand使用"></a>GoLand使用</h3><p>新部署项目后，需通过<code>go mod download</code> 下载第三方依赖包，如果报错，需设置Go Modules中的Proxy为：<code>https://goproxy.cn</code></p>
+<h3 id="GoLand使用下载第三方依赖包"><a href="#GoLand使用下载第三方依赖包" class="headerlink" title="GoLand使用下载第三方依赖包"></a>GoLand使用下载第三方依赖包</h3><p>1、 IDE-》setting-》Go-》Go Modules中，设置代理：<a target="_blank" rel="noopener" href="https://goproxy.cn">https://goproxy.cn</a><br><img src="/images/goland_1.png" alt><br>2、项目中，创建go.mod文件，包含需要引入的依赖包，<br>如：导入 gin：require github.com/gin-gonic/gin latest<br>在Terminal上，运行go mod download即可，系统会自动将版本号回填到go.mod中<br><img src="/images/goland_2.png" alt></p>
 
             </div>
             <hr/>
@@ -1268,7 +1280,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/cd988ed5.html">https://crazy-boy.com/posts/cd988ed5.html</a>
+                    <a href="https://crazy-boy.com/posts/go-note.html">https://crazy-boy.com/posts/go-note.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1306,12 +1318,12 @@ h3:hover {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Docker/">
-                                    <span class="chip bg-color">Docker</span>
+                                <a href="/tags/Go/">
+                                    <span class="chip bg-color">Go</span>
                                 </a>
                             
-                                <a href="/tags/Windows/">
-                                    <span class="chip bg-color">Windows</span>
+                                <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">语言基础</span>
                                 </a>
                             
                         </div>
@@ -1848,11 +1860,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/c1d2e7ba.html">
+                <a href="/posts/6467ec5d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Hexo使用笔记">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="SEO——权重转移">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1863,17 +1875,17 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Hexo使用笔记
+                          SEO——权重转移
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
-常用命令
-清除当前缓存        $ hexo clean
-重新生成并部署到github上        $ hexo g
+                             产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：
+
+
+Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复
                         
                     </div>
                     <div class="publish-info">
@@ -1884,8 +1896,8 @@ h3:hover {
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/SEO/" class="post-category">
+                                    SEO
                                 </a>
                             
                             
@@ -1895,12 +1907,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/SEO/">
+                        <span class="chip bg-color">SEO</span>
                     </a>
                     
-                    <a href="/tags/NexT/">
-                        <span class="chip bg-color">NexT</span>
+                    <a href="/tags/%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB/">
+                        <span class="chip bg-color">权重转移</span>
                     </a>
                     
                 </div>
@@ -1914,11 +1926,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/308f88a2.html">
+                <a href="/posts/gitbook-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="架构学习">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="GitBook使用笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1929,34 +1941,31 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          架构学习
+                          GitBook使用笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-架构设计的主要目的是为了解决软件系统复杂度带来的问题。
-
-架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。
-
-架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。
+                            使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
 
 
-
+常用命令
+编译文件生成网页        gitbook build
+启动服务        gitbook 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
-                                    架构
+                            <a href="/categories/GitBook/" class="post-category">
+                                    GitBook
                                 </a>
                             
                             
@@ -1966,12 +1975,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">软件架构</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">架构</span>
+                    <a href="/tags/GitBook/">
+                        <span class="chip bg-color">GitBook</span>
                     </a>
                     
                 </div>
@@ -2051,7 +2056,7 @@ h3:hover {
 
         </div>
         
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="Windows">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="语言基础">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -2218,12 +2223,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Docker/">
-                                <span class="chip bg-color">Docker</span>
+                            <a href="/tags/Go/">
+                                <span class="chip bg-color">Go</span>
                             </a>
                         
-                            <a href="/tags/Windows/">
-                                <span class="chip bg-color">Windows</span>
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">语言基础</span>
                             </a>
                         
                     </div>
@@ -2234,8 +2239,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Docker/" class="post-category">
-                                Docker
+                            <a href="/categories/Go/" class="post-category">
+                                Go
                             </a>
                         
                     </div>
@@ -2247,7 +2252,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-06-05
+                    2018-06-09
                 </div>
                 
 
@@ -2256,7 +2261,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    13
+                    199
                 </div>
                 
 
@@ -2273,9 +2278,21 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li>windows7 安装docker，需要利用 docker toolbox 来安装。</li>
-</ol>
+                <p>自学Go语言的过程漫长而坎坷，先记录一些基础知识。</p>
+<h3 id="执行go文件"><a href="#执行go文件" class="headerlink" title="执行go文件"></a>执行go文件</h3><p><code>E:\Go_WorkSpace&gt;go run test.go</code></p>
+<h3 id="把go程序编译成exe文件"><a href="#把go程序编译成exe文件" class="headerlink" title="把go程序编译成exe文件"></a>把go程序编译成exe文件</h3><p><code>E:\Go_WorkSpace&gt;go build test.go</code></p>
+<h3 id="打印内容"><a href="#打印内容" class="headerlink" title="打印内容"></a>打印内容</h3><p><code>fmt.Printf(&quot;Hello,World!&quot;)</code></p>
+<h3 id="switch语句中，多个case共用一组执行语句"><a href="#switch语句中，多个case共用一组执行语句" class="headerlink" title="switch语句中，多个case共用一组执行语句"></a>switch语句中，多个case共用一组执行语句</h3><pre class=" language-lang-shell"><code class="language-lang-shell">switch A&#123;
+    case a,b,c:
+        ...
+    case d:
+        ...
+    default :
+        ...
+&#125;
+</code></pre>
+<h3 id="GoLand使用"><a href="#GoLand使用" class="headerlink" title="GoLand使用"></a>GoLand使用</h3><p>新部署项目后，需通过<code>go mod download</code> 下载第三方依赖包，如果报错，需设置Go Modules中的Proxy为：<code>https://goproxy.cn</code></p>
+<h3 id="GoLand使用下载第三方依赖包"><a href="#GoLand使用下载第三方依赖包" class="headerlink" title="GoLand使用下载第三方依赖包"></a>GoLand使用下载第三方依赖包</h3><p>1、 IDE-》setting-》Go-》Go Modules中，设置代理：<a target="_blank" rel="noopener" href="https://goproxy.cn">https://goproxy.cn</a><br><img src="/images/goland_1.png" alt><br>2、项目中，创建go.mod文件，包含需要引入的依赖包，<br>如：导入 gin：require github.com/gin-gonic/gin latest<br>在Terminal上，运行go mod download即可，系统会自动将版本号回填到go.mod中<br><img src="/images/goland_2.png" alt></p>
 
             </div>
             <hr/>
@@ -2301,7 +2318,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/cd988ed5.html">https://crazy-boy.com/posts/cd988ed5.html</a>
+                    <a href="https://crazy-boy.com/posts/go-note.html">https://crazy-boy.com/posts/go-note.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2339,12 +2356,12 @@ h3:hover {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Docker/">
-                                    <span class="chip bg-color">Docker</span>
+                                <a href="/tags/Go/">
+                                    <span class="chip bg-color">Go</span>
                                 </a>
                             
-                                <a href="/tags/Windows/">
-                                    <span class="chip bg-color">Windows</span>
+                                <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">语言基础</span>
                                 </a>
                             
                         </div>
@@ -2881,11 +2898,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/c1d2e7ba.html">
+                <a href="/posts/6467ec5d.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Hexo使用笔记">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="SEO——权重转移">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2896,17 +2913,17 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Hexo使用笔记
+                          SEO——权重转移
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
-常用命令
-清除当前缓存        $ hexo clean
-重新生成并部署到github上        $ hexo g
+                             产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：
+
+
+Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复
                         
                     </div>
                     <div class="publish-info">
@@ -2917,8 +2934,8 @@ h3:hover {
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/SEO/" class="post-category">
+                                    SEO
                                 </a>
                             
                             
@@ -2928,12 +2945,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/SEO/">
+                        <span class="chip bg-color">SEO</span>
                     </a>
                     
-                    <a href="/tags/NexT/">
-                        <span class="chip bg-color">NexT</span>
+                    <a href="/tags/%E6%9D%83%E9%87%8D%E8%BD%AC%E7%A7%BB/">
+                        <span class="chip bg-color">权重转移</span>
                     </a>
                     
                 </div>
@@ -2947,11 +2964,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/308f88a2.html">
+                <a href="/posts/gitbook-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="架构学习">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="GitBook使用笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2962,34 +2979,31 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          架构学习
+                          GitBook使用笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-架构设计的主要目的是为了解决软件系统复杂度带来的问题。
-
-架构的复杂度来源：高性能、高可用、可扩展性、其它(低成本、安全、规模等)。
-
-架构设计的三原则：合适优于业界领先、简单优于复杂、演化优于一步到位。
+                            使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
 
 
-
+常用命令
+编译文件生成网页        gitbook build
+启动服务        gitbook 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
-                                    架构
+                            <a href="/categories/GitBook/" class="post-category">
+                                    GitBook
                                 </a>
                             
                             
@@ -2999,12 +3013,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">软件架构</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9E%B6%E6%9E%84/">
-                        <span class="chip bg-color">架构</span>
+                    <a href="/tags/GitBook/">
+                        <span class="chip bg-color">GitBook</span>
                     </a>
                     
                 </div>
@@ -3088,7 +3098,7 @@ h3:hover {
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         
         
-        <div class="toc-widget" data-spmid="Docker">
+        <div class="toc-widget" data-spmid="Go">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -3096,7 +3106,7 @@ h3:hover {
             <div id="toc-content"></div>
         </div>
         
-        <div class="toc-widget" data-spmid="Windows">
+        <div class="toc-widget" data-spmid="语言基础">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -3111,13 +3121,13 @@ h3:hover {
 <!-- TOC 悬浮按钮. -->
 
     
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="Docker">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="Go">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
 </div>
 
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="Windows">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="语言基础">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -3292,7 +3302,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">14.2k</span>&nbsp;
+        class="white-color">15.2k</span>&nbsp;
       
       
       

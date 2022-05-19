@@ -10,7 +10,7 @@ updated: 2019-07-02 19:45:00
 ---
 点击按钮，复制指定文本框内容，代码如下：
 
-``` html
+``` javascript
 <script type="text/javascript">
 function copy(){
     var str = document.getElementById("my-data");

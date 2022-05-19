@@ -1,3 +1,4 @@
+https://crazy-boy.com/posts/design-patterns.html
 https://crazy-boy.com/posts/8f013979.html
 https://crazy-boy.com/posts/4aed7067.html
 https://crazy-boy.com/posts/88ecfff4.html
@@ -22,6 +23,7 @@ https://crazy-boy.com/posts/4c19b56c.html
 https://crazy-boy.com/posts/c7205d17.html
 https://crazy-boy.com/posts/itsneko-opensource-blog.html
 https://crazy-boy.com/posts/articletemplate.html
+https://crazy-boy.com/posts/goframe-note.html
 https://crazy-boy.com/posts/bc18f661.html
 https://crazy-boy.com/posts/c5e566f2.html
 https://crazy-boy.com/posts/cb12c179.html
@@ -46,10 +48,10 @@ https://crazy-boy.com/posts/e803913a.html
 https://crazy-boy.com/posts/401ce197.html
 https://crazy-boy.com/posts/8d4c12d3.html
 https://crazy-boy.com/posts/6467ec5d.html
-https://crazy-boy.com/posts/4dbff8ff.html
-https://crazy-boy.com/posts/a85900e2.html
+https://crazy-boy.com/posts/go-note.html
+https://crazy-boy.com/posts/gitbook-note.html
 https://crazy-boy.com/posts/c1d2e7ba.html
-https://crazy-boy.com/posts/cd988ed5.html
+https://crazy-boy.com/posts/docker-note.html
 https://crazy-boy.com/posts/308f88a2.html
 https://crazy-boy.com/posts/b743cdda.html
 https://crazy-boy.com/posts/9e064ccc.html
