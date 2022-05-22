@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/simple-factory-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/articletemplate.html</loc>
-    <lastmod>2022-05-19</lastmod>
+    <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/essay-demo.html</loc>
-    <lastmod>2022-05-19</lastmod>
+    <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/itsneko-opensource-blog.html</loc>
-    <lastmod>2022-05-19</lastmod>
+    <lastmod>2022-05-16</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/8f013979.html</loc>
-    <lastmod>2022-05-16</lastmod>
+    <lastmod>2022-05-15</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/dc8a9d20.html</loc>
-    <lastmod>2022-05-16</lastmod>
+    <lastmod>2022-05-14</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/f00bf8aa.html</loc>
-    <lastmod>2022-05-16</lastmod>
+    <lastmod>2022-05-14</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/4aed7067.html</loc>
@@ -249,11 +253,11 @@
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
+    <loc>https://crazy-boy.com/posts/df9c1142.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/df9c1142.html</loc>
+    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>

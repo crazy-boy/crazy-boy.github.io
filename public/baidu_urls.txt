@@ -1,3 +1,4 @@
+https://crazy-boy.com/posts/simple-factory-pattern.html
 https://crazy-boy.com/posts/design-patterns.html
 https://crazy-boy.com/posts/8f013979.html
 https://crazy-boy.com/posts/4aed7067.html
@@ -56,8 +57,8 @@ https://crazy-boy.com/posts/308f88a2.html
 https://crazy-boy.com/posts/b743cdda.html
 https://crazy-boy.com/posts/9e064ccc.html
 https://crazy-boy.com/posts/fd5f561d.html
-https://crazy-boy.com/posts/1822a0ce.html
 https://crazy-boy.com/posts/df9c1142.html
+https://crazy-boy.com/posts/1822a0ce.html
 https://crazy-boy.com/posts/d0edc1ed.html
 https://crazy-boy.com/posts/92fdde39.html
 https://crazy-boy.com/posts/f00bf8aa.html
