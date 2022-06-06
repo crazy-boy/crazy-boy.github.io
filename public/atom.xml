@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-06-02T13:02:57.000Z</updated>
+  <updated>2022-06-06T08:31:39.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>建造者模式</title>
+    <link href="https://crazy-boy.com/posts/builder-pattern.html"/>
+    <id>https://crazy-boy.com/posts/builder-pattern.html</id>
+    <published>2022-06-06T08:31:39.000Z</published>
+    <updated>2022-06-06T08:31:39.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP实现方法运行前(后)执行指定的程序</title>
@@ -510,33 +535,6 @@
     <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
     <category term="代码规范" scheme="https://crazy-boy.com/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>phpStorm查找指定文件的修改历史</title>
-    <link href="https://crazy-boy.com/posts/aca1f155.html"/>
-    <id>https://crazy-boy.com/posts/aca1f155.html</id>
-    <published>2022-04-27T01:53:23.000Z</published>
-    <updated>2022-04-27T01:53:23.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="php" scheme="https://crazy-boy.com/tags/php/"/>
-    
-    <category term="phpStorm" scheme="https://crazy-boy.com/tags/phpStorm/"/>
     
   </entry>
   
