@@ -3,11 +3,10 @@ title: 关于itsNeko开源博客食用方法
 abbrlink: 'itsneko-opensource-blog'
 tags: 
   - 关于itsNeko开源博客
-categories:  itsNeko博客食用方法
+categories:  其他
 mathjax: true
 date: 2021-12-16 00:34:14
 img: medias/toc-banner/aboutme.JPG
-top: 999
 ---
 
 <div class="note info">前言：本文是关于itsNeko开源博客食用方法详解，感谢使用本开源博客。时间过的好快，还好我都记录下来了。</div>

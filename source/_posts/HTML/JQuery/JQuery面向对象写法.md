@@ -4,7 +4,7 @@ tags:
   - JQuery
   - JavaScript
   - 面向对象
-categories: JavaScript
+categories: 前端
 abbrlink: cdd95104
 date: 2018-04-19 09:52:00
 updated: 2018-04-19 09:52:00

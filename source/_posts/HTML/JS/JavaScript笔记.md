@@ -4,7 +4,7 @@ tags:
   - JavaScript
   - 笔记
   - 前端
-categories: JavaScript
+categories: 前端
 abbrlink: e803913a
 date: 2018-06-19 22:39:00
 updated: 2018-11-09 09:49:00

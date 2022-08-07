@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2022-06-06T08:31:39.000Z</updated>
+  <updated>2022-07-04T02:42:39.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下curl命令</title>
+    <link href="https://crazy-boy.com/posts/linux-curl.html"/>
+    <id>https://crazy-boy.com/posts/linux-curl.html</id>
+    <published>2022-07-04T02:42:39.000Z</published>
+    <updated>2022-07-04T02:42:39.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    
+    
+    <category term="curl" scheme="https://crazy-boy.com/tags/curl/"/>
+    
+  </entry>
   
   <entry>
     <title>建造者模式</title>
@@ -267,11 +292,63 @@
   </entry>
   
   <entry>
+    <title>常用的Redis命令</title>
+    <link href="https://crazy-boy.com/posts/redis-note.html"/>
+    <id>https://crazy-boy.com/posts/redis-note.html</id>
+    <published>2022-05-19T02:40:00.000Z</published>
+    <updated>2022-05-19T02:40:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/categories/Redis/"/>
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>phpStorm常用快捷键</title>
+    <link href="https://crazy-boy.com/posts/phpstorm-quick-key.html"/>
+    <id>https://crazy-boy.com/posts/phpstorm-quick-key.html</id>
+    <published>2022-05-17T00:21:00.000Z</published>
+    <updated>2022-05-17T00:21:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="php" scheme="https://crazy-boy.com/tags/php/"/>
+    
+    <category term="phpStorm" scheme="https://crazy-boy.com/tags/phpStorm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>记一次高并发迭代之路</title>
     <link href="https://crazy-boy.com/posts/8f013979.html"/>
     <id>https://crazy-boy.com/posts/8f013979.html</id>
     <published>2022-05-16T14:43:12.784Z</published>
-    <updated>2022-05-15T03:33:50.065Z</updated>
+    <updated>2022-08-07T02:34:32.289Z</updated>
     
     
       
@@ -295,8 +372,8 @@
   
   <entry>
     <title>phpStorm显示当前文件的所有函数和方法</title>
-    <link href="https://crazy-boy.com/posts/4aed7067.html"/>
-    <id>https://crazy-boy.com/posts/4aed7067.html</id>
+    <link href="https://crazy-boy.com/posts/phpstorm-show-func.html"/>
+    <id>https://crazy-boy.com/posts/phpstorm-show-func.html</id>
     <published>2022-05-12T09:17:55.000Z</published>
     <updated>2022-05-12T09:17:55.000Z</updated>
     
@@ -349,8 +426,8 @@
   
   <entry>
     <title>ThinkPHP5框架where条件中含有or的使用方法</title>
-    <link href="https://crazy-boy.com/posts/521b47c8.html"/>
-    <id>https://crazy-boy.com/posts/521b47c8.html</id>
+    <link href="https://crazy-boy.com/posts/thinkphp-where.html"/>
+    <id>https://crazy-boy.com/posts/thinkphp-where.html</id>
     <published>2022-05-08T09:07:22.000Z</published>
     <updated>2022-05-08T09:07:22.000Z</updated>
     
@@ -454,87 +531,6 @@
     <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
     
     <category term="函数" scheme="https://crazy-boy.com/tags/%E5%87%BD%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ThinkPHP5 中order的使用</title>
-    <link href="https://crazy-boy.com/posts/9a9f5736.html"/>
-    <id>https://crazy-boy.com/posts/9a9f5736.html</id>
-    <published>2022-05-06T12:49:19.000Z</published>
-    <updated>2022-05-06T12:49:19.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
-    
-    <category term="ThinkPHP" scheme="https://crazy-boy.com/tags/ThinkPHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>性能测试——ab.exe</title>
-    <link href="https://crazy-boy.com/posts/5081417f.html"/>
-    <id>https://crazy-boy.com/posts/5081417f.html</id>
-    <published>2022-05-06T09:28:37.000Z</published>
-    <updated>2022-05-06T09:28:37.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="测试" scheme="https://crazy-boy.com/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-    <category term="Apache" scheme="https://crazy-boy.com/tags/Apache/"/>
-    
-    <category term="ab.exe" scheme="https://crazy-boy.com/tags/ab-exe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>代码规范建议</title>
-    <link href="https://crazy-boy.com/posts/6541028b.html"/>
-    <id>https://crazy-boy.com/posts/6541028b.html</id>
-    <published>2022-04-28T09:21:00.000Z</published>
-    <updated>2022-04-28T09:21:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="编程" scheme="https://crazy-boy.com/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="笔记" scheme="https://crazy-boy.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-    <category term="代码规范" scheme="https://crazy-boy.com/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     
   </entry>
   

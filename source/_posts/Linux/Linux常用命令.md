@@ -3,9 +3,9 @@ title: Linux常用命令
 tags:
   - Linux
 categories: Linux
-abbrlink: d0edc1ed
+abbrlink: 'linux-common-commands'
 date: 2018-06-04 11:15:00
-updated: 2019-10-26 19:35:00
+updated: 2022-06-06 19:35:00
 ---
 编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：
 
@@ -41,3 +41,14 @@ CentOS Linux release 7.6.1810 (Core)
 Linux VM_0_7_centos 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ```
 从上述结果可以看出：系统为CentOS 7.6 内核为3.10.0-957.27.2.el7.x86_64
+
+### 9. 清空当前界面信息
+`clear`
+
+### 10. 显示当前时间
+`date`
+![](/images/linux_command_2.png)
+
+### 11. 显示当前路径
+`pwd`
+![](/images/linux_command_3.png)

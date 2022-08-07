@@ -5,7 +5,7 @@ tags:
   - ThinkPHP
   - 数据库查询
 categories: PHP
-abbrlink: 521b47c8
+abbrlink: 'thinkphp-where'
 date: 2022-05-08 17:07:22
 updated: 2022-05-08 17:07:22
 ---

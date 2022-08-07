@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux下curl命令</title>
+      <link href="/posts/linux-curl.html"/>
+      <url>/posts/linux-curl.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>curl https://www.baidu.com</code></pre><p>上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。</p><h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="d：使用-d参数向服务器发送POST请求的数据体"><a href="#d：使用-d参数向服务器发送POST请求的数据体" class="headerlink" title="-d：使用-d参数向服务器发送POST请求的数据体"></a>-d：使用-d参数向服务器发送POST请求的数据体</h4><pre><code>curl -d &#39;login=admin＆password=123&#39; -X POST https://www.aa.com/admin/</code></pre><p>上方的命令向服务器发送（POST）了login=admin＆password=123。但是使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。</p><pre><code>curl -d &#39;&amp;#123;&quot;login&quot;: &quot;admin&quot;, &quot;pass&quot;: &quot;123&quot;&amp;#125;&#39; -X &#39;Content-Type: application/json&#39; https://www.aa.com/admin</code></pre><p>上方的命令添加了HTTP请求标头：Content-Type:application/json并使用-d参数向服务器发送（POST）了json数据。</p><h4 id="H：设置-HTTP头信息"><a href="#H：设置-HTTP头信息" class="headerlink" title="-H：设置 HTTP头信息"></a>-H：设置 HTTP头信息</h4><pre><code>curl -H &#39;Token: xxxx&#39; https://www.aa.com/</code></pre><p>使用-H参数设置Token为xxxx向服务器发送了GET请求。</p><h4 id="X：可以指定HTTP请求方法"><a href="#X：可以指定HTTP请求方法" class="headerlink" title="-X：可以指定HTTP请求方法"></a>-X：可以指定HTTP请求方法</h4><pre><code>curl -X POST https://www.aa.com/</code></pre><p>上方的命令向服务器发送了POST请求。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.typeboom.com/archives/107/">https://www.typeboom.com/archives/107/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> curl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>建造者模式</title>
       <link href="/posts/builder-pattern.html"/>
       <url>/posts/builder-pattern.html</url>
@@ -254,6 +279,58 @@
     
     
     <entry>
+      <title>常用的Redis命令</title>
+      <link href="/posts/redis-note.html"/>
+      <url>/posts/redis-note.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><p>info<br><img src="/images/redis_note_1.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>phpStorm常用快捷键</title>
+      <link href="/posts/phpstorm-quick-key.html"/>
+      <url>/posts/phpstorm-quick-key.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="删除某行"><a href="#删除某行" class="headerlink" title="删除某行"></a>删除某行</h3><p>ctrl+Y</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
+            
+            <tag> phpStorm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记一次高并发迭代之路</title>
       <link href="/posts/8f013979.html"/>
       <url>/posts/8f013979.html</url>
@@ -282,8 +359,8 @@
     
     <entry>
       <title>phpStorm显示当前文件的所有函数和方法</title>
-      <link href="/posts/4aed7067.html"/>
-      <url>/posts/4aed7067.html</url>
+      <link href="/posts/phpstorm-show-func.html"/>
+      <url>/posts/phpstorm-show-func.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>phpStorm显示类的函数或方法列表， 点击左下方的Structure即可。<br><img src="/images/phpstorm_show_func_1.png" alt></p>]]></content>
       
@@ -336,8 +413,8 @@
     
     <entry>
       <title>ThinkPHP5框架where条件中含有or的使用方法</title>
-      <link href="/posts/521b47c8.html"/>
-      <url>/posts/521b47c8.html</url>
+      <link href="/posts/thinkphp-where.html"/>
+      <url>/posts/thinkphp-where.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-直接whereOr"><a href="#1-直接whereOr" class="headerlink" title="1. 直接whereOr"></a>1. 直接whereOr</h3><pre class=" language-lang-php"><code class="language-lang-php">    $list = Db::name('tb')->where(['status'=>1,'admin_id'=>5])->whereOr(['type'=>1,'step'=>2])->select();    // 生成的sql为：select * from `tb` where `status`=1 and `admin_id`=5 or (`type`=1 or `step`=2);</code></pre><h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];    $orMap = ['type'=>1,'step'=>2];    $list = Db::name('tb')->where(function ($query) use ($map) &#123;        $query->where($map);    &#125;)->whereOr(function ($query) use ($orMap) &#123;        $query->where($orMap);    &#125;)->order('id desc')->select();    // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);</code></pre><p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>]]></content>
       
@@ -446,8 +523,8 @@
     
     <entry>
       <title>ThinkPHP5 中order的使用</title>
-      <link href="/posts/9a9f5736.html"/>
-      <url>/posts/9a9f5736.html</url>
+      <link href="/posts/thinkphp-order.html"/>
+      <url>/posts/thinkphp-order.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。<br>下面这个查询没有得到预期的结果：</p><pre class=" language-lang-bash"><code class="language-lang-bash">    $list = Db::name('tb')->where(['status'=>1])->order(['create_time'=>SORT_DESC])->field('id,name')->select();   // 输出sql为：select id,name from tb where status=1 order by create_time;</code></pre><p>问题在于SORT_DESC=3、SORT_ASC=4，这不符合thinkphp中order方法的传参规则，<br>可以这样使用：</p><pre class=" language-lang-bash"><code class="language-lang-bash">   order('id','desc')   order('id desc')   order(['id'=>'desc','create_time'=>'asc'])   order('id,create_time desc')</code></pre>]]></content>
       
@@ -527,8 +604,8 @@
     
     <entry>
       <title>phpStorm查找指定文件的修改历史</title>
-      <link href="/posts/aca1f155.html"/>
-      <url>/posts/aca1f155.html</url>
+      <link href="/posts/phpstorm-show-history.html"/>
+      <url>/posts/phpstorm-show-history.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>打开需要查找的文件，对着文件右击选择Local History=&gt;Show History<br><img src="/images/phpstorm_show_history_1.png" alt><br><img src="/images/phpstorm_show_history_2.png" alt></p>]]></content>
       
@@ -554,8 +631,8 @@
     
     <entry>
       <title>ThinkPHP5 中clone Query对象</title>
-      <link href="/posts/edd59bca.html"/>
-      <url>/posts/edd59bca.html</url>
+      <link href="/posts/thinkphp-clone-query.html"/>
+      <url>/posts/thinkphp-clone-query.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>当我们在给前端提供列表接口的时候，经常需要根据条件返回总条数和当页列表数据；这时，我们就需要复用共同的查询条件对数据库执行多次查询操作。</p><p>在Yii2里，可以通过clone处理：</p><pre class=" language-lang-php"><code class="language-lang-php">$query = Post::find()->where(['status'=>1]);$query->andFilterWhere(['name'=>$kw]);$count = (clone $query)->count();$list = $query->limit(20)->offset(0)->orderBy(['id'=>SORT_DESC])->all()->asArray();</code></pre><p>在thinkphp5中，使用如下代码进行clone，会存在问题，提示：<code>SQLSTATE[HY000]: General error: 2031</code></p><pre class=" language-lang-php"><code class="language-lang-php">$offset = ($page - 1) * $pageSize;$query = Db::name('artist_bill')->where(['month' => $month]);$count = (clone $query)->count();$list = $query->field('id,title,month')    ->limit($offset, $pageSize)    ->order(['id' => SORT_DESC])    ->select();</code></pre><ul><li>如果把第3行改为：$count = $query-&gt;count();  第一个查询正常，之后的查询没有任何where条件；这是因为query执行完成后会把查询条件清空。</li><li>如果使用clone，打印处理的sql如下：<pre class=" language-lang-sql"><code class="language-lang-sql">select count(*) from t_artist_bill where `month` = :where_AND_month;</code></pre>初步认为是参数没有绑定上去。应该也是query内部引用了一个对象，对象在clone之后与原有对象是一个地址引用。通过一步一步断点输出，确认在$this-&gt;builder-&gt;select($options);之后获得了bind数据。因此只需要解绑clone前后对象的builder属性即可完成query对象的复制。查看query对象的属性，只有builder,connection是对象，但是connection我们希望在整个请求中是一个单实例，所以没必要区分。<br>最终修改,新建query子类，添加__clone方法,指定clone后对新对象执行php $this-&gt;setBuilder();保证 clone之后的builder是一个新实例。<br>这样就可以正常使用clone了。</li></ul><p>另一种处理方式是把where条件提取出来共用：</p><pre class=" language-lang-php"><code class="language-lang-php">public static function getList(?string $month, int $page, int $pageSize): array&#123;    $offset = ($page - 1) * $pageSize;    $where = [];    if (!empty($month)) &#123;        $where['month'] = $month;    &#125;    $query = Db::name('artist_bill');    $count = $query->where($where)->count('id');    $list = $query->where($where)->field('id,title,month')        ->limit($offset, $pageSize)        ->order(['id' => SORT_DESC])        ->select();    return ['count' => $count, 'list' => $list];&#125;</code></pre>]]></content>
       
@@ -581,8 +658,8 @@
     
     <entry>
       <title>phpStorm实现保存后，代码自动格式化</title>
-      <link href="/posts/16aefd1.html"/>
-      <url>/posts/16aefd1.html</url>
+      <link href="/posts/phpstorm-auto-format.html"/>
+      <url>/posts/phpstorm-auto-format.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>鉴于个人编程风格的不同，为了保证团队开发能更好地开展，需要进行代码统一格式化。我们可以在ctrl+s的时候让IED来自动格式化保存。<br>下面介绍下设置步骤：</p><h3 id="1-点击File-》Settings-》Keymap"><a href="#1-点击File-》Settings-》Keymap" class="headerlink" title="1. 点击File-》Settings-》Keymap"></a>1. 点击File-》Settings-》Keymap</h3><p><img src="/images/phpstorm_auth_format_1.png" alt></p><h3 id="2-在右侧搜索save-ALL"><a href="#2-在右侧搜索save-ALL" class="headerlink" title="2. 在右侧搜索save ALL"></a>2. 在右侧搜索save ALL</h3><p><img src="/images/phpstorm_auth_format_2.png" alt></p><h3 id="3-右键点击Save-All，选择Remove-Ctrl-S"><a href="#3-右键点击Save-All，选择Remove-Ctrl-S" class="headerlink" title="3. 右键点击Save All，选择Remove Ctrl+S"></a>3. 右键点击Save All，选择Remove Ctrl+S</h3><p><img src="/images/phpstorm_auth_format_3.png" alt></p><h3 id="4-右键点击Save-All，选择Add-Keyboard-Shortcut，然后按键盘shift-ctrl-alt-s，然后保存。"><a href="#4-右键点击Save-All，选择Add-Keyboard-Shortcut，然后按键盘shift-ctrl-alt-s，然后保存。" class="headerlink" title="4. 右键点击Save All，选择Add Keyboard Shortcut，然后按键盘shift+ctrl+alt+s，然后保存。"></a>4. 右键点击Save All，选择Add Keyboard Shortcut，然后按键盘shift+ctrl+alt+s，然后保存。</h3><p><img src="/images/phpstorm_auth_format_4.png" alt><br>PS:shift+ctrl+alt+s这个可以自己随便设置，但是不能和其他的快捷键冲突，而且要记住，一会我们会用得到。</p><h3 id="5-点击Edit-编辑-gt-Macros-宏-gt-Start-Macro-Recording-开始录制宏-。"><a href="#5-点击Edit-编辑-gt-Macros-宏-gt-Start-Macro-Recording-开始录制宏-。" class="headerlink" title="5. 点击Edit(编辑)-&gt;Macros(宏)-&gt;Start Macro Recording(开始录制宏)。"></a>5. 点击Edit(编辑)-&gt;Macros(宏)-&gt;Start Macro Recording(开始录制宏)。</h3><p>右下角会出现这样一个图标<br><img src="/images/phpstorm_auth_format_5.png" alt><br>然后先按ctrl+alt+l，再按我们刚刚吧save  all设置的快捷键shift+ctrl+alt+s，最后点击红色的小方块结束录制宏<br><img src="/images/phpstorm_auth_format_6.png" alt><br>保存宏：名称设置为：Format And Save（这个名字随意啦，自己记得就好）<br><img src="/images/phpstorm_auth_format_7.png" alt></p><h3 id="6-点击File-》Settings-》Keymap-搜索Format-And-Save"><a href="#6-点击File-》Settings-》Keymap-搜索Format-And-Save" class="headerlink" title="6. 点击File-》Settings-》Keymap  搜索Format And Save"></a>6. 点击File-》Settings-》Keymap  搜索Format And Save</h3><h3 id="7-右键点击Format-And-Save，选择Add-Keyboard-Shortcut-设置为command-s，保存就可以了"><a href="#7-右键点击Format-And-Save，选择Add-Keyboard-Shortcut-设置为command-s，保存就可以了" class="headerlink" title="7. 右键点击Format And Save，选择Add Keyboard Shortcut,设置为command+s，保存就可以了"></a>7. 右键点击Format And Save，选择Add Keyboard Shortcut,设置为command+s，保存就可以了</h3><p><img src="/images/phpstorm_auth_format_8.png" alt><br>最后试一下吧，ctrl+s 就实现了 保存+代码格式化</p>]]></content>
       
@@ -635,8 +712,8 @@
     
     <entry>
       <title>ThinkPHP5使用笔记</title>
-      <link href="/posts/d21f50bb.html"/>
-      <url>/posts/d21f50bb.html</url>
+      <link href="/posts/thinkphp-note.html"/>
+      <url>/posts/thinkphp-note.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-报错：Request-php中-variable-type-error-array"><a href="#1-报错：Request-php中-variable-type-error-array" class="headerlink" title="1. 报错：Request.php中 variable type error: array"></a>1. 报错：Request.php中 variable type error: array</h3><ul><li><p>描述：如果在post请求的时候，raw内容中某个参数的值为数组，直接使用$this-&gt;request-&gt;post(‘field’);，会报错<br><img src="/images/thinkphp_note_1.png" alt></p></li><li><p>原因：TP5之后，默认的变量修饰符为/s，转为字符串了。</p></li><li>解决办法：在变量名后加/a，转为数组：$this-&gt;request-&gt;post(‘field/a’);</li></ul>]]></content>
       
@@ -651,6 +728,31 @@
         <tags>
             
             <tag> ThinkPHP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>php中trait的用法</title>
+      <link href="/posts/php-trait.html"/>
+      <url>/posts/php-trait.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ol><li><p>可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。</p><p>例如：封装单例<br>先创建Singleton类，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php">trait Singleton&#123;    private static $instance;    /**     * @param ...$args     */    public static function getInstance(...$args) &#123;        if (!isset(self::$instance)) &#123;            self::$instance = new static(...$args);        &#125;        return self::$instance;    &#125;&#125;</code></pre><p>再创建Test类，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php"> class Test&#123;     use Singleton;     public function test()&#123;             return 'test';     &#125;     &#125;</code></pre><p>调用：</p><pre class=" language-lang-php"><code class="language-lang-php"> echo Test::getInstance()->test();</code></pre></li></ol><h3 id="常用的trait类"><a href="#常用的trait类" class="headerlink" title="常用的trait类"></a>常用的trait类</h3><ol><li>单例类</li></ol><pre class=" language-lang-php"><code class="language-lang-php">    /**     * 用作单例     * Trait Singleton     */    trait Singleton&#123;        private static $instance;        /**         * @param ...$args         */        public static function getInstance(...$args)&#123;            if (!isset(self::$instance)) &#123;                self::$instance = new static(...$args);            &#125;            return self::$instance;        &#125;    &#125;</code></pre><ol><li>错误处理类</li></ol><pre class=" language-lang-php"><code class="language-lang-php">   namespace app\common\helper;   /**    * 错误操作类    * Trait Error    * @package app\common\helper    */   trait Error&#123;       private $_code;       private $_error;       protected function setError(int $code, string $msg): void&#123;           $this->_code = $code;           $this->_error = $msg;       &#125;       public function getError(): ?array&#123;           return isset($this->_code) ? ['code' => $this->_code, 'msg' => $this->_error] : null;       &#125;   &#125;</code></pre><p>使用方法：</p><pre class=" language-lang-php"><code class="language-lang-php">    class A &#123;        use Error;        public function test()&#123;            ……            if()&#123;                 $this->setError(0, '数据不存在');                return null;                       &#125;        &#125;    &#125;</code></pre><p>调用：</p><pre class=" language-lang-php"><code class="language-lang-php">    $s = new A();    $rs = $s->test();    if ($error = $s->getError()) &#123;        extract($error);        /**         * @var $code         * @var $msg         */        $this->setError($code, $msg);        return false;    &#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> trait </tag>
             
         </tags>
       
@@ -720,14 +822,41 @@
       
       <categories>
           
-          <category> HTML </category>
+          <category> 前端 </category>
           
       </categories>
       
       
         <tags>
             
+            <tag> 前端 </tag>
+            
             <tag> 颜色值 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>跨域问题</title>
+      <link href="/posts/cross-domain.html"/>
+      <url>/posts/cross-domain.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="存在原因"><a href="#存在原因" class="headerlink" title="存在原因"></a>存在原因</h3><p>浏览器的同源策略，一个源表示协议、端口、域名都相同，否则就形成跨域。<br><img src="/images/cross_domain_1.png" alt></p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>  A. 服务器响应头：header(“Access-Control-Allow-Origin:*”);<br>  B. iframe实现跨域<br>  C. jsonp  带有 src属性的标签(&lt;script&gt;/&lt;img&gt;/&lt;iframe&gt;)不受同源策略限制</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 跨域 </tag>
             
         </tags>
       
@@ -752,9 +881,9 @@
       
         <tags>
             
-            <tag> 锚定效应 </tag>
-            
             <tag> 产品 </tag>
+            
+            <tag> 锚定效应 </tag>
             
         </tags>
       
@@ -804,9 +933,9 @@
       
         <tags>
             
-            <tag> 产品 </tag>
-            
             <tag> 产品设计 </tag>
+            
+            <tag> 产品 </tag>
             
         </tags>
       
@@ -824,7 +953,7 @@
       
       <categories>
           
-          <category> itsNeko博客食用方法 </category>
+          <category> 其他 </category>
           
       </categories>
       
@@ -849,7 +978,7 @@
       
       <categories>
           
-          <category> 技术 </category>
+          <category> 其他 </category>
           
       </categories>
       
@@ -909,6 +1038,33 @@
             <tag> MySQL </tag>
             
             <tag> 数据库优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>php中composer的使用</title>
+      <link href="/posts/php-composer.html"/>
+      <url>/posts/php-composer.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ol><li>降低composer版本<br><code>shell script composer self-update -r 或者是 composer self-update -- l</code></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
+            
+            <tag> composer </tag>
             
         </tags>
       
@@ -1140,7 +1296,7 @@
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> 前端 </category>
           
       </categories>
       
@@ -1148,8 +1304,6 @@
         <tags>
             
             <tag> JavaScript </tag>
-            
-            <tag> 复制 </tag>
             
         </tags>
       
@@ -1416,7 +1570,7 @@
       
       <categories>
           
-          <category> 心跳 </category>
+          <category> 其他 </category>
           
       </categories>
       
@@ -1443,7 +1597,7 @@
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> 前端 </category>
           
       </categories>
       
@@ -1676,15 +1830,15 @@
     
     <entry>
       <title>高德地图API使用</title>
-      <link href="/posts/b743cdda.html"/>
-      <url>/posts/b743cdda.html</url>
+      <link href="/posts/amap-api.html"/>
+      <url>/posts/amap-api.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li><p>高德地图的覆盖物label默认是蓝框白底的，className为amap-marker-label，可以通过css来修改样式。如：</p><pre class=" language-lang-bash"><code class="language-lang-bash"> <style>     .amap-marker-label&#123;         height:40px;         width:120px;         background-color: red;         border: solid 1px black;     &#125; </style></code></pre></li><li><p>高德地图，根据地址搜索经纬度，再次搜索时清除遮盖物：</p><pre class=" language-lang-bash"><code class="language-lang-bash"> var markers = [];     map.remove(markers);     markers.push(marker);</code></pre></li></ol>]]></content>
       
       
       <categories>
           
-          <category> 地图API </category>
+          <category> 第三方 </category>
           
       </categories>
       
@@ -1711,7 +1865,7 @@
       
       <categories>
           
-          <category> 插件 </category>
+          <category> 第三方 </category>
           
       </categories>
       
@@ -1765,7 +1919,7 @@
       
       <categories>
           
-          <category> CSS </category>
+          <category> 前端 </category>
           
       </categories>
       
@@ -1794,7 +1948,7 @@
       
       <categories>
           
-          <category> Jquery </category>
+          <category> 前端 </category>
           
       </categories>
       
@@ -1815,10 +1969,10 @@
     
     <entry>
       <title>Linux常用命令</title>
-      <link href="/posts/d0edc1ed.html"/>
-      <url>/posts/d0edc1ed.html</url>
+      <link href="/posts/linux-common-commands.html"/>
+      <url>/posts/linux-common-commands.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：</p><h3 id="1-创建文件夹"><a href="#1-创建文件夹" class="headerlink" title="1. 创建文件夹"></a>1. 创建文件夹</h3><p><code>mkdir dir</code></p><h3 id="2-删除文件夹"><a href="#2-删除文件夹" class="headerlink" title="2. 删除文件夹"></a>2. 删除文件夹</h3><p>-r向下递归，-f强制删除： <code>rm -rf dir</code></p><h3 id="3-创建文件"><a href="#3-创建文件" class="headerlink" title="3. 创建文件"></a>3. 创建文件</h3><p><code>touch a.txt</code></p><h3 id="4-删除文件"><a href="#4-删除文件" class="headerlink" title="4. 删除文件"></a>4. 删除文件</h3><p><code>rm -f /var/log/a.txt</code></p><h3 id="5-追加内容到文件"><a href="#5-追加内容到文件" class="headerlink" title="5. 追加内容到文件"></a>5. 追加内容到文件</h3><p><code>echo sssss &gt;&gt; a.txt</code></p><h3 id="6-插入内容"><a href="#6-插入内容" class="headerlink" title="6. 插入内容"></a>6. 插入内容</h3><p>vi text.txt =》按i =》插入内容 =》按Esc =》:wq</p><h3 id="7-修改密码"><a href="#7-修改密码" class="headerlink" title="7. 修改密码"></a>7. 修改密码</h3><ul><li>选择要修改密码的用户名，以root用户为例<br><code>passwd root</code></li><li>输入2次一样的新密码，当提示更新成功即可。<br><img src="/images/linux_command_1.png" alt></li></ul><h3 id="8-查看系统环境"><a href="#8-查看系统环境" class="headerlink" title="8. 查看系统环境"></a>8. 查看系统环境</h3><pre class=" language-lang-shell"><code class="language-lang-shell">[root@VM_0_7_centos ~]# cat /etc/redhat-release CentOS Linux release 7.6.1810 (Core) [root@VM_0_7_centos ~]# uname -aLinux VM_0_7_centos 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</code></pre><p>从上述结果可以看出：系统为CentOS 7.6 内核为3.10.0-957.27.2.el7.x86_64</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：</p><h3 id="1-创建文件夹"><a href="#1-创建文件夹" class="headerlink" title="1. 创建文件夹"></a>1. 创建文件夹</h3><p><code>mkdir dir</code></p><h3 id="2-删除文件夹"><a href="#2-删除文件夹" class="headerlink" title="2. 删除文件夹"></a>2. 删除文件夹</h3><p>-r向下递归，-f强制删除： <code>rm -rf dir</code></p><h3 id="3-创建文件"><a href="#3-创建文件" class="headerlink" title="3. 创建文件"></a>3. 创建文件</h3><p><code>touch a.txt</code></p><h3 id="4-删除文件"><a href="#4-删除文件" class="headerlink" title="4. 删除文件"></a>4. 删除文件</h3><p><code>rm -f /var/log/a.txt</code></p><h3 id="5-追加内容到文件"><a href="#5-追加内容到文件" class="headerlink" title="5. 追加内容到文件"></a>5. 追加内容到文件</h3><p><code>echo sssss &gt;&gt; a.txt</code></p><h3 id="6-插入内容"><a href="#6-插入内容" class="headerlink" title="6. 插入内容"></a>6. 插入内容</h3><p>vi text.txt =》按i =》插入内容 =》按Esc =》:wq</p><h3 id="7-修改密码"><a href="#7-修改密码" class="headerlink" title="7. 修改密码"></a>7. 修改密码</h3><ul><li>选择要修改密码的用户名，以root用户为例<br><code>passwd root</code></li><li>输入2次一样的新密码，当提示更新成功即可。<br><img src="/images/linux_command_1.png" alt></li></ul><h3 id="8-查看系统环境"><a href="#8-查看系统环境" class="headerlink" title="8. 查看系统环境"></a>8. 查看系统环境</h3><pre class=" language-lang-shell"><code class="language-lang-shell">[root@VM_0_7_centos ~]# cat /etc/redhat-release CentOS Linux release 7.6.1810 (Core) [root@VM_0_7_centos ~]# uname -aLinux VM_0_7_centos 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</code></pre><p>从上述结果可以看出：系统为CentOS 7.6 内核为3.10.0-957.27.2.el7.x86_64</p><h3 id="9-清空当前界面信息"><a href="#9-清空当前界面信息" class="headerlink" title="9. 清空当前界面信息"></a>9. 清空当前界面信息</h3><p><code>clear</code></p><h3 id="10-显示当前时间"><a href="#10-显示当前时间" class="headerlink" title="10. 显示当前时间"></a>10. 显示当前时间</h3><p><code>date</code><br><img src="/images/linux_command_2.png" alt></p><h3 id="11-显示当前路径"><a href="#11-显示当前路径" class="headerlink" title="11. 显示当前路径"></a>11. 显示当前路径</h3><p><code>pwd</code><br><img src="/images/linux_command_3.png" alt></p>]]></content>
       
       
       <categories>
@@ -1929,7 +2083,7 @@
       
       <categories>
           
-          <category> JavaScript </category>
+          <category> 前端 </category>
           
       </categories>
       
@@ -2010,7 +2164,7 @@
       
       <categories>
           
-          <category> 工具 </category>
+          <category> 其他 </category>
           
       </categories>
       

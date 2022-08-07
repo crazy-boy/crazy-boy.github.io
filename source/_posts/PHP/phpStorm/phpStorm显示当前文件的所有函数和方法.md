@@ -4,7 +4,7 @@ tags:
   - php
   - phpStorm
 categories: PHP
-abbrlink: 4aed7067
+abbrlink: 'phpstorm-show-func'
 date: 2022-05-12 17:17:55
 updated: 2022-05-12 17:17:55
 ---

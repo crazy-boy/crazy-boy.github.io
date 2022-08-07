@@ -4,7 +4,7 @@ tags:
   - ThinkPHP
   - Query
 categories: PHP
-abbrlink: edd59bca
+abbrlink: 'thinkphp-clone-query'
 date: 2022-04-26 21:18:26
 updated: 2022-04-26 21:18:26
 ---

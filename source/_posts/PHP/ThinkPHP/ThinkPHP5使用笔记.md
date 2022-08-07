@@ -3,7 +3,7 @@ title: ThinkPHP5使用笔记
 tags:
   - ThinkPHP
 categories: PHP
-abbrlink: d21f50bb
+abbrlink: 'thinkphp-note'
 date: 2022-04-25 11:32:32
 updated: 2022-04-25 11:32:32
 ---

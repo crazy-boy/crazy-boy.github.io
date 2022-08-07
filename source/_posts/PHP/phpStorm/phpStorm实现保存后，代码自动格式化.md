@@ -4,7 +4,7 @@ tags:
   - php
   - phpStorm
 categories: PHP
-abbrlink: 16aefd1
+abbrlink: 'phpstorm-auto-format'
 date: 2022-04-26 17:51:46
 updated: 2022-04-26 17:51:46
 ---

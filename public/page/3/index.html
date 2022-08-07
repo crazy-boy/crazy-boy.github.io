@@ -176,7 +176,7 @@ class="themespring" -->
                     <img src="/medias/logo.webp" class="logo-img" alt="LOGO">
                     
                     <!-- 大屏幕下logo字体 -->
-                    <span class="bigwidth">itsNeko-openSource-Blog</span>
+                    <span class="bigwidth">飞奔的蜗牛</span>
                     <!-- 小屏幕下logo字体 -->
                     <span class="smallwidth">itsNeko</span>
                 </a>
@@ -909,7 +909,7 @@ class="themespring" -->
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['欢迎使用itsNeko开源博客，也欢迎大家的赞赏',''],
+                        strings: ['欢迎来到这里，也欢迎大家的赞赏',''],
                         startDelay: 200,
                         typeSpeed: 120,
                         loop: true,
@@ -974,6 +974,190 @@ class="themespring" -->
   <!-- 所有文章卡片开始 -->
   <article id="articles" class="container articles">
     <div class="row article-row">
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/thinkphp-clone-query.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/1.jpg" class="responsive-img"
+                alt="ThinkPHP5 中clone Query对象">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                ThinkPHP5 中clone Query对象
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              当我们在给前端提供列表接口的时候，经常需要根据条件返回总条数和当页列表数据；这时，我们就需要复用共同的查询条件对数据库执行多次查询操作。
+在Yii2里，可以通过clone处理：
+$query = Post::find()->where(['
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/ThinkPHP/">
+              <span class="chip bg-color">ThinkPHP</span>
+            </a>
+            
+            <a href="/tags/Query/">
+              <span class="chip bg-color">Query</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/phpstorm-auto-format.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/1.jpg" class="responsive-img"
+                alt="phpStorm实现保存后，代码自动格式化">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                phpStorm实现保存后，代码自动格式化
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              鉴于个人编程风格的不同，为了保证团队开发能更好地开展，需要进行代码统一格式化。我们可以在ctrl+s的时候让IED来自动格式化保存。下面介绍下设置步骤：
+1. 点击File-》Settings-》Keymap
+2. 在右侧搜索save AL
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/php/">
+              <span class="chip bg-color">php</span>
+            </a>
+            
+            <a href="/tags/phpStorm/">
+              <span class="chip bg-color">phpStorm</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
       
       <div class="article col s12 m6 l4">
         <div class="card">
@@ -1073,7 +1257,7 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/d21f50bb.html">
+          <a href="/posts/thinkphp-note.html">
             <div class="card-image">
 
               
@@ -1148,6 +1332,98 @@ class="themespring" -->
             
             <a href="/tags/ThinkPHP/">
               <span class="chip bg-color">ThinkPHP</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-trait.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="php中trait的用法">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                php中trait的用法
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              用法
+可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。
+例如：封装单例先创建Singleton类，代码如下：
+trait Singleton&#123;
+    private static $instance;
+
+
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/trait/">
+              <span class="chip bg-color">trait</span>
             </a>
             
           </div>
@@ -1402,8 +1678,8 @@ class="themespring" -->
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/HTML/" class="post-category">
-                  HTML
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                  前端
                 </a>
                 
                 
@@ -1414,8 +1690,99 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+              <span class="chip bg-color">前端</span>
+            </a>
+            
             <a href="/tags/%E9%A2%9C%E8%89%B2%E5%80%BC/">
               <span class="chip bg-color">颜色值</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/cross-domain.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/1.jpg" class="responsive-img"
+                alt="跨域问题">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                跨域问题
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              存在原因浏览器的同源策略，一个源表示协议、端口、域名都相同，否则就形成跨域。
+解决办法  A. 服务器响应头：header(“Access-Control-Allow-Origin:*”);  B. iframe实现跨域  C. jsonp
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                  前端
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E8%B7%A8%E5%9F%9F/">
+              <span class="chip bg-color">跨域</span>
             </a>
             
           </div>
@@ -1501,12 +1868,12 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/">
-              <span class="chip bg-color">锚定效应</span>
-            </a>
-            
             <a href="/tags/%E4%BA%A7%E5%93%81/">
               <span class="chip bg-color">产品</span>
+            </a>
+            
+            <a href="/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/">
+              <span class="chip bg-color">锚定效应</span>
             </a>
             
           </div>
@@ -1677,385 +2044,12 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/%E4%BA%A7%E5%93%81/">
-              <span class="chip bg-color">产品</span>
-            </a>
-            
             <a href="/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">
               <span class="chip bg-color">产品设计</span>
             </a>
             
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/articletemplate.html">
-            <div class="card-image">
-
-              
-              <img src="/medias/toc-banner/suibi1.jpg" class="responsive-img" alt="这是技术文章模板">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                这是技术文章模板
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              前言，技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言。
-
-标题
-项目1
-项目2
-项目3
-
-正文正文正文正文正文正文正文正文正文正文
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                  技术
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E6%8A%80%E6%9C%AF/">
-              <span class="chip bg-color">技术</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/goframe-note.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Goframe框架使用">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Goframe框架使用
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              gen dao使用
-下载软件：https://github.com/gogf/gf-cli/releases
-安装，并添加环境变量
-
-查看版本：gf -version
-
-更新model：gf gen dao -c bin/config.to
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Go/" class="post-category">
-                  Go
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Goframe/">
-              <span class="chip bg-color">Goframe</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/bc18f661.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="MySQL数据库优化">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                MySQL数据库优化
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1、优化思路
-1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则
-2）表中碎片是否整理
-3）表的统计信息是否收集，只有统计信息准确，执行计划才能帮助优化SQL
-4）查看执行计划，检查索引使用情况，没有用到索引，考虑创建
-5）创建索
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/MySQL/" class="post-category">
-                  MySQL
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/MySQL/">
-              <span class="chip bg-color">MySQL</span>
-            </a>
-            
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">
-              <span class="chip bg-color">数据库优化</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/c5e566f2.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/3.jpg" class="responsive-img"
-                alt="系统设计">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                系统设计
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 系统分析
-对于初期单一系统的产品来说，一个数据库➕一个平台程序即可；
-
-对于含有两个及以上平台的初期产品来说，系统结构应该是：多个平台程序➕一个服务中心➕一个或多个数据库；
-
-对于多平台且需与第三方交互的产品来说，系统结构应该是：多个
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
-                  架构
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E6%9E%B6%E6%9E%84/">
-              <span class="chip bg-color">架构</span>
-            </a>
-            
-            <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/">
-              <span class="chip bg-color">系统设计</span>
+            <a href="/tags/%E4%BA%A7%E5%93%81/">
+              <span class="chip bg-color">产品</span>
             </a>
             
           </div>
@@ -2182,7 +2176,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">17.5k</span>&nbsp;
+        class="white-color">18.1k</span>&nbsp;
       
       
       

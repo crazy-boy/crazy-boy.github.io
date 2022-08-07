@@ -2,8 +2,7 @@
 title: JS点击复制指定内容
 tags:
   - JavaScript
-  - 复制
-categories: JavaScript
+categories: 前端
 abbrlink: 6e2d0a48
 date: 2019-07-02 19:41:00
 updated: 2019-07-02 19:45:00
