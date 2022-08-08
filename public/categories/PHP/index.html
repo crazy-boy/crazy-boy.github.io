@@ -228,13 +228,6 @@ class="themespring" -->
         </a>
       </li>
       
-      <li>
-        <a href="/count">
-          
-          <span>统计</span>
-        </a>
-      </li>
-      
       <!-- 波浪wave条 -->
       <div class="wavelineerji">
         <style>
@@ -357,13 +350,6 @@ class="themespring" -->
         <a href="/project">
           
           <span>实战项目</span>
-        </a>
-      </li>
-      
-      <li>
-        <a href="/donate">
-          
-          <span>打赏记录</span>
         </a>
       </li>
       
@@ -504,14 +490,6 @@ class="themespring" -->
                   </a>
                 </li>
               
-                <li>
-
-                  <a href="/count " style="margin-left:75px">
-				  
-		          <span>统计</span>
-                  </a>
-                </li>
-              
             </ul>
           
         </li>
@@ -617,14 +595,6 @@ class="themespring" -->
                   <a href="/project " style="margin-left:75px">
 				  
 		          <span>实战项目</span>
-                  </a>
-                </li>
-              
-                <li>
-
-                  <a href="/donate " style="margin-left:75px">
-				  
-		          <span>打赏记录</span>
                   </a>
                 </li>
               
@@ -993,6 +963,96 @@ class="themespring" -->
     
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
+                    <a href="/posts/php-define-const.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="PHP中define和const的区别">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              PHP中define和const的区别
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在PHP中，定义常量有两种方式： const、define；下面详细说下它们的区别：
+
+
+
+1、const是表达式赋值定义一个常量，而define是一个函数，它接受三个参数
+2、const对定义的常量大小写敏感，而define可以通过函数的
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/define%E4%B8%8Econst/">
+                            <span class="chip bg-color">define与const</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
@@ -2251,97 +2311,6 @@ $query = Post::find()->where(['
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
-                    <a href="/posts/phpstorm-auto-format.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/1.jpg" class="responsive-img" alt="phpStorm实现保存后，代码自动格式化">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              phpStorm实现保存后，代码自动格式化
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                鉴于个人编程风格的不同，为了保证团队开发能更好地开展，需要进行代码统一格式化。我们可以在ctrl+s的时候让IED来自动格式化保存。下面介绍下设置步骤：
-1. 点击File-》Settings-》Keymap
-2. 在右侧搜索save AL
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/php/">
-                            <span class="chip bg-color">php</span>
-                        </a>
-                        
-                        <a href="/tags/phpStorm/">
-                            <span class="chip bg-color">phpStorm</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 </main>
@@ -2459,7 +2428,7 @@ $query = Post::find()->where(['
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">18.1k</span>&nbsp;
+        class="white-color">19.8k</span>&nbsp;
       
       
       

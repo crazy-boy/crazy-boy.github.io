@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/dead-lock.html</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/pooling-technology.html</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/thread-safe.html</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/php-define-const.html</loc>
+    <lastmod>2022-08-08</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/itsneko-opensource-blog.html</loc>
     <lastmod>2022-08-07</lastmod>
   </url>

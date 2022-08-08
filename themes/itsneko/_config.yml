@@ -12,8 +12,6 @@ menu:
         url: /tags
       - name: 日历
         url: /archives
-      - name: 统计
-        url: /count
   About:
     url: /about
   qingdan:
@@ -38,8 +36,6 @@ menu:
         url: /collection
       - name: 实战项目
         url: /project
-      - name: 打赏记录
-        url: /donate
   lab:
     url: javascript:;
     children:

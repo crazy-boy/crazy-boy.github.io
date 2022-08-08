@@ -1,3 +1,7 @@
+https://crazy-boy.com/posts/dead-lock.html
+https://crazy-boy.com/posts/pooling-technology.html
+https://crazy-boy.com/posts/thread-safe.html
+https://crazy-boy.com/posts/php-define-const.html
 https://crazy-boy.com/posts/linux-curl.html
 https://crazy-boy.com/posts/builder-pattern.html
 https://crazy-boy.com/posts/php-auto-run-func.html
