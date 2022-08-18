@@ -1770,15 +1770,15 @@
     
     <entry>
       <title>SEO——权重转移</title>
-      <link href="/posts/6467ec5d.html"/>
-      <url>/posts/6467ec5d.html</url>
+      <link href="/posts/seo-weight-transfer.html"/>
+      <url>/posts/seo-weight-transfer.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong> 产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：</strong></p><pre class=" language-lang-html"><code class="language-lang-html"><link rel="canonical" href="主页url"/></code></pre><p>Google 等搜索引擎最终都会只收录 canonical 标签指定的这个网址，搜索引擎会将其它页面作为重复内容，这些重复的内容不再参与页面的权重分配(如 Google 的 PR 值)。</p><p>如：<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=1</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=2</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=3</a><br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=4</a><br>……<br><a href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45">https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html?beginPage=45</a></p><p>就可以在每个页面的head标签内添加代码：</p><link rel="canonical" href="https://s.1688.com/selloffer/-C6B7C5C6CDAFD0AC.html">]]></content>
       
       
       <categories>
           
-          <category> SEO </category>
+          <category> 其他 </category>
           
       </categories>
       
@@ -2094,15 +2094,15 @@
     
     <entry>
       <title>书单心愿墙</title>
-      <link href="/posts/92fdde39.html"/>
-      <url>/posts/92fdde39.html</url>
+      <link href="/posts/wished-book-list.html"/>
+      <url>/posts/wished-book-list.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="罗列一些自己后续要读的书籍或者文章："><a href="#罗列一些自己后续要读的书籍或者文章：" class="headerlink" title="罗列一些自己后续要读的书籍或者文章："></a>罗列一些自己后续要读的书籍或者文章：</h3><ul><li>《黑客与画家》</li><li>《UNIX编程艺术》</li><li>《异类》</li><li>《羊皮卷》——《选择的力量》</li><li>《优秀到不能被忽视》</li><li>《无言的宇宙》</li><li>《数学女孩》</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 书籍 </category>
+          <category> 随笔 </category>
           
       </categories>
       
@@ -2239,7 +2239,7 @@
       
       <categories>
           
-          <category> 其他 </category>
+          <category> 随笔 </category>
           
       </categories>
       

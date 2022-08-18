@@ -3,46 +3,33 @@
 menu:
   Index:
     url: /
-  Categories:
-    url: /categories
   Archives:
     url: javascript:;
     children:
+      - name: 分类
+        url: /categories
       - name: 标签
         url: /tags
       - name: 日历
         url: /archives
-  About:
-    url: /about
-  qingdan:
+  Mine:
     url: javascript:;
     children:
-      - name: vlog
-        url: /videos
-      - name: music
+      - name: 音乐
         url: /musics
       - name: 相册
         url: /gallery
       - name: 书单
         url: /books
-  Contact:
-    url: /contact
-  Friends:
+      - name: 关于
+        url: /about
+  Other:
     url: javascript:;
     children:
-      - name: 友情链接
-        url: /friends
-      - name: 网址收藏
-        url: /collection
-      - name: 实战项目
-        url: /project
-  lab:
-    url: javascript:;
-    children:
-      - name: ticktack
+      - name: 留言板
+        url: /contact
+      - name: 时间轮
         url: /ticktack
-      - name: opensource
-        url: /vote
 
   # 二级菜单写法如下
   #Medias:
@@ -65,9 +52,9 @@ menu:
 # 站点运行开始时间.
 time:
   enable: true
-  year: 2021 # 年份
-  month: 12 # 月份
-  date: 16 # 日期
+  year: 2018 # 年份
+  month: 05 # 月份
+  date: 17 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
   second: 00 # 秒
