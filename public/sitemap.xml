@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazy-boy.com/donate/index.html</loc>
+    
+    <lastmod>2022-08-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://crazy-boy.com/about/index.html</loc>
     
     <lastmod>2022-08-18</lastmod>
@@ -718,20 +725,6 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/Git/</loc>
-    <lastmod>2022-08-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/</loc>
-    <lastmod>2022-08-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy-boy.com/tags/Docker/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
@@ -740,6 +733,20 @@
   
   <url>
     <loc>https://crazy-boy.com/tags/Windows/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/Git/</loc>
+    <lastmod>2022-08-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1229,14 +1236,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/phpStorm/</loc>
+    <loc>https://crazy-boy.com/tags/composer/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/composer/</loc>
+    <loc>https://crazy-boy.com/tags/phpStorm/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1357,14 +1364,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/categories/Git/</loc>
+    <loc>https://crazy-boy.com/categories/Docker/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/categories/Docker/</loc>
+    <loc>https://crazy-boy.com/categories/Git/</loc>
     <lastmod>2022-08-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
