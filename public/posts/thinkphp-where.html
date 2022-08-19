@@ -1063,7 +1063,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    129
+                    125
                 </div>
                 
 
@@ -1085,11 +1085,11 @@ h3:hover {
 </code></pre>
 <h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];
     $orMap = ['type'=>1,'step'=>2];
-    $list = Db::name('tb')->where(function ($query) use ($map) &#123;
+    $list = Db::name('tb')->where(function ($query) use ($map) {
         $query->where($map);
-    &#125;)->whereOr(function ($query) use ($orMap) &#123;
+    })->whereOr(function ($query) use ($orMap) {
         $query->where($orMap);
-    &#125;)->order('id desc')->select();
+    })->order('id desc')->select();
     // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);
 </code></pre>
 <p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>
@@ -1750,12 +1750,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DOS%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">DOS命令</span>
-                    </a>
-                    
                     <a href="/tags/MySQL/">
                         <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/DOS%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">DOS命令</span>
                     </a>
                     
                 </div>
@@ -2108,7 +2108,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    129
+                    125
                 </div>
                 
 
@@ -2130,11 +2130,11 @@ h3:hover {
 </code></pre>
 <h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];
     $orMap = ['type'=>1,'step'=>2];
-    $list = Db::name('tb')->where(function ($query) use ($map) &#123;
+    $list = Db::name('tb')->where(function ($query) use ($map) {
         $query->where($map);
-    &#125;)->whereOr(function ($query) use ($orMap) &#123;
+    })->whereOr(function ($query) use ($orMap) {
         $query->where($orMap);
-    &#125;)->order('id desc')->select();
+    })->order('id desc')->select();
     // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);
 </code></pre>
 <p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>
@@ -2795,12 +2795,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DOS%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">DOS命令</span>
-                    </a>
-                    
                     <a href="/tags/MySQL/">
                         <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/DOS%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">DOS命令</span>
                     </a>
                     
                 </div>
@@ -3153,7 +3153,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    129
+                    125
                 </div>
                 
 
@@ -3175,11 +3175,11 @@ h3:hover {
 </code></pre>
 <h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];
     $orMap = ['type'=>1,'step'=>2];
-    $list = Db::name('tb')->where(function ($query) use ($map) &#123;
+    $list = Db::name('tb')->where(function ($query) use ($map) {
         $query->where($map);
-    &#125;)->whereOr(function ($query) use ($orMap) &#123;
+    })->whereOr(function ($query) use ($orMap) {
         $query->where($orMap);
-    &#125;)->order('id desc')->select();
+    })->order('id desc')->select();
     // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);
 </code></pre>
 <p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>
@@ -3840,12 +3840,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DOS%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">DOS命令</span>
-                    </a>
-                    
                     <a href="/tags/MySQL/">
                         <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/DOS%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">DOS命令</span>
                     </a>
                     
                 </div>
@@ -4211,7 +4211,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

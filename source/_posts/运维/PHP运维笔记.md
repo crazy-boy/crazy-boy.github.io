@@ -5,7 +5,7 @@ tags:
   - 运维
   - 笔记
 categories: PHP
-abbrlink: b0308f14
+abbrlink: 'php-operate-note'
 date: 2019-03-20 17:37:00
 updated: 2019-03-20 17:40:00
 ---

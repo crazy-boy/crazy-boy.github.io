@@ -5,17 +5,17 @@ tags:
   - 脚本执行
 categories: MySQL
 password: fdg34$35JFJEWfd
-abbrlink: f5a18430
+abbrlink: 'mysql-deal-miss-handle'
 date: 2020-08-05 18:04:16
 updated: 2020-08-05 18:04:16
 ---
 
-在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：
+<div class="note info">在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：</div>
 
-## 1、先测试
+### 1、先测试
    脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语法问题，另一方面看看数据是否正确被处理；
 
-## 2、脚本简单化
+### 2、脚本简单化
    尽量将复杂的联表处理语句转为多条单表处理语句，这可以防止由于逻辑不严谨导致的数据过多被处理的问题；
 如：现有脚本
 ```sql
@@ -30,7 +30,7 @@ update personnel set status=1 where id=203;
 update personnel set status=1 where id=296;
 ```
 
-## 3、Where条件精确化
+### 3、Where条件精确化
    变更的where条件尽量为唯一索引字段，这可以防止由于条件过于复杂、数据表过大，导致锁表时间过长，执行效率过低的问题；
 如：现有脚本
 ```sql
@@ -52,7 +52,7 @@ update personnel set status=1 where id=256;
 select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') from t_bracelet_person_relation where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;
 ```
 
-## 4、有条件处理
+### 4、有条件处理
 每条SQL语句必须有where条件，否则可能有问题，容易引起数据过度被处理的情况；
 如：现有脚本
 ```sql
@@ -64,7 +64,7 @@ update goods set status=0;
 update goods set status=0 where id=23;
 ```
 
-## 5、脚本数据校验
+### 5、脚本数据校验
 脚本写好之后，可以将update、delete改为select查询下，从查询结果的数据总条数和具体数据上比对下，看看数据是否和预期需要处理的数据有出入，如果有就是条件未控制好，需修改；
 如：现有脚本
 ```sql

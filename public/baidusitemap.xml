@@ -1,32 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://crazy-boy.com/posts/dead-lock.html</loc>
-    <lastmod>2022-08-08</lastmod>
+    <loc>https://crazy-boy.com/posts/btree-and-b+tree.html</loc>
+    <lastmod>2022-08-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/pooling-technology.html</loc>
-    <lastmod>2022-08-08</lastmod>
+    <loc>https://crazy-boy.com/posts/php-aes-encrypt.html</loc>
+    <lastmod>2022-08-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/thread-safe.html</loc>
-    <lastmod>2022-08-08</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/php-define-const.html</loc>
-    <lastmod>2022-08-08</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/itsneko-opensource-blog.html</loc>
-    <lastmod>2022-08-07</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/articletemplate.html</loc>
-    <lastmod>2022-08-07</lastmod>
+    <loc>https://crazy-boy.com/posts/essay-demo.html</loc>
+    <lastmod>2022-08-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/8f013979.html</loc>
-    <lastmod>2022-08-07</lastmod>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/articletemplate.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/thread-safe.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/dead-lock.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/pooling-technology.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/itsneko-opensource-blog.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/php-define-const.html</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/f00bf8aa.html</loc>
+    <lastmod>2022-08-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/linux-curl.html</loc>
@@ -83,18 +99,6 @@
   <url>
     <loc>https://crazy-boy.com/posts/phpstorm-quick-key.html</loc>
     <lastmod>2022-05-17</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/essay-demo.html</loc>
-    <lastmod>2022-05-16</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/dc8a9d20.html</loc>
-    <lastmod>2022-05-14</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/f00bf8aa.html</loc>
-    <lastmod>2022-05-14</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/phpstorm-show-func.html</loc>
@@ -185,7 +189,7 @@
     <lastmod>2022-02-22</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/4c19b56c.html</loc>
+    <loc>https://crazy-boy.com/posts/target-management.html</loc>
     <lastmod>2021-12-31</lastmod>
   </url>
   <url>
@@ -193,7 +197,7 @@
     <lastmod>2021-12-30</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/fd5f561d.html</loc>
+    <loc>https://crazy-boy.com/posts/mysql-notes.html</loc>
     <lastmod>2021-10-11</lastmod>
   </url>
   <url>
@@ -201,7 +205,7 @@
     <lastmod>2021-09-17</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/bc18f661.html</loc>
+    <loc>https://crazy-boy.com/posts/mysql-optimization.html</loc>
     <lastmod>2021-08-07</lastmod>
   </url>
   <url>
@@ -209,12 +213,20 @@
     <lastmod>2021-05-27</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/common-sql.html</loc>
+    <lastmod>2021-04-26</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/cb12c179.html</loc>
     <lastmod>2021-01-07</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/f5a18430.html</loc>
+    <loc>https://crazy-boy.com/posts/mysql-deal-miss-handle.html</loc>
     <lastmod>2020-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/mysql-structural-design.html</loc>
+    <lastmod>2020-03-22</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/1f318c3b.html</loc>
@@ -225,11 +237,19 @@
     <lastmod>2019-10-26</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/relation-between-leaders-and-staffs.html</loc>
+    <lastmod>2019-10-24</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/1711a719.html</loc>
     <lastmod>2019-10-14</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/6704a0e8.html</loc>
+    <lastmod>2019-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/linux-install-nodejs.html</loc>
     <lastmod>2019-10-11</lastmod>
   </url>
   <url>
@@ -241,15 +261,15 @@
     <lastmod>2019-07-02</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/f27137e0.html</loc>
+    <loc>https://crazy-boy.com/posts/mysql-errors.html</loc>
     <lastmod>2019-03-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/b0308f14.html</loc>
+    <loc>https://crazy-boy.com/posts/php-operate-note.html</loc>
     <lastmod>2019-03-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/b9733a42.html</loc>
+    <loc>https://crazy-boy.com/posts/markdown-note.html</loc>
     <lastmod>2019-01-31</lastmod>
   </url>
   <url>
@@ -265,7 +285,7 @@
     <lastmod>2018-11-07</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/ca4788ef.html</loc>
+    <loc>https://crazy-boy.com/posts/mysql-custom-functions.html</loc>
     <lastmod>2018-09-05</lastmod>
   </url>
   <url>
@@ -277,7 +297,7 @@
     <lastmod>2018-06-21</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/4acd8de8.html</loc>
+    <loc>https://crazy-boy.com/posts/oracle-note.html</loc>
     <lastmod>2018-06-19</lastmod>
   </url>
   <url>
@@ -325,7 +345,7 @@
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/df9c1142.html</loc>
+    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
@@ -333,11 +353,11 @@
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/cdd95104.html</loc>
+    <loc>https://crazy-boy.com/posts/jquery-obj.html</loc>
     <lastmod>2018-04-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/ed90cb85.html</loc>
+    <loc>https://crazy-boy.com/posts/mysql-functions.html</loc>
     <lastmod>2018-04-03</lastmod>
   </url>
   <url>

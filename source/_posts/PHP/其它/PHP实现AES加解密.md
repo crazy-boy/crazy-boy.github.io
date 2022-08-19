@@ -5,17 +5,16 @@ tags:
   - AES
   - 加解密
 categories: PHP
-abbrlink: dc8a9d20
+abbrlink: 'php-aes-encrypt'
 date: 2018-04-20 10:05:00
 ---
-系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。
+<div class="note info">系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。</div>
 
 下面介绍一下以PHP实现AES加密解密：
 
-1、AES加密解密类
-``` php
-<?php
+### 1. AES加密解密类
 
+``` php
 namespace libs;
 /**
 * 利用mcrypt做AES加密解密
@@ -84,9 +83,9 @@ class Aes{
 }
 ```
 
-2、调用
+### 2. 调用
+
 ``` php
-<?php
 namespace app\modules\demo\controllers;
 
 use app\common\components\Controller;
@@ -104,7 +103,7 @@ class TestController extends Controller{
 }
 ```
 
-3、访问http://127.0.0.1/web/demo/test/test ，运行结果如下：
+### 3. 访问http://127.0.0.1/web/demo/test/test ，运行结果如下：
 ``` php
 string(11) "18958019299" 
 string(24) "WiBZggO/DRaczJ3wSirvEw==" 

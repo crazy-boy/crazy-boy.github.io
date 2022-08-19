@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    271
+                    259
                 </div>
                 
 
@@ -1079,7 +1079,7 @@ h3:hover {
                 <p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p>
 <p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt></p>
-<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i&#123;&#125; mv  &#123;&#125; &#123;&#125;.txt
+<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt
 </code></pre>
 <p>命令分解：</p>
 <pre class=" language-lang-bash"><code class="language-lang-bash">-l 5 ：按行分割，每个文件5行
@@ -1087,7 +1087,7 @@ h3:hover {
 -a 1 : 用一位数据来顺序命名(从0开始)
 tmp/ ：拆分后的文件放在tmp目录下
 m_ ：拆分后的文件名前缀
-&& cd tmp/ && ls|grep m_|xargs -n1 -i&#123;&#125; mv  &#123;&#125; &#123;&#125;.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)
+&& cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)
 </code></pre>
 <h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt></p>
 <p>注：对xlsx文件拆分有问题</p>
@@ -2097,7 +2097,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    271
+                    259
                 </div>
                 
 
@@ -2117,7 +2117,7 @@ h3:hover {
                 <p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p>
 <p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt></p>
-<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i&#123;&#125; mv  &#123;&#125; &#123;&#125;.txt
+<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt
 </code></pre>
 <p>命令分解：</p>
 <pre class=" language-lang-bash"><code class="language-lang-bash">-l 5 ：按行分割，每个文件5行
@@ -2125,7 +2125,7 @@ h3:hover {
 -a 1 : 用一位数据来顺序命名(从0开始)
 tmp/ ：拆分后的文件放在tmp目录下
 m_ ：拆分后的文件名前缀
-&& cd tmp/ && ls|grep m_|xargs -n1 -i&#123;&#125; mv  &#123;&#125; &#123;&#125;.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)
+&& cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)
 </code></pre>
 <h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt></p>
 <p>注：对xlsx文件拆分有问题</p>
@@ -3138,7 +3138,7 @@ m_ ：拆分后的文件名前缀
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

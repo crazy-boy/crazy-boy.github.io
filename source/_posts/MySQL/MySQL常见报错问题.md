@@ -4,7 +4,7 @@ tags:
   - MySQL
   - 报错
 categories: MySQL
-abbrlink: f27137e0
+abbrlink: 'mysql-errors'
 date: 2019-03-20 17:37:00
 updated: 2019-03-20 17:40:00
 ---

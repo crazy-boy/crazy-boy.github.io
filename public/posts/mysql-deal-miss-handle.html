@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL数据库优化, 这里是网站关键词">
+    <meta name="keywords" content="MySQL脚本执行中，预防误处理数据的方法, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MySQL数据库优化 | 飞奔的蜗牛</title>
+    <title>MySQL脚本执行中，预防误处理数据的方法 | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -731,12 +731,12 @@ class="themespring" -->
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MySQL数据库优化</h1>
+                    <h1 class="description center-align post-title">MySQL脚本执行中，预防误处理数据的方法</h1>
                 </div>
             </div>
         </div>
@@ -1025,8 +1025,8 @@ h3:hover {
                                 <span class="chip bg-color">MySQL</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">
-                                <span class="chip bg-color">数据库优化</span>
+                            <a href="/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/">
+                                <span class="chip bg-color">脚本执行</span>
                             </a>
                         
                     </div>
@@ -1050,7 +1050,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2020-08-05
                 </div>
                 
 
@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    253
+                    321
                 </div>
                 
 
@@ -1076,15 +1076,45 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1、优化思路"><a href="#1、优化思路" class="headerlink" title="1、优化思路"></a>1、优化思路</h2><ul>
-<li>1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则</li>
-<li>2）表中碎片是否整理</li>
-<li>3）表的统计信息是否收集，只有统计信息准确，执行计划才能帮助优化SQL</li>
-<li>4）查看执行计划，检查索引使用情况，没有用到索引，考虑创建</li>
-<li>5）创建索引前，查看索引的选择性distinct，判断该字段是否适创建索引<br>索引选择性指不重复的索引值和数据记录总数的比值，越接近1越好；主键索引和唯一索引选择性是1</li>
-<li>6）创建索引后，再查看执行计划，对比两次结果，查看效率是否提高<h2 id="2、慢查询优化"><a href="#2、慢查询优化" class="headerlink" title="2、慢查询优化"></a>2、慢查询优化</h2></li>
-<li>1）如果一个select语句中没有where条件，只有单纯的group by | order by，这是无法使用索引的。需要有where作为基础铺垫，遵从最左原则才能使用索引。</li>
-</ul>
+                <div class="note info">在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：</div>
+
+<h3 id="1、先测试"><a href="#1、先测试" class="headerlink" title="1、先测试"></a>1、先测试</h3><p>   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语法问题，另一方面看看数据是否正确被处理；</p>
+<h3 id="2、脚本简单化"><a href="#2、脚本简单化" class="headerlink" title="2、脚本简单化"></a>2、脚本简单化</h3><p>   尽量将复杂的联表处理语句转为多条单表处理语句，这可以防止由于逻辑不严谨导致的数据过多被处理的问题；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;
+</code></pre>
+<p>假设经查询，grade_id=5的personnel 为201-296，可改为：</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=201;
+update personnel set status=1 where id=202;
+update personnel set status=1 where id=203;
+……
+update personnel set status=1 where id=296;
+</code></pre>
+<h3 id="3、Where条件精确化"><a href="#3、Where条件精确化" class="headerlink" title="3、Where条件精确化"></a>3、Where条件精确化</h3><p>   变更的where条件尽量为唯一索引字段，这可以防止由于条件过于复杂、数据表过大，导致锁表时间过长，执行效率过低的问题；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where class_id=20 and status=0 and create_time<1571580242;
+</code></pre>
+<p>假设经查询，满足上述条件的personnelId 为220、233、234、256，可改为：</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=220;
+update personnel set status=1 where id=233;
+update personnel set status=1 where id=234;
+update personnel set status=1 where id=256;
+</code></pre>
+<p>单条复杂语句拆分成多条单一条件语句的方法有很多，下面列举几种方式：<br>（1）将满足条件的数据导出，借助excel/Notepad++等工具进行批量补全sql语句；<br>（2）在数据库中使用concat函数进行sql拼接，如：</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') from t_bracelet_person_relation where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;
+</code></pre>
+<h3 id="4、有条件处理"><a href="#4、有条件处理" class="headerlink" title="4、有条件处理"></a>4、有条件处理</h3><p>每条SQL语句必须有where条件，否则可能有问题，容易引起数据过度被处理的情况；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0;
+</code></pre>
+<p>经查上述语句本来只变更id=23的数据，由于疏忽大意忘些where条件，导致整个表的数据都被变更了，这个问题的严重性不亚于删库；</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0 where id=23;
+</code></pre>
+<h3 id="5、脚本数据校验"><a href="#5、脚本数据校验" class="headerlink" title="5、脚本数据校验"></a>5、脚本数据校验</h3><p>脚本写好之后，可以将update、delete改为select查询下，从查询结果的数据总条数和具体数据上比对下，看看数据是否和预期需要处理的数据有出入，如果有就是条件未控制好，需修改；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;
+delete from personnel where class_id=20 and status=0 and create_time<1571580242;
+</code></pre>
+<p>可改为如下语句，查询后核对数据</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">select p.* from personnel p left join classes c on p.class_id=c.class_id where c.grade_id=5;
+select * from personnel where class_id=20 and status=0 and create_time<1571580242;
+</code></pre>
 
             </div>
             <hr/>
@@ -1110,7 +1140,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/bc18f661.html">https://crazy-boy.com/posts/bc18f661.html</a>
+                    <a href="https://crazy-boy.com/posts/mysql-deal-miss-handle.html">https://crazy-boy.com/posts/mysql-deal-miss-handle.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1152,8 +1182,8 @@ h3:hover {
                                     <span class="chip bg-color">MySQL</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">
-                                    <span class="chip bg-color">数据库优化</span>
+                                <a href="/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/">
+                                    <span class="chip bg-color">脚本执行</span>
                                 </a>
                             
                         </div>
@@ -1690,11 +1720,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/goframe-note.html">
+                <a href="/posts/cb12c179.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Goframe框架使用">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Linux下网络相关的命令">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1705,32 +1735,29 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Goframe框架使用
+                          Linux下网络相关的命令
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            gen dao使用
-下载软件：https://github.com/gogf/gf-cli/releases
-安装，并添加环境变量
+                            1、检测IP/域名是否连通：ping -c 4 192.168.10.8  #指定ping的次数  -c times
+ping -q -c 4 www.baidu.com  #只显示结果  -q
 
-查看版本：gf -version
-
-更新model：gf gen dao -c bin/config.to
+2、测试端口的连通性：telnet ip 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Go/" class="post-category">
-                                    Go
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -1740,8 +1767,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Goframe/">
-                        <span class="chip bg-color">Goframe</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
                     </a>
                     
                 </div>
@@ -1755,11 +1786,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/php-composer.html">
+                <a href="/posts/mysql-structural-design.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="php中composer的使用">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="MySQL架构设计">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1770,31 +1801,33 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          php中composer的使用
+                          MySQL架构设计
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用法
-降低composer版本shell script
- composer self-update -r
- 或者是 composer self-update -- l
+                            1、MySQL架构设计中的经验
+1）根据公司现有业务设计合理架构
+2）选择成熟架构方案
+3）因地制宜，根据实际设备情况做出选择
+4）考虑方案的可行性
+5）越简单越好，越适合公司越好
 
 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
@@ -1804,12 +1837,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/php/">
-                        <span class="chip bg-color">php</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
-                    <a href="/tags/composer/">
-                        <span class="chip bg-color">composer</span>
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
                     </a>
                     
                 </div>
@@ -1889,7 +1922,7 @@ h3:hover {
 
         </div>
         
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="数据库优化">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="脚本执行">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -2060,8 +2093,8 @@ h3:hover {
                                 <span class="chip bg-color">MySQL</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">
-                                <span class="chip bg-color">数据库优化</span>
+                            <a href="/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/">
+                                <span class="chip bg-color">脚本执行</span>
                             </a>
                         
                     </div>
@@ -2085,7 +2118,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2020-08-05
                 </div>
                 
 
@@ -2094,7 +2127,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    253
+                    321
                 </div>
                 
 
@@ -2111,15 +2144,45 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1、优化思路"><a href="#1、优化思路" class="headerlink" title="1、优化思路"></a>1、优化思路</h2><ul>
-<li>1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则</li>
-<li>2）表中碎片是否整理</li>
-<li>3）表的统计信息是否收集，只有统计信息准确，执行计划才能帮助优化SQL</li>
-<li>4）查看执行计划，检查索引使用情况，没有用到索引，考虑创建</li>
-<li>5）创建索引前，查看索引的选择性distinct，判断该字段是否适创建索引<br>索引选择性指不重复的索引值和数据记录总数的比值，越接近1越好；主键索引和唯一索引选择性是1</li>
-<li>6）创建索引后，再查看执行计划，对比两次结果，查看效率是否提高<h2 id="2、慢查询优化"><a href="#2、慢查询优化" class="headerlink" title="2、慢查询优化"></a>2、慢查询优化</h2></li>
-<li>1）如果一个select语句中没有where条件，只有单纯的group by | order by，这是无法使用索引的。需要有where作为基础铺垫，遵从最左原则才能使用索引。</li>
-</ul>
+                <div class="note info">在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：</div>
+
+<h3 id="1、先测试"><a href="#1、先测试" class="headerlink" title="1、先测试"></a>1、先测试</h3><p>   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语法问题，另一方面看看数据是否正确被处理；</p>
+<h3 id="2、脚本简单化"><a href="#2、脚本简单化" class="headerlink" title="2、脚本简单化"></a>2、脚本简单化</h3><p>   尽量将复杂的联表处理语句转为多条单表处理语句，这可以防止由于逻辑不严谨导致的数据过多被处理的问题；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;
+</code></pre>
+<p>假设经查询，grade_id=5的personnel 为201-296，可改为：</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=201;
+update personnel set status=1 where id=202;
+update personnel set status=1 where id=203;
+……
+update personnel set status=1 where id=296;
+</code></pre>
+<h3 id="3、Where条件精确化"><a href="#3、Where条件精确化" class="headerlink" title="3、Where条件精确化"></a>3、Where条件精确化</h3><p>   变更的where条件尽量为唯一索引字段，这可以防止由于条件过于复杂、数据表过大，导致锁表时间过长，执行效率过低的问题；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where class_id=20 and status=0 and create_time<1571580242;
+</code></pre>
+<p>假设经查询，满足上述条件的personnelId 为220、233、234、256，可改为：</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=220;
+update personnel set status=1 where id=233;
+update personnel set status=1 where id=234;
+update personnel set status=1 where id=256;
+</code></pre>
+<p>单条复杂语句拆分成多条单一条件语句的方法有很多，下面列举几种方式：<br>（1）将满足条件的数据导出，借助excel/Notepad++等工具进行批量补全sql语句；<br>（2）在数据库中使用concat函数进行sql拼接，如：</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') from t_bracelet_person_relation where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;
+</code></pre>
+<h3 id="4、有条件处理"><a href="#4、有条件处理" class="headerlink" title="4、有条件处理"></a>4、有条件处理</h3><p>每条SQL语句必须有where条件，否则可能有问题，容易引起数据过度被处理的情况；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0;
+</code></pre>
+<p>经查上述语句本来只变更id=23的数据，由于疏忽大意忘些where条件，导致整个表的数据都被变更了，这个问题的严重性不亚于删库；</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0 where id=23;
+</code></pre>
+<h3 id="5、脚本数据校验"><a href="#5、脚本数据校验" class="headerlink" title="5、脚本数据校验"></a>5、脚本数据校验</h3><p>脚本写好之后，可以将update、delete改为select查询下，从查询结果的数据总条数和具体数据上比对下，看看数据是否和预期需要处理的数据有出入，如果有就是条件未控制好，需修改；<br>如：现有脚本</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;
+delete from personnel where class_id=20 and status=0 and create_time<1571580242;
+</code></pre>
+<p>可改为如下语句，查询后核对数据</p>
+<pre class=" language-lang-sql"><code class="language-lang-sql">select p.* from personnel p left join classes c on p.class_id=c.class_id where c.grade_id=5;
+select * from personnel where class_id=20 and status=0 and create_time<1571580242;
+</code></pre>
 
             </div>
             <hr/>
@@ -2145,7 +2208,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/bc18f661.html">https://crazy-boy.com/posts/bc18f661.html</a>
+                    <a href="https://crazy-boy.com/posts/mysql-deal-miss-handle.html">https://crazy-boy.com/posts/mysql-deal-miss-handle.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2187,8 +2250,8 @@ h3:hover {
                                     <span class="chip bg-color">MySQL</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">
-                                    <span class="chip bg-color">数据库优化</span>
+                                <a href="/tags/%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C/">
+                                    <span class="chip bg-color">脚本执行</span>
                                 </a>
                             
                         </div>
@@ -2725,11 +2788,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/goframe-note.html">
+                <a href="/posts/cb12c179.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Goframe框架使用">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Linux下网络相关的命令">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2740,32 +2803,29 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Goframe框架使用
+                          Linux下网络相关的命令
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            gen dao使用
-下载软件：https://github.com/gogf/gf-cli/releases
-安装，并添加环境变量
+                            1、检测IP/域名是否连通：ping -c 4 192.168.10.8  #指定ping的次数  -c times
+ping -q -c 4 www.baidu.com  #只显示结果  -q
 
-查看版本：gf -version
-
-更新model：gf gen dao -c bin/config.to
+2、测试端口的连通性：telnet ip 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Go/" class="post-category">
-                                    Go
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -2775,8 +2835,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Goframe/">
-                        <span class="chip bg-color">Goframe</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
                     </a>
                     
                 </div>
@@ -2790,11 +2854,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/php-composer.html">
+                <a href="/posts/mysql-structural-design.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="php中composer的使用">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="MySQL架构设计">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2805,31 +2869,33 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          php中composer的使用
+                          MySQL架构设计
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用法
-降低composer版本shell script
- composer self-update -r
- 或者是 composer self-update -- l
+                            1、MySQL架构设计中的经验
+1）根据公司现有业务设计合理架构
+2）选择成熟架构方案
+3）因地制宜，根据实际设备情况做出选择
+4）考虑方案的可行性
+5）越简单越好，越适合公司越好
 
 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
@@ -2839,12 +2905,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/php/">
-                        <span class="chip bg-color">php</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
-                    <a href="/tags/composer/">
-                        <span class="chip bg-color">composer</span>
+                    <a href="/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">架构设计</span>
                     </a>
                     
                 </div>
@@ -2936,7 +3002,7 @@ h3:hover {
             <div id="toc-content"></div>
         </div>
         
-        <div class="toc-widget" data-spmid="数据库优化">
+        <div class="toc-widget" data-spmid="脚本执行">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -2957,7 +3023,7 @@ h3:hover {
     </a>
 </div>
 
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="数据库优化">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="脚本执行">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -3132,7 +3198,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

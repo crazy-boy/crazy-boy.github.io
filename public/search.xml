@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>记一次高并发迭代之路</title>
+      <link href="/posts/8f013979.html"/>
+      <url>/posts/8f013979.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h3><p>2020年之初，新冠肺炎突然来势汹汹，在全国人民的团结努力下，抗疫战进入了僵持阶段，2月24日我公司一复工，就接到了成都市XX区领导的需求，需要在一周内开发上线一个针对全区师生(10万人左右)疫情每日打卡平台。</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>其实就是需要做一个用户每日登陆填报问卷的功能。此平台需要有一个管理后台，一个h5打卡填报及其附属页面。</p><h3 id="雏形"><a href="#雏形" class="headerlink" title="雏形"></a>雏形</h3><p>由于时间紧，对项目进行简单分析后，确定功能(后台：用户信息管理、打卡记录、数据统计，前台：用户登陆、打卡、快速打卡、打卡记录)后，我们就着手开发。功能很快开发开发完成并上线。</p><h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>上线前的测试阶段，我们发现有些信息是固定的但每个人都需要查询，比如省市区信息，于是我们进行了redis缓存。由于后台的统计过于复杂，于是使用golang开发了计划任务，每两分钟统计一次数据。<br>领导验收时又提了一些功能改进，在改进时，我们发现用户数有10万左右，单一的打卡接口可能会堵塞，于是进行了优化，打卡接口只进行普通的填报信息校验，校验通过后，异步调用golang接口进行打卡信息保存，这样有一个坏处就是数据保存延迟，可能会出现打卡后看不到记录。为防止用户多次打卡，在填报信息校验通过后，将当天打卡人的唯一标识存入redis，如果存在redis中就不让再次打卡，当然如果打卡信息保存失败，go程序需删除该人当日的打卡缓存。<br>上线试运行期间，发现用户打卡打卡页面很慢，经分析，服务器带宽只有10M，前端页面图片未压缩，于是进行图片、js、css等资源文件压缩，单纯压测前端页面(压缩后未425k)，明显带宽不够，加大到100M，前端页面图片CND加速后，压测1000并发无问题。压测打卡接口，1000并发连接超时失败率20%，800并发连接超时失败率10%。<br>压测一个通宵后，本以为平安无事了，结果第二天一早上就卡得不行，原来是后台查询过慢，导致cpu飙升，前台用户查询不到数据，看慢查询发现，时不时有几个查询sql消耗时间过长，show preocesslist也看到异常。先加索引优化，但效果不明显，结果发现是在进行联表查询的时候，大表联了大表，大表牵引本来就是问题，于是对业务表进行了合并，5张表合成一张表，并添加索引，后台查询立马飞快。更新程序后，暂时一切正常了。<br>没想到第二天一早上服务器有出问题了，并发飙升到2万多，有很多insert 语句造成了锁表，而很多的select语句有无法执行。突然意识到myisam使用insert的时候会造成锁表，需要支持并发插入，得修改concurrent_insert=2,；另一方面有个在慢查询中有两个select语句出现很频繁，但耗时不高(0.60s左右)，explain发现居然没有使用索引，立马加上索引，查询耗时降低到0.02s。在无法kill sql进程的情况下，只能进行停止Nginx，重启数据库，重启后一切正常。<br>由于可能并发过高，我们选择了服务器升级，单台数据库可能扛不住。全迁移到阿里云，使用阿里云的数据库，读写分离，一主多从，弹性伸缩。一切ok，监控两日后发现并发在8000左右。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>架构设计的原则：简单、合适高于一切。<br>高并发需考虑带宽，页面缓存压缩、静态数据缓存、接口异步多线程处理。<br>慢查询除了关注耗时过长的sql，还得注意使用频繁的sql。<br>高并发当程序优化到极致后，需考虑服务器优化，读写分离，redis集群等。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 架构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高并发 </tag>
+            
+            <tag> 性能优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>死锁</title>
       <link href="/posts/dead-lock.html"/>
       <url>/posts/dead-lock.html</url>
@@ -431,33 +458,6 @@
     
     
     <entry>
-      <title>记一次高并发迭代之路</title>
-      <link href="/posts/8f013979.html"/>
-      <url>/posts/8f013979.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h3><p>2020年之初，新冠肺炎突然来势汹汹，在全国人民的团结努力下，抗疫战进入了僵持阶段，2月24日我公司一复工，就接到了成都市XX区领导的需求，需要在一周内开发上线一个针对全区师生(10万人左右)疫情每日打卡平台。</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>其实就是需要做一个用户每日登陆填报问卷的功能。此平台需要有一个管理后台，一个h5打卡填报及其附属页面。</p><h3 id="雏形"><a href="#雏形" class="headerlink" title="雏形"></a>雏形</h3><p>由于时间紧，对项目进行简单分析后，确定功能(后台：用户信息管理、打卡记录、数据统计，前台：用户登陆、打卡、快速打卡、打卡记录)后，我们就着手开发。功能很快开发开发完成并上线。</p><h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>上线前的测试阶段，我们发现有些信息是固定的但每个人都需要查询，比如省市区信息，于是我们进行了redis缓存。由于后台的统计过于复杂，于是使用golang开发了计划任务，每两分钟统计一次数据。<br>领导验收时又提了一些功能改进，在改进时，我们发现用户数有10万左右，单一的打卡接口可能会堵塞，于是进行了优化，打卡接口只进行普通的填报信息校验，校验通过后，异步调用golang接口进行打卡信息保存，这样有一个坏处就是数据保存延迟，可能会出现打卡后看不到记录。为防止用户多次打卡，在填报信息校验通过后，将当天打卡人的唯一标识存入redis，如果存在redis中就不让再次打卡，当然如果打卡信息保存失败，go程序需删除该人当日的打卡缓存。<br>上线试运行期间，发现用户打卡打卡页面很慢，经分析，服务器带宽只有10M，前端页面图片未压缩，于是进行图片、js、css等资源文件压缩，单纯压测前端页面(压缩后未425k)，明显带宽不够，加大到100M，前端页面图片CND加速后，压测1000并发无问题。压测打卡接口，1000并发连接超时失败率20%，800并发连接超时失败率10%。<br>压测一个通宵后，本以为平安无事了，结果第二天一早上就卡得不行，原来是后台查询过慢，导致cpu飙升，前台用户查询不到数据，看慢查询发现，时不时有几个查询sql消耗时间过长，show preocesslist也看到异常。先加索引优化，但效果不明显，结果发现是在进行联表查询的时候，大表联了大表，大表牵引本来就是问题，于是对业务表进行了合并，5张表合成一张表，并添加索引，后台查询立马飞快。更新程序后，暂时一切正常了。<br>没想到第二天一早上服务器有出问题了，并发飙升到2万多，有很多insert 语句造成了锁表，而很多的select语句有无法执行。突然意识到myisam使用insert的时候会造成锁表，需要支持并发插入，得修改concurrent_insert=2,；另一方面有个在慢查询中有两个select语句出现很频繁，但耗时不高(0.60s左右)，explain发现居然没有使用索引，立马加上索引，查询耗时降低到0.02s。在无法kill sql进程的情况下，只能进行停止Nginx，重启数据库，重启后一切正常。<br>由于可能并发过高，我们选择了服务器升级，单台数据库可能扛不住。全迁移到阿里云，使用阿里云的数据库，读写分离，一主多从，弹性伸缩。一切ok，监控两日后发现并发在8000左右。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>架构设计的原则：简单、合适高于一切。<br>高并发需考虑带宽，页面缓存压缩、静态数据缓存、接口异步多线程处理。<br>慢查询除了关注耗时过长的sql，还得注意使用频繁的sql。<br>高并发当程序优化到极致后，需考虑服务器优化，读写分离，redis集群等。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 架构 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 高并发 </tag>
-            
-            <tag> 性能优化 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>phpStorm显示当前文件的所有函数和方法</title>
       <link href="/posts/phpstorm-show-func.html"/>
       <url>/posts/phpstorm-show-func.html</url>
@@ -501,9 +501,9 @@
       
         <tags>
             
-            <tag> DOS命令 </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> DOS命令 </tag>
             
         </tags>
       
@@ -516,7 +516,7 @@
       <link href="/posts/thinkphp-where.html"/>
       <url>/posts/thinkphp-where.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-直接whereOr"><a href="#1-直接whereOr" class="headerlink" title="1. 直接whereOr"></a>1. 直接whereOr</h3><pre class=" language-lang-php"><code class="language-lang-php">    $list = Db::name('tb')->where(['status'=>1,'admin_id'=>5])->whereOr(['type'=>1,'step'=>2])->select();    // 生成的sql为：select * from `tb` where `status`=1 and `admin_id`=5 or (`type`=1 or `step`=2);</code></pre><h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];    $orMap = ['type'=>1,'step'=>2];    $list = Db::name('tb')->where(function ($query) use ($map) &#123;        $query->where($map);    &#125;)->whereOr(function ($query) use ($orMap) &#123;        $query->where($orMap);    &#125;)->order('id desc')->select();    // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);</code></pre><p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-直接whereOr"><a href="#1-直接whereOr" class="headerlink" title="1. 直接whereOr"></a>1. 直接whereOr</h3><pre class=" language-lang-php"><code class="language-lang-php">    $list = Db::name('tb')->where(['status'=>1,'admin_id'=>5])->whereOr(['type'=>1,'step'=>2])->select();    // 生成的sql为：select * from `tb` where `status`=1 and `admin_id`=5 or (`type`=1 or `step`=2);</code></pre><h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];    $orMap = ['type'=>1,'step'=>2];    $list = Db::name('tb')->where(function ($query) use ($map) {        $query->where($map);    })->whereOr(function ($query) use ($orMap) {        $query->where($orMap);    })->order('id desc')->select();    // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);</code></pre><p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>]]></content>
       
       
       <categories>
@@ -572,7 +572,7 @@
       <link href="/posts/56475516.html"/>
       <url>/posts/56475516.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p><p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt></p><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt></p><h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i&#123;&#125; mv  &#123;&#125; &#123;&#125;.txt</code></pre><p>命令分解：</p><pre class=" language-lang-bash"><code class="language-lang-bash">-l 5 ：按行分割，每个文件5行-d ：添加数字后缀，如00,01-a 1 : 用一位数据来顺序命名(从0开始)tmp/ ：拆分后的文件放在tmp目录下m_ ：拆分后的文件名前缀&& cd tmp/ && ls|grep m_|xargs -n1 -i&#123;&#125; mv  &#123;&#125; &#123;&#125;.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)</code></pre><h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt></p><p>注：对xlsx文件拆分有问题</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p><p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt></p><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt></p><h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt</code></pre><p>命令分解：</p><pre class=" language-lang-bash"><code class="language-lang-bash">-l 5 ：按行分割，每个文件5行-d ：添加数字后缀，如00,01-a 1 : 用一位数据来顺序命名(从0开始)tmp/ ：拆分后的文件放在tmp目录下m_ ：拆分后的文件名前缀&& cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)</code></pre><h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt></p><p>注：对xlsx文件拆分有问题</p>]]></content>
       
       
       <categories>
@@ -680,7 +680,7 @@
       <link href="/posts/6541028b.html"/>
       <url>/posts/6541028b.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-参数规范"><a href="#1-参数规范" class="headerlink" title="1. 参数规范"></a>1. 参数规范</h2><p> 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：</p><pre class=" language-lang-bash"><code class="language-lang-bash">    function test($age = 21, $id, $options = [])&#123;         print_r(func_get_args());     &#125;</code></pre><p> 上述代码在IDE中会对$age=21，提示“Optional parameter is provided before required”，应改为：</p><pre class=" language-lang-bash"><code class="language-lang-bash">    function test($id, $age = 21, $options = [])&#123;         print_r(func_get_args());     &#125;</code></pre><h2 id="2-命名规范"><a href="#2-命名规范" class="headerlink" title="2. 命名规范"></a>2. 命名规范</h2><p> 常用的四种命名格式：驼峰、帕斯卡、蛇形、串形，主要是为了解决多个单词之间的空格问题。</p><ul><li>驼峰命名（Camel Case），又叫小驼峰，除了第一个单词，其他单词首字母大写：<br>原始：<code>last login time</code><br>驼峰：<code>lastLoginTime</code></li><li>帕斯卡（Pascal Case），又叫大驼峰，跟驼峰命名很像，只不过所有单词首字母都需要大写：<br>原始：<code>last login time</code><br>帕斯卡：<code>LastLoginTime</code></li><li>蛇形（Snake Case），全由小写字母和下划线组成，是指用下划线(_)作用单词间的分隔符：<br>原始：<code>last login time</code><br>蛇形：<code>last_login_time</code></li><li>串行（Kebab Case），又叫脊柱命名法（spinal case），是指用短横线(-)作用单词间的分隔符：<br>原始：<code>last login time</code><br>串行：<code>last-login-time</code><br>一般而言，函数名或方法名采用小驼峰，类名采用大驼峰，数据库字段名采用蛇形。</li></ul>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-参数规范"><a href="#1-参数规范" class="headerlink" title="1. 参数规范"></a>1. 参数规范</h2><p> 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：</p><pre class=" language-lang-bash"><code class="language-lang-bash">    function test($age = 21, $id, $options = []){         print_r(func_get_args());     }</code></pre><p> 上述代码在IDE中会对$age=21，提示“Optional parameter is provided before required”，应改为：</p><pre class=" language-lang-bash"><code class="language-lang-bash">    function test($id, $age = 21, $options = []){         print_r(func_get_args());     }</code></pre><h2 id="2-命名规范"><a href="#2-命名规范" class="headerlink" title="2. 命名规范"></a>2. 命名规范</h2><p> 常用的四种命名格式：驼峰、帕斯卡、蛇形、串形，主要是为了解决多个单词之间的空格问题。</p><ul><li>驼峰命名（Camel Case），又叫小驼峰，除了第一个单词，其他单词首字母大写：<br>原始：<code>last login time</code><br>驼峰：<code>lastLoginTime</code></li><li>帕斯卡（Pascal Case），又叫大驼峰，跟驼峰命名很像，只不过所有单词首字母都需要大写：<br>原始：<code>last login time</code><br>帕斯卡：<code>LastLoginTime</code></li><li>蛇形（Snake Case），全由小写字母和下划线组成，是指用下划线(_)作用单词间的分隔符：<br>原始：<code>last login time</code><br>蛇形：<code>last_login_time</code></li><li>串行（Kebab Case），又叫脊柱命名法（spinal case），是指用短横线(-)作用单词间的分隔符：<br>原始：<code>last login time</code><br>串行：<code>last-login-time</code><br>一般而言，函数名或方法名采用小驼峰，类名采用大驼峰，数据库字段名采用蛇形。</li></ul>]]></content>
       
       
       <categories>
@@ -840,7 +840,7 @@
       <link href="/posts/php-trait.html"/>
       <url>/posts/php-trait.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ol><li><p>可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。</p><p>例如：封装单例<br>先创建Singleton类，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php">trait Singleton&#123;    private static $instance;    /**     * @param ...$args     */    public static function getInstance(...$args) &#123;        if (!isset(self::$instance)) &#123;            self::$instance = new static(...$args);        &#125;        return self::$instance;    &#125;&#125;</code></pre><p>再创建Test类，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php"> class Test&#123;     use Singleton;     public function test()&#123;             return 'test';     &#125;     &#125;</code></pre><p>调用：</p><pre class=" language-lang-php"><code class="language-lang-php"> echo Test::getInstance()->test();</code></pre></li></ol><h3 id="常用的trait类"><a href="#常用的trait类" class="headerlink" title="常用的trait类"></a>常用的trait类</h3><ol><li>单例类</li></ol><pre class=" language-lang-php"><code class="language-lang-php">    /**     * 用作单例     * Trait Singleton     */    trait Singleton&#123;        private static $instance;        /**         * @param ...$args         */        public static function getInstance(...$args)&#123;            if (!isset(self::$instance)) &#123;                self::$instance = new static(...$args);            &#125;            return self::$instance;        &#125;    &#125;</code></pre><ol><li>错误处理类</li></ol><pre class=" language-lang-php"><code class="language-lang-php">   namespace app\common\helper;   /**    * 错误操作类    * Trait Error    * @package app\common\helper    */   trait Error&#123;       private $_code;       private $_error;       protected function setError(int $code, string $msg): void&#123;           $this->_code = $code;           $this->_error = $msg;       &#125;       public function getError(): ?array&#123;           return isset($this->_code) ? ['code' => $this->_code, 'msg' => $this->_error] : null;       &#125;   &#125;</code></pre><p>使用方法：</p><pre class=" language-lang-php"><code class="language-lang-php">    class A &#123;        use Error;        public function test()&#123;            ……            if()&#123;                 $this->setError(0, '数据不存在');                return null;                       &#125;        &#125;    &#125;</code></pre><p>调用：</p><pre class=" language-lang-php"><code class="language-lang-php">    $s = new A();    $rs = $s->test();    if ($error = $s->getError()) &#123;        extract($error);        /**         * @var $code         * @var $msg         */        $this->setError($code, $msg);        return false;    &#125;</code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">trait是php的一种代码复用的方法。</div><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><h4 id="1-通过use-Trait类来使用"><a href="#1-通过use-Trait类来使用" class="headerlink" title="1. 通过use Trait类来使用"></a>1. 通过use Trait类来使用</h4><p>可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。<br> 例如：封装单例<br>    先创建Singleton类，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php">   trait Singleton&#123;       private static $instance;       /**        * @param ...$args        */       public static function getInstance(...$args) &#123;           if (!isset(self::$instance)) &#123;               self::$instance = new static(...$args);           &#125;           return self::$instance;       &#125;   &#125;</code></pre><p>再创建Test类，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php">    class Test&#123;        use Singleton;        public function test()&#123;                return 'test';        &#125;        &#125;</code></pre><p>调用：</p><pre class=" language-lang-php"><code class="language-lang-php">    echo Test::getInstance()->test();</code></pre><h4 id="2-优先级"><a href="#2-优先级" class="headerlink" title="2. 优先级"></a>2. 优先级</h4><p>当前类中的方法会覆盖trait方法，而trait方法用覆盖了基类中的方法。</p><pre class=" language-lang-php"><code class="language-lang-php">class Base&#123;    public function sayHello()&#123;        echo 'Hello ';    &#125;&#125;trait SayWorld&#123;    public function sayHello()&#123;        parent::sayHello();        echo 'world!';    &#125;&#125;class MyHelloWorld extends Base&#123;    use SayWorld;&#125;$obj = new MyHelloWorld();$obj->sayHello();     //output: Hello world!</code></pre><h4 id="3-多个trait"><a href="#3-多个trait" class="headerlink" title="3. 多个trait"></a>3. 多个trait</h4><p>通过逗号分隔，在 use 声明列出多个 trait类</p><h3 id="常用的trait类"><a href="#常用的trait类" class="headerlink" title="常用的trait类"></a>常用的trait类</h3><h4 id="1-单例类"><a href="#1-单例类" class="headerlink" title="1. 单例类"></a>1. 单例类</h4><pre class=" language-lang-php"><code class="language-lang-php">    /**     * 用作单例     * Trait Singleton     */    trait Singleton&#123;        private static $instance;        /**         * @param ...$args         */        public static function getInstance(...$args)&#123;            if (!isset(self::$instance)) &#123;                self::$instance = new static(...$args);            &#125;            return self::$instance;        &#125;    &#125;</code></pre><h4 id="2-错误处理类"><a href="#2-错误处理类" class="headerlink" title="2. 错误处理类"></a>2. 错误处理类</h4><pre class=" language-lang-php"><code class="language-lang-php">   namespace app\common\helper;   /**    * 错误操作类    * Trait Error    * @package app\common\helper    */   trait Error&#123;       private $_code;       private $_error;       protected function setError(int $code, string $msg): void&#123;           $this->_code = $code;           $this->_error = $msg;       &#125;       public function getError(): ?array&#123;           return isset($this->_code) ? ['code' => $this->_code, 'msg' => $this->_error] : null;       &#125;   &#125;</code></pre><p>使用方法：</p><pre class=" language-lang-php"><code class="language-lang-php">    class A &#123;        use Error;        public function test()&#123;            ……            if()&#123;                 $this->setError(0, '数据不存在');                return null;                       &#125;        &#125;    &#125;</code></pre><p>调用：</p><pre class=" language-lang-php"><code class="language-lang-php">    $s = new A();    $rs = $s->test();    if ($error = $s->getError()) &#123;        extract($error);        /**         * @var $code         * @var $msg         */        $this->setError($code, $msg);        return false;    &#125;</code></pre><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://www.php.net/manual/zh/language.oop5.traits.php">https://www.php.net/manual/zh/language.oop5.traits.php</a></p>]]></content>
       
       
       <categories>
@@ -853,6 +853,31 @@
         <tags>
             
             <tag> trait </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>B树与B+树</title>
+      <link href="/posts/btree-and-b+tree.html"/>
+      <url>/posts/btree-and-b+tree.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="B-Tree对比BTree的优点"><a href="#B-Tree对比BTree的优点" class="headerlink" title="B+Tree对比BTree的优点"></a>B+Tree对比BTree的优点</h3><ul><li>磁盘读写代价更低<br>一般来说B+Tree比BTree更适合实现外存的索引结构，因为存储引擎的设计专家巧妙的利用了外存（磁盘）的存储结构，即磁盘的最小存储单位是扇区（sector），而操作系统的块（block）通常是整数倍的sector，操作系统以页（page）为单位管理内存，一页（page）通常默认为4K，数据库的页通常设置为操作系统页的整数倍，因此索引结构的节点被设计为一个页的大小，然后利用外存的“预读取”原则，每次读取的时候，把整个节点的数据读取到内存中，然后在内存中查找，已知内存的读取速度是外存读取I/O速度的几百倍，那么提升查找速度的关键就在于尽可能少的磁盘I/O，那么可以知道，每个节点中的key个数越多，那么树的高度越小，需要I/O的次数越少，因此一般来说B+Tree比BTree更快，因为B+Tree的非叶节点中不存储data，就可以存储更多的key。</li><li>查询速度更稳定<br>由于B+Tree非叶子节点不存储数据（data），因此所有的数据都要查询至叶子节点，而叶子节点的高度都是相同的，B+Tree的高度一般都在2~4层，因此所有数据的查询速度都是一样的。</li></ul><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p>  <a href="https://blog.csdn.net/u013235478/article/details/50625677">https://blog.csdn.net/u013235478/article/details/50625677</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -993,8 +1018,8 @@
     
     <entry>
       <title>目标管理</title>
-      <link href="/posts/4c19b56c.html"/>
-      <url>/posts/4c19b56c.html</url>
+      <link href="/posts/target-management.html"/>
+      <url>/posts/target-management.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="目标管理"><a href="#目标管理" class="headerlink" title="目标管理"></a>目标管理</h2><h2 id="向上管理"><a href="#向上管理" class="headerlink" title="向上管理"></a>向上管理</h2><h2 id="向下负责"><a href="#向下负责" class="headerlink" title="向下负责"></a>向下负责</h2><h2 id="激励团队"><a href="#激励团队" class="headerlink" title="激励团队"></a>激励团队</h2>]]></content>
       
@@ -1120,10 +1145,10 @@
     
     <entry>
       <title>MySQL数据库优化</title>
-      <link href="/posts/bc18f661.html"/>
-      <url>/posts/bc18f661.html</url>
+      <link href="/posts/mysql-optimization.html"/>
+      <url>/posts/mysql-optimization.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1、优化思路"><a href="#1、优化思路" class="headerlink" title="1、优化思路"></a>1、优化思路</h2><ul><li>1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则</li><li>2）表中碎片是否整理</li><li>3）表的统计信息是否收集，只有统计信息准确，执行计划才能帮助优化SQL</li><li>4）查看执行计划，检查索引使用情况，没有用到索引，考虑创建</li><li>5）创建索引前，查看索引的选择性distinct，判断该字段是否适创建索引<br>索引选择性指不重复的索引值和数据记录总数的比值，越接近1越好；主键索引和唯一索引选择性是1</li><li>6）创建索引后，再查看执行计划，对比两次结果，查看效率是否提高<h2 id="2、慢查询优化"><a href="#2、慢查询优化" class="headerlink" title="2、慢查询优化"></a>2、慢查询优化</h2></li><li>1）如果一个select语句中没有where条件，只有单纯的group by | order by，这是无法使用索引的。需要有where作为基础铺垫，遵从最左原则才能使用索引。</li></ul>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1、优化思路"><a href="#1、优化思路" class="headerlink" title="1、优化思路"></a>1、优化思路</h3><ul><li>1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则</li><li>2）表中碎片是否整理</li><li>3）表的统计信息是否收集，只有统计信息准确，执行计划才能帮助优化SQL</li><li>4）查看执行计划，检查索引使用情况，没有用到索引，考虑创建</li><li>5）创建索引前，查看索引的选择性distinct，判断该字段是否适创建索引<br>索引选择性指不重复的索引值和数据记录总数的比值，越接近1越好；主键索引和唯一索引选择性是1</li><li>6）创建索引后，再查看执行计划，对比两次结果，查看效率是否提高<h3 id="2、慢查询优化"><a href="#2、慢查询优化" class="headerlink" title="2、慢查询优化"></a>2、慢查询优化</h3></li><li>1）如果一个select语句中没有where条件，只有单纯的group by | order by，这是无法使用索引的。需要有where作为基础铺垫，遵从最左原则才能使用索引。</li></ul>]]></content>
       
       
       <categories>
@@ -1165,6 +1190,31 @@
             <tag> php </tag>
             
             <tag> composer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常用的SQL</title>
+      <link href="/posts/common-sql.html"/>
+      <url>/posts/common-sql.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="1、查看所有的触发器"><a href="#1、查看所有的触发器" class="headerlink" title="1、查看所有的触发器"></a>1、查看所有的触发器</h4><pre><code>SELECT * FROM information_schema.`TRIGGERS`;</code></pre><h4 id="2、查询所有的表"><a href="#2、查询所有的表" class="headerlink" title="2、查询所有的表"></a>2、查询所有的表</h4><pre><code>SELECT TABLE_NAME table_name,TABLE_COMMENT table_comment FROM INFORMATION_SCHEMA.TABLES where table_schema=&#39;myDB&#39; and table_type=&#39;BASE TABLE&#39;;   //表名(不包含视图)及备注show full tables where Table_type = &#39;BASE TABLE&#39;;    //表名</code></pre><h4 id="3、查询db1数据库中所有有触发器的表"><a href="#3、查询db1数据库中所有有触发器的表" class="headerlink" title="3、查询db1数据库中所有有触发器的表"></a>3、查询db1数据库中所有有触发器的表</h4><pre><code>SELECT DISTINCT EVENT_OBJECT_TABLE FROM information_schema.`TRIGGERS` WHERE EVENT_OBJECT_SCHEMA = &quot;db1&quot;;</code></pre><h4 id="4、查询db1数据库中所有无触发器的表"><a href="#4、查询db1数据库中所有无触发器的表" class="headerlink" title="4、查询db1数据库中所有无触发器的表"></a>4、查询db1数据库中所有无触发器的表</h4><pre><code>SELECT A.TABLE_NAME from information_schema.`TABLES` A LEFT JOIN information_schema.`TRIGGERS` B ON A.TABLE_NAME=B.EVENT_OBJECT_TABLE where B.EVENT_OBJECT_TABLE is null and A.TABLE_SCHEMA=&quot;db1&quot;;</code></pre><h4 id="5、创建索引"><a href="#5、创建索引" class="headerlink" title="5、创建索引"></a>5、创建索引</h4><pre><code>alter table table_name add index index_name (索引字段);   -- 创建普通索引create index index_name on table_name (索引字段);         -- 创建普通索引alter table table_name add primary key(colunm_name);     -- 创建主键alter table table_name add unique(colunm_name);          -- 创建唯一索引create index idx_c1_c2 on table_name(c1,c2);             -- 创建联合索引show index from table_name;                              -- 查看表中的索引</code></pre><h4 id="6、去除数据表中指定字段的换行符"><a href="#6、去除数据表中指定字段的换行符" class="headerlink" title="6、去除数据表中指定字段的换行符"></a>6、去除数据表中指定字段的换行符</h4><pre><code>-- char(10)：换行符      char(13)：回车符update table set name=replace(replace(`field`,char(10),&#39;&#39;),char(13),&#39;&#39;);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -1228,10 +1278,10 @@
     
     <entry>
       <title>MySQL脚本执行中，预防误处理数据的方法</title>
-      <link href="/posts/f5a18430.html"/>
-      <url>/posts/f5a18430.html</url>
+      <link href="/posts/mysql-deal-miss-handle.html"/>
+      <url>/posts/mysql-deal-miss-handle.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：</p><h2 id="1、先测试"><a href="#1、先测试" class="headerlink" title="1、先测试"></a>1、先测试</h2><p>   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语法问题，另一方面看看数据是否正确被处理；</p><h2 id="2、脚本简单化"><a href="#2、脚本简单化" class="headerlink" title="2、脚本简单化"></a>2、脚本简单化</h2><p>   尽量将复杂的联表处理语句转为多条单表处理语句，这可以防止由于逻辑不严谨导致的数据过多被处理的问题；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;</code></pre><p>假设经查询，grade_id=5的personnel 为201-296，可改为：</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=201;update personnel set status=1 where id=202;update personnel set status=1 where id=203;……update personnel set status=1 where id=296;</code></pre><h2 id="3、Where条件精确化"><a href="#3、Where条件精确化" class="headerlink" title="3、Where条件精确化"></a>3、Where条件精确化</h2><p>   变更的where条件尽量为唯一索引字段，这可以防止由于条件过于复杂、数据表过大，导致锁表时间过长，执行效率过低的问题；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where class_id=20 and status=0 and create_time<1571580242;</code></pre><p>假设经查询，满足上述条件的personnelId 为220、233、234、256，可改为：</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=220;update personnel set status=1 where id=233;update personnel set status=1 where id=234;update personnel set status=1 where id=256;</code></pre><p>单条复杂语句拆分成多条单一条件语句的方法有很多，下面列举几种方式：<br>（1）将满足条件的数据导出，借助excel/Notepad++等工具进行批量补全sql语句；<br>（2）在数据库中使用concat函数进行sql拼接，如：</p><pre class=" language-lang-sql"><code class="language-lang-sql">select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') from t_bracelet_person_relation where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;</code></pre><h2 id="4、有条件处理"><a href="#4、有条件处理" class="headerlink" title="4、有条件处理"></a>4、有条件处理</h2><p>每条SQL语句必须有where条件，否则可能有问题，容易引起数据过度被处理的情况；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0;</code></pre><p>经查上述语句本来只变更id=23的数据，由于疏忽大意忘些where条件，导致整个表的数据都被变更了，这个问题的严重性不亚于删库；</p><pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0 where id=23;</code></pre><h2 id="5、脚本数据校验"><a href="#5、脚本数据校验" class="headerlink" title="5、脚本数据校验"></a>5、脚本数据校验</h2><p>脚本写好之后，可以将update、delete改为select查询下，从查询结果的数据总条数和具体数据上比对下，看看数据是否和预期需要处理的数据有出入，如果有就是条件未控制好，需修改；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;delete from personnel where class_id=20 and status=0 and create_time<1571580242;</code></pre><p>可改为如下语句，查询后核对数据</p><pre class=" language-lang-sql"><code class="language-lang-sql">select p.* from personnel p left join classes c on p.class_id=c.class_id where c.grade_id=5;select * from personnel where class_id=20 and status=0 and create_time<1571580242;</code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：</div><h3 id="1、先测试"><a href="#1、先测试" class="headerlink" title="1、先测试"></a>1、先测试</h3><p>   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语法问题，另一方面看看数据是否正确被处理；</p><h3 id="2、脚本简单化"><a href="#2、脚本简单化" class="headerlink" title="2、脚本简单化"></a>2、脚本简单化</h3><p>   尽量将复杂的联表处理语句转为多条单表处理语句，这可以防止由于逻辑不严谨导致的数据过多被处理的问题；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;</code></pre><p>假设经查询，grade_id=5的personnel 为201-296，可改为：</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=201;update personnel set status=1 where id=202;update personnel set status=1 where id=203;……update personnel set status=1 where id=296;</code></pre><h3 id="3、Where条件精确化"><a href="#3、Where条件精确化" class="headerlink" title="3、Where条件精确化"></a>3、Where条件精确化</h3><p>   变更的where条件尽量为唯一索引字段，这可以防止由于条件过于复杂、数据表过大，导致锁表时间过长，执行效率过低的问题；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where class_id=20 and status=0 and create_time<1571580242;</code></pre><p>假设经查询，满足上述条件的personnelId 为220、233、234、256，可改为：</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel set status=1 where id=220;update personnel set status=1 where id=233;update personnel set status=1 where id=234;update personnel set status=1 where id=256;</code></pre><p>单条复杂语句拆分成多条单一条件语句的方法有很多，下面列举几种方式：<br>（1）将满足条件的数据导出，借助excel/Notepad++等工具进行批量补全sql语句；<br>（2）在数据库中使用concat函数进行sql拼接，如：</p><pre class=" language-lang-sql"><code class="language-lang-sql">select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') from t_bracelet_person_relation where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;</code></pre><h3 id="4、有条件处理"><a href="#4、有条件处理" class="headerlink" title="4、有条件处理"></a>4、有条件处理</h3><p>每条SQL语句必须有where条件，否则可能有问题，容易引起数据过度被处理的情况；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0;</code></pre><p>经查上述语句本来只变更id=23的数据，由于疏忽大意忘些where条件，导致整个表的数据都被变更了，这个问题的严重性不亚于删库；</p><pre class=" language-lang-sql"><code class="language-lang-sql">update goods set status=0 where id=23;</code></pre><h3 id="5、脚本数据校验"><a href="#5、脚本数据校验" class="headerlink" title="5、脚本数据校验"></a>5、脚本数据校验</h3><p>脚本写好之后，可以将update、delete改为select查询下，从查询结果的数据总条数和具体数据上比对下，看看数据是否和预期需要处理的数据有出入，如果有就是条件未控制好，需修改；<br>如：现有脚本</p><pre class=" language-lang-sql"><code class="language-lang-sql">update personnel p set p.status=1 left join classes c on p.class_id=c.class_id where c.grade_id=5;delete from personnel where class_id=20 and status=0 and create_time<1571580242;</code></pre><p>可改为如下语句，查询后核对数据</p><pre class=" language-lang-sql"><code class="language-lang-sql">select p.* from personnel p left join classes c on p.class_id=c.class_id where c.grade_id=5;select * from personnel where class_id=20 and status=0 and create_time<1571580242;</code></pre>]]></content>
       
       
       <categories>
@@ -1246,6 +1296,33 @@
             <tag> MySQL </tag>
             
             <tag> 脚本执行 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL架构设计</title>
+      <link href="/posts/mysql-structural-design.html"/>
+      <url>/posts/mysql-structural-design.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1、MySQL架构设计中的经验"><a href="#1、MySQL架构设计中的经验" class="headerlink" title="1、MySQL架构设计中的经验"></a>1、MySQL架构设计中的经验</h3><ul><li>1）根据公司现有业务设计合理架构</li><li>2）选择成熟架构方案</li><li>3）因地制宜，根据实际设备情况做出选择</li><li>4）考虑方案的可行性</li><li>5）越简单越好，越适合公司越好</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> 架构设计 </tag>
             
         </tags>
       
@@ -1331,6 +1408,31 @@
     
     
     <entry>
+      <title>领导与下属交往之道</title>
+      <link href="/posts/relation-between-leaders-and-staffs.html"/>
+      <url>/posts/relation-between-leaders-and-staffs.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul><li><ol><li>非工作时间，不要拿工作上的事来打压威胁下属；这会让下属心生反感。<br>如：领导让下属帮忙做某件事情，下属不肯，领导就说以后所有的工作都指派给你，升职加薪想都别想……</li></ol></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 职场之道 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux 安装php5(php7)</title>
       <link href="/posts/1711a719.html"/>
       <url>/posts/1711a719.html</url>
@@ -1379,6 +1481,33 @@
             <tag> centos </tag>
             
             <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下安装nodejs</title>
+      <link href="/posts/linux-install-nodejs.html"/>
+      <url>/posts/linux-install-nodejs.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-下载nodejs"><a href="#1-下载nodejs" class="headerlink" title="1. 下载nodejs"></a>1. 下载nodejs</h3><pre><code>wget https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz</code></pre><h3 id="2-解压nodejs"><a href="#2-解压nodejs" class="headerlink" title="2. 解压nodejs"></a>2. 解压nodejs</h3><pre><code>tar xvf node-v8.11.4-linux-x64.tar.xz #解压mv node-v8.11.4-linux-x64 node-v8.11.4 #改短名</code></pre><h3 id="3-查看版本"><a href="#3-查看版本" class="headerlink" title="3. 查看版本"></a>3. 查看版本</h3><pre><code>cd /node-v8.11.4/bin &amp;&amp; ls #进入目录并列出./node -v #查看node版本node -v #无法获取，未配置</code></pre><p><img src="/images/linux_install_nodejs_1.png" alt></p><h3 id="4-配置"><a href="#4-配置" class="headerlink" title="4. 配置"></a>4. 配置</h3><pre><code>ln -s /node-v8.11.4/bin/node /usr/bin/nodeln -s /node-v8.11.4/bin/npm /usr/bin/npm</code></pre><p><img src="/images/linux_install_nodejs_2.png" alt></p><h3 id="5-清理安装包"><a href="#5-清理安装包" class="headerlink" title="5. 清理安装包"></a>5. 清理安装包</h3><pre><code>rm -rf node-v8.11.4-linux-x64.tar.xz</code></pre><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.jianshu.com/p/8cdbe4f4b533">https://www.jianshu.com/p/8cdbe4f4b533</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> nodejs </tag>
             
         </tags>
       
@@ -1442,8 +1571,8 @@
     
     <entry>
       <title>MySQL常见报错问题</title>
-      <link href="/posts/f27137e0.html"/>
-      <url>/posts/f27137e0.html</url>
+      <link href="/posts/mysql-errors.html"/>
+      <url>/posts/mysql-errors.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li><p>[Err] 1066 - Not unique table/alias: ‘s’</p><p>原因：SQL语句中存在多个表的别名为’s’</p></li></ol>]]></content>
       
@@ -1469,8 +1598,8 @@
     
     <entry>
       <title>PHP运维笔记</title>
-      <link href="/posts/b0308f14.html"/>
-      <url>/posts/b0308f14.html</url>
+      <link href="/posts/php-operate-note.html"/>
+      <url>/posts/php-operate-note.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-常见命令"><a href="#1-常见命令" class="headerlink" title="1. 常见命令"></a>1. 常见命令</h3><pre><code>查看PHP扩展：`php -m`查看扩展的版本信息：`php -ri 扩展名`  如：`php -ri redis`</code></pre>]]></content>
       
@@ -1498,10 +1627,10 @@
     
     <entry>
       <title>Markdown笔记</title>
-      <link href="/posts/b9733a42.html"/>
-      <url>/posts/b9733a42.html</url>
+      <link href="/posts/markdown-note.html"/>
+      <url>/posts/markdown-note.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li>解决有序列表排序失败的问题，格式如下：<pre class=" language-lang-angular2html"><code class="language-lang-angular2html">     1.[空格]测试文字1      [Tab]-[空格]测试文字1-1      [Tab]-[空格]测试文字1-2      2.[空格]测试文字2      [Tab]-[空格]测试文字2-1      [Tab][Tab]-[空格]测试文字2-1-1      [Tab][Tab]-[空格]测试文字2-1-2      [Tab]-[空格]测试文字2-2</code></pre> 代码段使用Tab退格</li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li>解决有序列表排序失败的问题，格式如下：<pre><code> 1.[空格]测试文字1  [Tab]-[空格]测试文字1-1  [Tab]-[空格]测试文字1-2  2.[空格]测试文字2  [Tab]-[空格]测试文字2-1  [Tab][Tab]-[空格]测试文字2-1-1  [Tab][Tab]-[空格]测试文字2-1-2  [Tab]-[空格]测试文字2-2</code></pre> 代码段使用Tab退格</li></ol>]]></content>
       
       
       <categories>
@@ -1579,10 +1708,10 @@
     
     <entry>
       <title>MySQL自定义函数</title>
-      <link href="/posts/ca4788ef.html"/>
-      <url>/posts/ca4788ef.html</url>
+      <link href="/posts/mysql-custom-functions.html"/>
+      <url>/posts/mysql-custom-functions.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：</p><ol><li><p>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</p><pre><code>     DROP FUNCTION IF EXISTS `SPLIT_STR`;      delimiter $$     CREATE FUNCTION SPLIT_STR(       x VARCHAR(255),       delim VARCHAR(12),       pos INT     )     RETURNS VARCHAR(255)     BEGIN         DECLARE i INT DEFAULT 0;         DECLARE s text DEFAULT &#39;&#39;;         myloop: LOOP             SET i = i+pos;             SET s = CONCAT(s,delim,left(x,pos));             SET x = right(x,length(x)-pos);             if pos&gt;length(x) then                 if length(x)&gt;0 then                     SET s = CONCAT(s,delim,x);                 end if;                 leave myloop;             end if;         END LOOP myloop;     RETURN right(s,length(s)-length(delim));     END $$</code></pre><p>调用：<code>SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);</code></p></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数</div><h3 id="1-批量处理字符串，将”FEEED305904B”转为”FE-EE-D3-05-90-4B”格式："><a href="#1-批量处理字符串，将”FEEED305904B”转为”FE-EE-D3-05-90-4B”格式：" class="headerlink" title="1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式："></a>1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</h3><pre><code>DROP FUNCTION IF EXISTS `SPLIT_STR`; delimiter $$CREATE FUNCTION SPLIT_STR(  x VARCHAR(255),  delim VARCHAR(12),  pos INT)RETURNS VARCHAR(255)BEGIN    DECLARE i INT DEFAULT 0;    DECLARE s text DEFAULT &#39;&#39;;    myloop: LOOP        SET i = i+pos;        SET s = CONCAT(s,delim,left(x,pos));        SET x = right(x,length(x)-pos);        if pos&gt;length(x) then            if length(x)&gt;0 then                SET s = CONCAT(s,delim,x);            end if;            leave myloop;        end if;    END LOOP myloop;RETURN right(s,length(s)-length(delim));END $$</code></pre><p>调用：<code>SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);</code></p>]]></content>
       
       
       <categories>
@@ -1635,10 +1764,10 @@
     
     <entry>
       <title>Oracle笔记</title>
-      <link href="/posts/4acd8de8.html"/>
-      <url>/posts/4acd8de8.html</url>
+      <link href="/posts/oracle-note.html"/>
+      <url>/posts/oracle-note.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li><p>强制并行处理：<code>/*+ monitor parallel(8)*/</code></p></li><li><p>plsql查看sql性能：F5</p></li><li><p>在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</p><pre class=" language-lang-bash"><code class="language-lang-bash">     CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := ',')     RETURN NUMBER IS       l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置       str      varchar2(500);  -- 根据分隔符截取的子字符串       piv_str  varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str       res      number:=0; -- 返回结果     BEGIN     -- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1     IF instr(piv_str, p_sep, 1) = 0 THEN        IF piv_str = piv_str1 THEN           res:= 1;        END IF;     ELSE     -- 循环按分隔符截取piv_str     LOOP         l_idx := instr(piv_str,p_sep);     -- 当piv_str中还有分隔符时           IF l_idx > 0 THEN        -- 截取第一个分隔符前的字段str              str:= substr(piv_str,1,l_idx-1);        -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断              IF str = piv_str1 THEN                res:= 1;                EXIT;              END IF;             piv_str := substr(piv_str,l_idx+length(p_sep));           ELSE        -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1             IF piv_str = piv_str1 THEN                res:= 1;             END IF;             -- 无论最后是否相等，都跳出循环             EXIT;           END IF;     END LOOP;     -- 结束循环     END IF;     -- 返回res     RETURN res;     END FIND_IN_SET;</code></pre></li><li><p>日期转时间戳函数</p><pre class=" language-lang-bash"><code class="language-lang-bash"> create or replace function oracle_to_unix(in_date IN DATE) return number is     begin          return( (in_date -TO_DATE('19700101','yyyymmdd'))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);     end oracle_to_unix;</code></pre></li><li><p>时间戳转日期函数</p><pre class=" language-lang-bash"><code class="language-lang-bash"> create or replace function unix_to_oracle(in_number NUMBER) return date is     begin         return(TO_DATE('19700101','yyyymmdd') + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);     end unix_to_oracle;</code></pre></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="1-强制并行处理"><a href="#1-强制并行处理" class="headerlink" title="1. 强制并行处理"></a>1. 强制并行处理</h4><p><code>/*+ monitor parallel(8)*/</code></p><h3 id="2-plsql查看sql性能"><a href="#2-plsql查看sql性能" class="headerlink" title="2. plsql查看sql性能"></a>2. plsql查看sql性能</h3><p><code>F5</code></p><h3 id="3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数："><a href="#3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数：" class="headerlink" title="3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数："></a>3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</h3><pre><code>CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := &#39;,&#39;)RETURN NUMBER IS  l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置  str      varchar2(500);  -- 根据分隔符截取的子字符串  piv_str  varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str  res      number:=0; -- 返回结果BEGIN-- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1IF instr(piv_str, p_sep, 1) = 0 THEN   IF piv_str = piv_str1 THEN      res:= 1;   END IF;ELSE-- 循环按分隔符截取piv_strLOOP    l_idx := instr(piv_str,p_sep);-- 当piv_str中还有分隔符时      IF l_idx &gt; 0 THEN   -- 截取第一个分隔符前的字段str         str:= substr(piv_str,1,l_idx-1);   -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断         IF str = piv_str1 THEN           res:= 1;           EXIT;         END IF;        piv_str := substr(piv_str,l_idx+length(p_sep));      ELSE   -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1        IF piv_str = piv_str1 THEN           res:= 1;        END IF;        -- 无论最后是否相等，都跳出循环        EXIT;      END IF;END LOOP;-- 结束循环END IF;-- 返回resRETURN res;END FIND_IN_SET;</code></pre><h3 id="4-日期转时间戳函数"><a href="#4-日期转时间戳函数" class="headerlink" title="4. 日期转时间戳函数"></a>4. 日期转时间戳函数</h3><pre><code>create or replace function oracle_to_unix(in_date IN DATE) return number is    begin         return( (in_date -TO_DATE(&#39;19700101&#39;,&#39;yyyymmdd&#39;))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);    end oracle_to_unix;</code></pre><h3 id="5-时间戳转日期函数"><a href="#5-时间戳转日期函数" class="headerlink" title="5. 时间戳转日期函数"></a>5. 时间戳转日期函数</h3><pre><code>create or replace function unix_to_oracle(in_number NUMBER) return date is    begin        return(TO_DATE(&#39;19700101&#39;,&#39;yyyymmdd&#39;) + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);    end unix_to_oracle;</code></pre>]]></content>
       
       
       <categories>
@@ -1984,10 +2113,10 @@
     
     <entry>
       <title>MySQL笔记</title>
-      <link href="/posts/fd5f561d.html"/>
-      <url>/posts/fd5f561d.html</url>
+      <link href="/posts/mysql-notes.html"/>
+      <url>/posts/mysql-notes.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h2><pre class=" language-lang-sql"><code class="language-lang-sql">-- utf8_general_ci编码select * from t_school order by convert(name using gbk);</code></pre><h2 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h2><p>应该这样写：<code>DELETE a FROM table a;</code></p><h2 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h2><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p><h2 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h2><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p><h2 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h2><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p><h2 id="6-数据库恢复"><a href="#6-数据库恢复" class="headerlink" title="6. 数据库恢复"></a>6. 数据库恢复</h2><p>是指通过技术手段将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p><h2 id="7-mysql删除自定义函数："><a href="#7-mysql删除自定义函数：" class="headerlink" title="7. mysql删除自定义函数："></a>7. mysql删除自定义函数：</h2><p><code>DROP FUNCTION IF EXISTS `函数名`;</code></p><h2 id="8-插入数据："><a href="#8-插入数据：" class="headerlink" title="8. 插入数据："></a>8. 插入数据：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">    insert into tb (field1,field2,field3……) value (val1,val2,val3……);    insert into tb (field1,field2,field3……) values (val1,val2,val3……);    insert into tb set field1=val1,field2=val2,field3=val3;    insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);    insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误</code></pre><h2 id="9-查询数据库中每个表的记录数："><a href="#9-查询数据库中每个表的记录数：" class="headerlink" title="9. 查询数据库中每个表的记录数："></a>9. 查询数据库中每个表的记录数：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">    use information_schema;    select table_name,table_rows from tables where TABLE_SCHEMA = 'dataBase' order by table_rows desc;</code></pre><h2 id="10-mysql查询主键字段名："><a href="#10-mysql查询主键字段名：" class="headerlink" title="10. mysql查询主键字段名："></a>10. mysql查询主键字段名：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name='表名' AND constraint_name='PRIMARY';</code></pre><h2 id="11-mysql查询所有字段名："><a href="#11-mysql查询所有字段名：" class="headerlink" title="11. mysql查询所有字段名："></a>11. mysql查询所有字段名：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM information_schema.columns WHERE table_name='表名';</code></pre><h2 id="12、null的问题："><a href="#12、null的问题：" class="headerlink" title="12、null的问题："></a>12、null的问题：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">update t_classroom set building_name=null where build_id is not null;</code></pre><h2 id="13、获取指定字段的默认值："><a href="#13、获取指定字段的默认值：" class="headerlink" title="13、获取指定字段的默认值："></a>13、获取指定字段的默认值：</h2><p>DEFAULT(col_name)</p><pre class=" language-lang-sql"><code class="language-lang-sql">select DEFAULT(sort) from t_node_school limit 1;</code></pre><h2 id="14、mysql重命名表名："><a href="#14、mysql重命名表名：" class="headerlink" title="14、mysql重命名表名："></a>14、mysql重命名表名：</h2><p><code>alter table tb1 rename to tb2;</code><br>或者<br><code>rename tb1 to tb2;</code></p><h2 id="15、null字段排序问题："><a href="#15、null字段排序问题：" class="headerlink" title="15、null字段排序问题："></a>15、null字段排序问题：</h2><p>设排序字段为sort，使用order by sort desc实现降序时，sort为null的数据会排在最后面；<br>但是使用order by sort升序时，sort为null的数据会排在最前面，如果想将sort为null的数据排在后面，就需要加is null。<br>如：<code>select * from t_grade order by sort is null, sort, create_time desc;</code></p><h2 id="16、主键设置规则"><a href="#16、主键设置规则" class="headerlink" title="16、主键设置规则"></a>16、主键设置规则</h2><p> 主键的值不可更新，未来可能会变更的字段不能设置为主键；<br> 主键的值不可为空，且不能重复；</p><h2 id="17、查看某个表的所有列："><a href="#17、查看某个表的所有列：" class="headerlink" title="17、查看某个表的所有列："></a>17、查看某个表的所有列：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">show columns from tableName;  或者  describe tableName; //可以用来生成数据字典</code></pre><h2 id="18、下划线”-”通配符-匹配一个字符"><a href="#18、下划线”-”通配符-匹配一个字符" class="headerlink" title="18、下划线”_”通配符 匹配一个字符"></a>18、下划线”_”通配符 匹配一个字符</h2><pre class=" language-lang-sql"><code class="language-lang-sql"> select field1,field2 from tableName where field3 like "_xx";</code></pre><h2 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h2><pre class=" language-lang-sql"><code class="language-lang-sql"> select weekday("2021-11-10")+1 week;       -- 2021年11月10日是星期三</code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><pre class=" language-lang-sql"><code class="language-lang-sql">-- utf8_general_ci编码select * from t_school order by convert(name using gbk);</code></pre><h3 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h3><p>应该这样写：<code>DELETE a FROM table a;</code></p><h3 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h3><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p><h3 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h3><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p><h3 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h3><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p><h3 id="6-数据库恢复"><a href="#6-数据库恢复" class="headerlink" title="6. 数据库恢复"></a>6. 数据库恢复</h3><p>是指通过技术手段将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p><h3 id="7-mysql删除自定义函数："><a href="#7-mysql删除自定义函数：" class="headerlink" title="7. mysql删除自定义函数："></a>7. mysql删除自定义函数：</h3><p><code>DROP FUNCTION IF EXISTS `函数名`;</code></p><h3 id="8-插入数据："><a href="#8-插入数据：" class="headerlink" title="8. 插入数据："></a>8. 插入数据：</h3><pre class=" language-lang-sql"><code class="language-lang-sql">    insert into tb (field1,field2,field3……) value (val1,val2,val3……);    insert into tb (field1,field2,field3……) values (val1,val2,val3……);    insert into tb set field1=val1,field2=val2,field3=val3;    insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);    insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误</code></pre><h3 id="9-查询数据库中每个表的记录数："><a href="#9-查询数据库中每个表的记录数：" class="headerlink" title="9. 查询数据库中每个表的记录数："></a>9. 查询数据库中每个表的记录数：</h3><pre class=" language-lang-sql"><code class="language-lang-sql">    use information_schema;    select table_name,table_rows from tables where TABLE_SCHEMA = 'dataBase' order by table_rows desc;</code></pre><h3 id="10-mysql查询主键字段名："><a href="#10-mysql查询主键字段名：" class="headerlink" title="10. mysql查询主键字段名："></a>10. mysql查询主键字段名：</h3><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name='表名' AND constraint_name='PRIMARY';</code></pre><h3 id="11-mysql查询所有字段名："><a href="#11-mysql查询所有字段名：" class="headerlink" title="11. mysql查询所有字段名："></a>11. mysql查询所有字段名：</h3><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM information_schema.columns WHERE table_name='表名';</code></pre><h3 id="12、null的问题："><a href="#12、null的问题：" class="headerlink" title="12、null的问题："></a>12、null的问题：</h3><pre class=" language-lang-sql"><code class="language-lang-sql">update t_classroom set building_name=null where build_id is not null;</code></pre><h3 id="13、获取指定字段的默认值："><a href="#13、获取指定字段的默认值：" class="headerlink" title="13、获取指定字段的默认值："></a>13、获取指定字段的默认值：</h3><p>DEFAULT(col_name)</p><pre class=" language-lang-sql"><code class="language-lang-sql">select DEFAULT(sort) from t_node_school limit 1;</code></pre><h3 id="14、mysql重命名表名："><a href="#14、mysql重命名表名：" class="headerlink" title="14、mysql重命名表名："></a>14、mysql重命名表名：</h3><p><code>alter table tb1 rename to tb2;</code><br>或者<br><code>rename tb1 to tb2;</code></p><h3 id="15、null字段排序问题："><a href="#15、null字段排序问题：" class="headerlink" title="15、null字段排序问题："></a>15、null字段排序问题：</h3><p>设排序字段为sort，使用order by sort desc实现降序时，sort为null的数据会排在最后面；<br>但是使用order by sort升序时，sort为null的数据会排在最前面，如果想将sort为null的数据排在后面，就需要加is null。<br>如：<code>select * from t_grade order by sort is null, sort, create_time desc;</code></p><h3 id="16、主键设置规则"><a href="#16、主键设置规则" class="headerlink" title="16、主键设置规则"></a>16、主键设置规则</h3><p> 主键的值不可更新，未来可能会变更的字段不能设置为主键；<br> 主键的值不可为空，且不能重复；</p><h3 id="17、查看某个表的所有列："><a href="#17、查看某个表的所有列：" class="headerlink" title="17、查看某个表的所有列："></a>17、查看某个表的所有列：</h3><pre class=" language-lang-sql"><code class="language-lang-sql">show columns from tableName;  或者  describe tableName; //可以用来生成数据字典</code></pre><h3 id="18、下划线”-”通配符-匹配一个字符"><a href="#18、下划线”-”通配符-匹配一个字符" class="headerlink" title="18、下划线”_”通配符 匹配一个字符"></a>18、下划线”_”通配符 匹配一个字符</h3><pre class=" language-lang-sql"><code class="language-lang-sql"> select field1,field2 from tableName where field3 like "_xx";</code></pre><h3 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h3><pre class=" language-lang-sql"><code class="language-lang-sql"> select weekday("2021-11-10")+1 week;       -- 2021年11月10日是星期三</code></pre>]]></content>
       
       
       <categories>
@@ -2040,10 +2169,10 @@
     
     <entry>
       <title>Jquery笔记</title>
-      <link href="/posts/df9c1142.html"/>
-      <url>/posts/df9c1142.html</url>
+      <link href="/posts/jquery-note.html"/>
+      <url>/posts/jquery-note.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li><p>jquery获取json的长度：</p><p> 1.1 一维：<code>var JsonTemp = &#123;&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;&#125;;  length = JsonTemp.length;</code></p><p> 1.2 二维：<code>var JsonTemp = &#123;[&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18],[&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19]&#125;;  length = Object.keys(JsonTemp).length;</code></p></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="jquery获取json的长度"><a href="#jquery获取json的长度" class="headerlink" title="jquery获取json的长度"></a>jquery获取json的长度</h3><pre><code>//一维：var JsonTemp = &amp;#123;&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;&amp;#125;;  length = JsonTemp.length;//二维：var JsonTemp = [&amp;#123;&quot;name&quot;:&quot;张三&quot;,&quot;age&quot;:18&amp;#125;,&amp;#123;&quot;name&quot;:&quot;李四&quot;,&quot;age&quot;:19&amp;#125;];  length = Object.keys(JsonTemp).length;</code></pre>]]></content>
       
       
       <categories>
@@ -2146,10 +2275,10 @@
     
     <entry>
       <title>PHP实现AES加解密</title>
-      <link href="/posts/dc8a9d20.html"/>
-      <url>/posts/dc8a9d20.html</url>
+      <link href="/posts/php-aes-encrypt.html"/>
+      <url>/posts/php-aes-encrypt.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。</p><p>下面介绍一下以PHP实现AES加密解密：</p><p>1、AES加密解密类</p><pre class=" language-lang-php"><code class="language-lang-php"><?phpnamespace libs;/*** 利用mcrypt做AES加密解密* 支持密钥：64bit（字节长度8）* 支持算法：DES* 支持模式：ECB* 填充方式：PKCS5*/class Aes&#123;    const CIPHER = MCRYPT_DES;    const MODE = MCRYPT_MODE_ECB;    /**     * 加密     * @param string $str    需加密的字符串     * @param string $key    密钥(8位)     * @return string   密文     */    public static function encode($str,$key)&#123;        $size = mcrypt_get_block_size ( MCRYPT_DES, 'ecb' );        $str = self::pkcs5_pad($str, $size);        $iv = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND);        $result = mcrypt_encrypt(self::CIPHER, $key, $str, self::MODE, $iv);        return base64_encode($result);    &#125;    /**     * 解密     * @param string $str   密文     * @param string $key   密钥(8位)     * @return string   明文     */    public static function decode($str,$key)&#123;        $str = base64_decode($str);        $iv = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND);        $str = trim(mcrypt_decrypt(self::CIPHER, $key, $str, self::MODE, $iv));        return  self::pkcs5_unpad($str);    &#125;    /**     * PKCS5填充     * @param $text     * @param $blocksize     * @return string     */    private static function pkcs5_pad($text, $blocksize) &#123;        $pad = $blocksize - (strlen($text) % $blocksize);        return $text . str_repeat(chr($pad), $pad);    &#125;    /**     *     * @param $text     * @return bool|string     */    private static function pkcs5_unpad($text) &#123;        $pad = ord($text&#123;strlen($text) - 1&#125;);        if ($pad > strlen($text)) &#123;            return false;        &#125;        if (strspn($text, chr($pad), strlen($text)-$pad) != $pad) &#123;            return false;        &#125;        return substr($text, 0, -1 * $pad);    &#125;&#125;</code></pre><p>2、调用</p><pre class=" language-lang-php"><code class="language-lang-php"><?phpnamespace app\modules\demo\controllers;use app\common\components\Controller;use libs\Aes;class TestController extends Controller&#123;    public function actionTest()&#123;        $key = 'WGiSP3UQ';        $str = '18958019299';        $enStr = Aes::encode($str,$key);        $deStr = Aes::decode($enStr,$key);        var_dump($str,$enStr,$deStr);    &#125;&#125;</code></pre><p>3、访问<a href="http://127.0.0.1/web/demo/test/test">http://127.0.0.1/web/demo/test/test</a> ，运行结果如下：</p><pre class=" language-lang-php"><code class="language-lang-php">string(11) "18958019299" string(24) "WiBZggO/DRaczJ3wSirvEw==" string(11) "18958019299"</code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，又不影响正常的业务处理。</div><p>下面介绍一下以PHP实现AES加密解密：</p><h3 id="1-AES加密解密类"><a href="#1-AES加密解密类" class="headerlink" title="1. AES加密解密类"></a>1. AES加密解密类</h3><pre class=" language-lang-php"><code class="language-lang-php">namespace libs;/*** 利用mcrypt做AES加密解密* 支持密钥：64bit（字节长度8）* 支持算法：DES* 支持模式：ECB* 填充方式：PKCS5*/class Aes&#123;    const CIPHER = MCRYPT_DES;    const MODE = MCRYPT_MODE_ECB;    /**     * 加密     * @param string $str    需加密的字符串     * @param string $key    密钥(8位)     * @return string   密文     */    public static function encode($str,$key)&#123;        $size = mcrypt_get_block_size ( MCRYPT_DES, 'ecb' );        $str = self::pkcs5_pad($str, $size);        $iv = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND);        $result = mcrypt_encrypt(self::CIPHER, $key, $str, self::MODE, $iv);        return base64_encode($result);    &#125;    /**     * 解密     * @param string $str   密文     * @param string $key   密钥(8位)     * @return string   明文     */    public static function decode($str,$key)&#123;        $str = base64_decode($str);        $iv = mcrypt_create_iv(mcrypt_get_iv_size(self::CIPHER,self::MODE),MCRYPT_RAND);        $str = trim(mcrypt_decrypt(self::CIPHER, $key, $str, self::MODE, $iv));        return  self::pkcs5_unpad($str);    &#125;    /**     * PKCS5填充     * @param $text     * @param $blocksize     * @return string     */    private static function pkcs5_pad($text, $blocksize) &#123;        $pad = $blocksize - (strlen($text) % $blocksize);        return $text . str_repeat(chr($pad), $pad);    &#125;    /**     *     * @param $text     * @return bool|string     */    private static function pkcs5_unpad($text) &#123;        $pad = ord($text&#123;strlen($text) - 1&#125;);        if ($pad > strlen($text)) &#123;            return false;        &#125;        if (strspn($text, chr($pad), strlen($text)-$pad) != $pad) &#123;            return false;        &#125;        return substr($text, 0, -1 * $pad);    &#125;&#125;</code></pre><h3 id="2-调用"><a href="#2-调用" class="headerlink" title="2. 调用"></a>2. 调用</h3><pre class=" language-lang-php"><code class="language-lang-php">namespace app\modules\demo\controllers;use app\common\components\Controller;use libs\Aes;class TestController extends Controller&#123;    public function actionTest()&#123;        $key = 'WGiSP3UQ';        $str = '18958019299';        $enStr = Aes::encode($str,$key);        $deStr = Aes::decode($enStr,$key);        var_dump($str,$enStr,$deStr);    &#125;&#125;</code></pre><h3 id="3-访问http-127-0-0-1-web-demo-test-test-，运行结果如下："><a href="#3-访问http-127-0-0-1-web-demo-test-test-，运行结果如下：" class="headerlink" title="3. 访问http://127.0.0.1/web/demo/test/test ，运行结果如下："></a>3. 访问<a href="http://127.0.0.1/web/demo/test/test">http://127.0.0.1/web/demo/test/test</a> ，运行结果如下：</h3><pre class=" language-lang-php"><code class="language-lang-php">string(11) "18958019299" string(24) "WiBZggO/DRaczJ3wSirvEw==" string(11) "18958019299"</code></pre>]]></content>
       
       
       <categories>
@@ -2175,10 +2304,10 @@
     
     <entry>
       <title>JQuery面向对象写法</title>
-      <link href="/posts/cdd95104.html"/>
-      <url>/posts/cdd95104.html</url>
+      <link href="/posts/jquery-obj.html"/>
+      <url>/posts/jquery-obj.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p><pre class=" language-lang-html"><code class="language-lang-html"><html>    <head>        <script src="jquery.min.js"></script>    </head>    <body>        <button data-event="list">列表</button>        <button data-event="search" data-name="大班">搜索</button>        <button data-event="add">添加</button>        <button data-event="update">修改</button>        <button data-event="del">删除</button>    </body></html></code></pre><pre class=" language-lang-javascript"><code class="language-lang-javascript"><script>var clickAct = &#123;    btn: $('button'),    init: function()&#123;        var that = this;        this.btn.click(function()&#123;            var func = $(this).attr('data-event');            that[func]($(this).attr('data-name'));        &#125;)    &#125;,    list: function(param)&#123;        console.log('1');    &#125;,    search: function(param)&#123;        console.log(param);    &#125;,    add: function(param)&#123;        console.log('3');    &#125;,    update: function(param)&#123;        console.log('4');    &#125;,    del: function(param)&#123;        console.log('5');    &#125;&#125;clickAct.init();</script></code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p><pre><code>&lt;html&gt;    &lt;head&gt;        &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;    &lt;/head&gt;    &lt;body&gt;        &lt;button data-event=&quot;list&quot;&gt;列表&lt;/button&gt;        &lt;button data-event=&quot;search&quot; data-name=&quot;大班&quot;&gt;搜索&lt;/button&gt;        &lt;button data-event=&quot;add&quot;&gt;添加&lt;/button&gt;        &lt;button data-event=&quot;update&quot;&gt;修改&lt;/button&gt;        &lt;button data-event=&quot;del&quot;&gt;删除&lt;/button&gt;    &lt;/body&gt;&lt;/html&gt;</code></pre><pre><code>&lt;script&gt;var clickAct = &amp;#123;    btn: $(&#39;button&#39;),    init: function()&amp;#123;        var that = this;        this.btn.click(function()&amp;#123;            var func = $(this).attr(&#39;data-event&#39;);            that[func]($(this).attr(&#39;data-name&#39;));        &amp;#125;)    &amp;#125;,    list: function(param)&amp;#123;        console.log(&#39;1&#39;);    &amp;#125;,    search: function(param)&amp;#123;        console.log(param);    &amp;#125;,    add: function(param)&amp;#123;        console.log(&#39;3&#39;);    &amp;#125;,    update: function(param)&amp;#123;        console.log(&#39;4&#39;);    &amp;#125;,    del: function(param)&amp;#123;        console.log(&#39;5&#39;);    &amp;#125;&amp;#125;clickAct.init();&lt;/script&gt;</code></pre>]]></content>
       
       
       <categories>
@@ -2204,10 +2333,10 @@
     
     <entry>
       <title>MySQL函数</title>
-      <link href="/posts/ed90cb85.html"/>
-      <url>/posts/ed90cb85.html</url>
+      <link href="/posts/mysql-functions.html"/>
+      <url>/posts/mysql-functions.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录几个常用的MySQL函数：</p><h2 id="1、LAST-INSERT-ID-expr"><a href="#1、LAST-INSERT-ID-expr" class="headerlink" title="1、LAST_INSERT_ID([expr])"></a>1、LAST_INSERT_ID([expr])</h2><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。<br>如果一次性insert多条数据，只返回第一个数据的主键。</p><pre class=" language-lang-bash"><code class="language-lang-bash">mysql> SELECT * FROM t;    +----+------+    | id | name |    |  1 | Bob  |    +----+------+mysql> INSERT INTO t VALUES  (NULL, 'Mary'), (NULL, 'Jane'), (NULL, 'Lisa');mysql> SELECT * FROM t;    +----+------+    | id | name |    |  1 | Bob  |    |  2 | Mary |    |  3 | Jane |    |  4 | Lisa |    +----+------+mysql> SELECT LAST_INSERT_ID();    ->2;</code></pre><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p><p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p><pre class=" language-lang-bash"><code class="language-lang-bash">mysql> CREATE TABLE sequence (id INT NOT NULL);mysql> INSERT INTO sequence VALUES (0);mysql> UPDATE sequence SET id=LAST_INSERT_ID(id+1);mysql> SELECT LAST_INSERT_ID();     ->1;</code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>记录几个常用的MySQL函数：</p><h4 id="LAST-INSERT-ID-expr"><a href="#LAST-INSERT-ID-expr" class="headerlink" title="LAST_INSERT_ID([expr])"></a>LAST_INSERT_ID([expr])</h4><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。<br>如果一次性insert多条数据，只返回第一个数据的主键。</p><pre><code>mysql&gt; SELECT * FROM t;    +----+------+    | id | name |    |  1 | Bob  |    +----+------+mysql&gt; INSERT INTO t VALUES  (NULL, &#39;Mary&#39;), (NULL, &#39;Jane&#39;), (NULL, &#39;Lisa&#39;);mysql&gt; SELECT * FROM t;    +----+------+    | id | name |    |  1 | Bob  |    |  2 | Mary |    |  3 | Jane |    |  4 | Lisa |    +----+------+mysql&gt; SELECT LAST_INSERT_ID();    -&gt;2;</code></pre><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p><p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p><pre><code>mysql&gt; CREATE TABLE sequence (id INT NOT NULL);mysql&gt; INSERT INTO sequence VALUES (0);mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);mysql&gt; SELECT LAST_INSERT_ID();     -&gt;1;</code></pre>]]></content>
       
       
       <categories>

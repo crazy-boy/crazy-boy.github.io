@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    303
+                    299
                 </div>
                 
 
@@ -1077,14 +1077,14 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-参数规范"><a href="#1-参数规范" class="headerlink" title="1. 参数规范"></a>1. 参数规范</h2><p> 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($age = 21, $id, $options = [])&#123;
+<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($age = 21, $id, $options = []){
          print_r(func_get_args());
-     &#125;
+     }
 </code></pre>
 <p> 上述代码在IDE中会对$age=21，提示“Optional parameter is provided before required”，应改为：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($id, $age = 21, $options = [])&#123;
+<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($id, $age = 21, $options = []){
          print_r(func_get_args());
-     &#125;
+     }
 </code></pre>
 <h2 id="2-命名规范"><a href="#2-命名规范" class="headerlink" title="2. 命名规范"></a>2. 命名规范</h2><p> 常用的四种命名格式：驼峰、帕斯卡、蛇形、串形，主要是为了解决多个单词之间的空格问题。</p>
 <ul>
@@ -2097,7 +2097,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    303
+                    299
                 </div>
                 
 
@@ -2115,14 +2115,14 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-参数规范"><a href="#1-参数规范" class="headerlink" title="1. 参数规范"></a>1. 参数规范</h2><p> 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($age = 21, $id, $options = [])&#123;
+<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($age = 21, $id, $options = []){
          print_r(func_get_args());
-     &#125;
+     }
 </code></pre>
 <p> 上述代码在IDE中会对$age=21，提示“Optional parameter is provided before required”，应改为：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($id, $age = 21, $options = [])&#123;
+<pre class=" language-lang-bash"><code class="language-lang-bash">    function test($id, $age = 21, $options = []){
          print_r(func_get_args());
-     &#125;
+     }
 </code></pre>
 <h2 id="2-命名规范"><a href="#2-命名规范" class="headerlink" title="2. 命名规范"></a>2. 命名规范</h2><p> 常用的四种命名格式：驼峰、帕斯卡、蛇形、串形，主要是为了解决多个单词之间的空格问题。</p>
 <ul>
@@ -3138,7 +3138,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

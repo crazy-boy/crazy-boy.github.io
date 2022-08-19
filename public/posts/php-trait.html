@@ -1055,7 +1055,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    262
+                    388
                 </div>
                 
 
@@ -1072,40 +1072,59 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><ol>
-<li><p>可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。</p>
-<p>例如：封装单例<br>先创建Singleton类，代码如下：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">trait Singleton&#123;
-    private static $instance;
+                <div class="note info">trait是php的一种代码复用的方法。</div>
 
-    /**
-     * @param ...$args
-     */
-    public static function getInstance(...$args) &#123;
-        if (!isset(self::$instance)) &#123;
-            self::$instance = new static(...$args);
-        &#125;
-        return self::$instance;
-    &#125;
-&#125;
+
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><h4 id="1-通过use-Trait类来使用"><a href="#1-通过use-Trait类来使用" class="headerlink" title="1. 通过use Trait类来使用"></a>1. 通过use Trait类来使用</h4><p>可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。<br> 例如：封装单例<br>    先创建Singleton类，代码如下：</p>
+<pre class=" language-lang-php"><code class="language-lang-php">   trait Singleton&#123;
+       private static $instance;
+
+       /**
+        * @param ...$args
+        */
+       public static function getInstance(...$args) &#123;
+           if (!isset(self::$instance)) &#123;
+               self::$instance = new static(...$args);
+           &#125;
+           return self::$instance;
+       &#125;
+   &#125;
 </code></pre>
 <p>再创建Test类，代码如下：</p>
-<pre class=" language-lang-php"><code class="language-lang-php"> class Test&#123;
-     use Singleton;
-     public function test()&#123;
-             return 'test';
-     &#125;    
- &#125;
+<pre class=" language-lang-php"><code class="language-lang-php">    class Test&#123;
+        use Singleton;
+        public function test()&#123;
+                return 'test';
+        &#125;    
+    &#125;
 </code></pre>
 <p>调用：</p>
-<pre class=" language-lang-php"><code class="language-lang-php"> echo Test::getInstance()->test();
+<pre class=" language-lang-php"><code class="language-lang-php">    echo Test::getInstance()->test();
 </code></pre>
-</li>
-</ol>
-<h3 id="常用的trait类"><a href="#常用的trait类" class="headerlink" title="常用的trait类"></a>常用的trait类</h3><ol>
-<li>单例类</li>
-</ol>
-<pre class=" language-lang-php"><code class="language-lang-php">    /**
+<h4 id="2-优先级"><a href="#2-优先级" class="headerlink" title="2. 优先级"></a>2. 优先级</h4><p>当前类中的方法会覆盖trait方法，而trait方法用覆盖了基类中的方法。</p>
+<pre class=" language-lang-php"><code class="language-lang-php">class Base&#123;
+    public function sayHello()&#123;
+        echo 'Hello ';
+    &#125;
+&#125;
+
+trait SayWorld&#123;
+    public function sayHello()&#123;
+        parent::sayHello();
+        echo 'world!';
+    &#125;
+&#125;
+
+class MyHelloWorld extends Base&#123;
+    use SayWorld;
+&#125;
+
+$obj = new MyHelloWorld();
+$obj->sayHello();     
+//output: Hello world!
+</code></pre>
+<h4 id="3-多个trait"><a href="#3-多个trait" class="headerlink" title="3. 多个trait"></a>3. 多个trait</h4><p>通过逗号分隔，在 use 声明列出多个 trait类</p>
+<h3 id="常用的trait类"><a href="#常用的trait类" class="headerlink" title="常用的trait类"></a>常用的trait类</h3><h4 id="1-单例类"><a href="#1-单例类" class="headerlink" title="1. 单例类"></a>1. 单例类</h4><pre class=" language-lang-php"><code class="language-lang-php">    /**
      * 用作单例
      * Trait Singleton
      */
@@ -1123,10 +1142,7 @@ h3:hover {
         &#125;
     &#125;
 </code></pre>
-<ol>
-<li>错误处理类</li>
-</ol>
-<pre class=" language-lang-php"><code class="language-lang-php">   namespace app\common\helper;
+<h4 id="2-错误处理类"><a href="#2-错误处理类" class="headerlink" title="2. 错误处理类"></a>2. 错误处理类</h4><pre class=" language-lang-php"><code class="language-lang-php">   namespace app\common\helper;
 
    /**
     * 错误操作类
@@ -1172,6 +1188,7 @@ h3:hover {
         return false;
     &#125;
 </code></pre>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/language.oop5.traits.php">https://www.php.net/manual/zh/language.oop5.traits.php</a></p>
 
             </div>
             <hr/>
@@ -1833,11 +1850,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ead2d66c.html">
+                <a href="/posts/btree-and-b+tree.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="Windows下电脑截图">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="B树与B+树">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1848,27 +1865,27 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Windows下电脑截图
+                          B树与B+树
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1、QQ截图：ctrl+alt+A2、花式截图：Win+shift+S  可截任意形状3、微信截图：Alt+A4、浏览器截图：Ctrl+shift+X5、WPS截图：Ctrl+Alt+X 
-
+                            B+Tree对比BTree的优点
+磁盘读写代价更低一般来说B+Tree比BTree更适合实现外存的索引结构，因为存储引擎的设计专家巧妙的利用了外存（磁盘）的存储结构，即磁盘的最小存储单位是扇区（sector），而操作系统的块（block）通
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Windows/" class="post-category">
-                                    Windows
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
@@ -1878,12 +1895,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Windows/">
-                        <span class="chip bg-color">Windows</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%94%B5%E8%84%91%E6%88%AA%E5%9B%BE/">
-                        <span class="chip bg-color">电脑截图</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -2157,7 +2170,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

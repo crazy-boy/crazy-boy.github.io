@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL笔记, 这里是网站关键词">
+    <meta name="keywords" content="Linux下安装nodejs, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MySQL笔记 | 飞奔的蜗牛</title>
+    <title>Linux下安装nodejs | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -736,7 +736,7 @@ class="themespring" -->
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MySQL笔记</h1>
+                    <h1 class="description center-align post-title">Linux下安装nodejs</h1>
                 </div>
             </div>
         </div>
@@ -854,7 +854,7 @@ class="themespring" -->
 <div class="row">
     
     
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="笔记">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="Linux">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -1021,12 +1021,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/nodejs/">
+                                <span class="chip bg-color">nodejs</span>
                             </a>
                         
                     </div>
@@ -1037,8 +1037,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MySQL/" class="post-category">
-                                MySQL
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
                             </a>
                         
                     </div>
@@ -1050,7 +1050,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-06-04
+                    2019-10-11
                 </div>
                 
 
@@ -1059,14 +1059,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    595
+                    134
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -1076,43 +1076,18 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h2><pre class=" language-lang-sql"><code class="language-lang-sql">-- utf8_general_ci编码
-select * from t_school order by convert(name using gbk);
-</code></pre>
-<h2 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h2><p>应该这样写：<code>DELETE a FROM table a;</code></p>
-<h2 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h2><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p>
-<h2 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h2><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p>
-<h2 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h2><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p>
-<h2 id="6-数据库恢复"><a href="#6-数据库恢复" class="headerlink" title="6. 数据库恢复"></a>6. 数据库恢复</h2><p>是指通过技术手段将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p>
-<h2 id="7-mysql删除自定义函数："><a href="#7-mysql删除自定义函数：" class="headerlink" title="7. mysql删除自定义函数："></a>7. mysql删除自定义函数：</h2><p><code>DROP FUNCTION IF EXISTS `函数名`;</code></p>
-<h2 id="8-插入数据："><a href="#8-插入数据：" class="headerlink" title="8. 插入数据："></a>8. 插入数据：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">    insert into tb (field1,field2,field3……) value (val1,val2,val3……);
-    insert into tb (field1,field2,field3……) values (val1,val2,val3……);
-    insert into tb set field1=val1,field2=val2,field3=val3;
-    insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);
-    insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误
-</code></pre>
-<h2 id="9-查询数据库中每个表的记录数："><a href="#9-查询数据库中每个表的记录数：" class="headerlink" title="9. 查询数据库中每个表的记录数："></a>9. 查询数据库中每个表的记录数：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">    use information_schema;
-    select table_name,table_rows from tables where TABLE_SCHEMA = 'dataBase' order by table_rows desc;
-</code></pre>
-<h2 id="10-mysql查询主键字段名："><a href="#10-mysql查询主键字段名：" class="headerlink" title="10. mysql查询主键字段名："></a>10. mysql查询主键字段名：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name='表名' AND constraint_name='PRIMARY';
-</code></pre>
-<h2 id="11-mysql查询所有字段名："><a href="#11-mysql查询所有字段名：" class="headerlink" title="11. mysql查询所有字段名："></a>11. mysql查询所有字段名：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM information_schema.columns WHERE table_name='表名';
-</code></pre>
-<h2 id="12、null的问题："><a href="#12、null的问题：" class="headerlink" title="12、null的问题："></a>12、null的问题：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">update t_classroom set building_name=null where build_id is not null;
-</code></pre>
-<h2 id="13、获取指定字段的默认值："><a href="#13、获取指定字段的默认值：" class="headerlink" title="13、获取指定字段的默认值："></a>13、获取指定字段的默认值：</h2><p>DEFAULT(col_name)</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">select DEFAULT(sort) from t_node_school limit 1;
-</code></pre>
-<h2 id="14、mysql重命名表名："><a href="#14、mysql重命名表名：" class="headerlink" title="14、mysql重命名表名："></a>14、mysql重命名表名：</h2><p><code>alter table tb1 rename to tb2;</code><br>或者<br><code>rename tb1 to tb2;</code></p>
-<h2 id="15、null字段排序问题："><a href="#15、null字段排序问题：" class="headerlink" title="15、null字段排序问题："></a>15、null字段排序问题：</h2><p>设排序字段为sort，使用order by sort desc实现降序时，sort为null的数据会排在最后面；<br>但是使用order by sort升序时，sort为null的数据会排在最前面，如果想将sort为null的数据排在后面，就需要加is null。<br>如：<code>select * from t_grade order by sort is null, sort, create_time desc;</code></p>
-<h2 id="16、主键设置规则"><a href="#16、主键设置规则" class="headerlink" title="16、主键设置规则"></a>16、主键设置规则</h2><p> 主键的值不可更新，未来可能会变更的字段不能设置为主键；<br> 主键的值不可为空，且不能重复；</p>
-<h2 id="17、查看某个表的所有列："><a href="#17、查看某个表的所有列：" class="headerlink" title="17、查看某个表的所有列："></a>17、查看某个表的所有列：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">show columns from tableName;  或者  describe tableName; //可以用来生成数据字典
-</code></pre>
-<h2 id="18、下划线”-”通配符-匹配一个字符"><a href="#18、下划线”-”通配符-匹配一个字符" class="headerlink" title="18、下划线”_”通配符 匹配一个字符"></a>18、下划线”_”通配符 匹配一个字符</h2><pre class=" language-lang-sql"><code class="language-lang-sql"> select field1,field2 from tableName where field3 like "_xx";
-</code></pre>
-<h2 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h2><pre class=" language-lang-sql"><code class="language-lang-sql"> select weekday("2021-11-10")+1 week;      
- -- 2021年11月10日是星期三
-</code></pre>
+                <h3 id="1-下载nodejs"><a href="#1-下载nodejs" class="headerlink" title="1. 下载nodejs"></a>1. 下载nodejs</h3><pre><code>wget https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz
+</code></pre><h3 id="2-解压nodejs"><a href="#2-解压nodejs" class="headerlink" title="2. 解压nodejs"></a>2. 解压nodejs</h3><pre><code>tar xvf node-v8.11.4-linux-x64.tar.xz #解压
+mv node-v8.11.4-linux-x64 node-v8.11.4 #改短名
+</code></pre><h3 id="3-查看版本"><a href="#3-查看版本" class="headerlink" title="3. 查看版本"></a>3. 查看版本</h3><pre><code>cd /node-v8.11.4/bin &amp;&amp; ls #进入目录并列出
+./node -v #查看node版本
+node -v #无法获取，未配置
+</code></pre><p><img src="/images/linux_install_nodejs_1.png" alt></p>
+<h3 id="4-配置"><a href="#4-配置" class="headerlink" title="4. 配置"></a>4. 配置</h3><pre><code>ln -s /node-v8.11.4/bin/node /usr/bin/node
+ln -s /node-v8.11.4/bin/npm /usr/bin/npm
+</code></pre><p><img src="/images/linux_install_nodejs_2.png" alt></p>
+<h3 id="5-清理安装包"><a href="#5-清理安装包" class="headerlink" title="5. 清理安装包"></a>5. 清理安装包</h3><pre><code>rm -rf node-v8.11.4-linux-x64.tar.xz
+</code></pre><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8cdbe4f4b533">https://www.jianshu.com/p/8cdbe4f4b533</a></p>
 
             </div>
             <hr/>
@@ -1138,7 +1113,7 @@ select * from t_school order by convert(name using gbk);
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/fd5f561d.html">https://crazy-boy.com/posts/fd5f561d.html</a>
+                    <a href="https://crazy-boy.com/posts/linux-install-nodejs.html">https://crazy-boy.com/posts/linux-install-nodejs.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1176,12 +1151,12 @@ select * from t_school order by convert(name using gbk);
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/nodejs/">
+                                    <span class="chip bg-color">nodejs</span>
                                 </a>
                             
                         </div>
@@ -1718,11 +1693,11 @@ select * from t_school order by convert(name using gbk);
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9e064ccc.html">
+                <a href="/posts/6704a0e8.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="富文本编辑器">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="centos7安装mysql5.0版本教程">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1733,27 +1708,29 @@ select * from t_school order by convert(name using gbk);
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          富文本编辑器
+                          centos7安装mysql5.0版本教程
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false     即：`,xssFilterRules: false,inputXssFilter: false,outputXss
+                            1. 下载mysql bundle.tar包上传  mysql bundle.tar包到服务器
+解压  tar -xvf mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar
+
+2. 按顺序逐个安装rpmrpm 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9/" class="post-category">
-                                    第三方
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -1763,12 +1740,16 @@ select * from t_school order by convert(name using gbk);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">
-                        <span class="chip bg-color">富文本编辑器</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/umeditor/">
-                        <span class="chip bg-color">umeditor</span>
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
+                    </a>
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
                 </div>
@@ -1782,11 +1763,11 @@ select * from t_school order by convert(name using gbk);
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1822a0ce.html">
+                <a href="/posts/6e2d0a48.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="CSS笔记">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="JS点击复制指定内容">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1797,22 +1778,24 @@ select * from t_school order by convert(name using gbk);
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          CSS笔记
+                          JS点击复制指定内容
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck&#123; margin-right: 5px!important;&#125;
+                            点击按钮，复制指定文本框内容，代码如下：
 
-如果css希望两个标签对齐，可以用position来处理，如：.cntc
+function copy()&#123;
+    var str = document.getElementById("my-data");
+    str.select(); // 选择对象
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-02
                             </span>
                         <span class="publish-author">
                             
@@ -1829,16 +1812,8 @@ select * from t_school order by convert(name using gbk);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/CSS/">
-                        <span class="chip bg-color">CSS</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -1918,7 +1893,7 @@ select * from t_school order by convert(name using gbk);
 
         </div>
         
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="MySQL">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="nodejs">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -2085,12 +2060,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/nodejs/">
+                                <span class="chip bg-color">nodejs</span>
                             </a>
                         
                     </div>
@@ -2101,8 +2076,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MySQL/" class="post-category">
-                                MySQL
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
                             </a>
                         
                     </div>
@@ -2114,7 +2089,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-06-04
+                    2019-10-11
                 </div>
                 
 
@@ -2123,14 +2098,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    595
+                    134
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -2140,43 +2115,18 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h2><pre class=" language-lang-sql"><code class="language-lang-sql">-- utf8_general_ci编码
-select * from t_school order by convert(name using gbk);
-</code></pre>
-<h2 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h2><p>应该这样写：<code>DELETE a FROM table a;</code></p>
-<h2 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h2><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p>
-<h2 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h2><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p>
-<h2 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h2><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p>
-<h2 id="6-数据库恢复"><a href="#6-数据库恢复" class="headerlink" title="6. 数据库恢复"></a>6. 数据库恢复</h2><p>是指通过技术手段将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p>
-<h2 id="7-mysql删除自定义函数："><a href="#7-mysql删除自定义函数：" class="headerlink" title="7. mysql删除自定义函数："></a>7. mysql删除自定义函数：</h2><p><code>DROP FUNCTION IF EXISTS `函数名`;</code></p>
-<h2 id="8-插入数据："><a href="#8-插入数据：" class="headerlink" title="8. 插入数据："></a>8. 插入数据：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">    insert into tb (field1,field2,field3……) value (val1,val2,val3……);
-    insert into tb (field1,field2,field3……) values (val1,val2,val3……);
-    insert into tb set field1=val1,field2=val2,field3=val3;
-    insert into tb (field1,field2,field3……) values (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);
-    insert ignore into tb (field1,field2,field3……) values (val1,val2,val3……);        //使用ignore关键字忽略错误
-</code></pre>
-<h2 id="9-查询数据库中每个表的记录数："><a href="#9-查询数据库中每个表的记录数：" class="headerlink" title="9. 查询数据库中每个表的记录数："></a>9. 查询数据库中每个表的记录数：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">    use information_schema;
-    select table_name,table_rows from tables where TABLE_SCHEMA = 'dataBase' order by table_rows desc;
-</code></pre>
-<h2 id="10-mysql查询主键字段名："><a href="#10-mysql查询主键字段名：" class="headerlink" title="10. mysql查询主键字段名："></a>10. mysql查询主键字段名：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` WHERE table_name='表名' AND constraint_name='PRIMARY';
-</code></pre>
-<h2 id="11-mysql查询所有字段名："><a href="#11-mysql查询所有字段名：" class="headerlink" title="11. mysql查询所有字段名："></a>11. mysql查询所有字段名：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">SELECT column_name FROM information_schema.columns WHERE table_name='表名';
-</code></pre>
-<h2 id="12、null的问题："><a href="#12、null的问题：" class="headerlink" title="12、null的问题："></a>12、null的问题：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">update t_classroom set building_name=null where build_id is not null;
-</code></pre>
-<h2 id="13、获取指定字段的默认值："><a href="#13、获取指定字段的默认值：" class="headerlink" title="13、获取指定字段的默认值："></a>13、获取指定字段的默认值：</h2><p>DEFAULT(col_name)</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">select DEFAULT(sort) from t_node_school limit 1;
-</code></pre>
-<h2 id="14、mysql重命名表名："><a href="#14、mysql重命名表名：" class="headerlink" title="14、mysql重命名表名："></a>14、mysql重命名表名：</h2><p><code>alter table tb1 rename to tb2;</code><br>或者<br><code>rename tb1 to tb2;</code></p>
-<h2 id="15、null字段排序问题："><a href="#15、null字段排序问题：" class="headerlink" title="15、null字段排序问题："></a>15、null字段排序问题：</h2><p>设排序字段为sort，使用order by sort desc实现降序时，sort为null的数据会排在最后面；<br>但是使用order by sort升序时，sort为null的数据会排在最前面，如果想将sort为null的数据排在后面，就需要加is null。<br>如：<code>select * from t_grade order by sort is null, sort, create_time desc;</code></p>
-<h2 id="16、主键设置规则"><a href="#16、主键设置规则" class="headerlink" title="16、主键设置规则"></a>16、主键设置规则</h2><p> 主键的值不可更新，未来可能会变更的字段不能设置为主键；<br> 主键的值不可为空，且不能重复；</p>
-<h2 id="17、查看某个表的所有列："><a href="#17、查看某个表的所有列：" class="headerlink" title="17、查看某个表的所有列："></a>17、查看某个表的所有列：</h2><pre class=" language-lang-sql"><code class="language-lang-sql">show columns from tableName;  或者  describe tableName; //可以用来生成数据字典
-</code></pre>
-<h2 id="18、下划线”-”通配符-匹配一个字符"><a href="#18、下划线”-”通配符-匹配一个字符" class="headerlink" title="18、下划线”_”通配符 匹配一个字符"></a>18、下划线”_”通配符 匹配一个字符</h2><pre class=" language-lang-sql"><code class="language-lang-sql"> select field1,field2 from tableName where field3 like "_xx";
-</code></pre>
-<h2 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h2><pre class=" language-lang-sql"><code class="language-lang-sql"> select weekday("2021-11-10")+1 week;      
- -- 2021年11月10日是星期三
-</code></pre>
+                <h3 id="1-下载nodejs"><a href="#1-下载nodejs" class="headerlink" title="1. 下载nodejs"></a>1. 下载nodejs</h3><pre><code>wget https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz
+</code></pre><h3 id="2-解压nodejs"><a href="#2-解压nodejs" class="headerlink" title="2. 解压nodejs"></a>2. 解压nodejs</h3><pre><code>tar xvf node-v8.11.4-linux-x64.tar.xz #解压
+mv node-v8.11.4-linux-x64 node-v8.11.4 #改短名
+</code></pre><h3 id="3-查看版本"><a href="#3-查看版本" class="headerlink" title="3. 查看版本"></a>3. 查看版本</h3><pre><code>cd /node-v8.11.4/bin &amp;&amp; ls #进入目录并列出
+./node -v #查看node版本
+node -v #无法获取，未配置
+</code></pre><p><img src="/images/linux_install_nodejs_1.png" alt></p>
+<h3 id="4-配置"><a href="#4-配置" class="headerlink" title="4. 配置"></a>4. 配置</h3><pre><code>ln -s /node-v8.11.4/bin/node /usr/bin/node
+ln -s /node-v8.11.4/bin/npm /usr/bin/npm
+</code></pre><p><img src="/images/linux_install_nodejs_2.png" alt></p>
+<h3 id="5-清理安装包"><a href="#5-清理安装包" class="headerlink" title="5. 清理安装包"></a>5. 清理安装包</h3><pre><code>rm -rf node-v8.11.4-linux-x64.tar.xz
+</code></pre><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8cdbe4f4b533">https://www.jianshu.com/p/8cdbe4f4b533</a></p>
 
             </div>
             <hr/>
@@ -2202,7 +2152,7 @@ select * from t_school order by convert(name using gbk);
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/fd5f561d.html">https://crazy-boy.com/posts/fd5f561d.html</a>
+                    <a href="https://crazy-boy.com/posts/linux-install-nodejs.html">https://crazy-boy.com/posts/linux-install-nodejs.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2240,12 +2190,12 @@ select * from t_school order by convert(name using gbk);
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/nodejs/">
+                                    <span class="chip bg-color">nodejs</span>
                                 </a>
                             
                         </div>
@@ -2782,11 +2732,11 @@ select * from t_school order by convert(name using gbk);
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9e064ccc.html">
+                <a href="/posts/6704a0e8.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="富文本编辑器">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="centos7安装mysql5.0版本教程">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2797,27 +2747,29 @@ select * from t_school order by convert(name using gbk);
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          富文本编辑器
+                          centos7安装mysql5.0版本教程
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-解决umeditor富文本内容居中可能失效的问题：更改umeditor.config.js的xss过滤为false     即：`,xssFilterRules: false,inputXssFilter: false,outputXss
+                            1. 下载mysql bundle.tar包上传  mysql bundle.tar包到服务器
+解压  tar -xvf mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar
+
+2. 按顺序逐个安装rpmrpm 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9/" class="post-category">
-                                    第三方
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
@@ -2827,12 +2779,16 @@ select * from t_school order by convert(name using gbk);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/">
-                        <span class="chip bg-color">富文本编辑器</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/umeditor/">
-                        <span class="chip bg-color">umeditor</span>
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
+                    </a>
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
                     </a>
                     
                 </div>
@@ -2846,11 +2802,11 @@ select * from t_school order by convert(name using gbk);
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1822a0ce.html">
+                <a href="/posts/6e2d0a48.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="CSS笔记">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="JS点击复制指定内容">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2861,22 +2817,24 @@ select * from t_school order by convert(name using gbk);
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          CSS笔记
+                          JS点击复制指定内容
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck&#123; margin-right: 5px!important;&#125;
+                            点击按钮，复制指定文本框内容，代码如下：
 
-如果css希望两个标签对齐，可以用position来处理，如：.cntc
+function copy()&#123;
+    var str = document.getElementById("my-data");
+    str.select(); // 选择对象
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-02
                             </span>
                         <span class="publish-author">
                             
@@ -2893,16 +2851,8 @@ select * from t_school order by convert(name using gbk);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/CSS/">
-                        <span class="chip bg-color">CSS</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -2986,7 +2936,7 @@ select * from t_school order by convert(name using gbk);
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         
         
-        <div class="toc-widget" data-spmid="笔记">
+        <div class="toc-widget" data-spmid="Linux">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -2994,7 +2944,7 @@ select * from t_school order by convert(name using gbk);
             <div id="toc-content"></div>
         </div>
         
-        <div class="toc-widget" data-spmid="MySQL">
+        <div class="toc-widget" data-spmid="nodejs">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -3009,13 +2959,13 @@ select * from t_school order by convert(name using gbk);
 <!-- TOC 悬浮按钮. -->
 
     
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="笔记">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="Linux">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
 </div>
 
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="MySQL">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="nodejs">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -3190,7 +3140,7 @@ select * from t_school order by convert(name using gbk);
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

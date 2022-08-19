@@ -1063,7 +1063,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    123
+                    250
                 </div>
                 
 
@@ -1081,56 +1081,54 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p>
-<pre class=" language-lang-html"><code class="language-lang-html"><html>
-    <head>
-        <script src="jquery.min.js"></script>
-    </head>
-    <body>
-        <button data-event="list">列表</button>
-        <button data-event="search" data-name="大班">搜索</button>
-        <button data-event="add">添加</button>
-        <button data-event="update">修改</button>
-        <button data-event="del">删除</button>
-    </body>
-</html>
-</code></pre>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript"><script>
-var clickAct = &#123;
-    btn: $('button'),
-    init: function()&#123;
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button data-event=&quot;list&quot;&gt;列表&lt;/button&gt;
+        &lt;button data-event=&quot;search&quot; data-name=&quot;大班&quot;&gt;搜索&lt;/button&gt;
+        &lt;button data-event=&quot;add&quot;&gt;添加&lt;/button&gt;
+        &lt;button data-event=&quot;update&quot;&gt;修改&lt;/button&gt;
+        &lt;button data-event=&quot;del&quot;&gt;删除&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><pre><code>&lt;script&gt;
+var clickAct = &amp;#123;
+    btn: $(&#39;button&#39;),
+    init: function()&amp;#123;
         var that = this;
-        this.btn.click(function()&#123;
-            var func = $(this).attr('data-event');
-            that[func]($(this).attr('data-name'));
-        &#125;)
-    &#125;,
+        this.btn.click(function()&amp;#123;
+            var func = $(this).attr(&#39;data-event&#39;);
+            that[func]($(this).attr(&#39;data-name&#39;));
+        &amp;#125;)
+    &amp;#125;,
 
-    list: function(param)&#123;
-        console.log('1');
-    &#125;,
+    list: function(param)&amp;#123;
+        console.log(&#39;1&#39;);
+    &amp;#125;,
 
-    search: function(param)&#123;
+    search: function(param)&amp;#123;
         console.log(param);
 
-    &#125;,
+    &amp;#125;,
 
-    add: function(param)&#123;
-        console.log('3');
-    &#125;,
+    add: function(param)&amp;#123;
+        console.log(&#39;3&#39;);
+    &amp;#125;,
 
-    update: function(param)&#123;
-        console.log('4');
-    &#125;,
+    update: function(param)&amp;#123;
+        console.log(&#39;4&#39;);
+    &amp;#125;,
 
-    del: function(param)&#123;
-        console.log('5');
-    &#125;
-&#125;
+    del: function(param)&amp;#123;
+        console.log(&#39;5&#39;);
+    &amp;#125;
+&amp;#125;
 
 clickAct.init();
-</script>
+&lt;/script&gt;
 </code></pre>
-
             </div>
             <hr/>
 
@@ -1155,7 +1153,7 @@ clickAct.init();
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/cdd95104.html">https://crazy-boy.com/posts/cdd95104.html</a>
+                    <a href="https://crazy-boy.com/posts/jquery-obj.html">https://crazy-boy.com/posts/jquery-obj.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1739,7 +1737,7 @@ clickAct.init();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/dc8a9d20.html">
+                <a href="/posts/php-aes-encrypt.html">
                     <div class="card-image">
                         
                         
@@ -1806,7 +1804,7 @@ clickAct.init();
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ed90cb85.html">
+                <a href="/posts/mysql-functions.html">
                     <div class="card-image">
                         
                         
@@ -1829,7 +1827,8 @@ clickAct.init();
                     <div class="summary block-with-text">
                         
                             记录几个常用的MySQL函数：
-1、LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键
+LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键。
+
                         
                     </div>
                     <div class="publish-info">
@@ -2145,7 +2144,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    123
+                    250
                 </div>
                 
 
@@ -2163,56 +2162,54 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p>
-<pre class=" language-lang-html"><code class="language-lang-html"><html>
-    <head>
-        <script src="jquery.min.js"></script>
-    </head>
-    <body>
-        <button data-event="list">列表</button>
-        <button data-event="search" data-name="大班">搜索</button>
-        <button data-event="add">添加</button>
-        <button data-event="update">修改</button>
-        <button data-event="del">删除</button>
-    </body>
-</html>
-</code></pre>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript"><script>
-var clickAct = &#123;
-    btn: $('button'),
-    init: function()&#123;
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button data-event=&quot;list&quot;&gt;列表&lt;/button&gt;
+        &lt;button data-event=&quot;search&quot; data-name=&quot;大班&quot;&gt;搜索&lt;/button&gt;
+        &lt;button data-event=&quot;add&quot;&gt;添加&lt;/button&gt;
+        &lt;button data-event=&quot;update&quot;&gt;修改&lt;/button&gt;
+        &lt;button data-event=&quot;del&quot;&gt;删除&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><pre><code>&lt;script&gt;
+var clickAct = &amp;#123;
+    btn: $(&#39;button&#39;),
+    init: function()&amp;#123;
         var that = this;
-        this.btn.click(function()&#123;
-            var func = $(this).attr('data-event');
-            that[func]($(this).attr('data-name'));
-        &#125;)
-    &#125;,
+        this.btn.click(function()&amp;#123;
+            var func = $(this).attr(&#39;data-event&#39;);
+            that[func]($(this).attr(&#39;data-name&#39;));
+        &amp;#125;)
+    &amp;#125;,
 
-    list: function(param)&#123;
-        console.log('1');
-    &#125;,
+    list: function(param)&amp;#123;
+        console.log(&#39;1&#39;);
+    &amp;#125;,
 
-    search: function(param)&#123;
+    search: function(param)&amp;#123;
         console.log(param);
 
-    &#125;,
+    &amp;#125;,
 
-    add: function(param)&#123;
-        console.log('3');
-    &#125;,
+    add: function(param)&amp;#123;
+        console.log(&#39;3&#39;);
+    &amp;#125;,
 
-    update: function(param)&#123;
-        console.log('4');
-    &#125;,
+    update: function(param)&amp;#123;
+        console.log(&#39;4&#39;);
+    &amp;#125;,
 
-    del: function(param)&#123;
-        console.log('5');
-    &#125;
-&#125;
+    del: function(param)&amp;#123;
+        console.log(&#39;5&#39;);
+    &amp;#125;
+&amp;#125;
 
 clickAct.init();
-</script>
+&lt;/script&gt;
 </code></pre>
-
             </div>
             <hr/>
 
@@ -2237,7 +2234,7 @@ clickAct.init();
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/cdd95104.html">https://crazy-boy.com/posts/cdd95104.html</a>
+                    <a href="https://crazy-boy.com/posts/jquery-obj.html">https://crazy-boy.com/posts/jquery-obj.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2821,7 +2818,7 @@ clickAct.init();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/dc8a9d20.html">
+                <a href="/posts/php-aes-encrypt.html">
                     <div class="card-image">
                         
                         
@@ -2888,7 +2885,7 @@ clickAct.init();
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ed90cb85.html">
+                <a href="/posts/mysql-functions.html">
                     <div class="card-image">
                         
                         
@@ -2911,7 +2908,8 @@ clickAct.init();
                     <div class="summary block-with-text">
                         
                             记录几个常用的MySQL函数：
-1、LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键
+LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键。
+
                         
                     </div>
                     <div class="publish-info">
@@ -3227,7 +3225,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    123
+                    250
                 </div>
                 
 
@@ -3245,56 +3243,54 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p>
-<pre class=" language-lang-html"><code class="language-lang-html"><html>
-    <head>
-        <script src="jquery.min.js"></script>
-    </head>
-    <body>
-        <button data-event="list">列表</button>
-        <button data-event="search" data-name="大班">搜索</button>
-        <button data-event="add">添加</button>
-        <button data-event="update">修改</button>
-        <button data-event="del">删除</button>
-    </body>
-</html>
-</code></pre>
-<pre class=" language-lang-javascript"><code class="language-lang-javascript"><script>
-var clickAct = &#123;
-    btn: $('button'),
-    init: function()&#123;
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button data-event=&quot;list&quot;&gt;列表&lt;/button&gt;
+        &lt;button data-event=&quot;search&quot; data-name=&quot;大班&quot;&gt;搜索&lt;/button&gt;
+        &lt;button data-event=&quot;add&quot;&gt;添加&lt;/button&gt;
+        &lt;button data-event=&quot;update&quot;&gt;修改&lt;/button&gt;
+        &lt;button data-event=&quot;del&quot;&gt;删除&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><pre><code>&lt;script&gt;
+var clickAct = &amp;#123;
+    btn: $(&#39;button&#39;),
+    init: function()&amp;#123;
         var that = this;
-        this.btn.click(function()&#123;
-            var func = $(this).attr('data-event');
-            that[func]($(this).attr('data-name'));
-        &#125;)
-    &#125;,
+        this.btn.click(function()&amp;#123;
+            var func = $(this).attr(&#39;data-event&#39;);
+            that[func]($(this).attr(&#39;data-name&#39;));
+        &amp;#125;)
+    &amp;#125;,
 
-    list: function(param)&#123;
-        console.log('1');
-    &#125;,
+    list: function(param)&amp;#123;
+        console.log(&#39;1&#39;);
+    &amp;#125;,
 
-    search: function(param)&#123;
+    search: function(param)&amp;#123;
         console.log(param);
 
-    &#125;,
+    &amp;#125;,
 
-    add: function(param)&#123;
-        console.log('3');
-    &#125;,
+    add: function(param)&amp;#123;
+        console.log(&#39;3&#39;);
+    &amp;#125;,
 
-    update: function(param)&#123;
-        console.log('4');
-    &#125;,
+    update: function(param)&amp;#123;
+        console.log(&#39;4&#39;);
+    &amp;#125;,
 
-    del: function(param)&#123;
-        console.log('5');
-    &#125;
-&#125;
+    del: function(param)&amp;#123;
+        console.log(&#39;5&#39;);
+    &amp;#125;
+&amp;#125;
 
 clickAct.init();
-</script>
+&lt;/script&gt;
 </code></pre>
-
             </div>
             <hr/>
 
@@ -3319,7 +3315,7 @@ clickAct.init();
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/cdd95104.html">https://crazy-boy.com/posts/cdd95104.html</a>
+                    <a href="https://crazy-boy.com/posts/jquery-obj.html">https://crazy-boy.com/posts/jquery-obj.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -3903,7 +3899,7 @@ clickAct.init();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/dc8a9d20.html">
+                <a href="/posts/php-aes-encrypt.html">
                     <div class="card-image">
                         
                         
@@ -3970,7 +3966,7 @@ clickAct.init();
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ed90cb85.html">
+                <a href="/posts/mysql-functions.html">
                     <div class="card-image">
                         
                         
@@ -3993,7 +3989,8 @@ clickAct.init();
                     <div class="summary block-with-text">
                         
                             记录几个常用的MySQL函数：
-1、LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键
+LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键。
+
                         
                     </div>
                     <div class="publish-info">
@@ -4322,7 +4319,7 @@ clickAct.init();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       

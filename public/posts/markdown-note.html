@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL自定义函数, 这里是网站关键词">
+    <meta name="keywords" content="Markdown笔记, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>MySQL自定义函数 | 飞奔的蜗牛</title>
+    <title>Markdown笔记 | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -731,12 +731,12 @@ class="themespring" -->
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">MySQL自定义函数</h1>
+                    <h1 class="description center-align post-title">Markdown笔记</h1>
                 </div>
             </div>
         </div>
@@ -854,7 +854,7 @@ class="themespring" -->
 <div class="row">
     
     
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="MySQL">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="Markdown">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -1021,12 +1021,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
                             </a>
                         
-                            <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">
-                                <span class="chip bg-color">自定义函数</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -1037,8 +1037,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MySQL/" class="post-category">
-                                MySQL
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
                             </a>
                         
                     </div>
@@ -1050,7 +1050,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-05
+                    2019-01-31
                 </div>
                 
 
@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    178
+                    99
                 </div>
                 
 
@@ -1076,36 +1076,16 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：</p>
-<ol>
-<li><p>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</p>
-<pre><code>     DROP FUNCTION IF EXISTS `SPLIT_STR`; 
-     delimiter $$
-     CREATE FUNCTION SPLIT_STR(
-       x VARCHAR(255),
-       delim VARCHAR(12),
-       pos INT
-     )
-     RETURNS VARCHAR(255)
-
-     BEGIN
-         DECLARE i INT DEFAULT 0;
-         DECLARE s text DEFAULT &#39;&#39;;
-         myloop: LOOP
-             SET i = i+pos;
-             SET s = CONCAT(s,delim,left(x,pos));
-             SET x = right(x,length(x)-pos);
-             if pos&gt;length(x) then
-                 if length(x)&gt;0 then
-                     SET s = CONCAT(s,delim,x);
-                 end if;
-                 leave myloop;
-             end if;
-         END LOOP myloop;
-     RETURN right(s,length(s)-length(delim));
-     END $$
-</code></pre><p>调用：<code>SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);</code></p>
-</li>
+                <ol>
+<li>解决有序列表排序失败的问题，格式如下：<pre><code> 1.[空格]测试文字1 
+ [Tab]-[空格]测试文字1-1 
+ [Tab]-[空格]测试文字1-2 
+ 2.[空格]测试文字2 
+ [Tab]-[空格]测试文字2-1 
+ [Tab][Tab]-[空格]测试文字2-1-1 
+ [Tab][Tab]-[空格]测试文字2-1-2 
+ [Tab]-[空格]测试文字2-2
+</code></pre> 代码段使用Tab退格</li>
 </ol>
 
             </div>
@@ -1132,7 +1112,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/ca4788ef.html">https://crazy-boy.com/posts/ca4788ef.html</a>
+                    <a href="https://crazy-boy.com/posts/markdown-note.html">https://crazy-boy.com/posts/markdown-note.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1170,12 +1150,12 @@ h3:hover {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
                                 </a>
                             
-                                <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">
-                                    <span class="chip bg-color">自定义函数</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -1712,11 +1692,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/e9763d3.html">
+                <a href="/posts/php-operate-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="PHPExcel笔记">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="PHP运维笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1727,86 +1707,22 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          PHPExcel笔记
+                          PHP运维笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 设置字体和样式    $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(['font'=>['bold'=>true]]);            //设置单
+                            1. 常见命令查看PHP扩展：`php -m`
+查看扩展的版本信息：`php -ri 扩展名`  如：`php -ri redis`
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/PHPExcel/">
-                        <span class="chip bg-color">PHPExcel</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/15513092.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="PHP生成数据字典">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          PHP生成数据字典
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            通过php代码生成MySQL数据字典，代码如下：
- $val)&#123;
-        $tableName = $val['TABLE_NAME'];
-        $string = explode('_',$tableName)
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-21
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1826,12 +1742,77 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/">
-                        <span class="chip bg-color">数据字典</span>
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/ec2116cd.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Prolog笔记">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          Prolog笔记
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 加载脚本?- [&#39;E:/SWI-Prolog/test/friend.pl&#39;].       %true
+2. 教程https://riptutorial.com/zh-CN/prolog
+3. 简单的计算求解：?- 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Prolog/" class="post-category">
+                                    Prolog
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Prolog/">
+                        <span class="chip bg-color">Prolog</span>
                     </a>
                     
                 </div>
@@ -1911,7 +1892,7 @@ h3:hover {
 
         </div>
         
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="自定义函数">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="笔记">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -2078,12 +2059,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
                             </a>
                         
-                            <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">
-                                <span class="chip bg-color">自定义函数</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -2094,8 +2075,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MySQL/" class="post-category">
-                                MySQL
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
                             </a>
                         
                     </div>
@@ -2107,7 +2088,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-05
+                    2019-01-31
                 </div>
                 
 
@@ -2116,7 +2097,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    178
+                    99
                 </div>
                 
 
@@ -2133,36 +2114,16 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数：</p>
-<ol>
-<li><p>批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</p>
-<pre><code>     DROP FUNCTION IF EXISTS `SPLIT_STR`; 
-     delimiter $$
-     CREATE FUNCTION SPLIT_STR(
-       x VARCHAR(255),
-       delim VARCHAR(12),
-       pos INT
-     )
-     RETURNS VARCHAR(255)
-
-     BEGIN
-         DECLARE i INT DEFAULT 0;
-         DECLARE s text DEFAULT &#39;&#39;;
-         myloop: LOOP
-             SET i = i+pos;
-             SET s = CONCAT(s,delim,left(x,pos));
-             SET x = right(x,length(x)-pos);
-             if pos&gt;length(x) then
-                 if length(x)&gt;0 then
-                     SET s = CONCAT(s,delim,x);
-                 end if;
-                 leave myloop;
-             end if;
-         END LOOP myloop;
-     RETURN right(s,length(s)-length(delim));
-     END $$
-</code></pre><p>调用：<code>SELECT SPLIT_STR(&#39;FEEED305904B&#39;, &#39;:&#39;, 2);</code></p>
-</li>
+                <ol>
+<li>解决有序列表排序失败的问题，格式如下：<pre><code> 1.[空格]测试文字1 
+ [Tab]-[空格]测试文字1-1 
+ [Tab]-[空格]测试文字1-2 
+ 2.[空格]测试文字2 
+ [Tab]-[空格]测试文字2-1 
+ [Tab][Tab]-[空格]测试文字2-1-1 
+ [Tab][Tab]-[空格]测试文字2-1-2 
+ [Tab]-[空格]测试文字2-2
+</code></pre> 代码段使用Tab退格</li>
 </ol>
 
             </div>
@@ -2189,7 +2150,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/ca4788ef.html">https://crazy-boy.com/posts/ca4788ef.html</a>
+                    <a href="https://crazy-boy.com/posts/markdown-note.html">https://crazy-boy.com/posts/markdown-note.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2227,12 +2188,12 @@ h3:hover {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
                                 </a>
                             
-                                <a href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/">
-                                    <span class="chip bg-color">自定义函数</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -2769,11 +2730,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/e9763d3.html">
+                <a href="/posts/php-operate-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="PHPExcel笔记">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="PHP运维笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2784,86 +2745,22 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          PHPExcel笔记
+                          PHP运维笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 设置字体和样式    $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(['font'=>['bold'=>true]]);            //设置单
+                            1. 常见命令查看PHP扩展：`php -m`
+查看扩展的版本信息：`php -ri 扩展名`  如：`php -ri redis`
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/PHPExcel/">
-                        <span class="chip bg-color">PHPExcel</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/15513092.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="PHP生成数据字典">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          PHP生成数据字典
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            通过php代码生成MySQL数据字典，代码如下：
- $val)&#123;
-        $tableName = $val['TABLE_NAME'];
-        $string = explode('_',$tableName)
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-21
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -2883,12 +2780,77 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/">
-                        <span class="chip bg-color">数据字典</span>
+                    <a href="/tags/%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">运维</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/ec2116cd.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Prolog笔记">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          Prolog笔记
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 加载脚本?- [&#39;E:/SWI-Prolog/test/friend.pl&#39;].       %true
+2. 教程https://riptutorial.com/zh-CN/prolog
+3. 简单的计算求解：?- 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-01-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Prolog/" class="post-category">
+                                    Prolog
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Prolog/">
+                        <span class="chip bg-color">Prolog</span>
                     </a>
                     
                 </div>
@@ -2972,7 +2934,7 @@ h3:hover {
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         
         
-        <div class="toc-widget" data-spmid="MySQL">
+        <div class="toc-widget" data-spmid="Markdown">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -2980,7 +2942,7 @@ h3:hover {
             <div id="toc-content"></div>
         </div>
         
-        <div class="toc-widget" data-spmid="自定义函数">
+        <div class="toc-widget" data-spmid="笔记">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -2995,13 +2957,13 @@ h3:hover {
 <!-- TOC 悬浮按钮. -->
 
     
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="MySQL">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="Markdown">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
 </div>
 
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="自定义函数">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="笔记">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -3176,7 +3138,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">19.8k</span>&nbsp;
+        class="white-color">21.3k</span>&nbsp;
       
       
       
