@@ -5,8 +5,8 @@
     
     <entry>
       <title>记一次高并发迭代之路</title>
-      <link href="/posts/8f013979.html"/>
-      <url>/posts/8f013979.html</url>
+      <link href="/posts/high-concurrent-experience.html"/>
+      <url>/posts/high-concurrent-experience.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h3><p>2020年之初，新冠肺炎突然来势汹汹，在全国人民的团结努力下，抗疫战进入了僵持阶段，2月24日我公司一复工，就接到了成都市XX区领导的需求，需要在一周内开发上线一个针对全区师生(10万人左右)疫情每日打卡平台。</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>其实就是需要做一个用户每日登陆填报问卷的功能。此平台需要有一个管理后台，一个h5打卡填报及其附属页面。</p><h3 id="雏形"><a href="#雏形" class="headerlink" title="雏形"></a>雏形</h3><p>由于时间紧，对项目进行简单分析后，确定功能(后台：用户信息管理、打卡记录、数据统计，前台：用户登陆、打卡、快速打卡、打卡记录)后，我们就着手开发。功能很快开发开发完成并上线。</p><h3 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h3><p>上线前的测试阶段，我们发现有些信息是固定的但每个人都需要查询，比如省市区信息，于是我们进行了redis缓存。由于后台的统计过于复杂，于是使用golang开发了计划任务，每两分钟统计一次数据。<br>领导验收时又提了一些功能改进，在改进时，我们发现用户数有10万左右，单一的打卡接口可能会堵塞，于是进行了优化，打卡接口只进行普通的填报信息校验，校验通过后，异步调用golang接口进行打卡信息保存，这样有一个坏处就是数据保存延迟，可能会出现打卡后看不到记录。为防止用户多次打卡，在填报信息校验通过后，将当天打卡人的唯一标识存入redis，如果存在redis中就不让再次打卡，当然如果打卡信息保存失败，go程序需删除该人当日的打卡缓存。<br>上线试运行期间，发现用户打卡打卡页面很慢，经分析，服务器带宽只有10M，前端页面图片未压缩，于是进行图片、js、css等资源文件压缩，单纯压测前端页面(压缩后未425k)，明显带宽不够，加大到100M，前端页面图片CND加速后，压测1000并发无问题。压测打卡接口，1000并发连接超时失败率20%，800并发连接超时失败率10%。<br>压测一个通宵后，本以为平安无事了，结果第二天一早上就卡得不行，原来是后台查询过慢，导致cpu飙升，前台用户查询不到数据，看慢查询发现，时不时有几个查询sql消耗时间过长，show preocesslist也看到异常。先加索引优化，但效果不明显，结果发现是在进行联表查询的时候，大表联了大表，大表牵引本来就是问题，于是对业务表进行了合并，5张表合成一张表，并添加索引，后台查询立马飞快。更新程序后，暂时一切正常了。<br>没想到第二天一早上服务器有出问题了，并发飙升到2万多，有很多insert 语句造成了锁表，而很多的select语句有无法执行。突然意识到myisam使用insert的时候会造成锁表，需要支持并发插入，得修改concurrent_insert=2,；另一方面有个在慢查询中有两个select语句出现很频繁，但耗时不高(0.60s左右)，explain发现居然没有使用索引，立马加上索引，查询耗时降低到0.02s。在无法kill sql进程的情况下，只能进行停止Nginx，重启数据库，重启后一切正常。<br>由于可能并发过高，我们选择了服务器升级，单台数据库可能扛不住。全迁移到阿里云，使用阿里云的数据库，读写分离，一主多从，弹性伸缩。一切ok，监控两日后发现并发在8000左右。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>架构设计的原则：简单、合适高于一切。<br>高并发需考虑带宽，页面缓存压缩、静态数据缓存、接口异步多线程处理。<br>慢查询除了关注耗时过长的sql，还得注意使用频繁的sql。<br>高并发当程序优化到极致后，需考虑服务器优化，读写分离，redis集群等。</p>]]></content>
       
@@ -235,7 +235,7 @@
       <link href="/posts/php-assignment.html"/>
       <url>/posts/php-assignment.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。</p><pre class=" language-lang-php"><code class="language-lang-php">$arr = ['id' => null, 'name' => 'test', 'age' => null];$time1 = microtime(true);$tmp = &$arr;for ($i = 0; $i < 100000000; $i++) &#123;    $tmp['id'] = $i;&#125;print_r($arr); echo PHP_EOL;echo microtime(true) - $time1;echo '<br/>';$time2 = microtime(true);$tmp1 = null;for ($i = 0; $i < 100000000; $i++) &#123;    $tmp1 = $i;&#125;$tmp['id'] = $tmp1;print_r($arr);echo PHP_EOL;echo microtime(true) - $time2;</code></pre><p>输出结果为：<code><br>Array ( [id] =&gt; 99999999 [name] =&gt; test [age] =&gt; )<br>2.0506858825684<br>Array ( [id] =&gt; 99999999 [name] =&gt; test [age] =&gt; )<br>1.1653530597687</code></p><p>不难看出，两次的处理结果是一样的，但通过&amp;多次改变值，效率较低。</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。</p><pre class=" language-lang-php"><code class="language-lang-php">$arr = ['id' => null, 'name' => 'test', 'age' => null];$time1 = microtime(true);$tmp = &$arr;for ($i = 0; $i < 100000000; $i++) &#123;    $tmp['id'] = $i;&#125;print_r($arr); echo PHP_EOL;echo microtime(true) - $time1;echo PHP_EOL;$time2 = microtime(true);$tmp1 = null;for ($i = 0; $i < 100000000; $i++) &#123;    $tmp1 = $i;&#125;$tmp['id'] = $tmp1;print_r($arr);echo PHP_EOL;echo microtime(true) - $time2;</code></pre><p>输出结果为：<code><br>Array ( [id] =&gt; 99999999 [name] =&gt; test [age] =&gt; )<br>2.0506858825684<br>Array ( [id] =&gt; 99999999 [name] =&gt; test [age] =&gt; )<br>1.1653530597687</code></p><p>不难看出，两次的处理结果是一样的，但通过&amp;多次改变值，效率较低。</p>]]></content>
       
       
       <categories>
@@ -406,11 +406,11 @@
     
     
     <entry>
-      <title>常用的Redis命令</title>
+      <title>Redis笔记</title>
       <link href="/posts/redis-note.html"/>
       <url>/posts/redis-note.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><p>info<br><img src="/images/redis_note_1.png" alt></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="安装redis客户端"><a href="#安装redis客户端" class="headerlink" title="安装redis客户端"></a>安装redis客户端</h3><p><code>yum install redis</code></p><h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><p><code>info</code><br><img src="/images/redis_note_1.png" alt></p><h3 id="通过命令行方式连接redis"><a href="#通过命令行方式连接redis" class="headerlink" title="通过命令行方式连接redis"></a>通过命令行方式连接redis</h3><p><code>redis-cli -h host -p port -a password</code><br>host:远程redis服务器host<br>port:远程redis服务端口<br>password:远程redis服务密码（无密码的的话就不需要-a参数了）<br><img src="/images/redis_note_2.png" alt></p><h3 id="redis执行lua脚本"><a href="#redis执行lua脚本" class="headerlink" title="redis执行lua脚本"></a>redis执行lua脚本</h3><p><img src="/images/redis_note_3.png" alt><br><img src="/images/redis_note_4.png" alt></p>]]></content>
       
       
       <categories>
@@ -486,8 +486,8 @@
     
     <entry>
       <title>DOS命令进入MySQL</title>
-      <link href="/posts/88ecfff4.html"/>
-      <url>/posts/88ecfff4.html</url>
+      <link href="/posts/use-mysql-on-dos.html"/>
+      <url>/posts/use-mysql-on-dos.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-先进入mysql安装目录下的bin目录中"><a href="#1-先进入mysql安装目录下的bin目录中" class="headerlink" title="1. 先进入mysql安装目录下的bin目录中"></a>1. 先进入mysql安装目录下的bin目录中</h3><p><img src="/images/doc_mysql_1.png" alt></p><h3 id="2-执行命令"><a href="#2-执行命令" class="headerlink" title="2. 执行命令"></a>2. 执行命令</h3><p><code>mysql -hlocalhost -uroot -p</code><br>按要求输入密码，回车即可。<br><img src="/images/doc_mysql_2.png" alt></p><h3 id="3-执行命令操作数据库"><a href="#3-执行命令操作数据库" class="headerlink" title="3. 执行命令操作数据库"></a>3. 执行命令操作数据库</h3><p>如：显示所有的数据库<br><img src="/images/doc_mysql_3.png" alt></p><h3 id="4-退出mysql数据库"><a href="#4-退出mysql数据库" class="headerlink" title="4. 退出mysql数据库"></a>4. 退出mysql数据库</h3><p>exit回车即可<br><img src="/images/doc_mysql_4.png" alt></p>]]></content>
       
@@ -1069,56 +1069,6 @@
     
     
     <entry>
-      <title>关于itsNeko开源博客食用方法</title>
-      <link href="/posts/itsneko-opensource-blog.html"/>
-      <url>/posts/itsneko-opensource-blog.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">前言：本文是关于itsNeko开源博客食用方法详解，感谢使用本开源博客。时间过的好快，还好我都记录下来了。</div><h3 id="itsNeko开源介绍"><a href="#itsNeko开源介绍" class="headerlink" title="itsNeko开源介绍"></a>itsNeko开源介绍</h3><ul><li>基于<br>itsNeko开源博客是基于Hexo博客Matery主题魔改，感谢各位对本博客的喜爱与支持。</li><li>作者<br>Hello，itsNeko，我是本博客的作者，itsNeko博主博客: <a href="https://dyfa.top/" target="_blank">itsNeko博客~</a></li><li>赞赏<br>如果你觉得本开源博客还可以，欢迎大家的赞赏，赞赏二维码见页面：<a href="https://dyfa.top/donate/" target="_blank">赞赏itsNeko开源博主~</a></li><li>提示<br>本博客为纯静态，无数据库，文章使用markdown格式，图片存在json里面，整体打包上传至服务器即可。</li><li>建议<br>最好懂一点编程知识，建议使用VsCode，善于使用<code>“ ctrl+F ”</code>快捷键定位然后修改自定义内容。</li></ul><h3 id="源码下载及命令"><a href="#源码下载及命令" class="headerlink" title="源码下载及命令"></a>源码下载及命令</h3><ul><li>本开源博客源码已公开在在博主的GitHub仓库，国内也可使用Gitee，希望得到各位的<code>小星星，Star</code>。</li><li>GitHub仓库：<a href="https://github.com/nekodeng/hexo-theme-itsneko.git" target="_blank">itsNeko开源博客源码GitHub地址</a></li><li><p>Gitee仓库：<a href="https://gitee.com/nekodeng/hexo-theme-itsneko.git" target="_blank">itsNeko开源博客源码Gitee地址</a></p></li><li><p>首先，新建一个文件夹名为“ <code>nekoblog</code> ”，在该文件夹下打开git bash，执行命令行</p></li></ul><pre><code>git clone https://github.com/nekodeng/hexo-theme-itsneko.git或者使用国内的giteegit clone https://gitee.com/nekodeng/hexo-theme-itsneko.git</code></pre><ul><li>将下载的整个文件夹在VsCode中打开，在终端中依次执行以下命令行</li></ul><pre><code>npm installhexo cleanhexo ghexo s</code></pre><ul><li>然后在浏览器中，打开“ <a href="http://localhost:4000/">http://localhost:4000/</a> ”，即可实时预览网站，再依次修改网站内容。</li></ul><p>注意：依次执行完上述4条命令后，若遇到报错极大概率是npm install的问题，也可能是网络问题，建议删除整个“ node_modules ”文件夹，然后重新执行上述命令行。</p><h3 id="各页面配置详解"><a href="#各页面配置详解" class="headerlink" title="各页面配置详解"></a>各页面配置详解</h3><h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><h5 id="1、网站标题描述等"><a href="#1、网站标题描述等" class="headerlink" title="1、网站标题描述等"></a>1、网站标题描述等</h5><p>在<code>/nekoblog/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ Site ”</code>，然后自行修改内容。</p><h5 id="2、logo图片与logo字体"><a href="#2、logo图片与logo字体" class="headerlink" title="2、logo图片与logo字体"></a>2、logo图片与logo字体</h5><ul><li>logo图片:<br>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 配置网站favicon和网站LOGO ”</code>，然后自行修改图片并注意图片格式（此处建议图片大小为180*116最佳）。</li><li>logo字体:<br>在<code>/themes/layout/_partial/header.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ itsNeko-openSource-Blog ”</code>，然后自行修改大屏幕和小屏幕下logo字体（此处建议小屏下字体数目不宜过多）。 </li></ul><h5 id="3、banner图上打字效果字体"><a href="#3、banner图上打字效果字体" class="headerlink" title="3、banner图上打字效果字体"></a>3、banner图上打字效果字体</h5><p>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ sub1 ”</code>，然后自行修改。</p><h5 id="4、《质数的孤独》内容部分"><a href="#4、《质数的孤独》内容部分" class="headerlink" title="4、《质数的孤独》内容部分"></a>4、《质数的孤独》内容部分</h5><p>在<code>/themes/layout/_widget/dream.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 《质数的孤独》 ”</code>，然后自行修改标题和内容。</p><h5 id="5、公告栏作者等内容部分"><a href="#5、公告栏作者等内容部分" class="headerlink" title="5、公告栏作者等内容部分"></a>5、公告栏作者等内容部分</h5><p>在<code>/themes/layout/index.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 公告文字栏开始 ”</code>，然后自行修改内容。</p><h5 id="6、footer内容部分"><a href="#6、footer内容部分" class="headerlink" title="6、footer内容部分"></a>6、footer内容部分</h5><p>在<code>/themes/layout/_partial/footer.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 版权信息 ”</code>，然后自行修改各类内容；此处还要在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ socialLink ”</code>，然后自行修改。</p><h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><h5 id="1、配置个人信息"><a href="#1、配置个人信息" class="headerlink" title="1、配置个人信息"></a>1、配置个人信息</h5><p>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ profile ”</code>，然后自行修改头像、职业和个人介绍。</p><h5 id="2、个人介绍内容"><a href="#2、个人介绍内容" class="headerlink" title="2、个人介绍内容"></a>2、个人介绍内容</h5><p>在<code>/themes/layout/about.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 关于我哦 ”</code>，然后自行个人介绍介绍。</p><h4 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h4><h5 id="1、页面介绍"><a href="#1、页面介绍" class="headerlink" title="1、页面介绍"></a>1、页面介绍</h5><p>在<code>/themes/layout/galley.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ itsNeko开源博客相册 ”</code>，然后自行修改此内容。</p><h5 id="2、相册数据"><a href="#2、相册数据" class="headerlink" title="2、相册数据"></a>2、相册数据</h5><p>相册是存在json里面的，在<code>/nekoblog/source/_data/galley.json</code>文件中。一个相册就是在一个{}对象内的json数据。</p><h5 id="3、新建一个相册流程"><a href="#3、新建一个相册流程" class="headerlink" title="3、新建一个相册流程"></a>3、新建一个相册流程</h5><ul><li>首先，找到<code>/nekoblog/source/galley</code>文件夹。</li><li>复制已存在的“ itsNeko博主的绘画作品 ”文件夹，并取名。</li><li>打开新取名文件夹下的index.md文件，然后修改title字段必须与新取名文件夹名称相同，否则运行报错。</li><li>然后，在<code>/nekoblog/source/_data/galley.json</code>文件中，复制已存在的{}对象内的json数据，与第一段并以逗号区隔，然后修改新相册的各类内容。并注意：<code>name，url_name，album内的title这三个字段内容必须与新取名文件夹名称相同，否则运行报错。</code></li></ul><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><h5 id="增加友情链接"><a href="#增加友情链接" class="headerlink" title="增加友情链接"></a>增加友情链接</h5><ul><li>友链信息是存储在<code>/nekoblog/source/_data/friends.json</code>文件中，一个友链就是在一个{}对象内的json数据，自行增添。</li></ul><h5 id="增加网址收藏"><a href="#增加网址收藏" class="headerlink" title="增加网址收藏"></a>增加网址收藏</h5><ul><li>网址收藏信息是存储在<code>/nekoblog/source/_data/collection.json</code>文件中，一个网址信息就是在一个{}对象内的json数据，自行增添。</li></ul><h4 id="其余"><a href="#其余" class="headerlink" title="其余"></a>其余</h4><p>其余页面自定义修改的内容不多，或者没必要修改，这里给出其余页面的对应文件，可自行根据需要定位到对应页面文件中进行修改。</p><ul><li><code>书单 -&gt; /themes/layout/books.ejs</code></li><li><code>留言板 -&gt; /themes/layout/contact.ejs</code></li><li><code>实战项目 -&gt; /themes/layout/project.ejs</code></li><li><code>博客打赏记录 -&gt; /themes/layout/donate.ejs</code></li><li><code>ticktack -&gt; /themes/layout/ticktack.ejs</code></li><li><code>实战项目 -&gt; /themes/layout/project.ejs</code></li><li><code>vlog -&gt; /themes/layout/videos.ejs</code><br>使用“ ctrl+F ”快捷键定位到<code>“ src=”//player.bilibili ”</code>，然后自行修改两个视频的src，建议使用B站的外链。</li><li><code>music -&gt; /themes/layout/musics.ejs</code><br>使用“ ctrl+F ”快捷键定位到<code>“ id=” ”</code>，然后自行修改两个歌单的id，建议使用网易云和QQ音乐的外链。</li><li><code>urls.txt -&gt; /nekoblog/urls.txt</code>将内容替换成自己网站的url地址即可。</li><li><code>网站2个_config.yml文件 -&gt; 主要是网站的总体配置，自行打开两个文件然后只修改里面的包含个人信息的部分，其余不动。</code></li></ul><h3 id="撰写第一篇文章"><a href="#撰写第一篇文章" class="headerlink" title="撰写第一篇文章"></a>撰写第一篇文章</h3><ul><li>修改完个人信息后，你便可以撰写属于你的第一篇文章啦。</li><li>文章采用markdown语法，所有文章存储在<code>/nekoblog/source/_posts</code>文件夹中。</li><li>这里我已给出常用的两类文章模板，可直接复制粘贴然后（修改文章名，链接后缀建议用英文，标签建议只用一个，分类，时间，以及文章banner图片）形成新的文章。</li></ul><h3 id="怎样开通评论"><a href="#怎样开通评论" class="headerlink" title="怎样开通评论"></a>怎样开通评论</h3><ul><li>本开源博客使用valine评论，环境以及搭好，只需填写valine配置数据即可。</li><li>自行根据网上教程得到配置数据，关键词 “ Hexo 博客添加 Valine 评论系统 ”，教程之一：<a href="https://www.zhyong.cn/posts/95cb/" target="_blank">Hexo 博客添加 Valine 评论系统</a></li><li>注意：本开源博客中已经搭好了环境，<code>比如valine.min.js，valine.ejs等文件已经存在，不用再根据教程添加这些文件</code>，只需根据教程步骤配置其余，然后获取到 APP ID 和 APP KEY。</li><li>然后，将获取到的 APP ID 和 APP KEY，在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ valine ”</code>，然后自行修改appId，appKey值即可。</li><li>多说一句，若最后评论功能总是报错，不知道怎么弄，那么建议一切根据外链教程（这个不行，换个完整版教程）操作，可替换本博客已经存在的环境文件，<code>学会自己独立使用浏览器解决问题</code>。</li></ul><h3 id="网站怎样上线"><a href="#网站怎样上线" class="headerlink" title="网站怎样上线"></a>网站怎样上线</h3><ul><li><p><code>免费版 使用gitee免费托管</code><br>关键词，“ Hexo部署到Gitee ”，随机教程：<a href="https://blog.csdn.net/qq_38157825/article/details/112783631" target="_blank">Hexo 部署到 Gitee</a></p></li><li><p><code>收费版 自行购买域名服务器</code><br>关键词，“ Hexo部署到自己服务器 ”</p></li></ul><h3 id="七零八碎补充"><a href="#七零八碎补充" class="headerlink" title="七零八碎补充"></a>七零八碎补充</h3><p>可自行根据需要定位到对应文件中进行修改。</p><ul><li><p><code>赞赏二维码图片 -&gt; /themes/source/medias/reward</code></p></li><li><p><code>鼠标左键点击文字 -&gt; /themes/source/js/click_show_text.js</code></p></li><li><p><code>网站标题栏和footer栏背景颜色 -&gt; /themes/source/css/matery.css</code><br>在该文件中使用“ ctrl+F ”快捷键定位到<code>“ 网站标题栏和footer栏背景颜色 ”</code>，然后自行修改颜色。</p></li><li><p><code>各大页面banner图 -&gt; 若你不想使用默认图片，将以下代码复制到对应页面ejs文件中并修改图片链接即可。</code></p></li></ul><pre><code>    &lt;style&gt;      /* banner背景图 */      .bg-cover &amp;#123;          background-image: url(&quot;图片链接地址&quot;)!important;      &amp;#125;    &lt;/style&gt;</code></pre><h3 id="怎样联系itsNeko"><a href="#怎样联系itsNeko" class="headerlink" title="怎样联系itsNeko"></a>怎样联系itsNeko</h3><ul><li>留言：itsNeko博客地址:<a href="https://dyfa.top/" target="_blank">itsNeko博客~</a></li><li>邮箱：nekodeng@qq.com</li><li>QQ: 2018854221</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 其他 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 关于itsNeko开源博客 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>这是技术文章模板</title>
-      <link href="/posts/articletemplate.html"/>
-      <url>/posts/articletemplate.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">前言，技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言技术文章前言。</div><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul><li>项目1</li><li>项目2</li><li>项目3</li></ul><p>正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文</p><p><img src="/posts/articletemplate.htm/图片url" alt="图片介绍"></p><p><code>正文一些需要高亮色的文字</code></p><p><a href="链接地址" class="LinkCard" target="_blank">引入链接</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 其他 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 技术 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Goframe框架使用</title>
       <link href="/posts/goframe-note.html"/>
       <url>/posts/goframe-note.html</url>
@@ -1277,6 +1227,31 @@
     
     
     <entry>
+      <title>云闪付的商业模式</title>
+      <link href="/posts/business-model-of-union-pay.html"/>
+      <url>/posts/business-model-of-union-pay.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="ipage">    <div class="ititle">云闪付的商业模式</div>  <div class="izhengwen">  <p>2018年，由银联主导的一个APP——云闪付上线，之后以新用户前20笔消费可享优惠的方式吸引了一大批羊毛党，近一两年在各大地铁站、公交站等出现了云闪付的广告。个人及周边的朋友也有使用过，但都是从开始的频繁使用，到现在的基本不使用。</p>  <p>云闪付的目的是打破支付宝、财付通的垄断，挤入移动支付的阵营，而且统一银行APP，聚合网上商城、移动支付、交通扫码等，立足二线以下城市。</p>  <p>就公交地铁扫码支付这一业务，不及天府通。天府通可以根据本地的定价策略进行优惠折扣，而云闪付无法一一对接个性化本地定价策略。故用户粘性不高。</p>  </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 产品 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 云闪付 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL脚本执行中，预防误处理数据的方法</title>
       <link href="/posts/mysql-deal-miss-handle.html"/>
       <url>/posts/mysql-deal-miss-handle.html</url>
@@ -1323,31 +1298,6 @@
             <tag> MySQL </tag>
             
             <tag> 架构设计 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>这是随笔文章模板</title>
-      <link href="/posts/essay-demo.html"/>
-      <url>/posts/essay-demo.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="这是博主的随笔板块，后续会更新文章，目前弄好了模板格式"><a href="#这是博主的随笔板块，后续会更新文章，目前弄好了模板格式" class="headerlink" title="这是博主的随笔板块，后续会更新文章，目前弄好了模板格式~"></a>这是博主的随笔板块，后续会更新文章，目前弄好了模板格式~</h4><div class="ipage">    <div class="ititle">节选自《你若安好便是晴天》- 前言</div>  <div class="izhengwen">  <p>几场梅雨，几卷荷风，江南已是烟水迷离。小院里湿润的青苔在雨中纯净生长。这个季节，许多人都在打听关于莲荷的消息，以及茉莉在黄昏浮动的神秘幽香。不知多少人会记得有个女子，曾经走过人间四月天，又与莲开的夏季有过相濡以沫的约定。</p>  <p>一个人，一本书，一杯茶，一帘梦。有时候，寂寞是这样叫人心动，也只有此刻，世事才会如此波澜不惊。凉风吹起书页，这烟雨让尘封在书卷里的词章和故事弥漫着潮湿的气息。独倚幽窗，看转角处的青石小巷，一柄久违的油纸伞，遮住了低过屋檐的光阴。</p>  <p>时光微凉，那一场远去的往事被春水浸泡，秋风吹拂，早已洗去铅华，清绝明净。以为历经人生匆匆聚散，尝过尘世种种烟火，应该承担岁月带给我们的沧桑。可流年分明安然无恙，而山石草木是这样毫发无伤。只是曾经许过地老天荒的城，在细雨中越发地清瘦单薄。</p>  <p>青梅煎好的茶水，还是当年的味道；而我们等候的人，不会再来。后来才知道，那一袭素色白衣的女子已化身为燕，去寻觅水乡旧巢。她走过的地方，有一树一树的花开，她呢喃的梁间，还留着余温犹存的梦。有人说，她是个冰洁的女子，所以无论人世如何变迁，她都有着美丽的容颜。有人说，她是个理智的女子，不管面临怎样的诱惑，最后都可以全身而退。</p>  <p>她叫林徽因，出生于杭州，是许多人梦中期待的白莲。她在雨雾之都伦敦，发生过一场空前绝后的康桥之恋。她爱过三个男子，爱得清醒，也爱得平静。徐志摩为她徜徉在康桥，深情地等待一场旧梦可以归来。梁思成与她携手走过千山万水，为完成使命而相约白头。金岳霖为她终身不娶，痴心不改地守候一世。可她懂得人生飘忽不定，要学会随遇而安。</p>  </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> 随笔 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
             
         </tags>
       
@@ -1516,11 +1466,65 @@
     
     
     <entry>
-      <title>JS点击复制指定内容</title>
-      <link href="/posts/6e2d0a48.html"/>
-      <url>/posts/6e2d0a48.html</url>
+      <title>Linux下安装Cacti</title>
+      <link href="/posts/install-cacti-on-linux.html"/>
+      <url>/posts/install-cacti-on-linux.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>点击按钮，复制指定文本框内容，代码如下：</p><pre class=" language-lang-javascript"><code class="language-lang-javascript"><script type="text/javascript">function copy()&#123;    var str = document.getElementById("my-data");    str.select(); // 选择对象    document.execCommand("Copy"); // 执行浏览器复制命令    alert("复制成功！");&#125;</script><textarea cols="20" rows="10" id="my-data">我的测试内容</textarea><input type="button" onClick="copy();" value="复制" /></code></pre>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1、安装rrdtool"><a href="#1、安装rrdtool" class="headerlink" title="1、安装rrdtool"></a>1、安装rrdtool</h3><p><code>yum install rrdtool rrdtool-perl -y</code></p><h3 id="2、安装配置net-snmp"><a href="#2、安装配置net-snmp" class="headerlink" title="2、安装配置net-snmp"></a>2、安装配置net-snmp</h3><ul><li>(1)、安装net-snmp<br><code>yum install net-snmp net-snmp-libs net-snmp-utils</code></li></ul><p>可能报错：</p><pre><code>...2:postfix-2.10.1-6.el7.x86_64 has missing requires of libmysqlclient.so.18()(64bit)2:postfix-2.10.1-6.el7.x86_64 has missing requires of libmysqlclient.so.18(libmysqlclient_18)(64bit)</code></pre><p>解决:缺少Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm这个包</p><pre class=" language-lang-shell"><code class="language-lang-shell"># wget http://www.percona.com/redir/downloads/Percona-XtraDB-Cluster/5.5.37-25.10/RPM/rhel6/x86_64/Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm# rpm -ivh Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rp</code></pre><ul><li>(2)、配置net-snmp<br><code>vim /etc/snmp/snmpd.conf</code></li></ul><pre><code>41行 1将default 改为监控服务器ip;2 将public 改成复杂些的识别的字符串  com2sec notConfigUser  127.0.0.1      public  62行 1将systemview 改为all,供所有snmp 访问权限  access  notConfigGroup &quot;&quot;      any       noauth    exact  all none none  85行 将#注释符号去掉  view all    included  .1                               80</code></pre><ul><li><p>(3)、启动net-snmp<br><code>service snmpd start</code><br>可能提示：Redirecting to /bin/systemctl start snmpd.service<br>解决方法：<code>/bin/systemctl start snmpd</code></p></li><li><p>(4)、测试net-snmp<br>snmpd 使用 tcp/udp 161 端口,验证snmpd 服务<br><code>lsof -i :161</code><br><img src="/images/install_cacti_on_linux_1.png" alt><br>使用snmpwalk 命令验证</p><pre><code>snmpwalk -v 2c -c public 127.0.0.1 -v是指版本,-c 是指密钥，获取到系统信息则正常！如果cacti搭建好后很久还是没出图，用这个命令试试看能否获取到数据。正常情况下，执行完这个命令后会有很多数据出现！</code></pre></li></ul><h3 id="3、安装cacti"><a href="#3、安装cacti" class="headerlink" title="3、安装cacti"></a>3、安装cacti</h3><ul><li>(1)、安装net-snmp<pre class=" language-lang-shell"><code class="language-lang-shell">cd /tmp wget http://www.cacti.net/downloads/cacti-0.8.8a.tar.gz tar xzf cacti-0.8.8a.tar.gz mv cacti-0.8.8a /var/www/cacti cd /var/www/cacti</code></pre></li><li><p>(2)、创建数据库<br><code>mysqladmin --user=root -p create cacti</code></p></li><li><p>(3)、导入数据库<br><code>mysql -uroot -p cacti &lt; cacti.sql</code><br>可能报错：ERROR 1067 (42000) at line 1847: Invalid default value for ‘status_fail_date’<br>原因：status_fail_date的datetime默认类型是不允许的<br>解决方法：</p><pre><code>vim /etc/my.cnf添加如下内容：sql-mode=&quot;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&quot;重启mysql服务：systemctl restart mysqld</code></pre></li><li><p>(4)、创建数据库用户</p><pre><code>shell&gt; mysql -uroot -p mysql mysql&gt; GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY &#39;Cacti@pwd001231&#39;; mysql&gt; flush privileges;</code></pre></li><li><p>(5)、配置include/config.php</p><pre><code>$database_type = &quot;mysql&quot;; $database_default = &quot;cacti&quot;; $database_hostname = &quot;localhost&quot;; $database_username = &quot;cactiuser&quot;; $database_password = &quot;Cacti@pwd001231&quot;;</code></pre></li></ul><p>打开注释掉的：<code>$url_path = &quot;/cacti/&quot;;</code></p><ul><li><p>(6)、配置include/global.php</p><pre class=" language-lang-php"><code class="language-lang-php">/* Default database settings*/ $database_type = "mysql"; $database_default = "cacti"; $database_hostname = "localhost"; $database_username = "cactiuser"; $database_password = "Cacti@pwd001231"; $database_port = "3306"; $database_ssl = false;</code></pre></li><li><p>(7)、设置目录权限</p><pre><code>useradd cactiuser chown -R cactiuser rra/ log/</code></pre></li><li><p>(8)、配置计划任务</p><pre><code>#crontab -e */5 * * * * /usr/bin/php /var/www/html/cacti/poller.php &gt; /dev/null 2&gt;&amp;1 //让系统每5分钟收集service crond restart</code></pre></li><li><p>(9)、完成cacti的安装<br>注意关闭防火墙或者允许80端口，关闭selinux<br>1) 在浏览器中输入：<a href="http://监控服务器IP/cacti/">http://监控服务器IP/cacti/</a><br>默认用户名：admin 密码：admin<br>2）设置cacti用到的命令路径<br>3) 更改密码<br>登陆成功户 next&gt;&gt;   next&gt;&gt;<br><img src="/images/install_cacti_on_linux_2.png" alt><br><img src="/images/install_cacti_on_linux_3.png" alt></p></li></ul><p>参考地址：<a href="https://www.cnblogs.com/liuyansheng/p/6118535.html">https://www.cnblogs.com/liuyansheng/p/6118535.html</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Cacti </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下操作MySQL</title>
+      <link href="/posts/use-mysql-on-linux.html"/>
+      <url>/posts/use-mysql-on-linux.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-登录MySQL数据库"><a href="#1-登录MySQL数据库" class="headerlink" title="1. 登录MySQL数据库"></a>1. 登录MySQL数据库</h3><p><code>mysql -uroot -p</code><br><img src="/images/use_mysql_on_linux_1.png" alt></p><h3 id="2-退出MySQL"><a href="#2-退出MySQL" class="headerlink" title="2. 退出MySQL"></a>2. 退出MySQL</h3><p><code>quit或者exit</code><br><img src="/images/use_mysql_on_linux_2.png" alt></p><h3 id="3-查看MySQL版本-四种方法"><a href="#3-查看MySQL版本-四种方法" class="headerlink" title="3. 查看MySQL版本(四种方法)"></a>3. 查看MySQL版本(四种方法)</h3><ul><li><p>在终端下执行： <code>mysql -V</code><br><img src="/images/show_mysql_version_on_linux_1.png" alt></p></li><li><p>在help中查找 <code>mysql --help | grep Distrib</code><br><img src="/images/show_mysql_version_on_linux_2.png" alt></p></li><li><p>在mysql 里查看 <code>select version()</code><br><img src="/images/show_mysql_version_on_linux_3.png" alt></p></li><li><p>在mysql 里查看 <code>status</code><br><img src="/images/show_mysql_version_on_linux_4.png" alt></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS点击复制指定内容</title>
+      <link href="/posts/js-copy-object.html"/>
+      <url>/posts/js-copy-object.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>点击按钮，复制指定文本框内容，代码如下：</p><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;function copy()&amp;#123;    var str = document.getElementById(&quot;my-data&quot;);    str.select(); // 选择对象    document.execCommand(&quot;Copy&quot;); // 执行浏览器复制命令    alert(&quot;复制成功！&quot;);&amp;#125;&lt;/script&gt;&lt;textarea cols=&quot;20&quot; rows=&quot;10&quot; id=&quot;my-data&quot;&gt;我的测试内容&lt;/textarea&gt;&lt;input type=&quot;button&quot; onClick=&quot;copy();&quot; value=&quot;复制&quot; /&gt;</code></pre>]]></content>
       
       
       <categories>
@@ -1735,10 +1739,10 @@
     
     <entry>
       <title>PHP生成数据字典</title>
-      <link href="/posts/15513092.html"/>
-      <url>/posts/15513092.html</url>
+      <link href="/posts/make-dictionary-by-php.html"/>
+      <url>/posts/make-dictionary-by-php.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通过php代码生成MySQL数据字典，代码如下：</p><pre class=" language-lang-php"><code class="language-lang-php"><?php/** * 生成mysql数据字典 */header("Content-type: text/html; charset=utf-8");//配置数据库$dbserver   = "127.0.0.1";$dbusername = "root";$dbpassword = "root";$database   = "demodb";//其他配置$mysql_conn = @mysql_connect($dbserver, $dbusername, $dbpassword) or die("Mysql connect is error.");mysql_select_db($database, $mysql_conn);mysql_query('SET NAMES utf8', $mysql_conn);$table_result = mysql_query('show tables', $mysql_conn);$no_show_table = array();    //不需要显示的表$no_show_field = array();   //不需要显示的字段//取得所有的表名while($row = mysql_fetch_array($table_result))&#123;    if(!in_array($row[0],$no_show_table))&#123;        $tables[]['TABLE_NAME'] = $row[0];    &#125;&#125;//替换所以表的表前缀if(!empty($_GET['prefix']))&#123;     $prefix = 'wxaj';    foreach($tables as $key => $val)&#123;        $tableName = $val['TABLE_NAME'];        $string = explode('_',$tableName);        if($string[0] != $prefix)&#123;              $string[0] = $prefix;              $newTableName = implode('_', $string);              mysql_query('rename table '.$tableName.' TO '.$newTableName);          &#125;    &#125;    echo "替换成功！";exit();&#125;//循环取得所有表的备注及表中列消息foreach ($tables as $k=>$v) &#123;    $sql  = 'SELECT * FROM ';    $sql .= 'INFORMATION_SCHEMA.TABLES ';    $sql .= 'WHERE ';    $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;'  AND table_schema = '&#123;$database&#125;'";    $table_result = mysql_query($sql, $mysql_conn);    while ($t = mysql_fetch_array($table_result) ) &#123;        $tables[$k]['TABLE_COMMENT'] = $t['TABLE_COMMENT'];    &#125;    $sql  = 'SELECT column_name FROM ';    $sql .= 'INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` ';    $sql .= 'WHERE ';    $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;'  AND constraint_name = 'PRIMARY'";    $pk_result = mysql_query($sql, $mysql_conn);    $pks = [];    while ($t = mysql_fetch_array($pk_result) ) &#123;        $pks[] = $t['column_name'];    &#125;    $tables[$k]['PRIMARY_KEY'] = $pks;    $sql  = 'SELECT * FROM ';    $sql .= 'INFORMATION_SCHEMA.COLUMNS ';    $sql .= 'WHERE ';    $sql .= "table_name = '&#123;$v['TABLE_NAME']&#125;' AND table_schema = '&#123;$database&#125;'";    $fields = [];    $field_result = mysql_query($sql, $mysql_conn);    while ($t = mysql_fetch_array($field_result) ) &#123;        $fields[] = $t;    &#125;    $tables[$k]['COLUMN'] = $fields;&#125;mysql_close($mysql_conn);$html = '';//循环所有表foreach ($tables as $k=>$v) &#123;    $html .= '    <h3>' . ($k + 1) . '、' . $v['TABLE_COMMENT'] .'  （'. $v['TABLE_NAME']. '）</h3>'."\n";    $html .= '    <table border="1" cellspacing="0" cellpadding="0" width="100%">'."\n";    $html .= '        <tbody>'."\n";    $html .= '            <tr>'."\n";    $html .= '                <th>字段名</th>'."\n";    $html .= '                <th>数据类型</th>'."\n";    $html .= '                <th>默认值</th>'."\n";    $html .= '                <th>允许非空</th>'."\n";    $html .= '                <th>自动递增</th>'."\n";    $html .= '                <th>是否主键</th>'."\n";    $html .= '                <th>备注</th>'."\n";    $html .= '            </tr>'."\n";    foreach ($v['COLUMN'] as $f) &#123;        if(empty($no_show_field[$v['TABLE_NAME']]) || !is_array($no_show_field[$v['TABLE_NAME']]))&#123;             $no_show_field[$v['TABLE_NAME']] = array();        &#125;        if(!in_array($f['COLUMN_NAME'],$no_show_field[$v['TABLE_NAME']]))&#123;            $html .= '            <tr>'."\n";            $html .= '                <td class="c1">' . $f['COLUMN_NAME'] . '</td>'."\n";            $html .= '                <td class="c2">' . $f['COLUMN_TYPE'] . '</td>'."\n";            $html .= '                <td class="c3">' . $f['COLUMN_DEFAULT'] . '</td>'."\n";            $html .= '                <td class="c4">' . $f['IS_NULLABLE'] . '</td>'."\n";            $html .= '                <td class="c5">' . ($f['EXTRA']=='auto_increment'?'是':'&nbsp;') . '</td>'."\n";            $html .= '                <td class="c6">' . (in_array($f['COLUMN_NAME'],$v['PRIMARY_KEY'])?'是':'&nbsp;') . '</td>'."\n";            $html .= '                <td class="c7">' . $f['COLUMN_COMMENT'] . '</td>'."\n";            $html .= '            </tr>'."\n";        &#125;    &#125;    $html .= '        </tbody>'."\n";    $html .= '    </table>'."\n";&#125;?><!doctype html><html><head><meta charset="utf-8"><title>数据字典</title><meta name="generator" content="ThinkDb V1.0" /><meta name="author" content="Crazy_boy" /><meta name="copyright" content="2014-208 zotuo.com" /><style>body, td, th &#123; font-family: "微软雅黑"; font-size: 14px; &#125;.warp&#123;margin:auto; width:900px;&#125;.warp h3&#123;margin:0px; padding:0px; line-height:30px; margin-top:10px;&#125;table &#123; border-collapse: collapse; border: 1px solid #CCC; background: #efefef; &#125;table th &#123; text-align: left; font-weight: bold; height: 26px; line-height: 26px; font-size: 14px; text-align:center; border: 1px solid #CCC; padding:5px;&#125;table td &#123; height: 20px; font-size: 14px; border: 1px solid #CCC; background-color: #fff; padding:5px;&#125;.c1 &#123; width: 120px; &#125;.c2 &#123; width: 120px; &#125;.c3 &#123; width: 150px; &#125;.c4 &#123; width: 80px; text-align:center;&#125;.c5 &#123; width: 80px; text-align:center;&#125;.c6 &#123; width: 80px; text-align:center;&#125;.c7 &#123; width: 270px; &#125;</style></head><body><div class="warp">    <h1 style="text-align:center;">数据字典</h1><?php echo $html; ?></div></body></html></code></pre><p>其中$dbserver、$dbusername、$dbpassword、$database需配置为相应的数据库IP地址、用户名、密码、数据库名。<br>代码下载：<a href="/codes/dictionary.php">dictionary.php</a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>通过php代码生成MySQL数据字典，代码如下：</p><pre><code>&lt;?php/** * 生成mysql数据字典 */header(&quot;Content-type: text/html; charset=utf-8&quot;);//配置数据库$dbserver   = &quot;127.0.0.1&quot;;$dbusername = &quot;root&quot;;$dbpassword = &quot;root&quot;;$database   = &quot;demodb&quot;;//其他配置$mysql_conn = @mysql_connect($dbserver, $dbusername, $dbpassword) or die(&quot;Mysql connect is error.&quot;);mysql_select_db($database, $mysql_conn);mysql_query(&#39;SET NAMES utf8&#39;, $mysql_conn);$table_result = mysql_query(&#39;show tables&#39;, $mysql_conn);$no_show_table = array();    //不需要显示的表$no_show_field = array();   //不需要显示的字段//取得所有的表名while($row = mysql_fetch_array($table_result))&amp;#123;    if(!in_array($row[0],$no_show_table))&amp;#123;        $tables[][&#39;TABLE_NAME&#39;] = $row[0];    &amp;#125;&amp;#125;//替换所以表的表前缀if(!empty($_GET[&#39;prefix&#39;]))&amp;#123;     $prefix = &#39;wxaj&#39;;    foreach($tables as $key =&gt; $val)&amp;#123;        $tableName = $val[&#39;TABLE_NAME&#39;];        $string = explode(&#39;_&#39;,$tableName);        if($string[0] != $prefix)&amp;#123;              $string[0] = $prefix;              $newTableName = implode(&#39;_&#39;, $string);              mysql_query(&#39;rename table &#39;.$tableName.&#39; TO &#39;.$newTableName);          &amp;#125;    &amp;#125;    echo &quot;替换成功！&quot;;exit();&amp;#125;//循环取得所有表的备注及表中列消息foreach ($tables as $k=&gt;$v) &amp;#123;    $sql  = &#39;SELECT * FROM &#39;;    $sql .= &#39;INFORMATION_SCHEMA.TABLES &#39;;    $sql .= &#39;WHERE &#39;;    $sql .= &quot;table_name = &#39;&amp;#123;$v[&#39;TABLE_NAME&#39;]&amp;#125;&#39;  AND table_schema = &#39;&amp;#123;$database&amp;#125;&#39;&quot;;    $table_result = mysql_query($sql, $mysql_conn);    while ($t = mysql_fetch_array($table_result) ) &amp;#123;        $tables[$k][&#39;TABLE_COMMENT&#39;] = $t[&#39;TABLE_COMMENT&#39;];    &amp;#125;    $sql  = &#39;SELECT column_name FROM &#39;;    $sql .= &#39;INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` &#39;;    $sql .= &#39;WHERE &#39;;    $sql .= &quot;table_name = &#39;&amp;#123;$v[&#39;TABLE_NAME&#39;]&amp;#125;&#39;  AND constraint_name = &#39;PRIMARY&#39;&quot;;    $pk_result = mysql_query($sql, $mysql_conn);    $pks = [];    while ($t = mysql_fetch_array($pk_result) ) &amp;#123;        $pks[] = $t[&#39;column_name&#39;];    &amp;#125;    $tables[$k][&#39;PRIMARY_KEY&#39;] = $pks;    $sql  = &#39;SELECT * FROM &#39;;    $sql .= &#39;INFORMATION_SCHEMA.COLUMNS &#39;;    $sql .= &#39;WHERE &#39;;    $sql .= &quot;table_name = &#39;&amp;#123;$v[&#39;TABLE_NAME&#39;]&amp;#125;&#39; AND table_schema = &#39;&amp;#123;$database&amp;#125;&#39;&quot;;    $fields = [];    $field_result = mysql_query($sql, $mysql_conn);    while ($t = mysql_fetch_array($field_result) ) &amp;#123;        $fields[] = $t;    &amp;#125;    $tables[$k][&#39;COLUMN&#39;] = $fields;&amp;#125;mysql_close($mysql_conn);$html = &#39;&#39;;//循环所有表foreach ($tables as $k=&gt;$v) &amp;#123;    $html .= &#39;    &lt;h3&gt;&#39; . ($k + 1) . &#39;、&#39; . $v[&#39;TABLE_COMMENT&#39;] .&#39;  （&#39;. $v[&#39;TABLE_NAME&#39;]. &#39;）&lt;/h3&gt;&#39;.&quot;\n&quot;;    $html .= &#39;    &lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot;&gt;&#39;.&quot;\n&quot;;    $html .= &#39;        &lt;tbody&gt;&#39;.&quot;\n&quot;;    $html .= &#39;            &lt;tr&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;字段名&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;数据类型&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;默认值&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;允许非空&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;自动递增&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;是否主键&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;                &lt;th&gt;备注&lt;/th&gt;&#39;.&quot;\n&quot;;    $html .= &#39;            &lt;/tr&gt;&#39;.&quot;\n&quot;;    foreach ($v[&#39;COLUMN&#39;] as $f) &amp;#123;        if(empty($no_show_field[$v[&#39;TABLE_NAME&#39;]]) || !is_array($no_show_field[$v[&#39;TABLE_NAME&#39;]]))&amp;#123;             $no_show_field[$v[&#39;TABLE_NAME&#39;]] = array();        &amp;#125;        if(!in_array($f[&#39;COLUMN_NAME&#39;],$no_show_field[$v[&#39;TABLE_NAME&#39;]]))&amp;#123;            $html .= &#39;            &lt;tr&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c1&quot;&gt;&#39; . $f[&#39;COLUMN_NAME&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c2&quot;&gt;&#39; . $f[&#39;COLUMN_TYPE&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c3&quot;&gt;&#39; . $f[&#39;COLUMN_DEFAULT&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c4&quot;&gt;&#39; . $f[&#39;IS_NULLABLE&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c5&quot;&gt;&#39; . ($f[&#39;EXTRA&#39;]==&#39;auto_increment&#39;?&#39;是&#39;:&#39;&amp;nbsp;&#39;) . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c6&quot;&gt;&#39; . (in_array($f[&#39;COLUMN_NAME&#39;],$v[&#39;PRIMARY_KEY&#39;])?&#39;是&#39;:&#39;&amp;nbsp;&#39;) . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;                &lt;td class=&quot;c7&quot;&gt;&#39; . $f[&#39;COLUMN_COMMENT&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;            $html .= &#39;            &lt;/tr&gt;&#39;.&quot;\n&quot;;        &amp;#125;    &amp;#125;    $html .= &#39;        &lt;/tbody&gt;&#39;.&quot;\n&quot;;    $html .= &#39;    &lt;/table&gt;&#39;.&quot;\n&quot;;&amp;#125;?&gt;&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;数据字典&lt;/title&gt;&lt;meta name=&quot;generator&quot; content=&quot;ThinkDb V1.0&quot; /&gt;&lt;meta name=&quot;author&quot; content=&quot;Crazy_boy&quot; /&gt;&lt;meta name=&quot;copyright&quot; content=&quot;2014-208 zotuo.com&quot; /&gt;&lt;style&gt;body, td, th &amp;#123; font-family: &quot;微软雅黑&quot;; font-size: 14px; &amp;#125;.warp&amp;#123;margin:auto; width:900px;&amp;#125;.warp h3&amp;#123;margin:0px; padding:0px; line-height:30px; margin-top:10px;&amp;#125;table &amp;#123; border-collapse: collapse; border: 1px solid #CCC; background: #efefef; &amp;#125;table th &amp;#123; text-align: left; font-weight: bold; height: 26px; line-height: 26px; font-size: 14px; text-align:center; border: 1px solid #CCC; padding:5px;&amp;#125;table td &amp;#123; height: 20px; font-size: 14px; border: 1px solid #CCC; background-color: #fff; padding:5px;&amp;#125;.c1 &amp;#123; width: 120px; &amp;#125;.c2 &amp;#123; width: 120px; &amp;#125;.c3 &amp;#123; width: 150px; &amp;#125;.c4 &amp;#123; width: 80px; text-align:center;&amp;#125;.c5 &amp;#123; width: 80px; text-align:center;&amp;#125;.c6 &amp;#123; width: 80px; text-align:center;&amp;#125;.c7 &amp;#123; width: 270px; &amp;#125;&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;warp&quot;&gt;    &lt;h1 style=&quot;text-align:center;&quot;&gt;数据字典&lt;/h1&gt;&lt;?php echo $html; ?&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>其中$dbserver、$dbusername、$dbpassword、$database需配置为相应的数据库IP地址、用户名、密码、数据库名。<br>代码下载：<a href="/codes/dictionary.php">dictionary.php</a></p>]]></content>
       
       
       <categories>
@@ -1847,15 +1851,15 @@
     
     <entry>
       <title>Excel使用小技巧</title>
-      <link href="/posts/401ce197.html"/>
-      <url>/posts/401ce197.html</url>
+      <link href="/posts/excel-tips.html"/>
+      <url>/posts/excel-tips.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ol><li><p>excel固定第一行：选择第二行，点击视图里的冻结窗口即可。</p></li><li><p>excel分列：<br> 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式：<br> <code>公式为：=left(A1,2) &amp; &quot;:&quot; &amp; mid(A1,3,2) &amp; &quot;:&quot; &amp; mid(A1,5,2) &amp; &quot;:&quot; &amp; mid(A1,7,2) &amp; &quot;:&quot; &amp; mid(A1,9,2) &amp; &quot;:&quot; &amp; right(A1,2)</code></p></li><li><p>删除重复项：<br> 选中数据区域-&gt;数据-&gt;删除重复项-&gt;确定</p></li><li><p>VLOOKUP函数的使用</p></li></ol>]]></content>
       
       
       <categories>
           
-          <category> Excel </category>
+          <category> Office </category>
           
       </categories>
       
@@ -1874,15 +1878,15 @@
     
     <entry>
       <title>R语言学习</title>
-      <link href="/posts/8d4c12d3.html"/>
-      <url>/posts/8d4c12d3.html</url>
+      <link href="/posts/r-notes.html"/>
+      <url>/posts/r-notes.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：</p><ol><li>&lt;- 是赋值的意思</li><li>向量是下标以1开始的</li><li>区分大小写</li><li>路径：<code>C://a.txt</code></li><li>round：四舍五入</li></ol>]]></content>
       
       
       <categories>
           
-          <category> R </category>
+          <category> R语言 </category>
           
       </categories>
       
@@ -1961,7 +1965,7 @@
       
       <categories>
           
-          <category> GitBook </category>
+          <category> 其他 </category>
           
       </categories>
       
@@ -1978,15 +1982,15 @@
     
     <entry>
       <title>Hexo使用笔记</title>
-      <link href="/posts/c1d2e7ba.html"/>
-      <url>/posts/c1d2e7ba.html</url>
+      <link href="/posts/hexo-notes.html"/>
+      <url>/posts/hexo-notes.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</p><h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol><li>清除当前缓存        <code>$ hexo clean</code></li><li>重新生成并部署到github上        <code>$ hexo g -d</code></li><li>启动服务        <code>$ hexo s</code></li><li>新建页面        <code>$ hexo new page categories</code></li></ol><h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol><li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p><ol><li>在文章中使用 <a id="more"></a> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li><li>在文章的 <a href="https://hexo.io/docs/front-matter.html">front-matter</a> 中添加 description，并提供文章摘录</li><li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class=" language-lang-bash"><code class="language-lang-bash"> auto_excerpt:   enable: true   length: 150</code></pre>默认截取的长度为 150 字符，可以根据需要自行设定。</li></ol></li></ol><p>建议使用 <!-- more -->方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>]]></content>
       
       
       <categories>
           
-          <category> Hexo </category>
+          <category> 其他 </category>
           
       </categories>
       
@@ -2363,7 +2367,7 @@
       <link href="/posts/971629fc.html"/>
       <url>/posts/971629fc.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>哈哈，木仓车神附体，科目一96！</p><p><img src="/images/happy.jpg" alt="I&#39;m very happy."></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>哈哈，科目一96！</p><p><img src="/images/happy.jpg" alt="I&#39;m very happy."></p>]]></content>
       
       
       <categories>

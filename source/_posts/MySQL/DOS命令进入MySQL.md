@@ -4,7 +4,7 @@ tags:
   - DOS命令
   - MySQL
 categories: MySQL
-abbrlink: 88ecfff4
+abbrlink: 'use-mysql-on-dos'
 date: 2022-05-11 17:08:36
 updated: 2022-05-11 17:08:36
 ---

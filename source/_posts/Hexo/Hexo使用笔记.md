@@ -3,8 +3,8 @@ title: Hexo使用笔记
 tags:
   - Hexo
   - NexT
-categories: Hexo
-abbrlink: c1d2e7ba
+categories: 其他
+abbrlink: 'hexo-notes'
 date: 2018-06-09 15:12:00
 updated: 2018-06-09 15:20:00
 ---

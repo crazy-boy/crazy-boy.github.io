@@ -2,7 +2,7 @@
 title: GitBook使用笔记
 tags:
   - GitBook
-categories: GitBook
+categories: 其他
 abbrlink: 'gitbook-note'
 date: 2018-06-09 15:12:00
 updated: 2018-06-09 15:20:00

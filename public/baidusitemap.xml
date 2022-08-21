@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/business-model-of-union-pay.html</loc>
+    <lastmod>2022-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/high-concurrent-experience.html</loc>
+    <lastmod>2022-08-20</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/btree-and-b+tree.html</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/php-aes-encrypt.html</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/essay-demo.html</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/8f013979.html</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/articletemplate.html</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
   <url>
@@ -30,10 +26,6 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/pooling-technology.html</loc>
-    <lastmod>2022-08-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/itsneko-opensource-blog.html</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
   <url>
@@ -105,7 +97,7 @@
     <lastmod>2022-05-12</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/88ecfff4.html</loc>
+    <loc>https://crazy-boy.com/posts/use-mysql-on-dos.html</loc>
     <lastmod>2022-05-11</lastmod>
   </url>
   <url>
@@ -253,7 +245,15 @@
     <lastmod>2019-10-11</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/6e2d0a48.html</loc>
+    <loc>https://crazy-boy.com/posts/install-cacti-on-linux.html</loc>
+    <lastmod>2019-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/use-mysql-on-linux.html</loc>
+    <lastmod>2019-09-23</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/js-copy-object.html</loc>
     <lastmod>2019-07-02</lastmod>
   </url>
   <url>
@@ -289,11 +289,11 @@
     <lastmod>2018-09-05</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/401ce197.html</loc>
+    <loc>https://crazy-boy.com/posts/excel-tips.html</loc>
     <lastmod>2018-09-02</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/15513092.html</loc>
+    <loc>https://crazy-boy.com/posts/make-dictionary-by-php.html</loc>
     <lastmod>2018-06-21</lastmod>
   </url>
   <url>
@@ -305,7 +305,7 @@
     <lastmod>2018-06-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/8d4c12d3.html</loc>
+    <loc>https://crazy-boy.com/posts/r-notes.html</loc>
     <lastmod>2018-06-19</lastmod>
   </url>
   <url>
@@ -321,7 +321,7 @@
     <lastmod>2018-06-09</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/c1d2e7ba.html</loc>
+    <loc>https://crazy-boy.com/posts/hexo-notes.html</loc>
     <lastmod>2018-06-09</lastmod>
   </url>
   <url>

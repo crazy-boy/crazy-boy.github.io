@@ -3,8 +3,8 @@ title: Excel使用小技巧
 tags:
   - Excel
   - 使用技巧
-categories: Excel
-abbrlink: 401ce197
+categories: Office
+abbrlink: 'excel-tips'
 date: 2018-06-19 22:02:03
 updated: 2018-09-02 15:43:00
 ---
