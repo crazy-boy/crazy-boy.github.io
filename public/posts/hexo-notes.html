@@ -1059,14 +1059,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    731
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -1076,27 +1076,67 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</p>
-<h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol>
+                <div class="note info">前言：这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</div>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
 <li>清除当前缓存        <code>$ hexo clean</code></li>
 <li>重新生成并部署到github上        <code>$ hexo g -d</code></li>
 <li>启动服务        <code>$ hexo s</code></li>
 <li>新建页面        <code>$ hexo new page categories</code></li>
+<li>快速构建        <code>$ hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code></li>
 </ol>
-<h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol>
-<li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p>
+<h3 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h3><h4 id="1-如何在首页设置「阅读全文」"><a href="#1-如何在首页设置「阅读全文」" class="headerlink" title="1. 如何在首页设置「阅读全文」?"></a>1. 如何在首页设置「阅读全文」?</h4><p>   在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p>
 <ol>
-<li>在文章中使用 <a id="more"></a> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li>
+<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li>
 <li>在文章的 <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">front-matter</a> 中添加 description，并提供文章摘录</li>
-<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class=" language-lang-bash"><code class="language-lang-bash"> auto_excerpt:
-   enable: true
-   length: 150
+<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class=" language-lang-bash"><code class="language-lang-bash">  auto_excerpt:
+    enable: true
+    length: 150
 </code></pre>
 默认截取的长度为 150 字符，可以根据需要自行设定。</li>
 </ol>
+<p>建议使用 <code>&lt;!-- more --&gt;</code>方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>
+<h3 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h3><ol>
+<li><p>文章生成永久短链接<br><code>npm install hexo-abbrlink --save</code><br>在站点配置项文件_config.yml下添加：</p>
+<pre><code>url: https://crazy-boy.com
+root: /
+permalink: archives/:abbrlink.html
+abbrlink:
+alg: crc32  # 算法：crc16(default) and crc32
+rep: hex    # 进制：dec(default) and hex
+permalink_defaults:
+pretty_urls:
+trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
+trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks
+</code></pre><p>当然文章的短链部分可以在文章的首部进行设置，如：<code>abbrlink: &#39;hexo-notes&#39;</code>，如果不设置就会自动生成随机短链。</p>
+</li>
+<li><p>开启文章字数统计<br><code>npm i --save hexo-wordcount</code></p>
+</li>
+<li><p>文章设置密码<br><code>npm install --save hexo-blog-encrypt</code><br>将”password”字段添加到文章的信息头：<code>password: abc123</code><br>文章可以按标签进行加密，优先级为：文章信息头&gt;按标签加密<br>文章信息头的设置示例<br><img src="/images/hexo_notes_2.png" alt></p>
 </li>
 </ol>
-<p>建议使用 <!-- more -->方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>
+<p>_config.yml示例</p>
+<pre class=" language-lang-yaml"><code class="language-lang-yaml"># Security
+encrypt: # hexo-blog-encrypt
+  abstract: 有东西被加密了, 请输入密码查看.
+  message: 您好, 这里需要密码.
+  tags:
+  - &#123;name: tagNameA, password: 密码A&#125;
+  - &#123;name: tagNameB, password: 密码B&#125;
+  wrong_pass_message: 抱歉, 密码不太对哟.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+</code></pre>
+<p>如果tagNameA中的某篇博文不想被加密，只需把博文头部的password设置为””即可。</p>
+<h3 id="多台电脑同步更新hexo博客"><a href="#多台电脑同步更新hexo博客" class="headerlink" title="多台电脑同步更新hexo博客"></a>多台电脑同步更新hexo博客</h3><ul>
+<li>在github上切个hexo分支，把源代码push上去。</li>
+<li>在需要同步更新的电脑上进行如下操作：<br>  安装git<br>  下载安装nodejs<br>  node -v<br>  npm -v<br>  git clone xx.git<br>  删除主题下.git目录<br>  进入目录，执行下面命令：<pre><code>  $ npm install
+  $ npm install hexo-generator-search --save
+  $ npm i hexo-permalink-pinyin --save
+  $ npm install hexo-filter-github-emojis --save
+  $ npm install hexo-generator-feed --save
+</code></pre></li>
+</ul>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30105599/article/details/118302086">https://blog.csdn.net/qq_30105599/article/details/118302086</a></p>
 
             </div>
             <hr/>
@@ -2103,14 +2143,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    731
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -2120,27 +2160,67 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</p>
-<h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><ol>
+                <div class="note info">前言：这个博客网站是使用hexo搭建，部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。</div>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
 <li>清除当前缓存        <code>$ hexo clean</code></li>
 <li>重新生成并部署到github上        <code>$ hexo g -d</code></li>
 <li>启动服务        <code>$ hexo s</code></li>
 <li>新建页面        <code>$ hexo new page categories</code></li>
+<li>快速构建        <code>$ hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code></li>
 </ol>
-<h4 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h4><ol>
-<li><p>如何在首页设置「阅读全文」?<br> 在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p>
+<h3 id="常用设置"><a href="#常用设置" class="headerlink" title="常用设置"></a>常用设置</h3><h4 id="1-如何在首页设置「阅读全文」"><a href="#1-如何在首页设置「阅读全文」" class="headerlink" title="1. 如何在首页设置「阅读全文」?"></a>1. 如何在首页设置「阅读全文」?</h4><p>   在首页显示一篇文章的部分内容(或者摘要)，并提供一个链接(「阅读全文」)跳转到文章详情页。 NexT 提供以下三种方式：</p>
 <ol>
-<li>在文章中使用 <a id="more"></a> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li>
+<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li>
 <li>在文章的 <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">front-matter</a> 中添加 description，并提供文章摘录</li>
-<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class=" language-lang-bash"><code class="language-lang-bash"> auto_excerpt:
-   enable: true
-   length: 150
+<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class=" language-lang-bash"><code class="language-lang-bash">  auto_excerpt:
+    enable: true
+    length: 150
 </code></pre>
 默认截取的长度为 150 字符，可以根据需要自行设定。</li>
 </ol>
+<p>建议使用 <code>&lt;!-- more --&gt;</code>方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>
+<h3 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h3><ol>
+<li><p>文章生成永久短链接<br><code>npm install hexo-abbrlink --save</code><br>在站点配置项文件_config.yml下添加：</p>
+<pre><code>url: https://crazy-boy.com
+root: /
+permalink: archives/:abbrlink.html
+abbrlink:
+alg: crc32  # 算法：crc16(default) and crc32
+rep: hex    # 进制：dec(default) and hex
+permalink_defaults:
+pretty_urls:
+trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
+trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks
+</code></pre><p>当然文章的短链部分可以在文章的首部进行设置，如：<code>abbrlink: &#39;hexo-notes&#39;</code>，如果不设置就会自动生成随机短链。</p>
+</li>
+<li><p>开启文章字数统计<br><code>npm i --save hexo-wordcount</code></p>
+</li>
+<li><p>文章设置密码<br><code>npm install --save hexo-blog-encrypt</code><br>将”password”字段添加到文章的信息头：<code>password: abc123</code><br>文章可以按标签进行加密，优先级为：文章信息头&gt;按标签加密<br>文章信息头的设置示例<br><img src="/images/hexo_notes_2.png" alt></p>
 </li>
 </ol>
-<p>建议使用 <!-- more -->方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>
+<p>_config.yml示例</p>
+<pre class=" language-lang-yaml"><code class="language-lang-yaml"># Security
+encrypt: # hexo-blog-encrypt
+  abstract: 有东西被加密了, 请输入密码查看.
+  message: 您好, 这里需要密码.
+  tags:
+  - &#123;name: tagNameA, password: 密码A&#125;
+  - &#123;name: tagNameB, password: 密码B&#125;
+  wrong_pass_message: 抱歉, 密码不太对哟.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+</code></pre>
+<p>如果tagNameA中的某篇博文不想被加密，只需把博文头部的password设置为””即可。</p>
+<h3 id="多台电脑同步更新hexo博客"><a href="#多台电脑同步更新hexo博客" class="headerlink" title="多台电脑同步更新hexo博客"></a>多台电脑同步更新hexo博客</h3><ul>
+<li>在github上切个hexo分支，把源代码push上去。</li>
+<li>在需要同步更新的电脑上进行如下操作：<br>  安装git<br>  下载安装nodejs<br>  node -v<br>  npm -v<br>  git clone xx.git<br>  删除主题下.git目录<br>  进入目录，执行下面命令：<pre><code>  $ npm install
+  $ npm install hexo-generator-search --save
+  $ npm i hexo-permalink-pinyin --save
+  $ npm install hexo-filter-github-emojis --save
+  $ npm install hexo-generator-feed --save
+</code></pre></li>
+</ul>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30105599/article/details/118302086">https://blog.csdn.net/qq_30105599/article/details/118302086</a></p>
 
             </div>
             <hr/>
@@ -3150,7 +3230,7 @@ windows7 安装docker，需要利用 docker toolbox 来安装。
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">20.1k</span>&nbsp;
+        class="white-color">25.6k</span>&nbsp;
       
       
       

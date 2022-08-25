@@ -1,12 +1,21 @@
 ---
-title: Git忽略文件
+title: Git使用笔记
 tags:
   - Git
-  - 文件忽略
 categories: Git
-abbrlink: f00bf8aa
+abbrlink: 'git-notes'
 date: 2018-04-25 13:55:00
 ---
+
+### 常用命令
+```
+git pull                #拉取代码到本地
+git add .               #暂存代码
+git commit -m "xx"      #提交代码，并填写描述
+git push                #推送代码到远端
+```
+
+### 文件忽略
 软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。
 
 如下为PHP Yii2下的.gitignore文件内容：

@@ -1678,11 +1678,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/php-trait.html">
+                <a href="/posts/mysql-clustered-index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="php中trait的用法">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="谈谈MySQL中的聚簇索引和非聚簇索引">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1693,30 +1693,27 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          php中trait的用法
+                          谈谈MySQL中的聚簇索引和非聚簇索引
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            trait是php的一种代码复用的方法。
-
-
-用法1. 通过use Trait类来使用可以将一些常用的处理封装到trait类里，在其他地方直接use就可以了。 例如：封装单例    先创建Singleton类，代码如下：
-   trait 
+                            聚簇索引和非聚簇索引的区别聚簇索引的主索引的叶子结点存储的是键值对应的数据本身，辅助索引的叶子结点存储的是键值对应的数据的主键键值。
+聚簇索引的数据和主键索引存储在一起。聚簇索引的数据是根据主键的顺序保存。因此适合按主键索引的区间查找，可以
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
                                 </a>
                             
                             
@@ -1726,8 +1723,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/trait/">
-                        <span class="chip bg-color">trait</span>
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/">
+                        <span class="chip bg-color">聚簇索引</span>
                     </a>
                     
                 </div>
@@ -2065,7 +2066,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">20.1k</span>&nbsp;
+        class="white-color">25.6k</span>&nbsp;
       
       
       

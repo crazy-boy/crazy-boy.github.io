@@ -101,7 +101,14 @@ show columns from tableName;  或者  describe tableName; //可以用来生成�
  -- 2021年11月10日是星期三
 ```
  
-  
+### 20、单条SQL语句完成多种数据统计
+ ```sql
+-- 现需分别统计wl_student_score_logs表中exam_id为5的change_score增加量和减少量
+select
+sum( if( change_score > 0, change_score, 0)) as increase_score,
+sum( if( change_score  < 0, change_score, 0)) as reduce_score
+from wl_student_score_logs where exam_id=5;
+```
 
 
 

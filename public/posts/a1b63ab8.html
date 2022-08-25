@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    239
+                    375
                 </div>
                 
 
@@ -1078,32 +1078,34 @@ h3:hover {
             <div id="articleContent">
                 <p>在日常开发过程中，经常需要把数组中的内容依次赋值给变量，可以使用list、[]、extract来处理。</p>
 <h3 id="1-list-var1-var2…-arr"><a href="#1-list-var1-var2…-arr" class="headerlink" title="1. list($var1,$var2…) = $arr;"></a>1. list($var1,$var2…) = $arr;</h3><p>   或者[$var1,$var2…] = $arr;<br>   将数组中的值赋给一些变量<br>   该函数只能用于索引数组，且数字索引从0开始。<br>   如果对应的数字下标，则该变量赋值为null</p>
-<pre class=" language-lang-php"><code class="language-lang-php">    <?php
-    list($a, $b, $c) = ['Jone', 'Jam', 'Kav'];
-    var_dump($a, $b, $c);       //output：string(4) "Jone" string(3) "Jam" string(3) "Kav"
+<pre><code>&lt;?php
+list($a, $b, $c) = [&#39;Jone&#39;, &#39;Jam&#39;, &#39;Kav&#39;];
+var_dump($a, $b, $c);       //output：string(4) &quot;Jone&quot; string(3) &quot;Jam&quot; string(3) &quot;Kav&quot;
 
-    list($a, $b) = ['Jone', 'Jam', 'Kav'];
-    var_dump($a, $b);           //output：string(4) "Jone" string(3) "Jam"
+list($a, $b) = [&#39;Jone&#39;, &#39;Jam&#39;, &#39;Kav&#39;];
+var_dump($a, $b);           //output：string(4) &quot;Jone&quot; string(3) &quot;Jam&quot;
 
-    list($a, $b, $c) = [2 => 'Jone', 3 => 'Jam', 4 => 'Kav'];
-    var_dump($a, $b, $c);       //output：NULL NULL string(4) "Jone"
+list($a, $b, $c) = [2 =&gt; &#39;Jone&#39;, 3 =&gt; &#39;Jam&#39;, 4 =&gt; &#39;Kav&#39;];
+var_dump($a, $b, $c);       //output：NULL NULL string(4) &quot;Jone&quot;
 
-    list($a, $b, $c) = ['id' => 4, 2 => 'Jam', 'name' => 'Kav'];
-    var_dump($a, $b, $c);       //output：NULL NULL string(3) "Jam"
-</code></pre>
-<h3 id="2-extract-array-extract-rules-prefix"><a href="#2-extract-array-extract-rules-prefix" class="headerlink" title="2. extract(array,extract_rules,prefix);"></a>2. extract(array,extract_rules,prefix);</h3><p>   从数组中将变量导入到当前的符号表<br>   该函数使用数组键名作为变量名，使用数组键值作为变量值，进行依次赋值</p>
-<pre class=" language-lang-php"><code class="language-lang-php">    extract(['id' => 3, 'name' => 'Hoj']);
-    /**
-     * 在IDE中会提示错误，加上注释即可
-     * @var $id
-     * @var $name
-     */
-    var_dump($id, $name);       //output：int(3) string(3) "Hoj"
+list($a, $b, $c) = [&#39;id&#39; =&gt; 4, 2 =&gt; &#39;Jam&#39;, &#39;name&#39; =&gt; &#39;Kav&#39;];
+var_dump($a, $b, $c);       //output：NULL NULL string(3) &quot;Jam&quot;
+</code></pre><p>   list()如果需要跳过某些值</p>
+<pre><code>$info = [&#39;coffee&#39;, &#39;brown&#39;, &#39;caffeine&#39;];
+[,$a,] = $info;
+var_dump($a);    // string(5) &quot;brown&quot;
+</code></pre><h3 id="2-extract-array-extract-rules-prefix"><a href="#2-extract-array-extract-rules-prefix" class="headerlink" title="2. extract(array,extract_rules,prefix);"></a>2. extract(array,extract_rules,prefix);</h3><p>   从数组中将变量导入到当前的符号表<br>   该函数使用数组键名作为变量名，使用数组键值作为变量值，进行依次赋值</p>
+<pre><code>extract([&#39;id&#39; =&gt; 3, &#39;name&#39; =&gt; &#39;Hoj&#39;]);
+/**
+ * 在IDE中会提示错误，加上注释即可
+ * @var $id
+ * @var $name
+ */
+var_dump($id, $name);       //output：int(3) string(3) &quot;Hoj&quot;
 
-    extract([3, 'name' => 'Hoj']);
-    var_dump($name);            //output：string(3) "Hoj"
-</code></pre>
-<p>总结：一般索引数组用list，关联数组用extract。</p>
+extract([3, &#39;name&#39; =&gt; &#39;Hoj&#39;]);
+var_dump($name);            //output：string(3) &quot;Hoj&quot;
+</code></pre><p>总结：一般索引数组用list，关联数组用extract。</p>
 
             </div>
             <hr/>
@@ -2113,7 +2115,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    239
+                    375
                 </div>
                 
 
@@ -2132,32 +2134,34 @@ h3:hover {
             <div id="articleContent">
                 <p>在日常开发过程中，经常需要把数组中的内容依次赋值给变量，可以使用list、[]、extract来处理。</p>
 <h3 id="1-list-var1-var2…-arr"><a href="#1-list-var1-var2…-arr" class="headerlink" title="1. list($var1,$var2…) = $arr;"></a>1. list($var1,$var2…) = $arr;</h3><p>   或者[$var1,$var2…] = $arr;<br>   将数组中的值赋给一些变量<br>   该函数只能用于索引数组，且数字索引从0开始。<br>   如果对应的数字下标，则该变量赋值为null</p>
-<pre class=" language-lang-php"><code class="language-lang-php">    <?php
-    list($a, $b, $c) = ['Jone', 'Jam', 'Kav'];
-    var_dump($a, $b, $c);       //output：string(4) "Jone" string(3) "Jam" string(3) "Kav"
+<pre><code>&lt;?php
+list($a, $b, $c) = [&#39;Jone&#39;, &#39;Jam&#39;, &#39;Kav&#39;];
+var_dump($a, $b, $c);       //output：string(4) &quot;Jone&quot; string(3) &quot;Jam&quot; string(3) &quot;Kav&quot;
 
-    list($a, $b) = ['Jone', 'Jam', 'Kav'];
-    var_dump($a, $b);           //output：string(4) "Jone" string(3) "Jam"
+list($a, $b) = [&#39;Jone&#39;, &#39;Jam&#39;, &#39;Kav&#39;];
+var_dump($a, $b);           //output：string(4) &quot;Jone&quot; string(3) &quot;Jam&quot;
 
-    list($a, $b, $c) = [2 => 'Jone', 3 => 'Jam', 4 => 'Kav'];
-    var_dump($a, $b, $c);       //output：NULL NULL string(4) "Jone"
+list($a, $b, $c) = [2 =&gt; &#39;Jone&#39;, 3 =&gt; &#39;Jam&#39;, 4 =&gt; &#39;Kav&#39;];
+var_dump($a, $b, $c);       //output：NULL NULL string(4) &quot;Jone&quot;
 
-    list($a, $b, $c) = ['id' => 4, 2 => 'Jam', 'name' => 'Kav'];
-    var_dump($a, $b, $c);       //output：NULL NULL string(3) "Jam"
-</code></pre>
-<h3 id="2-extract-array-extract-rules-prefix"><a href="#2-extract-array-extract-rules-prefix" class="headerlink" title="2. extract(array,extract_rules,prefix);"></a>2. extract(array,extract_rules,prefix);</h3><p>   从数组中将变量导入到当前的符号表<br>   该函数使用数组键名作为变量名，使用数组键值作为变量值，进行依次赋值</p>
-<pre class=" language-lang-php"><code class="language-lang-php">    extract(['id' => 3, 'name' => 'Hoj']);
-    /**
-     * 在IDE中会提示错误，加上注释即可
-     * @var $id
-     * @var $name
-     */
-    var_dump($id, $name);       //output：int(3) string(3) "Hoj"
+list($a, $b, $c) = [&#39;id&#39; =&gt; 4, 2 =&gt; &#39;Jam&#39;, &#39;name&#39; =&gt; &#39;Kav&#39;];
+var_dump($a, $b, $c);       //output：NULL NULL string(3) &quot;Jam&quot;
+</code></pre><p>   list()如果需要跳过某些值</p>
+<pre><code>$info = [&#39;coffee&#39;, &#39;brown&#39;, &#39;caffeine&#39;];
+[,$a,] = $info;
+var_dump($a);    // string(5) &quot;brown&quot;
+</code></pre><h3 id="2-extract-array-extract-rules-prefix"><a href="#2-extract-array-extract-rules-prefix" class="headerlink" title="2. extract(array,extract_rules,prefix);"></a>2. extract(array,extract_rules,prefix);</h3><p>   从数组中将变量导入到当前的符号表<br>   该函数使用数组键名作为变量名，使用数组键值作为变量值，进行依次赋值</p>
+<pre><code>extract([&#39;id&#39; =&gt; 3, &#39;name&#39; =&gt; &#39;Hoj&#39;]);
+/**
+ * 在IDE中会提示错误，加上注释即可
+ * @var $id
+ * @var $name
+ */
+var_dump($id, $name);       //output：int(3) string(3) &quot;Hoj&quot;
 
-    extract([3, 'name' => 'Hoj']);
-    var_dump($name);            //output：string(3) "Hoj"
-</code></pre>
-<p>总结：一般索引数组用list，关联数组用extract。</p>
+extract([3, &#39;name&#39; =&gt; &#39;Hoj&#39;]);
+var_dump($name);            //output：string(3) &quot;Hoj&quot;
+</code></pre><p>总结：一般索引数组用list，关联数组用extract。</p>
 
             </div>
             <hr/>
@@ -3170,7 +3174,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">20.1k</span>&nbsp;
+        class="white-color">25.6k</span>&nbsp;
       
       
       

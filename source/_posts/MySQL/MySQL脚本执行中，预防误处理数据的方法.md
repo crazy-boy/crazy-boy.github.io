@@ -8,6 +8,7 @@ password: fdg34$35JFJEWfd
 abbrlink: 'mysql-deal-miss-handle'
 date: 2020-08-05 18:04:16
 updated: 2020-08-05 18:04:16
+top: 999
 ---
 
 <div class="note info">在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：</div>

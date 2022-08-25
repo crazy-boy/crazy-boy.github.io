@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git忽略文件, 这里是网站关键词">
+    <meta name="keywords" content="MySQL中的JSON, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git忽略文件 | 飞奔的蜗牛</title>
+    <title>MySQL中的JSON | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -736,7 +736,7 @@ class="themespring" -->
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git忽略文件</h1>
+                    <h1 class="description center-align post-title">MySQL中的JSON</h1>
                 </div>
             </div>
         </div>
@@ -854,7 +854,7 @@ class="themespring" -->
 <div class="row">
     
     
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="Git">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="MySQL">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -1021,12 +1021,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
-                            <a href="/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/">
-                                <span class="chip bg-color">文件忽略</span>
+                            <a href="/tags/JSON/">
+                                <span class="chip bg-color">JSON</span>
                             </a>
                         
                     </div>
@@ -1037,8 +1037,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git/" class="post-category">
-                                Git
+                            <a href="/categories/MySQL/" class="post-category">
+                                MySQL
                             </a>
                         
                     </div>
@@ -1050,7 +1050,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-04-25
+                    2022-05-20
                 </div>
                 
 
@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    169
+                    381
                 </div>
                 
 
@@ -1076,19 +1076,49 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p>
-<p>如下为PHP Yii2下的.gitignore文件内容：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">.idea/
-.project
-.settings
-/vendor
-assets/
-/runtime
-/Runtime
-.idea/workspace.xml
-/upload
-</code></pre>
-<p>但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。<br>解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。</p>
+                <div class="note info">以MySQL为代表的关系型数据库，5.7.8之前没有JSON这种数据类型，只能以varchar或者text形式变相的支持JSON，存取键值极不方便；5.7.8开始有JSON数据类型，有专门语法支持键值的存取，易用性得到很大提升。下面说说json类型的使用。</div>
+
+<h3 id="json类型的使用"><a href="#json类型的使用" class="headerlink" title="json类型的使用"></a>json类型的使用</h3><ol>
+<li>先看下版本号，确定是否支持json类型<br><img src="/images/mysql_json_1.png" alt></li>
+<li>创建表user，其中extdata字段为json类型<br><img src="/images/mysql_json_2.png" alt></li>
+<li>往表user里插入一条数据<br><img src="/images/mysql_json_3.png" alt></li>
+<li>设置extdata字段的值<br><img src="/images/mysql_json_4.png" alt></li>
+<li>查看数据<br><img src="/images/mysql_json_5.png" alt></li>
+<li>查看json字段的指定项：<code>json_extract(字段名,&#39;$.xx&#39;)</code><br><img src="/images/mysql_json_6.png" alt></li>
+<li>explain看下<br><img src="/images/mysql_json_7.png" alt></li>
+<li>以json字段中的指定项来添加字段<br><img src="/images/mysql_json_8.png" alt></li>
+<li>派生字段添加索引<br><img src="/images/mysql_json_9.png" alt></li>
+</ol>
+<h3 id="json函数与find-in-set对比"><a href="#json函数与find-in-set对比" class="headerlink" title="json函数与find_in_set对比"></a>json函数与find_in_set对比</h3><ol>
+<li>新建表test<pre><code>CREATE TABLE test (
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+member_ids varchar(255) DEFAULT NULL,
+manager_ids json DEFAULT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=50159 DEFAULT CHARSET=utf8mb4;
+</code></pre></li>
+<li><p>并插入五万条数据<br><img src="/images/mysql_json_10.png" alt><br><img src="/images/mysql_json_11.png" alt></p>
+</li>
+<li><p>对比查询效率</p>
+<pre><code>select SQL_NO_CACHE * from test where FIND_IN_SET(2,member_ids);
+select SQL_NO_CACHE * from test where json_contains(manager_ids,&#39;2&#39;);
+</code></pre><p><img src="/images/mysql_json_12.png" alt><br><img src="/images/mysql_json_13.png" alt><br><img src="/images/mysql_json_14.png" alt><br>find_in_set稳定性不好，时间在0.09s到0.69s之间变动<br>json_contains稳定在0.14s左右，第二个字段必须是字符串<br>如果连表的话，要使用cast(b.id as char)</p>
+<pre><code>SELECT
+ a.id,
+ a.NAME,
+ group_concat( DISTINCT ( b.NAME ) ORDER BY b.id SEPARATOR &#39;、&#39; ) managerNames
+FROM
+ a
+ LEFT JOIN b ON json_contains( a.manager_ids, cast(b.id as char) )
+GROUP BY
+ `a`.`id` 
+ORDER BY
+ `a`.`id` ASC 
+ LIMIT 0,
+ 10
+</code></pre><p>综上，对于多id存储，还是使用逗号分隔的字符串会好一些，json数据使用json类型来存储会更方便。</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -1114,7 +1144,7 @@ assets/
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/f00bf8aa.html">https://crazy-boy.com/posts/f00bf8aa.html</a>
+                    <a href="https://crazy-boy.com/posts/mysql-json.html">https://crazy-boy.com/posts/mysql-json.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1152,12 +1182,12 @@ assets/
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
-                                <a href="/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/">
-                                    <span class="chip bg-color">文件忽略</span>
+                                <a href="/tags/JSON/">
+                                    <span class="chip bg-color">JSON</span>
                                 </a>
                             
                         </div>
@@ -1694,11 +1724,11 @@ assets/
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/wished-book-list.html">
+                <a href="/posts/thinkphp-rule.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="书单心愿墙">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="ThinkPHP5 中rule规则">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1709,88 +1739,23 @@ assets/
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          书单心愿墙
+                          ThinkPHP5 中rule规则
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            罗列一些自己后续要读的书籍或者文章：
-《黑客与画家》
-《UNIX编程艺术》
-《异类》
-《羊皮卷》——《选择的力量》
-《优秀到不能被忽视》
-《无言的宇宙》
-《数学女孩》
-
-
+                            rule规则
+class Item extends \think\Validate&#123;
+    protected $rule = [
+        [&#39;mobile|手机号&#39;, &#39;require|leng
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-31
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B9%A6%E7%B1%8D/">
-                        <span class="chip bg-color">书籍</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/php-aes-encrypt.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="PHP实现AES加解密">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          PHP实现AES加解密
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-04-20
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1806,16 +1771,70 @@ assets/
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PHP/">
-                        <span class="chip bg-color">PHP</span>
+                    <a href="/tags/ThinkPHP/">
+                        <span class="chip bg-color">ThinkPHP</span>
                     </a>
                     
-                    <a href="/tags/AES/">
-                        <span class="chip bg-color">AES</span>
-                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/singleton-pattern.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——单例模式">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          设计模式——单例模式
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            说明单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。
+示例下面看下单例模式的代码实现
+class Singleton&#123;
+    //持有私有静态实例，防止
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/">
-                        <span class="chip bg-color">加解密</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -1895,7 +1914,7 @@ assets/
 
         </div>
         
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="文件忽略">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="JSON">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -2062,12 +2081,12 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
-                            <a href="/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/">
-                                <span class="chip bg-color">文件忽略</span>
+                            <a href="/tags/JSON/">
+                                <span class="chip bg-color">JSON</span>
                             </a>
                         
                     </div>
@@ -2078,8 +2097,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git/" class="post-category">
-                                Git
+                            <a href="/categories/MySQL/" class="post-category">
+                                MySQL
                             </a>
                         
                     </div>
@@ -2091,7 +2110,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-04-25
+                    2022-05-20
                 </div>
                 
 
@@ -2100,7 +2119,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    169
+                    381
                 </div>
                 
 
@@ -2117,19 +2136,49 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p>
-<p>如下为PHP Yii2下的.gitignore文件内容：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">.idea/
-.project
-.settings
-/vendor
-assets/
-/runtime
-/Runtime
-.idea/workspace.xml
-/upload
-</code></pre>
-<p>但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。<br>解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。</p>
+                <div class="note info">以MySQL为代表的关系型数据库，5.7.8之前没有JSON这种数据类型，只能以varchar或者text形式变相的支持JSON，存取键值极不方便；5.7.8开始有JSON数据类型，有专门语法支持键值的存取，易用性得到很大提升。下面说说json类型的使用。</div>
+
+<h3 id="json类型的使用"><a href="#json类型的使用" class="headerlink" title="json类型的使用"></a>json类型的使用</h3><ol>
+<li>先看下版本号，确定是否支持json类型<br><img src="/images/mysql_json_1.png" alt></li>
+<li>创建表user，其中extdata字段为json类型<br><img src="/images/mysql_json_2.png" alt></li>
+<li>往表user里插入一条数据<br><img src="/images/mysql_json_3.png" alt></li>
+<li>设置extdata字段的值<br><img src="/images/mysql_json_4.png" alt></li>
+<li>查看数据<br><img src="/images/mysql_json_5.png" alt></li>
+<li>查看json字段的指定项：<code>json_extract(字段名,&#39;$.xx&#39;)</code><br><img src="/images/mysql_json_6.png" alt></li>
+<li>explain看下<br><img src="/images/mysql_json_7.png" alt></li>
+<li>以json字段中的指定项来添加字段<br><img src="/images/mysql_json_8.png" alt></li>
+<li>派生字段添加索引<br><img src="/images/mysql_json_9.png" alt></li>
+</ol>
+<h3 id="json函数与find-in-set对比"><a href="#json函数与find-in-set对比" class="headerlink" title="json函数与find_in_set对比"></a>json函数与find_in_set对比</h3><ol>
+<li>新建表test<pre><code>CREATE TABLE test (
+id int(10) unsigned NOT NULL AUTO_INCREMENT,
+member_ids varchar(255) DEFAULT NULL,
+manager_ids json DEFAULT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=50159 DEFAULT CHARSET=utf8mb4;
+</code></pre></li>
+<li><p>并插入五万条数据<br><img src="/images/mysql_json_10.png" alt><br><img src="/images/mysql_json_11.png" alt></p>
+</li>
+<li><p>对比查询效率</p>
+<pre><code>select SQL_NO_CACHE * from test where FIND_IN_SET(2,member_ids);
+select SQL_NO_CACHE * from test where json_contains(manager_ids,&#39;2&#39;);
+</code></pre><p><img src="/images/mysql_json_12.png" alt><br><img src="/images/mysql_json_13.png" alt><br><img src="/images/mysql_json_14.png" alt><br>find_in_set稳定性不好，时间在0.09s到0.69s之间变动<br>json_contains稳定在0.14s左右，第二个字段必须是字符串<br>如果连表的话，要使用cast(b.id as char)</p>
+<pre><code>SELECT
+ a.id,
+ a.NAME,
+ group_concat( DISTINCT ( b.NAME ) ORDER BY b.id SEPARATOR &#39;、&#39; ) managerNames
+FROM
+ a
+ LEFT JOIN b ON json_contains( a.manager_ids, cast(b.id as char) )
+GROUP BY
+ `a`.`id` 
+ORDER BY
+ `a`.`id` ASC 
+ LIMIT 0,
+ 10
+</code></pre><p>综上，对于多id存储，还是使用逗号分隔的字符串会好一些，json数据使用json类型来存储会更方便。</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -2155,7 +2204,7 @@ assets/
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/f00bf8aa.html">https://crazy-boy.com/posts/f00bf8aa.html</a>
+                    <a href="https://crazy-boy.com/posts/mysql-json.html">https://crazy-boy.com/posts/mysql-json.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -2193,12 +2242,12 @@ assets/
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
                                 </a>
                             
-                                <a href="/tags/%E6%96%87%E4%BB%B6%E5%BF%BD%E7%95%A5/">
-                                    <span class="chip bg-color">文件忽略</span>
+                                <a href="/tags/JSON/">
+                                    <span class="chip bg-color">JSON</span>
                                 </a>
                             
                         </div>
@@ -2735,11 +2784,11 @@ assets/
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/wished-book-list.html">
+                <a href="/posts/thinkphp-rule.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="书单心愿墙">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="ThinkPHP5 中rule规则">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2750,88 +2799,23 @@ assets/
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          书单心愿墙
+                          ThinkPHP5 中rule规则
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            罗列一些自己后续要读的书籍或者文章：
-《黑客与画家》
-《UNIX编程艺术》
-《异类》
-《羊皮卷》——《选择的力量》
-《优秀到不能被忽视》
-《无言的宇宙》
-《数学女孩》
-
-
+                            rule规则
+class Item extends \think\Validate&#123;
+    protected $rule = [
+        [&#39;mobile|手机号&#39;, &#39;require|leng
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-31
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
-                                    随笔
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B9%A6%E7%B1%8D/">
-                        <span class="chip bg-color">书籍</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/php-aes-encrypt.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="PHP实现AES加解密">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          PHP实现AES加解密
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            系统中的账号信息在进行存储的时候，需要做相应的加密处理；比如用户密码一般是以密文形式存储，而且是不可逆的，常用的就是md5加密；而对于某些账户信息(如：手机号码、银行卡号等)就需要进行可逆加密(如：AES)保存，这样既可以保证数据的安全性，
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-04-20
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -2847,16 +2831,70 @@ assets/
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/PHP/">
-                        <span class="chip bg-color">PHP</span>
+                    <a href="/tags/ThinkPHP/">
+                        <span class="chip bg-color">ThinkPHP</span>
                     </a>
                     
-                    <a href="/tags/AES/">
-                        <span class="chip bg-color">AES</span>
-                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/singleton-pattern.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——单例模式">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          设计模式——单例模式
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            说明单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。
+示例下面看下单例模式的代码实现
+class Singleton&#123;
+    //持有私有静态实例，防止
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/">
-                        <span class="chip bg-color">加解密</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -2940,7 +2978,7 @@ assets/
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         
         
-        <div class="toc-widget" data-spmid="Git">
+        <div class="toc-widget" data-spmid="MySQL">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -2948,7 +2986,7 @@ assets/
             <div id="toc-content"></div>
         </div>
         
-        <div class="toc-widget" data-spmid="文件忽略">
+        <div class="toc-widget" data-spmid="JSON">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -2963,13 +3001,13 @@ assets/
 <!-- TOC 悬浮按钮. -->
 
     
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="Git">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="MySQL">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
 </div>
 
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="文件忽略">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="JSON">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -3144,7 +3182,7 @@ assets/
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">20.1k</span>&nbsp;
+        class="white-color">25.6k</span>&nbsp;
       
       
       

@@ -1059,7 +1059,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    595
+                    649
                 </div>
                 
 
@@ -1112,6 +1112,12 @@ select * from t_school order by convert(name using gbk);
 </code></pre>
 <h3 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h3><pre class=" language-lang-sql"><code class="language-lang-sql"> select weekday("2021-11-10")+1 week;      
  -- 2021年11月10日是星期三
+</code></pre>
+<h3 id="20、单条SQL语句完成多种数据统计"><a href="#20、单条SQL语句完成多种数据统计" class="headerlink" title="20、单条SQL语句完成多种数据统计"></a>20、单条SQL语句完成多种数据统计</h3><pre class=" language-lang-sql"><code class="language-lang-sql">-- 现需分别统计wl_student_score_logs表中exam_id为5的change_score增加量和减少量
+select
+sum( if( change_score > 0, change_score, 0)) as increase_score,
+sum( if( change_score  < 0, change_score, 0)) as reduce_score
+from wl_student_score_logs where exam_id=5;
 </code></pre>
 
             </div>
@@ -2123,7 +2129,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    595
+                    649
                 </div>
                 
 
@@ -2176,6 +2182,12 @@ select * from t_school order by convert(name using gbk);
 </code></pre>
 <h3 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h3><pre class=" language-lang-sql"><code class="language-lang-sql"> select weekday("2021-11-10")+1 week;      
  -- 2021年11月10日是星期三
+</code></pre>
+<h3 id="20、单条SQL语句完成多种数据统计"><a href="#20、单条SQL语句完成多种数据统计" class="headerlink" title="20、单条SQL语句完成多种数据统计"></a>20、单条SQL语句完成多种数据统计</h3><pre class=" language-lang-sql"><code class="language-lang-sql">-- 现需分别统计wl_student_score_logs表中exam_id为5的change_score增加量和减少量
+select
+sum( if( change_score > 0, change_score, 0)) as increase_score,
+sum( if( change_score  < 0, change_score, 0)) as reduce_score
+from wl_student_score_logs where exam_id=5;
 </code></pre>
 
             </div>
@@ -3190,7 +3202,7 @@ select * from t_school order by convert(name using gbk);
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">20.1k</span>&nbsp;
+        class="white-color">25.6k</span>&nbsp;
       
       
       
