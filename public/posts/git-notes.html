@@ -1055,7 +1055,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    216
+                    348
                 </div>
                 
 
@@ -1073,9 +1073,18 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre><code>git pull                #拉取代码到本地
-git add .               #暂存代码
+git add .               #将文件添加到暂存区
 git commit -m &quot;xx&quot;      #提交代码，并填写描述
 git push                #推送代码到远端
+git status              #显示所有需提交的文件
+git branch              #显示当前代码库中所有的本地分支
+git branch xx           #创建一个新分支xx
+git branch -d xx        #删除指定分支xx
+git checkout xx         #切换到分支xx
+git checkout -b xx      #创建一个分支xx，并切换到新分支
+git merge xx            #将指定分支xx的历史记录合并到当前分支
+git stash save          #临时保存所有修改的文件
+git stash pop           #恢复最近一次存储的文件
 </code></pre><h3 id="文件忽略"><a href="#文件忽略" class="headerlink" title="文件忽略"></a>文件忽略</h3><p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p>
 <p>如下为PHP Yii2下的.gitignore文件内容：</p>
 <pre class=" language-lang-bash"><code class="language-lang-bash">.idea/
@@ -2085,7 +2094,7 @@ assets/
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">25.6k</span>&nbsp;
+        class="white-color">27k</span>&nbsp;
       
       
       

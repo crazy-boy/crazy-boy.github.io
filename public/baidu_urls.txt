@@ -1,3 +1,5 @@
+https://crazy-boy.com/posts/windows-move-desktop.html
+https://crazy-boy.com/posts/notepad++-notes.html
 https://crazy-boy.com/posts/20220824-happy.html
 https://crazy-boy.com/posts/high-concurrent-experience.html
 https://crazy-boy.com/posts/dead-lock.html
@@ -25,7 +27,7 @@ https://crazy-boy.com/posts/use-mysql-on-dos.html
 https://crazy-boy.com/posts/mysql-binlog.html
 https://crazy-boy.com/posts/thinkphp-where.html
 https://crazy-boy.com/posts/a1b63ab8.html
-https://crazy-boy.com/posts/56475516.html
+https://crazy-boy.com/posts/windows-quick-split-file.html
 https://crazy-boy.com/posts/28294742.html
 https://crazy-boy.com/posts/thinkphp-order.html
 https://crazy-boy.com/posts/5081417f.html
@@ -33,13 +35,13 @@ https://crazy-boy.com/posts/6541028b.html
 https://crazy-boy.com/posts/phpstorm-show-history.html
 https://crazy-boy.com/posts/thinkphp-clone-query.html
 https://crazy-boy.com/posts/phpstorm-auto-format.html
-https://crazy-boy.com/posts/e939ff3c.html
+https://crazy-boy.com/posts/windows-short-cut.html
 https://crazy-boy.com/posts/thinkphp-note.html
 https://crazy-boy.com/posts/php-trait.html
 https://crazy-boy.com/posts/php-elasticsearch.html
 https://crazy-boy.com/posts/mysql-clustered-index.html
 https://crazy-boy.com/posts/btree-and-b+tree.html
-https://crazy-boy.com/posts/ead2d66c.html
+https://crazy-boy.com/posts/windows-screen-shot.html
 https://crazy-boy.com/posts/php-interview.html
 https://crazy-boy.com/posts/php-bat.html
 https://crazy-boy.com/posts/61e2bcf6.html
@@ -61,6 +63,8 @@ https://crazy-boy.com/posts/c5e566f2.html
 https://crazy-boy.com/posts/cb12c179.html
 https://crazy-boy.com/posts/business-model-of-union-pay.html
 https://crazy-boy.com/posts/mysql-deal-miss-handle.html
+https://crazy-boy.com/posts/mysql-explain1.html
+https://crazy-boy.com/posts/mysql-index.html
 https://crazy-boy.com/posts/mysql-structural-design.html
 https://crazy-boy.com/posts/mysql-join.html
 https://crazy-boy.com/posts/qiniu-storage.html
@@ -94,7 +98,3 @@ https://crazy-boy.com/posts/308f88a2.html
 https://crazy-boy.com/posts/amap-api.html
 https://crazy-boy.com/posts/9e064ccc.html
 https://crazy-boy.com/posts/mysql-notes.html
-https://crazy-boy.com/posts/1822a0ce.html
-https://crazy-boy.com/posts/jquery-note.html
-https://crazy-boy.com/posts/linux-common-commands.html
-https://crazy-boy.com/posts/wished-book-list.html

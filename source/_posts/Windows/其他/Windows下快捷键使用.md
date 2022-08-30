@@ -4,7 +4,7 @@ tags:
   - Windows
   - 快捷键
 categories: Windows
-abbrlink: e939ff3c
+abbrlink: 'windows-short-cut'
 date: 2022-04-25 17:29:40
 updated: 2022-04-25 17:29:40
 ---

@@ -10,9 +10,9 @@ updated: 2021-10-11 19:10:00
 ---
 
 ### 1. mysql根据汉字首字母排序的方法
-```sql
+```
 -- utf8_general_ci编码
-select * from t_school order by convert(name using gbk);
+select * from tname order by convert(name using gbk);
 ```
    
 ### 2. 删除表数据的时候，如果表使用了别名
@@ -110,6 +110,16 @@ sum( if( change_score  < 0, change_score, 0)) as reduce_score
 from wl_student_score_logs where exam_id=5;
 ```
 
+### 21、truncate、drop 和 delete 的区别
+    1. 执行速度：drop > truncate > detele；
+    2. delete 和 truncate 只删除表数据，而 drop 会删除表数据和表结构以及表的索引、约束和触发器；
+    3. delete 可以加 where 条件实现部分数据删除，而 truncate 和 drop 不能加 where 条件是整体删除；
+    4. truncate 和 drop 是立即执行，且不能恢复；而 delete 会走事务，可以撤回和恢复；
+    5. truncate 会重置自增列为 1，而 delete 不会重置自增列；
+    6. truncate 和 drop 是 DDL 语句，而 delete 是 DML 语句。
 
-
-
+### 22、修改自增列的值
+    `alter table tname auto_increment=n;`
+    一个表中只能有一个自增列,如果设置多个自增列，那么 SQL 执行就会报错。除此之外还要注意自增列应该为整数类型，且 auto_increment 需要配合 key 一起使用，这个 key 可以是 primary key 或 foreign key。
+    
+    

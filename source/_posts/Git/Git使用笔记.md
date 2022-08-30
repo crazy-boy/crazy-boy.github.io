@@ -10,9 +10,18 @@ date: 2018-04-25 13:55:00
 ### 常用命令
 ```
 git pull                #拉取代码到本地
-git add .               #暂存代码
+git add .               #将文件添加到暂存区
 git commit -m "xx"      #提交代码，并填写描述
 git push                #推送代码到远端
+git status              #显示所有需提交的文件
+git branch              #显示当前代码库中所有的本地分支
+git branch xx           #创建一个新分支xx
+git branch -d xx        #删除指定分支xx
+git checkout xx         #切换到分支xx
+git checkout -b xx      #创建一个分支xx，并切换到新分支
+git merge xx            #将指定分支xx的历史记录合并到当前分支
+git stash save          #临时保存所有修改的文件
+git stash pop           #恢复最近一次存储的文件
 ```
 
 ### 文件忽略

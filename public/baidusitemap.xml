@@ -2,7 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://crazy-boy.com/posts/git-notes.html</loc>
-    <lastmod>2022-08-24</lastmod>
+    <lastmod>2022-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/windows-move-desktop.html</loc>
+    <lastmod>2022-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/notepad++-notes.html</loc>
+    <lastmod>2022-08-29</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/20220824-happy.html</loc>
@@ -133,7 +141,7 @@
     <lastmod>2022-05-08</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/56475516.html</loc>
+    <loc>https://crazy-boy.com/posts/windows-quick-split-file.html</loc>
     <lastmod>2022-05-08</lastmod>
   </url>
   <url>
@@ -173,7 +181,7 @@
     <lastmod>2022-04-26</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/e939ff3c.html</loc>
+    <loc>https://crazy-boy.com/posts/windows-short-cut.html</loc>
     <lastmod>2022-04-25</lastmod>
   </url>
   <url>
@@ -189,7 +197,7 @@
     <lastmod>2022-03-21</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/ead2d66c.html</loc>
+    <loc>https://crazy-boy.com/posts/windows-screen-shot.html</loc>
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
@@ -275,6 +283,14 @@
   <url>
     <loc>https://crazy-boy.com/posts/mysql-deal-miss-handle.html</loc>
     <lastmod>2020-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/mysql-explain1.html</loc>
+    <lastmod>2020-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/mysql-index.html</loc>
+    <lastmod>2020-05-23</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/mysql-structural-design.html</loc>

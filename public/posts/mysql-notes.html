@@ -1059,14 +1059,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    649
+                    875
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -1076,10 +1076,9 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><pre class=" language-lang-sql"><code class="language-lang-sql">-- utf8_general_ci编码
-select * from t_school order by convert(name using gbk);
-</code></pre>
-<h3 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h3><p>应该这样写：<code>DELETE a FROM table a;</code></p>
+                <h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><pre><code>-- utf8_general_ci编码
+select * from tname order by convert(name using gbk);
+</code></pre><h3 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h3><p>应该这样写：<code>DELETE a FROM table a;</code></p>
 <h3 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h3><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p>
 <h3 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h3><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p>
 <h3 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h3><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p>
@@ -1119,7 +1118,15 @@ sum( if( change_score > 0, change_score, 0)) as increase_score,
 sum( if( change_score  < 0, change_score, 0)) as reduce_score
 from wl_student_score_logs where exam_id=5;
 </code></pre>
-
+<h3 id="21、truncate、drop-和-delete-的区别"><a href="#21、truncate、drop-和-delete-的区别" class="headerlink" title="21、truncate、drop 和 delete 的区别"></a>21、truncate、drop 和 delete 的区别</h3><pre><code>1. 执行速度：drop &gt; truncate &gt; detele；
+2. delete 和 truncate 只删除表数据，而 drop 会删除表数据和表结构以及表的索引、约束和触发器；
+3. delete 可以加 where 条件实现部分数据删除，而 truncate 和 drop 不能加 where 条件是整体删除；
+4. truncate 和 drop 是立即执行，且不能恢复；而 delete 会走事务，可以撤回和恢复；
+5. truncate 会重置自增列为 1，而 delete 不会重置自增列；
+6. truncate 和 drop 是 DDL 语句，而 delete 是 DML 语句。
+</code></pre><h3 id="22、修改自增列的值"><a href="#22、修改自增列的值" class="headerlink" title="22、修改自增列的值"></a>22、修改自增列的值</h3><pre><code>`alter table tname auto_increment=n;`
+一个表中只能有一个自增列,如果设置多个自增列，那么 SQL 执行就会报错。除此之外还要注意自增列应该为整数类型，且 auto_increment 需要配合 key 一起使用，这个 key 可以是 primary key 或 foreign key。
+</code></pre>
             </div>
             <hr/>
 
@@ -2129,14 +2136,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    649
+                    875
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -2146,10 +2153,9 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><pre class=" language-lang-sql"><code class="language-lang-sql">-- utf8_general_ci编码
-select * from t_school order by convert(name using gbk);
-</code></pre>
-<h3 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h3><p>应该这样写：<code>DELETE a FROM table a;</code></p>
+                <h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><pre><code>-- utf8_general_ci编码
+select * from tname order by convert(name using gbk);
+</code></pre><h3 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h3><p>应该这样写：<code>DELETE a FROM table a;</code></p>
 <h3 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h3><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p>
 <h3 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h3><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p>
 <h3 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h3><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p>
@@ -2189,7 +2195,15 @@ sum( if( change_score > 0, change_score, 0)) as increase_score,
 sum( if( change_score  < 0, change_score, 0)) as reduce_score
 from wl_student_score_logs where exam_id=5;
 </code></pre>
-
+<h3 id="21、truncate、drop-和-delete-的区别"><a href="#21、truncate、drop-和-delete-的区别" class="headerlink" title="21、truncate、drop 和 delete 的区别"></a>21、truncate、drop 和 delete 的区别</h3><pre><code>1. 执行速度：drop &gt; truncate &gt; detele；
+2. delete 和 truncate 只删除表数据，而 drop 会删除表数据和表结构以及表的索引、约束和触发器；
+3. delete 可以加 where 条件实现部分数据删除，而 truncate 和 drop 不能加 where 条件是整体删除；
+4. truncate 和 drop 是立即执行，且不能恢复；而 delete 会走事务，可以撤回和恢复；
+5. truncate 会重置自增列为 1，而 delete 不会重置自增列；
+6. truncate 和 drop 是 DDL 语句，而 delete 是 DML 语句。
+</code></pre><h3 id="22、修改自增列的值"><a href="#22、修改自增列的值" class="headerlink" title="22、修改自增列的值"></a>22、修改自增列的值</h3><pre><code>`alter table tname auto_increment=n;`
+一个表中只能有一个自增列,如果设置多个自增列，那么 SQL 执行就会报错。除此之外还要注意自增列应该为整数类型，且 auto_increment 需要配合 key 一起使用，这个 key 可以是 primary key 或 foreign key。
+</code></pre>
             </div>
             <hr/>
 
@@ -3202,7 +3216,7 @@ from wl_student_score_logs where exam_id=5;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">25.6k</span>&nbsp;
+        class="white-color">27k</span>&nbsp;
       
       
       
