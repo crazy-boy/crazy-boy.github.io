@@ -1,8 +1,6 @@
 ---
 title: 解决phpStorm无法显示目录结构的问题
-tags:
-  - php
-  - phpStorm
+tags: [phpStorm]
 categories: PHP
 abbrlink: 'phpstorm-show-dir'
 date: 2022-05-16 17:51:46

@@ -1,7 +1,6 @@
 ---
 title: Linux下curl命令
-tags:
-  - curl
+tags: [curl]
 categories: Linux
 abbrlink: 'linux-curl'
 date: 2022-07-04 10:42:39

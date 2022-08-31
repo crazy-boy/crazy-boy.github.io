@@ -1,9 +1,6 @@
 ---
 title: PHP实现AES加解密
-tags:
-  - PHP
-  - AES
-  - 加解密
+tags: [加解密]
 categories: PHP
 abbrlink: 'php-aes-encrypt'
 date: 2018-04-20 10:05:00

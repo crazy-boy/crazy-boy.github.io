@@ -1,7 +1,6 @@
 ---
 title: ThinkPHP5使用笔记
-tags:
-  - ThinkPHP
+tags: [ThinkPHP]
 categories: PHP
 abbrlink: 'thinkphp-note'
 date: 2022-04-25 11:32:32

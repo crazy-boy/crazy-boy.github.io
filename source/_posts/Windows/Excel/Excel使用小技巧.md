@@ -1,7 +1,6 @@
 ---
 title: Excel使用小技巧
-tags:
-  - Excel
+tags: [Excel]
 categories: Windows
 abbrlink: e939ff3c
 date: 2019-10-26 14:16:36

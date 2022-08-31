@@ -1,11 +1,8 @@
 ---
 title: Linux中rz的使用
-tags:
-  - Linux
-  - rz
-  - sz
+tags: [rz/sz]
 categories: Linux
-abbrlink: a1146ed7
+abbrlink: 'rz-on-linux'
 date: 2019-07-02 19:20:00
 updated: 2019-07-02 19:20:00
 ---

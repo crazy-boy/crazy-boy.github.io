@@ -1,7 +1,6 @@
 ---
 title: Notepad++常用操作
-tags:
-  - Notepad++
+tags: [Notepad++]
 categories: 其他
 abbrlink: 'notepad++-notes'
 date: 2022-08-29 10:11:15

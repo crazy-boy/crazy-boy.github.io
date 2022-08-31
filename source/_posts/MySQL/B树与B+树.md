@@ -1,8 +1,7 @@
 ---
 title: B树与B+树
 abbrlink: 'btree-and-b+tree'
-tags: 
-  - MySQL
+tags:  [MySQL]
 categories:  MySQL
 date: 2022-03-21 04:12:21
 ---

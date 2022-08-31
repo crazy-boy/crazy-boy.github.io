@@ -1,8 +1,6 @@
 ---
 title: Excel使用小技巧
-tags:
-  - Excel
-  - 使用技巧
+tags: [Excel]
 categories: Office
 abbrlink: 'excel-tips'
 date: 2018-06-19 22:02:03

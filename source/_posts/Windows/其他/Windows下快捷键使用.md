@@ -1,8 +1,6 @@
 ---
 title: Windows下快捷键使用
-tags:
-  - Windows
-  - 快捷键
+tags: [Windows]
 categories: Windows
 abbrlink: 'windows-short-cut'
 date: 2022-04-25 17:29:40

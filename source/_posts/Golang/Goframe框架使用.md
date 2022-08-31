@@ -1,7 +1,6 @@
 ---
 title: Goframe框架使用
-tags:
-  - Goframe
+tags: [Goframe]
 categories: Go
 abbrlink: 'goframe-note'
 date: 2021-09-17 16:59:14

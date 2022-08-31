@@ -1,8 +1,6 @@
 ---
 title: phpStorm实现保存后，代码自动格式化
-tags:
-  - php
-  - phpStorm
+tags: [phpStorm]
 categories: PHP
 abbrlink: 'phpstorm-auto-format'
 date: 2022-04-26 17:51:46

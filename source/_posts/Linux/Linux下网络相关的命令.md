@@ -1,10 +1,8 @@
 ---
 title: Linux下网络相关的命令
-tags:
-  - Linux
-  - 网络
+tags: [网络]
 categories: Linux
-abbrlink: cb12c179
+abbrlink: 'network-command-on-linux'
 date: 2021-01-07 09:20:00
 updated: 2021-01-07 09:20:00
 ---

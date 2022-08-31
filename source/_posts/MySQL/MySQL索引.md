@@ -1,8 +1,6 @@
 ---
 title: MySQL索引
-tags:
-  - MySQL
-  - 索引
+tags: [索引]
 categories: MySQL
 abbrlink: 'mysql-index'
 date: 2020-05-23 10:21:00

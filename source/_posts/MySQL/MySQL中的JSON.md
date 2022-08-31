@@ -1,8 +1,6 @@
 ---
 title: MySQL中的JSON
-tags:
-  - MySQL
-  - JSON
+tags: [JSON]
 categories: MySQL
 abbrlink: 'mysql-json'
 date: 2022-05-20 11:30:42

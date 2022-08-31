@@ -1,8 +1,6 @@
 ---
 title: PHP使用ES
-tags:
-  - PHP
-  - elasticsearch
+tags: [elasticsearch]
 categories: PHP
 abbrlink: 'php-elasticsearch'
 date: 2022-04-06 23:22:05

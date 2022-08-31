@@ -1,7 +1,6 @@
 ---
 title: R语言学习
-tags:
-  - R
+tags: [R]
 categories: R语言
 abbrlink: 'r-notes'
 date: 2018-06-19 22:02:03

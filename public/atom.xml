@@ -96,7 +96,7 @@
     <link href="https://crazy-boy.com/posts/high-concurrent-experience.html"/>
     <id>https://crazy-boy.com/posts/high-concurrent-experience.html</id>
     <published>2022-08-19T02:18:58.378Z</published>
-    <updated>2022-08-20T08:45:50.626Z</updated>
+    <updated>2022-08-30T11:56:36.165Z</updated>
     
     
       
@@ -114,8 +114,6 @@
     
     <category term="高并发" scheme="https://crazy-boy.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     
-    <category term="性能优化" scheme="https://crazy-boy.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
   </entry>
   
   <entry>
@@ -123,7 +121,7 @@
     <link href="https://crazy-boy.com/posts/dead-lock.html"/>
     <id>https://crazy-boy.com/posts/dead-lock.html</id>
     <published>2022-08-02T08:21:54.000Z</published>
-    <updated>2022-08-19T02:18:58.364Z</updated>
+    <updated>2022-08-30T11:56:36.144Z</updated>
     
     
       
@@ -148,7 +146,7 @@
     <link href="https://crazy-boy.com/posts/pooling-technology.html"/>
     <id>https://crazy-boy.com/posts/pooling-technology.html</id>
     <published>2022-08-02T02:30:20.000Z</published>
-    <updated>2022-08-19T02:18:58.364Z</updated>
+    <updated>2022-08-30T11:56:36.610Z</updated>
     
     
       
@@ -173,7 +171,7 @@
     <link href="https://crazy-boy.com/posts/thread-safe.html"/>
     <id>https://crazy-boy.com/posts/thread-safe.html</id>
     <published>2022-08-01T04:31:24.000Z</published>
-    <updated>2022-08-19T02:18:58.365Z</updated>
+    <updated>2022-08-30T11:56:36.694Z</updated>
     
     
       
@@ -198,7 +196,7 @@
     <link href="https://crazy-boy.com/posts/php-define-const.html"/>
     <id>https://crazy-boy.com/posts/php-define-const.html</id>
     <published>2022-07-04T16:34:14.000Z</published>
-    <updated>2022-08-19T02:18:58.348Z</updated>
+    <updated>2022-08-30T11:39:00.471Z</updated>
     
     
       
@@ -464,8 +462,6 @@
     <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
     
     
-    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
-    
     <category term="JSON" scheme="https://crazy-boy.com/tags/JSON/"/>
     
   </entry>
@@ -496,9 +492,9 @@
   </entry>
   
   <entry>
-    <title>设计模式——简单工厂方法模式</title>
-    <link href="https://crazy-boy.com/posts/simple-factory-pattern.html"/>
-    <id>https://crazy-boy.com/posts/simple-factory-pattern.html</id>
+    <title>软件的设计模式</title>
+    <link href="https://crazy-boy.com/posts/design-patterns.html"/>
+    <id>https://crazy-boy.com/posts/design-patterns.html</id>
     <published>2022-05-19T13:53:34.000Z</published>
     <updated>2022-05-19T13:53:34.000Z</updated>
     

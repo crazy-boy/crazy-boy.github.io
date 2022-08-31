@@ -1,8 +1,6 @@
 ---
 title: PHP中数组内容依次赋值给变量
-tags:
-  - PHP
-  - 数组
+tags: [PHP]
 categories: PHP
 abbrlink: a1b63ab8
 date: 2022-05-08 16:59:22

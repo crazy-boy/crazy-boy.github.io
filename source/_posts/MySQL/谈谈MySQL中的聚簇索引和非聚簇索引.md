@@ -1,8 +1,6 @@
 ---
 title: 谈谈MySQL中的聚簇索引和非聚簇索引
-tags:
-  - MySQL
-  - 聚簇索引
+tags: [聚簇索引]
 categories: MySQL
 abbrlink: 'mysql-clustered-index'
 date: 2022-03-21 18:45:23

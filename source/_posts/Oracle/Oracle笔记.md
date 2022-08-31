@@ -1,8 +1,6 @@
 ---
 title: Oracle笔记
-tags:
-  - Oracle
-  - 笔记
+tags: [Oracle]
 categories: Oracle
 abbrlink: 'oracle-note'
 date: 2018-06-19 22:39:00

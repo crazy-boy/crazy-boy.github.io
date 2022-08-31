@@ -1,8 +1,6 @@
 ---
 title: Windows下电脑截图
-tags:
-  - Windows
-  - 电脑截图
+tags: [Windows]
 categories: Windows
 abbrlink: 'windows-screen-shot'
 date: 2022-03-20 09:25:08

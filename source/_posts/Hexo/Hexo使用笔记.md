@@ -1,8 +1,6 @@
 ---
 title: Hexo使用笔记
-tags:
-  - Hexo
-  - NexT
+tags: [Hexo]
 categories: 其他
 abbrlink: 'hexo-notes'
 date: 2018-06-09 15:12:00

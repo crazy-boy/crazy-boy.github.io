@@ -1,7 +1,6 @@
 ---
 title: 自己封装的一些常用的PHP函数
-tags:
-  - PHP函数
+tags: [PHP函数]
 categories: PHP
 abbrlink: 61e2bcf6
 date: 2022-02-27 21:26:25

@@ -1,8 +1,6 @@
 ---
 title: Go语言基础
-tags:
-  - Go
-  - 语言基础
+tags: [Go]
 categories: Go
 abbrlink: 'go-note'
 date: 2018-06-09 21:57:06

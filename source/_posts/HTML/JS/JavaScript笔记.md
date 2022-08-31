@@ -1,11 +1,8 @@
 ---
 title: JavaScript笔记
-tags:
-  - JavaScript
-  - 笔记
-  - 前端
+tags: [JavaScript]
 categories: 前端
-abbrlink: e803913a
+abbrlink: 'javascript-notes'
 date: 2018-06-19 22:39:00
 updated: 2018-11-09 09:49:00
 ---

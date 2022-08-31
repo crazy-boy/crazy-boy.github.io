@@ -1,7 +1,6 @@
 ---
 title: 常用的SQL
-tags:
-  - MySQL
+tags: [MySQL]
 categories: MySQL
 abbrlink: 'common-sql'
 date: 2021-04-26 20:20:18

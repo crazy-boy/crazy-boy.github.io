@@ -1,8 +1,6 @@
 ---
 title: MySQL笔记
-tags:
-  - MySQL
-  - 笔记
+tags: [MySQL]
 categories: MySQL
 abbrlink: 'mysql-notes'
 date: 2018-06-04 11:19:00

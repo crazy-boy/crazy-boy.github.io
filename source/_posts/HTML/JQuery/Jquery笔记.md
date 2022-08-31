@@ -1,9 +1,6 @@
 ---
 title: Jquery笔记
-tags:
-  - Jquery
-  - 笔记
-  - 前端
+tags: [Jquery]
 categories: 前端
 abbrlink: 'jquery-note'
 date: 2018-06-04 11:19:00

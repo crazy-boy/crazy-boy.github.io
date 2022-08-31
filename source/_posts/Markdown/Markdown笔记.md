@@ -1,8 +1,6 @@
 ---
 title: Markdown笔记
-tags:
-  - Markdown
-  - 笔记
+tags: [Markdown]
 categories: Markdown
 abbrlink: 'markdown-note'
 date: 2019-01-31 13:36:00

@@ -1,8 +1,6 @@
 ---
 title: Linux下安装Cacti
-tags:
-  - Linux
-  - Cacti
+tags: [Cacti]
 categories: Linux
 abbrlink: 'install-cacti-on-linux'
 date: 2019-09-23 18:28:06

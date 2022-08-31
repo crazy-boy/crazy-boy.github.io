@@ -1,8 +1,6 @@
 ---
 title: MySQL联表查询
-tags:
-  - MySQL
-  - 联表查询
+tags: [联表查询]
 categories: MySQL
 abbrlink: 'mysql-join'
 date: 2020-03-22 15:20:42

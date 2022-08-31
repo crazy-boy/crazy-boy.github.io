@@ -1,8 +1,6 @@
 ---
 title: MySQL函数
-tags:
-  - MySQL
-  - 函数
+tags: [MySQL]
 categories: MySQL
 abbrlink: 'mysql-functions'
 date: 2018-03-29 17:28:00

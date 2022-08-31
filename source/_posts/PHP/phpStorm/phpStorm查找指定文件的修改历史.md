@@ -1,8 +1,6 @@
 ---
 title: phpStorm查找指定文件的修改历史
-tags:
-  - php
-  - phpStorm
+tags: [phpStorm]
 categories: PHP
 abbrlink: 'phpstorm-show-history'
 date: 2022-04-27 09:53:23

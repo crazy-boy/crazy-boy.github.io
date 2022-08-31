@@ -1,7 +1,6 @@
 ---
 title: Windows下如何将桌面位置移到其他地方
-tags:
-  - Windows
+tags: [Windows]
 categories: Windows
 abbrlink: 'windows-move-desktop'
 date: 2022-08-29 11:06:15

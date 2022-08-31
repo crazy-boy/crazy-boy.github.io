@@ -1,8 +1,6 @@
 ---
 title: php中composer的使用
-tags:
-  - php
-  - composer
+tags: [composer]
 categories: PHP
 abbrlink: 'php-composer'
 date: 2021-05-27 13:29:31

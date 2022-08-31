@@ -1,8 +1,6 @@
 ---
 title: MySQL中的binlog
-tags:
-  - MySQL
-  - binlog
+tags: [binlog]
 categories: MySQL
 abbrlink: 'mysql-binlog'
 date: 2022-05-10 13:25:13

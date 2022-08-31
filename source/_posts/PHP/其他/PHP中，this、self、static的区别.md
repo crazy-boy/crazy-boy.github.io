@@ -1,7 +1,6 @@
 ---
 title: php中，this、self、static的区别
-tags:
-  - PHP笔记
+tags: [PHP笔记]
 categories: PHP
 abbrlink: 'php-self-static'
 date: 2022-06-02 20:28:32

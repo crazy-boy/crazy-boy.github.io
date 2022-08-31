@@ -1,8 +1,6 @@
 ---
 title: MySQL架构设计
-tags:
-  - MySQL
-  - 架构设计
+tags: [架构设计]
 categories: MySQL
 abbrlink: 'mysql-structural-design'
 date: 2020-03-22 20:16:25

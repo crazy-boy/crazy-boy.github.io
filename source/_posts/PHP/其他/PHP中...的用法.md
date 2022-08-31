@@ -1,7 +1,6 @@
 ---
 title: PHP中...的用法
-tags:
-  - PHP笔记
+tags: [PHP笔记]
 categories: PHP
 abbrlink: 'php-uncertain-params'
 date: 2022-06-02 19:26:25

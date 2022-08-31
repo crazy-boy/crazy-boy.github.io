@@ -1,9 +1,6 @@
 ---
 title: JQuery面向对象写法
-tags:
-  - JQuery
-  - JavaScript
-  - 面向对象
+tags: [JQuery]
 categories: 前端
 abbrlink: 'jquery-obj'
 date: 2018-04-19 09:52:00

@@ -1,8 +1,6 @@
 ---
 title: DOS命令进入MySQL
-tags:
-  - DOS命令
-  - MySQL
+tags: [DOS命令]
 categories: MySQL
 abbrlink: 'use-mysql-on-dos'
 date: 2022-05-11 17:08:36

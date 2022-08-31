@@ -1,7 +1,6 @@
 ---
 title: MongoDB笔记
-tags:
-  - MongoDB
+tags: [MongoDB]
 categories: MongoDB
 abbrlink: 'mongodb-notes'
 date: 2021-12-31 14:48:49

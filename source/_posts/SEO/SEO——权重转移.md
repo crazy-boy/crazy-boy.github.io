@@ -1,8 +1,6 @@
 ---
 title: SEO——权重转移
-tags:
-  - SEO
-  - 权重转移
+tags: [SEO]
 categories: 其他
 abbrlink: 'seo-weight-transfer'
 date: 2018-06-09 23:38:26

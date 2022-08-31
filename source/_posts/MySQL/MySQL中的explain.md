@@ -1,7 +1,6 @@
 ---
 title: MySQL中的explain
-tags:
-  - MySQL
+tags: [MySQL]
 categories: MySQL
 abbrlink: 'mysql-explain1'
 date: 2020-06-12 08:25:40

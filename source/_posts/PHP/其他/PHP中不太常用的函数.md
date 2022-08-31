@@ -1,8 +1,6 @@
 ---
 title: PHP中不太常用的函数
-tags:
-  - PHP
-  - 函数
+tags: [PHP]
 categories: PHP
 abbrlink: '28294742'
 date: 2022-05-08 16:28:55

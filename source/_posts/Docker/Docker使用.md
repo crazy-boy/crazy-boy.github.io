@@ -1,10 +1,8 @@
 ---
 title: Docker使用
-tags:
-  - Docker
-  - Windows
+tags: [Docker]
 categories: Docker
-abbrlink: 'docker-note'
+abbrlink: 'docker-notes'
 date: 2018-06-05 09:44:00
 updated: 2018-06-05 10:02:00
 ---

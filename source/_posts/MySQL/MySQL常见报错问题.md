@@ -1,8 +1,6 @@
 ---
 title: MySQL常见报错问题
-tags:
-  - MySQL
-  - 报错
+tags: [MySQL]
 categories: MySQL
 abbrlink: 'mysql-errors'
 date: 2019-03-20 17:37:00

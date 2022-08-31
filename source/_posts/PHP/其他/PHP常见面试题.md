@@ -1,8 +1,6 @@
 ---
 title: PHP常见面试题
-tags:
-  - PHP
-  - 面试
+tags: [面试]
 categories: PHP
 abbrlink: 'php-interview'
 date: 2022-03-07 12:15:40

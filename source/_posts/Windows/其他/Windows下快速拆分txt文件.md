@@ -1,8 +1,6 @@
 ---
 title: Windows下快速拆分txt文件
-tags:
-  - Windows
-  - 文件拆分
+tags: [Windows]
 categories: Windows
 abbrlink: 'windows-quick-split-file'
 date: 2022-05-08 16:37:12

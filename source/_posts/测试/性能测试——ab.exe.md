@@ -1,8 +1,6 @@
 ---
 title: 性能测试——ab.exe
-tags:
-  - Apache
-  - ab.exe
+tags: [ab.exe]
 categories: 测试
 abbrlink: 5081417f
 date: 2022-05-06 17:28:37

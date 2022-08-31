@@ -1,10 +1,8 @@
 ---
 title: Linux 安装php5(php7)
-tags:
-  - Linux
-  - PHP
+tags: [PHP]
 categories: Linux
-abbrlink: 1711a719
+abbrlink: 'install-php-on-linux'
 date: 2019-10-14 23:58:32
 updated: 2019-10-14 23:58:32
 ---

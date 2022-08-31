@@ -1,8 +1,6 @@
 ---
 title: MySQL数据库优化
-tags:
-  - MySQL
-  - 数据库优化
+tags: [数据库优化]
 categories: MySQL
 abbrlink: 'mysql-optimization'
 date: 2021-08-07 15:56:16

@@ -1,8 +1,6 @@
 ---
 title: MySQL脚本执行中，预防误处理数据的方法
-tags:
-  - MySQL
-  - 脚本执行
+tags: [MySQL]
 categories: MySQL
 password: fdg34$35JFJEWfd
 abbrlink: 'mysql-deal-miss-handle'

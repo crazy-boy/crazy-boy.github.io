@@ -1,9 +1,6 @@
 ---
 title: CSS笔记
-tags:
-  - CSS
-  - 笔记
-  - 前端
+tags: [CSS]
 categories: 前端
 abbrlink: 1822a0ce
 date: 2018-06-04 11:19:00

@@ -1,8 +1,6 @@
 ---
 title: Linux下操作MySQL
-tags:
-  - Linux
-  - MySQL
+tags: [Linux]
 categories: MySQL
 abbrlink: 'use-mysql-on-linux'
 date: 2019-09-23 18:10:20

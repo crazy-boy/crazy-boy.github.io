@@ -1,8 +1,6 @@
 ---
 title: PHPExcel笔记
-tags:
-  - PHPExcel
-  - 笔记
+tags: [PHPExcel]
 categories: PHP
 abbrlink: 'php-excel'
 date: 2018-11-06 11:55:00

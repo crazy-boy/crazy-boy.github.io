@@ -1,8 +1,6 @@
 ---
 title: MySQL自定义函数
-tags:
-  - MySQL
-  - 自定义函数
+tags: [MySQL]
 categories: MySQL
 abbrlink: 'mysql-custom-functions'
 date: 2018-09-05 12:27:00

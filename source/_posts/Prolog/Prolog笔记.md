@@ -1,8 +1,6 @@
 ---
 title: Prolog笔记
-tags:
-  - Prolog
-  - 笔记
+tags: [Prolog]
 categories: Prolog
 abbrlink: ec2116cd
 date: 2019-01-31 11:36:00

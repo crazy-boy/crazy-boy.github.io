@@ -1,9 +1,6 @@
 ---
 title: ThinkPHP5框架where条件中含有or的使用方法
-tags:
-  - PHP
-  - ThinkPHP
-  - 数据库查询
+tags: [ThinkPHP]
 categories: PHP
 abbrlink: 'thinkphp-where'
 date: 2022-05-08 17:07:22

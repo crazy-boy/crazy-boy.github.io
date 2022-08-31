@@ -1,7 +1,6 @@
 ---
 title: php中trait的用法
-tags:
-  - trait
+tags: [trait]
 categories: PHP
 abbrlink: 'php-trait'
 date: 2022-04-25 02:17:20

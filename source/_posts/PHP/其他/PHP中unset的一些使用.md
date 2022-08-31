@@ -1,7 +1,6 @@
 ---
 title: PHP中unset的一些使用
-tags:
-  - PHP笔记
+tags: [PHP笔记]
 categories: PHP
 abbrlink: 'php-unset'
 date: 2022-06-02 20:51:22

@@ -1,7 +1,6 @@
 ---
 title: ThinkPHP5 中rule规则
-tags:
-  - ThinkPHP
+tags: [ThinkPHP]
 categories: PHP
 abbrlink: 'thinkphp-rule'
 date: 2022-05-31 21:49:19

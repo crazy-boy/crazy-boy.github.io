@@ -1,7 +1,6 @@
 ---
 title: Linux常用命令
-tags:
-  - Linux
+tags: [Linux]
 categories: Linux
 abbrlink: 'linux-common-commands'
 date: 2018-06-04 11:15:00

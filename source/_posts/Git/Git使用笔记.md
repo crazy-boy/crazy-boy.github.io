@@ -1,7 +1,6 @@
 ---
 title: Git使用笔记
-tags:
-  - Git
+tags: [Git]
 categories: Git
 abbrlink: 'git-notes'
 date: 2018-04-25 13:55:00

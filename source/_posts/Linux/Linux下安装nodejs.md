@@ -1,8 +1,6 @@
 ---
 title: Linux下安装nodejs
-tags:
-  - Linux
-  - nodejs
+tags: [nodejs]
 categories: Linux
 abbrlink: 'linux-install-nodejs'
 date: 2019-10-11 20:04:51
