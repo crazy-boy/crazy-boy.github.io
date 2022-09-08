@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://crazy-boy.com/posts/itsneko-opensource-blog.html</loc>
-    <lastmod>2022-08-30</lastmod>
+    <loc>https://crazy-boy.com/posts/db-3nf.html</loc>
+    <lastmod>2022-09-08</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/architecture-notes.html</loc>
+    <lastmod>2022-09-04</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/personnel-public-data.html</loc>
+    <lastmod>2022-09-03</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/thread-safe.html</loc>
@@ -10,10 +18,6 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/pooling-technology.html</loc>
-    <lastmod>2022-08-30</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/308f88a2.html</loc>
     <lastmod>2022-08-30</lastmod>
   </url>
   <url>
@@ -46,10 +50,6 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/windows-move-desktop.html</loc>
-    <lastmod>2022-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/notepad++-notes.html</loc>
     <lastmod>2022-08-29</lastmod>
   </url>
   <url>
@@ -101,7 +101,83 @@
     <lastmod>2022-05-20</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/mediator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/flyweight-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/singleton-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/proxy-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/command-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/memento-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/factory-method-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/template-method-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/state-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/strategy-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/simple-factory-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/composite-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/decorator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/observer-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/interpreter-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/chain-of-responsibility-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -109,7 +185,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/simple-factory-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/iterator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/adapter-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -209,7 +289,7 @@
     <lastmod>2022-03-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/c5e566f2.html</loc>
+    <loc>https://crazy-boy.com/posts/soft-system-design.html</loc>
     <lastmod>2022-03-17</lastmod>
   </url>
   <url>
@@ -235,6 +315,10 @@
   <url>
     <loc>https://crazy-boy.com/posts/2207b087.html</loc>
     <lastmod>2022-02-22</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/php-common-algorithm.html</loc>
+    <lastmod>2022-01-12</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/mongodb-notes.html</loc>
@@ -289,8 +373,24 @@
     <lastmod>2021-01-07</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/notepad++-notes.html</loc>
+    <lastmod>2020-08-29</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/php-magic-methods.html</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/mysql-deal-miss-handle.html</loc>
     <lastmod>2020-08-05</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/php-ini-config.html</loc>
+    <lastmod>2020-07-12</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/mysql-decimal.html</loc>
+    <lastmod>2020-07-05</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/mysql-explain1.html</loc>

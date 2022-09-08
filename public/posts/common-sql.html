@@ -1055,7 +1055,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    252
+                    263
                 </div>
                 
 
@@ -1085,6 +1085,7 @@ create index idx_c1_c2 on table_name(c1,c2);             -- 创建联合索引
 show index from table_name;                              -- 查看表中的索引
 </code></pre><h4 id="6、去除数据表中指定字段的换行符"><a href="#6、去除数据表中指定字段的换行符" class="headerlink" title="6、去除数据表中指定字段的换行符"></a>6、去除数据表中指定字段的换行符</h4><pre><code>-- char(10)：换行符      char(13)：回车符
 update table set name=replace(replace(`field`,char(10),&#39;&#39;),char(13),&#39;&#39;);
+</code></pre><h4 id="7、修改表引擎"><a href="#7、修改表引擎" class="headerlink" title="7、修改表引擎"></a>7、修改表引擎</h4><pre><code>alter table table_name engine=MyISAM;
 </code></pre>
             </div>
             <hr/>
@@ -1750,7 +1751,7 @@ update table set name=replace(replace(`field`,char(10),&#39;&#39;),char(13),&#39
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/c5e566f2.html">
+                <a href="/posts/soft-system-design.html">
                     <div class="card-image">
                         
                         
@@ -2074,7 +2075,7 @@ update table set name=replace(replace(`field`,char(10),&#39;&#39;),char(13),&#39
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

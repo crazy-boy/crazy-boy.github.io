@@ -42,31 +42,6 @@
   </entry>
   
   <entry>
-    <title>Notepad++常用操作</title>
-    <link href="https://crazy-boy.com/posts/notepad++-notes.html"/>
-    <id>https://crazy-boy.com/posts/notepad++-notes.html</id>
-    <published>2022-08-29T02:11:15.000Z</published>
-    <updated>2022-08-29T02:11:15.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="Notepad++" scheme="https://crazy-boy.com/tags/Notepad/"/>
-    
-  </entry>
-  
-  <entry>
     <title>2022-08-24杂谈</title>
     <link href="https://crazy-boy.com/posts/20220824-happy.html"/>
     <id>https://crazy-boy.com/posts/20220824-happy.html</id>
@@ -467,9 +442,9 @@
   </entry>
   
   <entry>
-    <title>设计模式——单例模式</title>
-    <link href="https://crazy-boy.com/posts/singleton-pattern.html"/>
-    <id>https://crazy-boy.com/posts/singleton-pattern.html</id>
+    <title>设计模式——中介者模式</title>
+    <link href="https://crazy-boy.com/posts/mediator-pattern.html"/>
+    <id>https://crazy-boy.com/posts/mediator-pattern.html</id>
     <published>2022-05-19T13:53:34.000Z</published>
     <updated>2022-05-19T13:53:34.000Z</updated>
     
@@ -492,9 +467,34 @@
   </entry>
   
   <entry>
-    <title>软件的设计模式</title>
-    <link href="https://crazy-boy.com/posts/design-patterns.html"/>
-    <id>https://crazy-boy.com/posts/design-patterns.html</id>
+    <title>设计模式——享元模式</title>
+    <link href="https://crazy-boy.com/posts/flyweight-pattern.html"/>
+    <id>https://crazy-boy.com/posts/flyweight-pattern.html</id>
+    <published>2022-05-19T13:53:34.000Z</published>
+    <updated>2022-05-19T13:53:34.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+    <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式——单例模式</title>
+    <link href="https://crazy-boy.com/posts/singleton-pattern.html"/>
+    <id>https://crazy-boy.com/posts/singleton-pattern.html</id>
     <published>2022-05-19T13:53:34.000Z</published>
     <updated>2022-05-19T13:53:34.000Z</updated>
     

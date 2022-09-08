@@ -1723,11 +1723,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/design-patterns.html">
+                <a href="/posts/strategy-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="软件的设计模式">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——策略模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1738,15 +1738,19 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          软件的设计模式
+                          设计模式——策略模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            设计模式的六大原则
-总原则：开闭原则（Open Close Principle）开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的
+                            说明示例下面看下策略模式的代码实现
+interface ICalculator&#123;
+    public function calculate(string $exp);
+&#125;
+
+abstract class Abstrac
                         
                     </div>
                     <div class="publish-info">
@@ -1783,11 +1787,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/redis-note.html">
+                <a href="/posts/composite-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Redis笔记">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——组合模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1798,16 +1802,18 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Redis笔记
+                          设计模式——组合模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装redis客户端yum install redis
-查看版本号info
-通过命令行方式连接redisredis-cli -h host -p port -a passwordhost:远程redis服务器hostport:远程redis
+                            说明  又叫部分-整体模式,在处理类似树形结构的问题时比较方便。
+示例下面看下组合模式的代码实现
+class TreeNode&#123;
+    private string $name;
+    private TreeNode $pa
                         
                     </div>
                     <div class="publish-info">
@@ -1818,8 +1824,8 @@ h3:hover {
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
                                 </a>
                             
                             
@@ -1829,8 +1835,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Redis/">
-                        <span class="chip bg-color">Redis</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -2104,7 +2110,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

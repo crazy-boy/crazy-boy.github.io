@@ -1055,14 +1055,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -1101,6 +1101,24 @@ h3:hover {
     echo preg_match(‘/^[0-9a-zA-Z-]+@[0-9a-zA-Z-]+\.[0-9a-zA-Z]+$/’,$email)?’email格式正确‘:’email格式不正确‘;
 &amp;#125;
 </code></pre><h4 id="14、接口和抽象类的区别"><a href="#14、接口和抽象类的区别" class="headerlink" title="14、接口和抽象类的区别"></a>14、接口和抽象类的区别</h4><p>当多个同类的类要设计一个上层，通常设计为抽象类，当多个异构的类要设计一个上层，通常设计为接口。</p>
+<h4 id="15、说说数据库的索引"><a href="#15、说说数据库的索引" class="headerlink" title="15、说说数据库的索引"></a>15、说说数据库的索引</h4><p>唯一索引、主键索引、联合索引</p>
+<h4 id="16、说说redis常用的数据结构"><a href="#16、说说redis常用的数据结构" class="headerlink" title="16、说说redis常用的数据结构"></a>16、说说redis常用的数据结构</h4><p>string、list、hash、set、zset等</p>
+<h4 id="17、Redis的内存淘汰策略有哪些"><a href="#17、Redis的内存淘汰策略有哪些" class="headerlink" title="17、Redis的内存淘汰策略有哪些"></a>17、Redis的内存淘汰策略有哪些</h4><p>Redis的内存淘汰策略是指在Redis的用于缓存的内存不足时，怎么处理需要新写入且需要申请额外空间的数据。</p>
+<ul>
+<li>全局的键空间选择性移除<ol>
+<li>noeviction：当内存不足以容纳新写入数据时，新写入操作会报错。</li>
+<li>allkeys-lru：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的key。（这个是最常用的）</li>
+<li>allkeys-random：当内存不足以容纳新写入数据时，在键空间中，随机移除某个key。</li>
+</ol>
+</li>
+<li>设置过期时间的键空间选择性移除<ol>
+<li>volatile-lru：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，移除最近最少使用的key。</li>
+<li>volatile-random：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，随机移除某个key。</li>
+<li>volatile-ttl：当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，有更早过期时间的key优先移除。</li>
+</ol>
+</li>
+</ul>
+<h4 id="18、Redis如何实现延时队列"><a href="#18、Redis如何实现延时队列" class="headerlink" title="18、Redis如何实现延时队列"></a>18、Redis如何实现延时队列</h4><p>使用sortedset，使用时间戳做score, 消息内容作为key,调用zadd来生产消息，消费者使用zrangbyscore获取n秒之前的数据做轮询处理。</p>
 
             </div>
             <hr/>
@@ -2081,7 +2099,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

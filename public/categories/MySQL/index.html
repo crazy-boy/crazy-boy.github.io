@@ -1317,12 +1317,12 @@ class="themespring" -->
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1、优化思路
+                                数据库优化无论实在面试还是工作中都非常重要，结合个人多年的从业经验，它主要从数据库设计、sql优化、服务器优化等方面来进行。
+
+数据库设计优化
 1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则
 2）表中碎片是否整理
-3）表的统计信息是否收集，只有统计信息准确，执行计划才能帮助优化SQL
-4）查看执行计划，检查索引使用情况，没有用到索引，考虑创建
-5）创建索
+3）表的统计
                             
                         </div>
                         <div class="publish-info">
@@ -1529,6 +1529,93 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
+                    <a href="/posts/mysql-decimal.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="MySQL中decimal类型">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              MySQL中decimal类型
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在mysql中，经常会使用decimal数据类型来保存精度准确的数值，如工资、价格、金额等货币数据。
+
+语法及其说明columName decimal(P,D);P表示有效数字的精度，范围为1~65；P的默认值为10，如columName 
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/MySQL/">
+                            <span class="chip bg-color">MySQL</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
                     <a href="/posts/mysql-explain1.html" target="_blank">
                         <div class="card-image tag-image">
                             
@@ -1580,12 +1667,11 @@ class="themespring" -->
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                用法  只需要在查询的 SQL 前面添加上 explain 关键字即可。
+                                当我们在执行sql时，一般都会使用explain来分析sql的效率情况。
+用法  只需要在查询的 SQL 前面添加上 explain 关键字即可。
 结果列说明
 id — 选择标识符，id 越大优先级越高，越先被执行；
-select_type — 表示查询的类型；
-table — 输出结果集的表；
-partitio
+select_type
                             
                         </div>
                         <div class="publish-info">
@@ -2062,93 +2148,6 @@ partitio
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
-                    <a href="/posts/mysql-custom-functions.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="MySQL自定义函数">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              MySQL自定义函数
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数
-
-1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/MySQL/" class="post-category">
-                                    MySQL
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/MySQL/">
-                            <span class="chip bg-color">MySQL</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 </main>
@@ -2266,7 +2265,7 @@ partitio
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

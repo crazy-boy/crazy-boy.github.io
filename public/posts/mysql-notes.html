@@ -1055,7 +1055,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    875
+                    915
                 </div>
                 
 
@@ -1122,6 +1122,7 @@ from wl_student_score_logs where exam_id=5;
 6. truncate 和 drop 是 DDL 语句，而 delete 是 DML 语句。
 </code></pre><h3 id="22、修改自增列的值"><a href="#22、修改自增列的值" class="headerlink" title="22、修改自增列的值"></a>22、修改自增列的值</h3><pre><code>`alter table tname auto_increment=n;`
 一个表中只能有一个自增列,如果设置多个自增列，那么 SQL 执行就会报错。除此之外还要注意自增列应该为整数类型，且 auto_increment 需要配合 key 一起使用，这个 key 可以是 primary key 或 foreign key。
+</code></pre><h3 id="23、生成批量清空指定数据库的语句"><a href="#23、生成批量清空指定数据库的语句" class="headerlink" title="23、生成批量清空指定数据库的语句"></a>23、生成批量清空指定数据库的语句</h3><pre><code>`select CONCAT(&#39;TRUNCATE TABLE &#39;,table_schema,&#39;.&#39;,TABLE_NAME, &#39;;&#39;) 清空语句 from INFORMATION_SCHEMA.TABLES where table_schema =&#39;库名&#39;;`    
 </code></pre>
             </div>
             <hr/>
@@ -2105,7 +2106,7 @@ from wl_student_score_logs where exam_id=5;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

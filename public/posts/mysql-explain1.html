@@ -1055,14 +1055,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    326
+                    777
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -1072,23 +1072,27 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><p>  只需要在查询的 SQL 前面添加上 explain 关键字即可。<br><img src="/images/mysql_explain_1.png" alt></p>
+                <p>当我们在执行sql时，一般都会使用explain来分析sql的效率情况。</p>
+<h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><p>  只需要在查询的 SQL 前面添加上 explain 关键字即可。<br><img src="/images/mysql_explain_1.png" alt></p>
 <h4 id="结果列说明"><a href="#结果列说明" class="headerlink" title="结果列说明"></a>结果列说明</h4><ul>
 <li>id — 选择标识符，id 越大优先级越高，越先被执行；</li>
 <li>select_type — 表示查询的类型；</li>
 <li>table — 输出结果集的表；</li>
 <li>partitions — 匹配的分区；</li>
 <li>type — 表示表的连接类型；<br>  type 值有如下类型<ul>
-<li>all — 扫描全表数据；</li>
-<li>index — 遍历索引；</li>
-<li>range — 索引范围查找；</li>
-<li>index_subquery — 在子查询中使用 ref；</li>
-<li>unique_subquery — 在子查询中使用 eq_ref；</li>
-<li>ref_or_null — 对 null 进行索引的优化的 ref；</li>
+<li>all — 全表扫描，在数据量大时效率极低；</li>
+<li>index — 遍历索引，全索引排序；根据extra的内容分以下几种情况：<br>  Using Index：覆盖索引，即<strong>只需要</strong>通过索引就可以返回查询所需要的数据<br>  Using Where：查询列未用到索引<br>  Using Index  Using Where：其中的查询列是索引，但是并不是前导列，因此其实是没法用到这个索引的<br>  Null：查询列有些不是索引，需要回表来查询未被索引覆盖的字段（不是纯粹用了索引，也不是完全没用到索引）</li>
+<li>range — 索引范围查找，有范围的索引排序；如：<code>between and &lt; &gt; in or</code></li>
+<li>index_subquery — 在子查询中使用 ref；非唯一性索引，一般出现在in查询中；</li>
+<li>unique_subquery — 在子查询中使用 eq_ref，一般出现在in查询中；</li>
+<li>index_merge — 使用了索引合并优化。(对多个索引分别进行了条件的查询，最后对这几个查询的结果进行合并交集运算)</li>
+<li>ref_or_null — 对 null 进行索引的优化的 ref； 类似 ref。区别是他会额外的搜索包含 null 的记录，他会对其进行一些优化。(例如：SELECT * FROM table WHERE age = 18 and name is null)</li>
 <li>fulltext — 使用全文索引；</li>
-<li>ref — 使用非唯一索引查找数据；</li>
-<li>eq_ref — 在 join 查询中使用主键或唯一索引关联；</li>
-<li>const — 将一个主键放置到 where 后面作为条件查询， MySQL 优化器就能把这次查询优化转化为一个常量，如何转化以及何时转化，这个取决于优化器，这个比 eq_ref 效率高一点。</li>
+<li>ref — 使用非唯一索引查找数据；利用查询索引来进行搜索。（非主键以及 UNIQUE）</li>
+<li>eq_ref — 在 join 查询中使用主键或唯一索引关联；查询列是主键或者非 NULL 的 UNIQUE 索引，常用在联合查询。(例如：SELECT * FROM ref_table,other_table WHERE ref_table.key_column=other_table.column =&gt; ref_table.key_column 是主键或者非 NULL 的 UNIQUE 索引)</li>
+<li>const — 将一个主键放置到 where 后面作为条件查询， MySQL 优化器就能把这次查询优化转化为一个常量，如何转化以及何时转化，这个取决于优化器，这个比 eq_ref 效率高一点。<br>  查询条件是主键或者非 NULL 的 UNIQUE 索引，因此结果只有一条，同时优化过程中查询列值会转成常量。</li>
+<li>system — 表中数据只有一行的情况；</li>
+<li>null — 不用访问表就可以直接得到结果。(例如：SELECT 1)<br>type的效率高低情况：<code>all &lt; index &lt; range &lt; index_subquery &lt; unique_subquery &lt; index_merge &lt; ref_or_null &lt; ref &lt; eq_ref &lt; const &lt; system</code></li>
 </ul>
 </li>
 <li>possible_keys — 表示查询时，可能使用的索引；</li>
@@ -1700,11 +1704,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/mysql-deal-miss-handle.html">
+                <a href="/posts/mysql-decimal.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="MySQL脚本执行中，预防误处理数据的方法">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="MySQL中decimal类型">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1715,21 +1719,21 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          MySQL脚本执行中，预防误处理数据的方法
+                          MySQL中decimal类型
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：
+                            在mysql中，经常会使用decimal数据类型来保存精度准确的数值，如工资、价格、金额等货币数据。
 
-1、先测试   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语
+语法及其说明columName decimal(P,D);P表示有效数字的精度，范围为1~65；P的默认值为10，如columName 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
                         </span>
                         <span class="publish-author">
                             
@@ -2082,7 +2086,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

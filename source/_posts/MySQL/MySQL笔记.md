@@ -120,4 +120,5 @@ from wl_student_score_logs where exam_id=5;
     `alter table tname auto_increment=n;`
     一个表中只能有一个自增列,如果设置多个自增列，那么 SQL 执行就会报错。除此之外还要注意自增列应该为整数类型，且 auto_increment 需要配合 key 一起使用，这个 key 可以是 primary key 或 foreign key。
     
-    
+### 23、生成批量清空指定数据库的语句
+    `select CONCAT('TRUNCATE TABLE ',table_schema,'.',TABLE_NAME, ';') 清空语句 from INFORMATION_SCHEMA.TABLES where table_schema ='库名';`    

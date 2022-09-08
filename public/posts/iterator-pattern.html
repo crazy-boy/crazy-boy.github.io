@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于itsNeko开源博客食用方法, 这里是网站关键词">
+    <meta name="keywords" content="设计模式——迭代器模式, 这里是网站关键词">
     <meta name="description" content="这里是网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于itsNeko开源博客食用方法 | 飞奔的蜗牛</title>
+    <title>设计模式——迭代器模式 | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -731,12 +731,12 @@ class="themespring" -->
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/toc-banner/aboutme.JPG')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于itsNeko开源博客食用方法</h1>
+                    <h1 class="description center-align post-title">设计模式——迭代器模式</h1>
                 </div>
             </div>
         </div>
@@ -854,7 +854,7 @@ class="themespring" -->
 <div class="row">
     
     
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="关于itsNeko开源博客">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="设计模式">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -1021,8 +1021,8 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%85%B3%E4%BA%8EitsNeko%E5%BC%80%E6%BA%90%E5%8D%9A%E5%AE%A2/">
-                                <span class="chip bg-color">关于itsNeko开源博客</span>
+                            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                                <span class="chip bg-color">设计模式</span>
                             </a>
                         
                     </div>
@@ -1033,8 +1033,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
-                                其他
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                设计模式
                             </a>
                         
                     </div>
@@ -1046,7 +1046,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-16
+                    2022-05-19
                 </div>
                 
 
@@ -1055,14 +1055,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    204
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    1 分
                 </div>
                 
 
@@ -1072,118 +1072,74 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <div class="note info">前言：本文是关于itsNeko开源博客食用方法详解，感谢使用本开源博客。时间过的好快，还好我都记录下来了。</div>
+                <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下代码实现</p>
+<pre class=" language-lang-php"><code class="language-lang-php">interface Collection&#123;
+    public function iterator();
+    public function get(int $i);
+    public function size(): int;
+&#125;
 
-<h3 id="itsNeko开源介绍"><a href="#itsNeko开源介绍" class="headerlink" title="itsNeko开源介绍"></a>itsNeko开源介绍</h3><ul>
-<li>基于<br>itsNeko开源博客是基于Hexo博客Matery主题魔改，感谢各位对本博客的喜爱与支持。</li>
-<li>作者<br>Hello，itsNeko，我是本博客的作者，itsNeko博主博客: <a href="https://dyfa.top/" target="_blank">itsNeko博客~</a></li>
-<li>赞赏<br>如果你觉得本开源博客还可以，欢迎大家的赞赏，赞赏二维码见页面：<a href="https://dyfa.top/donate/" target="_blank">赞赏itsNeko开源博主~</a></li>
-<li>提示<br>本博客为纯静态，无数据库，文章使用markdown格式，图片存在json里面，整体打包上传至服务器即可。</li>
-<li>建议<br>最好懂一点编程知识，建议使用VsCode，善于使用<code>“ ctrl+F ”</code>快捷键定位然后修改自定义内容。</li>
-</ul>
-<h3 id="源码下载及命令"><a href="#源码下载及命令" class="headerlink" title="源码下载及命令"></a>源码下载及命令</h3><ul>
-<li>本开源博客源码已公开在在博主的GitHub仓库，国内也可使用Gitee，希望得到各位的<code>小星星，Star</code>。</li>
-<li>GitHub仓库：<a href="https://github.com/nekodeng/hexo-theme-itsneko.git" target="_blank">itsNeko开源博客源码GitHub地址</a></li>
-<li><p>Gitee仓库：<a href="https://gitee.com/nekodeng/hexo-theme-itsneko.git" target="_blank">itsNeko开源博客源码Gitee地址</a></p>
-</li>
-<li><p>首先，新建一个文件夹名为“ <code>nekoblog</code> ”，在该文件夹下打开git bash，执行命令行</p>
-</li>
-</ul>
-<pre><code>git clone https://github.com/nekodeng/hexo-theme-itsneko.git
+interface Iterator&#123;
+    public function previous();
+    public function next();
+    public function hasNext(): bool;
+    public function first();
+&#125;
 
-或者使用国内的gitee
+class MyCollection implements Collection&#123;
+    public string $str = 'ABCDE';
+    public function iterator(): MyIterator&#123;
+        return new MyIterator($this);
+    &#125;
+    public function get(int $i): string&#123;
+        return $this->str[$i];
+    &#125;
+    public function size(): int&#123;
+        return strlen($this->str);
+    &#125;
+&#125;
 
-git clone https://gitee.com/nekodeng/hexo-theme-itsneko.git
-</code></pre><ul>
-<li>将下载的整个文件夹在VsCode中打开，在终端中依次执行以下命令行</li>
-</ul>
-<pre><code>npm install
-hexo clean
-hexo g
-hexo s
-</code></pre><ul>
-<li>然后在浏览器中，打开“ <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> ”，即可实时预览网站，再依次修改网站内容。</li>
-</ul>
-<p>注意：依次执行完上述4条命令后，若遇到报错极大概率是npm install的问题，也可能是网络问题，建议删除整个“ node_modules ”文件夹，然后重新执行上述命令行。</p>
-<h3 id="各页面配置详解"><a href="#各页面配置详解" class="headerlink" title="各页面配置详解"></a>各页面配置详解</h3><h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><h5 id="1、网站标题描述等"><a href="#1、网站标题描述等" class="headerlink" title="1、网站标题描述等"></a>1、网站标题描述等</h5><p>在<code>/nekoblog/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ Site ”</code>，然后自行修改内容。</p>
-<h5 id="2、logo图片与logo字体"><a href="#2、logo图片与logo字体" class="headerlink" title="2、logo图片与logo字体"></a>2、logo图片与logo字体</h5><ul>
-<li>logo图片:<br>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 配置网站favicon和网站LOGO ”</code>，然后自行修改图片并注意图片格式（此处建议图片大小为180*116最佳）。</li>
-<li>logo字体:<br>在<code>/themes/layout/_partial/header.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ itsNeko-openSource-Blog ”</code>，然后自行修改大屏幕和小屏幕下logo字体（此处建议小屏下字体数目不宜过多）。 </li>
-</ul>
-<h5 id="3、banner图上打字效果字体"><a href="#3、banner图上打字效果字体" class="headerlink" title="3、banner图上打字效果字体"></a>3、banner图上打字效果字体</h5><p>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ sub1 ”</code>，然后自行修改。</p>
-<h5 id="4、《质数的孤独》内容部分"><a href="#4、《质数的孤独》内容部分" class="headerlink" title="4、《质数的孤独》内容部分"></a>4、《质数的孤独》内容部分</h5><p>在<code>/themes/layout/_widget/dream.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 《质数的孤独》 ”</code>，然后自行修改标题和内容。</p>
-<h5 id="5、公告栏作者等内容部分"><a href="#5、公告栏作者等内容部分" class="headerlink" title="5、公告栏作者等内容部分"></a>5、公告栏作者等内容部分</h5><p>在<code>/themes/layout/index.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 公告文字栏开始 ”</code>，然后自行修改内容。</p>
-<h5 id="6、footer内容部分"><a href="#6、footer内容部分" class="headerlink" title="6、footer内容部分"></a>6、footer内容部分</h5><p>在<code>/themes/layout/_partial/footer.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 版权信息 ”</code>，然后自行修改各类内容；此处还要在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ socialLink ”</code>，然后自行修改。</p>
-<h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><h5 id="1、配置个人信息"><a href="#1、配置个人信息" class="headerlink" title="1、配置个人信息"></a>1、配置个人信息</h5><p>在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ profile ”</code>，然后自行修改头像、职业和个人介绍。</p>
-<h5 id="2、个人介绍内容"><a href="#2、个人介绍内容" class="headerlink" title="2、个人介绍内容"></a>2、个人介绍内容</h5><p>在<code>/themes/layout/about.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ 关于我哦 ”</code>，然后自行个人介绍介绍。</p>
-<h4 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h4><h5 id="1、页面介绍"><a href="#1、页面介绍" class="headerlink" title="1、页面介绍"></a>1、页面介绍</h5><p>在<code>/themes/layout/galley.ejs</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ itsNeko开源博客相册 ”</code>，然后自行修改此内容。</p>
-<h5 id="2、相册数据"><a href="#2、相册数据" class="headerlink" title="2、相册数据"></a>2、相册数据</h5><p>相册是存在json里面的，在<code>/nekoblog/source/_data/galley.json</code>文件中。一个相册就是在一个{}对象内的json数据。</p>
-<h5 id="3、新建一个相册流程"><a href="#3、新建一个相册流程" class="headerlink" title="3、新建一个相册流程"></a>3、新建一个相册流程</h5><ul>
-<li>首先，找到<code>/nekoblog/source/galley</code>文件夹。</li>
-<li>复制已存在的“ itsNeko博主的绘画作品 ”文件夹，并取名。</li>
-<li>打开新取名文件夹下的index.md文件，然后修改title字段必须与新取名文件夹名称相同，否则运行报错。</li>
-<li>然后，在<code>/nekoblog/source/_data/galley.json</code>文件中，复制已存在的{}对象内的json数据，与第一段并以逗号区隔，然后修改新相册的各类内容。并注意：<code>name，url_name，album内的title这三个字段内容必须与新取名文件夹名称相同，否则运行报错。</code></li>
-</ul>
-<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><h5 id="增加友情链接"><a href="#增加友情链接" class="headerlink" title="增加友情链接"></a>增加友情链接</h5><ul>
-<li>友链信息是存储在<code>/nekoblog/source/_data/friends.json</code>文件中，一个友链就是在一个{}对象内的json数据，自行增添。</li>
-</ul>
-<h5 id="增加网址收藏"><a href="#增加网址收藏" class="headerlink" title="增加网址收藏"></a>增加网址收藏</h5><ul>
-<li>网址收藏信息是存储在<code>/nekoblog/source/_data/collection.json</code>文件中，一个网址信息就是在一个{}对象内的json数据，自行增添。</li>
-</ul>
-<h4 id="其余"><a href="#其余" class="headerlink" title="其余"></a>其余</h4><p>其余页面自定义修改的内容不多，或者没必要修改，这里给出其余页面的对应文件，可自行根据需要定位到对应页面文件中进行修改。</p>
-<ul>
-<li><code>书单 -&gt; /themes/layout/books.ejs</code></li>
-<li><code>留言板 -&gt; /themes/layout/contact.ejs</code></li>
-<li><code>实战项目 -&gt; /themes/layout/project.ejs</code></li>
-<li><code>博客打赏记录 -&gt; /themes/layout/donate.ejs</code></li>
-<li><code>ticktack -&gt; /themes/layout/ticktack.ejs</code></li>
-<li><code>实战项目 -&gt; /themes/layout/project.ejs</code></li>
-<li><code>vlog -&gt; /themes/layout/videos.ejs</code><br>使用“ ctrl+F ”快捷键定位到<code>“ src=”//player.bilibili ”</code>，然后自行修改两个视频的src，建议使用B站的外链。</li>
-<li><code>music -&gt; /themes/layout/musics.ejs</code><br>使用“ ctrl+F ”快捷键定位到<code>“ id=” ”</code>，然后自行修改两个歌单的id，建议使用网易云和QQ音乐的外链。</li>
-<li><code>urls.txt -&gt; /nekoblog/urls.txt</code>将内容替换成自己网站的url地址即可。</li>
-<li><code>网站2个_config.yml文件 -&gt; 主要是网站的总体配置，自行打开两个文件然后只修改里面的包含个人信息的部分，其余不动。</code></li>
-</ul>
-<h3 id="撰写第一篇文章"><a href="#撰写第一篇文章" class="headerlink" title="撰写第一篇文章"></a>撰写第一篇文章</h3><ul>
-<li>修改完个人信息后，你便可以撰写属于你的第一篇文章啦。</li>
-<li>文章采用markdown语法，所有文章存储在<code>/nekoblog/source/_posts</code>文件夹中。</li>
-<li>这里我已给出常用的两类文章模板，可直接复制粘贴然后（修改文章名，链接后缀建议用英文，标签建议只用一个，分类，时间，以及文章banner图片）形成新的文章。</li>
-</ul>
-<h3 id="怎样开通评论"><a href="#怎样开通评论" class="headerlink" title="怎样开通评论"></a>怎样开通评论</h3><ul>
-<li>本开源博客使用valine评论，环境以及搭好，只需填写valine配置数据即可。</li>
-<li>自行根据网上教程得到配置数据，关键词 “ Hexo 博客添加 Valine 评论系统 ”，教程之一：<a href="https://www.zhyong.cn/posts/95cb/" target="_blank">Hexo 博客添加 Valine 评论系统</a></li>
-<li>注意：本开源博客中已经搭好了环境，<code>比如valine.min.js，valine.ejs等文件已经存在，不用再根据教程添加这些文件</code>，只需根据教程步骤配置其余，然后获取到 APP ID 和 APP KEY。</li>
-<li>然后，将获取到的 APP ID 和 APP KEY，在<code>/themes/_config.yml</code>文件中，使用“ ctrl+F ”快捷键定位到<code>“ valine ”</code>，然后自行修改appId，appKey值即可。</li>
-<li>多说一句，若最后评论功能总是报错，不知道怎么弄，那么建议一切根据外链教程（这个不行，换个完整版教程）操作，可替换本博客已经存在的环境文件，<code>学会自己独立使用浏览器解决问题</code>。</li>
-</ul>
-<h3 id="网站怎样上线"><a href="#网站怎样上线" class="headerlink" title="网站怎样上线"></a>网站怎样上线</h3><ul>
-<li><p><code>免费版 使用gitee免费托管</code><br>关键词，“ Hexo部署到Gitee ”，随机教程：<a href="https://blog.csdn.net/qq_38157825/article/details/112783631" target="_blank">Hexo 部署到 Gitee</a></p>
-</li>
-<li><p><code>收费版 自行购买域名服务器</code><br>关键词，“ Hexo部署到自己服务器 ”</p>
-</li>
-</ul>
-<h3 id="七零八碎补充"><a href="#七零八碎补充" class="headerlink" title="七零八碎补充"></a>七零八碎补充</h3><p>可自行根据需要定位到对应文件中进行修改。</p>
-<ul>
-<li><p><code>赞赏二维码图片 -&gt; /themes/source/medias/reward</code></p>
-</li>
-<li><p><code>鼠标左键点击文字 -&gt; /themes/source/js/click_show_text.js</code></p>
-</li>
-<li><p><code>网站标题栏和footer栏背景颜色 -&gt; /themes/source/css/matery.css</code><br>在该文件中使用“ ctrl+F ”快捷键定位到<code>“ 网站标题栏和footer栏背景颜色 ”</code>，然后自行修改颜色。</p>
-</li>
-<li><p><code>各大页面banner图 -&gt; 若你不想使用默认图片，将以下代码复制到对应页面ejs文件中并修改图片链接即可。</code></p>
-</li>
-</ul>
-<pre><code>    &lt;style&gt;
-      /* banner背景图 */
-      .bg-cover &amp;#123;
-          background-image: url(&quot;图片链接地址&quot;)!important;
-      &amp;#125;
-    &lt;/style&gt;
-</code></pre><h3 id="怎样联系itsNeko"><a href="#怎样联系itsNeko" class="headerlink" title="怎样联系itsNeko"></a>怎样联系itsNeko</h3><ul>
-<li>留言：itsNeko博客地址:<a href="https://dyfa.top/" target="_blank">itsNeko博客~</a></li>
-<li>邮箱：nekodeng@qq.com</li>
-<li>QQ: 2018854221</li>
-</ul>
+class MyIterator implements Iterator&#123;
+    private Collection $collection;
+    private int $pos = -1;
+    public function __construct(Collection $collection)&#123;
+        $this->collection = $collection;
+    &#125;
 
+    public function previous()&#123;
+        if ($this->pos > 0)&#123;
+            $this->pos--;
+        &#125;
+        return $this->collection->get($this->pos);
+    &#125;
+
+    public function next()&#123;
+        if ($this->pos < $this->collection->size() - 1)&#123;
+            $this->pos++;
+        &#125;
+        return $this->collection->get($this->pos);
+    &#125;
+
+    public function hasNext(): bool&#123;
+        return $this->pos < $this->collection->size() - 1;
+    &#125;
+
+    public function first()&#123;
+        $this->pos = 0;
+        return $this->collection->get($this->pos);
+    &#125;
+&#125;
+
+
+// 调用
+$collection = new MyCollection();
+$it = $collection->iterator();
+while ($it->hasNext())&#123;
+    echo $it->next().'&nbsp;&nbsp;';
+&#125;
+// output: A  B  C  D  E
+</code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
             </div>
             <hr/>
 
@@ -1208,7 +1164,7 @@ hexo s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/itsneko-opensource-blog.html">https://crazy-boy.com/posts/itsneko-opensource-blog.html</a>
+                    <a href="https://crazy-boy.com/posts/iterator-pattern.html">https://crazy-boy.com/posts/iterator-pattern.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1246,8 +1202,8 @@ hexo s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%85%B3%E4%BA%8EitsNeko%E5%BC%80%E6%BA%90%E5%8D%9A%E5%AE%A2/">
-                                    <span class="chip bg-color">关于itsNeko开源博客</span>
+                                <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                                    <span class="chip bg-color">设计模式</span>
                                 </a>
                             
                         </div>
@@ -1784,11 +1740,11 @@ hexo s
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/c7205d17.html">
+                <a href="/posts/design-patterns.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="产品设计">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="软件的设计模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1799,26 +1755,27 @@ hexo s
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          产品设计
+                          软件的设计模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1、我们的手机上都装了很多APP，而现在的APP基本上都需要账号登录。那么问题来了，如果手机丢了，你最关心的是什么呢，是这些APP的账号信息泄露被不法份子使用，还是这个应用里的个人隐私数据泄露呢？个人感觉可以从以下几个方面提高产品的安全性：
+                            设计模式的六大原则
+总原则：开闭原则（Open Close Principle）开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BA%A7%E5%93%81/" class="post-category">
-                                    产品
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
                                 </a>
                             
                             
@@ -1828,8 +1785,8 @@ hexo s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">产品设计</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -1843,11 +1800,11 @@ hexo s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/html-to-pdf.html">
+                <a href="/posts/adapter-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="Html网页内容转为pdf文件">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——适配器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1858,28 +1815,27 @@ hexo s
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Html网页内容转为pdf文件
+                          设计模式——适配器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用wkhtmltopdf软件下载地址：https://wkhtmltopdf.org/downloads.html，需翻墙
-
-windows下使用下载并安装cmd命令行执行示例：wkhtmltopdf\bin\wkhtmltopdf.ex
+                            说明  适配器模式将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。
+分类类的适配器模式  核心思想就是：有一个Source类，
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HTML/" class="post-category">
-                                    HTML
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
                                 </a>
                             
                             
@@ -1889,8 +1845,8 @@ windows下使用下载并安装cmd命令行执行示例：wkhtmltopdf\bin\wkhtml
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -1974,7 +1930,7 @@ windows下使用下载并安装cmd命令行执行示例：wkhtmltopdf\bin\wkhtml
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         
         
-        <div class="toc-widget" data-spmid="关于itsNeko开源博客">
+        <div class="toc-widget" data-spmid="设计模式">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -1989,7 +1945,7 @@ windows下使用下载并安装cmd命令行执行示例：wkhtmltopdf\bin\wkhtml
 <!-- TOC 悬浮按钮. -->
 
     
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="关于itsNeko开源博客">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="设计模式">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -2164,7 +2120,7 @@ windows下使用下载并安装cmd命令行执行示例：wkhtmltopdf\bin\wkhtml
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

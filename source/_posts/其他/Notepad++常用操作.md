@@ -3,8 +3,8 @@ title: Notepad++常用操作
 tags: [Notepad++]
 categories: 其他
 abbrlink: 'notepad++-notes'
-date: 2022-08-29 10:11:15
-updated: 2022-08-29 10:11:15
+date: 2020-08-29 10:11:15
+updated: 2020-08-29 10:11:15
 ---
 
 ### 1. 将指定字符替换为换行

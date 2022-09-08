@@ -1615,6 +1615,94 @@ $query = Post::find()->where(['
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
+                    <a href="/posts/php-common-algorithm.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="PHP常用的算法">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              PHP常用的算法
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                冒泡排序
+时间复杂度：O(N^2)
+代码实现```phpfunction bubbleSort($arr)&#123;  $n = count($arr);  for ($i=0; $i&lt;$n-1; $i++)&#123;
+  for
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E7%AE%97%E6%B3%95/">
+                            <span class="chip bg-color">算法</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
                     <a href="/posts/yii2-rabbitmq.html" target="_blank">
                         <div class="card-image tag-image">
                             
@@ -1884,11 +1972,11 @@ use PhpAmqpLib\Connection\AMQPStr
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/php-operate-note.html" target="_blank">
+                    <a href="/posts/php-magic-methods.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/banner/0.jpg" class="responsive-img" alt="PHP运维笔记">
+                            <img src="/medias/banner/3.jpg" class="responsive-img" alt="PHP常用的魔术方法">
                             
                             
                             <!-- 福袋按钮 -->
@@ -1928,21 +2016,31 @@ use PhpAmqpLib\Connection\AMQPStr
                                   }
                                 </style>
                               </span>
-                              PHP运维笔记
+                              PHP常用的魔术方法
                             </span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1. 常见命令查看PHP扩展：`php -m`
-查看扩展的版本信息：`php -ri 扩展名`  如：`php -ri redis`
+                                
+__construct()
+
+__clone()
+
+__get()
+
+__set()
+
+__call()
+
+
 
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-22
                             </span>
                             <span class="publish-author">
                                 
@@ -1960,8 +2058,8 @@ use PhpAmqpLib\Connection\AMQPStr
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E8%BF%90%E7%BB%B4/">
-                            <span class="chip bg-color">运维</span>
+                        <a href="/tags/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/">
+                            <span class="chip bg-color">魔术方法</span>
                         </a>
                         
                     </div>
@@ -1971,11 +2069,11 @@ use PhpAmqpLib\Connection\AMQPStr
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/php-excel.html" target="_blank">
+                    <a href="/posts/php-ini-config.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/banner/1.jpg" class="responsive-img" alt="PHPExcel笔记">
+                            <img src="/medias/banner/3.jpg" class="responsive-img" alt="详解php.ini">
                             
                             
                             <!-- 福袋按钮 -->
@@ -2015,19 +2113,22 @@ use PhpAmqpLib\Connection\AMQPStr
                                   }
                                 </style>
                               </span>
-                              PHPExcel笔记
+                              详解php.ini
                             </span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1. 设置字体和样式    $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(['font'=>['bold'=>true]]);            //设置单
+                                
+safe_mode_exec_dir 设置安全模式下脚本可执行的目录，如果要通过popen()、system()、exec()等执行脚本，则该脚本需放在本配置设置的目录下。
+
+
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
                             </span>
                             <span class="publish-author">
                                 
@@ -2045,99 +2146,8 @@ use PhpAmqpLib\Connection\AMQPStr
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/PHPExcel/">
-                            <span class="chip bg-color">PHPExcel</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
-                    <a href="/posts/make-dictionary-by-php.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/0.jpg" class="responsive-img" alt="PHP生成数据字典">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              PHP生成数据字典
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                通过php代码生成MySQL数据字典，代码如下：
-&lt;?php
-/**
- * 生成mysql数据字典
- */
-header(&quot;Content-type: text/html; charset=utf-8&quot;);
-//配
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-21
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/">
-                            <span class="chip bg-color">数据字典</span>
+                        <a href="/tags/PHP/">
+                            <span class="chip bg-color">PHP</span>
                         </a>
                         
                     </div>
@@ -2263,7 +2273,7 @@ header(&quot;Content-type: text/html; charset=utf-8&quot;);
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">29.1k</span>&nbsp;
+        class="white-color">34.8k</span>&nbsp;
       
       
       

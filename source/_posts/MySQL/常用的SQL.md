@@ -43,3 +43,9 @@ show index from table_name;                              -- 查看表中的索�
 -- char(10)：换行符      char(13)：回车符
 update table set name=replace(replace(`field`,char(10),''),char(13),'');
 ```
+
+#### 7、修改表引擎
+```
+alter table table_name engine=MyISAM;
+```
+
