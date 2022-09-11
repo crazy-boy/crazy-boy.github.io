@@ -17,8 +17,8 @@ https://crazy-boy.com/posts/thinkphp-rule.html
 https://crazy-boy.com/posts/mysql-json.html
 https://crazy-boy.com/posts/mediator-pattern.html
 https://crazy-boy.com/posts/flyweight-pattern.html
-https://crazy-boy.com/posts/singleton-pattern.html
 https://crazy-boy.com/posts/proxy-pattern.html
+https://crazy-boy.com/posts/singleton-pattern.html
 https://crazy-boy.com/posts/prototype-pattern.html
 https://crazy-boy.com/posts/command-pattern.html
 https://crazy-boy.com/posts/memento-pattern.html
@@ -66,12 +66,12 @@ https://crazy-boy.com/posts/php-bat.html
 https://crazy-boy.com/posts/61e2bcf6.html
 https://crazy-boy.com/posts/normal-rgb.html
 https://crazy-boy.com/posts/cross-domain.html
-https://crazy-boy.com/posts/2207b087.html
+https://crazy-boy.com/posts/anchoring-effect.html
 https://crazy-boy.com/posts/php-common-algorithm.html
 https://crazy-boy.com/posts/mongodb-notes.html
 https://crazy-boy.com/posts/target-management.html
 https://crazy-boy.com/posts/wx-msg-push.html
-https://crazy-boy.com/posts/c7205d17.html
+https://crazy-boy.com/posts/product-design.html
 https://crazy-boy.com/posts/html-to-pdf.html
 https://crazy-boy.com/posts/goframe-note.html
 https://crazy-boy.com/posts/mysql-optimization.html

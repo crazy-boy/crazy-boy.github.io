@@ -1055,7 +1055,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    272
+                    550
                 </div>
                 
 
@@ -1079,6 +1079,17 @@ h3:hover {
 <li>索引列使用了函数<br> 如：<code>explain select * from tname where ifnull(id,0)=1;</code>未使用索引</li>
 <li>索引列存在类型转换<br> 如果索引列存在类型转换，那么也不会走索引，比如 name 为字符串类型，而查询的时候设置了 int 类型的值就会导致索引失效</li>
 <li>索引列使用 is not null 查询<br> 当在查询中使用了 is not null 也会导致索引失效，而 is null 则会正常触发索引的</li>
+</ol>
+<h4 id="哪些情况不适合创建索引"><a href="#哪些情况不适合创建索引" class="headerlink" title="哪些情况不适合创建索引"></a>哪些情况不适合创建索引</h4><ol>
+<li>不应该在字段比较长的字段上建立索引，因为会消耗大量的空间</li>
+<li>对于频繁更新、插入的字段应该少建立索引，因为在修改和插入之后，数据库会去维护索引，会消耗资源</li>
+<li>尽量少在无用字段上建立索引【where条件中用不到的字段】</li>
+<li>表记录太少不应该创建索引</li>
+<li>数据重复且分布平均的表字段不应该创建索引【选择性太低，例如性别、状态、真假值等字段】</li>
+<li>参与列计算的列不适合建索引【保持列”干净”，比如from_unixtime(create_time) = ‘2022-05-29’就不能使用到索引，原因是b+树中存的都是数据表中的字段值，但进行检索时需要把所有元素都应用函数才能比较，显然成本太大，所以语句应该写成create_time = unix_timestamp(‘2022-05-29’)】</li>
+</ol>
+<h4 id="索引的优缺点"><a href="#索引的优缺点" class="headerlink" title="索引的优缺点"></a>索引的优缺点</h4><ol>
+<li>建立索引是要消耗一定的空间，况且在索引的维护上也会消耗资源</li>
 </ol>
 
             </div>
@@ -1748,7 +1759,7 @@ select_type
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="MySQL架构设计">
+                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="MySQL架构设计">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2069,8 +2080,8 @@ select_type
       <br>
 
       
-      &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total number of words: &nbsp;<span
-        class="white-color">34.8k</span>&nbsp;
+      &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
+        class="white-color">36.2k</span>&nbsp;
       
       
       
@@ -2078,17 +2089,17 @@ select_type
       
       
       <span id="busuanzi_container_site_pv">
-        <i class="far"></i>Total access: &nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;
+        <i class="far"></i>总访问量: &nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;
       </span>
       
       
       <span id="busuanzi_container_site_uv">
-        <i class="fas"></i>Total visits: &nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;
+        <i class="fas"></i>总访问人数: &nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;
       </span>
       
       <br>
       
-      <span id="sitetime">running time</span>
+      <span id="sitetime">运行时间</span>
       <script>
         function siteTime() {
           var seconds = 1000;
@@ -2121,24 +2132,32 @@ select_type
             diffMinutes * minutes) / seconds);
           if (startYear == todayYear) {
             document.getElementById("year").innerHTML = todayYear;
-            document.getElementById("sitetime").innerHTML = "The site has been running for " +
-              "<span class= 'white-color'>" + diffDays + "</span>" + " d " + "<span class= 'white-color'>" + diffHours +
+            document.getElementById("sitetime").innerHTML = "本站已运行 " +
+              "<span class= 'white-color'>" + diffDays + "</span>" + " 天 " + "<span class= 'white-color'>" + diffHours +
               "</span>" +
-              " h " + "<span class= 'white-color'>" + diffMinutes + "</span>" + " m " + "<span class= 'white-color'>" +
-              diffSeconds + "</span>" + " s";
+              " 小时 " + "<span class= 'white-color'>" + diffMinutes + "</span>" + " 分 " + "<span class= 'white-color'>" +
+              diffSeconds + "</span>" + " 秒";
           } else {
             document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-            document.getElementById("sitetime").innerHTML = "The site has been running for " +
-              "<span class= 'white-color'>" + diffYears + "</span>" + " y " + "<span class= 'white-color'>" + diffDays +
+            document.getElementById("sitetime").innerHTML = "本站已运行 " +
+              "<span class= 'white-color'>" + diffYears + "</span>" + " 年 " + "<span class= 'white-color'>" + diffDays +
               "</span>" +
-              " d " + "<span class= 'white-color'>" + diffHours + "</span>" + " h " + "<span class= 'white-color'>" +
-              diffMinutes + "</span>" + " m " + "<span class= 'white-color'>" + diffSeconds + "</span>" + " s";
+              " 天 " + "<span class= 'white-color'>" + diffHours + "</span>" + " 小时 " + "<span class= 'white-color'>" +
+              diffMinutes + "</span>" + " 分 " + "<span class= 'white-color'>" + diffSeconds + "</span>" + " 秒";
           }
         }
         setInterval(siteTime, 1000);
       </script>
       
       <br>
+      
+      <span id="icp">
+        <a href="http://beian.miit.gov.cn" target="_blank">
+          <img src="/medias/icp.png"
+            style="vertical-align: text-bottom;width: 16px;height: 16px;" />
+          蜀ICP备2022000541号-1
+        </a>
+      </span>
       
     </div>
     <div class="col s12 m3 l3 social-link social-statis">
