@@ -2108,7 +2108,7 @@
       <link href="/posts/notepad++-notes.html"/>
       <url>/posts/notepad++-notes.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-将指定字符替换为换行"><a href="#1-将指定字符替换为换行" class="headerlink" title="1. 将指定字符替换为换行"></a>1. 将指定字符替换为换行</h3><p>  查找目标：待替换的字符<br>  替换为：\r<br>  查找模式：扩展<br>  如把 | 替换为换行<br><img src="/images/notepad_note_1.png" alt><br><img src="/images/notepad_note_2.png" alt></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="1-将指定字符替换为换行"><a href="#1-将指定字符替换为换行" class="headerlink" title="1. 将指定字符替换为换行"></a>1. 将指定字符替换为换行</h3><p>  查找目标：待替换的字符<br>  替换为：\r<br>  查找模式：扩展<br>  如把 | 替换为换行<br><img src="/images/notepad_note_1.png" alt><br><img src="/images/notepad_note_2.png" alt></p><h3 id="2-去除重复的行"><a href="#2-去除重复的行" class="headerlink" title="2. 去除重复的行"></a>2. 去除重复的行</h3><ul><li>选择内容，然后点击 编辑-&gt;行操作-&gt;升(降)序排列文本行<br><img src="/images/notepad_note_3.png" alt></li><li>选择内容，然后点击 编辑-&gt;行操作-&gt;删除连续的重复行<br><img src="/images/notepad_note_4.png" alt></li><li>得到去重后的内容，唯一缺点是打乱了原有内容的顺序<br><img src="/images/notepad_note_5.png" alt></li></ul>]]></content>
       
       
       <categories>
@@ -2358,7 +2358,7 @@
       <link href="/posts/personnel-public-data.html"/>
       <url>/posts/personnel-public-data.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">这是个人采集的一些公用数据，大家可根据需要自取，不谢！</div><ul><li><a href="https://github.com/crazy-boy/public-data/blob/main/地名词库.txt" target="_blank">地名词库</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/歇后语.txt" target="_blank">歇后语</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">这是个人采集的一些公用数据，大家可根据需要自取，不谢！</div><ul><li><a href="https://github.com/crazy-boy/public-data/blob/main/地名词库.txt" target="_blank">地名词库</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/歇后语.txt" target="_blank">歇后语</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/成语.txt" target="_blank">成语</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/品牌名(英文).txt" target="_blank">2015年搜集的一些英文版品牌名</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/常见的用户名.txt" target="_blank">常见的用户名</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/常见的弱密码.txt" target="_blank">常见的弱密码</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/姓氏(中文).txt" target="_blank">姓氏(中文)</a></li><li><a href="https://github.com/crazy-boy/public-data/blob/main/姓氏(日文).txt" target="_blank">姓氏(日文)</a></li></ul>]]></content>
       
       
       <categories>
@@ -3396,6 +3396,31 @@
         <tags>
             
             <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>利用JQuery进行md5加密</title>
+      <link href="/posts/jquery-md5.html"/>
+      <url>/posts/jquery-md5.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在开发中，有时候需要前端将数据加密后传给后端，下面介绍下jquery md5加密：</p><p>先引入<a href="/codes/md5.min.js">md5.min.js</a>，再调用，代码如下：</p><pre><code>&lt;script src=&quot;md5.min.js&quot;&gt;&lt;/script&gt;&lt;script&gt;    var str = document.getElementById(&#39;input&#39;).value;    console.log(md5(str));&lt;/script&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Jquery </tag>
             
         </tags>
       

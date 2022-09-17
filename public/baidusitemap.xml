@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/personnel-public-data.html</loc>
+    <lastmod>2022-09-16</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/db-3nf.html</loc>
     <lastmod>2022-09-08</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/architecture-notes.html</loc>
     <lastmod>2022-09-04</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/personnel-public-data.html</loc>
-    <lastmod>2022-09-03</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/thread-safe.html</loc>
@@ -543,5 +543,9 @@
   <url>
     <loc>https://crazy-boy.com/posts/971629fc.html</loc>
     <lastmod>2018-03-29</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/jquery-md5.html</loc>
+    <lastmod>2016-07-02</lastmod>
   </url>
 </urlset> 
