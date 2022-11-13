@@ -2,7 +2,7 @@
 title: Prolog笔记
 tags: [Prolog]
 categories: Prolog
-abbrlink: ec2116cd
+abbrlink: 'prolog-notes'
 date: 2019-01-31 11:36:00
 updated: 2019-01-31 11:36:00
 ---

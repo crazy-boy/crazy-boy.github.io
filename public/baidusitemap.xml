@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/lua-notes.html</loc>
+    <lastmod>2022-11-13</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/personnel-public-data.html</loc>
     <lastmod>2022-09-16</lastmod>
   </url>
@@ -461,7 +465,7 @@
     <lastmod>2019-01-31</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/ec2116cd.html</loc>
+    <loc>https://crazy-boy.com/posts/prolog-notes.html</loc>
     <lastmod>2019-01-31</lastmod>
   </url>
   <url>
