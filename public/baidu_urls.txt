@@ -1,4 +1,5 @@
 https://crazy-boy.com/posts/lua-notes.html
+https://crazy-boy.com/posts/php-if-else.html
 https://crazy-boy.com/posts/windows-move-desktop.html
 https://crazy-boy.com/posts/20220824-happy.html
 https://crazy-boy.com/posts/high-concurrent-experience.html
@@ -42,7 +43,7 @@ https://crazy-boy.com/posts/adapter-pattern.html
 https://crazy-boy.com/posts/redis-note.html
 https://crazy-boy.com/posts/phpstorm-quick-key.html
 https://crazy-boy.com/posts/phpstorm-show-dir.html
-https://crazy-boy.com/posts/phpstorm-show-func.html
+https://crazy-boy.com/posts/phpstorm-notes.html
 https://crazy-boy.com/posts/use-mysql-on-dos.html
 https://crazy-boy.com/posts/mysql-binlog.html
 https://crazy-boy.com/posts/thinkphp-where.html
@@ -97,4 +98,3 @@ https://crazy-boy.com/posts/personnel-public-data.html
 https://crazy-boy.com/posts/qiniu-storage.html
 https://crazy-boy.com/posts/e939ff3c.html
 https://crazy-boy.com/posts/relation-between-leaders-and-staffs.html
-https://crazy-boy.com/posts/install-php-on-linux.html

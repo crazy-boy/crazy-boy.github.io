@@ -42,6 +42,31 @@
   </entry>
   
   <entry>
+    <title>PHP中if else的优化方案</title>
+    <link href="https://crazy-boy.com/posts/php-if-else.html"/>
+    <id>https://crazy-boy.com/posts/php-if-else.html</id>
+    <published>2022-10-18T14:52:19.000Z</published>
+    <updated>2022-10-18T14:52:19.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Windows下如何将桌面位置移到其他地方</title>
     <link href="https://crazy-boy.com/posts/windows-move-desktop.html"/>
     <id>https://crazy-boy.com/posts/windows-move-desktop.html</id>
@@ -470,31 +495,6 @@
     <title>设计模式——中介者模式</title>
     <link href="https://crazy-boy.com/posts/mediator-pattern.html"/>
     <id>https://crazy-boy.com/posts/mediator-pattern.html</id>
-    <published>2022-05-19T13:53:34.000Z</published>
-    <updated>2022-05-19T13:53:34.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="设计模式" scheme="https://crazy-boy.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-    <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式——享元模式</title>
-    <link href="https://crazy-boy.com/posts/flyweight-pattern.html"/>
-    <id>https://crazy-boy.com/posts/flyweight-pattern.html</id>
     <published>2022-05-19T13:53:34.000Z</published>
     <updated>2022-05-19T13:53:34.000Z</updated>
     

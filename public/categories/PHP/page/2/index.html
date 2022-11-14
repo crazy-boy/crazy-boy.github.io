@@ -832,6 +832,92 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
+                    <a href="/posts/thinkphp-order.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/5.jpg" class="responsive-img" alt="ThinkPHP5 中order的使用">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              ThinkPHP5 中order的使用
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。下面这个查询没有得到预期的结果：
+    $list = Db::name(&#39;tb&#39;)-&gt;
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/ThinkPHP/">
+                            <span class="chip bg-color">ThinkPHP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
                     <a href="/posts/phpstorm-show-history.html" target="_blank">
                         <div class="card-image tag-image">
                             
@@ -2067,94 +2153,6 @@ __call()
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
-                    <a href="/posts/php-ini-config.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="详解php.ini">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              详解php.ini
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-safe_mode_exec_dir 设置安全模式下脚本可执行的目录，如果要通过popen()、system()、exec()等执行脚本，则该脚本需放在本配置设置的目录下。
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-12
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/PHP/">
-                            <span class="chip bg-color">PHP</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 </main>
@@ -2273,7 +2271,7 @@ safe_mode_exec_dir 设置安全模式下脚本可执行的目录，如果要通�
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">36.9k</span>&nbsp;
+        class="white-color">37.5k</span>&nbsp;
       
       
       

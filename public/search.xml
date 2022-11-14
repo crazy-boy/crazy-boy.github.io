@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>PHP中if else的优化方案</title>
+      <link href="/posts/php-if-else.html"/>
+      <url>/posts/php-if-else.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="note info">前言：在项目开发中，经常会遇到多个复杂if else的情况，下面说说这种情况的优化方案。</div><h3 id="提前return"><a href="#提前return" class="headerlink" title="提前return"></a>提前return</h3><p> 让正常流程走主干，非正常流程提前return，去除不必要的else，适用于函数参数校验。</p><ul><li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition)&#123;      doSomething  &#125;else&#123;      return ;  &#125;</code></pre></li><li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (!condition)&#123;      return ;  &#125;  doSomething</code></pre></li></ul><h3 id="使用三目运算符"><a href="#使用三目运算符" class="headerlink" title="使用三目运算符"></a>使用三目运算符</h3><p> 适用于根据条件给变量赋值。</p><ul><li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition)&#123;      $status = 1;  &#125;else&#123;      $status = 0;  &#125;</code></pre></li><li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  $status = condition ? 1 : 0;</code></pre></li></ul><h3 id="合并条件表达式"><a href="#合并条件表达式" class="headerlink" title="合并条件表达式"></a>合并条件表达式</h3><ul><li><p>优化前</p><pre class=" language-lang-php"><code class="language-lang-php">  if (condition1)&#123;      return true;  &#125;  if (condition2)&#123;      return true;  &#125;else&#123;      return false;  &#125;</code></pre></li><li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1 || condition2)&#123;      return true;  &#125;else&#123;      return false;  &#125;</code></pre></li></ul><h3 id="使用switch-case优化"><a href="#使用switch-case优化" class="headerlink" title="使用switch case优化"></a>使用switch case优化</h3><p> php8可以使用match表达式</p><ul><li><p>优化前</p><pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;      public static function handle(string $act, int $userId)&#123;          if ($act == 'sign in') &#123;              self::sign($userId);          &#125; elseif ($act == 'register user') &#123;              self::register($userId);          &#125; elseif ($act == 'change password') &#123;              self::changePwd($userId);          &#125;      &#125;      protected static function sign(int $userId)&#123;&#125;      protected static function register(int $userId)&#123;&#125;      protected static function changePwd(int $userId)&#123;&#125;  &#125;</code></pre></li><li><p>优化后</p><pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;      public static function handle(string $act, int $userId)&#123;          switch ($act) &#123;              case 'sign in':                  self::sign($userId);                  break;              case 'register user':                  self::register($userId);                  break;              case 'change password':                  self::changePwd($userId);                  break;              default:                  break;          &#125;      &#125;      protected static function sign(int $userId)&#123;&#125;      protected static function register(int $userId)&#123;&#125;      protected static function changePwd(int $userId)&#123;&#125;  &#125;</code></pre><p>效果：和原来的差不多，每次新增方法后还得修改代码。</p></li></ul><h3 id="使用枚举"><a href="#使用枚举" class="headerlink" title="使用枚举"></a>使用枚举</h3><ul><li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if ($status == 0)&#123;      return '待支付';  &#125;elseif($status == 1)&#123;      return '已支付';  &#125;else&#123;      return '支付失败';  &#125;</code></pre></li><li><p>优化后</p><pre class=" language-lang-php"><code class="language-lang-php">  $orderStatus = [      0 => '待支付',      1 => '已支付',      2 => '支付失败',  ];  return $orderStatus[$status];</code></pre></li></ul><h3 id="表驱动法"><a href="#表驱动法" class="headerlink" title="表驱动法"></a>表驱动法</h3><ul><li><p>优化前</p><pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;      public static function handle(string $act, int $userId)&#123;          if ($act == 'sign in') &#123;              self::sign($userId);          &#125; elseif ($act == 'register user') &#123;              self::register($userId);          &#125; elseif ($act == 'change password') &#123;              self::changePwd($userId);          &#125;      &#125;      protected static function sign(int $userId)&#123;&#125;      protected static function register(int $userId)&#123;&#125;      protected static function changePwd(int $userId)&#123;&#125;  &#125;</code></pre></li><li><p>优化后</p><pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;      private static $acts = [          'sign in' => 'sign',          'register use' => 'register',          'change password' => 'changePwd',      ];      public static function handle(string $act, int $userId)&#123;          $fun = !empty($act) && isset(self::$acts[$act]) ? self::$acts[$act] : null;          if ($fun) call_user_func($fun, $userId);      &#125;      protected static function sign(int $userId)&#123;&#125;      protected static function register(int $userId)&#123;&#125;      protected static function changePwd(int $userId)&#123;&#125;  &#125;</code></pre><p>效果：新增方法后，只需修改配置项，不用变更其他代码。</p></li></ul><h3 id="策略模式-工厂方法消除if-else"><a href="#策略模式-工厂方法消除if-else" class="headerlink" title="策略模式+工厂方法消除if-else"></a>策略模式+工厂方法消除if-else</h3><p>参考：<a href="https://www.phpmianshi.com/?id=197">https://www.phpmianshi.com/?id=197</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> PHP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PHP笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows下如何将桌面位置移到其他地方</title>
       <link href="/posts/windows-move-desktop.html"/>
       <url>/posts/windows-move-desktop.html</url>
@@ -1104,11 +1129,11 @@
     
     
     <entry>
-      <title>phpStorm显示当前文件的所有函数和方法</title>
-      <link href="/posts/phpstorm-show-func.html"/>
-      <url>/posts/phpstorm-show-func.html</url>
+      <title>phpStorm使用笔记</title>
+      <link href="/posts/phpstorm-notes.html"/>
+      <url>/posts/phpstorm-notes.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>phpStorm显示类的函数或方法列表， 点击左下方的Structure即可。<br><img src="/images/phpstorm_show_func_1.png" alt></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="phpStorm显示类的函数或方法列表"><a href="#phpStorm显示类的函数或方法列表" class="headerlink" title="phpStorm显示类的函数或方法列表"></a>phpStorm显示类的函数或方法列表</h4><p> 点击左下方的Structure即可<br><img src="/images/phpstorm_notes_1.png" alt></p><h4 id="设置在新窗口打开项目"><a href="#设置在新窗口打开项目" class="headerlink" title="设置在新窗口打开项目"></a>设置在新窗口打开项目</h4><p> 在File=&gt;Settings=&gt;Appearance &amp; Behavior=&gt;System Settings中设置<br><img src="/images/phpstorm_notes_2.png" alt></p><h4 id="修改字体的风格和大小"><a href="#修改字体的风格和大小" class="headerlink" title="修改字体的风格和大小"></a>修改字体的风格和大小</h4><p> 在File=&gt;Setting=&gt;Editor/Font中设置<br><img src="/images/phpstorm_notes_3.png" alt></p><h4 id="在phpstorm中写lua"><a href="#在phpstorm中写lua" class="headerlink" title="在phpstorm中写lua"></a>在phpstorm中写lua</h4><p> 可以安装插件<a href="https://github.com/EmmyLua/IntelliJ-EmmyLua">EmmyLua</a></p>]]></content>
       
       
       <categories>
