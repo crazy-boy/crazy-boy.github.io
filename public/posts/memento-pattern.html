@@ -1749,11 +1749,11 @@ echo "恢复后的状态为：" . $origi->getValue() . PHP_EOL;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/command-pattern.html">
+                <a href="/posts/facade-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——命令模式">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——外观模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1764,21 +1764,14 @@ echo "恢复后的状态为：" . $origi->getValue() . PHP_EOL;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——命令模式
+                          设计模式——外观模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下命令模式的代码实现
-// 创建接口Command
-interface Command&#123;
-    public function exe();
-&#125;
-
-class Receiver&#123;
-    pub
+                            说明  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的
                         
                     </div>
                     <div class="publish-info">
@@ -1815,11 +1808,11 @@ class Receiver&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/facade-pattern.html">
+                <a href="/posts/factory-method-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——外观模式">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="设计模式——工厂方法模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1830,14 +1823,18 @@ class Receiver&#123;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——外观模式
+                          设计模式——工厂方法模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的
+                            说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
+示例下面看下工厂方法模式的代码实现
+// 创建公共接口
+interface Sender&#123;
+    pub
                         
                     </div>
                     <div class="publish-info">

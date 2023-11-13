@@ -35,7 +35,6 @@ git stash pop           #恢复最近一次存储的文件
 assets/
 /runtime
 /Runtime
-.idea/workspace.xml
 /upload
 ```
 但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。
