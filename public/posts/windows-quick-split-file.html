@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1073,8 +1075,8 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p>
-<p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt></p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt></p>
+<p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt=""></p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt=""></p>
 <h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt
 </code></pre>
 <p>命令分解：</p>
@@ -1085,7 +1087,7 @@ tmp/ ：拆分后的文件放在tmp目录下
 m_ ：拆分后的文件名前缀
 && cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)
 </code></pre>
-<h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt></p>
+<h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt=""></p>
 <p>注：对xlsx文件拆分有问题</p>
 
             </div>
@@ -2070,7 +2072,7 @@ m_ ：拆分后的文件名前缀
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    181
+                    171
                 </div>
                 
 
@@ -1078,27 +1080,27 @@ h3:hover {
 <li>static和self很接近，唯一区别在于：self调用的是本身代码片段的这个类；而static调用的是从堆内存中提取出来的，即访问的是当前实例化的那个类。</li>
 </ul>
 <p>下面看下测试代码：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class A&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">class A{
     public $name = 'Jams';
     protected static $age = 26;
 
-    public function start()&#123;
+    public function start(){
         echo get_called_class() . '==>' . $this->name . '==>' . $this::$age;
-    &#125;
+    }
 
-    public static function getAge()&#123;
+    public static function getAge(){
         echo get_called_class() . '==>' . self::$age;
-    &#125;
+    }
 
-    public static function getInfo()&#123;
+    public static function getInfo(){
         echo get_called_class() . '==>' . static::$age;
-    &#125;
-&#125;
+    }
+}
 
-class B extends A&#123;
+class B extends A{
     public $name = 'Kiv';
     protected static $age = 20;
-&#125;
+}
 
 (new B())->start();
 B::getAge();
@@ -2091,7 +2093,7 @@ $t
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

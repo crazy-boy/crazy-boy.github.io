@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    204
+                    174
                 </div>
                 
 
@@ -1073,70 +1075,70 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface Collection&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">interface Collection{
     public function iterator();
     public function get(int $i);
     public function size(): int;
-&#125;
+}
 
-interface Iterator&#123;
+interface Iterator{
     public function previous();
     public function next();
     public function hasNext(): bool;
     public function first();
-&#125;
+}
 
-class MyCollection implements Collection&#123;
+class MyCollection implements Collection{
     public string $str = 'ABCDE';
-    public function iterator(): MyIterator&#123;
+    public function iterator(): MyIterator{
         return new MyIterator($this);
-    &#125;
-    public function get(int $i): string&#123;
+    }
+    public function get(int $i): string{
         return $this->str[$i];
-    &#125;
-    public function size(): int&#123;
+    }
+    public function size(): int{
         return strlen($this->str);
-    &#125;
-&#125;
+    }
+}
 
-class MyIterator implements Iterator&#123;
+class MyIterator implements Iterator{
     private Collection $collection;
     private int $pos = -1;
-    public function __construct(Collection $collection)&#123;
+    public function __construct(Collection $collection){
         $this->collection = $collection;
-    &#125;
+    }
 
-    public function previous()&#123;
-        if ($this->pos > 0)&#123;
+    public function previous(){
+        if ($this->pos > 0){
             $this->pos--;
-        &#125;
+        }
         return $this->collection->get($this->pos);
-    &#125;
+    }
 
-    public function next()&#123;
-        if ($this->pos < $this->collection->size() - 1)&#123;
+    public function next(){
+        if ($this->pos < $this->collection->size() - 1){
             $this->pos++;
-        &#125;
+        }
         return $this->collection->get($this->pos);
-    &#125;
+    }
 
-    public function hasNext(): bool&#123;
+    public function hasNext(): bool{
         return $this->pos < $this->collection->size() - 1;
-    &#125;
+    }
 
-    public function first()&#123;
+    public function first(){
         $this->pos = 0;
         return $this->collection->get($this->pos);
-    &#125;
-&#125;
+    }
+}
 
 
 // 调用
 $collection = new MyCollection();
 $it = $collection->iterator();
-while ($it->hasNext())&#123;
+while ($it->hasNext()){
     echo $it->next().'&nbsp;&nbsp;';
-&#125;
+}
 // output: A  B  C  D  E
 </code></pre>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
@@ -1740,11 +1742,11 @@ while ($it->hasNext())&#123;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/adapter-pattern.html">
+                <a href="/posts/chain-of-responsibility-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——适配器模式">
+                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——责任链模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1755,15 +1757,20 @@ while ($it->hasNext())&#123;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——适配器模式
+                          设计模式——责任链模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  适配器模式将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。
-分类类的适配器模式  核心思想就是：有一个Source类，
+                            说明示例下面看下责任链模式的代码实现
+interface Handler{
+    public function operation();
+}
+
+abstract class AbstractHandler{
+    private ?H
                         
                     </div>
                     <div class="publish-info">
@@ -1800,11 +1807,11 @@ while ($it->hasNext())&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/redis-note.html">
+                <a href="/posts/design-patterns.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Redis笔记">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="软件的设计模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1815,16 +1822,15 @@ while ($it->hasNext())&#123;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Redis笔记
+                          软件的设计模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装redis客户端yum install redis
-查看版本号info
-通过命令行方式连接redisredis-cli -h host -p port -a passwordhost:远程redis服务器hostport:远程redis
+                            设计模式的六大原则
+总原则：开闭原则（Open Close Principle）开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的
                         
                     </div>
                     <div class="publish-info">
@@ -1835,8 +1841,8 @@ while ($it->hasNext())&#123;
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
+                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
                                 </a>
                             
                             
@@ -1846,8 +1852,8 @@ while ($it->hasNext())&#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Redis/">
-                        <span class="chip bg-color">Redis</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -2121,7 +2127,7 @@ while ($it->hasNext())&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

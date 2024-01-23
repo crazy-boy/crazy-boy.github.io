@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    844
+                    680
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -1081,53 +1083,53 @@ use yii\console\Controller;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
-class RpcServerController extends Controller&amp;#123;
+class RpcServerController extends Controller{
 
     private $channel;
     private  $connection;
 
-    public function init ()&amp;#123;
-        $amqp = yii::$app-&gt;params[&#39;amqp&#39;];
+    public function init (){
+        $amqp = yii::$app-&gt;params['amqp'];
 
         //建立一个到RabbitMQ服务器的连接
-        $this-&gt;connection = new AMQPStreamConnection($amqp[&quot;host&quot;], $amqp[&quot;port&quot;], $amqp[&quot;user&quot;], $amqp[&quot;password&quot;]);
+        $this-&gt;connection = new AMQPStreamConnection($amqp["host"], $amqp["port"], $amqp["user"], $amqp["password"]);
         $this-&gt;channel = $this-&gt;connection-&gt;channel();
-    &amp;#125;
+    }
 
     /**
      * RPC服务端
      */
-    public function actionRpcServer()&amp;#123;
+    public function actionRpcServer(){
         //建立一个到RabbitMQ服务器的连接
         $connection = $this-&gt;connection;
         $channel = $this-&gt;channel;
 
         //接下来,我们创建一个通道
-        $channel-&gt;queue_declare(&#39;rpc_queue&#39;,false,false,false,false);
-        function fib($n) &amp;#123;
+        $channel-&gt;queue_declare('rpc_queue',false,false,false,false);
+        function fib($n) {
            return $n;
-        &amp;#125;
+        }
 
         //回调
-        $callback = function($req)&amp;#123;
+        $callback = function($req){
             $n = intval($req-&gt;body);
-            echo &quot; [.] fib(&quot;, $n, &quot;)\n&quot;;
-            $msg = new AMQPMessage((string) fib($n),[]&#39;correlation_id&#39; =&gt; $req-&gt;get(&#39;correlation_id&#39;)]);
-            $req-&gt;delivery_info[&#39;channel&#39;]-&gt;basic_publish($msg,&#39;&#39;, $req-&gt;get(&#39;reply_to&#39;));
-            $req-&gt;delivery_info[&#39;channel&#39;]-&gt;basic_ack($req-&gt;delivery_info[&#39;delivery_tag&#39;]);
-        &amp;#125;;
+            echo " [.] fib(", $n, ")\n";
+            $msg = new AMQPMessage((string) fib($n),[]'correlation_id' =&gt; $req-&gt;get('correlation_id')]);
+            $req-&gt;delivery_info['channel']-&gt;basic_publish($msg,'', $req-&gt;get('reply_to'));
+            $req-&gt;delivery_info['channel']-&gt;basic_ack($req-&gt;delivery_info['delivery_tag']);
+        };
 
         $channel-&gt;basic_qos(null,1,null);
-        $channel-&gt;basic_consume(&#39;rpc_queue&#39;,&#39;&#39;,false,false,false,false,$callback);
+        $channel-&gt;basic_consume('rpc_queue','',false,false,false,false,$callback);
 
-        while (count($channel-&gt;callbacks)) &amp;#123;
+        while (count($channel-&gt;callbacks)) {
             $channel-&gt;wait();
-        &amp;#125;
+        }
 
         $channel-&gt;close();
         $connection-&gt;close();
-    &amp;#125;
-&amp;#125;
+    }
+}
 </code></pre><h3 id="RPC客户端代码"><a href="#RPC客户端代码" class="headerlink" title="RPC客户端代码"></a>RPC客户端代码</h3><pre><code>&lt;?php
 
 
@@ -1143,9 +1145,9 @@ use PhpAmqpLib\Wire\AMQPTable;
 use Yii;
 
 class RemoteOpenDoor extends BaseServer
-&amp;#123;
+{
    const EXPIRE = 5;
-   const QUEUE_NAME = &quot;remote_open_door&quot;;
+   const QUEUE_NAME = "remote_open_door";
    public $devSn,$schoolId;
 
    /**
@@ -1155,68 +1157,68 @@ class RemoteOpenDoor extends BaseServer
    private $connection,$replyQueue,$corrId,$response,$params;
    private $door = [1,2];
 
-   public function init()&amp;#123;
-      $amqp = Yii::$app-&gt;params[&#39;rabbitMQ&#39;];
-      $this-&gt;connection = new AMQPStreamConnection($amqp[&#39;host&#39;],$amqp[&#39;port&#39;],$amqp[&#39;user&#39;],$amqp[&#39;password&#39;],$amqp[&#39;vhost&#39;]);
-      if(!$this-&gt;connection-&gt;isConnected())&amp;#123;
-         $this-&gt;setError(10003,&#39;连接失败&#39;);
+   public function init(){
+      $amqp = Yii::$app-&gt;params['rabbitMQ'];
+      $this-&gt;connection = new AMQPStreamConnection($amqp['host'],$amqp['port'],$amqp['user'],$amqp['password'],$amqp['vhost']);
+      if(!$this-&gt;connection-&gt;isConnected()){
+         $this-&gt;setError(10003,'连接失败');
          return false;
-      &amp;#125;
+      }
       $this-&gt;channel = $this-&gt;connection-&gt;channel();
 
       $arguments = new AMQPTable();
-      $arguments-&gt;set(&quot;x-message-ttl&quot;,10000);    //消息10s过期
+      $arguments-&gt;set("x-message-ttl",10000);    //消息10s过期
       //$this-&gt;channel-&gt;queue_declare(self::QUEUE_NAME,false,false,false,false,false,$arguments);
-      $this-&gt;channel-&gt;exchange_declare(self::QUEUE_NAME,&#39;topic&#39;,false,false,false);
-      //$this-&gt;replyQueue = $this-&gt;devSn.&#39;_&#39;.$this-&gt;schoolId.&#39;_&#39;.microtime(true);
-      list($this-&gt;replyQueue, ,) = $this-&gt;channel-&gt;queue_declare(&quot;&quot;,false,false,false,true,false);
+      $this-&gt;channel-&gt;exchange_declare(self::QUEUE_NAME,'topic',false,false,false);
+      //$this-&gt;replyQueue = $this-&gt;devSn.'_'.$this-&gt;schoolId.'_'.microtime(true);
+      list($this-&gt;replyQueue, ,) = $this-&gt;channel-&gt;queue_declare("",false,false,false,true,false);
       //回调
-      $callback = function(AMQPMessage $rep)&amp;#123;
+      $callback = function(AMQPMessage $rep){
          //var_dump($rep-&gt;get_properties());die;
-         if($rep-&gt;get(&#39;correlation_id&#39;) == $this-&gt;corrId) &amp;#123;
+         if($rep-&gt;get('correlation_id') == $this-&gt;corrId) {
             $this-&gt;response = $rep-&gt;body;
-         &amp;#125;
-      &amp;#125;;
+         }
+      };
 
       //接收回调信息
-      $this-&gt;channel-&gt;basic_consume( $this-&gt;replyQueue,&#39;&#39;,false,false,false,false,$callback);
-   &amp;#125;
+      $this-&gt;channel-&gt;basic_consume( $this-&gt;replyQueue,'',false,false,false,false,$callback);
+   }
 
-   public function __construct()&amp;#123;
+   public function __construct(){
       $this-&gt;init();
-   &amp;#125;
+   }
 
    //组装参数
-   protected function buildParams()&amp;#123;
+   protected function buildParams(){
       $params = [
-         &#39;expire&#39;=&gt;intval(time() + self::EXPIRE),
-         &#39;devSn&#39;=&gt;intval($this-&gt;devSn),
-         &#39;door&#39;=&gt;$this-&gt;door,
+         'expire'=&gt;intval(time() + self::EXPIRE),
+         'devSn'=&gt;intval($this-&gt;devSn),
+         'door'=&gt;$this-&gt;door,
       ];
 
       $this-&gt;params = json_encode($params,true);
-   &amp;#125;
+   }
 
 
    //发送mq开门指令
-   public function open()&amp;#123;
+   public function open(){
       $this-&gt;buildParams();
       $this-&gt;corrId = uniqid();
       $this-&gt;response = null;
-      $properties = [&#39;correlation_id&#39;=&gt;$this-&gt;corrId,&#39;reply_to&#39;=&gt;$this-&gt;replyQueue];
+      $properties = ['correlation_id'=&gt;$this-&gt;corrId,'reply_to'=&gt;$this-&gt;replyQueue];
       $message = new AMQPMessage($this-&gt;params,$properties);
-      $this-&gt;channel-&gt;basic_publish($message,self::QUEUE_NAME,sprintf(&#39;school.%d&#39;,$this-&gt;schoolId));
+      $this-&gt;channel-&gt;basic_publish($message,self::QUEUE_NAME,sprintf('school.%d',$this-&gt;schoolId));
 
       //test
-      /*$message = new AMQPMessage(json_encode([&#39;FailDoor&#39;=&gt;[1,2]],true),$properties);
-      $this-&gt;channel-&gt;basic_publish($message,&#39;&#39;,$this-&gt;replyQueue);*/
+      /*$message = new AMQPMessage(json_encode(['FailDoor'=&gt;[1,2]],true),$properties);
+      $this-&gt;channel-&gt;basic_publish($message,'',$this-&gt;replyQueue);*/
 
-      try&amp;#123;
+      try{
          $this-&gt;channel-&gt;wait(null,false,self::EXPIRE);
-      &amp;#125;catch (\Exception $exception)&amp;#123;
-         $this-&gt;setError(10003,&#39;开门失败&#39;);
+      }catch (\Exception $exception){
+         $this-&gt;setError(10003,'开门失败');
          return false;
-      &amp;#125;
+      }
 
 
       //var_dump($this-&gt;response);
@@ -1224,22 +1226,22 @@ class RemoteOpenDoor extends BaseServer
       // $this-&gt;connection-&gt;close();
 
       $rs = json_decode($this-&gt;response,true);
-      if (!is_array($rs[&#39;failDoor&#39;]) &amp;&amp; (!$rs[&#39;failDoor&#39;] || $rs[&#39;failDoor&#39;]!=$this-&gt;door))&amp;#123;
+      if (!is_array($rs['failDoor']) &amp;&amp; (!$rs['failDoor'] || $rs['failDoor']!=$this-&gt;door)){
          return true;
-      &amp;#125;
+      }
 
-      $this-&gt;setError(10003,&#39;开门失败&#39;);
+      $this-&gt;setError(10003,'开门失败');
       return false;
-   &amp;#125;
-&amp;#125;
+   }
+}
 </code></pre><h3 id="客户端调用代码："><a href="#客户端调用代码：" class="headerlink" title="客户端调用代码："></a>客户端调用代码：</h3><pre><code>$server = new RemoteOpenDoor();
 $server-&gt;devSn = $devSn;
 $server-&gt;schoolId = $teacher-&gt;getSchoolId();
 $rs = $server-&gt;open();
 $error = $server-&gt;getError();
-if(!$rs)&amp;#123;
-   return $error ? \Yii::$app-&gt;responseHelper-&gt;error($error)-&gt;response() : \Yii::$app-&gt;responseHelper-&gt;error(new Error(110000,&#39;操作失败！&#39;))-&gt;response();
-&amp;#125;
+if(!$rs){
+   return $error ? \Yii::$app-&gt;responseHelper-&gt;error($error)-&gt;response() : \Yii::$app-&gt;responseHelper-&gt;error(new Error(110000,'操作失败！'))-&gt;response();
+}
 
 return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
 </code></pre><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36851500/article/details/93501861">https://blog.csdn.net/weixin_36851500/article/details/93501861</a></p>
@@ -1869,7 +1871,7 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
                             1. 安装Yii2第三方扩展
 方法一：composer安装php composer.phar require php-amqplib/php-amqplib
 或者
-在composer.json文件的require里添加&quot;php-a
+在composer.json文件的require里添加"php-amqpli
                         
                     </div>
                     <div class="publish-info">
@@ -2230,7 +2232,7 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

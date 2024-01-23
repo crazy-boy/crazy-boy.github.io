@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    169
+                    143
                 </div>
                 
 
@@ -1073,51 +1075,51 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下观察者模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface Observer&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">interface Observer{
     public function update();
-&#125;
+}
 
-class Observer1 implements Observer&#123;
-    public function update()&#123;
+class Observer1 implements Observer{
+    public function update(){
         echo "observer1 has received!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class Observer2 implements Observer&#123;
-    public function update()&#123;
+class Observer2 implements Observer{
+    public function update(){
         echo "observer2 has received!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-interface Subject&#123;
+interface Subject{
     public function add(Observer $observer);
     public function del(Observer $observer);
     public function notifyObservers();
     public function operation();
-&#125;
+}
 
-abstract class AbstractSubject implements Subject&#123;
+abstract class AbstractSubject implements Subject{
     private $vector = [];
-    public function add(Observer $observer)&#123;
+    public function add(Observer $observer){
         $this->vector[] = $observer;
-    &#125;
-    public function del(Observer $observer)&#123;
+    }
+    public function del(Observer $observer){
         $index = array_search($observer,$this->vector);
         unset($this->vector[$index]);
-    &#125;
-    public function notifyObservers()&#123;
-        foreach ($this->vector as $value)&#123;
+    }
+    public function notifyObservers(){
+        foreach ($this->vector as $value){
             $value->update();
-        &#125;
-    &#125;
-&#125;
+        }
+    }
+}
 
-class MySubject extends AbstractSubject&#123;
-    public function operation()&#123;
+class MySubject extends AbstractSubject{
+    public function operation(){
         echo "update self!" . PHP_EOL;
         $this->notifyObservers();
-    &#125;
-&#125;
+    }
+}
 
 
 // 调用
@@ -1733,11 +1735,11 @@ $sub->operation();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/composite-pattern.html">
+                <a href="/posts/decorator-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——组合模式">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——装饰模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1748,18 +1750,16 @@ $sub->operation();
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——组合模式
+                          设计模式——装饰模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  又叫部分-整体模式,在处理类似树形结构的问题时比较方便。
-示例下面看下组合模式的代码实现
-class TreeNode&#123;
-    private string $name;
-    private TreeNode $pa
+                            说明  装饰模式就是给一个对象增加一些新的功能，而且是动态的，要求装饰对象和被装饰对象实现同一个接口，装饰对象持有被装饰对象的实例。
+示例下面看下装饰模式的代码实现
+//Source类是被装饰类，Decorator类是一个装饰类，可以为So
                         
                     </div>
                     <div class="publish-info">
@@ -1796,11 +1796,11 @@ class TreeNode&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/decorator-pattern.html">
+                <a href="/posts/visitor-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——装饰模式">
+                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——访问者模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1811,16 +1811,20 @@ class TreeNode&#123;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——装饰模式
+                          设计模式——访问者模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  装饰模式就是给一个对象增加一些新的功能，而且是动态的，要求装饰对象和被装饰对象实现同一个接口，装饰对象持有被装饰对象的实例。
-示例下面看下装饰模式的代码实现
-//Source类是被装饰类，Decorator类是一个装饰类，可以为So
+                            说明示例下面看下访问者模式的代码实现
+interface Visitor{
+    public function visit(Subject $sub);
+}
+
+class MyVisitor implements Visitor{
+  
                         
                     </div>
                     <div class="publish-info">
@@ -2117,7 +2121,7 @@ class TreeNode&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

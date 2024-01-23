@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    731
+                    721
                 </div>
                 
 
@@ -1102,13 +1104,13 @@ alg: crc32  # 算法：crc16(default) and crc32
 rep: hex    # 进制：dec(default) and hex
 permalink_defaults:
 pretty_urls:
-trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks
-trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks
-</code></pre><p>当然文章的短链部分可以在文章的首部进行设置，如：<code>abbrlink: &#39;hexo-notes&#39;</code>，如果不设置就会自动生成随机短链。</p>
+trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+trailing_html: true # Set to false to remove trailing '.html' from permalinks
+</code></pre><p>当然文章的短链部分可以在文章的首部进行设置，如：<code>abbrlink: 'hexo-notes'</code>，如果不设置就会自动生成随机短链。</p>
 </li>
 <li><p>开启文章字数统计<br><code>npm i --save hexo-wordcount</code></p>
 </li>
-<li><p>文章设置密码<br><code>npm install --save hexo-blog-encrypt</code><br>将”password”字段添加到文章的信息头：<code>password: abc123</code><br>文章可以按标签进行加密，优先级为：文章信息头&gt;按标签加密<br>文章信息头的设置示例<br><img src="/images/hexo_notes_2.png" alt></p>
+<li><p>文章设置密码<br><code>npm install --save hexo-blog-encrypt</code><br>将”password”字段添加到文章的信息头：<code>password: abc123</code><br>文章可以按标签进行加密，优先级为：文章信息头&gt;按标签加密<br>文章信息头的设置示例<br><img src="/images/hexo_notes_2.png" alt=""></p>
 </li>
 </ol>
 <p>_config.yml示例</p>
@@ -1117,8 +1119,8 @@ encrypt: # hexo-blog-encrypt
   abstract: 有东西被加密了, 请输入密码查看.
   message: 您好, 这里需要密码.
   tags:
-  - &#123;name: tagNameA, password: 密码A&#125;
-  - &#123;name: tagNameB, password: 密码B&#125;
+  - {name: tagNameA, password: 密码A}
+  - {name: tagNameB, password: 密码B}
   wrong_pass_message: 抱歉, 密码不太对哟.
   wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
 </code></pre>
@@ -2120,7 +2122,7 @@ windows7 安装docker，需要利用 docker toolbox 来安装。
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

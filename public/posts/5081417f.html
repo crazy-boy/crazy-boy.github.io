@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1073,9 +1075,9 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>ab.exe是apache server下的一个性能检测小组件，使用方便简单。<br>使用方法：</p>
-<h3 id="1-找到ab-exe的位置"><a href="#1-找到ab-exe的位置" class="headerlink" title="1. 找到ab.exe的位置"></a>1. 找到ab.exe的位置</h3><p>在电脑中找到ab.exe的位置，一般在Apache文件下的bin目录中，我这里的目录路径为：D:\software\phpstudy_pro\Extensions\Apache2.4.39\bin<br><img src="/images/test_ab_1.png" alt></p>
-<h3 id="2-打开cmd"><a href="#2-打开cmd" class="headerlink" title="2. 打开cmd"></a>2. 打开cmd</h3><h3 id="3-进入ab-exe所在目录"><a href="#3-进入ab-exe所在目录" class="headerlink" title="3. 进入ab.exe所在目录"></a>3. 进入ab.exe所在目录</h3><p><img src="/images/test_ab_2.png" alt></p>
-<h3 id="4-开始压测"><a href="#4-开始压测" class="headerlink" title="4. 开始压测"></a>4. 开始压测</h3><p><img src="/images/test_ab_3.png" alt></p>
+<h3 id="1-找到ab-exe的位置"><a href="#1-找到ab-exe的位置" class="headerlink" title="1. 找到ab.exe的位置"></a>1. 找到ab.exe的位置</h3><p>在电脑中找到ab.exe的位置，一般在Apache文件下的bin目录中，我这里的目录路径为：D:\software\phpstudy_pro\Extensions\Apache2.4.39\bin<br><img src="/images/test_ab_1.png" alt=""></p>
+<h3 id="2-打开cmd"><a href="#2-打开cmd" class="headerlink" title="2. 打开cmd"></a>2. 打开cmd</h3><h3 id="3-进入ab-exe所在目录"><a href="#3-进入ab-exe所在目录" class="headerlink" title="3. 进入ab.exe所在目录"></a>3. 进入ab.exe所在目录</h3><p><img src="/images/test_ab_2.png" alt=""></p>
+<h3 id="4-开始压测"><a href="#4-开始压测" class="headerlink" title="4. 开始压测"></a>4. 开始压测</h3><p><img src="/images/test_ab_3.png" alt=""></p>
 <p>常用参数说明：<br>-n：请求个数，默认一次一个<br>-c：并发数<br>-t：超时限制(秒)，默认不限制</p>
 <p>结果分析：</p>
 <pre class=" language-lang-shell"><code class="language-lang-shell">D:\software\phpstudy_pro\Extensions\Apache2.4.39\bin>ab -n 10 -c 10 http://www.baidu.com/
@@ -1749,7 +1751,7 @@ Percentage of the requests served within a certain time (ms)
                     <div class="summary block-with-text">
                         
                             之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。下面这个查询没有得到预期的结果：
-    $list = Db::name(&#39;tb&#39;)-&gt;
+    $list = Db::name('tb')-&gt;where(['
                         
                     </div>
                     <div class="publish-info">
@@ -2107,7 +2109,7 @@ Percentage of the requests served within a certain time (ms)
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

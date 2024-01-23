@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1073,9 +1075,9 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="安装redis客户端"><a href="#安装redis客户端" class="headerlink" title="安装redis客户端"></a>安装redis客户端</h3><p><code>yum install redis</code></p>
-<h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><p><code>info</code><br><img src="/images/redis_note_1.png" alt></p>
-<h3 id="通过命令行方式连接redis"><a href="#通过命令行方式连接redis" class="headerlink" title="通过命令行方式连接redis"></a>通过命令行方式连接redis</h3><p><code>redis-cli -h host -p port -a password</code><br>host:远程redis服务器host<br>port:远程redis服务端口<br>password:远程redis服务密码（无密码的的话就不需要-a参数了）<br><img src="/images/redis_note_2.png" alt></p>
-<h3 id="redis执行lua脚本"><a href="#redis执行lua脚本" class="headerlink" title="redis执行lua脚本"></a>redis执行lua脚本</h3><p><img src="/images/redis_note_3.png" alt><br><img src="/images/redis_note_4.png" alt></p>
+<h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><p><code>info</code><br><img src="/images/redis_note_1.png" alt=""></p>
+<h3 id="通过命令行方式连接redis"><a href="#通过命令行方式连接redis" class="headerlink" title="通过命令行方式连接redis"></a>通过命令行方式连接redis</h3><p><code>redis-cli -h host -p port -a password</code><br>host:远程redis服务器host<br>port:远程redis服务端口<br>password:远程redis服务密码（无密码的的话就不需要-a参数了）<br><img src="/images/redis_note_2.png" alt=""></p>
+<h3 id="redis执行lua脚本"><a href="#redis执行lua脚本" class="headerlink" title="redis执行lua脚本"></a>redis执行lua脚本</h3><p><img src="/images/redis_note_3.png" alt=""><br><img src="/images/redis_note_4.png" alt=""></p>
 
             </div>
             <hr/>
@@ -1677,11 +1679,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/iterator-pattern.html">
+                <a href="/posts/adapter-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——迭代器模式">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——适配器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1692,18 +1694,15 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——迭代器模式
+                          设计模式——适配器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下代码实现
-interface Collection&#123;
-    public function iterator();
-    public function get(int $i);
-    public func
+                            说明  适配器模式将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。
+分类类的适配器模式  核心思想就是：有一个Source类，
                         
                     </div>
                     <div class="publish-info">
@@ -2060,7 +2059,7 @@ interface Collection&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

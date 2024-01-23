@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    250
+                    214
                 </div>
                 
 
@@ -1074,20 +1076,20 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="常用脚本"><a href="#常用脚本" class="headerlink" title="常用脚本"></a>常用脚本</h3><ol>
 <li><p>修改字段名</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').update(&#123;&#125;, &#123;$rename: &#123;"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...&#125;&#125;, &#123;multi:true&#125;)
+<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').update({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:true})
 </code></pre>
-<p><code>&#123;multi:true&#125;</code>表示 对该集合的所有数据生效</p>
+<p><code>{multi:true}</code>表示 对该集合的所有数据生效</p>
 </li>
 <li><p>新增字段</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').update(&#123;&#125;, &#123;$set: &#123;"字段名1": "", "字段名2": ""...&#125;&#125;, &#123;multi:true&#125;)
+<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').update({}, {$set: {"字段名1": "", "字段名2": ""...}}, {multi:true})
 </code></pre>
-<p><code>&#123;multi:true&#125;</code>表示 对该集合的所有数据生效</p>
+<p><code>{multi:true}</code>表示 对该集合的所有数据生效</p>
 </li>
 <li><p>更新某个字段的值，使其与另一个字段的值相同</p>
 <pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').find().forEach(
- function(item)&#123;
-     db.getCollection('集合名').update(&#123;"_id":item._id&#125;, &#123;"$set":&#123;"字段名A":item.字段名B&#125;&#125;, &#123;&#125;)
- &#125;
+ function(item){
+     db.getCollection('集合名').update({"_id":item._id}, {"$set":{"字段名A":item.字段名B}}, {})
+ }
 )
 </code></pre>
 </li>
@@ -1097,24 +1099,24 @@ h3:hover {
 </li>
 </ol>
 <ol>
-<li>创建索引<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection("集合名").createIndex(&#123;
+<li>创建索引<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection("集合名").createIndex({
  "字段名": NumberInt("1"),
  "字段名": NumberInt("-1"),
  ……
  "字段名": NumberInt("1")
-&#125;, &#123;
+}, {
  name: "索引名"
-&#125;);
+});
 </code></pre>
 1：升序，-1：降序</li>
 </ol>
 <ol>
-<li>插入数据<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection("集合名").insert(&#123;
+<li>插入数据<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection("集合名").insert({
  "字段1": 值1,
  "字段2": 值2,
  ……
  "字段n": 值n
-&#125;);
+});
 </code></pre>
 </li>
 </ol>
@@ -1743,8 +1745,8 @@ h3:hover {
                         
                             冒泡排序
 时间复杂度：O(N^2)
-代码实现```phpfunction bubbleSort($arr)&#123;  $n = count($arr);  for ($i=0; $i&lt;$n-1; $i++)&#123;
-  for
+代码实现```phpfunction bubbleSort($arr){  $n = count($arr);  for ($i=0; $i&lt;$n-1; $i++){
+  for ($j=$i+1;
                         
                     </div>
                     <div class="publish-info">
@@ -2100,7 +2102,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

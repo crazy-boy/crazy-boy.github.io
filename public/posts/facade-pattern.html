@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    404
+                    378
                 </div>
                 
 
@@ -1074,63 +1076,63 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的启动过程为例）</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下外观模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class CPU&#123;
-    public function startup()&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">class CPU{
+    public function startup(){
         echo "cpu startup!" . PHP_EOL;
-    &#125;
+    }
 
-    public function shutdown()&#123;
+    public function shutdown(){
         echo "cpu shutdown!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class Memory&#123;
-    public function startup()&#123;
+class Memory{
+    public function startup(){
         echo "memory startup!" . PHP_EOL;
-    &#125;
+    }
 
-    public function shutdown()&#123;
+    public function shutdown(){
         echo "memory shutdown!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class Disk&#123;
-    public function startup()&#123;
+class Disk{
+    public function startup(){
         echo "disk startup!" . PHP_EOL;
-    &#125;
+    }
 
-    public function shutdown()&#123;
+    public function shutdown(){
         echo "disk shutdown!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class Computer&#123;
+class Computer{
     private CPU $cpu;
     private Memory $memory;
     private Disk $disk;
 
-    public function __construct()&#123;
+    public function __construct(){
         $this->cpu = new CPU();
         $this->memory = new Memory();
         $this->disk = new Disk();
-    &#125;
+    }
 
-    public function startup()&#123;
+    public function startup(){
         echo "start the computer!" . PHP_EOL;
         $this->cpu->startup();
         $this->memory->startup();
         $this->disk->startup();
         echo "start computer finished!" . PHP_EOL;
-    &#125;
+    }
 
-    public function shutdown()&#123;
+    public function shutdown(){
         echo "begin to close th computer!" . PHP_EOL;
         $this->cpu->shutdown();
         $this->memory->shutdown();
         $this->disk->shutdown();
         echo "computer closed!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 
 //调用
@@ -1756,11 +1758,11 @@ computer closed!
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/command-pattern.html">
+                <a href="/posts/memento-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——命令模式">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——备忘录模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1771,21 +1773,19 @@ computer closed!
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——命令模式
+                          设计模式——备忘录模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下命令模式的代码实现
-// 创建接口Command
-interface Command&#123;
-    public function exe();
-&#125;
+                            说明示例下面看下备忘录模式的代码实现
+class Original{
+    private string $value;
 
-class Receiver&#123;
-    pub
+    public function __construct(string $value){
+        $
                         
                     </div>
                     <div class="publish-info">
@@ -1822,11 +1822,11 @@ class Receiver&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/memento-pattern.html">
+                <a href="/posts/factory-method-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——备忘录模式">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="设计模式——工厂方法模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1837,18 +1837,18 @@ class Receiver&#123;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——备忘录模式
+                          设计模式——工厂方法模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下备忘录模式的代码实现
-class Original&#123;
-    private string $value;
-
-    public function __construct(string $value)&#123;
+                            说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
+示例下面看下工厂方法模式的代码实现
+// 创建公共接口
+interface Sender{
+    public f
                         
                     </div>
                     <div class="publish-info">
@@ -2145,7 +2145,7 @@ class Original&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

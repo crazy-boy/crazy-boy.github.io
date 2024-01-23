@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    550
+                    548
                 </div>
                 
 
@@ -1074,7 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h4 id="导致-MySQL-索引失效的常见场景"><a href="#导致-MySQL-索引失效的常见场景" class="headerlink" title="导致 MySQL 索引失效的常见场景"></a>导致 MySQL 索引失效的常见场景</h4><ol>
 <li>联合索引不满足最左匹配原则<br> 最左匹配原则是指以最左边的为起点字段查询可以使用联合索引，否则将不能使用联合索引。<br> 假设联合索引为A+B+C，则能使用索引的为A+B+C、A+B、A+C。</li>
-<li>模糊查询最前面的为不确定匹配字符<br> 只有模糊匹配后面任意字符：<code>like &#39;xx%&#39;</code> 可以使用索引</li>
+<li>模糊查询最前面的为不确定匹配字符<br> 只有模糊匹配后面任意字符：<code>like 'xx%'</code> 可以使用索引</li>
 <li>索引列参与了运算<br> 如：<code>explain select * from tname where id+1=1;</code>未使用索引</li>
 <li>索引列使用了函数<br> 如：<code>explain select * from tname where ifnull(id,0)=1;</code>未使用索引</li>
 <li>索引列存在类型转换<br> 如果索引列存在类型转换，那么也不会走索引，比如 name 为字符串类型，而查询的时候设置了 int 类型的值就会导致索引失效</li>
@@ -2081,7 +2083,7 @@ select_type
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

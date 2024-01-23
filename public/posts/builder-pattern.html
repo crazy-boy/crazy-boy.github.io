@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    322
                 </div>
                 
 
@@ -1072,77 +1074,77 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：<br><img src="/images/builder-pattern-1.jpg" alt></p>
+                <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：<br><img src="/images/builder-pattern-1.jpg" alt=""></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面讲解下设计模式的代码实现</p>
 <ol>
-<li>创建产品类<pre class=" language-lang-php"><code class="language-lang-php"> class Product&#123;
+<li>创建产品类<pre class=" language-lang-php"><code class="language-lang-php"> class Product{
      private $parts = [];
-     public function add(string $part): void&#123;
+     public function add(string $part): void{
          $this->parts[] = $part;
-     &#125;
-     public function show():void&#123;
+     }
+     public function show():void{
          print_r($this->parts);
-     &#125;
- &#125;
+     }
+ }
 </code></pre>
 </li>
-<li>创建建造者接口<pre class=" language-lang-php"><code class="language-lang-php"> interface Builder&#123;
+<li>创建建造者接口<pre class=" language-lang-php"><code class="language-lang-php"> interface Builder{
      public function buildPartA(): void;
      public function buildPartB(): void;
      public function getResult(): Product;
- &#125;
+ }
 </code></pre>
 </li>
 <li><p>创建多个建造者实现类</p>
-<pre class=" language-lang-php"><code class="language-lang-php"> class ConcreteBuilder1 implements Builder&#123;
+<pre class=" language-lang-php"><code class="language-lang-php"> class ConcreteBuilder1 implements Builder{
      private $product;
-     public function __construct()&#123;
+     public function __construct(){
          $this->product = new Product();
-     &#125;
+     }
 
-     public function buildPartA(): void&#123;
+     public function buildPartA(): void{
          $this->product->add('部件A');
-     &#125;
-     public function buildPartB(): void&#123;
+     }
+     public function buildPartB(): void{
          $this->product->add('部件B');
-     &#125;
-     public function getResult(): Product&#123;
+     }
+     public function getResult(): Product{
          return $this->product;
-     &#125;
- &#125;
+     }
+ }
 
- class ConcreteBuilder2 implements Builder&#123;
+ class ConcreteBuilder2 implements Builder{
      private $product;
-     public function __construct()&#123;
+     public function __construct(){
          $this->product = new Product();
-     &#125;
+     }
 
-     public function buildPartA(): void&#123;
+     public function buildPartA(): void{
          $this->product->add('部件X');
-     &#125;
-     public function buildPartB(): void&#123;
+     }
+     public function buildPartB(): void{
          $this->product->add('部件Y');
-     &#125;
-     public function getResult(): Product&#123;
+     }
+     public function getResult(): Product{
          return $this->product;
-     &#125;
- &#125;
+     }
+ }
 </code></pre>
 </li>
 <li><p>创建构造器</p>
-<pre class=" language-lang-php"><code class="language-lang-php"> class Director&#123;
-     public function construct(Builder $builder)&#123;
+<pre class=" language-lang-php"><code class="language-lang-php"> class Director{
+     public function construct(Builder $builder){
          $builder->buildPartA();
          $builder->buildPartB();
-     &#125;
- &#125;
+     }
+ }
 </code></pre>
 </li>
 </ol>
 <ul>
 <li><p>我们来测试下：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class FactoryTest&#123;
-      public static function index()&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">  class FactoryTest{
+      public static function index(){
           $director = new Director();
           $builder1 = new ConcreteBuilder1();
           $builder2 = new ConcreteBuilder2();
@@ -1154,8 +1156,8 @@ h3:hover {
           $director->construct($builder2);
           $product2 = $builder2->getResult();
           $product2->show();
-      &#125;
-  &#125;
+      }
+  }
 </code></pre>
 </li>
 <li><p>输出结果为：</p>
@@ -1789,7 +1791,7 @@ Array ( [0] =&gt; 部件X [1] =&gt; 部件Y )
                         
                             格式curl https://www.baidu.com
 上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。
-常用参数-d：使用-d参数向服务器发送POST请求的数据体curl -d &#39;logi
+常用参数-d：使用-d参数向服务器发送POST请求的数据体curl -d 'login=ad
                         
                     </div>
                     <div class="publish-info">
@@ -1850,8 +1852,8 @@ Array ( [0] =&gt; 部件X [1] =&gt; 部件Y )
                         
                             在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。
 下面演示下，在test方法执行后自动执行afterTest方法
-trait A&#123;
-    public function __call($method, 
+trait A{
+    public function __call($method, $args
                         
                     </div>
                     <div class="publish-info">
@@ -2148,7 +2150,7 @@ trait A&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

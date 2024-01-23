@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    186
+                    156
                 </div>
                 
 
@@ -1073,65 +1075,65 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下中介者模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface Mediator&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">interface Mediator{
     public function createMediator(): void;
     public function workAll(): void;
-&#125;
+}
 
-class MyMediator implements Mediator&#123;
+class MyMediator implements Mediator{
     private User $user1,$user2;
 
-    public function getUser1(): User&#123;
+    public function getUser1(): User{
         return $this->user1;
-    &#125;
+    }
 
-    public function getUser2(): User&#123;
+    public function getUser2(): User{
         return $this->user2;
-    &#125;
+    }
 
-    public function createMediator(): void&#123;
+    public function createMediator(): void{
         $this->user1 = new User1($this);
         $this->user2 = new User2($this);
-    &#125;
+    }
 
-    public function workAll(): void&#123;
+    public function workAll(): void{
         $this->user1->work();
         $this->user2->work();
-    &#125;
-&#125;
+    }
+}
 
-abstract class User&#123;
+abstract class User{
     private Mediator $mediator;
 
-    public function __construct(Mediator $mediator)&#123;
+    public function __construct(Mediator $mediator){
         $this->mediator = $mediator;
-    &#125;
+    }
 
-    public function getMediator(): Mediator&#123;
+    public function getMediator(): Mediator{
         return $this->mediator;
-    &#125;
+    }
 
     public abstract function work():void;
-&#125;
+}
 
-class User1 extends User&#123;
-    public function __construct(Mediator $mediator)&#123;
+class User1 extends User{
+    public function __construct(Mediator $mediator){
         parent::__construct($mediator);
-    &#125;
-    public function work(): void&#123;
+    }
+    public function work(): void{
         echo "user1 exe!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class User2 extends User&#123;
-    public function __construct(Mediator $mediator)&#123;
+class User2 extends User{
+    public function __construct(Mediator $mediator){
         parent::__construct($mediator);
-    &#125;
+    }
 
-    public function work(): void&#123;
+    public function work(): void{
         echo "user2 exe!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 
 // 调用
@@ -2124,7 +2126,7 @@ $mediator->workAll();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

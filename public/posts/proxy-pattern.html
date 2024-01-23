@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    398
+                    382
                 </div>
                 
 
@@ -1075,35 +1077,35 @@ h3:hover {
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>其实每个模式名称就表明了该模式的作用，代理模式就是多一个代理类出来，替原对象进行一些操作，比如我们在租房子的时候回去找中介，为什么呢？因为你对该地区房屋的信息掌握的不够全面，希望找一个更熟悉的人去帮你做，此处的代理就是这个意思。再如我们有的时候打官司，我们需要请律师，因为律师在法律方面有专长，可以替我们进行操作，表达我们的想法。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下代理模式的代码实现</p>
 <pre class=" language-lang-php"><code class="language-lang-php">// 创建接口Sourceable
-interface Sourceable&#123;
+interface Sourceable{
     public function method();
-&#125;
+}
 
 // 类Source实现接口Sourceable
-class Source implements Sourceable&#123;
-    public function method()&#123;
+class Source implements Sourceable{
+    public function method(){
         echo "the original method!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 // 代理类Proxy实现Sourceable
-class Proxy implements Sourceable&#123;
+class Proxy implements Sourceable{
     private Source $source;
-    public function __construct()&#123;
+    public function __construct(){
         $this->source = new Source();
-    &#125;
-    public function method()&#123;
+    }
+    public function method(){
         $this->before();
         $this->source->method();
         $this->after();
-    &#125;
-    private function before()&#123;
+    }
+    private function before(){
         echo "before proxy!" . PHP_EOL;
-    &#125;
-    private function after()&#123;
+    }
+    private function after(){
         echo "after proxy!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 
 // 调用
@@ -2098,7 +2100,7 @@ $source->method();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

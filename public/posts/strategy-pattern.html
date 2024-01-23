@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    142
+                    124
                 </div>
                 
 
@@ -1073,37 +1075,37 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下策略模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface ICalculator&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">interface ICalculator{
     public function calculate(string $exp);
-&#125;
+}
 
-abstract class AbstractCalculator&#123;
-    public function split(string $exp,string $opt): array&#123;
+abstract class AbstractCalculator{
+    public function split(string $exp,string $opt): array{
         $arr = explode($opt,$exp);
         return [intval($arr[0]),intval($arr[1])];
-    &#125;
-&#125;
+    }
+}
 
-class Plus extends AbstractCalculator implements ICalculator&#123;
-    public function calculate(string $exp)&#123;
+class Plus extends AbstractCalculator implements ICalculator{
+    public function calculate(string $exp){
         $arr = $this->split($exp,'+');
         return $arr[0] + $arr[1];
-    &#125;
-&#125;
+    }
+}
 
-class Minus extends AbstractCalculator implements ICalculator&#123;
-    public function calculate(string $exp)&#123;
+class Minus extends AbstractCalculator implements ICalculator{
+    public function calculate(string $exp){
         $arr = $this->split($exp, '-');
         return $arr[0] - $arr[1];
-    &#125;
-&#125;
+    }
+}
 
-class Multiply extends AbstractCalculator implements ICalculator&#123;
-    public function calculate(string $exp)&#123;
+class Multiply extends AbstractCalculator implements ICalculator{
+    public function calculate(string $exp){
         $arr = $this->split($exp, '*');
         return $arr[0] * $arr[1];
-    &#125;
-&#125;
+    }
+}
 
 
 // 调用
@@ -1737,11 +1739,11 @@ echo $result;
                     <div class="summary block-with-text">
                         
                             说明示例下面看下状态模式的代码实现
-class State&#123;
+class State{
     private string $value;
 
-    public function getValue(): string&#123;
-        ret
+    public function getValue(): string{
+        return $this-
                         
                     </div>
                     <div class="publish-info">
@@ -2100,7 +2102,7 @@ class State&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    368
+                    358
                 </div>
                 
 
@@ -1074,7 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h4 id="1-强制并行处理"><a href="#1-强制并行处理" class="headerlink" title="1. 强制并行处理"></a>1. 强制并行处理</h4><p><code>/*+ monitor parallel(8)*/</code></p>
 <h3 id="2-plsql查看sql性能"><a href="#2-plsql查看sql性能" class="headerlink" title="2. plsql查看sql性能"></a>2. plsql查看sql性能</h3><p><code>F5</code></p>
-<h3 id="3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数："><a href="#3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数：" class="headerlink" title="3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数："></a>3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</h3><pre><code>CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := &#39;,&#39;)
+<h3 id="3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数："><a href="#3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数：" class="headerlink" title="3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数："></a>3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</h3><pre><code>CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := ',')
 RETURN NUMBER IS
   l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置
   str      varchar2(500);  -- 根据分隔符截取的子字符串
@@ -1116,11 +1118,11 @@ RETURN res;
 END FIND_IN_SET;
 </code></pre><h3 id="4-日期转时间戳函数"><a href="#4-日期转时间戳函数" class="headerlink" title="4. 日期转时间戳函数"></a>4. 日期转时间戳函数</h3><pre><code>create or replace function oracle_to_unix(in_date IN DATE) return number is
     begin 
-        return( (in_date -TO_DATE(&#39;19700101&#39;,&#39;yyyymmdd&#39;))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);
+        return( (in_date -TO_DATE('19700101','yyyymmdd'))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);
     end oracle_to_unix;
 </code></pre><h3 id="5-时间戳转日期函数"><a href="#5-时间戳转日期函数" class="headerlink" title="5. 时间戳转日期函数"></a>5. 时间戳转日期函数</h3><pre><code>create or replace function unix_to_oracle(in_number NUMBER) return date is
     begin
-        return(TO_DATE(&#39;19700101&#39;,&#39;yyyymmdd&#39;) + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);
+        return(TO_DATE('19700101','yyyymmdd') + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);
     end unix_to_oracle;
 </code></pre>
             </div>
@@ -1750,8 +1752,9 @@ END FIND_IN_SET;
 /**
  * 生成mysql数据字典
  */
-header(&quot;Content-type: text/html; charset=utf-8&quot;);
-//配
+header("Content-type: text/html; charset=utf-8");
+//配置数据库
+$dbse
                         
                     </div>
                     <div class="publish-info">
@@ -2110,7 +2113,7 @@ header(&quot;Content-type: text/html; charset=utf-8&quot;);
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

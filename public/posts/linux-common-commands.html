@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    668
+                    658
                 </div>
                 
 
@@ -1089,7 +1091,7 @@ h3:hover {
 <li><p>修改密码</p>
 <ol>
 <li>选择要修改密码的用户名，以root用户为例<br><code>passwd root</code></li>
-<li>输入2次一样的新密码，当提示更新成功即可。<br><img src="/images/linux_command_1.png" alt></li>
+<li>输入2次一样的新密码，当提示更新成功即可。<br><img src="/images/linux_command_1.png" alt=""></li>
 </ol>
 </li>
 <li><p>查看系统环境</p>
@@ -1108,11 +1110,11 @@ h3:hover {
 <li>查询100行之后的所有内容：<code>tail -n +100 xx.log</code></li>
 <li>查询头10行的内容：<code>head -n 10 xx.log</code></li>
 <li>查询除最后100行外的内容：<code>head -n -100 xx.log</code></li>
-<li>根据关键字查询日志：<code>cat -n xx.log |grep &quot;charge&quot;</code>   可以得到关键字日志的行号和内容</li>
-<li>根据关键字查询日志并获取最后5行：<code>grep &#39;charge&#39; xx.log |tail -n 5</code></li>
-<li>根据关键字查询日志内容：<code>grep &#39;charge&#39; xx.log</code>   不返回行号，如果为空，则说明日志中无此关键字<ul>
-<li>如果日志太多，可分页查看：<code>cat -n xx.log |grep &#39;charge&#39; | more</code>  按空格键进行翻页</li>
-<li>如果日志太大，也可以只把关键字部分保存到文件中，提取下来，命令如下：<br>  <code>cat -n xx.log |grep &#39;charge&#39; &gt; aa.txt</code><br>  然后下载下来：<code>sz aa.txt</code><br>  最后删除文件：<code>rm -f aa.txt</code></li>
+<li>根据关键字查询日志：<code>cat -n xx.log |grep "charge"</code>   可以得到关键字日志的行号和内容</li>
+<li>根据关键字查询日志并获取最后5行：<code>grep 'charge' xx.log |tail -n 5</code></li>
+<li>根据关键字查询日志内容：<code>grep 'charge' xx.log</code>   不返回行号，如果为空，则说明日志中无此关键字<ul>
+<li>如果日志太多，可分页查看：<code>cat -n xx.log |grep 'charge' | more</code>  按空格键进行翻页</li>
+<li>如果日志太大，也可以只把关键字部分保存到文件中，提取下来，命令如下：<br>  <code>cat -n xx.log |grep 'charge' &gt; aa.txt</code><br>  然后下载下来：<code>sz aa.txt</code><br>  最后删除文件：<code>rm -f aa.txt</code></li>
 </ul>
 </li>
 </ul>
@@ -1726,11 +1728,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/jquery-note.html">
+                <a href="/posts/1822a0ce.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Jquery笔记">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="CSS笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1741,16 +1743,17 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Jquery笔记
+                          CSS笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            jquery获取json的长度//一维：
-var JsonTemp = &amp;#123;&#39;id&#39;:5,&#39;name&#39;:&#39;lilei&#39;&amp;#125;;  
-length = JsonTe
+                            
+如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}
+
+如果css希望两个标签对齐，可以用position来处理，如：.cntck{position
                         
                     </div>
                     <div class="publish-info">
@@ -1772,8 +1775,8 @@ length = JsonTe
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jquery/">
-                        <span class="chip bg-color">Jquery</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
@@ -2115,7 +2118,7 @@ length = JsonTe
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

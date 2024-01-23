@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    263
+                    249
                 </div>
                 
 
@@ -1073,10 +1075,10 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="1、查看所有的触发器"><a href="#1、查看所有的触发器" class="headerlink" title="1、查看所有的触发器"></a>1、查看所有的触发器</h4><pre><code>SELECT * FROM information_schema.`TRIGGERS`;
-</code></pre><h4 id="2、查询所有的表"><a href="#2、查询所有的表" class="headerlink" title="2、查询所有的表"></a>2、查询所有的表</h4><pre><code>SELECT TABLE_NAME table_name,TABLE_COMMENT table_comment FROM INFORMATION_SCHEMA.TABLES where table_schema=&#39;myDB&#39; and table_type=&#39;BASE TABLE&#39;;   //表名(不包含视图)及备注
-show full tables where Table_type = &#39;BASE TABLE&#39;;    //表名
-</code></pre><h4 id="3、查询db1数据库中所有有触发器的表"><a href="#3、查询db1数据库中所有有触发器的表" class="headerlink" title="3、查询db1数据库中所有有触发器的表"></a>3、查询db1数据库中所有有触发器的表</h4><pre><code>SELECT DISTINCT EVENT_OBJECT_TABLE FROM information_schema.`TRIGGERS` WHERE EVENT_OBJECT_SCHEMA = &quot;db1&quot;;
-</code></pre><h4 id="4、查询db1数据库中所有无触发器的表"><a href="#4、查询db1数据库中所有无触发器的表" class="headerlink" title="4、查询db1数据库中所有无触发器的表"></a>4、查询db1数据库中所有无触发器的表</h4><pre><code>SELECT A.TABLE_NAME from information_schema.`TABLES` A LEFT JOIN information_schema.`TRIGGERS` B ON A.TABLE_NAME=B.EVENT_OBJECT_TABLE where B.EVENT_OBJECT_TABLE is null and A.TABLE_SCHEMA=&quot;db1&quot;;
+</code></pre><h4 id="2、查询所有的表"><a href="#2、查询所有的表" class="headerlink" title="2、查询所有的表"></a>2、查询所有的表</h4><pre><code>SELECT TABLE_NAME table_name,TABLE_COMMENT table_comment FROM INFORMATION_SCHEMA.TABLES where table_schema='myDB' and table_type='BASE TABLE';   //表名(不包含视图)及备注
+show full tables where Table_type = 'BASE TABLE';    //表名
+</code></pre><h4 id="3、查询db1数据库中所有有触发器的表"><a href="#3、查询db1数据库中所有有触发器的表" class="headerlink" title="3、查询db1数据库中所有有触发器的表"></a>3、查询db1数据库中所有有触发器的表</h4><pre><code>SELECT DISTINCT EVENT_OBJECT_TABLE FROM information_schema.`TRIGGERS` WHERE EVENT_OBJECT_SCHEMA = "db1";
+</code></pre><h4 id="4、查询db1数据库中所有无触发器的表"><a href="#4、查询db1数据库中所有无触发器的表" class="headerlink" title="4、查询db1数据库中所有无触发器的表"></a>4、查询db1数据库中所有无触发器的表</h4><pre><code>SELECT A.TABLE_NAME from information_schema.`TABLES` A LEFT JOIN information_schema.`TRIGGERS` B ON A.TABLE_NAME=B.EVENT_OBJECT_TABLE where B.EVENT_OBJECT_TABLE is null and A.TABLE_SCHEMA="db1";
 </code></pre><h4 id="5、创建索引"><a href="#5、创建索引" class="headerlink" title="5、创建索引"></a>5、创建索引</h4><pre><code>alter table table_name add index index_name (索引字段);   -- 创建普通索引
 create index index_name on table_name (索引字段);         -- 创建普通索引
 alter table table_name add primary key(colunm_name);     -- 创建主键
@@ -1084,7 +1086,7 @@ alter table table_name add unique(colunm_name);          -- 创建唯一索引
 create index idx_c1_c2 on table_name(c1,c2);             -- 创建联合索引
 show index from table_name;                              -- 查看表中的索引
 </code></pre><h4 id="6、去除数据表中指定字段的换行符"><a href="#6、去除数据表中指定字段的换行符" class="headerlink" title="6、去除数据表中指定字段的换行符"></a>6、去除数据表中指定字段的换行符</h4><pre><code>-- char(10)：换行符      char(13)：回车符
-update table set name=replace(replace(`field`,char(10),&#39;&#39;),char(13),&#39;&#39;);
+update table set name=replace(replace(`field`,char(10),''),char(13),'');
 </code></pre><h4 id="7、修改表引擎"><a href="#7、修改表引擎" class="headerlink" title="7、修改表引擎"></a>7、修改表引擎</h4><pre><code>alter table table_name engine=MyISAM;
 </code></pre>
             </div>
@@ -2075,7 +2077,7 @@ update table set name=replace(replace(`field`,char(10),&#39;&#39;),char(13),&#39
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

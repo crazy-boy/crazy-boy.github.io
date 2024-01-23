@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    90
+                    68
                 </div>
                 
 
@@ -1073,34 +1075,34 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>rule规则</p>
-<pre><code>class Item extends \think\Validate&#123;
+<pre><code>class Item extends \think\Validate{
     protected $rule = [
-        [&#39;mobile|手机号&#39;, &#39;require|length:11&#39;, &#39;手机号必填|手机号格式不正确&#39;],
+        ['mobile|手机号', 'require|length:11', '手机号必填|手机号格式不正确'],
         …
     ];
 
     protected $scene = [
-        &#39;add&#39;=&gt;[&#39;mobile&#39;,&#39;name&#39;…],
+        'add'=&gt;['mobile','name'…],
         …
     ];
 
-&#125;
+}
 </code></pre><p>添加自定义校验</p>
 <pre><code>$rule = [
-    [&#39;anchor_id|关联账号&#39;, &#39;require|checkAnchor&#39;],
+    ['anchor_id|关联账号', 'require|checkAnchor'],
 ];
 
-protected function checkAnchor($value)&#123;
+protected function checkAnchor($value){
     …
-    if ($error = $server-&gt;getError()) &#123;
+    if ($error = $server-&gt;getError()) {
         extract($error);
         /**
          * @var $msg
          */
         return $msg;
-    &#125;
+    }
     return true;
-&#125;
+}
 </code></pre>
             </div>
             <hr/>
@@ -1726,9 +1728,9 @@ protected function checkAnchor($value)&#123;
                         
                             
 如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)
-  function sum(...$numbers)&#123;
+  function sum(...$numbers){
       $sum = 0;
-      foreach ($numbers as $
+      foreach ($numbers as $numbe
                         
                     </div>
                     <div class="publish-info">
@@ -2084,7 +2086,7 @@ protected function checkAnchor($value)&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

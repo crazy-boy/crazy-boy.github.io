@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    950
                 </div>
                 
 
@@ -1074,56 +1076,56 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ul>
 <li>时间复杂度：O(N^2)</li>
-<li><p>代码实现<br>```php<br>function bubbleSort($arr)&#123;<br>  $n = count($arr);<br>  for ($i=0; $i&lt;$n-1; $i++)&#123;</p>
-<pre><code>  for ($j=$i+1; $j&lt;$n; $j++)&amp;#123;
-      if ($arr[$j] &lt; $arr[$i])&amp;#123;
+<li><p>代码实现<br>```php<br>function bubbleSort($arr){<br>  $n = count($arr);<br>  for ($i=0; $i&lt;$n-1; $i++){</p>
+<pre><code>  for ($j=$i+1; $j&lt;$n; $j++){
+      if ($arr[$j] &lt; $arr[$i]){
           [$arr[$i], $arr[$j]] = [$arr[$j], $arr[$i]];
-      &amp;#125;
-  &amp;#125;
-</code></pre><p>  &#125;</p>
-<p>  return $arr;<br>&#125;</p>
+      }
+  }
+</code></pre><p>  }</p>
+<p>  return $arr;<br>}</p>
 </li>
 </ul>
 <p>$arr = [45,2,5,54,3,23];<br>print_r(bubbleSort($arr));<br>// Array ( [0] =&gt; 2 [1] =&gt; 3 [2] =&gt; 5 [3] =&gt; 23 [4] =&gt; 45 [5] =&gt; 54 )</p>
 <pre><code>
 ### 快速排序
 ```php
-function quickSort($arr)&amp;#123;
+function quickSort($arr){
     $n = count($arr);
     if ($n &lt;= 1)    return $arr;
     $index = $arr[0];
     $leftArr = $rightArr = [];
-    for ($i=1; $i&lt;$n; $i++)&amp;#123;
-        if ($arr[$i] &lt;= $index)&amp;#123;
+    for ($i=1; $i&lt;$n; $i++){
+        if ($arr[$i] &lt;= $index){
             $leftArr[] = $arr[$i];
-        &amp;#125;else&amp;#123;
+        }else{
             $rightArr[] = $arr[$i];
-        &amp;#125;
-    &amp;#125;
+        }
+    }
 
     $leftArr = quickSort($leftArr);
     $rightArr = quickSort($rightArr);
 
     return array_merge($leftArr,[$index],$rightArr);
-&amp;#125;
+}
 
 $arr = [1,45,2,5,54,3,23];
 print_r(quickSort($arr));
 // Array ( [0] =&gt; 1 [1] =&gt; 2 [2] =&gt; 3 [3] =&gt; 5 [4] =&gt; 23 [5] =&gt; 45 [6] =&gt; 54 )
 </code></pre><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ul>
 <li>时间复杂度：O(N^2)</li>
-<li><p>代码实现<br>```php<br>function selectSort($arr)&#123;<br>  $n = count($arr);<br>  for ($i=0; $i&lt;$n-1; $i++)&#123;</p>
+<li><p>代码实现<br>```php<br>function selectSort($arr){<br>  $n = count($arr);<br>  for ($i=0; $i&lt;$n-1; $i++){</p>
 <pre><code>  $k = $i;
-  for ($j=$i+1; $j&lt;$n; $j++)&amp;#123;
-      if ($arr[$k] &gt; $arr[$j])&amp;#123;
+  for ($j=$i+1; $j&lt;$n; $j++){
+      if ($arr[$k] &gt; $arr[$j]){
           $k = $j;
-      &amp;#125;
-  &amp;#125;
-  if ($k != $i)&amp;#123;
+      }
+  }
+  if ($k != $i){
       [$arr[$k],$arr[$i]] = [$arr[$i],$arr[$k]];
-  &amp;#125;
-</code></pre><p>  &#125;</p>
-<p>  return $arr;<br>&#125;</p>
+  }
+</code></pre><p>  }</p>
+<p>  return $arr;<br>}</p>
 </li>
 </ul>
 <p>$arr = [1,45,2,5,54,3,23];<br>print_r(selectSort($arr));<br>// Array ( [0] =&gt; 1 [1] =&gt; 2 [2] =&gt; 3 [3] =&gt; 5 [4] =&gt; 23 [5] =&gt; 45 [6] =&gt; 54 )</p>
@@ -1139,24 +1141,24 @@ print_r(quickSort($arr));
 - 时间复杂度：O(N^2)
 - 代码实现
     ```php
-    function insertSort($arr)&amp;#123;
+    function insertSort($arr){
         if (!is_array($arr))    return null;
         $count = count($arr);
-        if ($count &lt;= 1)&amp;#123;
+        if ($count &lt;= 1){
             return $arr;
-        &amp;#125;
+        }
 
-        for ($i=1; $i&lt;$count; $i++)&amp;#123;
+        for ($i=1; $i&lt;$count; $i++){
             $insertValue = $arr[$i];
             $insertIndex = $i-1;
-            while($insertIndex &gt;= 0 &amp;&amp; $insertValue &lt; $arr[$insertIndex])&amp;#123;
+            while($insertIndex &gt;= 0 &amp;&amp; $insertValue &lt; $arr[$insertIndex]){
                 $arr[$insertIndex+1] = $arr[$insertIndex];
                 $insertIndex--;
-            &amp;#125;
+            }
             $arr[$insertIndex+1] = $insertValue;
-        &amp;#125;
+        }
         return $arr;
-    &amp;#125;
+    }
 
     $arr = [1,45,2,5,54,3,23];
     print_r(insertSort($arr));
@@ -1166,41 +1168,41 @@ print_r(quickSort($arr));
 <li><p>代码实例</p>
 <ul>
 <li><p>循环二分查找</p>
-<pre class=" language-lang-php"><code class="language-lang-php">function binarySearch($array,$findVal)&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">function binarySearch($array,$findVal){
   if (!is_array($array) || empty($array)) return -1;
 
   $start = 0;
   $end = count($array) - 1;
-  while ($start <= $end)&#123;
+  while ($start <= $end){
       $middle = intval(($start+$end)/2);
-      if ($array[$middle] > $findVal)&#123;
+      if ($array[$middle] > $findVal){
           $end = $middle - 1;
-      &#125;elseif ($array[$middle] < $findVal)&#123;
+      }elseif ($array[$middle] < $findVal){
           $start = $middle + 1;
-      &#125;else&#123;
+      }else{
           return $middle;
-      &#125;
-  &#125;
+      }
+  }
 
   return -1;
-&#125;
+}
 
 $array = [3,54,67,124,542,642,843];
 echo binarySearch($array, 542);     // 4
 </code></pre>
 </li>
 <li><p>递归二分查找</p>
-<pre class=" language-lang-php"><code class="language-lang-php">function binarySearch($array,$findVal,$start,$end)&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">function binarySearch($array,$findVal,$start,$end){
   $middle = intval(($start+$end)/2);
   if($start>$end) return -1;
-  if ($array[$middle] > $findVal)&#123;
+  if ($array[$middle] > $findVal){
       return binarySearch($array,$findVal,$start,$middle-1);
-  &#125;elseif ($array[$middle] < $findVal)&#123;
+  }elseif ($array[$middle] < $findVal){
       return binarySearch($array,$findVal,$middle+1,$end);
-  &#125;else&#123;
+  }else{
       return $middle;
-  &#125;
-&#125;
+  }
+}
 
 $array = [3,54,67,124,542,642,843];
 echo binarySearch($array, 542,0,count($array)-1);     // 4
@@ -1894,7 +1896,8 @@ echo binarySearch($array, 542,0,count($array)-1);     // 4
                         
                             常用脚本
 修改字段名
-db.getCollection('集合名').update(&#123;&#125;, &#123;$rename: &#123;"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2".
+db.getCollection('集合名').update({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:true})
+
                         
                     </div>
                     <div class="publish-info">
@@ -2191,7 +2194,7 @@ db.getCollection('集合名').update(&#123;&#125;, &#123;$rename: &#123;"修改�
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

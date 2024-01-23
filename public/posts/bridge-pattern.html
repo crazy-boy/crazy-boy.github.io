@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    339
+                    317
                 </div>
                 
 
@@ -1075,45 +1077,45 @@ h3:hover {
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  桥接模式就是把事物和其具体实现分开，使他们可以各自独立的变化。桥接的用意是：将抽象化与实现化解耦，使得二者可以独立变化，像我们常用的JDBC桥DriverManager一样，JDBC进行连接数据库的时候，在各个数据库之间进行切换，基本不需要动太多的代码，甚至丝毫不用动，原因就是JDBC提供统一接口，每个数据库提供各自的实现，用一个叫做数据库驱动的程序来桥接就行了。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下桥接模式的代码实现</p>
 <pre class=" language-lang-php"><code class="language-lang-php">// 定义接口
-interface Sourceable&#123;
+interface Sourceable{
     public function method();
-&#125;
+}
 
 // 定义两个实现类
-class SourceSub1 implements Sourceable&#123;
-    public function method()&#123;
+class SourceSub1 implements Sourceable{
+    public function method(){
         echo "this is first sub!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class SourceSub2 implements Sourceable&#123;
-    public function method()&#123;
+class SourceSub2 implements Sourceable{
+    public function method(){
         echo "this is the second sub!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 // 定义一个桥，持有Sourceable的一个实例
-abstract class Bridge&#123;
+abstract class Bridge{
     private Sourceable $source;
 
-    public function method()&#123;
+    public function method(){
         $this->source->method();
-    &#125;
+    }
 
-    public function getMSource(): Sourceable&#123;
+    public function getMSource(): Sourceable{
         return $this->source;
-    &#125;
+    }
 
-    public function setSource(Sourceable $source)&#123;
+    public function setSource(Sourceable $source){
         $this->source = $source;
-    &#125;
-&#125;
+    }
+}
 
-class MyBridge extends Bridge&#123;
-    public function method()&#123;
+class MyBridge extends Bridge{
+    public function method(){
         $this->getMSource()->method();
-    &#125;
-&#125;
+    }
+}
 
 // 调用
 $bridge = new MyBridge();
@@ -1760,8 +1762,8 @@ this is the second sub!
                             说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
 示例下面看下工厂方法模式的代码实现
 // 创建公共接口
-interface Sender&#123;
-    pub
+interface Sender{
+    public f
                         
                     </div>
                     <div class="publish-info">
@@ -1798,11 +1800,11 @@ interface Sender&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/state-pattern.html">
+                <a href="/posts/template-method-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——状态模式">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——模板方法模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1813,19 +1815,17 @@ interface Sender&#123;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——状态模式
+                          设计模式——模板方法模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下状态模式的代码实现
-class State&#123;
-    private string $value;
-
-    public function getValue(): string&#123;
-        ret
+                            说明示例下面看下模板方法模式的代码实现
+abstract class AbstractCalculator{
+    public final function calculate(string $exp,string $opt){
+   
                         
                     </div>
                     <div class="publish-info">
@@ -2122,7 +2122,7 @@ class State&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

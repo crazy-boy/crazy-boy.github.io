@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    283
+                    277
                 </div>
                 
 
@@ -1087,9 +1089,9 @@ h3:hover {
       ['id' => 2, 'name' => '李四', 'status' => 0],
       ['id' => 3, 'name' => '王五', 'status' => 1],
   ];
-  array_walk($list, function (&$item) &#123;
+  array_walk($list, function (&$item) {
       unset($item['status']);
-  &#125;);
+  });
 
   print_r($list);
   // output:  Array ( [0] => Array ( [id] => 1 [name] => 张三 ) [1] => Array ( [id] => 2 [name] => 李四 ) [2] => Array ( [id] => 3 [name] => 王五 ) )
@@ -1097,18 +1099,18 @@ h3:hover {
 </li>
 <li><p>下面试下去掉一维数组中的空值</p>
 <pre class=" language-lang-php"><code class="language-lang-php">  $data = ['test', 'haha', '', 'hello', null, 'good'];
-  array_walk($data, function (&$item) &#123;
+  array_walk($data, function (&$item) {
       if (!$item) unset($item);
-  &#125;);
+  });
   print_r($data);
   // output: Array ( [0] => test [1] => haha [2] => [3] => hello [4] => [5] => good )
 </code></pre>
 </li>
 <li><p>上面的代码没有达到预期的效果，那我们修改下试试</p>
 <pre class=" language-lang-php"><code class="language-lang-php">  $data = ['test', 'haha', '', 'hello', null, 'good', ''];
-  array_walk($data, function ($item, $key) use (&$data) &#123;
+  array_walk($data, function ($item, $key) use (&$data) {
       if (!$item) unset($data[$key]);
-  &#125;);
+  });
   print_r($data);
   // output: Array ( [0] => test [1] => haha [3] => hello [5] => good )
 </code></pre>
@@ -1745,8 +1747,8 @@ h3:hover {
                         
                             在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。
 下面演示下，在test方法执行后自动执行afterTest方法
-trait A&#123;
-    public function __call($method, 
+trait A{
+    public function __call($method, $args
                         
                     </div>
                     <div class="publish-info">
@@ -2106,7 +2108,7 @@ $t
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

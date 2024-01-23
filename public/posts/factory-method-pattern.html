@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    228
+                    208
                 </div>
                 
 
@@ -1075,40 +1077,40 @@ h3:hover {
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下工厂方法模式的代码实现</p>
 <pre class=" language-lang-php"><code class="language-lang-php">// 创建公共接口
-interface Sender&#123;
+interface Sender{
     public function send();
-&#125;
+}
 
 // 创建两个实现类
-class MailSender implements Sender&#123;
-    public function send()&#123;
+class MailSender implements Sender{
+    public function send(){
         print "mail send";
-    &#125;
-&#125;
+    }
+}
 
-class SmsSender implements Sender&#123;
-    public function send()&#123;
+class SmsSender implements Sender{
+    public function send(){
         print "sms send";
-    &#125;
-&#125;
+    }
+}
 
 // 工厂类接口
-interface Provider&#123;
+interface Provider{
     public function produce(): Sender;
-&#125;
+}
 
 // 实现工厂类
-class SendMailFactory implements Provider&#123;
-    public function produce(): Sender&#123;
+class SendMailFactory implements Provider{
+    public function produce(): Sender{
         return new MailSender();
-    &#125;
-&#125;
+    }
+}
 
-class SendSmsFactory implements Provider&#123;
-    public function produce(): Sender&#123;
+class SendSmsFactory implements Provider{
+    public function produce(): Sender{
         return new SmsSender();
-    &#125;
-&#125;
+    }
+}
 
 // test
 $sender = (new SendMailFactory())->produce();
@@ -1717,11 +1719,11 @@ $sender->send();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/memento-pattern.html">
+                <a href="/posts/facade-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——备忘录模式">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——外观模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1732,18 +1734,14 @@ $sender->send();
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——备忘录模式
+                          设计模式——外观模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下备忘录模式的代码实现
-class Original&#123;
-    private string $value;
-
-    public function __construct(string $value)&#123;
+                            说明  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的
                         
                     </div>
                     <div class="publish-info">
@@ -2099,7 +2097,7 @@ class Original&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

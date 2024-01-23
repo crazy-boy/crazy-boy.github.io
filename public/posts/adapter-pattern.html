@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    838
+                    798
                 </div>
                 
 
@@ -1075,23 +1077,23 @@ h3:hover {
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  适配器模式将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。</p>
 <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="类的适配器模式"><a href="#类的适配器模式" class="headerlink" title="类的适配器模式"></a>类的适配器模式</h4><p>  核心思想就是：有一个Source类，拥有一个方法，待适配，目标接口是Targetable，通过Adapter类，将Source的功能扩展到Targetable里</p>
 <p>示例</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class Source&#123;
-    public function method1()&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">class Source{
+    public function method1(){
         echo 'this is original method!' . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-interface Targetable&#123;
+interface Targetable{
     public function method1();
     public function method2();
-&#125;
+}
 
 //Adapter类继承Source类，实现Targetable接口，这样Targetable接口的实现类就具有了Source类的功能。
-class Adapter extends Source implements Targetable &#123;
-    public function method2()&#123;
+class Adapter extends Source implements Targetable {
+    public function method2(){
         echo 'this is the targetable method!' . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 // 调用
 $target = new Adapter();
@@ -1105,30 +1107,30 @@ $target->method2();
 </code></pre>
 <h4 id="对象的适配器模式"><a href="#对象的适配器模式" class="headerlink" title="对象的适配器模式"></a>对象的适配器模式</h4><p>  与类的适配器模式大体相同，只是适配的方法不同。</p>
 <p>示例</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class Source&#123;
-    public function method1()&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">class Source{
+    public function method1(){
         echo 'this is original method!' . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-interface Targetable&#123;
+interface Targetable{
     public function method1();
     public function method2();
-&#125;
+}
 
 //Adapter类不继承Source类，而是持有Source类的实例，以达到解决兼容性的问题。
-class Wrapper implements Targetable &#123;
+class Wrapper implements Targetable {
     private Source $source;
-    public function __construct(Source $source)&#123;
+    public function __construct(Source $source){
         $this->source = $source;
-    &#125;
-    public function method2()&#123;
+    }
+    public function method2(){
         echo 'this is the targetable method!' . PHP_EOL;
-    &#125;
-    public function method1()&#123;
+    }
+    public function method1(){
         $this->source->method1();
-    &#125;
-&#125;
+    }
+}
 
 // 调用
 $source = new Source();
@@ -1143,27 +1145,27 @@ $target->method2();
 </code></pre>
 <h4 id="接口的适配器模式"><a href="#接口的适配器模式" class="headerlink" title="接口的适配器模式"></a>接口的适配器模式</h4><p>  接口的适配器是这样的：有时我们写的一个接口中有多个抽象方法，当我们写该接口的实现类时，必须实现该接口的所有方法，这明显有时比较浪费，因为并不是所有的方法都是我们需要的，有时只需要某一些，此处为了解决这个问题，我们引入了接口的适配器模式，借助于一个抽象类，该抽象类实现了该接口，实现了所有的方法，而我们不和原始的接口打交道，只和该抽象类取得联系，所以我们写一个类，继承该抽象类，重写我们需要的方法就行。</p>
 <p>示例</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface Sourceable&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">interface Sourceable{
     public function method1();
     public function method2();
-&#125;
+}
 
-abstract class Wrapper implements Sourceable&#123;
-    public function method1()&#123;&#125;
-    public function method2()&#123;&#125;
-&#125;
+abstract class Wrapper implements Sourceable{
+    public function method1(){}
+    public function method2(){}
+}
 
-class SourceSub1 extends Wrapper&#123;
-    public function method1()&#123;
+class SourceSub1 extends Wrapper{
+    public function method1(){
         echo "the sourceable interface's first Sub1!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
-class SourceSub2 extends Wrapper&#123;
-    public function method2()&#123;
+class SourceSub2 extends Wrapper{
+    public function method2(){
         echo "ths sourceable interface's second Sub2!" . PHP_EOL;
-    &#125;
-&#125;
+    }
+}
 
 //调用
 $source1 = new SourceSub1();
@@ -1840,11 +1842,11 @@ $source2->method2();
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/iterator-pattern.html">
+                <a href="/posts/redis-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——迭代器模式">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="Redis笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1855,18 +1857,16 @@ $source2->method2();
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——迭代器模式
+                          Redis笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下代码实现
-interface Collection&#123;
-    public function iterator();
-    public function get(int $i);
-    public func
+                            安装redis客户端yum install redis
+查看版本号info
+通过命令行方式连接redisredis-cli -h host -p port -a passwordhost:远程redis服务器hostport:远程redis
                         
                     </div>
                     <div class="publish-info">
@@ -1877,8 +1877,8 @@ interface Collection&#123;
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
+                            <a href="/categories/Redis/" class="post-category">
+                                    Redis
                                 </a>
                             
                             
@@ -1888,8 +1888,8 @@ interface Collection&#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
                     </a>
                     
                 </div>
@@ -2163,7 +2163,7 @@ interface Collection&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    122
+                    118
                 </div>
                 
 
@@ -1077,17 +1079,17 @@ h3:hover {
 <pre class=" language-lang-php"><code class="language-lang-php">    $arr = ['id' => 3242, 'name' => 'test', 'age' => null];
 
     $time1 = microtime(true);
-    for ($i = 0; $i < 100000000; $i++) &#123;
+    for ($i = 0; $i < 100000000; $i++) {
         $tmp = isset($arr['age']);
-    &#125;
+    }
 
     echo microtime(true) - $time1;
 
     echo PHP_EOL;
     $time2 = microtime(true);
-    for ($i = 0; $i < 100000000; $i++) &#123;
+    for ($i = 0; $i < 100000000; $i++) {
         $tmp1 = array_key_exists('age', $arr);
-    &#125;
+    }
 
     echo microtime(true) - $time2;
 </code></pre>
@@ -1781,9 +1783,9 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                         
                             
 如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)
-  function sum(...$numbers)&#123;
+  function sum(...$numbers){
       $sum = 0;
-      foreach ($numbers as $
+      foreach ($numbers as $numbe
                         
                     </div>
                     <div class="publish-info">
@@ -2080,7 +2082,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

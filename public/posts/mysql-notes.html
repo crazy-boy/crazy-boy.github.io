@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    915
+                    907
                 </div>
                 
 
@@ -1122,7 +1124,7 @@ from wl_student_score_logs where exam_id=5;
 6. truncate 和 drop 是 DDL 语句，而 delete 是 DML 语句。
 </code></pre><h3 id="22、修改自增列的值"><a href="#22、修改自增列的值" class="headerlink" title="22、修改自增列的值"></a>22、修改自增列的值</h3><pre><code>`alter table tname auto_increment=n;`
 一个表中只能有一个自增列,如果设置多个自增列，那么 SQL 执行就会报错。除此之外还要注意自增列应该为整数类型，且 auto_increment 需要配合 key 一起使用，这个 key 可以是 primary key 或 foreign key。
-</code></pre><h3 id="23、生成批量清空指定数据库的语句"><a href="#23、生成批量清空指定数据库的语句" class="headerlink" title="23、生成批量清空指定数据库的语句"></a>23、生成批量清空指定数据库的语句</h3><pre><code>`select CONCAT(&#39;TRUNCATE TABLE &#39;,table_schema,&#39;.&#39;,TABLE_NAME, &#39;;&#39;) 清空语句 from INFORMATION_SCHEMA.TABLES where table_schema =&#39;库名&#39;;`    
+</code></pre><h3 id="23、生成批量清空指定数据库的语句"><a href="#23、生成批量清空指定数据库的语句" class="headerlink" title="23、生成批量清空指定数据库的语句"></a>23、生成批量清空指定数据库的语句</h3><pre><code>`select CONCAT('TRUNCATE TABLE ',table_schema,'.',TABLE_NAME, ';') 清空语句 from INFORMATION_SCHEMA.TABLES where table_schema ='库名';`    
 </code></pre>
             </div>
             <hr/>
@@ -1784,11 +1786,11 @@ from wl_student_score_logs where exam_id=5;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/1822a0ce.html">
+                <a href="/posts/jquery-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="CSS笔记">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Jquery笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1799,17 +1801,19 @@ from wl_student_score_logs where exam_id=5;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          CSS笔记
+                          Jquery笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck&#123; margin-right: 5px!important;&#125;
+                            jquery获取json的长度//一维：
+var JsonTemp = {'id':5,'name':'lilei'};  
+length = JsonTemp.length;
 
-如果css希望两个标签对齐，可以用position来处理，如：.cntc
+//二维：
+var JsonTemp = [{"name":
                         
                     </div>
                     <div class="publish-info">
@@ -1831,8 +1835,8 @@ from wl_student_score_logs where exam_id=5;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/Jquery/">
+                        <span class="chip bg-color">Jquery</span>
                     </a>
                     
                 </div>
@@ -2106,7 +2110,7 @@ from wl_student_score_logs where exam_id=5;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

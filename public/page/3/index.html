@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -868,8 +870,8 @@ class="themespring" -->
               说明  将一个对象作为原型，对其进行复制、克隆，产生一个和原对象类似的新对象。  
 示例下面看下原型模式的代码实现
 // 定义了一个原型
-abstract class Prototype&#123;
-    public $v = 'clo
+abstract class Prototype{
+    public $v = 'clone'.P
               
             </div>
             <div class="publish-info">
@@ -957,12 +959,103 @@ abstract class Prototype&#123;
               
               说明示例下面看下命令模式的代码实现
 // 创建接口Command
-interface Command&#123;
+interface Command{
     public function exe();
-&#125;
+}
 
-class Receiver&#123;
-    pub
+class Receiver{
+    public function ac
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                  设计模式
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+              <span class="chip bg-color">设计模式</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/memento-pattern.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/1.jpg" class="responsive-img"
+                alt="设计模式——备忘录模式">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                设计模式——备忘录模式
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              说明示例下面看下备忘录模式的代码实现
+class Original{
+    private string $value;
+
+    public function __construct(string $value){
+        $
               
             </div>
             <div class="publish-info">
@@ -1085,96 +1178,6 @@ class Receiver&#123;
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/memento-pattern.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="设计模式——备忘录模式">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                设计模式——备忘录模式
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              说明示例下面看下备忘录模式的代码实现
-class Original&#123;
-    private string $value;
-
-    public function __construct(string $value)&#123;
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                  设计模式
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-              <span class="chip bg-color">设计模式</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/factory-method-pattern.html">
             <div class="card-image">
 
@@ -1227,8 +1230,8 @@ class Original&#123;
               说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
 示例下面看下工厂方法模式的代码实现
 // 创建公共接口
-interface Sender&#123;
-    pub
+interface Sender{
+    public f
               
             </div>
             <div class="publish-info">
@@ -1351,6 +1354,95 @@ interface Sender&#123;
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/template-method-pattern.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/1.jpg" class="responsive-img"
+                alt="设计模式——模板方法模式">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                设计模式——模板方法模式
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              说明示例下面看下模板方法模式的代码实现
+abstract class AbstractCalculator{
+    public final function calculate(string $exp,string $opt){
+   
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                  设计模式
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+              <span class="chip bg-color">设计模式</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/state-pattern.html">
             <div class="card-image">
 
@@ -1401,11 +1493,11 @@ interface Sender&#123;
             <div class="summary block-with-text">
               
               说明示例下面看下状态模式的代码实现
-class State&#123;
+class State{
     private string $value;
 
-    public function getValue(): string&#123;
-        ret
+    public function getValue(): string{
+        return $this-
               
             </div>
             <div class="publish-info">
@@ -1492,11 +1584,11 @@ class State&#123;
             <div class="summary block-with-text">
               
               说明示例下面看下策略模式的代码实现
-interface ICalculator&#123;
+interface ICalculator{
     public function calculate(string $exp);
-&#125;
+}
 
-abstract class Abstrac
+abstract class AbstractCalculato
               
             </div>
             <div class="publish-info">
@@ -1622,94 +1714,6 @@ abstract class Abstrac
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/template-method-pattern.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="设计模式——模板方法模式">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                设计模式——模板方法模式
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              说明示例下面看下模板方法模式的代码实现
-abstract class AbstractCalculator&#123;
-    public final function calculate(string $exp,string $opt)
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                  设计模式
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-              <span class="chip bg-color">设计模式</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/composite-pattern.html">
             <div class="card-image">
 
@@ -1761,9 +1765,9 @@ abstract class AbstractCalculator&#123;
               
               说明  又叫部分-整体模式,在处理类似树形结构的问题时比较方便。
 示例下面看下组合模式的代码实现
-class TreeNode&#123;
+class TreeNode{
     private string $name;
-    private TreeNode $pa
+    private TreeNode $parent;
               
             </div>
             <div class="publish-info">
@@ -1800,13 +1804,13 @@ class TreeNode&#123;
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/observer-pattern.html">
+          <a href="/posts/decorator-pattern.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/3.jpg" class="responsive-img"
-                alt="设计模式——观察者模式">
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="设计模式——装饰模式">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1815,7 +1819,7 @@ class TreeNode&#123;
                 </div>
               </div>
               <span class="card-title">
-                设计模式——观察者模式
+                设计模式——装饰模式
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1849,12 +1853,9 @@ class TreeNode&#123;
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              说明示例下面看下观察者模式的代码实现
-interface Observer&#123;
-    public function update();
-&#125;
-
-class Observer1 implements Observer&#1
+              说明  装饰模式就是给一个对象增加一些新的功能，而且是动态的，要求装饰对象和被装饰对象实现同一个接口，装饰对象持有被装饰对象的实例。
+示例下面看下装饰模式的代码实现
+//Source类是被装饰类，Decorator类是一个装饰类，可以为So
               
             </div>
             <div class="publish-info">
@@ -2005,7 +2006,7 @@ class Observer1 implements Observer&#1
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

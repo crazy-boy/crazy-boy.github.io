@@ -3,8 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/.deploy_git" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/hexo-theme-matery" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/themes/blinkfox" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/themes/matery" vcs="Git" />
   </component>
 </project>

@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    794
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    4 分
                 </div>
                 
 
@@ -1077,145 +1079,145 @@ h3:hover {
 /**
  * 生成mysql数据字典
  */
-header(&quot;Content-type: text/html; charset=utf-8&quot;);
+header("Content-type: text/html; charset=utf-8");
 //配置数据库
-$dbserver   = &quot;127.0.0.1&quot;;
-$dbusername = &quot;root&quot;;
-$dbpassword = &quot;root&quot;;
-$database   = &quot;demodb&quot;;
+$dbserver   = "127.0.0.1";
+$dbusername = "root";
+$dbpassword = "root";
+$database   = "demodb";
 
 //其他配置
-$mysql_conn = @mysql_connect($dbserver, $dbusername, $dbpassword) or die(&quot;Mysql connect is error.&quot;);
+$mysql_conn = @mysql_connect($dbserver, $dbusername, $dbpassword) or die("Mysql connect is error.");
 mysql_select_db($database, $mysql_conn);
-mysql_query(&#39;SET NAMES utf8&#39;, $mysql_conn);
-$table_result = mysql_query(&#39;show tables&#39;, $mysql_conn);
+mysql_query('SET NAMES utf8', $mysql_conn);
+$table_result = mysql_query('show tables', $mysql_conn);
 
 $no_show_table = array();    //不需要显示的表
 $no_show_field = array();   //不需要显示的字段
 
 //取得所有的表名
-while($row = mysql_fetch_array($table_result))&amp;#123;
-    if(!in_array($row[0],$no_show_table))&amp;#123;
-        $tables[][&#39;TABLE_NAME&#39;] = $row[0];
-    &amp;#125;
-&amp;#125;
+while($row = mysql_fetch_array($table_result)){
+    if(!in_array($row[0],$no_show_table)){
+        $tables[]['TABLE_NAME'] = $row[0];
+    }
+}
 //替换所以表的表前缀
-if(!empty($_GET[&#39;prefix&#39;]))&amp;#123; 
-    $prefix = &#39;wxaj&#39;;
-    foreach($tables as $key =&gt; $val)&amp;#123;
-        $tableName = $val[&#39;TABLE_NAME&#39;];
-        $string = explode(&#39;_&#39;,$tableName);
-        if($string[0] != $prefix)&amp;#123;  
+if(!empty($_GET['prefix'])){ 
+    $prefix = 'wxaj';
+    foreach($tables as $key =&gt; $val){
+        $tableName = $val['TABLE_NAME'];
+        $string = explode('_',$tableName);
+        if($string[0] != $prefix){  
             $string[0] = $prefix;  
-            $newTableName = implode(&#39;_&#39;, $string);  
-            mysql_query(&#39;rename table &#39;.$tableName.&#39; TO &#39;.$newTableName);  
-        &amp;#125;
-    &amp;#125;
-    echo &quot;替换成功！&quot;;exit();
-&amp;#125;
+            $newTableName = implode('_', $string);  
+            mysql_query('rename table '.$tableName.' TO '.$newTableName);  
+        }
+    }
+    echo "替换成功！";exit();
+}
 
 //循环取得所有表的备注及表中列消息
-foreach ($tables as $k=&gt;$v) &amp;#123;
-    $sql  = &#39;SELECT * FROM &#39;;
-    $sql .= &#39;INFORMATION_SCHEMA.TABLES &#39;;
-    $sql .= &#39;WHERE &#39;;
-    $sql .= &quot;table_name = &#39;&amp;#123;$v[&#39;TABLE_NAME&#39;]&amp;#125;&#39;  AND table_schema = &#39;&amp;#123;$database&amp;#125;&#39;&quot;;
+foreach ($tables as $k=&gt;$v) {
+    $sql  = 'SELECT * FROM ';
+    $sql .= 'INFORMATION_SCHEMA.TABLES ';
+    $sql .= 'WHERE ';
+    $sql .= "table_name = '{$v['TABLE_NAME']}'  AND table_schema = '{$database}'";
     $table_result = mysql_query($sql, $mysql_conn);
-    while ($t = mysql_fetch_array($table_result) ) &amp;#123;
-        $tables[$k][&#39;TABLE_COMMENT&#39;] = $t[&#39;TABLE_COMMENT&#39;];
-    &amp;#125;
+    while ($t = mysql_fetch_array($table_result) ) {
+        $tables[$k]['TABLE_COMMENT'] = $t['TABLE_COMMENT'];
+    }
 
-    $sql  = &#39;SELECT column_name FROM &#39;;
-    $sql .= &#39;INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` &#39;;
-    $sql .= &#39;WHERE &#39;;
-    $sql .= &quot;table_name = &#39;&amp;#123;$v[&#39;TABLE_NAME&#39;]&amp;#125;&#39;  AND constraint_name = &#39;PRIMARY&#39;&quot;;
+    $sql  = 'SELECT column_name FROM ';
+    $sql .= 'INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` ';
+    $sql .= 'WHERE ';
+    $sql .= "table_name = '{$v['TABLE_NAME']}'  AND constraint_name = 'PRIMARY'";
     $pk_result = mysql_query($sql, $mysql_conn);
     $pks = [];
-    while ($t = mysql_fetch_array($pk_result) ) &amp;#123;
-        $pks[] = $t[&#39;column_name&#39;];
-    &amp;#125;
-    $tables[$k][&#39;PRIMARY_KEY&#39;] = $pks;
+    while ($t = mysql_fetch_array($pk_result) ) {
+        $pks[] = $t['column_name'];
+    }
+    $tables[$k]['PRIMARY_KEY'] = $pks;
 
-    $sql  = &#39;SELECT * FROM &#39;;
-    $sql .= &#39;INFORMATION_SCHEMA.COLUMNS &#39;;
-    $sql .= &#39;WHERE &#39;;
-    $sql .= &quot;table_name = &#39;&amp;#123;$v[&#39;TABLE_NAME&#39;]&amp;#125;&#39; AND table_schema = &#39;&amp;#123;$database&amp;#125;&#39;&quot;;
+    $sql  = 'SELECT * FROM ';
+    $sql .= 'INFORMATION_SCHEMA.COLUMNS ';
+    $sql .= 'WHERE ';
+    $sql .= "table_name = '{$v['TABLE_NAME']}' AND table_schema = '{$database}'";
 
     $fields = [];
     $field_result = mysql_query($sql, $mysql_conn);
-    while ($t = mysql_fetch_array($field_result) ) &amp;#123;
+    while ($t = mysql_fetch_array($field_result) ) {
         $fields[] = $t;
-    &amp;#125;
-    $tables[$k][&#39;COLUMN&#39;] = $fields;
-&amp;#125;
+    }
+    $tables[$k]['COLUMN'] = $fields;
+}
 mysql_close($mysql_conn);
 
 
-$html = &#39;&#39;;
+$html = '';
 //循环所有表
-foreach ($tables as $k=&gt;$v) &amp;#123;
-    $html .= &#39;    &lt;h3&gt;&#39; . ($k + 1) . &#39;、&#39; . $v[&#39;TABLE_COMMENT&#39;] .&#39;  （&#39;. $v[&#39;TABLE_NAME&#39;]. &#39;）&lt;/h3&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;    &lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; width=&quot;100%&quot;&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;        &lt;tbody&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;            &lt;tr&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;字段名&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;数据类型&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;默认值&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;允许非空&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;自动递增&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;是否主键&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;                &lt;th&gt;备注&lt;/th&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;            &lt;/tr&gt;&#39;.&quot;\n&quot;;
+foreach ($tables as $k=&gt;$v) {
+    $html .= '    &lt;h3&gt;' . ($k + 1) . '、' . $v['TABLE_COMMENT'] .'  （'. $v['TABLE_NAME']. '）&lt;/h3&gt;'."\n";
+    $html .= '    &lt;table border="1" cellspacing="0" cellpadding="0" width="100%"&gt;'."\n";
+    $html .= '        &lt;tbody&gt;'."\n";
+    $html .= '            &lt;tr&gt;'."\n";
+    $html .= '                &lt;th&gt;字段名&lt;/th&gt;'."\n";
+    $html .= '                &lt;th&gt;数据类型&lt;/th&gt;'."\n";
+    $html .= '                &lt;th&gt;默认值&lt;/th&gt;'."\n";
+    $html .= '                &lt;th&gt;允许非空&lt;/th&gt;'."\n";
+    $html .= '                &lt;th&gt;自动递增&lt;/th&gt;'."\n";
+    $html .= '                &lt;th&gt;是否主键&lt;/th&gt;'."\n";
+    $html .= '                &lt;th&gt;备注&lt;/th&gt;'."\n";
+    $html .= '            &lt;/tr&gt;'."\n";
 
-    foreach ($v[&#39;COLUMN&#39;] as $f) &amp;#123;
-        if(empty($no_show_field[$v[&#39;TABLE_NAME&#39;]]) || !is_array($no_show_field[$v[&#39;TABLE_NAME&#39;]]))&amp;#123; 
-            $no_show_field[$v[&#39;TABLE_NAME&#39;]] = array();
-        &amp;#125;
-        if(!in_array($f[&#39;COLUMN_NAME&#39;],$no_show_field[$v[&#39;TABLE_NAME&#39;]]))&amp;#123;
-            $html .= &#39;            &lt;tr&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c1&quot;&gt;&#39; . $f[&#39;COLUMN_NAME&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c2&quot;&gt;&#39; . $f[&#39;COLUMN_TYPE&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c3&quot;&gt;&#39; . $f[&#39;COLUMN_DEFAULT&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c4&quot;&gt;&#39; . $f[&#39;IS_NULLABLE&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c5&quot;&gt;&#39; . ($f[&#39;EXTRA&#39;]==&#39;auto_increment&#39;?&#39;是&#39;:&#39;&amp;nbsp;&#39;) . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c6&quot;&gt;&#39; . (in_array($f[&#39;COLUMN_NAME&#39;],$v[&#39;PRIMARY_KEY&#39;])?&#39;是&#39;:&#39;&amp;nbsp;&#39;) . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;                &lt;td class=&quot;c7&quot;&gt;&#39; . $f[&#39;COLUMN_COMMENT&#39;] . &#39;&lt;/td&gt;&#39;.&quot;\n&quot;;
-            $html .= &#39;            &lt;/tr&gt;&#39;.&quot;\n&quot;;
-        &amp;#125;
-    &amp;#125;
-    $html .= &#39;        &lt;/tbody&gt;&#39;.&quot;\n&quot;;
-    $html .= &#39;    &lt;/table&gt;&#39;.&quot;\n&quot;;
-&amp;#125;
+    foreach ($v['COLUMN'] as $f) {
+        if(empty($no_show_field[$v['TABLE_NAME']]) || !is_array($no_show_field[$v['TABLE_NAME']])){ 
+            $no_show_field[$v['TABLE_NAME']] = array();
+        }
+        if(!in_array($f['COLUMN_NAME'],$no_show_field[$v['TABLE_NAME']])){
+            $html .= '            &lt;tr&gt;'."\n";
+            $html .= '                &lt;td class="c1"&gt;' . $f['COLUMN_NAME'] . '&lt;/td&gt;'."\n";
+            $html .= '                &lt;td class="c2"&gt;' . $f['COLUMN_TYPE'] . '&lt;/td&gt;'."\n";
+            $html .= '                &lt;td class="c3"&gt;' . $f['COLUMN_DEFAULT'] . '&lt;/td&gt;'."\n";
+            $html .= '                &lt;td class="c4"&gt;' . $f['IS_NULLABLE'] . '&lt;/td&gt;'."\n";
+            $html .= '                &lt;td class="c5"&gt;' . ($f['EXTRA']=='auto_increment'?'是':'&amp;nbsp;') . '&lt;/td&gt;'."\n";
+            $html .= '                &lt;td class="c6"&gt;' . (in_array($f['COLUMN_NAME'],$v['PRIMARY_KEY'])?'是':'&amp;nbsp;') . '&lt;/td&gt;'."\n";
+            $html .= '                &lt;td class="c7"&gt;' . $f['COLUMN_COMMENT'] . '&lt;/td&gt;'."\n";
+            $html .= '            &lt;/tr&gt;'."\n";
+        }
+    }
+    $html .= '        &lt;/tbody&gt;'."\n";
+    $html .= '    &lt;/table&gt;'."\n";
+}
 ?&gt;
 
 
 &lt;!doctype html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta charset="utf-8"&gt;
 &lt;title&gt;数据字典&lt;/title&gt;
-&lt;meta name=&quot;generator&quot; content=&quot;ThinkDb V1.0&quot; /&gt;
-&lt;meta name=&quot;author&quot; content=&quot;Crazy_boy&quot; /&gt;
-&lt;meta name=&quot;copyright&quot; content=&quot;2014-208 zotuo.com&quot; /&gt;
+&lt;meta name="generator" content="ThinkDb V1.0" /&gt;
+&lt;meta name="author" content="Crazy_boy" /&gt;
+&lt;meta name="copyright" content="2014-208 zotuo.com" /&gt;
 &lt;style&gt;
-body, td, th &amp;#123; font-family: &quot;微软雅黑&quot;; font-size: 14px; &amp;#125;
-.warp&amp;#123;margin:auto; width:900px;&amp;#125;
-.warp h3&amp;#123;margin:0px; padding:0px; line-height:30px; margin-top:10px;&amp;#125;
-table &amp;#123; border-collapse: collapse; border: 1px solid #CCC; background: #efefef; &amp;#125;
-table th &amp;#123; text-align: left; font-weight: bold; height: 26px; line-height: 26px; font-size: 14px; text-align:center; border: 1px solid #CCC; padding:5px;&amp;#125;
-table td &amp;#123; height: 20px; font-size: 14px; border: 1px solid #CCC; background-color: #fff; padding:5px;&amp;#125;
-.c1 &amp;#123; width: 120px; &amp;#125;
-.c2 &amp;#123; width: 120px; &amp;#125;
-.c3 &amp;#123; width: 150px; &amp;#125;
-.c4 &amp;#123; width: 80px; text-align:center;&amp;#125;
-.c5 &amp;#123; width: 80px; text-align:center;&amp;#125;
-.c6 &amp;#123; width: 80px; text-align:center;&amp;#125;
-.c7 &amp;#123; width: 270px; &amp;#125;
+body, td, th { font-family: "微软雅黑"; font-size: 14px; }
+.warp{margin:auto; width:900px;}
+.warp h3{margin:0px; padding:0px; line-height:30px; margin-top:10px;}
+table { border-collapse: collapse; border: 1px solid #CCC; background: #efefef; }
+table th { text-align: left; font-weight: bold; height: 26px; line-height: 26px; font-size: 14px; text-align:center; border: 1px solid #CCC; padding:5px;}
+table td { height: 20px; font-size: 14px; border: 1px solid #CCC; background-color: #fff; padding:5px;}
+.c1 { width: 120px; }
+.c2 { width: 120px; }
+.c3 { width: 150px; }
+.c4 { width: 80px; text-align:center;}
+.c5 { width: 80px; text-align:center;}
+.c6 { width: 80px; text-align:center;}
+.c7 { width: 270px; }
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;div class=&quot;warp&quot;&gt;
-    &lt;h1 style=&quot;text-align:center;&quot;&gt;数据字典&lt;/h1&gt;
+&lt;div class="warp"&gt;
+    &lt;h1 style="text-align:center;"&gt;数据字典&lt;/h1&gt;
 &lt;?php echo $html; ?&gt;
 &lt;/div&gt;
 &lt;/body&gt;
@@ -2204,7 +2206,7 @@ table td &amp;#123; height: 20px; font-size: 14px; border: 1px solid #CCC; backg
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

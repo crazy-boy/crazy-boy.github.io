@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    414
+                    388
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -1080,27 +1082,27 @@ h3:hover {
      * @return string       结果字符串
      * eg: ed4a32c2=>ed:4a:32:c2
      */
-    function divisionStr(string $str,int $n,string $d=" "):string&#123;
+    function divisionStr(string $str,int $n,string $d=" "):string{
         return join($d,str_split($str,$n)));
-    &#125;
+    }
 </code></pre>
 <h3 id="2-打印图片的每一个像素颜色值"><a href="#2-打印图片的每一个像素颜色值" class="headerlink" title="2. 打印图片的每一个像素颜色值"></a>2. 打印图片的每一个像素颜色值</h3><pre class=" language-lang-php"><code class="language-lang-php">    /**
      * 打印图片的每一个像素颜色值
      * @param string $picUrl    图片路径
      */
-    function printPicPixels(string $picUrl): void &#123;
+    function printPicPixels(string $picUrl): void {
         $i = imagecreatefrompng($picUrl);
         if (!$i)    return ;
-        for ($y = 0; $y < imagesy($i); $y++) &#123;
-            for ($x = 0; $x < imagesx($i); $x++) &#123;
+        for ($y = 0; $y < imagesy($i); $y++) {
+            for ($x = 0; $x < imagesx($i); $x++) {
                 $rgb = imagecolorat($i, $x, $y);
                 $r = ($rgb >> 16) & 0xFF;
                 $g = ($rgb >> 8) & 0xFF;
                 $b = $rgb & 0xFF;
                 echo "rgb($r,$g,$b)";
-            &#125;
-        &#125;
-    &#125;
+            }
+        }
+    }
 </code></pre>
 <h3 id="3-字符串按照ASCII码顺序排序"><a href="#3-字符串按照ASCII码顺序排序" class="headerlink" title="3. 字符串按照ASCII码顺序排序"></a>3. 字符串按照ASCII码顺序排序</h3><pre class=" language-lang-php"><code class="language-lang-php">/**
  * 字符串按照ASCII码顺序排序
@@ -1108,27 +1110,27 @@ h3:hover {
  * @param int $sort 排序
  * @return string
  */
-function sortStr(string $str, $sort=SORT_ASC): string&#123;
+function sortStr(string $str, $sort=SORT_ASC): string{
     $arr = str_split($str);
-    if ($sort == SORT_ASC)&#123;
+    if ($sort == SORT_ASC){
         asort($arr);
-    &#125;else&#123;
+    }else{
         arsort($arr);
-    &#125;
+    }
 
     return join('', $arr);
-&#125;
+}
 </code></pre>
 <h3 id="4-字节数转化为常用单位"><a href="#4-字节数转化为常用单位" class="headerlink" title="4. 字节数转化为常用单位"></a>4. 字节数转化为常用单位</h3><pre class=" language-lang-php"><code class="language-lang-php">/**
  * 字节数转化为常用单位
  * @param int $size 字节数
  * @return string
  */
-function convert(int $size): string&#123;
+function convert(int $size): string{
     $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
     $exp = floor(log($size, 1024));
     return round($size / pow(1024, $exp), 2) . ' ' . $unit[$exp];
-&#125;
+}
 // 使用：查看内存使用 echo convert(memory_get_usage(false));
 </code></pre>
 <h3 id="5-ping指定地址，用于监控服务器是否在线"><a href="#5-ping指定地址，用于监控服务器是否在线" class="headerlink" title="5. ping指定地址，用于监控服务器是否在线"></a>5. ping指定地址，用于监控服务器是否在线</h3><pre class=" language-lang-php"><code class="language-lang-php">/**
@@ -1136,19 +1138,19 @@ function convert(int $size): string&#123;
  * @param string $address
  * @return bool
  */
-public function pingHost($address)&#123;
+public function pingHost($address){
     $address = parse_url($address);
     $host = isset($address['host']) ? $address['host'] : '';
     if(!$host)  return false;
     $status = -1;
-    if (strcasecmp(PHP_OS, 'WINNT') === 0) &#123;
-        $rs = exec("ping -n 1 &#123;$host&#125;", $outcome, $status);  // Windows 服务器下
-    &#125; elseif (strcasecmp(PHP_OS, 'Linux') === 0) &#123;
-        $rs = exec("ping -c 1 &#123;$host&#125;", $outcome, $status);  // Linux 服务器下
-    &#125;
+    if (strcasecmp(PHP_OS, 'WINNT') === 0) {
+        $rs = exec("ping -n 1 {$host}", $outcome, $status);  // Windows 服务器下
+    } elseif (strcasecmp(PHP_OS, 'Linux') === 0) {
+        $rs = exec("ping -c 1 {$host}", $outcome, $status);  // Linux 服务器下
+    }
 
     return $status==0 ? true : false;
-&#125;
+}
 
 //$url = "https://cloud.tencent.com/document/api/457/37184?id=232";
 //var_dump(pingHost($url));       //true
@@ -2133,7 +2135,7 @@ public function pingHost($address)&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    113
+                    103
                 </div>
                 
 
@@ -1073,25 +1075,25 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下模板方法模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">abstract class AbstractCalculator&#123;
-    public final function calculate(string $exp,string $opt)&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">abstract class AbstractCalculator{
+    public final function calculate(string $exp,string $opt){
         $arr = $this->split($exp,$opt);
         return $this->cal($arr[0],$arr[1]);
-    &#125;
+    }
 
     abstract public function cal(int $num1, int $num2): int;
 
-    public function split(string $exp, string $opt): array&#123;
+    public function split(string $exp, string $opt): array{
         $arr = explode($opt,$exp);
         return [intval($arr[0]),intval($arr[1])];
-    &#125;
-&#125;
+    }
+}
 
-class Plus extends AbstractCalculator&#123;
-    public function cal(int $num1, int $num2): int&#123;
+class Plus extends AbstractCalculator{
+    public function cal(int $num1, int $num2): int{
         return $num1 + $num2;
-    &#125;
-&#125;
+    }
+}
 
 
 // 调用
@@ -1702,11 +1704,11 @@ echo $result;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/simple-factory-pattern.html">
+                <a href="/posts/bridge-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——简单工厂方法模式">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——桥接模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1717,17 +1719,14 @@ echo $result;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——简单工厂方法模式
+                          设计模式——桥接模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明凡是出现了大量的产品需要创建，并且具有共同的接口时，可以通过工厂方法模式进行创建。就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建。首先看下关系图：
-示例下面讲解下静态工厂方法模式的代码实现
-
-创建公共接口 interface
+                            说明  桥接模式就是把事物和其具体实现分开，使他们可以各自独立的变化。桥接的用意是：将抽象化与实现化解耦，使得二者可以独立变化，像我们常用的JDBC桥DriverManager一样，JDBC进行连接数据库的时候，在各个数据库之间进行切换，基
                         
                     </div>
                     <div class="publish-info">
@@ -1764,11 +1763,11 @@ echo $result;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/composite-pattern.html">
+                <a href="/posts/state-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——组合模式">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——状态模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1779,18 +1778,19 @@ echo $result;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——组合模式
+                          设计模式——状态模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  又叫部分-整体模式,在处理类似树形结构的问题时比较方便。
-示例下面看下组合模式的代码实现
-class TreeNode&#123;
-    private string $name;
-    private TreeNode $pa
+                            说明示例下面看下状态模式的代码实现
+class State{
+    private string $value;
+
+    public function getValue(): string{
+        return $this-
                         
                     </div>
                     <div class="publish-info">
@@ -2087,7 +2087,7 @@ class TreeNode&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

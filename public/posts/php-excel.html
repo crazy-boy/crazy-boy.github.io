@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    344
+                    334
                 </div>
                 
 
@@ -1084,31 +1086,31 @@ h3:hover {
 <h3 id="4-单元格内容特定位置换行"><a href="#4-单元格内容特定位置换行" class="headerlink" title="4. 单元格内容特定位置换行"></a>4. 单元格内容特定位置换行</h3><pre class=" language-lang-bash"><code class="language-lang-bash">    $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A3', "第三节\n11:00-12:00");   //注意双引号
     $objPHPExcel->getActiveSheet()->getStyle('A3')->getAlignment()->setWrapText(true);
 </code></pre>
-<h3 id="5-PhpSpreadsheet日期格式问题"><a href="#5-PhpSpreadsheet日期格式问题" class="headerlink" title="5. PhpSpreadsheet日期格式问题"></a>5. PhpSpreadsheet日期格式问题</h3><p>使用PhpSpreadsheet  进行导入处理时，如果单元格格式为：自定义的<code>yyyy/m/d</code>，导入后的数据格式会变为<code>m/d/yyyy</code>，即12/13/2021<br><img src="/images/php_excel_note_1.png" alt><br>这是因为PhpSpreadsheet会把单元格转为数字，而校验出的单元格格式为<code>m/d/yyyy</code>。<br>解决办法：使用日期格式的<code>yyyy/m/d</code><br><img src="/images/php_excel_note_2.png" alt><br>程序校验出的日期格式为：<code>yyyy/m/d;@</code><br>excel导入，获取数据：</p>
+<h3 id="5-PhpSpreadsheet日期格式问题"><a href="#5-PhpSpreadsheet日期格式问题" class="headerlink" title="5. PhpSpreadsheet日期格式问题"></a>5. PhpSpreadsheet日期格式问题</h3><p>使用PhpSpreadsheet  进行导入处理时，如果单元格格式为：自定义的<code>yyyy/m/d</code>，导入后的数据格式会变为<code>m/d/yyyy</code>，即12/13/2021<br><img src="/images/php_excel_note_1.png" alt=""><br>这是因为PhpSpreadsheet会把单元格转为数字，而校验出的单元格格式为<code>m/d/yyyy</code>。<br>解决办法：使用日期格式的<code>yyyy/m/d</code><br><img src="/images/php_excel_note_2.png" alt=""><br>程序校验出的日期格式为：<code>yyyy/m/d;@</code><br>excel导入，获取数据：</p>
 <pre class=" language-lang-php"><code class="language-lang-php">$allobjWorksheets = $objPHPExcel->getAllSheets();
 $result = [];
-foreach($allobjWorksheets as $objWorksheet) &#123;
+foreach($allobjWorksheets as $objWorksheet) {
     $sheetname = $objWorksheet->getTitle();
     $highestRow = $objWorksheet->getHighestRow();
     $highestColumn = $objWorksheet->getHighestColumn();
     $highestColumnIndex = Coordinate::columnIndexFromString($highestColumn);
-    for ($row = 1; $row <= $highestRow; ++$row) &#123;
-        for ($col = 0; $col <= $highestColumnIndex; ++$col) &#123;
+    for ($row = 1; $row <= $highestRow; ++$row) {
+        for ($col = 0; $col <= $highestColumnIndex; ++$col) {
             $cell = $objWorksheet->getCellByColumnAndRow($col, $row);
             $value = $cell->getValue();
-            if ($cell->getDataType() == DataType::TYPE_NUMERIC) &#123;
+            if ($cell->getDataType() == DataType::TYPE_NUMERIC) {
                 $formatcode = $cell->getStyle()->getNumberFormat()->getFormatCode();
-                if (preg_match('/^(\[\$[A-Z]*-[0-9A-F]*\])*[hmsdy]/i', $formatcode)) &#123;
+                if (preg_match('/^(\[\$[A-Z]*-[0-9A-F]*\])*[hmsdy]/i', $formatcode)) {
                     $value = $cell->getFormattedValue();
                     //$value=gmdate("Y-m-d", PHPExcel_Shared_Date::ExcelToPHP($value));
-                &#125; else &#123;
+                } else {
                     $value = NumberFormat::toFormattedString($value, $formatcode);
-                &#125;
-            &#125;
+                }
+            }
             $result[$sheetname][$row - 1][$col] = $value;
-        &#125;
-    &#125;
-&#125;
+        }
+    }
+}
 print_r($result);
 die;
 </code></pre>
@@ -1735,9 +1737,9 @@ die;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 加载脚本?- [&#39;E:/SWI-Prolog/test/friend.pl&#39;].       %true
+                            1. 加载脚本?- ['E:/SWI-Prolog/test/friend.pl'].       %true
 2. 教程https://riptutorial.com/zh-CN/prolog
-3. 简单的计算求解：?- 
+3. 简单的计算求解：?- X is 3*7
                         
                     </div>
                     <div class="publish-info">
@@ -2095,7 +2097,7 @@ die;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    381
+                    375
                 </div>
                 
 
@@ -1075,15 +1077,15 @@ h3:hover {
                 <div class="note info">以MySQL为代表的关系型数据库，5.7.8之前没有JSON这种数据类型，只能以varchar或者text形式变相的支持JSON，存取键值极不方便；5.7.8开始有JSON数据类型，有专门语法支持键值的存取，易用性得到很大提升。下面说说json类型的使用。</div>
 
 <h3 id="json类型的使用"><a href="#json类型的使用" class="headerlink" title="json类型的使用"></a>json类型的使用</h3><ol>
-<li>先看下版本号，确定是否支持json类型<br><img src="/images/mysql_json_1.png" alt></li>
-<li>创建表user，其中extdata字段为json类型<br><img src="/images/mysql_json_2.png" alt></li>
-<li>往表user里插入一条数据<br><img src="/images/mysql_json_3.png" alt></li>
-<li>设置extdata字段的值<br><img src="/images/mysql_json_4.png" alt></li>
-<li>查看数据<br><img src="/images/mysql_json_5.png" alt></li>
-<li>查看json字段的指定项：<code>json_extract(字段名,&#39;$.xx&#39;)</code><br><img src="/images/mysql_json_6.png" alt></li>
-<li>explain看下<br><img src="/images/mysql_json_7.png" alt></li>
-<li>以json字段中的指定项来添加字段<br><img src="/images/mysql_json_8.png" alt></li>
-<li>派生字段添加索引<br><img src="/images/mysql_json_9.png" alt></li>
+<li>先看下版本号，确定是否支持json类型<br><img src="/images/mysql_json_1.png" alt=""></li>
+<li>创建表user，其中extdata字段为json类型<br><img src="/images/mysql_json_2.png" alt=""></li>
+<li>往表user里插入一条数据<br><img src="/images/mysql_json_3.png" alt=""></li>
+<li>设置extdata字段的值<br><img src="/images/mysql_json_4.png" alt=""></li>
+<li>查看数据<br><img src="/images/mysql_json_5.png" alt=""></li>
+<li>查看json字段的指定项：<code>json_extract(字段名,'$.xx')</code><br><img src="/images/mysql_json_6.png" alt=""></li>
+<li>explain看下<br><img src="/images/mysql_json_7.png" alt=""></li>
+<li>以json字段中的指定项来添加字段<br><img src="/images/mysql_json_8.png" alt=""></li>
+<li>派生字段添加索引<br><img src="/images/mysql_json_9.png" alt=""></li>
 </ol>
 <h3 id="json函数与find-in-set对比"><a href="#json函数与find-in-set对比" class="headerlink" title="json函数与find_in_set对比"></a>json函数与find_in_set对比</h3><ol>
 <li>新建表test<pre><code>CREATE TABLE test (
@@ -1093,16 +1095,16 @@ manager_ids json DEFAULT NULL,
 PRIMARY KEY (id)
 ) ENGINE=InnoDB AUTO_INCREMENT=50159 DEFAULT CHARSET=utf8mb4;
 </code></pre></li>
-<li><p>并插入五万条数据<br><img src="/images/mysql_json_10.png" alt><br><img src="/images/mysql_json_11.png" alt></p>
+<li><p>并插入五万条数据<br><img src="/images/mysql_json_10.png" alt=""><br><img src="/images/mysql_json_11.png" alt=""></p>
 </li>
 <li><p>对比查询效率</p>
 <pre><code>select SQL_NO_CACHE * from test where FIND_IN_SET(2,member_ids);
-select SQL_NO_CACHE * from test where json_contains(manager_ids,&#39;2&#39;);
-</code></pre><p><img src="/images/mysql_json_12.png" alt><br><img src="/images/mysql_json_13.png" alt><br><img src="/images/mysql_json_14.png" alt><br>find_in_set稳定性不好，时间在0.09s到0.69s之间变动<br>json_contains稳定在0.14s左右，第二个字段必须是字符串<br>如果连表的话，要使用cast(b.id as char)</p>
+select SQL_NO_CACHE * from test where json_contains(manager_ids,'2');
+</code></pre><p><img src="/images/mysql_json_12.png" alt=""><br><img src="/images/mysql_json_13.png" alt=""><br><img src="/images/mysql_json_14.png" alt=""><br>find_in_set稳定性不好，时间在0.09s到0.69s之间变动<br>json_contains稳定在0.14s左右，第二个字段必须是字符串<br>如果连表的话，要使用cast(b.id as char)</p>
 <pre><code>SELECT
  a.id,
  a.NAME,
- group_concat( DISTINCT ( b.NAME ) ORDER BY b.id SEPARATOR &#39;、&#39; ) managerNames
+ group_concat( DISTINCT ( b.NAME ) ORDER BY b.id SEPARATOR '、' ) managerNames
 FROM
  a
  LEFT JOIN b ON json_contains( a.manager_ids, cast(b.id as char) )
@@ -1739,9 +1741,9 @@ ORDER BY
                     <div class="summary block-with-text">
                         
                             rule规则
-class Item extends \think\Validate&#123;
+class Item extends \think\Validate{
     protected $rule = [
-        [&#39;mobile|手机号&#39;, &#39;require|leng
+        ['mobile|手机号', 'require|length:11', '手机号必填|手机
                         
                     </div>
                     <div class="publish-info">
@@ -1801,9 +1803,10 @@ class Item extends \think\Validate&#123;
                     <div class="summary block-with-text">
                         
                             说明示例下面看下中介者模式的代码实现
-interface Mediator&#123;
+interface Mediator{
     public function createMediator(): void;
-    public function workAll(): v
+    public function workAll(): void;
+
                         
                     </div>
                     <div class="publish-info">
@@ -2100,7 +2103,7 @@ interface Mediator&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

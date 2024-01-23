@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1064,8 +1066,8 @@ class="themespring" -->
                             
                                 在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。
 下面演示下，在test方法执行后自动执行afterTest方法
-trait A&#123;
-    public function __call($method, 
+trait A{
+    public function __call($method, $args
                             
                         </div>
                         <div class="publish-info">
@@ -1505,9 +1507,9 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                             
                                 
 如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)
-  function sum(...$numbers)&#123;
+  function sum(...$numbers){
       $sum = 0;
-      foreach ($numbers as $
+      foreach ($numbers as $numbe
                             
                         </div>
                         <div class="publish-info">
@@ -1593,9 +1595,9 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                         <div class="summary block-with-text">
                             
                                 rule规则
-class Item extends \think\Validate&#123;
+class Item extends \think\Validate{
     protected $rule = [
-        [&#39;mobile|手机号&#39;, &#39;require|leng
+        ['mobile|手机号', 'require|length:11', '手机号必填|手机
                             
                         </div>
                         <div class="publish-info">
@@ -2263,7 +2265,7 @@ class Item extends \think\Validate&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

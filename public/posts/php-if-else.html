@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    581
+                    501
                 </div>
                 
 
@@ -1076,27 +1078,27 @@ h3:hover {
 
 <h3 id="提前return"><a href="#提前return" class="headerlink" title="提前return"></a>提前return</h3><p> 让正常流程走主干，非正常流程提前return，去除不必要的else，适用于函数参数校验。</p>
 <ul>
-<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition)&#123;
+<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition){
       doSomething
-  &#125;else&#123;
+  }else{
       return ;
-  &#125;
+  }
 </code></pre>
 </li>
-<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (!condition)&#123;
+<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (!condition){
       return ;
-  &#125;
+  }
   doSomething
 </code></pre>
 </li>
 </ul>
 <h3 id="使用三目运算符"><a href="#使用三目运算符" class="headerlink" title="使用三目运算符"></a>使用三目运算符</h3><p> 适用于根据条件给变量赋值。</p>
 <ul>
-<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition)&#123;
+<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition){
       $status = 1;
-  &#125;else&#123;
+  }else{
       $status = 0;
-  &#125;
+  }
 </code></pre>
 </li>
 <li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  $status = condition ? 1 : 0;
@@ -1105,52 +1107,52 @@ h3:hover {
 </ul>
 <h3 id="合并条件表达式"><a href="#合并条件表达式" class="headerlink" title="合并条件表达式"></a>合并条件表达式</h3><ul>
 <li><p>优化前</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1)&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1){
       return true;
-  &#125;
+  }
 
-  if (condition2)&#123;
+  if (condition2){
       return true;
-  &#125;else&#123;
+  }else{
       return false;
-  &#125;
+  }
 </code></pre>
 </li>
-<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1 || condition2)&#123;
+<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1 || condition2){
       return true;
-  &#125;else&#123;
+  }else{
       return false;
-  &#125;
+  }
 </code></pre>
 </li>
 </ul>
 <h3 id="使用switch-case优化"><a href="#使用switch-case优化" class="headerlink" title="使用switch case优化"></a>使用switch case优化</h3><p> php8可以使用match表达式</p>
 <ul>
 <li><p>优化前</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;
-      public static function handle(string $act, int $userId)&#123;
-          if ($act == 'sign in') &#123;
+<pre class=" language-lang-php"><code class="language-lang-php">  class A{
+      public static function handle(string $act, int $userId){
+          if ($act == 'sign in') {
               self::sign($userId);
-          &#125; elseif ($act == 'register user') &#123;
+          } elseif ($act == 'register user') {
               self::register($userId);
-          &#125; elseif ($act == 'change password') &#123;
+          } elseif ($act == 'change password') {
               self::changePwd($userId);
-          &#125;
-      &#125;
+          }
+      }
 
-      protected static function sign(int $userId)&#123;&#125;
+      protected static function sign(int $userId){}
 
-      protected static function register(int $userId)&#123;&#125;
+      protected static function register(int $userId){}
 
-      protected static function changePwd(int $userId)&#123;&#125;
+      protected static function changePwd(int $userId){}
 
-  &#125;
+  }
 </code></pre>
 </li>
 <li><p>优化后</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;
-      public static function handle(string $act, int $userId)&#123;
-          switch ($act) &#123;
+<pre class=" language-lang-php"><code class="language-lang-php">  class A{
+      public static function handle(string $act, int $userId){
+          switch ($act) {
               case 'sign in':
                   self::sign($userId);
                   break;
@@ -1162,28 +1164,28 @@ h3:hover {
                   break;
               default:
                   break;
-          &#125;
-      &#125;
+          }
+      }
 
-      protected static function sign(int $userId)&#123;&#125;
+      protected static function sign(int $userId){}
 
-      protected static function register(int $userId)&#123;&#125;
+      protected static function register(int $userId){}
 
-      protected static function changePwd(int $userId)&#123;&#125;
+      protected static function changePwd(int $userId){}
 
-  &#125;
+  }
 </code></pre>
 <p>效果：和原来的差不多，每次新增方法后还得修改代码。</p>
 </li>
 </ul>
 <h3 id="使用枚举"><a href="#使用枚举" class="headerlink" title="使用枚举"></a>使用枚举</h3><ul>
-<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if ($status == 0)&#123;
+<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if ($status == 0){
       return '待支付';
-  &#125;elseif($status == 1)&#123;
+  }elseif($status == 1){
       return '已支付';
-  &#125;else&#123;
+  }else{
       return '支付失败';
-  &#125;
+  }
 </code></pre>
 </li>
 <li><p>优化后</p>
@@ -1199,46 +1201,46 @@ h3:hover {
 </ul>
 <h3 id="表驱动法"><a href="#表驱动法" class="headerlink" title="表驱动法"></a>表驱动法</h3><ul>
 <li><p>优化前</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;
-      public static function handle(string $act, int $userId)&#123;
-          if ($act == 'sign in') &#123;
+<pre class=" language-lang-php"><code class="language-lang-php">  class A{
+      public static function handle(string $act, int $userId){
+          if ($act == 'sign in') {
               self::sign($userId);
-          &#125; elseif ($act == 'register user') &#123;
+          } elseif ($act == 'register user') {
               self::register($userId);
-          &#125; elseif ($act == 'change password') &#123;
+          } elseif ($act == 'change password') {
               self::changePwd($userId);
-          &#125;
-      &#125;
+          }
+      }
 
-      protected static function sign(int $userId)&#123;&#125;
+      protected static function sign(int $userId){}
 
-      protected static function register(int $userId)&#123;&#125;
+      protected static function register(int $userId){}
 
-      protected static function changePwd(int $userId)&#123;&#125;
+      protected static function changePwd(int $userId){}
 
-  &#125;
+  }
 </code></pre>
 </li>
 <li><p>优化后</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">  class A{
       private static $acts = [
           'sign in' => 'sign',
           'register use' => 'register',
           'change password' => 'changePwd',
       ];
 
-      public static function handle(string $act, int $userId)&#123;
+      public static function handle(string $act, int $userId){
           $fun = !empty($act) && isset(self::$acts[$act]) ? self::$acts[$act] : null;
           if ($fun) call_user_func($fun, $userId);
-      &#125;
+      }
 
-      protected static function sign(int $userId)&#123;&#125;
+      protected static function sign(int $userId){}
 
-      protected static function register(int $userId)&#123;&#125;
+      protected static function register(int $userId){}
 
-      protected static function changePwd(int $userId)&#123;&#125;
+      protected static function changePwd(int $userId){}
 
-  &#125;
+  }
 </code></pre>
 <p>效果：新增方法后，只需修改配置项，不用变更其他代码。</p>
 </li>
@@ -2236,7 +2238,7 @@ Lua的数组下标是从1开始的
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

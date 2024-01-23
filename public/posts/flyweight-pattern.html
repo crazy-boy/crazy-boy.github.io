@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    429
+                    413
                 </div>
                 
 
@@ -1074,7 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  享元模式的主要目的是实现对象的共享，即共享池，当系统中对象多的时候可以减少内存的开销，通常与工厂模式一起使用。<br>  FlyWeightFactory负责创建和管理享元单元，当一个客户端请求时，工厂需要检查当前对象池中是否有符合条件的对象，如果有，就返回已经存在的对象，如果没有，则创建一个新对象，FlyWeight是超类。一提到共享池，我们很容易联想到Java里面的JDBC连接池，想想每个连接的特点，我们不难总结出：适用于作共享的一些个对象，他们有一些共有的属性，就拿数据库连接池来说，url、driverClassName、username、password及dbname，这些属性对于每个连接来说都是一样的，所以就适合用享元模式来处理，建一个工厂类，将上述类似属性作为内部数据，其它的作为外部数据，在方法调用时，当做参数传进来，这样就节省了空间，减少了实例的数量。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下享元模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class ConnectionPool&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">class ConnectionPool{
     private array $pool;
 
     private string $server = '127.0.0.1';
@@ -1087,30 +1089,30 @@ h3:hover {
 
     public $conn = null;
 
-    public function __construct()&#123;
+    public function __construct(){
         $this->pool = [];
-        for ($i=0; $i<$this->poolSize; $i++)&#123;
-            try &#123;
+        for ($i=0; $i<$this->poolSize; $i++){
+            try {
                 $mysqlConn = mysqli_connect($this->server, $this->username, $this->password);
                 if (!$mysqlConn)  die("connect error");
                 mysqli_select_db($mysqlConn,$this->database);
                 mysqli_query($mysqlConn,'SET NAMES utf8');
                 $this->pool[] = $mysqlConn;
-            &#125;catch (Exception $e)&#123;
+            }catch (Exception $e){
                 die("connect error");
-            &#125;
-        &#125;
-    &#125;
+            }
+        }
+    }
 
-    public function getConnection()&#123;
-        if (count($this->pool) > 0)&#123;
+    public function getConnection(){
+        if (count($this->pool) > 0){
             $this->conn = array_shift($this->pool);
             return $this->conn;
-        &#125;else&#123;
+        }else{
             return null;
-        &#125;
-    &#125;
-&#125;
+        }
+    }
+}
 
 $connPool = new ConnectionPool();
 $conn1 = $connPool->getConnection();
@@ -1741,9 +1743,10 @@ var_dump($conn1===$conn2);      //false
                     <div class="summary block-with-text">
                         
                             说明示例下面看下中介者模式的代码实现
-interface Mediator&#123;
+interface Mediator{
     public function createMediator(): void;
-    public function workAll(): v
+    public function workAll(): void;
+
                         
                     </div>
                     <div class="publish-info">
@@ -2099,7 +2102,7 @@ interface Mediator&#123;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

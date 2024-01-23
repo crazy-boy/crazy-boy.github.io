@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    481
+                    477
                 </div>
                 
 
@@ -1095,13 +1097,13 @@ $list = $query->field('id,title,month')
 初步认为是参数没有绑定上去。应该也是query内部引用了一个对象，对象在clone之后与原有对象是一个地址引用。通过一步一步断点输出，确认在$this-&gt;builder-&gt;select($options);之后获得了bind数据。因此只需要解绑clone前后对象的builder属性即可完成query对象的复制。查看query对象的属性，只有builder,connection是对象，但是connection我们希望在整个请求中是一个单实例，所以没必要区分。<br>最终修改,新建query子类，添加__clone方法,指定clone后对新对象执行php $this-&gt;setBuilder();保证 clone之后的builder是一个新实例。<br>这样就可以正常使用clone了。</li>
 </ul>
 <p>另一种处理方式是把where条件提取出来共用：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">public static function getList(?string $month, int $page, int $pageSize): array&#123;
+<pre class=" language-lang-php"><code class="language-lang-php">public static function getList(?string $month, int $page, int $pageSize): array{
     $offset = ($page - 1) * $pageSize;
 
     $where = [];
-    if (!empty($month)) &#123;
+    if (!empty($month)) {
         $where['month'] = $month;
-    &#125;
+    }
     $query = Db::name('artist_bill');
     $count = $query->where($where)->count('id');
 
@@ -1111,7 +1113,7 @@ $list = $query->field('id,title,month')
         ->select();
 
     return ['count' => $count, 'list' => $list];
-&#125;
+}
 </code></pre>
 
             </div>
@@ -2095,7 +2097,7 @@ $list = $query->field('id,title,month')
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       

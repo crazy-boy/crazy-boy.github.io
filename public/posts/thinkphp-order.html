@@ -126,7 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.0.2"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -1055,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    156
+                    132
                 </div>
                 
 
@@ -1073,13 +1075,13 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。<br>下面这个查询没有得到预期的结果：</p>
-<pre><code>    $list = Db::name(&#39;tb&#39;)-&gt;where([&#39;status&#39;=&gt;1])-&gt;order([&#39;create_time&#39;=&gt;SORT_DESC])-&gt;field(&#39;id,name&#39;)-&gt;select();
+<pre><code>    $list = Db::name('tb')-&gt;where(['status'=&gt;1])-&gt;order(['create_time'=&gt;SORT_DESC])-&gt;field('id,name')-&gt;select();
    // 输出sql为：select id,name from tb where status=1 order by create_time;
 </code></pre><p>问题在于SORT_DESC=3、SORT_ASC=4，这不符合thinkphp中order方法的传参规则，<br>可以这样使用：</p>
-<pre><code>   order(&#39;id&#39;,&#39;desc&#39;)
-   order(&#39;id desc&#39;)
-   order([&#39;id&#39;=&gt;&#39;desc&#39;,&#39;create_time&#39;=&gt;&#39;asc&#39;])
-   order(&#39;id,create_time desc&#39;)
+<pre><code>   order('id','desc')
+   order('id desc')
+   order(['id'=&gt;'desc','create_time'=&gt;'asc'])
+   order('id,create_time desc')
 </code></pre>
             </div>
             <hr/>
@@ -2063,7 +2065,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">37.5k</span>&nbsp;
+        class="white-color">35.7k</span>&nbsp;
       
       
       
