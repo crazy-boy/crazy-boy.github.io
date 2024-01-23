@@ -124,7 +124,7 @@ deploy:
   type: git
   repo:
     github: https://github.com/crazy-boy/crazy-boy.github.io.git
-    gitee: https://gitee.com/crazy-pb/blog.git
+    # gitee: https://gitee.com/crazy-pb/blog.git
     # coding: https://e.coding.net/crazy-boy/crazy-boy/blog.git
   branch: master
 
