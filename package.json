@@ -16,7 +16,7 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-baidu-url-submit": "0.0.6",
-    "hexo-deployer-cos-enhanced": "^0.0.4",
+    "hexo-deployer-cos-enhanced": "^1.0.1",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-github-emojis": "^3.0.5",
     "hexo-generator-archive": "^1.0.0",
