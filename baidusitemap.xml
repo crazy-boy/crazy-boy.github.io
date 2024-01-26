@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/3493.html</loc>
+    <lastmod>2024-01-26</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/mysql-datetime.html</loc>
+    <lastmod>2024-01-26</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/867a.html</loc>
+    <lastmod>2024-01-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/6c10.html</loc>
+    <lastmod>2024-01-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/f999.html</loc>
+    <lastmod>2024-01-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/6590.html</loc>
+    <lastmod>2024-01-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/3a8a.html</loc>
+    <lastmod>2024-01-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/git-notes.html</loc>
+    <lastmod>2024-01-25</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/high-concurrent-experience.html</loc>
     <lastmod>2024-01-23</lastmod>
   </url>
@@ -9,11 +41,11 @@
     <lastmod>2024-01-23</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/git-notes.html</loc>
+    <loc>https://crazy-boy.com/posts/architecture-notes.html</loc>
     <lastmod>2024-01-23</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/architecture-notes.html</loc>
+    <loc>https://crazy-boy.com/posts/dead-lock.html</loc>
     <lastmod>2024-01-23</lastmod>
   </url>
   <url>
@@ -22,10 +54,6 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/thread-safe.html</loc>
-    <lastmod>2024-01-23</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/dead-lock.html</loc>
     <lastmod>2024-01-23</lastmod>
   </url>
   <url>
@@ -129,7 +157,7 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/memento-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -137,19 +165,7 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/memento-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/factory-method-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -181,11 +197,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/interpreter-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/interpreter-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -193,7 +209,7 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/iterator-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -201,7 +217,19 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/iterator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/adapter-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -453,7 +481,7 @@
     <lastmod>2019-07-02</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/rz-on-linux.html</loc>
+    <loc>https://crazy-boy.com/posts/8692.html</loc>
     <lastmod>2019-07-02</lastmod>
   </url>
   <url>
@@ -529,11 +557,11 @@
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
+    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
+    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>

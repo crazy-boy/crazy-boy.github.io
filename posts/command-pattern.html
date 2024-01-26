@@ -1717,11 +1717,11 @@ $invoker->action();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/prototype-pattern.html">
+                <a href="/posts/memento-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——原型模式">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——备忘录模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1732,18 +1732,19 @@ $invoker->action();
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——原型模式
+                          设计模式——备忘录模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  将一个对象作为原型，对其进行复制、克隆，产生一个和原对象类似的新对象。  
-示例下面看下原型模式的代码实现
-// 定义了一个原型
-abstract class Prototype{
-    public $v = 'clone'.P
+                            说明示例下面看下备忘录模式的代码实现
+class Original{
+    private string $value;
+
+    public function __construct(string $value){
+        $
                         
                     </div>
                     <div class="publish-info">
@@ -1780,11 +1781,11 @@ abstract class Prototype{
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/memento-pattern.html">
+                <a href="/posts/factory-method-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——备忘录模式">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="设计模式——工厂方法模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1795,19 +1796,18 @@ abstract class Prototype{
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——备忘录模式
+                          设计模式——工厂方法模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下备忘录模式的代码实现
-class Original{
-    private string $value;
-
-    public function __construct(string $value){
-        $
+                            说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
+示例下面看下工厂方法模式的代码实现
+// 创建公共接口
+interface Sender{
+    public f
                         
                     </div>
                     <div class="publish-info">
@@ -2104,7 +2104,7 @@ class Original{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">37.8k</span>&nbsp;
       
       
       

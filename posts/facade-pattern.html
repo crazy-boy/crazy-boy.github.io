@@ -1758,11 +1758,11 @@ computer closed!
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/memento-pattern.html">
+                <a href="/posts/iterator-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="设计模式——备忘录模式">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——迭代器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1773,19 +1773,18 @@ computer closed!
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——备忘录模式
+                          设计模式——迭代器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下备忘录模式的代码实现
-class Original{
-    private string $value;
-
-    public function __construct(string $value){
-        $
+                            说明示例下面看下代码实现
+interface Collection{
+    public function iterator();
+    public function get(int $i);
+    public function 
                         
                     </div>
                     <div class="publish-info">
@@ -1822,11 +1821,11 @@ class Original{
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/factory-method-pattern.html">
+                <a href="/posts/adapter-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="设计模式——工厂方法模式">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——适配器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1837,18 +1836,15 @@ class Original{
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——工厂方法模式
+                          设计模式——适配器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
-示例下面看下工厂方法模式的代码实现
-// 创建公共接口
-interface Sender{
-    public f
+                            说明  适配器模式将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。
+分类类的适配器模式  核心思想就是：有一个Source类，
                         
                     </div>
                     <div class="publish-info">
@@ -2145,7 +2141,7 @@ interface Sender{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">37.8k</span>&nbsp;
       
       
       
