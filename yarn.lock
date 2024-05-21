@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@adobe/css-tools@~4.3.1":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.3.2.tgz#a6abc715fb6884851fca9dad37fc34739a04fd11"
+  integrity sha512-DA5a1C0gD/pLOvhv33YMrbf2FK3oUzwNl9oOJqE4XVjuEtt6XIakRcsd7eLiOSPkp1kTRQGICTA8cKra/vFbjw==
+
 "@tootallnate/once@2":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@tootallnate/once/-/once-2.0.0.tgz"
@@ -118,11 +123,6 @@ align-text@^0.1.1, align-text@^0.1.3:
     kind-of "^3.0.2"
     longest "^1.0.1"
     repeat-string "^1.5.2"
-
-amdefine@>=0.0.4:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz"
-  integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -894,16 +894,6 @@ css-what@2.1:
   resolved "https://registry.npmjs.org/css-what/-/css-what-2.1.3.tgz"
   integrity sha512-a+EPoD+uZiNfh+5fxw2nO9QwFa6nJe2Or35fGY6Ipw1R3R4AGz1d1TEZrCegvw2YTmZ0jXirGYlzxxpYSHwpEg==
 
-css@^2.0.0:
-  version "2.2.4"
-  resolved "https://registry.npmjs.org/css/-/css-2.2.4.tgz"
-  integrity sha512-oUnjmWpy0niI3x/mPL8dVEI1l7MnG3+HHyRPHf+YFSbK+svOhXpmSOcDURUh2aOCgl2grzrOPt1nHLuCVFULLw==
-  dependencies:
-    inherits "^2.0.3"
-    source-map "^0.6.1"
-    source-map-resolve "^0.5.2"
-    urix "^0.1.0"
-
 cssom@^0.5.0:
   version "0.5.0"
   resolved "https://registry.npmjs.org/cssom/-/cssom-0.5.0.tgz"
@@ -983,6 +973,13 @@ debug@~3.1.0:
   integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   dependencies:
     ms "2.0.0"
+
+debug@4, debug@^4.3.2:
+  version "4.3.4"
+  resolved "https://registry.npmjs.org/debug/-/debug-4.3.4.tgz"
+  integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
+  dependencies:
+    ms "2.1.2"
 
 decamelize@^1.0.0, decamelize@^1.2.0:
   version "1.2.0"
@@ -1150,6 +1147,7 @@ domutils@^2.8.0:
     dom-serializer "^1.0.1"
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
+
 
 domutils@^3.1.0:
   version "3.1.0"
@@ -1728,13 +1726,6 @@ has-values@^1.0.0:
     is-number "^3.0.0"
     kind-of "^4.0.0"
 
-hasown@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/hasown/-/hasown-2.0.0.tgz"
-  integrity sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==
-  dependencies:
-    function-bind "^1.1.2"
-
 hexo-abbrlink@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/hexo-abbrlink/-/hexo-abbrlink-2.2.1.tgz"
@@ -1800,15 +1791,17 @@ hexo-cli@^4.3.2:
     resolve "^1.20.0"
     tildify "^2.0.0"
 
-hexo-deployer-cos-enhanced@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/hexo-deployer-cos-enhanced/-/hexo-deployer-cos-enhanced-0.0.4.tgz"
-  integrity sha512-SIT00tZ530j2vMwjLFFIAVfPmVKKAmGxNvGWI1hB02XJrp+7dsa2rRDxr6Cx50XuVV7ZRQVbyMFnIeYifGtKdQ==
+hexo-deployer-cos-enhanced@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/hexo-deployer-cos-enhanced/-/hexo-deployer-cos-enhanced-1.0.1.tgz#5cee111ad961497298ea01596c119d2e5eb8624d"
+  integrity sha512-8VM6GSqxoUlMCvvR0EetbqJiY/xCKyiI/vzvZ1z1lpR+Kx3EgghQ47OUKT7WRrQJ8Nc6mT9Vr550GtEqKkA5HQ==
   dependencies:
     chalk "^2.3.0"
     cos-nodejs-sdk-v5 "^2.4.3"
     hexo-fs "^0.2.2"
-    qcloud-cdn-node-sdk "^1.0.0"
+    lodash "^4.17.2"
+    request "^2.79.0"
+    utility "^1.9.0"
 
 hexo-deployer-git@^4.0.0:
   version "4.0.0"
@@ -1851,6 +1844,13 @@ hexo-front-matter@^4.2.1:
   integrity sha512-sJJI0GNmejYiwBvgnGRKn5V3sbODB4dNPr8jyw2Qp0PRHr4Uuyv8iyxw6WfK3+T7yvzYvJOh+tZ7jnwr2BYARA==
   dependencies:
     js-yaml "^4.1.0"
+
+hexo-front-matter@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/hexo-front-matter/-/hexo-front-matter-2.0.0.tgz"
+  integrity sha512-IR3tjAyK2Ga/0a/WDAoNy5+n3ju2/mkuAsCDEeGgGLf5+7kkiOkkG/FrnueuYgz0h2MPfWDLBiDsSTCmB0sLCA==
+  dependencies:
+    js-yaml "^3.13.1"
 
 hexo-fs@^0.2.0, hexo-fs@^0.2.1, hexo-fs@^0.2.2:
   version "0.2.3"
@@ -2046,13 +2046,13 @@ hexo-renderer-kramed@^0.1.4:
     object-assign "^4.1.0"
     strip-indent "^1.0.1"
 
-hexo-renderer-stylus@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/hexo-renderer-stylus/-/hexo-renderer-stylus-2.0.0.tgz"
-  integrity sha512-pn411nLqlmd9oq2oEPZ7AfYrCUmAVUxJ/QnE0fpoTFbLARVHOkJaKr6GlcWmKs2jdYIu8xa7yB7cEFo406k8DA==
+hexo-renderer-stylus@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/hexo-renderer-stylus/-/hexo-renderer-stylus-3.0.1.tgz#7ff6f3101fa86ba25de415257be7fa7032e910bc"
+  integrity sha512-cFm8ZwShBBeFcQwOXc8EK7lIZnSYVD6OJykdL4GBw99hxc4eD5Hlsi32nRzE8sgKv00jhX1s9Da3GVVFMPAVQg==
   dependencies:
-    nib "^1.1.2"
-    stylus "^0.54.8"
+    nib "^1.2.0"
+    stylus "^0.62.0"
 
 hexo-server@^2.0.0:
   version "2.0.0"
@@ -3071,6 +3071,11 @@ moment-timezone@^0.5.21, moment-timezone@^0.5.34:
   version "0.5.45"
   resolved "https://registry.yarnpkg.com/moment-timezone/-/moment-timezone-0.5.45.tgz#cb685acd56bac10e69d93c536366eb65aa6bcf5c"
   integrity sha512-HIWmqA86KcmCAhnMAN0wuDOARV/525R2+lOLotuGFzn4HO+FH+/645z2wx0Dt3iDv6/p61SIvKnDstISainhLQ==
+
+moment-timezone@^0.5.21:
+  version "0.5.44"
+  resolved "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.44.tgz"
+  integrity sha512-nv3YpzI/8lkQn0U6RkLd+f0W/zy/JnoR5/EyPz/dNkPTBjA2jNLCVxaiQ8QpeLymhSZvX0wCL5s27NQWdOPwAw==
   dependencies:
     moment "^2.29.4"
 
@@ -3124,6 +3129,7 @@ mz@^2.7.0:
     thenify-all "^1.0.0"
 
 nan@^2.12.1:
+
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.19.0.tgz#bb58122ad55a6c5bc973303908d5b16cfdd5a8c0"
   integrity sha512-nO1xXxfh/RWNxfd/XPfbIfFk5vgLsAxUR9y5O0cHMJu/AW9U95JLXqthYHjEp+8gQ5p96K9jUp8nbVOxCdRbtw==
@@ -3155,12 +3161,10 @@ negotiator@0.6.2:
   resolved "https://registry.npmjs.org/negotiator/-/negotiator-0.6.2.tgz"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nib@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/nib/-/nib-1.1.2.tgz"
-  integrity sha1-amnt5AgblcDe+L4CSkyK4MLLtsc=
-  dependencies:
-    stylus "0.54.5"
+nib@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/nib/-/nib-1.2.0.tgz#cf650a975307edaa8683470430f82ba132bf9f7b"
+  integrity sha512-7HgrnMl/3yOmWykueO8/D0q+0iWwe7Z+CK2Eaq/xQV8w1hK80WN1oReRQkfkrztbAAnp/nTHkUSl5EcVkor6JQ==
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -3569,15 +3573,6 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-qcloud-cdn-node-sdk@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/qcloud-cdn-node-sdk/-/qcloud-cdn-node-sdk-1.0.0.tgz"
-  integrity sha512-HJCKoL6F6yiiP5UzIPaOgCB1hZ/+NSz5AdR1OQfR2nkoZclHbVtfxq4QSW8U+YwbT8/+4OK98Z6PPx2G5pOnfA==
-  dependencies:
-    lodash "^4.17.2"
-    request "^2.79.0"
-    utility "^1.9.0"
-
 qs@~6.5.2:
   version "6.5.3"
   resolved "https://registry.npmjs.org/qs/-/qs-6.5.3.tgz"
@@ -3825,6 +3820,11 @@ sax@0.5.x:
   resolved "https://registry.npmjs.org/sax/-/sax-0.5.8.tgz"
   integrity sha1-1HLbIo6zMcJQaw6MFVJK25OdEsE=
 
+sax@~1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.3.0.tgz#a5dbe77db3be05c9d1ee7785dbd3ea9de51593d0"
+  integrity sha512-0s+oAmw9zLl1V1cS9BtZN7JAd0cW5e0QH4W3LWEK6a4LaLEA2OTpGYWDY+6XasBLtz6wkm3u1xRw95mRuJ59WA==
+
 sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz"
@@ -3847,7 +3847,7 @@ semver@^5.5.0:
   resolved "https://registry.npmjs.org/semver/-/semver-5.7.2.tgz"
   integrity sha512-cBznnQ9KjJqU67B52RMC65CMarK2600WFnbkcaiwWq3xy/5haFJlshgnpjovMVJ+Hff49d8GEn0b87C5pDQ10g==
 
-semver@^6.0.0, semver@^6.3.0:
+semver@^6.0.0:
   version "6.3.1"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
@@ -3972,7 +3972,7 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-source-map-resolve@^0.5.0, source-map-resolve@^0.5.2:
+source-map-resolve@^0.5.0:
   version "0.5.3"
   resolved "https://registry.npmjs.org/source-map-resolve/-/source-map-resolve-0.5.3.tgz"
   integrity sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==
@@ -4009,6 +4009,11 @@ source-map@^0.7.3:
   version "0.7.3"
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.7.3.tgz"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
+
+source-map@~0.6.1:
+  version "0.6.1"
+  resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
+  integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
@@ -4185,6 +4190,18 @@ stylus@^0.54.8:
     safer-buffer "^2.1.2"
     sax "~1.2.4"
     semver "^6.3.0"
+
+stylus@^0.62.0:
+  version "0.62.0"
+  resolved "https://registry.yarnpkg.com/stylus/-/stylus-0.62.0.tgz#648a020e2bf90ed87587ab9c2f012757e977bb5d"
+  integrity sha512-v3YCf31atbwJQIMtPNX8hcQ+okD4NQaTuKGUWfII8eaqn+3otrbttGL1zSMZAAtiPsBztQnujVBugg/cXFUpyg==
+
+  dependencies:
+    "@adobe/css-tools" "~4.3.1"
+    debug "^4.3.2"
+    glob "^7.1.6"
+    sax "~1.3.0"
+>>>>>>> hexo
     source-map "^0.7.3"
 
 supports-color@^2.0.0:
