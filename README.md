@@ -8,6 +8,6 @@
 
 
 ### 怎样联系博主
-- 留言：前往博客l留言: <a href="https://crazy-boy.com/" target="_blank">飞奔的蜗牛</a>
+- 留言：前往博客留言: <a href="https://crazy-boy.com/" target="_blank">飞奔的蜗牛</a>
 - 邮箱：pengbing945@protonmail.com
 - QQ：1489249823
