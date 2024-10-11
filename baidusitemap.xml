@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/git-notes.html</loc>
+    <lastmod>2024-07-05</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/38c1.html</loc>
+    <lastmod>2024-07-04</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/2b4a.html</loc>
     <lastmod>2024-05-22</lastmod>
   </url>
@@ -54,10 +62,6 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/btree-and-b+tree.html</loc>
-    <lastmod>2024-05-21</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/git-notes.html</loc>
     <lastmod>2024-05-21</lastmod>
   </url>
   <url>
@@ -161,11 +165,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/template-method-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/template-method-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -181,11 +185,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/composite-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/decorator-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/decorator-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/composite-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -373,11 +377,11 @@
     <lastmod>2021-08-07</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/php-yii2-notes.html</loc>
+    <loc>https://crazy-boy.com/posts/yii2-rabbitmq.html</loc>
     <lastmod>2021-05-27</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/yii2-rabbitmq.html</loc>
+    <loc>https://crazy-boy.com/posts/php-yii2-notes.html</loc>
     <lastmod>2021-05-27</lastmod>
   </url>
   <url>

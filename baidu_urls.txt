@@ -1,3 +1,4 @@
+https://crazy-boy.com/posts/38c1.html
 https://crazy-boy.com/posts/2b4a.html
 https://crazy-boy.com/posts/85ed.html
 https://crazy-boy.com/posts/9c77.html
@@ -29,13 +30,13 @@ https://crazy-boy.com/posts/command-pattern.html
 https://crazy-boy.com/posts/memento-pattern.html
 https://crazy-boy.com/posts/facade-pattern.html
 https://crazy-boy.com/posts/factory-method-pattern.html
-https://crazy-boy.com/posts/bridge-pattern.html
 https://crazy-boy.com/posts/template-method-pattern.html
+https://crazy-boy.com/posts/bridge-pattern.html
 https://crazy-boy.com/posts/state-pattern.html
 https://crazy-boy.com/posts/strategy-pattern.html
 https://crazy-boy.com/posts/simple-factory-pattern.html
-https://crazy-boy.com/posts/composite-pattern.html
 https://crazy-boy.com/posts/decorator-pattern.html
+https://crazy-boy.com/posts/composite-pattern.html
 https://crazy-boy.com/posts/observer-pattern.html
 https://crazy-boy.com/posts/interpreter-pattern.html
 https://crazy-boy.com/posts/visitor-pattern.html
@@ -80,8 +81,8 @@ https://crazy-boy.com/posts/product-design.html
 https://crazy-boy.com/posts/html-to-pdf.html
 https://crazy-boy.com/posts/goframe-note.html
 https://crazy-boy.com/posts/mysql-optimization.html
-https://crazy-boy.com/posts/php-yii2-notes.html
 https://crazy-boy.com/posts/yii2-rabbitmq.html
+https://crazy-boy.com/posts/php-yii2-notes.html
 https://crazy-boy.com/posts/php-composer.html
 https://crazy-boy.com/posts/common-sql.html
 https://crazy-boy.com/posts/soft-system-design.html
@@ -97,4 +98,3 @@ https://crazy-boy.com/posts/mysql-explain1.html
 https://crazy-boy.com/posts/mysql-index.html
 https://crazy-boy.com/posts/mysql-structural-design.html
 https://crazy-boy.com/posts/mysql-join.html
-https://crazy-boy.com/posts/personnel-public-data.html
