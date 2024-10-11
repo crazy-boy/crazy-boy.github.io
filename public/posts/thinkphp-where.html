@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    125
+                    209
                 </div>
                 
 
@@ -1074,18 +1074,8 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-直接whereOr"><a href="#1-直接whereOr" class="headerlink" title="1. 直接whereOr"></a>1. 直接whereOr</h3><pre class=" language-lang-php"><code class="language-lang-php">    $list = Db::name('tb')->where(['status'=>1,'admin_id'=>5])->whereOr(['type'=>1,'step'=>2])->select();
-    // 生成的sql为：select * from `tb` where `status`=1 and `admin_id`=5 or (`type`=1 or `step`=2);
-</code></pre>
-<h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><pre class=" language-lang-php"><code class="language-lang-php">    $map = ['status'=>1,'admin_id'=>5];
-    $orMap = ['type'=>1,'step'=>2];
-    $list = Db::name('tb')->where(function ($query) use ($map) {
-        $query->where($map);
-    })->whereOr(function ($query) use ($orMap) {
-        $query->where($orMap);
-    })->order('id desc')->select();
-    // 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);
-</code></pre>
+                <h3 id="1-直接whereOr"><a href="#1-直接whereOr" class="headerlink" title="1. 直接whereOr"></a>1. 直接whereOr</h3><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$list</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'tb'</span>)-&gt;<span class="hljs-title function_ invoke__">where</span>([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'admin_id'</span>=&gt;<span class="hljs-number">5</span>])-&gt;<span class="hljs-title function_ invoke__">whereOr</span>([<span class="hljs-string">'type'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'step'</span>=&gt;<span class="hljs-number">2</span>])-&gt;<span class="hljs-title function_ invoke__">select</span>();<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$list</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'tb'</span>)-&gt;<span class="hljs-title function_ invoke__">where</span>([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'admin_id'</span>=&gt;<span class="hljs-number">5</span>])-&gt;<span class="hljs-title function_ invoke__">whereOr</span>([<span class="hljs-string">'type'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'step'</span>=&gt;<span class="hljs-number">2</span>])-&gt;<span class="hljs-title function_ invoke__">select</span>();<br><span class="hljs-comment">// 生成的sql为：select * from `tb` where `status`=1 and `admin_id`=5 or (`type`=1 or `step`=2);</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="2-采用闭包的方式"><a href="#2-采用闭包的方式" class="headerlink" title="2. 采用闭包的方式"></a>2. 采用闭包的方式</h3><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$map</span> = [<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'admin_id'</span>=&gt;<span class="hljs-number">5</span>];<br><span class="hljs-variable">$orMap</span> = [<span class="hljs-string">'type'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'step'</span>=&gt;<span class="hljs-number">2</span>];<br><span class="hljs-variable">$list</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'tb'</span>)-&gt;<span class="hljs-title function_ invoke__">where</span>(function (<span class="hljs-variable">$query</span>) <span class="hljs-keyword">use</span> ($<span class="hljs-title">map</span>) {<br>    $<span class="hljs-title">query</span>-&gt;<span class="hljs-title">where</span>($<span class="hljs-title">map</span>);<br>})-&gt;<span class="hljs-title function_ invoke__">whereOr</span>(function (<span class="hljs-variable">$query</span>) <span class="hljs-keyword">use</span> ($<span class="hljs-title">orMap</span>) {<br>    $<span class="hljs-title">query</span>-&gt;<span class="hljs-title">where</span>($<span class="hljs-title">orMap</span>);<br>})-&gt;<span class="hljs-title function_ invoke__">order</span>(<span class="hljs-string">'id desc'</span>)-&gt;<span class="hljs-title function_ invoke__">select</span>();<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$map</span> = [<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'admin_id'</span>=&gt;<span class="hljs-number">5</span>];<br><span class="hljs-variable">$orMap</span> = [<span class="hljs-string">'type'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'step'</span>=&gt;<span class="hljs-number">2</span>];<br><span class="hljs-variable">$list</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'tb'</span>)-&gt;<span class="hljs-title function_ invoke__">where</span>(function (<span class="hljs-variable">$query</span>) <span class="hljs-keyword">use</span> ($<span class="hljs-title">map</span>) {<br>    $<span class="hljs-title">query</span>-&gt;<span class="hljs-title">where</span>($<span class="hljs-title">map</span>);<br>})-&gt;<span class="hljs-title function_ invoke__">whereOr</span>(function (<span class="hljs-variable">$query</span>) <span class="hljs-keyword">use</span> ($<span class="hljs-title">orMap</span>) {<br>    $<span class="hljs-title">query</span>-&gt;<span class="hljs-title">where</span>($<span class="hljs-title">orMap</span>);<br>})-&gt;<span class="hljs-title function_ invoke__">order</span>(<span class="hljs-string">'id desc'</span>)-&gt;<span class="hljs-title function_ invoke__">select</span>();<br><span class="hljs-comment">// 生成的sql为：select * from `tb` where (`status`=1 and `admin_id`=5) or (`type`=1 and `step`=2);</span><br></code></pre></td></tr></tbody></table></figure>
 <p>一般来说，在复杂的查询里，我们更多的是使用第二种方式。</p>
 
             </div>
@@ -2070,7 +2060,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2144,7 +2134,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

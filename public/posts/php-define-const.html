@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    174
+                    186
                 </div>
                 
 
@@ -1085,15 +1085,9 @@ h3:hover {
 <li><p>5、const在使用上比define要简单便捷，并且编译速度要比Define来得快</p>
 </li>
 <li><p>6、用法<br>define常放在文件的开头</p>
-<pre class=" language-lang-php"><code class="language-lang-php">defined('ENV_PREFIX') or define('ENV_PREFIX', 'PHP_');
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-title function_ invoke__">defined</span>(<span class="hljs-string">'ENV_PREFIX'</span>) <span class="hljs-keyword">or</span> <span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">'ENV_PREFIX'</span>, <span class="hljs-string"><code class="language-hljs php"><span class="hljs-title function_ invoke__">defined</span>(<span class="hljs-string">'ENV_PREFIX'</span>) <span class="hljs-keyword">or</span> <span class="hljs-title function_ invoke__">define</span>(<span class="hljs-string">'ENV_PREFIX'</span>, <span class="hljs-string">'PHP_'</span>);<br></code></pre></td></tr></tbody></table></figure>
 <p>const一般放在类里：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class A{
-  const STATUS_NORMAL = 1;
-  const STATUS_FILED = 2;
-}
-</code></pre>
-</li>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>	<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">STATUS_NORMAL</span> = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">STATUS_FILED</span> = <span class="hljs-number"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>	<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">STATUS_NORMAL</span> = <span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">STATUS_FILED</span> = <span class="hljs-number">2</span>;<br>}<br></code></pre></td></tr></tbody></table></figure></li>
 </ul>
 
             </div>
@@ -1780,9 +1774,9 @@ h3:hover {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            格式curl https://www.baidu.com
+                            格式1curl https:curl https://www.baidu.com
 上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。
-常用参数-d：使用-d参数向服务器发送POST请求的数据体curl -d 'login=ad
+常用参数-d：使用-d参数向服务器发送POST请求的数据体1curl
                         
                     </div>
                     <div class="publish-info">
@@ -2079,7 +2073,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2153,7 +2147,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

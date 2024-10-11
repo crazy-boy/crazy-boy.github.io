@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    647
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -1076,55 +1076,10 @@ h3:hover {
             <div id="articleContent">
                 <h4 id="1-强制并行处理"><a href="#1-强制并行处理" class="headerlink" title="1. 强制并行处理"></a>1. 强制并行处理</h4><p><code>/*+ monitor parallel(8)*/</code></p>
 <h3 id="2-plsql查看sql性能"><a href="#2-plsql查看sql性能" class="headerlink" title="2. plsql查看sql性能"></a>2. plsql查看sql性能</h3><p><code>F5</code></p>
-<h3 id="3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数："><a href="#3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数：" class="headerlink" title="3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数："></a>3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</h3><pre><code>CREATE OR REPLACE FUNCTION FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := ',')
-RETURN NUMBER IS
-  l_idx    number:=0; -- 用于计算piv_str2中分隔符的位置
-  str      varchar2(500);  -- 根据分隔符截取的子字符串
-  piv_str  varchar2(500) := piv_str2; -- 将piv_str2赋值给piv_str
-  res      number:=0; -- 返回结果
-BEGIN
--- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1
-IF instr(piv_str, p_sep, 1) = 0 THEN
-   IF piv_str = piv_str1 THEN
-      res:= 1;
-   END IF;
-ELSE
--- 循环按分隔符截取piv_str
-LOOP
-    l_idx := instr(piv_str,p_sep);
--- 当piv_str中还有分隔符时
-      IF l_idx &gt; 0 THEN
-   -- 截取第一个分隔符前的字段str
-         str:= substr(piv_str,1,l_idx-1);
-   -- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断
-         IF str = piv_str1 THEN
-           res:= 1;
-           EXIT;
-         END IF;
-        piv_str := substr(piv_str,l_idx+length(p_sep));
-      ELSE
-   -- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1
-        IF piv_str = piv_str1 THEN
-           res:= 1;
-        END IF;
-        -- 无论最后是否相等，都跳出循环
-        EXIT;
-      END IF;
-END LOOP;
--- 结束循环
-END IF;
--- 返回res
-RETURN res;
-END FIND_IN_SET;
-</code></pre><h3 id="4-日期转时间戳函数"><a href="#4-日期转时间戳函数" class="headerlink" title="4. 日期转时间戳函数"></a>4. 日期转时间戳函数</h3><pre><code>create or replace function oracle_to_unix(in_date IN DATE) return number is
-    begin 
-        return( (in_date -TO_DATE('19700101','yyyymmdd'))*86400 - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))*3600);
-    end oracle_to_unix;
-</code></pre><h3 id="5-时间戳转日期函数"><a href="#5-时间戳转日期函数" class="headerlink" title="5. 时间戳转日期函数"></a>5. 时间戳转日期函数</h3><pre><code>create or replace function unix_to_oracle(in_number NUMBER) return date is
-    begin
-        return(TO_DATE('19700101','yyyymmdd') + in_number/86400 +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),1,3))/24);
-    end unix_to_oracle;
-</code></pre>
+<h3 id="3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数："><a href="#3-在oracle中有时候需要进行MySQL中的find-in-set查询，故封装了如下函数：" class="headerlink" title="3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数："></a>3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：</h3><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span> FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := <span class="hljs-string">','</span>)<br><span class="hljs-keyword">RETURN</span> NUMBER <span class="hljs-keyword">IS</span><br>  l_idx    number:=<span class="hljs-number">0</span>; <span class="hljs-comment">-- 用于计算piv_str2中分隔符的位置</span><br>  str      varchar2(<span class="hljs-number">500</span>);  <span class="hljs-comment">-- 根据分隔符截取的子字符串</span><br>  piv_str  varchar2(<span class="hljs-number">500</span>) := piv_str2; <span class="hljs-comment">-- 将piv_str2赋值给piv_str</span><br>  res      number:=<span class="hljs-number">0</span>; <span class="hljs-comment">-- 返回结果</span><br><span class="hljs-keyword">BEGIN</span><br><span class="hljs-comment">-- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1</span><br><span class="hljs-keyword">IF</span> instr(piv_str, p_sep, <span class="hljs-number">1</span>) = <span class="hljs-number">0</span> <span class="hljs-keyword">THEN</span><br>   <span class="hljs-keyword">IF</span> piv_str = piv_str1 <span class="hljs-keyword">THEN</span><br>      res:= <span class="hljs-number">1</span>;<br>   <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br><span class="hljs-keyword">ELSE</span><br><span class="hljs-comment">-- 循环按分隔符截取piv_str</span><br><span class="hljs-keyword">LOOP</span><br>    l_idx := instr(piv_str,p_sep);<br><span class="hljs-comment">-- 当piv_str中还有分隔符时</span><br>      <span class="hljs-keyword">IF</span> l_idx &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">THEN</span><br>   <span class="hljs-comment">-- 截取第一个分隔符前的字段str</span><br>         str:= substr(piv_str,<span class="hljs-number">1</span>,l_idx<span class="hljs-number">-1</span>);<br>   <span class="hljs-comment">-- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断</span><br>         <span class="hljs-keyword">IF</span> str = piv_str1 <span class="hljs-keyword">THEN</span><br>           res:= <span class="hljs-number">1</span>;<br>           <span class="hljs-keyword">EXIT</span>;<br>         <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br>        piv_str := substr(piv_str,l_idx+length(p_sep));<br>      <span class="hljs-keyword">ELSE</span><br>   <span class="hljs-comment">-- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1</span><br>        <span class="hljs-keyword">IF</span> piv_str = piv_str1 <span class="hljs-keyword">THEN</span><br>           res:= <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br>        <span class="hljs-comment">-- 无论最后是否相等，都跳出循环</span><br>        <span class="hljs-keyword">EXIT</span>;<br>      <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br><span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;<br><span class="hljs-comment">-- 结束循环</span><br><span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br><span class="hljs-comment">-- 返回res</span><br><span class="hljs-keyword">RETURN</span> res;<br><span class="hljs-keyword"><code class="language-hljs pgsql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR REPLACE</span> <span class="hljs-keyword">FUNCTION</span> FIND_IN_SET(piv_str1 varchar2, piv_str2 varchar2, p_sep varchar2 := <span class="hljs-string">','</span>)<br><span class="hljs-keyword">RETURN</span> NUMBER <span class="hljs-keyword">IS</span><br>  l_idx    number:=<span class="hljs-number">0</span>; <span class="hljs-comment">-- 用于计算piv_str2中分隔符的位置</span><br>  str      varchar2(<span class="hljs-number">500</span>);  <span class="hljs-comment">-- 根据分隔符截取的子字符串</span><br>  piv_str  varchar2(<span class="hljs-number">500</span>) := piv_str2; <span class="hljs-comment">-- 将piv_str2赋值给piv_str</span><br>  res      number:=<span class="hljs-number">0</span>; <span class="hljs-comment">-- 返回结果</span><br><span class="hljs-keyword">BEGIN</span><br><span class="hljs-comment">-- 如果piv_str中没有分割符，直接判断piv_str1和piv_str是否相等，相等 res=1</span><br><span class="hljs-keyword">IF</span> instr(piv_str, p_sep, <span class="hljs-number">1</span>) = <span class="hljs-number">0</span> <span class="hljs-keyword">THEN</span><br>   <span class="hljs-keyword">IF</span> piv_str = piv_str1 <span class="hljs-keyword">THEN</span><br>      res:= <span class="hljs-number">1</span>;<br>   <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br><span class="hljs-keyword">ELSE</span><br><span class="hljs-comment">-- 循环按分隔符截取piv_str</span><br><span class="hljs-keyword">LOOP</span><br>    l_idx := instr(piv_str,p_sep);<br><span class="hljs-comment">-- 当piv_str中还有分隔符时</span><br>      <span class="hljs-keyword">IF</span> l_idx &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">THEN</span><br>   <span class="hljs-comment">-- 截取第一个分隔符前的字段str</span><br>         str:= substr(piv_str,<span class="hljs-number">1</span>,l_idx<span class="hljs-number">-1</span>);<br>   <span class="hljs-comment">-- 判断 str 和piv_str1 是否相等，相等 res=1 并结束循环判断</span><br>         <span class="hljs-keyword">IF</span> str = piv_str1 <span class="hljs-keyword">THEN</span><br>           res:= <span class="hljs-number">1</span>;<br>           <span class="hljs-keyword">EXIT</span>;<br>         <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br>        piv_str := substr(piv_str,l_idx+length(p_sep));<br>      <span class="hljs-keyword">ELSE</span><br>   <span class="hljs-comment">-- 当截取后的piv_str 中不存在分割符时，判断piv_str和piv_str1是否相等，相等 res=1</span><br>        <span class="hljs-keyword">IF</span> piv_str = piv_str1 <span class="hljs-keyword">THEN</span><br>           res:= <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br>        <span class="hljs-comment">-- 无论最后是否相等，都跳出循环</span><br>        <span class="hljs-keyword">EXIT</span>;<br>      <span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br><span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span>;<br><span class="hljs-comment">-- 结束循环</span><br><span class="hljs-keyword">END</span> <span class="hljs-keyword">IF</span>;<br><span class="hljs-comment">-- 返回res</span><br><span class="hljs-keyword">RETURN</span> res;<br><span class="hljs-keyword">END</span> FIND_IN_SET;<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="4-日期转时间戳函数"><a href="#4-日期转时间戳函数" class="headerlink" title="4. 日期转时间戳函数"></a>4. 日期转时间戳函数</h3><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or replace</span> <span class="hljs-keyword">function</span> oracle_to_unix(in_date <span class="hljs-keyword">IN</span> <span class="hljs-type">DATE</span>) <span class="hljs-keyword">return</span> number <span class="hljs-keyword">is</span><br>    <span class="hljs-keyword">begin</span> <br>        <span class="hljs-keyword">return</span>( (in_date -TO_DATE(<span class="hljs-string">'19700101'</span>,<span class="hljs-string">'yyyymmdd'</span>))*<span class="hljs-number">86400</span> - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))*<span class="hljs-number">3600</span>);<br>    <span class="hljs-keyword"><code class="language-hljs pgsql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or replace</span> <span class="hljs-keyword">function</span> oracle_to_unix(in_date <span class="hljs-keyword">IN</span> <span class="hljs-type">DATE</span>) <span class="hljs-keyword">return</span> number <span class="hljs-keyword">is</span><br>    <span class="hljs-keyword">begin</span> <br>        <span class="hljs-keyword">return</span>( (in_date -TO_DATE(<span class="hljs-string">'19700101'</span>,<span class="hljs-string">'yyyymmdd'</span>))*<span class="hljs-number">86400</span> - TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))*<span class="hljs-number">3600</span>);<br>    <span class="hljs-keyword">end</span> oracle_to_unix;<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="5-时间戳转日期函数"><a href="#5-时间戳转日期函数" class="headerlink" title="5. 时间戳转日期函数"></a>5. 时间戳转日期函数</h3><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or replace</span> <span class="hljs-keyword">function</span> unix_to_oracle(in_number NUMBER) <span class="hljs-keyword">return</span> <span class="hljs-type">date</span> <span class="hljs-keyword">is</span><br>    <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">return</span>(TO_DATE(<span class="hljs-string">'19700101'</span>,<span class="hljs-string">'yyyymmdd'</span>) + in_number/<span class="hljs-number">86400</span> +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))/<span class="hljs-number">24</span>);<br>    <span class="hljs-keyword"><code class="language-hljs pgsql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or replace</span> <span class="hljs-keyword">function</span> unix_to_oracle(in_number NUMBER) <span class="hljs-keyword">return</span> <span class="hljs-type">date</span> <span class="hljs-keyword">is</span><br>    <span class="hljs-keyword">begin</span><br>        <span class="hljs-keyword">return</span>(TO_DATE(<span class="hljs-string">'19700101'</span>,<span class="hljs-string">'yyyymmdd'</span>) + in_number/<span class="hljs-number">86400</span> +TO_NUMBER(SUBSTR(TZ_OFFSET(sessiontimezone),<span class="hljs-number">1</span>,<span class="hljs-number">3</span>))/<span class="hljs-number">24</span>);<br>    <span class="hljs-keyword">end</span> unix_to_oracle;<br><br></code></pre></td></tr></tbody></table></figure>
+
             </div>
             <hr/>
 
@@ -1748,13 +1703,7 @@ END FIND_IN_SET;
                     <div class="summary block-with-text">
                         
                             通过php代码生成MySQL数据字典，代码如下：
-&lt;?php
-/**
- * 生成mysql数据字典
- */
-header("Content-type: text/html; charset=utf-8");
-//配置数据库
-$dbse
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152
                         
                     </div>
                     <div class="publish-info">
@@ -2113,7 +2062,7 @@ $dbse
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2187,7 +2136,7 @@ $dbse
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

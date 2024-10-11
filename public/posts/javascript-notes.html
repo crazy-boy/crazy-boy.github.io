@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    43
+                    142
                 </div>
                 
 
@@ -1074,25 +1074,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="如果想获取ajax里的function返回值，可用同步ajax。"><a href="#如果想获取ajax里的function返回值，可用同步ajax。" class="headerlink" title="如果想获取ajax里的function返回值，可用同步ajax。"></a>如果想获取ajax里的function返回值，可用同步ajax。</h3><h3 id="JavaScript不定参数"><a href="#JavaScript不定参数" class="headerlink" title="JavaScript不定参数"></a>JavaScript不定参数</h3><pre class=" language-lang-html"><code class="language-lang-html">    <html>
-    <head>
-    <title>JavaScript不定参数</title>
-    <script type="text/javascript">
-
-    function test(){
-        console.log(arguments);
-        for( var i = 0; i < arguments.length; i++ ){
-            console.log(arguments[i]);
-        }
-    }
-
-    </script>
-    </head>
-    <body onload="test('one','two','three','four');">
-    </body>
-    </html>
-</code></pre>
-
+                <h3 id="如果想获取ajax里的function返回值，可用同步ajax。"><a href="#如果想获取ajax里的function返回值，可用同步ajax。" class="headerlink" title="如果想获取ajax里的function返回值，可用同步ajax。"></a>如果想获取ajax里的function返回值，可用同步ajax。</h3><h3 id="JavaScript不定参数"><a href="#JavaScript不定参数" class="headerlink" title="JavaScript不定参数"></a>JavaScript不定参数</h3><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre class=" language-hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JavaScript不定参数<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"> </span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>){</span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>);</span><br><span class="language-javascript">    <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span>; i++ ){</span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>[i]);</span><br><span class="language-javascript">    }</span><br><span class="language-javascript">}</span><br><span class="language-javascript"> </span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">"test('one','two','three','four');"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name"><code class="language-hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>JavaScript不定参数<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"> </span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">test</span>(<span class="hljs-params"></span>){</span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>);</span><br><span class="language-javascript">    <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span>; i++ ){</span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>[i]);</span><br><span class="language-javascript">    }</span><br><span class="language-javascript">}</span><br><span class="language-javascript"> </span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">onload</span>=<span class="hljs-string">"test('one','two','three','four');"</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>></span><br></code></pre></td></tr></tbody></table></figure>
             </div>
             <hr/>
 
@@ -2077,7 +2059,7 @@ excel分列： 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2151,7 +2133,7 @@ excel分列： 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

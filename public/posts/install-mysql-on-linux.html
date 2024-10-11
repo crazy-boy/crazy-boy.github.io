@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    258
+                    334
                 </div>
                 
 
@@ -1074,49 +1074,15 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-下载mysql-bundle-tar包"><a href="#1-下载mysql-bundle-tar包" class="headerlink" title="1. 下载mysql bundle.tar包"></a>1. 下载mysql bundle.tar包</h3><p>上传  mysql bundle.tar包到服务器</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">解压  tar -xvf mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar
-</code></pre>
-<h3 id="2-按顺序逐个安装rpm"><a href="#2-按顺序逐个安装rpm" class="headerlink" title="2. 按顺序逐个安装rpm"></a>2. 按顺序逐个安装rpm</h3><pre class=" language-lang-shell"><code class="language-lang-shell">rpm -qa|grep mariadb
-rpm -e mariadb-libs-5.5.35-3.el7.x86_64 --nodeps
-rpm - ivh mysql-community-common-
-rpm - ivh mysql-community-libs-      
-rpm - ivh mysql-community-client-  
-rpm - ivh mysql-community-server-   
-rpm - ivh mysql-community-devel-
-</code></pre>
-<h3 id="3-启动-amp-配置"><a href="#3-启动-amp-配置" class="headerlink" title="3. 启动&amp;配置"></a>3. 启动&amp;配置</h3><pre class=" language-lang-shell"><code class="language-lang-shell"># 启动
-systemctl  start mysqld
-# 关闭
-systemctl  stop mysqld
-# 开机启动
-systemctl enable mysqld
-systemctl daemon-reload
-# 查看运行状态
-systemctl  status mysqld
-# 看到绿色的running代表已经启动成功，然后mysql在5.6之后的版本都会默认生成一个默认密码，是root用户的。
-# 查看默认设置的密码
-grep 'temporary password' /var/log/mysqld.log
-</code></pre>
-<h3 id="4-进入mysql"><a href="#4-进入mysql" class="headerlink" title="4. 进入mysql"></a>4. 进入mysql</h3><p>执行完如下命令之后输入默认密码</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">mysql -u root -p
-</code></pre>
-<p>MySQL 5调整密码验证规则：</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">mysql> set global validate_password_policy=0;
-mysql> set global validate_password_length=1;
-</code></pre>
-<p>重新设置密码</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">ALTER USER  user() identified by "123456";
-</code></pre>
-<p>授权 root 远程连接</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">use mysql;
-</code></pre>
-<p>修改连接权限，执行：</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">update user set host='%' where user ='root';
-</code></pre>
-<p>执行刷新权限：</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell">flush privileges;
-</code></pre>
+                <h3 id="1-下载mysql-bundle-tar包"><a href="#1-下载mysql-bundle-tar包" class="headerlink" title="1. 下载mysql bundle.tar包"></a>1. 下载mysql bundle.tar包</h3><p>上传  mysql bundle.tar包到服务器<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">解压  tar -xvf mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar<br></code></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="2-按顺序逐个安装rpm"><a href="#2-按顺序逐个安装rpm" class="headerlink" title="2. 按顺序逐个安装rpm"></a>2. 按顺序逐个安装rpm</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">rpm -qa|grep mariadb<br>rpm -e mariadb-libs-5.5.35-3.el7.x86_64 --nodeps<br>rpm - ivh mysql-community-common-<br>rpm - ivh mysql-community-libs-      <br>rpm - ivh mysql-community-client-  <br>rpm - ivh mysql-community-server-   <br>rpm - ivh mysql-community-devel-<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="3-启动-amp-配置"><a href="#3-启动-amp-配置" class="headerlink" title="3. 启动&amp;配置"></a>3. 启动&amp;配置</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">启动</span><br>systemctl  start mysqld<br><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭</span><br>systemctl  stop mysqld<br><span class="hljs-meta prompt_"># </span><span class="language-bash">开机启动</span><br>systemctl enable mysqld<br>systemctl daemon-reload<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看运行状态</span><br>systemctl  status mysqld<br><span class="hljs-meta prompt_"># </span><span class="language-bash">看到绿色的running代表已经启动成功，然后mysql在5.6之后的版本都会默认生成一个默认密码，是root用户的。</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">启动</span><br>systemctl  start mysqld<br><span class="hljs-meta prompt_"># </span><span class="language-bash">关闭</span><br>systemctl  stop mysqld<br><span class="hljs-meta prompt_"># </span><span class="language-bash">开机启动</span><br>systemctl enable mysqld<br>systemctl daemon-reload<br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看运行状态</span><br>systemctl  status mysqld<br><span class="hljs-meta prompt_"># </span><span class="language-bash">看到绿色的running代表已经启动成功，然后mysql在5.6之后的版本都会默认生成一个默认密码，是root用户的。</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看默认设置的密码</span><br>grep 'temporary password' /var/log/mysqld.log<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="4-进入mysql"><a href="#4-进入mysql" class="headerlink" title="4. 进入mysql"></a>4. 进入mysql</h3><p>执行完如下命令之后输入默认密码<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">mysql -u root -p<br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>MySQL 5调整密码验证规则：<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash"><span class="hljs-built_in">set</span> global validate_password_policy=0;</span><br><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash"><span class="hljs-built_in"><code class="language-hljs shell"><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash"><span class="hljs-built_in">set</span> global validate_password_policy=0;</span><br><span class="hljs-meta prompt_">mysql&gt; </span><span class="language-bash"><span class="hljs-built_in">set</span> global validate_password_length=1;</span><br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>重新设置密码<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">ALTER USER  user() identified by "123456";<br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>授权 root 远程连接<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">use mysql;<br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>修改连接权限，执行：<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">update user set host='%' where user ='root';<br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>执行刷新权限：<br></p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">flush privileges;<br></code></pre></td></tr></tbody></table></figure><p></p>
 
             </div>
             <hr/>
@@ -1740,7 +1706,7 @@ mysql> set global validate_password_length=1;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 先安装依赖包$   yum install gcc bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel
+                            1. 先安装依赖包1$ $   yum install gcc bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-de
                         
                     </div>
                     <div class="publish-info">
@@ -1799,8 +1765,7 @@ mysql> set global validate_password_length=1;
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 下载nodejswget https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz
-2. 解压nodejstar xvf node-v8.11.4-linux-x64.
+                            1. 下载nodejs1wget&nbsp;https://nodejs.org/dist/v8.11.4/node-v8.11.wget&nbsp;https://nodejs.org/dist/v8.11.4/node-v8.11.4-
                         
                     </div>
                     <div class="publish-info">
@@ -2097,7 +2062,7 @@ mysql> set global validate_password_length=1;
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2171,7 +2136,7 @@ mysql> set global validate_password_length=1;
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

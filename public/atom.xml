@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2024-01-23T06:04:29.426Z</updated>
+  <updated>2024-07-04T02:49:12.318Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -17,11 +17,119 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux下如何实现与Internet时间同步</title>
+    <link href="https://crazy-boy.com/posts/38c1.html"/>
+    <id>https://crazy-boy.com/posts/38c1.html</id>
+    <published>2024-07-04T02:48:00.000Z</published>
+    <updated>2024-07-04T02:49:12.318Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="ntpdate" scheme="https://crazy-boy.com/categories/ntpdate/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="ntpdate" scheme="https://crazy-boy.com/tags/ntpdate/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SystemD</title>
+    <link href="https://crazy-boy.com/posts/2b4a.html"/>
+    <id>https://crazy-boy.com/posts/2b4a.html</id>
+    <published>2024-05-22T04:16:00.000Z</published>
+    <updated>2024-05-22T04:16:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SystemD" scheme="https://crazy-boy.com/categories/SystemD/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="SystemD" scheme="https://crazy-boy.com/tags/SystemD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xargs 命令</title>
+    <link href="https://crazy-boy.com/posts/85ed.html"/>
+    <id>https://crazy-boy.com/posts/85ed.html</id>
+    <published>2024-05-22T04:16:00.000Z</published>
+    <updated>2024-05-22T04:16:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="xargs" scheme="https://crazy-boy.com/categories/xargs/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="xargs" scheme="https://crazy-boy.com/tags/xargs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Cron定时任务</title>
+    <link href="https://crazy-boy.com/posts/9c77.html"/>
+    <id>https://crazy-boy.com/posts/9c77.html</id>
+    <published>2024-05-22T03:44:00.000Z</published>
+    <updated>2024-05-22T03:44:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Cron" scheme="https://crazy-boy.com/categories/Cron/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="Cron" scheme="https://crazy-boy.com/tags/Cron/"/>
+    
+  </entry>
+  
+  <entry>
     <title>记一次高并发迭代之路！！</title>
     <link href="https://crazy-boy.com/posts/high-concurrent-experience.html"/>
     <id>https://crazy-boy.com/posts/high-concurrent-experience.html</id>
-    <published>2024-01-23T05:20:25.691Z</published>
-    <updated>2024-01-23T06:04:29.426Z</updated>
+    <published>2024-05-21T03:19:18.128Z</published>
+    <updated>2024-05-21T03:19:18.128Z</updated>
     
     
       
@@ -146,7 +254,7 @@
     <link href="https://crazy-boy.com/posts/dead-lock.html"/>
     <id>https://crazy-boy.com/posts/dead-lock.html</id>
     <published>2022-08-02T08:21:54.000Z</published>
-    <updated>2024-01-23T05:20:25.690Z</updated>
+    <updated>2024-05-21T03:19:18.124Z</updated>
     
     
       
@@ -171,7 +279,7 @@
     <link href="https://crazy-boy.com/posts/pooling-technology.html"/>
     <id>https://crazy-boy.com/posts/pooling-technology.html</id>
     <published>2022-08-02T02:30:20.000Z</published>
-    <updated>2024-01-23T05:20:25.690Z</updated>
+    <updated>2024-05-21T03:19:18.124Z</updated>
     
     
       
@@ -196,7 +304,7 @@
     <link href="https://crazy-boy.com/posts/thread-safe.html"/>
     <id>https://crazy-boy.com/posts/thread-safe.html</id>
     <published>2022-08-01T04:31:24.000Z</published>
-    <updated>2024-01-23T05:20:25.690Z</updated>
+    <updated>2024-05-21T03:19:18.125Z</updated>
     
     
       
@@ -221,7 +329,7 @@
     <link href="https://crazy-boy.com/posts/php-define-const.html"/>
     <id>https://crazy-boy.com/posts/php-define-const.html</id>
     <published>2022-07-04T16:34:14.000Z</published>
-    <updated>2024-01-23T05:20:25.686Z</updated>
+    <updated>2024-05-21T03:19:18.104Z</updated>
     
     
       
@@ -413,106 +521,6 @@
     
     
     <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中...的用法</title>
-    <link href="https://crazy-boy.com/posts/php-uncertain-params.html"/>
-    <id>https://crazy-boy.com/posts/php-uncertain-params.html</id>
-    <published>2022-06-02T11:26:25.000Z</published>
-    <updated>2022-06-02T11:26:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ThinkPHP5 中rule规则</title>
-    <link href="https://crazy-boy.com/posts/thinkphp-rule.html"/>
-    <id>https://crazy-boy.com/posts/thinkphp-rule.html</id>
-    <published>2022-05-31T13:49:19.000Z</published>
-    <updated>2022-05-31T13:49:19.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="ThinkPHP" scheme="https://crazy-boy.com/tags/ThinkPHP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL中的JSON</title>
-    <link href="https://crazy-boy.com/posts/mysql-json.html"/>
-    <id>https://crazy-boy.com/posts/mysql-json.html</id>
-    <published>2022-05-20T03:30:42.000Z</published>
-    <updated>2022-05-20T03:30:42.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
-    
-    
-    <category term="JSON" scheme="https://crazy-boy.com/tags/JSON/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式——中介者模式</title>
-    <link href="https://crazy-boy.com/posts/mediator-pattern.html"/>
-    <id>https://crazy-boy.com/posts/mediator-pattern.html</id>
-    <published>2022-05-19T13:53:34.000Z</published>
-    <updated>2022-05-19T13:53:34.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="设计模式" scheme="https://crazy-boy.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-    <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

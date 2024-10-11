@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    378
+                    566
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -1076,86 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的启动过程为例）</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下外观模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class CPU{
-    public function startup(){
-        echo "cpu startup!" . PHP_EOL;
-    }
-
-    public function shutdown(){
-        echo "cpu shutdown!" . PHP_EOL;
-    }
-}
-
-class Memory{
-    public function startup(){
-        echo "memory startup!" . PHP_EOL;
-    }
-
-    public function shutdown(){
-        echo "memory shutdown!" . PHP_EOL;
-    }
-}
-
-class Disk{
-    public function startup(){
-        echo "disk startup!" . PHP_EOL;
-    }
-
-    public function shutdown(){
-        echo "disk shutdown!" . PHP_EOL;
-    }
-}
-
-class Computer{
-    private CPU $cpu;
-    private Memory $memory;
-    private Disk $disk;
-
-    public function __construct(){
-        $this->cpu = new CPU();
-        $this->memory = new Memory();
-        $this->disk = new Disk();
-    }
-
-    public function startup(){
-        echo "start the computer!" . PHP_EOL;
-        $this->cpu->startup();
-        $this->memory->startup();
-        $this->disk->startup();
-        echo "start computer finished!" . PHP_EOL;
-    }
-
-    public function shutdown(){
-        echo "begin to close th computer!" . PHP_EOL;
-        $this->cpu->shutdown();
-        $this->memory->shutdown();
-        $this->disk->shutdown();
-        echo "computer closed!" . PHP_EOL;
-    }
-}
-
-
-//调用
-$computer = new Computer();
-$computer->startup();
-$computer->shutdown();
-
-/**
- * output:
- *
-start the computer!
-cpu startup!
-memory startup!
-disk startup!
-start computer finished!
-begin to close th computer!
-cpu shutdown!
-memory shutdown!
-disk shutdown!
-computer closed!
-
- */
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CPU</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"cpu startup!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"cpu shutdown!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Memory</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"memory startup!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"memory shutdown!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Disk</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"disk startup!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"disk shutdown!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Computer</span></span>{<br>    <span class="hljs-keyword">private</span> CPU <span class="hljs-variable">$cpu</span>;<br>    <span class="hljs-keyword">private</span> Memory <span class="hljs-variable">$memory</span>;<br>    <span class="hljs-keyword">private</span> Disk <span class="hljs-variable">$disk</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;cpu = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">CPU</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;memory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Memory</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;disk = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Disk</span>();<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"start the computer!"</span> . PHP_EOL;<br>        <span class="hljs-variable language_">$this</span>-&gt;cpu-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;memory-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;disk-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"start computer finished!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"begin to close th computer!"</span> . PHP_EOL;<br>        <span class="hljs-variable language_">$this</span>-&gt;cpu-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;memory-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;disk-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"computer closed!"</span> . PHP_EOL;<br>    }<br>}<br><br><br><span class="hljs-comment">//调用</span><br><span class="hljs-variable">$computer</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Computer</span>();<br><span class="hljs-variable">$computer</span>-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br><span class="hljs-variable">$computer</span>-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment">start the computer!</span><br><span class="hljs-comment">cpu startup!</span><br><span class="hljs-comment">memory startup!</span><br><span class="hljs-comment">disk startup!</span><br><span class="hljs-comment">start computer finished!</span><br><span class="hljs-comment">begin to close th computer!</span><br><span class="hljs-comment">cpu shutdown!</span><br><span class="hljs-comment">memory shutdown!</span><br><span class="hljs-comment">disk shutdown!</span><br><span class="hljs-comment">computer closed!</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CPU</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"cpu startup!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"cpu shutdown!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Memory</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"memory startup!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"memory shutdown!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Disk</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"disk startup!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"disk shutdown!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Computer</span></span>{<br>    <span class="hljs-keyword">private</span> CPU <span class="hljs-variable">$cpu</span>;<br>    <span class="hljs-keyword">private</span> Memory <span class="hljs-variable">$memory</span>;<br>    <span class="hljs-keyword">private</span> Disk <span class="hljs-variable">$disk</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;cpu = <span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">CPU</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;memory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Memory</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;disk = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Disk</span>();<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"start the computer!"</span> . PHP_EOL;<br>        <span class="hljs-variable language_">$this</span>-&gt;cpu-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;memory-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;disk-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"start computer finished!"</span> . PHP_EOL;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shutdown</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"begin to close th computer!"</span> . PHP_EOL;<br>        <span class="hljs-variable language_">$this</span>-&gt;cpu-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;memory-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;disk-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"computer closed!"</span> . PHP_EOL;<br>    }<br>}<br><br><br><span class="hljs-comment">//调用</span><br><span class="hljs-variable">$computer</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Computer</span>();<br><span class="hljs-variable">$computer</span>-&gt;<span class="hljs-title function_ invoke__">startup</span>();<br><span class="hljs-variable">$computer</span>-&gt;<span class="hljs-title function_ invoke__">shutdown</span>();<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment">start the computer!</span><br><span class="hljs-comment">cpu startup!</span><br><span class="hljs-comment">memory startup!</span><br><span class="hljs-comment">disk startup!</span><br><span class="hljs-comment">start computer finished!</span><br><span class="hljs-comment">begin to close th computer!</span><br><span class="hljs-comment">cpu shutdown!</span><br><span class="hljs-comment">memory shutdown!</span><br><span class="hljs-comment">disk shutdown!</span><br><span class="hljs-comment">computer closed!</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"> */</span><br><br></code></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>  如果我们没有Computer类，那么，CPU、Memory、Disk他们之间将会相互持有实例，产生关系，这样会造成严重的依赖，修改一个类，可能会带来其他类的修改，这不是我们想要看到的，有了Computer类，他们之间的关系被放在了Computer类里，这样就起到了解耦的作用，这，就是外观模式！</p>
 
             </div>
@@ -1781,11 +1702,7 @@ computer closed!
                     <div class="summary block-with-text">
                         
                             说明示例下面看下备忘录模式的代码实现
-class Original{
-    private string $value;
-
-    public function __construct(string $value){
-        $
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
                         
                     </div>
                     <div class="publish-info">
@@ -1846,9 +1763,7 @@ class Original{
                         
                             说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
 示例下面看下工厂方法模式的代码实现
-// 创建公共接口
-interface Sender{
-    public f
+1234567891011121314151617181920212223242
                         
                     </div>
                     <div class="publish-info">
@@ -2145,7 +2060,7 @@ interface Sender{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2219,7 +2134,7 @@ interface Sender{
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

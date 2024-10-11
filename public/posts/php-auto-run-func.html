@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    201
+                    292
                 </div>
                 
 
@@ -1076,37 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <p>在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。</p>
 <p>下面演示下，在test方法执行后自动执行afterTest方法</p>
-<pre class=" language-lang-php"><code class="language-lang-php">trait A{
-    public function __call($method, $args){
-        if (!method_exists($this, $method)) {
-            throw new Exception('no such method: ' . $method);
-        }
-        $afterMethod = 'after'.ucfirst($method);
-        if (method_exists($this, $afterMethod)) {
-            $rs = call_user_func_array([$this, $method], $args);
-            if ($rs['code'] == 0) {
-                call_user_func_array([$this, $afterMethod], $rs);
-                return $rs;
-            }
-        } else {
-            return call_user_func_array([$this, $method], $args);
-        }
-    }
-
-    private function afterTest(...$args){
-        print_r($args);
-    }
-}
-
-Class B{
-    use A;
-    protected function test($id,$name): array{
-        return $id>10 ? ['code'=>1,'msg'=>'ok'] : ['code'=>0,'msg'=>'error'];
-    }
-}
-
-$rs = (new B())->test(7,'张三');
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span>(<span class="hljs-params"><span class="hljs-variable">$method</span>, <span class="hljs-variable">$args</span></span>)</span>{<br>        <span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">method_exists</span>(<span class="hljs-variable">$this</span>, <span class="hljs-variable">$method</span>)) {<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Exception</span>(<span class="hljs-string">'no such method: '</span> . <span class="hljs-variable">$method</span>);<br>        }<br>        <span class="hljs-variable">$afterMethod</span> = <span class="hljs-string">'after'</span>.<span class="hljs-title function_ invoke__">ucfirst</span>(<span class="hljs-variable">$method</span>);<br>        <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">method_exists</span>(<span class="hljs-variable">$this</span>, <span class="hljs-variable">$afterMethod</span>)) {<br>            <span class="hljs-variable">$rs</span> = <span class="hljs-title function_ invoke__">call_user_func_array</span>([<span class="hljs-variable">$this</span>, <span class="hljs-variable">$method</span>], <span class="hljs-variable">$args</span>);<br>            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$rs</span>[<span class="hljs-string">'code'</span>] == <span class="hljs-number">0</span>) {<br>                <span class="hljs-title function_ invoke__">call_user_func_array</span>([<span class="hljs-variable">$this</span>, <span class="hljs-variable">$afterMethod</span>], <span class="hljs-variable">$rs</span>);<br>                <span class="hljs-keyword">return</span> <span class="hljs-variable">$rs</span>;<br>            }<br>        } <span class="hljs-keyword">else</span> {<br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">call_user_func_array</span>([<span class="hljs-variable">$this</span>, <span class="hljs-variable">$method</span>], <span class="hljs-variable">$args</span>);<br>        }<br>    }<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">afterTest</span>(<span class="hljs-params">...<span class="hljs-variable">$args</span></span>)</span>{<br>        <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$args</span>);<br>    }<br>}<br><br>Class B{<br>    <span class="hljs-keyword">use</span> <span class="hljs-title">A</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"><span class="hljs-variable">$id</span>,<span class="hljs-variable">$name</span></span>): <span class="hljs-title">array</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$id</span>&gt;<span class="hljs-number">10</span> ? [<span class="hljs-string">'code'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'msg'</span>=&gt;<span class="hljs-string">'ok'</span>] : [<span class="hljs-string">'code'</span>=&gt;<span class="hljs-number">0</span>,<span class="hljs-string">'msg'</span>=&gt;<span class="hljs-string">'error'</span>];<br>    }<br>}<br><br><span class="hljs-variable">$rs</span> = (<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>())-&gt;<span class="hljs-title function_ invoke__">test</span>(<span class="hljs-number">7</span>,<span class="hljs-string"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__call</span>(<span class="hljs-params"><span class="hljs-variable">$method</span>, <span class="hljs-variable">$args</span></span>)</span>{<br>        <span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">method_exists</span>(<span class="hljs-variable">$this</span>, <span class="hljs-variable">$method</span>)) {<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Exception</span>(<span class="hljs-string">'no such method: '</span> . <span class="hljs-variable">$method</span>);<br>        }<br>        <span class="hljs-variable">$afterMethod</span> = <span class="hljs-string">'after'</span>.<span class="hljs-title function_ invoke__">ucfirst</span>(<span class="hljs-variable">$method</span>);<br>        <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">method_exists</span>(<span class="hljs-variable">$this</span>, <span class="hljs-variable">$afterMethod</span>)) {<br>            <span class="hljs-variable">$rs</span> = <span class="hljs-title function_ invoke__">call_user_func_array</span>([<span class="hljs-variable">$this</span>, <span class="hljs-variable">$method</span>], <span class="hljs-variable">$args</span>);<br>            <span class="hljs-keyword">if</span> (<span class="hljs-variable">$rs</span>[<span class="hljs-string">'code'</span>] == <span class="hljs-number">0</span>) {<br>                <span class="hljs-title function_ invoke__">call_user_func_array</span>([<span class="hljs-variable">$this</span>, <span class="hljs-variable">$afterMethod</span>], <span class="hljs-variable">$rs</span>);<br>                <span class="hljs-keyword">return</span> <span class="hljs-variable">$rs</span>;<br>            }<br>        } <span class="hljs-keyword">else</span> {<br>            <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">call_user_func_array</span>([<span class="hljs-variable">$this</span>, <span class="hljs-variable">$method</span>], <span class="hljs-variable">$args</span>);<br>        }<br>    }<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">afterTest</span>(<span class="hljs-params">...<span class="hljs-variable">$args</span></span>)</span>{<br>        <span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$args</span>);<br>    }<br>}<br><br>Class B{<br>    <span class="hljs-keyword">use</span> <span class="hljs-title">A</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"><span class="hljs-variable">$id</span>,<span class="hljs-variable">$name</span></span>): <span class="hljs-title">array</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$id</span>&gt;<span class="hljs-number">10</span> ? [<span class="hljs-string">'code'</span>=&gt;<span class="hljs-number">1</span>,<span class="hljs-string">'msg'</span>=&gt;<span class="hljs-string">'ok'</span>] : [<span class="hljs-string">'code'</span>=&gt;<span class="hljs-number">0</span>,<span class="hljs-string">'msg'</span>=&gt;<span class="hljs-string">'error'</span>];<br>    }<br>}<br><br><span class="hljs-variable">$rs</span> = (<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>())-&gt;<span class="hljs-title function_ invoke__">test</span>(<span class="hljs-number">7</span>,<span class="hljs-string">'张三'</span>);<br></code></pre></td></tr></tbody></table></figure>
 <p>输出结果为：<br><code>Array ( [0] =&gt; 0 [1] =&gt; error )</code></p>
 <p>不难看出，这种处理方式存在以下两个缺陷：</p>
 <ol>
@@ -1739,9 +1709,7 @@ $rs = (new B())->test(7,'张三');
                             说明将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：
 示例下面讲解下设计模式的代码实现
 
-创建产品类 class Product{
-     private $parts = [];
-     pu
+创建产品类123456789class Product{    private $parts = [];  
                         
                     </div>
                     <div class="publish-info">
@@ -1804,7 +1772,7 @@ $rs = (new B())->test(7,'张三');
 
 
 如果需要去掉数组中的某些key，直接unset即可
-  $arr = ['id' => 5, 'name' => '张三', 'status
+123$arr = ['id' =&gt; 5, 'name' =&gt; '张三', 
                         
                     </div>
                     <div class="publish-info">
@@ -2101,7 +2069,7 @@ $rs = (new B())->test(7,'张三');
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2175,7 +2143,7 @@ $rs = (new B())->test(7,'张三');
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

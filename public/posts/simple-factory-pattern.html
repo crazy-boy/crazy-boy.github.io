@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    221
+                    274
                 </div>
                 
 
@@ -1077,51 +1077,18 @@ h3:hover {
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>凡是出现了大量的产品需要创建，并且具有共同的接口时，可以通过工厂方法模式进行创建。<br>就是建立一个工厂类，对实现了同一接口的一些类进行实例的创建。首先看下关系图：<br><img src="/images/simple-factory-pattern-1.jpg" alt=""></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面讲解下静态工厂方法模式的代码实现</p>
 <ol>
-<li>创建公共接口<pre class=" language-lang-php"><code class="language-lang-php"> interface Sender{
-     public function send();
- }
-</code></pre>
-</li>
-<li><p>创建实现类</p>
-<pre class=" language-lang-php"><code class="language-lang-php"> class MailSender implements Sender{
-     public function send(){
-         print "mail send";
-     }
- }
-
- class SmsSender implements Sender{
-     public function send(){
-         print "sms send";
-     }
- }
-</code></pre>
-</li>
-<li><p>创建工厂类</p>
-<pre class=" language-lang-php"><code class="language-lang-php"> class SendFactory{
-     public static function produceMail(): Sender{
-         return new MailSender();
-     }
-
-     public static function produceSms(): Sender{
-         return new SmsSender();
-     }
- }
-</code></pre>
+<li>创建公共接口<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sender</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sender</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params"></span>)</span>;<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>创建实现类<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MailSender</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sender</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">print</span> <span class="hljs-string">"mail send"</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SmsSender</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sender</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">print</span> <span class="hljs-string"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MailSender</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sender</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">print</span> <span class="hljs-string">"mail send"</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SmsSender</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sender</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">send</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">print</span> <span class="hljs-string">"sms send"</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>创建工厂类<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SendFactory</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">produceMail</span>(<span class="hljs-params"></span>): <span class="hljs-title">Sender</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MailSender</span>();<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">produceSms</span>(<span class="hljs-params"></span>): <span class="hljs-title">Sender</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SendFactory</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">produceMail</span>(<span class="hljs-params"></span>): <span class="hljs-title">Sender</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">MailSender</span>();<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">produceSms</span>(<span class="hljs-params"></span>): <span class="hljs-title">Sender</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SmsSender</span>();<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ol>
 <ul>
 <li><p>我们来测试下：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class FactoryTest{
-      public static function index(){
-          $sender = SendFactory::produceSms();
-          $sender->send();
-      }
-  }
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FactoryTest</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable">$sender</span> = <span class="hljs-title class_">SendFactory</span>::<span class="hljs-title function_ invoke__">produceSms</span>();<br>        <span class="hljs-variable">$sender</span>-&gt;<span class="hljs-title function_ invoke__"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FactoryTest</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable">$sender</span> = <span class="hljs-title class_">SendFactory</span>::<span class="hljs-title function_ invoke__">produceSms</span>();<br>        <span class="hljs-variable">$sender</span>-&gt;<span class="hljs-title function_ invoke__">send</span>();<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>输出结果为：</p>
-<pre><code>sms send
-</code></pre></li>
+<figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">sms <span class="hljs-built_in"><code class="language-hljs autoit">sms <span class="hljs-built_in">send</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>缺陷：类的创建依赖工厂类，也就是说，如果想要拓展程序，必须对工厂类进行修改，这违背了闭包原则。</p>
 
@@ -1748,11 +1715,7 @@ h3:hover {
                     <div class="summary block-with-text">
                         
                             说明示例下面看下策略模式的代码实现
-interface ICalculator{
-    public function calculate(string $exp);
-}
-
-abstract class AbstractCalculato
+12345678910111213141516171819202122232425262728293031323334353637383940interface ICalculator{    publi
                         
                     </div>
                     <div class="publish-info">
@@ -1789,11 +1752,11 @@ abstract class AbstractCalculato
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/composite-pattern.html">
+                <a href="/posts/decorator-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——组合模式">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——装饰模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1804,18 +1767,16 @@ abstract class AbstractCalculato
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——组合模式
+                          设计模式——装饰模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明  又叫部分-整体模式,在处理类似树形结构的问题时比较方便。
-示例下面看下组合模式的代码实现
-class TreeNode{
-    private string $name;
-    private TreeNode $parent;
+                            说明  装饰模式就是给一个对象增加一些新的功能，而且是动态的，要求装饰对象和被装饰对象实现同一个接口，装饰对象持有被装饰对象的实例。
+示例下面看下装饰模式的代码实现
+1234567891011121314151617181920212223
                         
                     </div>
                     <div class="publish-info">
@@ -2112,7 +2073,7 @@ class TreeNode{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2186,7 +2147,7 @@ class TreeNode{
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

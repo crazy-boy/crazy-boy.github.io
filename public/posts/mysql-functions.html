@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    217
+                    280
                 </div>
                 
 
@@ -1075,32 +1075,10 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>记录几个常用的MySQL函数：</p>
-<h4 id="LAST-INSERT-ID-expr"><a href="#LAST-INSERT-ID-expr" class="headerlink" title="LAST_INSERT_ID([expr])"></a>LAST_INSERT_ID([expr])</h4><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。<br>如果一次性insert多条数据，只返回第一个数据的主键。</p>
-<pre><code>mysql&gt; SELECT * FROM t;
-    +----+------+
-    | id | name |
-    |  1 | Bob  |
-    +----+------+
-
-mysql&gt; INSERT INTO t VALUES  (NULL, 'Mary'), (NULL, 'Jane'), (NULL, 'Lisa');
-mysql&gt; SELECT * FROM t;
-    +----+------+
-    | id | name |
-    |  1 | Bob  |
-    |  2 | Mary |
-    |  3 | Jane |
-    |  4 | Lisa |
-    +----+------+
-mysql&gt; SELECT LAST_INSERT_ID();
-    -&gt;2;
-</code></pre><p>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。</p>
+<h4 id="LAST-INSERT-ID-expr"><a href="#LAST-INSERT-ID-expr" class="headerlink" title="LAST_INSERT_ID([expr])"></a>LAST_INSERT_ID([expr])</h4><p>自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。<br>如果一次性insert多条数据，只返回第一个数据的主键。<br></p><figure class="highlight gherkin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre class=" language-hljs gherkin">mysql&gt; SELECT <span class="hljs-symbol">*</span> FROM t;<br>	+----+------+<br>	|<span class="hljs-string"> id </span>|<span class="hljs-string"> name </span>|<br>	|<span class="hljs-string">  1 </span>|<span class="hljs-string"> Bob  </span>|<br>	+----+------+<br><br>mysql&gt; INSERT INTO t VALUES  (NULL, 'Mary'), (NULL, 'Jane'), (NULL, 'Lisa');<br>mysql&gt; SELECT <span class="hljs-symbol">*</span> FROM t;<br>	+----+------+<br>	|<span class="hljs-string"> id </span>|<span class="hljs-string"> name </span>|<br>	|<span class="hljs-string">  1 </span>|<span class="hljs-string"> Bob  </span>|<br>	|<span class="hljs-string">  2 </span>|<span class="hljs-string"> Mary </span>|<br>	|<span class="hljs-string">  3 </span>|<span class="hljs-string"> Jane </span>|<br>	|<span class="hljs-string">  4 </span>|<span class="hljs-string"><code class="language-hljs gherkin">mysql&gt; SELECT <span class="hljs-symbol">*</span> FROM t;<br>	+----+------+<br>	|<span class="hljs-string"> id </span>|<span class="hljs-string"> name </span>|<br>	|<span class="hljs-string">  1 </span>|<span class="hljs-string"> Bob  </span>|<br>	+----+------+<br><br>mysql&gt; INSERT INTO t VALUES  (NULL, 'Mary'), (NULL, 'Jane'), (NULL, 'Lisa');<br>mysql&gt; SELECT <span class="hljs-symbol">*</span> FROM t;<br>	+----+------+<br>	|<span class="hljs-string"> id </span>|<span class="hljs-string"> name </span>|<br>	|<span class="hljs-string">  1 </span>|<span class="hljs-string"> Bob  </span>|<br>	|<span class="hljs-string">  2 </span>|<span class="hljs-string"> Mary </span>|<br>	|<span class="hljs-string">  3 </span>|<span class="hljs-string"> Jane </span>|<br>	|<span class="hljs-string">  4 </span>|<span class="hljs-string"> Lisa </span>|<br>	+----+------+<br>mysql> SELECT LAST_INSERT_ID();<br>	->2;<br></code></pre></td></tr></tbody></table></figure><br>注：假如你使用 INSERT IGNORE而记录被忽略，则AUTO_INCREMENT 计数器不会增量，而 LAST_INSERT_ID() 返回0,这反映出没有插入任何记录。<p></p>
 <p>若给出作为到LAST_INSERT_ID()的参数expr ，则参数的值被函数返回，并作为被LAST_INSERT_ID()返回的下一个值而被记忆。这可用于模拟序列：</p>
-<pre><code>mysql&gt; CREATE TABLE sequence (id INT NOT NULL);
-mysql&gt; INSERT INTO sequence VALUES (0);
-mysql&gt; UPDATE sequence SET id=LAST_INSERT_ID(id+1);
-mysql&gt; SELECT LAST_INSERT_ID();
-     -&gt;1;
-</code></pre>
+<figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql">mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">sequence</span> (id <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>);<br>mysql&gt; <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">sequence</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">0</span>);<br>mysql&gt; <span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">sequence</span> <span class="hljs-keyword">SET</span> id=LAST_INSERT_ID(id+<span class="hljs-number">1</span>);<br>mysql&gt; <span class="hljs-keyword">SELECT</span> LAST_INSERT_ID();<br>     -&gt;<span class="hljs-number"><code class="language-hljs pgsql">mysql&gt; <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">sequence</span> (id <span class="hljs-type">INT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>);<br>mysql&gt; <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">sequence</span> <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">0</span>);<br>mysql&gt; <span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">sequence</span> <span class="hljs-keyword">SET</span> id=LAST_INSERT_ID(id+<span class="hljs-number">1</span>);<br>mysql&gt; <span class="hljs-keyword">SELECT</span> LAST_INSERT_ID();<br>     -&gt;<span class="hljs-number">1</span>;<br></code></pre></td></tr></tbody></table></figure>
+
             </div>
             <hr/>
 
@@ -1724,9 +1702,7 @@ mysql&gt; SELECT LAST_INSERT_ID();
                     <div class="summary block-with-text">
                         
                             书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;script src="jquery.min.js"&g
+123456789101112&lt;html&gt;    &lt;head&gt;        &lt;script src="jqu
                         
                     </div>
                     <div class="publish-info">
@@ -2084,7 +2060,7 @@ mysql&gt; SELECT LAST_INSERT_ID();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2158,7 +2134,7 @@ mysql&gt; SELECT LAST_INSERT_ID();
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

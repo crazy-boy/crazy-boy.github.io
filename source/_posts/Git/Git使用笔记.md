@@ -39,3 +39,9 @@ assets/
 ```
 但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。
 解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。
+
+### git设置
+```bash
+cat .git/config
+git remote set-url origin ssh地址
+```

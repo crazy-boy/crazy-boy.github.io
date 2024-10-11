@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    214
+                    295
                 </div>
                 
 
@@ -1076,49 +1076,26 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="常用脚本"><a href="#常用脚本" class="headerlink" title="常用脚本"></a>常用脚本</h3><ol>
 <li><p>修改字段名</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').update({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:true})
-</code></pre>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:<span class="hljs-literal"><code class="language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:<span class="hljs-literal">true</span>})<br></code></pre></td></tr></tbody></table></figure>
 <p><code>{multi:true}</code>表示 对该集合的所有数据生效</p>
 </li>
 <li><p>新增字段</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').update({}, {$set: {"字段名1": "", "字段名2": ""...}}, {multi:true})
-</code></pre>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$<span class="hljs-keyword">set</span>: {"字段名1": "", "字段名2": ""...}}, {multi:<span class="hljs-literal"><code class="language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$<span class="hljs-keyword">set</span>: {"字段名1": "", "字段名2": ""...}}, {multi:<span class="hljs-literal">true</span>})<br></code></pre></td></tr></tbody></table></figure>
 <p><code>{multi:true}</code>表示 对该集合的所有数据生效</p>
 </li>
 <li><p>更新某个字段的值，使其与另一个字段的值相同</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection('集合名').find().forEach(
- function(item){
-     db.getCollection('集合名').update({"_id":item._id}, {"$set":{"字段名A":item.字段名B}}, {})
- }
-)
-</code></pre>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).find().forEach(<br>	<span class="hljs-keyword">function</span>(item){<br>		db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword"><code class="language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).find().forEach(<br>	<span class="hljs-keyword">function</span>(item){<br>		db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({"_id":item._id}, {"$set":{"字段名A":item.字段名B}}, {})<br>	}<br>)<br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>创建集合</p>
-<pre class=" language-lang-sql"><code class="language-lang-sql">db.createCollection("集合名");
-</code></pre>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><code class="language-hljs sql">db.createCollection("集合名");<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ol>
 <ol>
-<li>创建索引<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection("集合名").createIndex({
- "字段名": NumberInt("1"),
- "字段名": NumberInt("-1"),
- ……
- "字段名": NumberInt("1")
-}, {
- name: "索引名"
-});
-</code></pre>
+<li>创建索引<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><code class="language-hljs sql">db.getCollection("集合名").createIndex({<br>    "字段名": NumberInt("1"),<br>    "字段名": NumberInt("-1"),<br>	……<br>    "字段名": NumberInt("1")<br>}, {<br>    name: "索引名"<br>});<br></code></pre></td></tr></tbody></table></figure>
 1：升序，-1：降序</li>
 </ol>
 <ol>
-<li>插入数据<pre class=" language-lang-sql"><code class="language-lang-sql">db.getCollection("集合名").insert({
- "字段1": 值1,
- "字段2": 值2,
- ……
- "字段n": 值n
-});
-</code></pre>
-</li>
+<li>插入数据<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection("集合名").<span class="hljs-keyword">insert</span>({<br>	"字段1": 值<span class="hljs-number">1</span>,<br>	"字段2": 值<span class="hljs-number"><code class="language-hljs sql">db.getCollection("集合名").<span class="hljs-keyword">insert</span>({<br>	"字段1": 值<span class="hljs-number">1</span>,<br>	"字段2": 值<span class="hljs-number">2</span>,<br>	……<br>    "字段n": 值n<br>});<br></code></pre></td></tr></tbody></table></figure></li>
 </ol>
 
             </div>
@@ -1745,8 +1722,7 @@ h3:hover {
                         
                             冒泡排序
 时间复杂度：O(N^2)
-代码实现```phpfunction bubbleSort($arr){  $n = count($arr);  for ($i=0; $i&lt;$n-1; $i++){
-  for ($j=$i+1;
+代码实现12345678910111213141516function bubbleSort($arr){    $n = count($arr);    for ($i=0; $i&lt;$n-1; $
                         
                     </div>
                     <div class="publish-info">
@@ -2102,7 +2078,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2176,7 +2152,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

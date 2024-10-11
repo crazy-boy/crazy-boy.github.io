@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    361
                 </div>
                 
 
@@ -1077,16 +1077,8 @@ h3:hover {
                 <p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p>
 <p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt=""></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt=""></p>
-<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><pre class=" language-lang-bash"><code class="language-lang-bash">split -l 5 -d -a 1 a.txt tmp/m_ && cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt
-</code></pre>
-<p>命令分解：</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">-l 5 ：按行分割，每个文件5行
--d ：添加数字后缀，如00,01
--a 1 : 用一位数据来顺序命名(从0开始)
-tmp/ ：拆分后的文件放在tmp目录下
-m_ ：拆分后的文件名前缀
-&& cd tmp/ && ls|grep m_|xargs -n1 -i{} mv  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)
-</code></pre>
+<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><span class="hljs-built_in">split</span> -l 5 -d -a 1 a.txt tmp/m_ &amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in"><code class="language-hljs bash"><span class="hljs-built_in">split</span> -l 5 -d -a 1 a.txt tmp/m_ &amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in">mv</span>  {} {}.txt<br></code></pre></td></tr></tbody></table></figure>
+<p>命令分解：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs bash">-l 5 ：按行分割，每个文件5行<br>-d ：添加数字后缀，如00,01<br>-a 1 : 用一位数据来顺序命名(从0开始)<br>tmp/ ：拆分后的文件放在tmp目录下<br>m_ ：拆分后的文件名前缀<br>&amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in"><code class="language-hljs bash">-l 5 ：按行分割，每个文件5行<br>-d ：添加数字后缀，如00,01<br>-a 1 : 用一位数据来顺序命名(从0开始)<br>tmp/ ：拆分后的文件放在tmp目录下<br>m_ ：拆分后的文件名前缀<br>&amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in">mv</span>  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)<br></code></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt=""></p>
 <p>注：对xlsx文件拆分有问题</p>
 
@@ -1772,10 +1764,7 @@ m_ ：拆分后的文件名前缀
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. constant()   返回常量的值
-    define('DEV','test');
-
-    var_dump(constant('DEV'));       //string(4) "test"     等同于var_dum
+                            1. constant()   返回常量的值123456define('DEV','test');var_dump(constant('DEV'));       //string(4) "test"     等同于var_dump(DEV
                         
                     </div>
                     <div class="publish-info">
@@ -2072,7 +2061,7 @@ m_ ：拆分后的文件名前缀
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2146,7 +2135,7 @@ m_ ：拆分后的文件名前缀
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

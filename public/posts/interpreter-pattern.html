@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    127
+                    256
                 </div>
                 
 
@@ -1075,53 +1075,7 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下解释器模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface Expression{
-    public function interpret(Context $context): int;
-}
-
-class Plus implements Expression{
-    public function interpret(Context $context): int{
-        return $context->getNum1() + $context->getNum2();
-    }
-}
-
-class Minus implements Expression{
-    public function interpret(Context $context): int{
-        return $context->getNum1() - $context->getNum2();
-    }
-}
-
-class Context{
-    private int $num1,$num2;
-
-    public function __construct(int $num1,int $num2){
-        $this->num1 = $num1;
-        $this->num2 = $num2;
-    }
-
-    public function getNum1(): int{
-        return $this->num1;
-    }
-
-    public function setNum1(int $num1){
-        $this->num1 = $num1;
-    }
-
-    public function getNum2(): int{
-        return $this->num2;
-    }
-
-    public function setNum2(int $num2){
-        $this->num2 = $num2;
-    }
-}
-
-
-// 调用
-$result = (new Minus())->interpret(new Context((new Plus())->interpret(new Context(9,2)),8));
-echo $result;
-// output: 3
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Expression</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpret</span>(<span class="hljs-params">Context <span class="hljs-variable">$context</span></span>): <span class="hljs-title">int</span></span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Plus</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Expression</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpret</span>(<span class="hljs-params">Context <span class="hljs-variable">$context</span></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum1</span>() + <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum2</span>();<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Minus</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Expression</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpret</span>(<span class="hljs-params">Context <span class="hljs-variable">$context</span></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum1</span>() - <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum2</span>();<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Context</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-variable">$num1</span>,<span class="hljs-variable">$num2</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$num1</span>,<span class="hljs-keyword">int</span> <span class="hljs-variable">$num2</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;num1 = <span class="hljs-variable">$num1</span>;<br>        <span class="hljs-variable language_">$this</span>-&gt;num2 = <span class="hljs-variable">$num2</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNum1</span>(<span class="hljs-params"></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;num1;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setNum1</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$num1</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;num1 = <span class="hljs-variable">$num1</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNum2</span>(<span class="hljs-params"></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;num2;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setNum2</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$num2</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;num2 = <span class="hljs-variable">$num2</span>;<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$result</span> = (<span class="hljs-keyword">new</span> <span class="hljs-title class_">Minus</span>())-&gt;<span class="hljs-title function_ invoke__">interpret</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Context</span>((<span class="hljs-keyword">new</span> <span class="hljs-title class_">Plus</span>())-&gt;<span class="hljs-title function_ invoke__">interpret</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Context</span>(<span class="hljs-number">9</span>,<span class="hljs-number">2</span>)),<span class="hljs-number">8</span>));<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$result</span>;<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Expression</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpret</span>(<span class="hljs-params">Context <span class="hljs-variable">$context</span></span>): <span class="hljs-title">int</span></span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Plus</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Expression</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpret</span>(<span class="hljs-params">Context <span class="hljs-variable">$context</span></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum1</span>() + <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum2</span>();<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Minus</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Expression</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">interpret</span>(<span class="hljs-params">Context <span class="hljs-variable">$context</span></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum1</span>() - <span class="hljs-variable">$context</span>-&gt;<span class="hljs-title function_ invoke__">getNum2</span>();<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Context</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-variable">$num1</span>,<span class="hljs-variable">$num2</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$num1</span>,<span class="hljs-keyword">int</span> <span class="hljs-variable">$num2</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;num1 = <span class="hljs-variable">$num1</span>;<br>        <span class="hljs-variable language_">$this</span>-&gt;num2 = <span class="hljs-variable">$num2</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNum1</span>(<span class="hljs-params"></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;num1;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setNum1</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$num1</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;num1 = <span class="hljs-variable">$num1</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNum2</span>(<span class="hljs-params"></span>): <span class="hljs-title">int</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;num2;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setNum2</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$num2</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;num2 = <span class="hljs-variable">$num2</span>;<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$result</span> = (<span class="hljs-keyword">new</span> <span class="hljs-title class_">Minus</span>())-&gt;<span class="hljs-title function_ invoke__">interpret</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Context</span>((<span class="hljs-keyword">new</span> <span class="hljs-title class_">Plus</span>())-&gt;<span class="hljs-title function_ invoke__">interpret</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Context</span>(<span class="hljs-number">9</span>,<span class="hljs-number">2</span>)),<span class="hljs-number">8</span>));<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$result</span>;<br><span class="hljs-comment">// output: 3</span><br><br></code></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
             </div>
             <hr/>
@@ -1723,11 +1677,11 @@ echo $result;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/visitor-pattern.html">
+                <a href="/posts/observer-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——访问者模式">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——观察者模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1738,20 +1692,15 @@ echo $result;
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——访问者模式
+                          设计模式——观察者模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下访问者模式的代码实现
-interface Visitor{
-    public function visit(Subject $sub);
-}
-
-class MyVisitor implements Visitor{
-  
+                            说明示例下面看下观察者模式的代码实现
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
                         
                     </div>
                     <div class="publish-info">
@@ -1788,11 +1737,11 @@ class MyVisitor implements Visitor{
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/chain-of-responsibility-pattern.html">
+                <a href="/posts/visitor-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——责任链模式">
+                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——访问者模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1803,20 +1752,15 @@ class MyVisitor implements Visitor{
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——责任链模式
+                          设计模式——访问者模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下责任链模式的代码实现
-interface Handler{
-    public function operation();
-}
-
-abstract class AbstractHandler{
-    private ?H
+                            说明示例下面看下访问者模式的代码实现
+12345678910111213141516171819202122232425262728293031interface Visitor{    public function visit(Subj
                         
                     </div>
                     <div class="publish-info">
@@ -2113,7 +2057,7 @@ abstract class AbstractHandler{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2187,7 +2131,7 @@ abstract class AbstractHandler{
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

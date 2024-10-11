@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    190
+                    336
                 </div>
                 
 
@@ -1075,54 +1075,9 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>书写Jquery代码时，普通的面向过程的写法可以实现功能，但不利于后期维护。现介绍面向对象的写法。</p>
-<pre><code>&lt;html&gt;
-    &lt;head&gt;
-        &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;button data-event="list"&gt;列表&lt;/button&gt;
-        &lt;button data-event="search" data-name="大班"&gt;搜索&lt;/button&gt;
-        &lt;button data-event="add"&gt;添加&lt;/button&gt;
-        &lt;button data-event="update"&gt;修改&lt;/button&gt;
-        &lt;button data-event="del"&gt;删除&lt;/button&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><pre><code>&lt;script&gt;
-var clickAct = {
-    btn: $('button'),
-    init: function(){
-        var that = this;
-        this.btn.click(function(){
-            var func = $(this).attr('data-event');
-            that[func]($(this).attr('data-name'));
-        })
-    },
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre class=" language-hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"list"</span>&gt;</span>列表<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">data-name</span>=<span class="hljs-string">"大班"</span>&gt;</span>搜索<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"add"</span>&gt;</span>添加<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"update"</span>&gt;</span>修改<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"del"</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name"><code class="language-hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"list"</span>&gt;</span>列表<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"search"</span> <span class="hljs-attr">data-name</span>=<span class="hljs-string">"大班"</span>&gt;</span>搜索<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"add"</span>&gt;</span>添加<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"update"</span>&gt;</span>修改<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">data-event</span>=<span class="hljs-string">"del"</span>&gt;</span>删除<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>></span><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre class=" language-hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">var</span> clickAct = {</span><br><span class="language-javascript">	<span class="hljs-attr">btn</span>: $(<span class="hljs-string">'button'</span>),</span><br><span class="language-javascript">	<span class="hljs-attr">init</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){</span><br><span class="language-javascript">		<span class="hljs-keyword">var</span> that = <span class="hljs-variable language_">this</span>;</span><br><span class="language-javascript">		<span class="hljs-variable language_">this</span>.<span class="hljs-property">btn</span>.<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){</span><br><span class="language-javascript">			<span class="hljs-keyword">var</span> func = $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">attr</span>(<span class="hljs-string">'data-event'</span>);</span><br><span class="language-javascript">			that[func]($(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">attr</span>(<span class="hljs-string">'data-name'</span>));</span><br><span class="language-javascript">		})</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">list</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'1'</span>);</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">search</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(param);</span><br><span class="language-javascript">		</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">add</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'3'</span>);</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">update</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'4'</span>);</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">del</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'5'</span>);</span><br><span class="language-javascript">	}</span><br><span class="language-javascript">}</span><br><span class="language-javascript"></span><br><span class="language-javascript">clickAct.<span class="hljs-title function_">init</span>();</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name"><code class="language-hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">var</span> clickAct = {</span><br><span class="language-javascript">	<span class="hljs-attr">btn</span>: $(<span class="hljs-string">'button'</span>),</span><br><span class="language-javascript">	<span class="hljs-attr">init</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){</span><br><span class="language-javascript">		<span class="hljs-keyword">var</span> that = <span class="hljs-variable language_">this</span>;</span><br><span class="language-javascript">		<span class="hljs-variable language_">this</span>.<span class="hljs-property">btn</span>.<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){</span><br><span class="language-javascript">			<span class="hljs-keyword">var</span> func = $(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">attr</span>(<span class="hljs-string">'data-event'</span>);</span><br><span class="language-javascript">			that[func]($(<span class="hljs-variable language_">this</span>).<span class="hljs-title function_">attr</span>(<span class="hljs-string">'data-name'</span>));</span><br><span class="language-javascript">		})</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">list</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'1'</span>);</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">search</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(param);</span><br><span class="language-javascript">		</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">add</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'3'</span>);</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">update</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'4'</span>);</span><br><span class="language-javascript">	},</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-attr">del</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">param</span>){</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'5'</span>);</span><br><span class="language-javascript">	}</span><br><span class="language-javascript">}</span><br><span class="language-javascript"></span><br><span class="language-javascript">clickAct.<span class="hljs-title function_">init</span>();</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>></span><br></code></pre></td></tr></tbody></table></figure>
 
-    list: function(param){
-        console.log('1');
-    },
-
-    search: function(param){
-        console.log(param);
-
-    },
-
-    add: function(param){
-        console.log('3');
-    },
-
-    update: function(param){
-        console.log('4');
-    },
-
-    del: function(param){
-        console.log('5');
-    }
-}
-
-clickAct.init();
-&lt;/script&gt;
-</code></pre>
             </div>
             <hr/>
 
@@ -1805,8 +1760,7 @@ clickAct.init();
                     <div class="summary block-with-text">
                         
                             记录几个常用的MySQL函数：
-LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键。
-
+LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_INCREMENT列设置的第一个发生的值。如果一次性insert多条数据，只返回第一个数据的主键。1
                         
                     </div>
                     <div class="publish-info">
@@ -2103,7 +2057,7 @@ LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_IN
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2177,7 +2131,7 @@ LAST_INSERT_ID([expr])自动返回最后一个INSERT或 UPDATE 问询为 AUTO_IN
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

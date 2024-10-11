@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    382
+                    476
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -1076,50 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>其实每个模式名称就表明了该模式的作用，代理模式就是多一个代理类出来，替原对象进行一些操作，比如我们在租房子的时候回去找中介，为什么呢？因为你对该地区房屋的信息掌握的不够全面，希望找一个更熟悉的人去帮你做，此处的代理就是这个意思。再如我们有的时候打官司，我们需要请律师，因为律师在法律方面有专长，可以替我们进行操作，表达我们的想法。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下代理模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">// 创建接口Sourceable
-interface Sourceable{
-    public function method();
-}
-
-// 类Source实现接口Sourceable
-class Source implements Sourceable{
-    public function method(){
-        echo "the original method!" . PHP_EOL;
-    }
-}
-
-// 代理类Proxy实现Sourceable
-class Proxy implements Sourceable{
-    private Source $source;
-    public function __construct(){
-        $this->source = new Source();
-    }
-    public function method(){
-        $this->before();
-        $this->source->method();
-        $this->after();
-    }
-    private function before(){
-        echo "before proxy!" . PHP_EOL;
-    }
-    private function after(){
-        echo "after proxy!" . PHP_EOL;
-    }
-}
-
-
-// 调用
-$source = new Proxy();
-$source->method();
-
-/**
- * output:
- * before proxy!
- * the original method!
- * after proxy!
- * 
- */
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-comment">// 创建接口Sourceable</span><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-comment">// 类Source实现接口Sourceable</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"the original method!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-comment">// 代理类Proxy实现Sourceable</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Proxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">private</span> Source <span class="hljs-variable">$source</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;source = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Source</span>();<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">before</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;source-&gt;<span class="hljs-title function_ invoke__">method</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">after</span>();<br>    }<br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">before</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"before proxy!"</span> . PHP_EOL;<br>    }<br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">after</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"after proxy!"</span> . PHP_EOL;<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$source</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>();<br><span class="hljs-variable">$source</span>-&gt;<span class="hljs-title function_ invoke__">method</span>();<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * before proxy!</span><br><span class="hljs-comment"> * the original method!</span><br><span class="hljs-comment"> * after proxy!</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-comment">// 创建接口Sourceable</span><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-comment">// 类Source实现接口Sourceable</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"the original method!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-comment">// 代理类Proxy实现Sourceable</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Proxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">private</span> Source <span class="hljs-variable">$source</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;source = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Source</span>();<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">before</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;source-&gt;<span class="hljs-title function_ invoke__">method</span>();<br>        <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">after</span>();<br>    }<br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">before</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"before proxy!"</span> . PHP_EOL;<br>    }<br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">after</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"after proxy!"</span> . PHP_EOL;<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$source</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>();<br><span class="hljs-variable">$source</span>-&gt;<span class="hljs-title function_ invoke__">method</span>();<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * before proxy!</span><br><span class="hljs-comment"> * the original method!</span><br><span class="hljs-comment"> * after proxy!</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>如果已有的方法在使用的时候需要对原有的方法进行改进，此时有两种办法：<br>    1、修改原有的方法来适应。这样违反了“对扩展开放，对修改关闭”的原则。<br>    2、就是采用一个代理类调用原有的方法，且对产生的结果进行控制。这种方法就是代理模式。<br>使用代理模式，可以将功能划分的更加清晰，有助于后期维护！</p>
 
             </div>
@@ -2100,7 +2057,7 @@ $source->method();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2174,7 +2131,7 @@ $source->method();
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

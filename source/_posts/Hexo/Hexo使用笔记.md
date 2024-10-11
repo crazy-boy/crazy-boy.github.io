@@ -32,7 +32,7 @@ updated: 2022-05-08 11:20:00
 建议使用 `<!-- more -->`方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。	
 
 ### 常用插件
-1. 文章生成永久短链接
+#### 1. 文章生成永久短链接
 `npm install hexo-abbrlink --save`
 在站点配置项文件_config.yml下添加：
 ```
@@ -49,10 +49,10 @@ pretty_urls:
 ```
 当然文章的短链部分可以在文章的首部进行设置，如：`abbrlink: 'hexo-notes'`，如果不设置就会自动生成随机短链。
 
-2. 开启文章字数统计
+#### 2. 开启文章字数统计
 `npm i --save hexo-wordcount`
 
-3. 文章设置密码
+#### 3. 文章设置密码
 `npm install --save hexo-blog-encrypt`
 将"password"字段添加到文章的信息头：`password: abc123`
 文章可以按标签进行加密，优先级为：文章信息头>按标签加密
@@ -90,7 +90,18 @@ encrypt: # hexo-blog-encrypt
     $ npm install hexo-filter-github-emojis --save
     $ npm install hexo-generator-feed --save
     ```
-  
+
+### 常见问题
+#### 1. 执行hexo命令，提示`hexo: command not found`
+ + 首先检查nodejs和npm是否正常，依次输入`node -v`和`npm -v`检查版本信息
+ + 将与_config.yml同级的node_modules下的.bin路径(F:\GitHub\crazy-boy.github.io\node_modules\.bin)添加到系统环境变量的Path里
+ + 如果还不行，就重装hexo：`npm install hexo-cli -g`
+
+#### 2. hexo g -d报错fatal: in unpopulated submodule '.deploy_git'
+ + 删除.deploy_git文件夹
+ + 再执行`hexo g -d`
+
+ 
 ### 参考文档
 https://blog.csdn.net/sinat_37781304/article/details/82729029
 https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md

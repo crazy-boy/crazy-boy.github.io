@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    103
                 </div>
                 
 
@@ -1074,15 +1074,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-constant"><a href="#1-constant" class="headerlink" title="1. constant()"></a>1. constant()</h3><p>   返回常量的值</p>
-<pre class=" language-lang-bash"><code class="language-lang-bash">    define('DEV','test');
-
-    var_dump(constant('DEV'));       //string(4) "test"     等同于var_dump(DEV);
-    var_dump(constant('SORT_ASC'));  //int(4)    等同于var_dump(SORT_ASC);
-    var_dump(constant(SORT_ASC));    //NULL
-    var_dump(TEST);                  //string(4) "TEST"
-</code></pre>
-<p>   个人感觉作用不大，还不如直接使用常量呢，最多也就是判断常量是否被定义。</p>
+                <h3 id="1-constant"><a href="#1-constant" class="headerlink" title="1. constant()"></a>1. constant()</h3><p>   返回常量的值<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs bash">define(<span class="hljs-string">'DEV'</span>,<span class="hljs-string">'test'</span>);<br><br>var_dump(constant(<span class="hljs-string">'DEV'</span>));       //string(4) <span class="hljs-string">"test"</span>     等同于var_dump(DEV);<br>var_dump(constant(<span class="hljs-string">'SORT_ASC'</span>));  //int(4)    等同于var_dump(SORT_ASC);<br>var_dump(constant(SORT_ASC));    //NULL<br>var_dump(TEST);                  //string(4) <span class="hljs-string"><code class="language-hljs bash">define(<span class="hljs-string">'DEV'</span>,<span class="hljs-string">'test'</span>);<br><br>var_dump(constant(<span class="hljs-string">'DEV'</span>));       //string(4) <span class="hljs-string">"test"</span>     等同于var_dump(DEV);<br>var_dump(constant(<span class="hljs-string">'SORT_ASC'</span>));  //int(4)    等同于var_dump(SORT_ASC);<br>var_dump(constant(SORT_ASC));    //NULL<br>var_dump(TEST);                  //string(4) <span class="hljs-string">"TEST"</span><br></code></pre></td></tr></tbody></table></figure><br>   个人感觉作用不大，还不如直接使用常量呢，最多也就是判断常量是否被定义。<p></p>
 
             </div>
             <hr/>
@@ -1767,8 +1759,7 @@ h3:hover {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。下面这个查询没有得到预期的结果：
-    $list = Db::name('tb')-&gt;where(['
+                            之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。下面这个查询没有得到预期的结果：12 $list = Db::name('tb')-&gt;where(['st
                         
                     </div>
                     <div class="publish-info">
@@ -2065,7 +2056,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2139,7 +2130,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

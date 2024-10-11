@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    413
+                    556
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -1076,49 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  享元模式的主要目的是实现对象的共享，即共享池，当系统中对象多的时候可以减少内存的开销，通常与工厂模式一起使用。<br>  FlyWeightFactory负责创建和管理享元单元，当一个客户端请求时，工厂需要检查当前对象池中是否有符合条件的对象，如果有，就返回已经存在的对象，如果没有，则创建一个新对象，FlyWeight是超类。一提到共享池，我们很容易联想到Java里面的JDBC连接池，想想每个连接的特点，我们不难总结出：适用于作共享的一些个对象，他们有一些共有的属性，就拿数据库连接池来说，url、driverClassName、username、password及dbname，这些属性对于每个连接来说都是一样的，所以就适合用享元模式来处理，建一个工厂类，将上述类似属性作为内部数据，其它的作为外部数据，在方法调用时，当做参数传进来，这样就节省了空间，减少了实例的数量。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下享元模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class ConnectionPool{
-    private array $pool;
-
-    private string $server = '127.0.0.1';
-    private string $username = 'root';
-    private string $password = 'root';
-    private string $database = 'test';
-
-    private int $poolSize = 100;
-    private static ?ConnectionPool $instance = null;
-
-    public $conn = null;
-
-    public function __construct(){
-        $this->pool = [];
-        for ($i=0; $i<$this->poolSize; $i++){
-            try {
-                $mysqlConn = mysqli_connect($this->server, $this->username, $this->password);
-                if (!$mysqlConn)  die("connect error");
-                mysqli_select_db($mysqlConn,$this->database);
-                mysqli_query($mysqlConn,'SET NAMES utf8');
-                $this->pool[] = $mysqlConn;
-            }catch (Exception $e){
-                die("connect error");
-            }
-        }
-    }
-
-    public function getConnection(){
-        if (count($this->pool) > 0){
-            $this->conn = array_shift($this->pool);
-            return $this->conn;
-        }else{
-            return null;
-        }
-    }
-}
-
-$connPool = new ConnectionPool();
-$conn1 = $connPool->getConnection();
-$conn2 = $connPool->getConnection();
-var_dump($conn1===$conn2);      //false
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConnectionPool</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">array</span> <span class="hljs-variable">$pool</span>;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$server</span> = <span class="hljs-string">'127.0.0.1'</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$username</span> = <span class="hljs-string">'root'</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$password</span> = <span class="hljs-string">'root'</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$database</span> = <span class="hljs-string">'test'</span>;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-variable">$poolSize</span> = <span class="hljs-number">100</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> ?ConnectionPool <span class="hljs-variable">$instance</span> = <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$conn</span> = <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;pool = [];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span>=<span class="hljs-number">0</span>; <span class="hljs-variable">$i</span>&lt;<span class="hljs-variable language_">$this</span>-&gt;poolSize; <span class="hljs-variable">$i</span>++){<br>            <span class="hljs-keyword">try</span> {<br>                <span class="hljs-variable">$mysqlConn</span> = <span class="hljs-title function_ invoke__">mysqli_connect</span>(<span class="hljs-variable">$this</span>-&gt;server, <span class="hljs-variable">$this</span>-&gt;username, <span class="hljs-variable">$this</span>-&gt;password);<br>                <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$mysqlConn</span>)  <span class="hljs-keyword">die</span>(<span class="hljs-string">"connect error"</span>);<br>                <span class="hljs-title function_ invoke__">mysqli_select_db</span>(<span class="hljs-variable">$mysqlConn</span>,<span class="hljs-variable">$this</span>-&gt;database);<br>                <span class="hljs-title function_ invoke__">mysqli_query</span>(<span class="hljs-variable">$mysqlConn</span>,<span class="hljs-string">'SET NAMES utf8'</span>);<br>                <span class="hljs-variable language_">$this</span>-&gt;pool[] = <span class="hljs-variable">$mysqlConn</span>;<br>            }<span class="hljs-keyword">catch</span> (<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$e</span>){<br>                <span class="hljs-keyword">die</span>(<span class="hljs-string">"connect error"</span>);<br>            }<br>        }<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getConnection</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">$this</span>-&gt;pool) &gt; <span class="hljs-number">0</span>){<br>            <span class="hljs-variable language_">$this</span>-&gt;conn = <span class="hljs-title function_ invoke__">array_shift</span>(<span class="hljs-variable">$this</span>-&gt;pool);<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;conn;<br>        }<span class="hljs-keyword">else</span>{<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        }<br>    }<br>}<br><br><span class="hljs-variable">$connPool</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConnectionPool</span>();<br><span class="hljs-variable">$conn1</span> = <span class="hljs-variable">$connPool</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>();<br><span class="hljs-variable">$conn2</span> = <span class="hljs-variable">$connPool</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>();<br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$conn1</span>===<span class="hljs-variable">$conn2</span>);      <span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConnectionPool</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">array</span> <span class="hljs-variable">$pool</span>;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$server</span> = <span class="hljs-string">'127.0.0.1'</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$username</span> = <span class="hljs-string">'root'</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$password</span> = <span class="hljs-string">'root'</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$database</span> = <span class="hljs-string">'test'</span>;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-variable">$poolSize</span> = <span class="hljs-number">100</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> ?ConnectionPool <span class="hljs-variable">$instance</span> = <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$conn</span> = <span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;pool = [];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span>=<span class="hljs-number">0</span>; <span class="hljs-variable">$i</span>&lt;<span class="hljs-variable language_">$this</span>-&gt;poolSize; <span class="hljs-variable">$i</span>++){<br>            <span class="hljs-keyword">try</span> {<br>                <span class="hljs-variable">$mysqlConn</span> = <span class="hljs-title function_ invoke__">mysqli_connect</span>(<span class="hljs-variable">$this</span>-&gt;server, <span class="hljs-variable">$this</span>-&gt;username, <span class="hljs-variable">$this</span>-&gt;password);<br>                <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$mysqlConn</span>)  <span class="hljs-keyword">die</span>(<span class="hljs-string">"connect error"</span>);<br>                <span class="hljs-title function_ invoke__">mysqli_select_db</span>(<span class="hljs-variable">$mysqlConn</span>,<span class="hljs-variable">$this</span>-&gt;database);<br>                <span class="hljs-title function_ invoke__">mysqli_query</span>(<span class="hljs-variable">$mysqlConn</span>,<span class="hljs-string">'SET NAMES utf8'</span>);<br>                <span class="hljs-variable language_">$this</span>-&gt;pool[] = <span class="hljs-variable">$mysqlConn</span>;<br>            }<span class="hljs-keyword">catch</span> (<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$e</span>){<br>                <span class="hljs-keyword">die</span>(<span class="hljs-string">"connect error"</span>);<br>            }<br>        }<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getConnection</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">$this</span>-&gt;pool) &gt; <span class="hljs-number">0</span>){<br>            <span class="hljs-variable language_">$this</span>-&gt;conn = <span class="hljs-title function_ invoke__">array_shift</span>(<span class="hljs-variable">$this</span>-&gt;pool);<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;conn;<br>        }<span class="hljs-keyword">else</span>{<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        }<br>    }<br>}<br><br><span class="hljs-variable">$connPool</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConnectionPool</span>();<br><span class="hljs-variable">$conn1</span> = <span class="hljs-variable">$connPool</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>();<br><span class="hljs-variable">$conn2</span> = <span class="hljs-variable">$connPool</span>-&gt;<span class="hljs-title function_ invoke__">getConnection</span>();<br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$conn1</span>===<span class="hljs-variable">$conn2</span>);      <span class="hljs-comment">//false</span><br><br></code></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
             </div>
             <hr/>
@@ -1743,10 +1701,7 @@ var_dump($conn1===$conn2);      //false
                     <div class="summary block-with-text">
                         
                             说明示例下面看下中介者模式的代码实现
-interface Mediator{
-    public function createMediator(): void;
-    public function workAll(): void;
-
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
                         
                     </div>
                     <div class="publish-info">
@@ -2102,7 +2057,7 @@ interface Mediator{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2176,7 +2131,7 @@ interface Mediator{
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

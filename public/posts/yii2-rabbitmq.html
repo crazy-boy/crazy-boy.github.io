@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    680
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -1074,177 +1074,10 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="RPC服务端代码"><a href="#RPC服务端代码" class="headerlink" title="RPC服务端代码"></a>RPC服务端代码</h3><pre><code>&lt;?php
-
-namespace console\controllers;
-
-use yii;
-use yii\console\Controller;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
-
-class RpcServerController extends Controller{
-
-    private $channel;
-    private  $connection;
-
-    public function init (){
-        $amqp = yii::$app-&gt;params['amqp'];
-
-        //建立一个到RabbitMQ服务器的连接
-        $this-&gt;connection = new AMQPStreamConnection($amqp["host"], $amqp["port"], $amqp["user"], $amqp["password"]);
-        $this-&gt;channel = $this-&gt;connection-&gt;channel();
-    }
-
-    /**
-     * RPC服务端
-     */
-    public function actionRpcServer(){
-        //建立一个到RabbitMQ服务器的连接
-        $connection = $this-&gt;connection;
-        $channel = $this-&gt;channel;
-
-        //接下来,我们创建一个通道
-        $channel-&gt;queue_declare('rpc_queue',false,false,false,false);
-        function fib($n) {
-           return $n;
-        }
-
-        //回调
-        $callback = function($req){
-            $n = intval($req-&gt;body);
-            echo " [.] fib(", $n, ")\n";
-            $msg = new AMQPMessage((string) fib($n),[]'correlation_id' =&gt; $req-&gt;get('correlation_id')]);
-            $req-&gt;delivery_info['channel']-&gt;basic_publish($msg,'', $req-&gt;get('reply_to'));
-            $req-&gt;delivery_info['channel']-&gt;basic_ack($req-&gt;delivery_info['delivery_tag']);
-        };
-
-        $channel-&gt;basic_qos(null,1,null);
-        $channel-&gt;basic_consume('rpc_queue','',false,false,false,false,$callback);
-
-        while (count($channel-&gt;callbacks)) {
-            $channel-&gt;wait();
-        }
-
-        $channel-&gt;close();
-        $connection-&gt;close();
-    }
-}
-</code></pre><h3 id="RPC客户端代码"><a href="#RPC客户端代码" class="headerlink" title="RPC客户端代码"></a>RPC客户端代码</h3><pre><code>&lt;?php
-
-
-namespace service\entry;
-
-
-use common\components\BaseServer;
-use common\library\Helper;
-use PhpAmqpLib\Channel\AMQPChannel;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
-use PhpAmqpLib\Wire\AMQPTable;
-use Yii;
-
-class RemoteOpenDoor extends BaseServer
-{
-   const EXPIRE = 5;
-   const QUEUE_NAME = "remote_open_door";
-   public $devSn,$schoolId;
-
-   /**
-    * @var AMQPChannel
-    */
-   private $channel;
-   private $connection,$replyQueue,$corrId,$response,$params;
-   private $door = [1,2];
-
-   public function init(){
-      $amqp = Yii::$app-&gt;params['rabbitMQ'];
-      $this-&gt;connection = new AMQPStreamConnection($amqp['host'],$amqp['port'],$amqp['user'],$amqp['password'],$amqp['vhost']);
-      if(!$this-&gt;connection-&gt;isConnected()){
-         $this-&gt;setError(10003,'连接失败');
-         return false;
-      }
-      $this-&gt;channel = $this-&gt;connection-&gt;channel();
-
-      $arguments = new AMQPTable();
-      $arguments-&gt;set("x-message-ttl",10000);    //消息10s过期
-      //$this-&gt;channel-&gt;queue_declare(self::QUEUE_NAME,false,false,false,false,false,$arguments);
-      $this-&gt;channel-&gt;exchange_declare(self::QUEUE_NAME,'topic',false,false,false);
-      //$this-&gt;replyQueue = $this-&gt;devSn.'_'.$this-&gt;schoolId.'_'.microtime(true);
-      list($this-&gt;replyQueue, ,) = $this-&gt;channel-&gt;queue_declare("",false,false,false,true,false);
-      //回调
-      $callback = function(AMQPMessage $rep){
-         //var_dump($rep-&gt;get_properties());die;
-         if($rep-&gt;get('correlation_id') == $this-&gt;corrId) {
-            $this-&gt;response = $rep-&gt;body;
-         }
-      };
-
-      //接收回调信息
-      $this-&gt;channel-&gt;basic_consume( $this-&gt;replyQueue,'',false,false,false,false,$callback);
-   }
-
-   public function __construct(){
-      $this-&gt;init();
-   }
-
-   //组装参数
-   protected function buildParams(){
-      $params = [
-         'expire'=&gt;intval(time() + self::EXPIRE),
-         'devSn'=&gt;intval($this-&gt;devSn),
-         'door'=&gt;$this-&gt;door,
-      ];
-
-      $this-&gt;params = json_encode($params,true);
-   }
-
-
-   //发送mq开门指令
-   public function open(){
-      $this-&gt;buildParams();
-      $this-&gt;corrId = uniqid();
-      $this-&gt;response = null;
-      $properties = ['correlation_id'=&gt;$this-&gt;corrId,'reply_to'=&gt;$this-&gt;replyQueue];
-      $message = new AMQPMessage($this-&gt;params,$properties);
-      $this-&gt;channel-&gt;basic_publish($message,self::QUEUE_NAME,sprintf('school.%d',$this-&gt;schoolId));
-
-      //test
-      /*$message = new AMQPMessage(json_encode(['FailDoor'=&gt;[1,2]],true),$properties);
-      $this-&gt;channel-&gt;basic_publish($message,'',$this-&gt;replyQueue);*/
-
-      try{
-         $this-&gt;channel-&gt;wait(null,false,self::EXPIRE);
-      }catch (\Exception $exception){
-         $this-&gt;setError(10003,'开门失败');
-         return false;
-      }
-
-
-      //var_dump($this-&gt;response);
-      // // $this-&gt;channel-&gt;close();
-      // $this-&gt;connection-&gt;close();
-
-      $rs = json_decode($this-&gt;response,true);
-      if (!is_array($rs['failDoor']) &amp;&amp; (!$rs['failDoor'] || $rs['failDoor']!=$this-&gt;door)){
-         return true;
-      }
-
-      $this-&gt;setError(10003,'开门失败');
-      return false;
-   }
-}
-</code></pre><h3 id="客户端调用代码："><a href="#客户端调用代码：" class="headerlink" title="客户端调用代码："></a>客户端调用代码：</h3><pre><code>$server = new RemoteOpenDoor();
-$server-&gt;devSn = $devSn;
-$server-&gt;schoolId = $teacher-&gt;getSchoolId();
-$rs = $server-&gt;open();
-$error = $server-&gt;getError();
-if(!$rs){
-   return $error ? \Yii::$app-&gt;responseHelper-&gt;error($error)-&gt;response() : \Yii::$app-&gt;responseHelper-&gt;error(new Error(110000,'操作失败！'))-&gt;response();
-}
-
-return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
-</code></pre><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36851500/article/details/93501861">https://blog.csdn.net/weixin_36851500/article/details/93501861</a></p>
+                <h3 id="RPC服务端代码"><a href="#RPC服务端代码" class="headerlink" title="RPC服务端代码"></a>RPC服务端代码</h3><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">console</span>\<span class="hljs-title class_">controllers</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Controller</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Connection</span>\<span class="hljs-title">AMQPStreamConnection</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Message</span>\<span class="hljs-title">AMQPMessage</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RpcServerController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span></span>{<br><br>	<span class="hljs-keyword">private</span> <span class="hljs-variable">$channel</span>;<br>	<span class="hljs-keyword">private</span>  <span class="hljs-variable">$connection</span>;<br>	<br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span> (<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable">$amqp</span> = yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'amqp'</span>];<br>        <br>        <span class="hljs-comment">//建立一个到RabbitMQ服务器的连接</span><br>        <span class="hljs-variable language_">$this</span>-&gt;connection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPStreamConnection</span>(<span class="hljs-variable">$amqp</span>[<span class="hljs-string">"host"</span>], <span class="hljs-variable">$amqp</span>[<span class="hljs-string">"port"</span>], <span class="hljs-variable">$amqp</span>[<span class="hljs-string">"user"</span>], <span class="hljs-variable">$amqp</span>[<span class="hljs-string">"password"</span>]);<br>        <span class="hljs-variable language_">$this</span>-&gt;channel = <span class="hljs-variable language_">$this</span>-&gt;connection-&gt;<span class="hljs-title function_ invoke__">channel</span>();<br>	}<br>	<br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * RPC服务端</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionRpcServer</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-comment">//建立一个到RabbitMQ服务器的连接</span><br>        <span class="hljs-variable">$connection</span> = <span class="hljs-variable language_">$this</span>-&gt;connection;<br>        <span class="hljs-variable">$channel</span> = <span class="hljs-variable language_">$this</span>-&gt;channel;<br>        <br>        <span class="hljs-comment">//接下来,我们创建一个通道</span><br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">queue_declare</span>(<span class="hljs-string">'rpc_queue'</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);<br>        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fib</span>(<span class="hljs-params"><span class="hljs-variable">$n</span></span>) </span>{<br>           <span class="hljs-keyword">return</span> <span class="hljs-variable">$n</span>;<br>        }<br>        <br>        <span class="hljs-comment">//回调</span><br>        <span class="hljs-variable">$callback</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable">$req</span></span>)</span>{<br>            <span class="hljs-variable">$n</span> = <span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-variable">$req</span>-&gt;body);<br>            <span class="hljs-keyword">echo</span> <span class="hljs-string">" [.] fib("</span>, <span class="hljs-variable">$n</span>, <span class="hljs-string">")\n"</span>;<br>            <span class="hljs-variable">$msg</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPMessage</span>((<span class="hljs-keyword">string</span>) <span class="hljs-title function_ invoke__">fib</span>(<span class="hljs-variable">$n</span>),[]<span class="hljs-string">'correlation_id'</span> =&gt; <span class="hljs-variable">$req</span>-&gt;<span class="hljs-title function_ invoke__">get</span>(<span class="hljs-string">'correlation_id'</span>)]);<br>            <span class="hljs-variable">$req</span>-&gt;delivery_info[<span class="hljs-string">'channel'</span>]-&gt;<span class="hljs-title function_ invoke__">basic_publish</span>(<span class="hljs-variable">$msg</span>,<span class="hljs-string">''</span>, <span class="hljs-variable">$req</span>-&gt;<span class="hljs-title function_ invoke__">get</span>(<span class="hljs-string">'reply_to'</span>));<br>            <span class="hljs-variable">$req</span>-&gt;delivery_info[<span class="hljs-string">'channel'</span>]-&gt;<span class="hljs-title function_ invoke__">basic_ack</span>(<span class="hljs-variable">$req</span>-&gt;delivery_info[<span class="hljs-string">'delivery_tag'</span>]);<br>        };<br>        <br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">basic_qos</span>(<span class="hljs-literal">null</span>,<span class="hljs-number">1</span>,<span class="hljs-literal">null</span>);<br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">basic_consume</span>(<span class="hljs-string">'rpc_queue'</span>,<span class="hljs-string">''</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-variable">$callback</span>);<br>        <br>        <span class="hljs-keyword">while</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">$channel</span>-&gt;callbacks)) {<br>			<span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">wait</span>();<br>        }<br>        <br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">close</span>();<br>        <span class="hljs-variable">$connection</span>-&gt;<span class="hljs-title function_ invoke__"><code class="language-hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">console</span>\<span class="hljs-title class_">controllers</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">yii</span>\<span class="hljs-title">console</span>\<span class="hljs-title">Controller</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Connection</span>\<span class="hljs-title">AMQPStreamConnection</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Message</span>\<span class="hljs-title">AMQPMessage</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RpcServerController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span></span>{<br><br>	<span class="hljs-keyword">private</span> <span class="hljs-variable">$channel</span>;<br>	<span class="hljs-keyword">private</span>  <span class="hljs-variable">$connection</span>;<br>	<br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span> (<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable">$amqp</span> = yii::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'amqp'</span>];<br>        <br>        <span class="hljs-comment">//建立一个到RabbitMQ服务器的连接</span><br>        <span class="hljs-variable language_">$this</span>-&gt;connection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPStreamConnection</span>(<span class="hljs-variable">$amqp</span>[<span class="hljs-string">"host"</span>], <span class="hljs-variable">$amqp</span>[<span class="hljs-string">"port"</span>], <span class="hljs-variable">$amqp</span>[<span class="hljs-string">"user"</span>], <span class="hljs-variable">$amqp</span>[<span class="hljs-string">"password"</span>]);<br>        <span class="hljs-variable language_">$this</span>-&gt;channel = <span class="hljs-variable language_">$this</span>-&gt;connection-&gt;<span class="hljs-title function_ invoke__">channel</span>();<br>	}<br>	<br>	<span class="hljs-comment">/**</span><br><span class="hljs-comment">	 * RPC服务端</span><br><span class="hljs-comment">	 */</span><br>	<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">actionRpcServer</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-comment">//建立一个到RabbitMQ服务器的连接</span><br>        <span class="hljs-variable">$connection</span> = <span class="hljs-variable language_">$this</span>-&gt;connection;<br>        <span class="hljs-variable">$channel</span> = <span class="hljs-variable language_">$this</span>-&gt;channel;<br>        <br>        <span class="hljs-comment">//接下来,我们创建一个通道</span><br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">queue_declare</span>(<span class="hljs-string">'rpc_queue'</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);<br>        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fib</span>(<span class="hljs-params"><span class="hljs-variable">$n</span></span>) </span>{<br>           <span class="hljs-keyword">return</span> <span class="hljs-variable">$n</span>;<br>        }<br>        <br>        <span class="hljs-comment">//回调</span><br>        <span class="hljs-variable">$callback</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-variable">$req</span></span>)</span>{<br>            <span class="hljs-variable">$n</span> = <span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-variable">$req</span>-&gt;body);<br>            <span class="hljs-keyword">echo</span> <span class="hljs-string">" [.] fib("</span>, <span class="hljs-variable">$n</span>, <span class="hljs-string">")\n"</span>;<br>            <span class="hljs-variable">$msg</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPMessage</span>((<span class="hljs-keyword">string</span>) <span class="hljs-title function_ invoke__">fib</span>(<span class="hljs-variable">$n</span>),[]<span class="hljs-string">'correlation_id'</span> =&gt; <span class="hljs-variable">$req</span>-&gt;<span class="hljs-title function_ invoke__">get</span>(<span class="hljs-string">'correlation_id'</span>)]);<br>            <span class="hljs-variable">$req</span>-&gt;delivery_info[<span class="hljs-string">'channel'</span>]-&gt;<span class="hljs-title function_ invoke__">basic_publish</span>(<span class="hljs-variable">$msg</span>,<span class="hljs-string">''</span>, <span class="hljs-variable">$req</span>-&gt;<span class="hljs-title function_ invoke__">get</span>(<span class="hljs-string">'reply_to'</span>));<br>            <span class="hljs-variable">$req</span>-&gt;delivery_info[<span class="hljs-string">'channel'</span>]-&gt;<span class="hljs-title function_ invoke__">basic_ack</span>(<span class="hljs-variable">$req</span>-&gt;delivery_info[<span class="hljs-string">'delivery_tag'</span>]);<br>        };<br>        <br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">basic_qos</span>(<span class="hljs-literal">null</span>,<span class="hljs-number">1</span>,<span class="hljs-literal">null</span>);<br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">basic_consume</span>(<span class="hljs-string">'rpc_queue'</span>,<span class="hljs-string">''</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-variable">$callback</span>);<br>        <br>        <span class="hljs-keyword">while</span> (<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-variable">$channel</span>-&gt;callbacks)) {<br>			<span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">wait</span>();<br>        }<br>        <br>        <span class="hljs-variable">$channel</span>-&gt;<span class="hljs-title function_ invoke__">close</span>();<br>        <span class="hljs-variable">$connection</span>-&gt;<span class="hljs-title function_ invoke__">close</span>();<br>	}<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="RPC客户端代码"><a href="#RPC客户端代码" class="headerlink" title="RPC客户端代码"></a>RPC客户端代码</h3><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-meta">&lt;?php</span><br><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">service</span>\<span class="hljs-title class_">entry</span>;<br><br><br><span class="hljs-keyword">use</span> <span class="hljs-title">common</span>\<span class="hljs-title">components</span>\<span class="hljs-title">BaseServer</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">common</span>\<span class="hljs-title">library</span>\<span class="hljs-title">Helper</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Channel</span>\<span class="hljs-title">AMQPChannel</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Connection</span>\<span class="hljs-title">AMQPStreamConnection</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Message</span>\<span class="hljs-title">AMQPMessage</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Wire</span>\<span class="hljs-title">AMQPTable</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RemoteOpenDoor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseServer</span></span><br><span class="hljs-class"></span>{<br>   <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">EXPIRE</span> = <span class="hljs-number">5</span>;<br>   <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">QUEUE_NAME</span> = <span class="hljs-string">"remote_open_door"</span>;<br>   <span class="hljs-keyword">public</span> <span class="hljs-variable">$devSn</span>,<span class="hljs-variable">$schoolId</span>;<br><br>   <span class="hljs-comment">/**</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@var</span> AMQPChannel</span><br><span class="hljs-comment">    */</span><br>   <span class="hljs-keyword">private</span> <span class="hljs-variable">$channel</span>;<br>   <span class="hljs-keyword">private</span> <span class="hljs-variable">$connection</span>,<span class="hljs-variable">$replyQueue</span>,<span class="hljs-variable">$corrId</span>,<span class="hljs-variable">$response</span>,<span class="hljs-variable">$params</span>;<br>   <span class="hljs-keyword">private</span> <span class="hljs-variable">$door</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>];<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable">$amqp</span> = <span class="hljs-title class_">Yii</span>::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'rabbitMQ'</span>];<br>      <span class="hljs-variable language_">$this</span>-&gt;connection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPStreamConnection</span>(<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'host'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'port'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'user'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'password'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'vhost'</span>]);<br>      <span class="hljs-keyword">if</span>(!<span class="hljs-variable language_">$this</span>-&gt;connection-&gt;<span class="hljs-title function_ invoke__">isConnected</span>()){<br>         <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">setError</span>(<span class="hljs-number">10003</span>,<span class="hljs-string">'连接失败'</span>);<br>         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>      }<br>      <span class="hljs-variable language_">$this</span>-&gt;channel = <span class="hljs-variable language_">$this</span>-&gt;connection-&gt;<span class="hljs-title function_ invoke__">channel</span>();<br><br>      <span class="hljs-variable">$arguments</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPTable</span>();<br>      <span class="hljs-variable">$arguments</span>-&gt;<span class="hljs-title function_ invoke__">set</span>(<span class="hljs-string">"x-message-ttl"</span>,<span class="hljs-number">10000</span>);    <span class="hljs-comment">//消息10s过期</span><br>      <span class="hljs-comment">//$this-&gt;channel-&gt;queue_declare(self::QUEUE_NAME,false,false,false,false,false,$arguments);</span><br>      <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">exchange_declare</span>(<span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">QUEUE_NAME</span>,<span class="hljs-string">'topic'</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);<br>      <span class="hljs-comment">//$this-&gt;replyQueue = $this-&gt;devSn.'_'.$this-&gt;schoolId.'_'.microtime(true);</span><br>      <span class="hljs-keyword">list</span>(<span class="hljs-variable language_">$this</span>-&gt;replyQueue, ,) = <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">queue_declare</span>(<span class="hljs-string">""</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">true</span>,<span class="hljs-literal">false</span>);<br>      <span class="hljs-comment">//回调</span><br>      <span class="hljs-variable">$callback</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">AMQPMessage <span class="hljs-variable">$rep</span></span>)</span>{<br>         <span class="hljs-comment">//var_dump($rep-&gt;get_properties());die;</span><br>         <span class="hljs-keyword">if</span>(<span class="hljs-variable">$rep</span>-&gt;<span class="hljs-title function_ invoke__">get</span>(<span class="hljs-string">'correlation_id'</span>) == <span class="hljs-variable language_">$this</span>-&gt;corrId) {<br>            <span class="hljs-variable language_">$this</span>-&gt;response = <span class="hljs-variable">$rep</span>-&gt;body;<br>         }<br>      };<br><br>      <span class="hljs-comment">//接收回调信息</span><br>      <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">basic_consume</span>( <span class="hljs-variable">$this</span>-&gt;replyQueue,<span class="hljs-string">''</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-variable">$callback</span>);<br>   }<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">init</span>();<br>   }<br><br>   <span class="hljs-comment">//组装参数</span><br>   <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildParams</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable">$params</span> = [<br>         <span class="hljs-string">'expire'</span>=&gt;<span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-title function_ invoke__">time</span>() + <span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">EXPIRE</span>),<br>         <span class="hljs-string">'devSn'</span>=&gt;<span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-variable">$this</span>-&gt;devSn),<br>         <span class="hljs-string">'door'</span>=&gt;<span class="hljs-variable language_">$this</span>-&gt;door,<br>      ];<br><br>      <span class="hljs-variable language_">$this</span>-&gt;params = <span class="hljs-title function_ invoke__">json_encode</span>(<span class="hljs-variable">$params</span>,<span class="hljs-literal">true</span>);<br>   }<br><br><br>   <span class="hljs-comment">//发送mq开门指令</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">open</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">buildParams</span>();<br>      <span class="hljs-variable language_">$this</span>-&gt;corrId = <span class="hljs-title function_ invoke__">uniqid</span>();<br>      <span class="hljs-variable language_">$this</span>-&gt;response = <span class="hljs-literal">null</span>;<br>      <span class="hljs-variable">$properties</span> = [<span class="hljs-string">'correlation_id'</span>=&gt;<span class="hljs-variable language_">$this</span>-&gt;corrId,<span class="hljs-string">'reply_to'</span>=&gt;<span class="hljs-variable language_">$this</span>-&gt;replyQueue];<br>      <span class="hljs-variable">$message</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPMessage</span>(<span class="hljs-variable language_">$this</span>-&gt;params,<span class="hljs-variable">$properties</span>);<br>      <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">basic_publish</span>(<span class="hljs-variable">$message</span>,<span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">QUEUE_NAME</span>,<span class="hljs-title function_ invoke__">sprintf</span>(<span class="hljs-string">'school.%d'</span>,<span class="hljs-variable">$this</span>-&gt;schoolId));<br><br>      <span class="hljs-comment">//test</span><br>      <span class="hljs-comment">/*$message = new AMQPMessage(json_encode(['FailDoor'=&gt;[1,2]],true),$properties);</span><br><span class="hljs-comment">      $this-&gt;channel-&gt;basic_publish($message,'',$this-&gt;replyQueue);*/</span><br><br>      <span class="hljs-keyword">try</span>{<br>         <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">wait</span>(<span class="hljs-literal">null</span>,<span class="hljs-literal">false</span>,<span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">EXPIRE</span>);<br>      }<span class="hljs-keyword">catch</span> (\<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$exception</span>){<br>         <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">setError</span>(<span class="hljs-number">10003</span>,<span class="hljs-string">'开门失败'</span>);<br>         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>      }<br><br><br>      <span class="hljs-comment">//var_dump($this-&gt;response);</span><br>      <span class="hljs-comment">// // $this-&gt;channel-&gt;close();</span><br>      <span class="hljs-comment">// $this-&gt;connection-&gt;close();</span><br><br>      <span class="hljs-variable">$rs</span> = <span class="hljs-title function_ invoke__">json_decode</span>(<span class="hljs-variable">$this</span>-&gt;response,<span class="hljs-literal">true</span>);<br>      <span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">is_array</span>(<span class="hljs-variable">$rs</span>[<span class="hljs-string">'failDoor'</span>]) &amp;&amp; (!<span class="hljs-variable">$rs</span>[<span class="hljs-string">'failDoor'</span>] || <span class="hljs-variable">$rs</span>[<span class="hljs-string">'failDoor'</span>]!=<span class="hljs-variable language_">$this</span>-&gt;door)){<br>         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>      }<br><br>      <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">setError</span>(<span class="hljs-number">10003</span>,<span class="hljs-string">'开门失败'</span>);<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal"><code class="language-hljs php"><span class="hljs-meta">&lt;?php</span><br><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">service</span>\<span class="hljs-title class_">entry</span>;<br><br><br><span class="hljs-keyword">use</span> <span class="hljs-title">common</span>\<span class="hljs-title">components</span>\<span class="hljs-title">BaseServer</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">common</span>\<span class="hljs-title">library</span>\<span class="hljs-title">Helper</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Channel</span>\<span class="hljs-title">AMQPChannel</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Connection</span>\<span class="hljs-title">AMQPStreamConnection</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Message</span>\<span class="hljs-title">AMQPMessage</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">PhpAmqpLib</span>\<span class="hljs-title">Wire</span>\<span class="hljs-title">AMQPTable</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Yii</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RemoteOpenDoor</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseServer</span></span><br><span class="hljs-class"></span>{<br>   <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">EXPIRE</span> = <span class="hljs-number">5</span>;<br>   <span class="hljs-keyword">const</span> <span class="hljs-variable constant_">QUEUE_NAME</span> = <span class="hljs-string">"remote_open_door"</span>;<br>   <span class="hljs-keyword">public</span> <span class="hljs-variable">$devSn</span>,<span class="hljs-variable">$schoolId</span>;<br><br>   <span class="hljs-comment">/**</span><br><span class="hljs-comment">    * <span class="hljs-doctag">@var</span> AMQPChannel</span><br><span class="hljs-comment">    */</span><br>   <span class="hljs-keyword">private</span> <span class="hljs-variable">$channel</span>;<br>   <span class="hljs-keyword">private</span> <span class="hljs-variable">$connection</span>,<span class="hljs-variable">$replyQueue</span>,<span class="hljs-variable">$corrId</span>,<span class="hljs-variable">$response</span>,<span class="hljs-variable">$params</span>;<br>   <span class="hljs-keyword">private</span> <span class="hljs-variable">$door</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>];<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable">$amqp</span> = <span class="hljs-title class_">Yii</span>::<span class="hljs-variable">$app</span>-&gt;params[<span class="hljs-string">'rabbitMQ'</span>];<br>      <span class="hljs-variable language_">$this</span>-&gt;connection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPStreamConnection</span>(<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'host'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'port'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'user'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'password'</span>],<span class="hljs-variable">$amqp</span>[<span class="hljs-string">'vhost'</span>]);<br>      <span class="hljs-keyword">if</span>(!<span class="hljs-variable language_">$this</span>-&gt;connection-&gt;<span class="hljs-title function_ invoke__">isConnected</span>()){<br>         <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">setError</span>(<span class="hljs-number">10003</span>,<span class="hljs-string">'连接失败'</span>);<br>         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>      }<br>      <span class="hljs-variable language_">$this</span>-&gt;channel = <span class="hljs-variable language_">$this</span>-&gt;connection-&gt;<span class="hljs-title function_ invoke__">channel</span>();<br><br>      <span class="hljs-variable">$arguments</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPTable</span>();<br>      <span class="hljs-variable">$arguments</span>-&gt;<span class="hljs-title function_ invoke__">set</span>(<span class="hljs-string">"x-message-ttl"</span>,<span class="hljs-number">10000</span>);    <span class="hljs-comment">//消息10s过期</span><br>      <span class="hljs-comment">//$this-&gt;channel-&gt;queue_declare(self::QUEUE_NAME,false,false,false,false,false,$arguments);</span><br>      <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">exchange_declare</span>(<span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">QUEUE_NAME</span>,<span class="hljs-string">'topic'</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);<br>      <span class="hljs-comment">//$this-&gt;replyQueue = $this-&gt;devSn.'_'.$this-&gt;schoolId.'_'.microtime(true);</span><br>      <span class="hljs-keyword">list</span>(<span class="hljs-variable language_">$this</span>-&gt;replyQueue, ,) = <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">queue_declare</span>(<span class="hljs-string">""</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">true</span>,<span class="hljs-literal">false</span>);<br>      <span class="hljs-comment">//回调</span><br>      <span class="hljs-variable">$callback</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">AMQPMessage <span class="hljs-variable">$rep</span></span>)</span>{<br>         <span class="hljs-comment">//var_dump($rep-&gt;get_properties());die;</span><br>         <span class="hljs-keyword">if</span>(<span class="hljs-variable">$rep</span>-&gt;<span class="hljs-title function_ invoke__">get</span>(<span class="hljs-string">'correlation_id'</span>) == <span class="hljs-variable language_">$this</span>-&gt;corrId) {<br>            <span class="hljs-variable language_">$this</span>-&gt;response = <span class="hljs-variable">$rep</span>-&gt;body;<br>         }<br>      };<br><br>      <span class="hljs-comment">//接收回调信息</span><br>      <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">basic_consume</span>( <span class="hljs-variable">$this</span>-&gt;replyQueue,<span class="hljs-string">''</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>,<span class="hljs-variable">$callback</span>);<br>   }<br><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">init</span>();<br>   }<br><br>   <span class="hljs-comment">//组装参数</span><br>   <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildParams</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable">$params</span> = [<br>         <span class="hljs-string">'expire'</span>=&gt;<span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-title function_ invoke__">time</span>() + <span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">EXPIRE</span>),<br>         <span class="hljs-string">'devSn'</span>=&gt;<span class="hljs-title function_ invoke__">intval</span>(<span class="hljs-variable">$this</span>-&gt;devSn),<br>         <span class="hljs-string">'door'</span>=&gt;<span class="hljs-variable language_">$this</span>-&gt;door,<br>      ];<br><br>      <span class="hljs-variable language_">$this</span>-&gt;params = <span class="hljs-title function_ invoke__">json_encode</span>(<span class="hljs-variable">$params</span>,<span class="hljs-literal">true</span>);<br>   }<br><br><br>   <span class="hljs-comment">//发送mq开门指令</span><br>   <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">open</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">buildParams</span>();<br>      <span class="hljs-variable language_">$this</span>-&gt;corrId = <span class="hljs-title function_ invoke__">uniqid</span>();<br>      <span class="hljs-variable language_">$this</span>-&gt;response = <span class="hljs-literal">null</span>;<br>      <span class="hljs-variable">$properties</span> = [<span class="hljs-string">'correlation_id'</span>=&gt;<span class="hljs-variable language_">$this</span>-&gt;corrId,<span class="hljs-string">'reply_to'</span>=&gt;<span class="hljs-variable language_">$this</span>-&gt;replyQueue];<br>      <span class="hljs-variable">$message</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">AMQPMessage</span>(<span class="hljs-variable language_">$this</span>-&gt;params,<span class="hljs-variable">$properties</span>);<br>      <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">basic_publish</span>(<span class="hljs-variable">$message</span>,<span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">QUEUE_NAME</span>,<span class="hljs-title function_ invoke__">sprintf</span>(<span class="hljs-string">'school.%d'</span>,<span class="hljs-variable">$this</span>-&gt;schoolId));<br><br>      <span class="hljs-comment">//test</span><br>      <span class="hljs-comment">/*$message = new AMQPMessage(json_encode(['FailDoor'=&gt;[1,2]],true),$properties);</span><br><span class="hljs-comment">      $this-&gt;channel-&gt;basic_publish($message,'',$this-&gt;replyQueue);*/</span><br><br>      <span class="hljs-keyword">try</span>{<br>         <span class="hljs-variable language_">$this</span>-&gt;channel-&gt;<span class="hljs-title function_ invoke__">wait</span>(<span class="hljs-literal">null</span>,<span class="hljs-literal">false</span>,<span class="hljs-built_in">self</span>::<span class="hljs-variable constant_">EXPIRE</span>);<br>      }<span class="hljs-keyword">catch</span> (\<span class="hljs-built_in">Exception</span> <span class="hljs-variable">$exception</span>){<br>         <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">setError</span>(<span class="hljs-number">10003</span>,<span class="hljs-string">'开门失败'</span>);<br>         <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>      }<br><br><br>      <span class="hljs-comment">//var_dump($this-&gt;response);</span><br>      <span class="hljs-comment">// // $this-&gt;channel-&gt;close();</span><br>      <span class="hljs-comment">// $this-&gt;connection-&gt;close();</span><br><br>      <span class="hljs-variable">$rs</span> = <span class="hljs-title function_ invoke__">json_decode</span>(<span class="hljs-variable">$this</span>-&gt;response,<span class="hljs-literal">true</span>);<br>      <span class="hljs-keyword">if</span> (!<span class="hljs-title function_ invoke__">is_array</span>(<span class="hljs-variable">$rs</span>[<span class="hljs-string">'failDoor'</span>]) &amp;&amp; (!<span class="hljs-variable">$rs</span>[<span class="hljs-string">'failDoor'</span>] || <span class="hljs-variable">$rs</span>[<span class="hljs-string">'failDoor'</span>]!=<span class="hljs-variable language_">$this</span>-&gt;door)){<br>         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>      }<br><br>      <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">setError</span>(<span class="hljs-number">10003</span>,<span class="hljs-string">'开门失败'</span>);<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>   }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="客户端调用代码："><a href="#客户端调用代码：" class="headerlink" title="客户端调用代码："></a>客户端调用代码：</h3><figure class="highlight xl"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre class=" language-hljs xl">$server = new RemoteOpenDoor();<br>$<span class="hljs-function"><span class="hljs-title">server</span>-&gt;</span>devSn = $devSn;<br>$<span class="hljs-function"><span class="hljs-title">server</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">schoolId</span> = $teacher-&gt;</span>getSchoolId();<br>$<span class="hljs-function"><span class="hljs-title">rs</span> = $server-&gt;</span>open();<br>$<span class="hljs-function"><span class="hljs-title">error</span> = $server-&gt;</span>getError();<br><span class="hljs-keyword">if</span>(!$rs){<br>   <span class="hljs-function"><span class="hljs-title">return</span> $error ? \Yii::$app-&gt;</span><span class="hljs-function"><span class="hljs-title">responseHelper</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">error</span>($error)-&gt;</span><span class="hljs-function"><span class="hljs-title">response</span>() : \Yii::$app-&gt;</span><span class="hljs-function"><span class="hljs-title">responseHelper</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">error</span>(new Error(110000,'操作失败！'))-&gt;</span>response();<br>}<br><br><span class="hljs-function"><span class="hljs-title">return</span> \Yii::$app-&gt;</span><span class="hljs-function"><span class="hljs-title">responseHelper</span>-&gt;</span><span class="hljs-function"><span class="hljs-title"><code class="language-hljs xl">$server = new RemoteOpenDoor();<br>$<span class="hljs-function"><span class="hljs-title">server</span>-&gt;</span>devSn = $devSn;<br>$<span class="hljs-function"><span class="hljs-title">server</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">schoolId</span> = $teacher-&gt;</span>getSchoolId();<br>$<span class="hljs-function"><span class="hljs-title">rs</span> = $server-&gt;</span>open();<br>$<span class="hljs-function"><span class="hljs-title">error</span> = $server-&gt;</span>getError();<br><span class="hljs-keyword">if</span>(!$rs){<br>   <span class="hljs-function"><span class="hljs-title">return</span> $error ? \Yii::$app-&gt;</span><span class="hljs-function"><span class="hljs-title">responseHelper</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">error</span>($error)-&gt;</span><span class="hljs-function"><span class="hljs-title">response</span>() : \Yii::$app-&gt;</span><span class="hljs-function"><span class="hljs-title">responseHelper</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">error</span>(new Error(110000,'操作失败！'))-&gt;</span>response();<br>}<br><br><span class="hljs-function"><span class="hljs-title">return</span> \Yii::$app-&gt;</span><span class="hljs-function"><span class="hljs-title">responseHelper</span>-&gt;</span><span class="hljs-function"><span class="hljs-title">success</span>(null)-></span>response();<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36851500/article/details/93501861">https://blog.csdn.net/weixin_36851500/article/details/93501861</a></p>
 
             </div>
             <hr/>
@@ -1846,6 +1679,70 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/posts/mysql-optimization.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="MySQL数据库优化">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          MySQL数据库优化
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据库优化无论实在面试还是工作中都非常重要，结合个人多年的从业经验，它主要从数据库设计、sql优化、服务器优化等方面来进行。
+
+数据库设计优化表设计方面
+1）表的数据类型是否合理，要遵守选取数据类型越简单越小的原则
+2）表中碎片是否整理
+3
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">数据库优化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/posts/php-yii2-notes.html">
                     <div class="card-image">
                         
@@ -1869,73 +1766,7 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
                     <div class="summary block-with-text">
                         
                             1. 安装Yii2第三方扩展
-方法一：composer安装php composer.phar require php-amqplib/php-amqplib
-或者
-在composer.json文件的require里添加"php-amqpli
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Yii2/">
-                        <span class="chip bg-color">Yii2</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/php-composer.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="php中composer的使用">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          php中composer的使用
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            用法
-降低composer版本shell script
- composer self-update -r
- 或者是 composer self-update -- l
-
-
+方法一：composer安装123php composer.phar require php-amqplib/php-amqplib或者在composer.json文件的require里添加"php-amqpl
                         
                     </div>
                     <div class="publish-info">
@@ -1957,8 +1788,8 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/composer/">
-                        <span class="chip bg-color">composer</span>
+                    <a href="/tags/Yii2/">
+                        <span class="chip bg-color">Yii2</span>
                     </a>
                     
                 </div>
@@ -2232,7 +2063,7 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2306,7 +2137,7 @@ return \Yii::$app-&gt;responseHelper-&gt;success(null)-&gt;response();
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

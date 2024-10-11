@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    133
+                    200
                 </div>
                 
 
@@ -1075,28 +1075,7 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。</p>
-<pre class=" language-lang-php"><code class="language-lang-php">$arr = ['id' => null, 'name' => 'test', 'age' => null];
-
-$time1 = microtime(true);
-$tmp = &$arr;
-for ($i = 0; $i < 100000000; $i++) {
-    $tmp['id'] = $i;
-}
-print_r($arr); 
-echo PHP_EOL;
-echo microtime(true) - $time1;
-
-echo PHP_EOL;
-$time2 = microtime(true);
-$tmp1 = null;
-for ($i = 0; $i < 100000000; $i++) {
-    $tmp1 = $i;
-}
-$tmp['id'] = $tmp1;
-print_r($arr);
-echo PHP_EOL;
-echo microtime(true) - $time2;
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-literal">null</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'test'</span>, <span class="hljs-string">'age'</span> =&gt; <span class="hljs-literal">null</span>];<br><br><span class="hljs-variable">$time1</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-variable">$tmp</span> = &amp;<span class="hljs-variable">$arr</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp</span>[<span class="hljs-string">'id'</span>] = <span class="hljs-variable">$i</span>;<br>}<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$arr</span>); <br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable">$time1</span>;<br><br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-variable">$time2</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-variable">$tmp1</span> = <span class="hljs-literal">null</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp1</span> = <span class="hljs-variable">$i</span>;<br>}<br><span class="hljs-variable">$tmp</span>[<span class="hljs-string">'id'</span>] = <span class="hljs-variable">$tmp1</span>;<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$arr</span>);<br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-literal">null</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'test'</span>, <span class="hljs-string">'age'</span> =&gt; <span class="hljs-literal">null</span>];<br><br><span class="hljs-variable">$time1</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-variable">$tmp</span> = &amp;<span class="hljs-variable">$arr</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp</span>[<span class="hljs-string">'id'</span>] = <span class="hljs-variable">$i</span>;<br>}<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$arr</span>); <br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable">$time1</span>;<br><br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-variable">$time2</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-variable">$tmp1</span> = <span class="hljs-literal">null</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp1</span> = <span class="hljs-variable">$i</span>;<br>}<br><span class="hljs-variable">$tmp</span>[<span class="hljs-string">'id'</span>] = <span class="hljs-variable">$tmp1</span>;<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$arr</span>);<br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable">$time2</span>;<br><br></code></pre></td></tr></tbody></table></figure>
 <p>输出结果为：<code><br>Array ( [id] =&gt; 99999999 [name] =&gt; test [age] =&gt; )<br>2.0506858825684<br>Array ( [id] =&gt; 99999999 [name] =&gt; test [age] =&gt; )<br>1.1653530597687
 </code></p>
 <p>不难看出，两次的处理结果是一样的，但通过&amp;多次改变值，效率较低。</p>
@@ -1727,7 +1706,7 @@ echo microtime(true) - $time2;
 
 
 如果需要去掉数组中的某些key，直接unset即可
-  $arr = ['id' => 5, 'name' => '张三', 'status
+123$arr = ['id' =&gt; 5, 'name' =&gt; '张三', 
                         
                     </div>
                     <div class="publish-info">
@@ -2086,7 +2065,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2160,7 +2139,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

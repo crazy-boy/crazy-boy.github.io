@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    716
+                    734
                 </div>
                 
 
@@ -1074,173 +1074,14 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-先安装依赖包"><a href="#1-先安装依赖包" class="headerlink" title="1. 先安装依赖包"></a>1. 先安装依赖包</h3><pre class=" language-lang-shell"><code class="language-lang-shell">$   yum install gcc bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel
-</code></pre>
-<h3 id="2-下载php-5-3-0"><a href="#2-下载php-5-3-0" class="headerlink" title="2. 下载php-5.3.0"></a>2. 下载php-5.3.0</h3><pre class=" language-lang-shell"><code class="language-lang-shell">wget http://cn2.php.net/get/php-5.3.0.tar.gz/from/this/mirror -o php-5.3.0
-
-# 解压 
-$ tar -zxvf php-5.3.0.tar.gz
-$ cd php-5.3.0
-
-yum install libxml2
-
-yum install libxml2-devel -y
-
-yum install curl curl-devel
-yum install -y epel-release
-yum install -y libmcrypt-devel
-</code></pre>
-<pre class=" language-lang-shell"><code class="language-lang-shell">php5 配置 
-
- ./configure \
---prefix=/usr/local/php5 \
---with-config-file-path=/usr/local/php5/etc \
---enable-inline-optimization \
---disable-debug \
---disable-rpath \
---enable-shared \
---enable-opcache \
---enable-fpm \
---with-fpm-user=www \
---with-fpm-group=www \
---with-mysql=mysqlnd \
---with-mysqli=mysqlnd \
---with-pdo-mysql=mysqlnd \
---with-gettext \
---with-gd \
---enable-mbstring \
---with-iconv \
---with-mcrypt \
---with-mhash \
---with-openssl \
---enable-bcmath \
---enable-soap \
---with-libxml-dir \
---enable-pcntl \
---enable-shmop \
---enable-sysvmsg \
---enable-sysvsem \
---enable-sysvshm \
---enable-sockets \
---with-curl \
---with-zlib \
---enable-zip \
---with-bz2 \
---with-readline \
---with-xsl \
---without-sqlite3 \
---without-pdo-sqlite \
---with-pear
-</code></pre>
-<pre class=" language-lang-shell"><code class="language-lang-shell">php7 配置
-
- ./configure \
---prefix=/usr/local/php7 \
---with-config-file-path=/usr/local/php7/etc \
---enable-inline-optimization \
---disable-debug \
---disable-rpath \
---enable-shared \
---enable-opcache \
---enable-fpm \
---with-fpm-user=www \
---with-fpm-group=www \
---with-mysql=mysqlnd \
---with-mysqli=mysqlnd \
---with-pdo-mysql=mysqlnd \
---with-gettext \
---enable-mbstring \
---with-iconv \
---with-mcrypt \
---with-mhash \
---with-openssl \
---enable-bcmath \
---enable-soap \
---with-libxml-dir \
---enable-pcntl \
---enable-shmop \
---enable-sysvmsg \
---enable-sysvsem \
---enable-sysvshm \
---enable-sockets \
---with-curl \
---with-zlib \
---enable-zip \
---with-bz2 \
---with-readline \
---without-sqlite3 \
---without-pdo-sqlite \
---with-pear
-</code></pre>
-<h3 id="3-编译安装"><a href="#3-编译安装" class="headerlink" title="3. 编译安装"></a>3. 编译安装</h3><pre class=" language-lang-shell"><code class="language-lang-shell">$ make && make install
-</code></pre>
-<h3 id="4-复制-php-配置文件"><a href="#4-复制-php-配置文件" class="headerlink" title="4. 复制 php 配置文件"></a>4. 复制 php 配置文件</h3><pre class=" language-lang-shell"><code class="language-lang-shell">[root@VM_0_2_centos php-5.6.30]# cp php.ini-production /usr/local/php7/etc/php.ini
-已经安装完成，查看版本号
-
-[root@VM_0_2_centos php-5.6.30]# /usr/local/php7/bin/php -v
-返回
-
-PHP 5.6.30 (cli) (built: Aug 29 2018 09:09:28) 
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
-</code></pre>
-<h3 id="5-配置-php-fpm"><a href="#5-配置-php-fpm" class="headerlink" title="5. 配置 php-fpm"></a>5. 配置 php-fpm</h3><pre class=" language-lang-shell"><code class="language-lang-shell">[root@VM_0_2_centos php-5.6.30]# cp /usr/local/php7/etc/php-fpm.conf.default /usr/local/php7/etc/php-fpm.conf
-[root@VM_0_2_centos php-5.6.30]# vim /usr/local/php7/etc/php-fpm.conf
-查找 user 将
-
-user = nobody
-group = nobody
-改成
-
-user = www
-group = www
-查找 listen 将
-
-listen = 127.0.0.1:9000
-改成
-
-listen = 127.0.0.1:9001
-
-配置 php-fpm 服务
-
-[root@VM_0_2_centos php-5.6.30]# cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php7-fpm.service
-[root@VM_0_2_centos php-5.6.30]# vim /usr/lib/systemd/system/php7-fpm.service 
-将：
-
-PIDFile=${prefix}/var/run/php-fpm.pid
-ExecStart=${exec_prefix}/sbin/php-fpm --nodaemonize --fpm-config ${prefix}/etc/php-fpm.conf
-改成
-
-PIDFile=/usr/local/php7/var/run/php-fpm.pid
-ExecStart=/usr/local/php7/sbin/php-fpm --nodaemonize --fpm-config /usr/local/php7/etc/php-fpm.conf
-</code></pre>
-<h3 id="6-重新载入-systemd"><a href="#6-重新载入-systemd" class="headerlink" title="6. 重新载入 systemd"></a>6. 重新载入 systemd</h3><pre class=" language-lang-shell"><code class="language-lang-shell">[root@VM_0_2_centos php-5.6.30]# systemctl daemon-reload
-可以设置开机启动：
-
-[root@VM_0_2_centos php-5.6.30]# systemctl enable php7-fpm
-返回结果
-
-Created symlink from /etc/systemd/system/multi-user.target.wants/php7-fpm.service to /usr/lib/systemd/system/php7-fpm.service.
-启动：
-
-[root@VM_0_2_centos php-5.6.30]# systemctl start php7-fpm
-关闭：
-
-[root@VM_0_2_centos php-5.6.30]# systemctl stop php7-fpm
-查看状态：
-
-[root@VM_0_2_centos php-5.6.30]# systemctl status php7-fpm
-返回
-
-● php5-fpm.service - The PHP FastCGI Process Manager
-   Loaded: loaded (/usr/lib/systemd/system/php5-fpm.service; disabled; vendor preset: disabled)
-   Active: active (running) since Wed 2018-08-29 09:36:39 CST; 47s ago
- Main PID: 14996 (php-fpm)
-   CGroup: /system.slice/php5-fpm.service
-           ├─14996 php-fpm: master process (/usr/local/php5/etc/php-fpm.conf)
-           ├─14997 php-fpm: pool www
-           └─14998 php-fpm: pool www
-</code></pre>
+                <h3 id="1-先安装依赖包"><a href="#1-先安装依赖包" class="headerlink" title="1. 先安装依赖包"></a>1. 先安装依赖包</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">  yum install gcc bison bison-devel zlib-devel libmcrypt-devel mcrypt mhash-devel openssl-devel libxml2-devel libcurl-devel bzip2-devel readline-devel libedit-devel</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="2-下载php-5-3-0"><a href="#2-下载php-5-3-0" class="headerlink" title="2. 下载php-5.3.0"></a>2. 下载php-5.3.0</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre class=" language-hljs shell">wget http://cn2.php.net/get/php-5.3.0.tar.gz/from/this/mirror -o php-5.3.0<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">解压</span> <br><span class="hljs-meta prompt_">$ </span><span class="language-bash">tar -zxvf php-5.3.0.tar.gz</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in"><code class="language-hljs shell">wget http://cn2.php.net/get/php-5.3.0.tar.gz/from/this/mirror -o php-5.3.0<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">解压</span> <br><span class="hljs-meta prompt_">$ </span><span class="language-bash">tar -zxvf php-5.3.0.tar.gz</span><br><span class="hljs-meta prompt_">$ </span><span class="language-bash"><span class="hljs-built_in">cd</span> php-5.3.0</span><br><br>yum install libxml2<br><br>yum install libxml2-devel -y<br><br>yum install curl curl-devel<br>yum install -y epel-release<br>yum install -y libmcrypt-devel<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">php5 配置 <br><br> ./configure \<br>--prefix=/usr/local/php5 \<br>--with-config-file-path=/usr/local/php5/etc \<br>--enable-inline-optimization \<br>--disable-debug \<br>--disable-rpath \<br>--enable-shared \<br>--enable-opcache \<br>--enable-fpm \<br>--with-fpm-user=www \<br>--with-fpm-group=www \<br>--with-mysql=mysqlnd \<br>--with-mysqli=mysqlnd \<br>--with-pdo-mysql=mysqlnd \<br>--with-gettext \<br>--with-gd \<br>--enable-mbstring \<br>--with-iconv \<br>--with-mcrypt \<br>--with-mhash \<br>--with-openssl \<br>--enable-bcmath \<br>--enable-soap \<br>--with-libxml-dir \<br>--enable-pcntl \<br>--enable-shmop \<br>--enable-sysvmsg \<br>--enable-sysvsem \<br>--enable-sysvshm \<br>--enable-sockets \<br>--with-curl \<br>--with-zlib \<br>--enable-zip \<br>--with-bz2 \<br>--with-readline \<br>--with-xsl \<br>--without-sqlite3 \<br>--without-pdo-sqlite \<br>--with-pear<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">php7 配置<br><br> ./configure \<br>--prefix=/usr/local/php7 \<br>--with-config-file-path=/usr/local/php7/etc \<br>--enable-inline-optimization \<br>--disable-debug \<br>--disable-rpath \<br>--enable-shared \<br>--enable-opcache \<br>--enable-fpm \<br>--with-fpm-user=www \<br>--with-fpm-group=www \<br>--with-mysql=mysqlnd \<br>--with-mysqli=mysqlnd \<br>--with-pdo-mysql=mysqlnd \<br>--with-gettext \<br>--enable-mbstring \<br>--with-iconv \<br>--with-mcrypt \<br>--with-mhash \<br>--with-openssl \<br>--enable-bcmath \<br>--enable-soap \<br>--with-libxml-dir \<br>--enable-pcntl \<br>--enable-shmop \<br>--enable-sysvmsg \<br>--enable-sysvsem \<br>--enable-sysvshm \<br>--enable-sockets \<br>--with-curl \<br>--with-zlib \<br>--enable-zip \<br>--with-bz2 \<br>--with-readline \<br>--without-sqlite3 \<br>--without-pdo-sqlite \<br>--with-pear<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="3-编译安装"><a href="#3-编译安装" class="headerlink" title="3. 编译安装"></a>3. 编译安装</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">make && make install</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="4-复制-php-配置文件"><a href="#4-复制-php-配置文件" class="headerlink" title="4. 复制 php 配置文件"></a>4. 复制 php 配置文件</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">[root@VM_0_2_centos php-5.6.30]# cp php.ini-production /usr/local/php7/etc/php.ini<br>已经安装完成，查看版本号<br><br>[root@VM_0_2_centos php-5.6.30]# /usr/local/php7/bin/php -v<br>返回<br><br>PHP 5.6.30 (cli) (built: Aug 29 2018 09:09:28) <br>Copyright (c) 1997-2016 The PHP Group<br>Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="5-配置-php-fpm"><a href="#5-配置-php-fpm" class="headerlink" title="5. 配置 php-fpm"></a>5. 配置 php-fpm</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">[root@VM_0_2_centos php-5.6.30]# cp /usr/local/php7/etc/php-fpm.conf.default /usr/local/php7/etc/php-fpm.conf<br>[root@VM_0_2_centos php-5.6.30]# vim /usr/local/php7/etc/php-fpm.conf<br>查找 user 将<br><br>user = nobody<br>group = nobody<br>改成<br><br>user = www<br>group = www<br>查找 listen 将<br><br>listen = 127.0.0.1:9000<br>改成<br><br>listen = 127.0.0.1:9001<br><br>配置 php-fpm 服务<br><br>[root@VM_0_2_centos php-5.6.30]# cp sapi/fpm/php-fpm.service /usr/lib/systemd/system/php7-fpm.service<br>[root@VM_0_2_centos php-5.6.30]# vim /usr/lib/systemd/system/php7-fpm.service <br>将：<br><br>PIDFile=${prefix}/var/run/php-fpm.pid<br>ExecStart=${exec_prefix}/sbin/php-fpm --nodaemonize --fpm-config ${prefix}/etc/php-fpm.conf<br>改成<br><br>PIDFile=/usr/local/php7/var/run/php-fpm.pid<br>ExecStart=/usr/local/php7/sbin/php-fpm --nodaemonize --fpm-config /usr/local/php7/etc/php-fpm.conf<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="6-重新载入-systemd"><a href="#6-重新载入-systemd" class="headerlink" title="6. 重新载入 systemd"></a>6. 重新载入 systemd</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">[root@VM_0_2_centos php-5.6.30]# systemctl daemon-reload<br>可以设置开机启动：<br><br>[root@VM_0_2_centos php-5.6.30]# systemctl enable php7-fpm<br>返回结果<br><br>Created symlink from /etc/systemd/system/multi-user.target.wants/php7-fpm.service to /usr/lib/systemd/system/php7-fpm.service.<br>启动：<br><br>[root@VM_0_2_centos php-5.6.30]# systemctl start php7-fpm<br>关闭：<br><br>[root@VM_0_2_centos php-5.6.30]# systemctl stop php7-fpm<br>查看状态：<br><br>[root@VM_0_2_centos php-5.6.30]# systemctl status php7-fpm<br>返回<br><br>● php5-fpm.service - The PHP FastCGI Process Manager<br>   Loaded: loaded (/usr/lib/systemd/system/php5-fpm.service; disabled; vendor preset: disabled)<br>   Active: active (running) since Wed 2018-08-29 09:36:39 CST; 47s ago<br> Main PID: 14996 (php-fpm)<br>   CGroup: /system.slice/php5-fpm.service<br>           ├─14996 php-fpm: master process (/usr/local/php5/etc/php-fpm.conf)<br>           ├─14997 php-fpm: pool www<br>           └─14998 php-fpm: pool www<br></code></pre></td></tr></tbody></table></figure>
 <p>参考地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42579642/article/details/85290670">https://blog.csdn.net/weixin_42579642/article/details/85290670</a></p>
 
             </div>
@@ -1929,10 +1770,8 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/php7-fpm.servic
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 下载mysql bundle.tar包上传  mysql bundle.tar包到服务器
-解压  tar -xvf mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar
-
-2. 按顺序逐个安装rpmrpm 
+                            1. 下载mysql bundle.tar包上传  mysql bundle.tar包到服务器1解压  tar -xvf mysql-5.7.27-1.el7.x86_64.rpm-bundle.tar
+2. 按顺序逐个安装rpm12345
                         
                     </div>
                     <div class="publish-info">
@@ -2229,7 +2068,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/php7-fpm.servic
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2303,7 +2142,7 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/php7-fpm.servic
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

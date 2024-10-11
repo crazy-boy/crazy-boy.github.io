@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    68
+                    118
                 </div>
                 
 
@@ -1074,36 +1074,9 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>rule规则</p>
-<pre><code>class Item extends \think\Validate{
-    protected $rule = [
-        ['mobile|手机号', 'require|length:11', '手机号必填|手机号格式不正确'],
-        …
-    ];
+                <p>rule规则<br></p><figure class="highlight scala"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre class=" language-hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Item</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">\think\Validate</span></span>{<br>	<span class="hljs-keyword">protected</span> $rule = [<br>		['mobile|手机号', 'require|length:<span class="hljs-number">11</span>', '手机号必填|手机号格式不正确'],<br>		…<br>	];<br><br>	<span class="hljs-keyword"><code class="language-hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Item</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">\think\Validate</span></span>{<br>	<span class="hljs-keyword">protected</span> $rule = [<br>		['mobile|手机号', 'require|length:<span class="hljs-number">11</span>', '手机号必填|手机号格式不正确'],<br>		…<br>	];<br><br>	<span class="hljs-keyword">protected</span> $scene = [<br>		'add'=>['mobile','name'…],<br>		…<br>	];<br>	<br>}<br><br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>添加自定义校验<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$rule</span> = [<br>	[<span class="hljs-string">'anchor_id|关联账号'</span>, <span class="hljs-string">'require|checkAnchor'</span>],<br>];<br><br><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnchor</span>(<span class="hljs-params"><span class="hljs-variable">$value</span></span>)</span>{<br>	…<br>	<span class="hljs-keyword">if</span> (<span class="hljs-variable">$error</span> = <span class="hljs-variable">$server</span>-&gt;<span class="hljs-title function_ invoke__">getError</span>()) {<br>		<span class="hljs-title function_ invoke__">extract</span>(<span class="hljs-variable">$error</span>);<br>		<span class="hljs-comment">/**</span><br><span class="hljs-comment">		 * <span class="hljs-doctag">@var</span> $msg</span><br><span class="hljs-comment">		 */</span><br>		<span class="hljs-keyword">return</span> <span class="hljs-variable">$msg</span>;<br>	}<br>	<span class="hljs-keyword">return</span> <span class="hljs-literal"><code class="language-hljs php"><span class="hljs-variable">$rule</span> = [<br>	[<span class="hljs-string">'anchor_id|关联账号'</span>, <span class="hljs-string">'require|checkAnchor'</span>],<br>];<br><br><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnchor</span>(<span class="hljs-params"><span class="hljs-variable">$value</span></span>)</span>{<br>	…<br>	<span class="hljs-keyword">if</span> (<span class="hljs-variable">$error</span> = <span class="hljs-variable">$server</span>-&gt;<span class="hljs-title function_ invoke__">getError</span>()) {<br>		<span class="hljs-title function_ invoke__">extract</span>(<span class="hljs-variable">$error</span>);<br>		<span class="hljs-comment">/**</span><br><span class="hljs-comment">		 * <span class="hljs-doctag">@var</span> $msg</span><br><span class="hljs-comment">		 */</span><br>		<span class="hljs-keyword">return</span> <span class="hljs-variable">$msg</span>;<br>	}<br>	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<br></code></pre></td></tr></tbody></table></figure><p></p>
 
-    protected $scene = [
-        'add'=&gt;['mobile','name'…],
-        …
-    ];
-
-}
-</code></pre><p>添加自定义校验</p>
-<pre><code>$rule = [
-    ['anchor_id|关联账号', 'require|checkAnchor'],
-];
-
-protected function checkAnchor($value){
-    …
-    if ($error = $server-&gt;getError()) {
-        extract($error);
-        /**
-         * @var $msg
-         */
-        return $msg;
-    }
-    return true;
-}
-</code></pre>
             </div>
             <hr/>
 
@@ -1727,10 +1700,7 @@ protected function checkAnchor($value){
                     <div class="summary block-with-text">
                         
                             
-如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)
-  function sum(...$numbers){
-      $sum = 0;
-      foreach ($numbers as $numbe
+如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)12345678910function sum(...$numbers){    $sum = 0;    foreach ($numbers as $num
                         
                     </div>
                     <div class="publish-info">
@@ -2086,7 +2056,7 @@ protected function checkAnchor($value){
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2160,7 +2130,7 @@ protected function checkAnchor($value){
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

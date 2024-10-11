@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    132
+                    167
                 </div>
                 
 
@@ -1074,15 +1074,10 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。<br>下面这个查询没有得到预期的结果：</p>
-<pre><code>    $list = Db::name('tb')-&gt;where(['status'=&gt;1])-&gt;order(['create_time'=&gt;SORT_DESC])-&gt;field('id,name')-&gt;select();
-   // 输出sql为：select id,name from tb where status=1 order by create_time;
-</code></pre><p>问题在于SORT_DESC=3、SORT_ASC=4，这不符合thinkphp中order方法的传参规则，<br>可以这样使用：</p>
-<pre><code>   order('id','desc')
-   order('id desc')
-   order(['id'=&gt;'desc','create_time'=&gt;'asc'])
-   order('id,create_time desc')
-</code></pre>
+                <p>之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。<br>下面这个查询没有得到预期的结果：<br></p><figure class="highlight livescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs livescript"> $<span class="hljs-keyword">list</span> = Db::name<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'tb'</span>)</span>-&gt;</span>where<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>])</span>-&gt;</span>order<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'create_time'</span>=&gt;SORT_DESC])</span>-&gt;</span>field<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id,name'</span>)</span>-&gt;</span>select();<br><span class="hljs-regexp"><code class="language-hljs livescript"> $<span class="hljs-keyword">list</span> = Db::name<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'tb'</span>)</span>-&gt;</span>where<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>])</span>-&gt;</span>order<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'create_time'</span>=&gt;SORT_DESC])</span>-&gt;</span>field<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id,name'</span>)</span>-&gt;</span>select();<br><span class="hljs-regexp">// 输出sql为：select id,name from tb where status=1 order by create_time;</span><br></code></pre></td></tr></tbody></table></figure><p></p>
+<p>问题在于SORT_DESC=3、SORT_ASC=4，这不符合thinkphp中order方法的传参规则，<br>可以这样使用：</p>
+<figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs stylus"><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id'</span>,<span class="hljs-string">'desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">([<span class="hljs-string">'id'</span>=&gt;<span class="hljs-string">'desc'</span>,<span class="hljs-string">'create_time'</span>=&gt;<span class="hljs-string">'asc'</span>])</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string"><code class="language-hljs stylus"><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id'</span>,<span class="hljs-string">'desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">([<span class="hljs-string">'id'</span>=&gt;<span class="hljs-string">'desc'</span>,<span class="hljs-string">'create_time'</span>=&gt;<span class="hljs-string">'asc'</span>])</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id,create_time desc'</span>)</span></span><br></code></pre></td></tr></tbody></table></figure>
+
             </div>
             <hr/>
 
@@ -1705,10 +1700,7 @@ h3:hover {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. constant()   返回常量的值
-    define('DEV','test');
-
-    var_dump(constant('DEV'));       //string(4) "test"     等同于var_dum
+                            1. constant()   返回常量的值123456define('DEV','test');var_dump(constant('DEV'));       //string(4) "test"     等同于var_dump(DEV
                         
                     </div>
                     <div class="publish-info">
@@ -2065,7 +2057,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2139,7 +2131,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

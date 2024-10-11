@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    173
+                    258
                 </div>
                 
 
@@ -1076,32 +1076,8 @@ h3:hover {
             <div id="articleContent">
                 <div class="note info">有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数</div>
 
-<h3 id="1-批量处理字符串，将”FEEED305904B”转为”FE-EE-D3-05-90-4B”格式："><a href="#1-批量处理字符串，将”FEEED305904B”转为”FE-EE-D3-05-90-4B”格式：" class="headerlink" title="1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式："></a>1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</h3><pre><code>DROP FUNCTION IF EXISTS `SPLIT_STR`; 
-delimiter $$
-CREATE FUNCTION SPLIT_STR(
-  x VARCHAR(255),
-  delim VARCHAR(12),
-  pos INT
-)
-RETURNS VARCHAR(255)
-
-BEGIN
-    DECLARE i INT DEFAULT 0;
-    DECLARE s text DEFAULT '';
-    myloop: LOOP
-        SET i = i+pos;
-        SET s = CONCAT(s,delim,left(x,pos));
-        SET x = right(x,length(x)-pos);
-        if pos&gt;length(x) then
-            if length(x)&gt;0 then
-                SET s = CONCAT(s,delim,x);
-            end if;
-            leave myloop;
-        end if;
-    END LOOP myloop;
-RETURN right(s,length(s)-length(delim));
-END $$
-</code></pre><p>调用：<code>SELECT SPLIT_STR('FEEED305904B', ':', 2);</code></p>
+<h3 id="1-批量处理字符串，将”FEEED305904B”转为”FE-EE-D3-05-90-4B”格式："><a href="#1-批量处理字符串，将”FEEED305904B”转为”FE-EE-D3-05-90-4B”格式：" class="headerlink" title="1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式："></a>1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：</h3><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FUNCTION</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> `SPLIT_STR`; <br><span class="hljs-keyword">delimiter</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">FUNCTION</span> SPLIT_STR(</span><br><span class="language-pgsql">  x <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),</span><br><span class="language-pgsql">  delim <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">12</span>),</span><br><span class="language-pgsql">  pos <span class="hljs-type">INT</span></span><br><span class="language-pgsql">)</span><br><span class="language-pgsql"><span class="hljs-keyword">RETURNS</span> <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>)</span><br><span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">    <span class="hljs-keyword">DECLARE</span> i <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>;</span><br><span class="language-pgsql">    <span class="hljs-keyword">DECLARE</span> s <span class="hljs-type">text</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">''</span>;</span><br><span class="language-pgsql">    myloop: <span class="hljs-keyword">LOOP</span></span><br><span class="language-pgsql">        <span class="hljs-keyword">SET</span> i = i+pos;</span><br><span class="language-pgsql">        <span class="hljs-keyword">SET</span> s = CONCAT(s,delim,left(x,pos));</span><br><span class="language-pgsql">        <span class="hljs-keyword">SET</span> x = right(x,length(x)-pos);</span><br><span class="language-pgsql">        <span class="hljs-keyword">if</span> pos&gt;length(x) <span class="hljs-keyword">then</span></span><br><span class="language-pgsql">            <span class="hljs-keyword">if</span> length(x)&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">then</span></span><br><span class="language-pgsql">                <span class="hljs-keyword">SET</span> s = CONCAT(s,delim,x);</span><br><span class="language-pgsql">            <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;</span><br><span class="language-pgsql">            leave myloop;</span><br><span class="language-pgsql">        <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;</span><br><span class="language-pgsql">    <span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span> myloop;</span><br><span class="language-pgsql"><span class="hljs-keyword">RETURN</span> right(s,length(s)-length(delim));</span><br><span class="language-pgsql"><span class="hljs-keyword"><code class="language-hljs pgsql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FUNCTION</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span> `SPLIT_STR`; <br><span class="hljs-keyword">delimiter</span> $$<span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">FUNCTION</span> SPLIT_STR(</span><br><span class="language-pgsql">  x <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>),</span><br><span class="language-pgsql">  delim <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">12</span>),</span><br><span class="language-pgsql">  pos <span class="hljs-type">INT</span></span><br><span class="language-pgsql">)</span><br><span class="language-pgsql"><span class="hljs-keyword">RETURNS</span> <span class="hljs-type">VARCHAR</span>(<span class="hljs-number">255</span>)</span><br><span class="language-pgsql"></span><br><span class="language-pgsql"><span class="hljs-keyword">BEGIN</span></span><br><span class="language-pgsql">    <span class="hljs-keyword">DECLARE</span> i <span class="hljs-type">INT</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>;</span><br><span class="language-pgsql">    <span class="hljs-keyword">DECLARE</span> s <span class="hljs-type">text</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">''</span>;</span><br><span class="language-pgsql">    myloop: <span class="hljs-keyword">LOOP</span></span><br><span class="language-pgsql">        <span class="hljs-keyword">SET</span> i = i+pos;</span><br><span class="language-pgsql">        <span class="hljs-keyword">SET</span> s = CONCAT(s,delim,left(x,pos));</span><br><span class="language-pgsql">        <span class="hljs-keyword">SET</span> x = right(x,length(x)-pos);</span><br><span class="language-pgsql">        <span class="hljs-keyword">if</span> pos&gt;length(x) <span class="hljs-keyword">then</span></span><br><span class="language-pgsql">            <span class="hljs-keyword">if</span> length(x)&gt;<span class="hljs-number">0</span> <span class="hljs-keyword">then</span></span><br><span class="language-pgsql">                <span class="hljs-keyword">SET</span> s = CONCAT(s,delim,x);</span><br><span class="language-pgsql">            <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;</span><br><span class="language-pgsql">            leave myloop;</span><br><span class="language-pgsql">        <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>;</span><br><span class="language-pgsql">    <span class="hljs-keyword">END</span> <span class="hljs-keyword">LOOP</span> myloop;</span><br><span class="language-pgsql"><span class="hljs-keyword">RETURN</span> right(s,length(s)-length(delim));</span><br><span class="language-pgsql"><span class="hljs-keyword">END</span> $$</span><br></code></pre></td></tr></tbody></table></figure>
+<p>调用：<code>SELECT SPLIT_STR('FEEED305904B', ':', 2);</code></p>
 
             </div>
             <hr/>
@@ -1725,7 +1701,7 @@ END $$
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 设置字体和样式    $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray(['font'=>['bold'=>true]]);            //设置单
+                            1. 设置字体和样式123$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('A1')-&gt;applyFromArray(['font'=&gt;['bold'=&gt;true]]);			
                         
                     </div>
                     <div class="publish-info">
@@ -1785,13 +1761,7 @@ END $$
                     <div class="summary block-with-text">
                         
                             通过php代码生成MySQL数据字典，代码如下：
-&lt;?php
-/**
- * 生成mysql数据字典
- */
-header("Content-type: text/html; charset=utf-8");
-//配置数据库
-$dbse
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152
                         
                     </div>
                     <div class="publish-info">
@@ -2088,7 +2058,7 @@ $dbse
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2162,7 +2132,7 @@ $dbse
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

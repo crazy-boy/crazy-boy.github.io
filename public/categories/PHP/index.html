@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -889,7 +889,7 @@ class="themespring" -->
 
 提前return 让正常流程走主干，非正常流程提前return，去除不必要的else，适用于函数参数校验。
 
-优化前  if (condition)
+优化前12345if (conditi
                             
                         </div>
                         <div class="publish-info">
@@ -1066,8 +1066,7 @@ class="themespring" -->
                             
                                 在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。
 下面演示下，在test方法执行后自动执行afterTest方法
-trait A{
-    public function __call($method, $args
+12345678910111213141516171819202122232425262728293
                             
                         </div>
                         <div class="publish-info">
@@ -1156,7 +1155,7 @@ trait A{
 
 
 如果需要去掉数组中的某些key，直接unset即可
-  $arr = ['id' => 5, 'name' => '张三', 'status
+123$arr = ['id' =&gt; 5, 'name' =&gt; '张三', 
                             
                         </div>
                         <div class="publish-info">
@@ -1242,10 +1241,7 @@ trait A{
                         <div class="summary block-with-text">
                             
                                 在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。
-$arr = ['id' => null, 'name' => 'test', 'age' => null];
-
-$time1 = microtime(true);
-$t
+12345678910111213141516171819202122$arr = ['id' =&gt; null, 'name' =&gt; 'test', 'age
                             
                         </div>
                         <div class="publish-info">
@@ -1420,7 +1416,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                             
                                 前言：在开发中，之前判断数组中的键是否存在，我一直使用isset；今天看到有同事大量使用array_key_exists，闲来没事就测试了一下它们的性能。
 
-    $arr = ['id' => 3242, 'name' => 'test
+12345678910111213141516$arr = ['id' =&gt;
                             
                         </div>
                         <div class="publish-info">
@@ -1506,10 +1502,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                         <div class="summary block-with-text">
                             
                                 
-如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)
-  function sum(...$numbers){
-      $sum = 0;
-      foreach ($numbers as $numbe
+如果…在函数的定义中，则表示传入多个参数(个数不定)将合并成一个数组(索引数组)12345678910function sum(...$numbers){    $sum = 0;    foreach ($numbers as $num
                             
                         </div>
                         <div class="publish-info">
@@ -1594,10 +1587,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                rule规则
-class Item extends \think\Validate{
-    protected $rule = [
-        ['mobile|手机号', 'require|length:11', '手机号必填|手机
+                                rule规则12345678910111213class Item extends \think\Validate{	protected $rule = [		['mobile|手机号', 'require|length:11', '手机号
                             
                         </div>
                         <div class="publish-info">
@@ -1941,8 +1931,7 @@ class Item extends \think\Validate{
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1. 直接whereOr    $list = Db::name('tb')->where(['status'=>1,'admin_id'=>5])->whereOr(['type'=>1,'step'=>2])->select();
-  
+                                1. 直接whereOr12$list = Db::name('tb')-&gt;where(['status'=&gt;1,'admin_id'=&gt;5])-&gt;whereOr(['type'=&gt;1,'step'=&gt;2
                             
                         </div>
                         <div class="publish-info">
@@ -2113,10 +2102,7 @@ class Item extends \think\Validate{
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1. constant()   返回常量的值
-    define('DEV','test');
-
-    var_dump(constant('DEV'));       //string(4) "test"     等同于var_dum
+                                1. constant()   返回常量的值123456define('DEV','test');var_dump(constant('DEV'));       //string(4) "test"     等同于var_dump(DEV
                             
                         </div>
                         <div class="publish-info">
@@ -2265,7 +2251,7 @@ class Item extends \think\Validate{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2339,7 +2325,7 @@ class Item extends \think\Validate{
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

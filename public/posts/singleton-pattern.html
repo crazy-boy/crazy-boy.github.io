@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    617
+                    695
                 </div>
                 
 
@@ -1076,25 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。<br>单例模式适用于经常被访问的对象，或是创建和销毁需要调用大量资源和时间的对象，使用单例模式可以避免频繁创建和销毁对象。单例模式的常用实现方法有 4 种：饿汉模式、懒汉模式、静态内部类和枚举。从写法的简洁性、线程安全性和代码的易懂性等方面综合来看，博主比较推荐使用枚举或懒汉模式来实现单例模式。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下单例模式的代码实现</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class Singleton{
-    //持有私有静态实例，防止被引用，此处赋值为null，目的是实现延迟加载
-    private static ?Singleton $instance=null;
-
-    // 禁止被实例化
-    private function __construct(){}
-
-    // 禁止被克隆
-    private function __clone(){}
-
-    public static function getInstance(): Singleton{
-        //if (!self::$instance){    有线程安全问题
-        if (!self::$instance instanceof self){
-            self::$instance = new self();
-        }
-        return self::$instance;
-    }
-}
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span></span>{<br>    <span class="hljs-comment">//持有私有静态实例，防止被引用，此处赋值为null，目的是实现延迟加载</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> ?Singleton <span class="hljs-variable">$instance</span>=<span class="hljs-literal">null</span>;<br><br>    <span class="hljs-comment">// 禁止被实例化</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{}<br><br>    <span class="hljs-comment">// 禁止被克隆</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>{}<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInstance</span>(<span class="hljs-params"></span>): <span class="hljs-title">Singleton</span></span>{<br>        <span class="hljs-comment">//if (!self::$instance){    有线程安全问题</span><br>        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">self</span>::<span class="hljs-variable">$instance</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">self</span>){<br>            <span class="hljs-built_in">self</span>::<span class="hljs-variable">$instance</span> = <span class="hljs-keyword">new</span> <span class="hljs-built_in">self</span>();<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">self</span>::<span class="hljs-variable"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span></span>{<br>    <span class="hljs-comment">//持有私有静态实例，防止被引用，此处赋值为null，目的是实现延迟加载</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> ?Singleton <span class="hljs-variable">$instance</span>=<span class="hljs-literal">null</span>;<br><br>    <span class="hljs-comment">// 禁止被实例化</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{}<br><br>    <span class="hljs-comment">// 禁止被克隆</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>{}<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInstance</span>(<span class="hljs-params"></span>): <span class="hljs-title">Singleton</span></span>{<br>        <span class="hljs-comment">//if (!self::$instance){    有线程安全问题</span><br>        <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">self</span>::<span class="hljs-variable">$instance</span> <span class="hljs-keyword">instanceof</span> <span class="hljs-built_in">self</span>){<br>            <span class="hljs-built_in">self</span>::<span class="hljs-variable">$instance</span> = <span class="hljs-keyword">new</span> <span class="hljs-built_in">self</span>();<br>        }<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">self</span>::<span class="hljs-variable">$instance</span>;<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
 <p>如果使用<code>if (!self::$instance){ </code>会有线程安全问题</p>
 <ul>
 <li>a. A、B线程同时进入了getInstance </li>
@@ -1788,9 +1770,7 @@ h3:hover {
                         
                             说明  将一个对象作为原型，对其进行复制、克隆，产生一个和原对象类似的新对象。  
 示例下面看下原型模式的代码实现
-// 定义了一个原型
-abstract class Prototype{
-    public $v = 'clone'.P
+12345678910111213141516171819202122232425262728293031323334353
                         
                     </div>
                     <div class="publish-info">
@@ -2087,7 +2067,7 @@ abstract class Prototype{
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2161,7 +2141,7 @@ abstract class Prototype{
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

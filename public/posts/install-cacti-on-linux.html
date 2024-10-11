@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    687
+                    928
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -1079,85 +1079,45 @@ h3:hover {
 <li>(1)、安装net-snmp<br><code>yum install net-snmp net-snmp-libs net-snmp-utils</code></li>
 </ul>
 <p>可能报错：</p>
-<pre><code>...
-2:postfix-2.10.1-6.el7.x86_64 has missing requires of libmysqlclient.so.18()(64bit)
-2:postfix-2.10.1-6.el7.x86_64 has missing requires of libmysqlclient.so.18(libmysqlclient_18)(64bit)
-</code></pre><p>解决:缺少Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm这个包</p>
-<pre class=" language-lang-shell"><code class="language-lang-shell"># wget http://www.percona.com/redir/downloads/Percona-XtraDB-Cluster/5.5.37-25.10/RPM/rhel6/x86_64/Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm
-# rpm -ivh Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rp
-</code></pre>
+<figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs stylus">...<br><span class="hljs-number">2</span>:postfix-<span class="hljs-number">2.10</span>.<span class="hljs-number">1</span>-<span class="hljs-number">6</span><span class="hljs-selector-class">.el7</span><span class="hljs-selector-class">.x86_64</span> has missing requires of libmysqlclient<span class="hljs-selector-class">.so</span>.<span class="hljs-number">18</span>()(<span class="hljs-number">64</span>bit)<br><span class="hljs-number">2</span>:postfix-<span class="hljs-number">2.10</span>.<span class="hljs-number">1</span>-<span class="hljs-number">6</span><span class="hljs-selector-class">.el7</span><span class="hljs-selector-class">.x86_64</span> has missing requires of libmysqlclient<span class="hljs-selector-class">.so</span>.<span class="hljs-number">18</span>(libmysqlclient_18)(<span class="hljs-number"><code class="language-hljs stylus">...<br><span class="hljs-number">2</span>:postfix-<span class="hljs-number">2.10</span>.<span class="hljs-number">1</span>-<span class="hljs-number">6</span><span class="hljs-selector-class">.el7</span><span class="hljs-selector-class">.x86_64</span> has missing requires of libmysqlclient<span class="hljs-selector-class">.so</span>.<span class="hljs-number">18</span>()(<span class="hljs-number">64</span>bit)<br><span class="hljs-number">2</span>:postfix-<span class="hljs-number">2.10</span>.<span class="hljs-number">1</span>-<span class="hljs-number">6</span><span class="hljs-selector-class">.el7</span><span class="hljs-selector-class">.x86_64</span> has missing requires of libmysqlclient<span class="hljs-selector-class">.so</span>.<span class="hljs-number">18</span>(libmysqlclient_18)(<span class="hljs-number">64</span>bit)<br></code></pre></td></tr></tbody></table></figure>
+<p>解决:缺少Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm这个包</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">wget http://www.percona.com/redir/downloads/Percona-XtraDB-Cluster/5.5.37-25.10/RPM/rhel6/x86_64/Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">wget http://www.percona.com/redir/downloads/Percona-XtraDB-Cluster/5.5.37-25.10/RPM/rhel6/x86_64/Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rpm</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">rpm -ivh Percona-XtraDB-Cluster-shared-55-5.5.37-25.10.756.el6.x86_64.rp</span><br></code></pre></td></tr></tbody></table></figure>
 <ul>
 <li>(2)、配置net-snmp<br><code>vim /etc/snmp/snmpd.conf</code></li>
 </ul>
-<pre><code>41行 1将default 改为监控服务器ip;2 将public 改成复杂些的识别的字符串  
-com2sec notConfigUser  127.0.0.1      public  
-
-62行 1将systemview 改为all,供所有snmp 访问权限  
-access  notConfigGroup ""      any       noauth    exact  all none none  
-
-85行 将#注释符号去掉  
-view all    included  .1                               80
-</code></pre><ul>
+<figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql"><span class="hljs-number">41</span>行 <span class="hljs-number">1</span>将<span class="hljs-keyword">default</span> 改为监控服务器ip;<span class="hljs-number">2</span> 将<span class="hljs-built_in">public</span> 改成复杂些的识别的字符串  <br>com2sec notConfigUser  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>      <span class="hljs-built_in">public</span>  <br>  <br><span class="hljs-number">62</span>行 <span class="hljs-number">1</span>将systemview 改为<span class="hljs-keyword">all</span>,供所有snmp 访问权限  <br><span class="hljs-keyword">access</span>  notConfigGroup ""      <span class="hljs-keyword">any</span>       noauth    exact  <span class="hljs-keyword">all</span> <span class="hljs-keyword">none</span> <span class="hljs-keyword">none</span>  <br>  <br><span class="hljs-number">85</span>行 将#注释符号去掉  <br><span class="hljs-keyword">view</span> <span class="hljs-keyword">all</span>    included  <span class="hljs-number">.1</span>                               <span class="hljs-number"><code class="language-hljs pgsql"><span class="hljs-number">41</span>行 <span class="hljs-number">1</span>将<span class="hljs-keyword">default</span> 改为监控服务器ip;<span class="hljs-number">2</span> 将<span class="hljs-built_in">public</span> 改成复杂些的识别的字符串  <br>com2sec notConfigUser  <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>      <span class="hljs-built_in">public</span>  <br>  <br><span class="hljs-number">62</span>行 <span class="hljs-number">1</span>将systemview 改为<span class="hljs-keyword">all</span>,供所有snmp 访问权限  <br><span class="hljs-keyword">access</span>  notConfigGroup ""      <span class="hljs-keyword">any</span>       noauth    exact  <span class="hljs-keyword">all</span> <span class="hljs-keyword">none</span> <span class="hljs-keyword">none</span>  <br>  <br><span class="hljs-number">85</span>行 将#注释符号去掉  <br><span class="hljs-keyword">view</span> <span class="hljs-keyword">all</span>    included  <span class="hljs-number">.1</span>                               <span class="hljs-number">80</span>  <br></code></pre></td></tr></tbody></table></figure>
+<ul>
 <li><p>(3)、启动net-snmp<br><code>service snmpd start</code><br>可能提示：Redirecting to /bin/systemctl start snmpd.service<br>解决方法：<code>/bin/systemctl start snmpd</code></p>
 </li>
 <li><p>(4)、测试net-snmp<br>snmpd 使用 tcp/udp 161 端口,验证snmpd 服务<br><code>lsof -i :161</code><br><img src="/images/install_cacti_on_linux_1.png" alt=""><br>使用snmpwalk 命令验证</p>
-<pre><code>snmpwalk -v 2c -c public 127.0.0.1 
--v是指版本,-c 是指密钥，获取到系统信息则正常！
-如果cacti搭建好后很久还是没出图，用这个命令试试看能否获取到数据。
-正常情况下，执行完这个命令后会有很多数据出现！
-</code></pre></li>
+<figure class="highlight llvm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs llvm">snmpwalk -v <span class="hljs-number">2</span><span class="hljs-keyword">c</span> -<span class="hljs-keyword">c</span> public <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <br>-v是指版本<span class="hljs-punctuation">,</span>-<span class="hljs-keyword"><code class="language-hljs llvm">snmpwalk -v <span class="hljs-number">2</span><span class="hljs-keyword">c</span> -<span class="hljs-keyword">c</span> public <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> <br>-v是指版本<span class="hljs-punctuation">,</span>-<span class="hljs-keyword">c</span> 是指密钥，获取到系统信息则正常！<br>如果cacti搭建好后很久还是没出图，用这个命令试试看能否获取到数据。<br>正常情况下，执行完这个命令后会有很多数据出现！<br></code></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
 <h3 id="3、安装cacti"><a href="#3、安装cacti" class="headerlink" title="3、安装cacti"></a>3、安装cacti</h3><ul>
-<li>(1)、安装net-snmp<pre class=" language-lang-shell"><code class="language-lang-shell">cd /tmp 
-wget http://www.cacti.net/downloads/cacti-0.8.8a.tar.gz 
-tar xzf cacti-0.8.8a.tar.gz 
-mv cacti-0.8.8a /var/www/cacti 
-cd /var/www/cacti
-</code></pre>
-</li>
+<li>(1)、安装net-snmp<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">cd /tmp <br>wget http://www.cacti.net/downloads/cacti-0.8.8a.tar.gz <br>tar xzf cacti-0.8.8a.tar.gz <br>mv cacti-0.8.8a /var/www/cacti <br>cd /var/www/cacti<br></code></pre></td></tr></tbody></table></figure></li>
 <li><p>(2)、创建数据库<br><code>mysqladmin --user=root -p create cacti</code></p>
 </li>
 <li><p>(3)、导入数据库<br><code>mysql -uroot -p cacti &lt; cacti.sql</code><br>可能报错：ERROR 1067 (42000) at line 1847: Invalid default value for ‘status_fail_date’<br>原因：status_fail_date的datetime默认类型是不允许的<br>解决方法：</p>
-<pre><code>vim /etc/my.cnf
-添加如下内容：
-sql-mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
-重启mysql服务：systemctl restart mysqld
-</code></pre></li>
+<figure class="highlight vim"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs vim"><span class="hljs-keyword">vim</span> /etc/my.<span class="hljs-keyword">cnf</span><br>添加如下内容：<br>sql-<span class="hljs-keyword">mode</span>=<span class="hljs-string"><code class="language-hljs vim"><span class="hljs-keyword">vim</span> /etc/my.<span class="hljs-keyword">cnf</span><br>添加如下内容：<br>sql-<span class="hljs-keyword">mode</span>=<span class="hljs-string">"ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"</span><br>重启mysql服务：systemctl restart mysqld<br></code></pre></td></tr></tbody></table></figure>
+</li>
 <li><p>(4)、创建数据库用户</p>
-<pre><code>shell&gt; mysql -uroot -p mysql 
-mysql&gt; GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'Cacti@pwd001231'; 
-mysql&gt; flush privileges;
-</code></pre></li>
+<figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql">shell&gt; mysql -uroot -p mysql <br>mysql&gt; <span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">ON</span> cacti.* <span class="hljs-keyword">TO</span> cactiuser@localhost IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">'Cacti@pwd001231'</span>; <br>mysql&gt; flush <span class="hljs-keyword"><code class="language-hljs pgsql">shell&gt; mysql -uroot -p mysql <br>mysql&gt; <span class="hljs-keyword">GRANT</span> <span class="hljs-keyword">ALL</span> <span class="hljs-keyword">ON</span> cacti.* <span class="hljs-keyword">TO</span> cactiuser@localhost IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">'Cacti@pwd001231'</span>; <br>mysql&gt; flush <span class="hljs-keyword">privileges</span>; <br></code></pre></td></tr></tbody></table></figure>
+</li>
 <li><p>(5)、配置include/config.php</p>
-<pre><code>$database_type = "mysql"; 
-$database_default = "cacti"; 
-$database_hostname = "localhost"; 
-$database_username = "cactiuser"; 
-$database_password = "Cacti@pwd001231";
-</code></pre></li>
+<figure class="highlight perl"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs perl">$database_type = <span class="hljs-string">"mysql"</span>; <br>$database_default = <span class="hljs-string">"cacti"</span>; <br>$database_hostname = <span class="hljs-string">"localhost"</span>; <br>$database_username = <span class="hljs-string">"cactiuser"</span>; <br>$database_password = <span class="hljs-string"><code class="language-hljs perl">$database_type = <span class="hljs-string">"mysql"</span>; <br>$database_default = <span class="hljs-string">"cacti"</span>; <br>$database_hostname = <span class="hljs-string">"localhost"</span>; <br>$database_username = <span class="hljs-string">"cactiuser"</span>; <br>$database_password = <span class="hljs-string">"Cacti@pwd001231"</span>; <br></code></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
 <p>打开注释掉的：<code>$url_path = "/cacti/";</code></p>
 <ul>
 <li><p>(6)、配置include/global.php</p>
-<pre class=" language-lang-php"><code class="language-lang-php">/* Default database settings*/ 
-$database_type = "mysql"; 
-$database_default = "cacti"; 
-$database_hostname = "localhost"; 
-$database_username = "cactiuser"; 
-$database_password = "Cacti@pwd001231"; 
-$database_port = "3306"; 
-$database_ssl = false;
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-comment">/* Default database settings*/</span> <br><span class="hljs-variable">$database_type</span> = <span class="hljs-string">"mysql"</span>; <br><span class="hljs-variable">$database_default</span> = <span class="hljs-string">"cacti"</span>; <br><span class="hljs-variable">$database_hostname</span> = <span class="hljs-string">"localhost"</span>; <br><span class="hljs-variable">$database_username</span> = <span class="hljs-string">"cactiuser"</span>; <br><span class="hljs-variable">$database_password</span> = <span class="hljs-string">"Cacti@pwd001231"</span>; <br><span class="hljs-variable">$database_port</span> = <span class="hljs-string">"3306"</span>; <br><span class="hljs-variable">$database_ssl</span> = <span class="hljs-literal"><code class="language-hljs php"><span class="hljs-comment">/* Default database settings*/</span> <br><span class="hljs-variable">$database_type</span> = <span class="hljs-string">"mysql"</span>; <br><span class="hljs-variable">$database_default</span> = <span class="hljs-string">"cacti"</span>; <br><span class="hljs-variable">$database_hostname</span> = <span class="hljs-string">"localhost"</span>; <br><span class="hljs-variable">$database_username</span> = <span class="hljs-string">"cactiuser"</span>; <br><span class="hljs-variable">$database_password</span> = <span class="hljs-string">"Cacti@pwd001231"</span>; <br><span class="hljs-variable">$database_port</span> = <span class="hljs-string">"3306"</span>; <br><span class="hljs-variable">$database_ssl</span> = <span class="hljs-literal">false</span>; <br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>(7)、设置目录权限</p>
-<pre><code>useradd cactiuser 
-chown -R cactiuser rra/ log/
-</code></pre></li>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs bash">useradd cactiuser <br><span class="hljs-built_in">chown</span> -R cactiuser rra/ <span class="hljs-built_in"><code class="language-hljs bash">useradd cactiuser <br><span class="hljs-built_in">chown</span> -R cactiuser rra/ <span class="hljs-built_in">log</span>/ <br></code></pre></td></tr></tbody></table></figure>
+</li>
 <li><p>(8)、配置计划任务</p>
-<pre><code>#crontab -e 
-*/5 * * * * /usr/bin/php /var/www/html/cacti/poller.php &gt; /dev/null 2&gt;&amp;1 //让系统每5分钟收集
-service crond restart
-</code></pre></li>
+<figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs awk"><span class="hljs-comment">#crontab -e </span><br>*<span class="hljs-regexp">/5 * * * * /u</span>sr<span class="hljs-regexp">/bin/</span>php <span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/html/</span>cacti<span class="hljs-regexp">/poller.php &gt; /</span>dev<span class="hljs-regexp">/null 2&gt;&amp;1 /</span>/让系统每<span class="hljs-number"><code class="language-hljs awk"><span class="hljs-comment">#crontab -e </span><br>*<span class="hljs-regexp">/5 * * * * /u</span>sr<span class="hljs-regexp">/bin/</span>php <span class="hljs-regexp">/var/</span>www<span class="hljs-regexp">/html/</span>cacti<span class="hljs-regexp">/poller.php &gt; /</span>dev<span class="hljs-regexp">/null 2&gt;&amp;1 /</span>/让系统每<span class="hljs-number">5</span>分钟收集<br>service crond restart <br></code></pre></td></tr></tbody></table></figure>
+</li>
 <li><p>(9)、完成cacti的安装<br>注意关闭防火墙或者允许80端口，关闭selinux<br>1) 在浏览器中输入：<a target="_blank" rel="noopener" href="http://监控服务器IP/cacti/">http://监控服务器IP/cacti/</a><br>默认用户名：admin 密码：admin<br>2）设置cacti用到的命令路径<br>3) 更改密码<br>登陆成功户 next&gt;&gt;   next&gt;&gt;<br><img src="/images/install_cacti_on_linux_2.png" alt=""><br><img src="/images/install_cacti_on_linux_3.png" alt=""></p>
 </li>
 </ul>
@@ -1785,8 +1745,7 @@ service crond restart
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 下载nodejswget https://nodejs.org/dist/v8.11.4/node-v8.11.4-linux-x64.tar.xz
-2. 解压nodejstar xvf node-v8.11.4-linux-x64.
+                            1. 下载nodejs1wget&nbsp;https://nodejs.org/dist/v8.11.4/node-v8.11.wget&nbsp;https://nodejs.org/dist/v8.11.4/node-v8.11.4-
                         
                     </div>
                     <div class="publish-info">
@@ -2147,7 +2106,7 @@ service crond restart
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2221,7 +2180,7 @@ service crond restart
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

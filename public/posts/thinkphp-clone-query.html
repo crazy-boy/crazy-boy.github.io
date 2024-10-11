@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    477
+                    669
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -1075,46 +1075,13 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>当我们在给前端提供列表接口的时候，经常需要根据条件返回总条数和当页列表数据；这时，我们就需要复用共同的查询条件对数据库执行多次查询操作。</p>
-<p>在Yii2里，可以通过clone处理：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">$query = Post::find()->where(['status'=>1]);
-$query->andFilterWhere(['name'=>$kw]);
-$count = (clone $query)->count();
-$list = $query->limit(20)->offset(0)->orderBy(['id'=>SORT_DESC])->all()->asArray();
-</code></pre>
-<p>在thinkphp5中，使用如下代码进行clone，会存在问题，提示：<code>SQLSTATE[HY000]: General error: 2031</code></p>
-<pre class=" language-lang-php"><code class="language-lang-php">$offset = ($page - 1) * $pageSize;
-$query = Db::name('artist_bill')->where(['month' => $month]);
-$count = (clone $query)->count();
-$list = $query->field('id,title,month')
-    ->limit($offset, $pageSize)
-    ->order(['id' => SORT_DESC])
-    ->select();
-</code></pre>
+<p>在Yii2里，可以通过clone处理：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$query</span> = <span class="hljs-title class_">Post</span>::<span class="hljs-title function_ invoke__">find</span>()-&gt;<span class="hljs-title function_ invoke__">where</span>([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>]);<br><span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">andFilterWhere</span>([<span class="hljs-string">'name'</span>=&gt;<span class="hljs-variable">$kw</span>]);<br><span class="hljs-variable">$count</span> = (<span class="hljs-keyword">clone</span> <span class="hljs-variable">$query</span>)-&gt;<span class="hljs-title function_ invoke__">count</span>();<br><span class="hljs-variable">$list</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">limit</span>(<span class="hljs-number">20</span>)-&gt;<span class="hljs-title function_ invoke__">offset</span>(<span class="hljs-number">0</span>)-&gt;<span class="hljs-title function_ invoke__">orderBy</span>([<span class="hljs-string">'id'</span>=&gt;SORT_DESC])-&gt;<span class="hljs-title function_ invoke__">all</span>()-&gt;<span class="hljs-title function_ invoke__">asArray</span>();<br></code></pre></td></tr></tbody></table></figure><br>在thinkphp5中，使用如下代码进行clone，会存在问题，提示：<code>SQLSTATE[HY000]: General error: 2031</code><br><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$offset</span> = (<span class="hljs-variable">$page</span> - <span class="hljs-number">1</span>) * <span class="hljs-variable">$pageSize</span>;<br><span class="hljs-variable">$query</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'artist_bill'</span>)-&gt;<span class="hljs-title function_ invoke__">where</span>([<span class="hljs-string">'month'</span> =&gt; <span class="hljs-variable">$month</span>]);<br><span class="hljs-variable">$count</span> = (<span class="hljs-keyword">clone</span> <span class="hljs-variable">$query</span>)-&gt;<span class="hljs-title function_ invoke__">count</span>();<br><span class="hljs-variable">$list</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">field</span>(<span class="hljs-string">'id,title,month'</span>)<br>    -&gt;<span class="hljs-title function_ invoke__">limit</span>(<span class="hljs-variable">$offset</span>, <span class="hljs-variable">$pageSize</span>)<br>    -&gt;<span class="hljs-title function_ invoke__">order</span>([<span class="hljs-string">'id'</span> =&gt; SORT_DESC])<br>    -&gt;<span class="hljs-title function_ invoke__"><code class="language-hljs php"><span class="hljs-variable">$query</span> = <span class="hljs-title class_">Post</span>::<span class="hljs-title function_ invoke__">find</span>()-&gt;<span class="hljs-title function_ invoke__">where</span>([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>]);<br><span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">andFilterWhere</span>([<span class="hljs-string">'name'</span>=&gt;<span class="hljs-variable">$kw</span>]);<br><span class="hljs-variable">$count</span> = (<span class="hljs-keyword">clone</span> <span class="hljs-variable">$query</span>)-&gt;<span class="hljs-title function_ invoke__">count</span>();<br><span class="hljs-variable">$list</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">limit</span>(<span class="hljs-number">20</span>)-&gt;<span class="hljs-title function_ invoke__">offset</span>(<span class="hljs-number">0</span>)-&gt;<span class="hljs-title function_ invoke__">orderBy</span>([<span class="hljs-string">'id'</span>=&gt;SORT_DESC])-&gt;<span class="hljs-title function_ invoke__">all</span>()-&gt;<span class="hljs-title function_ invoke__">asArray</span>();<br></code></pre></td></tr></tbody></table></figure><br>在thinkphp5中，使用如下代码进行clone，会存在问题，提示：<code>SQLSTATE[HY000]: General error: 2031</code><br><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$offset</span> = (<span class="hljs-variable">$page</span> - <span class="hljs-number">1</span>) * <span class="hljs-variable">$pageSize</span>;<br><span class="hljs-variable">$query</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'artist_bill'</span>)-&gt;<span class="hljs-title function_ invoke__">where</span>([<span class="hljs-string">'month'</span> =&gt; <span class="hljs-variable">$month</span>]);<br><span class="hljs-variable">$count</span> = (<span class="hljs-keyword">clone</span> <span class="hljs-variable">$query</span>)-&gt;<span class="hljs-title function_ invoke__">count</span>();<br><span class="hljs-variable">$list</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">field</span>(<span class="hljs-string">'id,title,month'</span>)<br>    -&gt;<span class="hljs-title function_ invoke__">limit</span>(<span class="hljs-variable">$offset</span>, <span class="hljs-variable">$pageSize</span>)<br>    -&gt;<span class="hljs-title function_ invoke__">order</span>([<span class="hljs-string">'id'</span> =&gt; SORT_DESC])<br>    -&gt;<span class="hljs-title function_ invoke__">select</span>();<br></code></pre></td></tr></tbody></table></figure><p></p>
 <ul>
 <li>如果把第3行改为：$count = $query-&gt;count();  第一个查询正常，之后的查询没有任何where条件；这是因为query执行完成后会把查询条件清空。</li>
-<li>如果使用clone，打印处理的sql如下：<pre class=" language-lang-sql"><code class="language-lang-sql">select count(*) from t_artist_bill where `month` = :where_AND_month;
-</code></pre>
+<li>如果使用clone，打印处理的sql如下：<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">from</span> t_artist_bill <span class="hljs-keyword">where</span> `<span class="hljs-keyword">month</span>` <span class="hljs-operator"><code class="language-hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">from</span> t_artist_bill <span class="hljs-keyword">where</span> `<span class="hljs-keyword">month</span>` <span class="hljs-operator">=</span> :where_AND_month;<br></code></pre></td></tr></tbody></table></figure>
 初步认为是参数没有绑定上去。应该也是query内部引用了一个对象，对象在clone之后与原有对象是一个地址引用。通过一步一步断点输出，确认在$this-&gt;builder-&gt;select($options);之后获得了bind数据。因此只需要解绑clone前后对象的builder属性即可完成query对象的复制。查看query对象的属性，只有builder,connection是对象，但是connection我们希望在整个请求中是一个单实例，所以没必要区分。<br>最终修改,新建query子类，添加__clone方法,指定clone后对新对象执行php $this-&gt;setBuilder();保证 clone之后的builder是一个新实例。<br>这样就可以正常使用clone了。</li>
 </ul>
-<p>另一种处理方式是把where条件提取出来共用：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">public static function getList(?string $month, int $page, int $pageSize): array{
-    $offset = ($page - 1) * $pageSize;
-
-    $where = [];
-    if (!empty($month)) {
-        $where['month'] = $month;
-    }
-    $query = Db::name('artist_bill');
-    $count = $query->where($where)->count('id');
-
-    $list = $query->where($where)->field('id,title,month')
-        ->limit($offset, $pageSize)
-        ->order(['id' => SORT_DESC])
-        ->select();
-
-    return ['count' => $count, 'list' => $list];
-}
-</code></pre>
+<p>另一种处理方式是把where条件提取出来共用：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getList</span>(<span class="hljs-params">?<span class="hljs-keyword">string</span> <span class="hljs-variable">$month</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$page</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$pageSize</span></span>): <span class="hljs-title">array</span></span>{<br>    <span class="hljs-variable">$offset</span> = (<span class="hljs-variable">$page</span> - <span class="hljs-number">1</span>) * <span class="hljs-variable">$pageSize</span>;<br><br>    <span class="hljs-variable">$where</span> = [];<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$month</span>)) {<br>        <span class="hljs-variable">$where</span>[<span class="hljs-string">'month'</span>] = <span class="hljs-variable">$month</span>;<br>    }<br>    <span class="hljs-variable">$query</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'artist_bill'</span>);<br>    <span class="hljs-variable">$count</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">where</span>(<span class="hljs-variable">$where</span>)-&gt;<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-string">'id'</span>);<br><br>    <span class="hljs-variable">$list</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">where</span>(<span class="hljs-variable">$where</span>)-&gt;<span class="hljs-title function_ invoke__">field</span>(<span class="hljs-string">'id,title,month'</span>)<br>        -&gt;<span class="hljs-title function_ invoke__">limit</span>(<span class="hljs-variable">$offset</span>, <span class="hljs-variable">$pageSize</span>)<br>        -&gt;<span class="hljs-title function_ invoke__">order</span>([<span class="hljs-string">'id'</span> =&gt; SORT_DESC])<br>        -&gt;<span class="hljs-title function_ invoke__">select</span>();<br><br>    <span class="hljs-keyword">return</span> [<span class="hljs-string">'count'</span> =&gt; <span class="hljs-variable">$count</span>, <span class="hljs-string">'list'</span> =&gt; <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getList</span>(<span class="hljs-params">?<span class="hljs-keyword">string</span> <span class="hljs-variable">$month</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$page</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$pageSize</span></span>): <span class="hljs-title">array</span></span>{<br>    <span class="hljs-variable">$offset</span> = (<span class="hljs-variable">$page</span> - <span class="hljs-number">1</span>) * <span class="hljs-variable">$pageSize</span>;<br><br>    <span class="hljs-variable">$where</span> = [];<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$month</span>)) {<br>        <span class="hljs-variable">$where</span>[<span class="hljs-string">'month'</span>] = <span class="hljs-variable">$month</span>;<br>    }<br>    <span class="hljs-variable">$query</span> = <span class="hljs-title class_">Db</span>::<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">'artist_bill'</span>);<br>    <span class="hljs-variable">$count</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">where</span>(<span class="hljs-variable">$where</span>)-&gt;<span class="hljs-title function_ invoke__">count</span>(<span class="hljs-string">'id'</span>);<br><br>    <span class="hljs-variable">$list</span> = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">where</span>(<span class="hljs-variable">$where</span>)-&gt;<span class="hljs-title function_ invoke__">field</span>(<span class="hljs-string">'id,title,month'</span>)<br>        -&gt;<span class="hljs-title function_ invoke__">limit</span>(<span class="hljs-variable">$offset</span>, <span class="hljs-variable">$pageSize</span>)<br>        -&gt;<span class="hljs-title function_ invoke__">order</span>([<span class="hljs-string">'id'</span> =&gt; SORT_DESC])<br>        -&gt;<span class="hljs-title function_ invoke__">select</span>();<br><br>    <span class="hljs-keyword">return</span> [<span class="hljs-string">'count'</span> =&gt; <span class="hljs-variable">$count</span>, <span class="hljs-string">'list'</span> =&gt; <span class="hljs-variable">$list</span>];<br>}<br></code></pre></td></tr></tbody></table></figure><p></p>
 
             </div>
             <hr/>
@@ -2097,7 +2064,7 @@ $list = $query->field('id,title,month')
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2171,7 +2138,7 @@ $list = $query->field('id,title,month')
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

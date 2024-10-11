@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    173
+                    198
                 </div>
                 
 
@@ -1074,11 +1074,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>因工作需要，需要按条件删除指定表中大批量数据，故用php做了个站点页面处理程序，每页处理500条数据，处理后sleep(5)，跳转下一页；但程序运行中可能出现超时页面挂掉的情况，为了减少个人的工作量，就借助windows的任务计划程序，设置每两个小时，关闭浏览器，休眠几秒，再次在浏览器中访问处理程序地址。没想到效果还不错。下面是计划任务的bat程序。</p>
-<pre><code>TASKKILL /F /IM chrome.exe
-ping -n 10 127.0.0.1 &gt; nul
-cmd /c start https://manage.lepayedu.com/index.php/my-test/deal-school-entry?page=100
-</code></pre><p><img src="/images/php_bat_1.png" alt=""></p>
+                <p>因工作需要，需要按条件删除指定表中大批量数据，故用php做了个站点页面处理程序，每页处理500条数据，处理后sleep(5)，跳转下一页；但程序运行中可能出现超时页面挂掉的情况，为了减少个人的工作量，就借助windows的任务计划程序，设置每两个小时，关闭浏览器，休眠几秒，再次在浏览器中访问处理程序地址。没想到效果还不错。下面是计划任务的bat程序。<br></p><figure class="highlight dos"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs dos"><span class="hljs-built_in">TASKKILL</span> /F /IM chrome.exe<br><span class="hljs-built_in">ping</span> -n <span class="hljs-number">10</span> <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> &gt; <span class="hljs-built_in">nul</span><br><span class="hljs-built_in">cmd</span> /c <span class="hljs-built_in">start</span> https://manage.lepayedu.com/index.php/my-test/deal-school-entry?page=<span class="hljs-number"><code class="language-hljs dos"><span class="hljs-built_in">TASKKILL</span> /F /IM chrome.exe<br><span class="hljs-built_in">ping</span> -n <span class="hljs-number">10</span> <span class="hljs-number">127</span>.<span class="hljs-number">0</span>.<span class="hljs-number">0</span>.<span class="hljs-number">1</span> &gt; <span class="hljs-built_in">nul</span><br><span class="hljs-built_in">cmd</span> /c <span class="hljs-built_in">start</span> https://manage.lepayedu.com/index.php/my-test/deal-school-entry?page=<span class="hljs-number">100</span><br></code></pre></td></tr></tbody></table></figure><br><img src="/images/php_bat_1.png" alt=""><p></p>
 
             </div>
             <hr/>
@@ -1762,11 +1758,7 @@ cmd /c start https://manage.lepayedu.com/index.php/my-test/deal-school-entry?pag
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 将字符串每隔n位显示一个指定字符    /**
-     * 将字符串每隔n位显示一个指定字符
-     * @param string $str   原始字符串
-     * @param int $n        间隔位数
-  
+                            1. 将字符串每隔n位显示一个指定字符1234567891011/** * 将字符串每隔n位显示一个指定字符 * @param string $str   原始字符串 * @param int $n        间隔位数 * @param
                         
                     </div>
                     <div class="publish-info">
@@ -2063,7 +2055,7 @@ cmd /c start https://manage.lepayedu.com/index.php/my-test/deal-school-entry?pag
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2137,7 +2129,7 @@ cmd /c start https://manage.lepayedu.com/index.php/my-test/deal-school-entry?pag
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

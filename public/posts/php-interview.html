@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1099,10 +1099,8 @@ h3:hover {
 <h4 id="10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？"><a href="#10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？" class="headerlink" title="10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？"></a>10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？</h4><p>MVC三层分别指：业务模型、视图、控制器，由控制器层调用模型处理数据，然后将数据映射到视图层进行显示，优点是：①可以实现代码的重用性，避免产生代码冗余；②M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式</p>
 <h4 id="11、AJAX的优势是什么？"><a href="#11、AJAX的优势是什么？" class="headerlink" title="11、AJAX的优势是什么？"></a>11、AJAX的优势是什么？</h4><p>ajax是异步传输技术，可以通过javascript实现，也可以通过JQuery框架实现，实现局部刷新，减轻了服务器的压力，也提高了用户体验。</p>
 <h4 id="12、在程序的开发中，如何提高程序的运行效率？"><a href="#12、在程序的开发中，如何提高程序的运行效率？" class="headerlink" title="12、在程序的开发中，如何提高程序的运行效率？"></a>12、在程序的开发中，如何提高程序的运行效率？</h4><p>A、优化SQL语句，查询语句中尽量不使用select *，用哪个字段查哪个字段；少用子查询可用表连接代替；少用模糊查询；<br>B、数据表中创建索引；<br>C、对程序中经常用到的数据生成缓存。</p>
-<h4 id="13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。"><a href="#13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。" class="headerlink" title="13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。"></a>13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。</h4><pre><code>function checkemail($email){
-    echo preg_match(‘/^[0-9a-zA-Z-]+@[0-9a-zA-Z-]+\.[0-9a-zA-Z]+$/’,$email)?’email格式正确‘:’email格式不正确‘;
-}
-</code></pre><h4 id="14、接口和抽象类的区别"><a href="#14、接口和抽象类的区别" class="headerlink" title="14、接口和抽象类的区别"></a>14、接口和抽象类的区别</h4><p>当多个同类的类要设计一个上层，通常设计为抽象类，当多个异构的类要设计一个上层，通常设计为接口。</p>
+<h4 id="13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。"><a href="#13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。" class="headerlink" title="13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。"></a>13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。</h4><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkemail</span>(<span class="hljs-params"><span class="hljs-variable">$email</span></span>)</span>{<br>    <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">preg_match</span>(‘/^[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+@[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z]+$/’,<span class="hljs-variable"><code class="language-hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkemail</span>(<span class="hljs-params"><span class="hljs-variable">$email</span></span>)</span>{<br>    <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">preg_match</span>(‘/^[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+@[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z]+$/’,<span class="hljs-variable">$email</span>)?’email格式正确‘:’email格式不正确‘;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h4 id="14、接口和抽象类的区别"><a href="#14、接口和抽象类的区别" class="headerlink" title="14、接口和抽象类的区别"></a>14、接口和抽象类的区别</h4><p>当多个同类的类要设计一个上层，通常设计为抽象类，当多个异构的类要设计一个上层，通常设计为接口。</p>
 <h4 id="15、说说数据库的索引"><a href="#15、说说数据库的索引" class="headerlink" title="15、说说数据库的索引"></a>15、说说数据库的索引</h4><p>唯一索引、主键索引、联合索引</p>
 <h4 id="16、说说redis常用的数据结构"><a href="#16、说说redis常用的数据结构" class="headerlink" title="16、说说redis常用的数据结构"></a>16、说说redis常用的数据结构</h4><p>string、list、hash、set、zset等</p>
 <h4 id="17、Redis的内存淘汰策略有哪些"><a href="#17、Redis的内存淘汰策略有哪些" class="headerlink" title="17、Redis的内存淘汰策略有哪些"></a>17、Redis的内存淘汰策略有哪些</h4><p>Redis的内存淘汰策略是指在Redis的用于缓存的内存不足时，怎么处理需要新写入且需要申请额外空间的数据。</p>
@@ -2101,7 +2099,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2175,7 +2173,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    798
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -1076,110 +1076,11 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  适配器模式将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。</p>
 <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="类的适配器模式"><a href="#类的适配器模式" class="headerlink" title="类的适配器模式"></a>类的适配器模式</h4><p>  核心思想就是：有一个Source类，拥有一个方法，待适配，目标接口是Targetable，通过Adapter类，将Source的功能扩展到Targetable里</p>
-<p>示例</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class Source{
-    public function method1(){
-        echo 'this is original method!' . PHP_EOL;
-    }
-}
-
-interface Targetable{
-    public function method1();
-    public function method2();
-}
-
-//Adapter类继承Source类，实现Targetable接口，这样Targetable接口的实现类就具有了Source类的功能。
-class Adapter extends Source implements Targetable {
-    public function method2(){
-        echo 'this is the targetable method!' . PHP_EOL;
-    }
-}
-
-// 调用
-$target = new Adapter();
-$target->method1();
-$target->method2();
-/**
- * output:
- * this is original method!
- * this is the targetable method!
- */
-</code></pre>
+<p>示例<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is original method!'</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Targetable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-comment">//Adapter类继承Source类，实现Targetable接口，这样Targetable接口的实现类就具有了Source类的功能。</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Source</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Targetable</span> </span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is the targetable method!'</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$target</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Adapter</span>();<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * this is original method!</span><br><span class="hljs-comment"> * this is the targetable method!</span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is original method!'</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Targetable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-comment">//Adapter类继承Source类，实现Targetable接口，这样Targetable接口的实现类就具有了Source类的功能。</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Source</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Targetable</span> </span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is the targetable method!'</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$target</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Adapter</span>();<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * this is original method!</span><br><span class="hljs-comment"> * this is the targetable method!</span><br><span class="hljs-comment"> */</span><br><br></code></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="对象的适配器模式"><a href="#对象的适配器模式" class="headerlink" title="对象的适配器模式"></a>对象的适配器模式</h4><p>  与类的适配器模式大体相同，只是适配的方法不同。</p>
-<p>示例</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class Source{
-    public function method1(){
-        echo 'this is original method!' . PHP_EOL;
-    }
-}
-
-interface Targetable{
-    public function method1();
-    public function method2();
-}
-
-//Adapter类不继承Source类，而是持有Source类的实例，以达到解决兼容性的问题。
-class Wrapper implements Targetable {
-    private Source $source;
-    public function __construct(Source $source){
-        $this->source = $source;
-    }
-    public function method2(){
-        echo 'this is the targetable method!' . PHP_EOL;
-    }
-    public function method1(){
-        $this->source->method1();
-    }
-}
-
-// 调用
-$source = new Source();
-$target = new Wrapper($source);
-$target->method1();
-$target->method2();
-/**
- * output:
- * this is original method!
- * this is the targetable method!
- */
-</code></pre>
+<p>示例<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is original method!'</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Targetable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-comment">//Adapter类不继承Source类，而是持有Source类的实例，以达到解决兼容性的问题。</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Wrapper</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Targetable</span> </span>{<br>    <span class="hljs-keyword">private</span> Source <span class="hljs-variable">$source</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params">Source <span class="hljs-variable">$source</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;source = <span class="hljs-variable">$source</span>;<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is the targetable method!'</span> . PHP_EOL;<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;source-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br>    }<br>}<br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$source</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Source</span>();<br><span class="hljs-variable">$target</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Wrapper</span>(<span class="hljs-variable">$source</span>);<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * this is original method!</span><br><span class="hljs-comment"> * this is the targetable method!</span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Source</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is original method!'</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Targetable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-comment">//Adapter类不继承Source类，而是持有Source类的实例，以达到解决兼容性的问题。</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Wrapper</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Targetable</span> </span>{<br>    <span class="hljs-keyword">private</span> Source <span class="hljs-variable">$source</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params">Source <span class="hljs-variable">$source</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;source = <span class="hljs-variable">$source</span>;<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'this is the targetable method!'</span> . PHP_EOL;<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;source-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br>    }<br>}<br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$source</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Source</span>();<br><span class="hljs-variable">$target</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Wrapper</span>(<span class="hljs-variable">$source</span>);<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$target</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * this is original method!</span><br><span class="hljs-comment"> * this is the targetable method!</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="接口的适配器模式"><a href="#接口的适配器模式" class="headerlink" title="接口的适配器模式"></a>接口的适配器模式</h4><p>  接口的适配器是这样的：有时我们写的一个接口中有多个抽象方法，当我们写该接口的实现类时，必须实现该接口的所有方法，这明显有时比较浪费，因为并不是所有的方法都是我们需要的，有时只需要某一些，此处为了解决这个问题，我们引入了接口的适配器模式，借助于一个抽象类，该抽象类实现了该接口，实现了所有的方法，而我们不和原始的接口打交道，只和该抽象类取得联系，所以我们写一个类，继承该抽象类，重写我们需要的方法就行。</p>
-<p>示例</p>
-<pre class=" language-lang-php"><code class="language-lang-php">interface Sourceable{
-    public function method1();
-    public function method2();
-}
-
-abstract class Wrapper implements Sourceable{
-    public function method1(){}
-    public function method2(){}
-}
-
-class SourceSub1 extends Wrapper{
-    public function method1(){
-        echo "the sourceable interface's first Sub1!" . PHP_EOL;
-    }
-}
-
-class SourceSub2 extends Wrapper{
-    public function method2(){
-        echo "ths sourceable interface's second Sub2!" . PHP_EOL;
-    }
-}
-
-//调用
-$source1 = new SourceSub1();
-$source2 = new SourceSub2();
-$source1->method1();
-$source1->method2();
-$source2->method1();
-$source2->method2();
-/**
- * output:
- * the sourceable interface's first Sub1!
- * ths sourceable interface's second Sub2!
- */
-</code></pre>
+<p>示例<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Wrapper</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{}<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{}<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SourceSub1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Wrapper</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"the sourceable interface's first Sub1!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SourceSub2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Wrapper</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"ths sourceable interface's second Sub2!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-comment">//调用</span><br><span class="hljs-variable">$source1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SourceSub1</span>();<br><span class="hljs-variable">$source2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SourceSub2</span>();<br><span class="hljs-variable">$source1</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$source1</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-variable">$source2</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$source2</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * the sourceable interface's first Sub1!</span><br><span class="hljs-comment"> * ths sourceable interface's second Sub2!</span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Wrapper</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Sourceable</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{}<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{}<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SourceSub1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Wrapper</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method1</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"the sourceable interface's first Sub1!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SourceSub2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Wrapper</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">method2</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"ths sourceable interface's second Sub2!"</span> . PHP_EOL;<br>    }<br>}<br><br><span class="hljs-comment">//调用</span><br><span class="hljs-variable">$source1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SourceSub1</span>();<br><span class="hljs-variable">$source2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SourceSub2</span>();<br><span class="hljs-variable">$source1</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$source1</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-variable">$source2</span>-&gt;<span class="hljs-title function_ invoke__">method1</span>();<br><span class="hljs-variable">$source2</span>-&gt;<span class="hljs-title function_ invoke__">method2</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * the sourceable interface's first Sub1!</span><br><span class="hljs-comment"> * ths sourceable interface's second Sub2!</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>  类的适配器模式：当希望将一个类转换成满足另一个新接口的类时，可以使用类的适配器模式，创建一个新类，继承原有的类，实现新的接口即可。<br>  对象的适配器模式：当希望将一个对象转换成满足另一个新接口的对象时，可以创建一个Wrapper类，持有原类的一个实例，在Wrapper类的方法中，调用实例的方法就行。<br>  接口的适配器模式：当不希望实现一个接口中所有的方法时，可以创建一个抽象类Wrapper，实现所有方法，我们写别的类的时候，继承抽象类即可。</p>
 
             </div>
@@ -1782,11 +1683,11 @@ $source2->method2();
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/design-patterns.html">
+                <a href="/posts/iterator-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="软件的设计模式">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——迭代器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1797,15 +1698,15 @@ $source2->method2();
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          软件的设计模式
+                          设计模式——迭代器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            设计模式的六大原则
-总原则：开闭原则（Open Close Principle）开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的
+                            说明示例下面看下代码实现
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758
                         
                     </div>
                     <div class="publish-info">
@@ -2163,7 +2064,7 @@ $source2->method2();
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2237,7 +2138,7 @@ $source2->method2();
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    171
+                    234
                 </div>
                 
 
@@ -1080,32 +1080,7 @@ h3:hover {
 <li>static和self很接近，唯一区别在于：self调用的是本身代码片段的这个类；而static调用的是从堆内存中提取出来的，即访问的是当前实例化的那个类。</li>
 </ul>
 <p>下面看下测试代码：</p>
-<pre class=" language-lang-php"><code class="language-lang-php">class A{
-    public $name = 'Jams';
-    protected static $age = 26;
-
-    public function start(){
-        echo get_called_class() . '==>' . $this->name . '==>' . $this::$age;
-    }
-
-    public static function getAge(){
-        echo get_called_class() . '==>' . self::$age;
-    }
-
-    public static function getInfo(){
-        echo get_called_class() . '==>' . static::$age;
-    }
-}
-
-class B extends A{
-    public $name = 'Kiv';
-    protected static $age = 20;
-}
-
-(new B())->start();
-B::getAge();
-B::getInfo();
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Jams'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">26</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>-&gt;name . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">self</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInfo</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">static</span>::<span class="hljs-variable">$age</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Kiv'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">20</span>;<br>}<br><br>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>())-&gt;<span class="hljs-title function_ invoke__">start</span>();<br>B::<span class="hljs-title function_ invoke__">getAge</span>();<br>B::<span class="hljs-title function_ invoke__"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Jams'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">26</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>-&gt;name . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">self</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInfo</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">static</span>::<span class="hljs-variable">$age</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Kiv'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">20</span>;<br>}<br><br>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>())-&gt;<span class="hljs-title function_ invoke__">start</span>();<br>B::<span class="hljs-title function_ invoke__">getAge</span>();<br>B::<span class="hljs-title function_ invoke__">getInfo</span>();<br></code></pre></td></tr></tbody></table></figure>
 <p>输出结果为：<code><br>B==&gt;Kiv==&gt;20<br>B==&gt;26<br>B==&gt;20
 </code></p>
 
@@ -1732,10 +1707,7 @@ B::getInfo();
                     <div class="summary block-with-text">
                         
                             在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。
-$arr = ['id' => null, 'name' => 'test', 'age' => null];
-
-$time1 = microtime(true);
-$t
+12345678910111213141516171819202122$arr = ['id' =&gt; null, 'name' =&gt; 'test', 'age
                         
                     </div>
                     <div class="publish-info">
@@ -1796,7 +1768,7 @@ $t
                         
                             前言：在开发中，之前判断数组中的键是否存在，我一直使用isset；今天看到有同事大量使用array_key_exists，闲来没事就测试了一下它们的性能。
 
-    $arr = ['id' => 3242, 'name' => 'test
+12345678910111213141516$arr = ['id' =&gt;
                         
                     </div>
                     <div class="publish-info">
@@ -2093,7 +2065,7 @@ $t
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2167,7 +2139,7 @@ $t
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

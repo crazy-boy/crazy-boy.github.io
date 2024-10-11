@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    501
+                    786
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    4 分
                 </div>
                 
 
@@ -1078,172 +1078,36 @@ h3:hover {
 
 <h3 id="提前return"><a href="#提前return" class="headerlink" title="提前return"></a>提前return</h3><p> 让正常流程走主干，非正常流程提前return，去除不必要的else，适用于函数参数校验。</p>
 <ul>
-<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition){
-      doSomething
-  }else{
-      return ;
-  }
-</code></pre>
-</li>
-<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (!condition){
-      return ;
-  }
-  doSomething
-</code></pre>
+<li>优化前<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">if</span> (condition){<br>    doSomething<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword"><code class="language-hljs php"><span class="hljs-keyword">if</span> (condition){<br>    doSomething<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> ;<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>优化后<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">if</span> (!condition){<br>    <span class="hljs-keyword"><code class="language-hljs php"><span class="hljs-keyword">if</span> (!condition){<br>    <span class="hljs-keyword">return</span> ;<br>}<br>doSomething<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <h3 id="使用三目运算符"><a href="#使用三目运算符" class="headerlink" title="使用三目运算符"></a>使用三目运算符</h3><p> 适用于根据条件给变量赋值。</p>
 <ul>
-<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if (condition){
-      $status = 1;
-  }else{
-      $status = 0;
-  }
-</code></pre>
-</li>
-<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  $status = condition ? 1 : 0;
-</code></pre>
+<li>优化前<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">if</span> (condition){<br>    <span class="hljs-variable">$status</span> = <span class="hljs-number">1</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-variable">$status</span> = <span class="hljs-number"><code class="language-hljs php"><span class="hljs-keyword">if</span> (condition){<br>    <span class="hljs-variable">$status</span> = <span class="hljs-number">1</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-variable">$status</span> = <span class="hljs-number">0</span>;<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>优化后<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$status</span> = condition ? <span class="hljs-number">1</span> : <span class="hljs-number"><code class="language-hljs php"><span class="hljs-variable">$status</span> = condition ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <h3 id="合并条件表达式"><a href="#合并条件表达式" class="headerlink" title="合并条件表达式"></a>合并条件表达式</h3><ul>
-<li><p>优化前</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1){
-      return true;
-  }
-
-  if (condition2){
-      return true;
-  }else{
-      return false;
-  }
-</code></pre>
-</li>
-<li>优化后<pre class=" language-lang-php"><code class="language-lang-php">  if (condition1 || condition2){
-      return true;
-  }else{
-      return false;
-  }
-</code></pre>
+<li>优化前<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">if</span> (condition1){<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<br><br><span class="hljs-keyword">if</span> (condition2){<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal"><code class="language-hljs php"><span class="hljs-keyword">if</span> (condition1){<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<br><br><span class="hljs-keyword">if</span> (condition2){<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>优化后<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">if</span> (condition1 || condition2){<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal"><code class="language-hljs php"><span class="hljs-keyword">if</span> (condition1 || condition2){<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>}<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <h3 id="使用switch-case优化"><a href="#使用switch-case优化" class="headerlink" title="使用switch case优化"></a>使用switch case优化</h3><p> php8可以使用match表达式</p>
 <ul>
-<li><p>优化前</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A{
-      public static function handle(string $act, int $userId){
-          if ($act == 'sign in') {
-              self::sign($userId);
-          } elseif ($act == 'register user') {
-              self::register($userId);
-          } elseif ($act == 'change password') {
-              self::changePwd($userId);
-          }
-      }
-
-      protected static function sign(int $userId){}
-
-      protected static function register(int $userId){}
-
-      protected static function changePwd(int $userId){}
-
-  }
-</code></pre>
-</li>
-<li><p>优化后</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A{
-      public static function handle(string $act, int $userId){
-          switch ($act) {
-              case 'sign in':
-                  self::sign($userId);
-                  break;
-              case 'register user':
-                  self::register($userId);
-                  break;
-              case 'change password':
-                  self::changePwd($userId);
-                  break;
-              default:
-                  break;
-          }
-      }
-
-      protected static function sign(int $userId){}
-
-      protected static function register(int $userId){}
-
-      protected static function changePwd(int $userId){}
-
-  }
-</code></pre>
-<p>效果：和原来的差不多，每次新增方法后还得修改代码。</p>
-</li>
+<li>优化前<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'sign in'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">sign</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'register user'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">register</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'change password'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">changePwd</span>(<span class="hljs-variable">$userId</span>);<br>        }<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'sign in'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">sign</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'register user'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">register</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'change password'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">changePwd</span>(<span class="hljs-variable">$userId</span>);<br>        }<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>优化后<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-keyword">switch</span> (<span class="hljs-variable">$act</span>) {<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">'sign in'</span>:<br>                <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">sign</span>(<span class="hljs-variable">$userId</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">'register user'</span>:<br>                <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">register</span>(<span class="hljs-variable">$userId</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">'change password'</span>:<br>                <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">changePwd</span>(<span class="hljs-variable">$userId</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">default</span>:<br>                <span class="hljs-keyword">break</span>;<br>        }<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-keyword">switch</span> (<span class="hljs-variable">$act</span>) {<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">'sign in'</span>:<br>                <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">sign</span>(<span class="hljs-variable">$userId</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">'register user'</span>:<br>                <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">register</span>(<span class="hljs-variable">$userId</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">case</span> <span class="hljs-string">'change password'</span>:<br>                <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">changePwd</span>(<span class="hljs-variable">$userId</span>);<br>                <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">default</span>:<br>                <span class="hljs-keyword">break</span>;<br>        }<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>}<br></code></pre></td></tr></tbody></table></figure>
+效果：和原来的差不多，每次新增方法后还得修改代码。</li>
 </ul>
 <h3 id="使用枚举"><a href="#使用枚举" class="headerlink" title="使用枚举"></a>使用枚举</h3><ul>
-<li>优化前<pre class=" language-lang-php"><code class="language-lang-php">  if ($status == 0){
-      return '待支付';
-  }elseif($status == 1){
-      return '已支付';
-  }else{
-      return '支付失败';
-  }
-</code></pre>
-</li>
-<li><p>优化后</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  $orderStatus = [
-      0 => '待支付',
-      1 => '已支付',
-      2 => '支付失败',
-  ];
-
-  return $orderStatus[$status];
-</code></pre>
+<li>优化前<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$status</span> == <span class="hljs-number">0</span>){<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">'待支付'</span>;<br>}<span class="hljs-keyword">elseif</span>(<span class="hljs-variable">$status</span> == <span class="hljs-number">1</span>){<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">'已支付'</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> <span class="hljs-string"><code class="language-hljs php"><span class="hljs-keyword">if</span> (<span class="hljs-variable">$status</span> == <span class="hljs-number">0</span>){<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">'待支付'</span>;<br>}<span class="hljs-keyword">elseif</span>(<span class="hljs-variable">$status</span> == <span class="hljs-number">1</span>){<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">'已支付'</span>;<br>}<span class="hljs-keyword">else</span>{<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">'支付失败'</span>;<br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>优化后<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$orderStatus</span> = [<br>    <span class="hljs-number">0</span> =&gt; <span class="hljs-string">'待支付'</span>,<br>    <span class="hljs-number">1</span> =&gt; <span class="hljs-string">'已支付'</span>,<br>    <span class="hljs-number">2</span> =&gt; <span class="hljs-string">'支付失败'</span>,<br>];<br><br><span class="hljs-keyword">return</span> <span class="hljs-variable">$orderStatus</span>[<span class="hljs-variable"><code class="language-hljs php"><span class="hljs-variable">$orderStatus</span> = [<br>    <span class="hljs-number">0</span> =&gt; <span class="hljs-string">'待支付'</span>,<br>    <span class="hljs-number">1</span> =&gt; <span class="hljs-string">'已支付'</span>,<br>    <span class="hljs-number">2</span> =&gt; <span class="hljs-string">'支付失败'</span>,<br>];<br><br><span class="hljs-keyword">return</span> <span class="hljs-variable">$orderStatus</span>[<span class="hljs-variable">$status</span>];<br></code></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <h3 id="表驱动法"><a href="#表驱动法" class="headerlink" title="表驱动法"></a>表驱动法</h3><ul>
-<li><p>优化前</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A{
-      public static function handle(string $act, int $userId){
-          if ($act == 'sign in') {
-              self::sign($userId);
-          } elseif ($act == 'register user') {
-              self::register($userId);
-          } elseif ($act == 'change password') {
-              self::changePwd($userId);
-          }
-      }
-
-      protected static function sign(int $userId){}
-
-      protected static function register(int $userId){}
-
-      protected static function changePwd(int $userId){}
-
-  }
-</code></pre>
-</li>
-<li><p>优化后</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  class A{
-      private static $acts = [
-          'sign in' => 'sign',
-          'register use' => 'register',
-          'change password' => 'changePwd',
-      ];
-
-      public static function handle(string $act, int $userId){
-          $fun = !empty($act) && isset(self::$acts[$act]) ? self::$acts[$act] : null;
-          if ($fun) call_user_func($fun, $userId);
-      }
-
-      protected static function sign(int $userId){}
-
-      protected static function register(int $userId){}
-
-      protected static function changePwd(int $userId){}
-
-  }
-</code></pre>
-<p>效果：新增方法后，只需修改配置项，不用变更其他代码。</p>
-</li>
+<li>优化前<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'sign in'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">sign</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'register user'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">register</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'change password'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">changePwd</span>(<span class="hljs-variable">$userId</span>);<br>        }<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'sign in'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">sign</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'register user'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">register</span>(<span class="hljs-variable">$userId</span>);<br>        } <span class="hljs-keyword">elseif</span> (<span class="hljs-variable">$act</span> == <span class="hljs-string">'change password'</span>) {<br>            <span class="hljs-built_in">self</span>::<span class="hljs-title function_ invoke__">changePwd</span>(<span class="hljs-variable">$userId</span>);<br>        }<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>}<br></code></pre></td></tr></tbody></table></figure></li>
+<li>优化后<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$acts</span> = [<br>        <span class="hljs-string">'sign in'</span> =&gt; <span class="hljs-string">'sign'</span>,<br>        <span class="hljs-string">'register use'</span> =&gt; <span class="hljs-string">'register'</span>,<br>        <span class="hljs-string">'change password'</span> =&gt; <span class="hljs-string">'changePwd'</span>,<br>    ];<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-variable">$fun</span> = !<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$act</span>) &amp;&amp; <span class="hljs-keyword">isset</span>(<span class="hljs-built_in">self</span>::<span class="hljs-variable">$acts</span>[<span class="hljs-variable">$act</span>]) ? <span class="hljs-built_in">self</span>::<span class="hljs-variable">$acts</span>[<span class="hljs-variable">$act</span>] : <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$fun</span>) <span class="hljs-title function_ invoke__">call_user_func</span>(<span class="hljs-variable">$fun</span>, <span class="hljs-variable">$userId</span>);<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$acts</span> = [<br>        <span class="hljs-string">'sign in'</span> =&gt; <span class="hljs-string">'sign'</span>,<br>        <span class="hljs-string">'register use'</span> =&gt; <span class="hljs-string">'register'</span>,<br>        <span class="hljs-string">'change password'</span> =&gt; <span class="hljs-string">'changePwd'</span>,<br>    ];<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$act</span>, <span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{<br>        <span class="hljs-variable">$fun</span> = !<span class="hljs-keyword">empty</span>(<span class="hljs-variable">$act</span>) &amp;&amp; <span class="hljs-keyword">isset</span>(<span class="hljs-built_in">self</span>::<span class="hljs-variable">$acts</span>[<span class="hljs-variable">$act</span>]) ? <span class="hljs-built_in">self</span>::<span class="hljs-variable">$acts</span>[<span class="hljs-variable">$act</span>] : <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-variable">$fun</span>) <span class="hljs-title function_ invoke__">call_user_func</span>(<span class="hljs-variable">$fun</span>, <span class="hljs-variable">$userId</span>);<br>    }<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sign</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changePwd</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> <span class="hljs-variable">$userId</span></span>)</span>{}<br><br>}<br></code></pre></td></tr></tbody></table></figure>
+效果：新增方法后，只需修改配置项，不用变更其他代码。</li>
 </ul>
 <h3 id="策略模式-工厂方法消除if-else"><a href="#策略模式-工厂方法消除if-else" class="headerlink" title="策略模式+工厂方法消除if-else"></a>策略模式+工厂方法消除if-else</h3><p>参考：<a target="_blank" rel="noopener" href="https://www.phpmianshi.com/?id=197">https://www.phpmianshi.com/?id=197</a></p>
 
@@ -2238,7 +2102,7 @@ Lua的数组下标是从1开始的
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2312,7 +2176,7 @@ Lua的数组下标是从1开始的
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    721
+                    966
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -1087,52 +1087,27 @@ h3:hover {
 <ol>
 <li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，Hexo 提供的方式(<font color="#FF0000">推荐</font> )</li>
 <li>在文章的 <a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter.html">front-matter</a> 中添加 description，并提供文章摘录</li>
-<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<pre class=" language-lang-bash"><code class="language-lang-bash">  auto_excerpt:
-    enable: true
-    length: 150
-</code></pre>
+<li>自动形成摘要，在 主题配置文件_config.yml 中添加：<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs bash">auto_excerpt:<br>  <span class="hljs-built_in">enable</span>: <span class="hljs-literal"><code class="language-hljs bash">auto_excerpt:<br>  <span class="hljs-built_in">enable</span>: <span class="hljs-literal">true</span><br>  length: 150<br></code></pre></td></tr></tbody></table></figure>
 默认截取的长度为 150 字符，可以根据需要自行设定。</li>
 </ol>
 <p>建议使用 <code>&lt;!-- more --&gt;</code>方式，既可以精确控制需要显示的摘录内容， 还可以让 Hexo 中的插件更好的识别。    </p>
-<h3 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h3><ol>
-<li><p>文章生成永久短链接<br><code>npm install hexo-abbrlink --save</code><br>在站点配置项文件_config.yml下添加：</p>
-<pre><code>url: https://crazy-boy.com
-root: /
-permalink: archives/:abbrlink.html
-abbrlink:
-alg: crc32  # 算法：crc16(default) and crc32
-rep: hex    # 进制：dec(default) and hex
-permalink_defaults:
-pretty_urls:
-trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-trailing_html: true # Set to false to remove trailing '.html' from permalinks
-</code></pre><p>当然文章的短链部分可以在文章的首部进行设置，如：<code>abbrlink: 'hexo-notes'</code>，如果不设置就会自动生成随机短链。</p>
-</li>
-<li><p>开启文章字数统计<br><code>npm i --save hexo-wordcount</code></p>
-</li>
-<li><p>文章设置密码<br><code>npm install --save hexo-blog-encrypt</code><br>将”password”字段添加到文章的信息头：<code>password: abc123</code><br>文章可以按标签进行加密，优先级为：文章信息头&gt;按标签加密<br>文章信息头的设置示例<br><img src="/images/hexo_notes_2.png" alt=""></p>
-</li>
-</ol>
-<p>_config.yml示例</p>
-<pre class=" language-lang-yaml"><code class="language-lang-yaml"># Security
-encrypt: # hexo-blog-encrypt
-  abstract: 有东西被加密了, 请输入密码查看.
-  message: 您好, 这里需要密码.
-  tags:
-  - {name: tagNameA, password: 密码A}
-  - {name: tagNameB, password: 密码B}
-  wrong_pass_message: 抱歉, 密码不太对哟.
-  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
-</code></pre>
-<p>如果tagNameA中的某篇博文不想被加密，只需把博文头部的password设置为””即可。</p>
+<h3 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h3><h4 id="1-文章生成永久短链接"><a href="#1-文章生成永久短链接" class="headerlink" title="1. 文章生成永久短链接"></a>1. 文章生成永久短链接</h4><p><code>npm install hexo-abbrlink --save</code><br>在站点配置项文件_config.yml下添加：<br></p><figure class="highlight oxygene"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre class=" language-hljs oxygene">url: https:<span class="hljs-comment">//crazy-boy.com</span><br>root: /<br>permalink: archives/:abbrlink.html<br>abbrlink:<br>  alg: crc32  # 算法：crc16(<span class="hljs-keyword">default</span>) <span class="hljs-keyword">and</span> crc32<br>  rep: hex    # 进制：dec(<span class="hljs-keyword">default</span>) <span class="hljs-keyword">and</span> hex<br>permalink_defaults:<br>pretty_urls:<br>  trailing_index: <span class="hljs-keyword">true</span> # <span class="hljs-keyword">Set</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">remove</span> trailing <span class="hljs-string">'index.html'</span> <span class="hljs-keyword">from</span> permalinks<br>  trailing_html: <span class="hljs-keyword">true</span> # <span class="hljs-keyword">Set</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">remove</span> trailing <span class="hljs-string">'.html'</span> <span class="hljs-keyword"><code class="language-hljs oxygene">url: https:<span class="hljs-comment">//crazy-boy.com</span><br>root: /<br>permalink: archives/:abbrlink.html<br>abbrlink:<br>  alg: crc32  # 算法：crc16(<span class="hljs-keyword">default</span>) <span class="hljs-keyword">and</span> crc32<br>  rep: hex    # 进制：dec(<span class="hljs-keyword">default</span>) <span class="hljs-keyword">and</span> hex<br>permalink_defaults:<br>pretty_urls:<br>  trailing_index: <span class="hljs-keyword">true</span> # <span class="hljs-keyword">Set</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">remove</span> trailing <span class="hljs-string">'index.html'</span> <span class="hljs-keyword">from</span> permalinks<br>  trailing_html: <span class="hljs-keyword">true</span> # <span class="hljs-keyword">Set</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">remove</span> trailing <span class="hljs-string">'.html'</span> <span class="hljs-keyword">from</span> permalinks<br></code></pre></td></tr></tbody></table></figure><br>当然文章的短链部分可以在文章的首部进行设置，如：<code>abbrlink: 'hexo-notes'</code>，如果不设置就会自动生成随机短链。<p></p>
+<h4 id="2-开启文章字数统计"><a href="#2-开启文章字数统计" class="headerlink" title="2. 开启文章字数统计"></a>2. 开启文章字数统计</h4><p><code>npm i --save hexo-wordcount</code></p>
+<h4 id="3-文章设置密码"><a href="#3-文章设置密码" class="headerlink" title="3. 文章设置密码"></a>3. 文章设置密码</h4><p><code>npm install --save hexo-blog-encrypt</code><br>将”password”字段添加到文章的信息头：<code>password: abc123</code><br>文章可以按标签进行加密，优先级为：文章信息头&gt;按标签加密<br>文章信息头的设置示例<br><img src="/images/hexo_notes_2.png" alt=""></p>
+<p>_config.yml示例<br></p><figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre class=" language-hljs yaml"><span class="hljs-comment"># Security</span><br><span class="hljs-attr">encrypt:</span> <span class="hljs-comment"># hexo-blog-encrypt</span><br>  <span class="hljs-attr">abstract:</span> <span class="hljs-string">有东西被加密了,</span> <span class="hljs-string">请输入密码查看.</span><br>  <span class="hljs-attr">message:</span> <span class="hljs-string">您好,</span> <span class="hljs-string">这里需要密码.</span><br>  <span class="hljs-attr">tags:</span><br>  <span class="hljs-bullet">-</span> {<span class="hljs-attr">name:</span> <span class="hljs-string">tagNameA</span>, <span class="hljs-attr">password:</span> <span class="hljs-string">密码A</span>}<br>  <span class="hljs-bullet">-</span> {<span class="hljs-attr">name:</span> <span class="hljs-string">tagNameB</span>, <span class="hljs-attr">password:</span> <span class="hljs-string">密码B</span>}<br>  <span class="hljs-attr">wrong_pass_message:</span> <span class="hljs-string">抱歉,</span> <span class="hljs-string">密码不太对哟.</span><br>  <span class="hljs-attr">wrong_hash_message:</span> <span class="hljs-string">抱歉,</span> <span class="hljs-string">这个文章不能被校验,</span> <span class="hljs-string"><code class="language-hljs yaml"><span class="hljs-comment"># Security</span><br><span class="hljs-attr">encrypt:</span> <span class="hljs-comment"># hexo-blog-encrypt</span><br>  <span class="hljs-attr">abstract:</span> <span class="hljs-string">有东西被加密了,</span> <span class="hljs-string">请输入密码查看.</span><br>  <span class="hljs-attr">message:</span> <span class="hljs-string">您好,</span> <span class="hljs-string">这里需要密码.</span><br>  <span class="hljs-attr">tags:</span><br>  <span class="hljs-bullet">-</span> {<span class="hljs-attr">name:</span> <span class="hljs-string">tagNameA</span>, <span class="hljs-attr">password:</span> <span class="hljs-string">密码A</span>}<br>  <span class="hljs-bullet">-</span> {<span class="hljs-attr">name:</span> <span class="hljs-string">tagNameB</span>, <span class="hljs-attr">password:</span> <span class="hljs-string">密码B</span>}<br>  <span class="hljs-attr">wrong_pass_message:</span> <span class="hljs-string">抱歉,</span> <span class="hljs-string">密码不太对哟.</span><br>  <span class="hljs-attr">wrong_hash_message:</span> <span class="hljs-string">抱歉,</span> <span class="hljs-string">这个文章不能被校验,</span> <span class="hljs-string">不过您还是能看看解密后的内容.</span><br></code></pre></td></tr></tbody></table></figure><br>如果tagNameA中的某篇博文不想被加密，只需把博文头部的password设置为””即可。<p></p>
 <h3 id="多台电脑同步更新hexo博客"><a href="#多台电脑同步更新hexo博客" class="headerlink" title="多台电脑同步更新hexo博客"></a>多台电脑同步更新hexo博客</h3><ul>
 <li>在github上切个hexo分支，把源代码push上去。</li>
-<li>在需要同步更新的电脑上进行如下操作：<br>  安装git<br>  下载安装nodejs<br>  node -v<br>  npm -v<br>  git clone xx.git<br>  删除主题下.git目录<br>  进入目录，执行下面命令：<pre><code>  $ npm install
-  $ npm install hexo-generator-search --save
-  $ npm i hexo-permalink-pinyin --save
-  $ npm install hexo-filter-github-emojis --save
-  $ npm install hexo-generator-feed --save
-</code></pre></li>
+<li>在需要同步更新的电脑上进行如下操作：<br>  安装git<br>  下载安装nodejs<br>  node -v<br>  npm -v<br>  git clone xx.git<br>  删除主题下.git目录<br>  进入目录，执行下面命令：  <figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs sql">$ npm install<br>$ npm install hexo<span class="hljs-operator">-</span>generator<span class="hljs-operator">-</span><span class="hljs-keyword">search</span> <span class="hljs-comment">--save</span><br>$ npm i hexo<span class="hljs-operator">-</span>permalink<span class="hljs-operator">-</span>pinyin <span class="hljs-comment">--save</span><br>$ npm install hexo<span class="hljs-operator">-</span><span class="hljs-keyword">filter</span><span class="hljs-operator">-</span>github<span class="hljs-operator">-</span>emojis <span class="hljs-comment">--save</span><br>$ npm install hexo<span class="hljs-operator">-</span>generator<span class="hljs-operator">-</span>feed <span class="hljs-comment"><code class="language-hljs sql">$ npm install<br>$ npm install hexo<span class="hljs-operator">-</span>generator<span class="hljs-operator">-</span><span class="hljs-keyword">search</span> <span class="hljs-comment">--save</span><br>$ npm i hexo<span class="hljs-operator">-</span>permalink<span class="hljs-operator">-</span>pinyin <span class="hljs-comment">--save</span><br>$ npm install hexo<span class="hljs-operator">-</span><span class="hljs-keyword">filter</span><span class="hljs-operator">-</span>github<span class="hljs-operator">-</span>emojis <span class="hljs-comment">--save</span><br>$ npm install hexo<span class="hljs-operator">-</span>generator<span class="hljs-operator">-</span>feed <span class="hljs-comment">--save</span><br></code></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="1-执行hexo命令，提示hexo-command-not-found"><a href="#1-执行hexo命令，提示hexo-command-not-found" class="headerlink" title="1. 执行hexo命令，提示hexo: command not found"></a>1. 执行hexo命令，提示<code>hexo: command not found</code></h4><ul>
+<li>首先检查nodejs和npm是否正常，依次输入<code>node -v</code>和<code>npm -v</code>检查版本信息</li>
+<li>将与_config.yml同级的node_modules下的.bin路径(F:\GitHub\crazy-boy.github.io\node_modules.bin)添加到系统环境变量的Path里</li>
+<li>如果还不行，就重装hexo：<code>npm install hexo-cli -g</code></li>
+</ul>
+<h4 id="2-hexo-g-d报错fatal-in-unpopulated-submodule-‘-deploy-git’"><a href="#2-hexo-g-d报错fatal-in-unpopulated-submodule-‘-deploy-git’" class="headerlink" title="2. hexo g -d报错fatal: in unpopulated submodule ‘.deploy_git’"></a>2. hexo g -d报错fatal: in unpopulated submodule ‘.deploy_git’</h4><ul>
+<li>删除.deploy_git文件夹</li>
+<li>再执行<code>hexo g -d</code></li>
 </ul>
 <h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_30105599/article/details/118302086">https://blog.csdn.net/qq_30105599/article/details/118302086</a></p>
 
@@ -2122,7 +2097,7 @@ windows7 安装docker，需要利用 docker toolbox 来安装。
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2196,7 +2171,7 @@ windows7 安装docker，需要利用 docker toolbox 来安装。
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

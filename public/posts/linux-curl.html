@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    253
+                    287
                 </div>
                 
 
@@ -1074,16 +1074,16 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>curl https://www.baidu.com
-</code></pre><p>上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。</p>
-<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="d：使用-d参数向服务器发送POST请求的数据体"><a href="#d：使用-d参数向服务器发送POST请求的数据体" class="headerlink" title="-d：使用-d参数向服务器发送POST请求的数据体"></a>-d：使用-d参数向服务器发送POST请求的数据体</h4><pre><code>curl -d 'login=admin＆password=123' -X POST https://www.aa.com/admin/
-</code></pre><p>上方的命令向服务器发送（POST）了login=admin＆password=123。但是使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。</p>
-<pre><code>curl -d '{"login": "admin", "pass": "123"}' -X 'Content-Type: application/json' https://www.aa.com/admin
-</code></pre><p>上方的命令添加了HTTP请求标头：Content-Type:application/json并使用-d参数向服务器发送（POST）了json数据。</p>
-<h4 id="H：设置-HTTP头信息"><a href="#H：设置-HTTP头信息" class="headerlink" title="-H：设置 HTTP头信息"></a>-H：设置 HTTP头信息</h4><pre><code>curl -H 'Token: xxxx' https://www.aa.com/
-</code></pre><p>使用-H参数设置Token为xxxx向服务器发送了GET请求。</p>
-<h4 id="X：可以指定HTTP请求方法"><a href="#X：可以指定HTTP请求方法" class="headerlink" title="-X：可以指定HTTP请求方法"></a>-X：可以指定HTTP请求方法</h4><pre><code>curl -X POST https://www.aa.com/
-</code></pre><p>上方的命令向服务器发送了POST请求。</p>
+                <h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs 1c">curl https:<span class="hljs-comment"><code class="language-hljs 1c">curl https:<span class="hljs-comment">//www.baidu.com</span><br></code></pre></td></tr></tbody></table></figure>
+<p>上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。</p>
+<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="d：使用-d参数向服务器发送POST请求的数据体"><a href="#d：使用-d参数向服务器发送POST请求的数据体" class="headerlink" title="-d：使用-d参数向服务器发送POST请求的数据体"></a>-d：使用-d参数向服务器发送POST请求的数据体</h4><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs awk">curl -d <span class="hljs-string">'login=admin＆password=123'</span> -X POST https:<span class="hljs-regexp">//</span>www.aa.com<span class="hljs-regexp"><code class="language-hljs awk">curl -d <span class="hljs-string">'login=admin＆password=123'</span> -X POST https:<span class="hljs-regexp">//</span>www.aa.com<span class="hljs-regexp">/admin/</span><br></code></pre></td></tr></tbody></table></figure>
+<p>上方的命令向服务器发送（POST）了login=admin＆password=123。但是使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。</p>
+<figure class="highlight scilab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs scilab">curl -d <span class="hljs-string">'{"</span>login<span class="hljs-string">": "</span>admin<span class="hljs-string">", "</span>pass<span class="hljs-string">": "</span><span class="hljs-number">123</span><span class="hljs-string">"}'</span> -X <span class="hljs-string">'Content-Type: application/json'</span> https:<span class="hljs-comment"><code class="language-hljs scilab">curl -d <span class="hljs-string">'{"</span>login<span class="hljs-string">": "</span>admin<span class="hljs-string">", "</span>pass<span class="hljs-string">": "</span><span class="hljs-number">123</span><span class="hljs-string">"}'</span> -X <span class="hljs-string">'Content-Type: application/json'</span> https:<span class="hljs-comment">//www.aa.com/admin</span><br></code></pre></td></tr></tbody></table></figure>
+<p>上方的命令添加了HTTP请求标头：Content-Type:application/json并使用-d参数向服务器发送（POST）了json数据。</p>
+<h4 id="H：设置-HTTP头信息"><a href="#H：设置-HTTP头信息" class="headerlink" title="-H：设置 HTTP头信息"></a>-H：设置 HTTP头信息</h4><figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs 1c">curl -H 'Token: xxxx' https:<span class="hljs-comment"><code class="language-hljs 1c">curl -H 'Token: xxxx' https:<span class="hljs-comment">//www.aa.com/</span><br></code></pre></td></tr></tbody></table></figure>
+<p>使用-H参数设置Token为xxxx向服务器发送了GET请求。</p>
+<h4 id="X：可以指定HTTP请求方法"><a href="#X：可以指定HTTP请求方法" class="headerlink" title="-X：可以指定HTTP请求方法"></a>-X：可以指定HTTP请求方法</h4><figure class="highlight stata"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs stata">curl -X <span class="hljs-keyword">POST</span> https:<span class="hljs-comment"><code class="language-hljs stata">curl -X <span class="hljs-keyword">POST</span> https:<span class="hljs-comment">//www.aa.com/</span><br></code></pre></td></tr></tbody></table></figure>
+<p>上方的命令向服务器发送了POST请求。</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://www.typeboom.com/archives/107/">https://www.typeboom.com/archives/107/</a></p>
 
             </div>
@@ -1775,9 +1775,7 @@ h3:hover {
                             说明将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：
 示例下面讲解下设计模式的代码实现
 
-创建产品类 class Product{
-     private $parts = [];
-     pu
+创建产品类123456789class Product{    private $parts = [];  
                         
                     </div>
                     <div class="publish-info">
@@ -2074,7 +2072,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2148,7 +2146,7 @@ h3:hover {
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       

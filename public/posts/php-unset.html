@@ -126,7 +126,7 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    277
+                    401
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -1078,49 +1078,19 @@ h3:hover {
 
 <ul>
 <li><p>如果需要去掉数组中的某些key，直接unset即可</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  $arr = ['id' => 5, 'name' => '张三', 'status' => 1];
-  unset($arr['status']);
-  print_r($arr);      // Array ( [id] => 5 [name] => 张三 )
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">5</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'张三'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>];<br><span class="hljs-keyword">unset</span>(<span class="hljs-variable">$arr</span>[<span class="hljs-string">'status'</span>]);<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$arr</span>);      <span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">5</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'张三'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>];<br><span class="hljs-keyword">unset</span>(<span class="hljs-variable">$arr</span>[<span class="hljs-string">'status'</span>]);<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$arr</span>);      <span class="hljs-comment">// Array ( [id] => 5 [name] => 张三 )</span><br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>也可以去掉二位数组中指定的key</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  $list = [
-      ['id' => 1, 'name' => '张三', 'status' => 1],
-      ['id' => 2, 'name' => '李四', 'status' => 0],
-      ['id' => 3, 'name' => '王五', 'status' => 1],
-  ];
-  array_walk($list, function (&$item) {
-      unset($item['status']);
-  });
-
-  print_r($list);
-  // output:  Array ( [0] => Array ( [id] => 1 [name] => 张三 ) [1] => Array ( [id] => 2 [name] => 李四 ) [2] => Array ( [id] => 3 [name] => 王五 ) )
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$list</span> = [<br>    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'张三'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>],<br>    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'李四'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">0</span>],<br>    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">3</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'王五'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>],<br>];<br><span class="hljs-title function_ invoke__">array_walk</span>(<span class="hljs-variable">$list</span>, function (&amp;<span class="hljs-variable">$item</span>) {<br>    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$item</span>[<span class="hljs-string">'status'</span>]);<br>});<br><br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$list</span>);<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$list</span> = [<br>    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">1</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'张三'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>],<br>    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">2</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'李四'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">0</span>],<br>    [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">3</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'王五'</span>, <span class="hljs-string">'status'</span> =&gt; <span class="hljs-number">1</span>],<br>];<br><span class="hljs-title function_ invoke__">array_walk</span>(<span class="hljs-variable">$list</span>, function (&amp;<span class="hljs-variable">$item</span>) {<br>    <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$item</span>[<span class="hljs-string">'status'</span>]);<br>});<br><br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$list</span>);<br><span class="hljs-comment">// output:  Array ( [0] => Array ( [id] => 1 [name] => 张三 ) [1] => Array ( [id] => 2 [name] => 李四 ) [2] => Array ( [id] => 3 [name] => 王五 ) )</span><br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>下面试下去掉一维数组中的空值</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  $data = ['test', 'haha', '', 'hello', null, 'good'];
-  array_walk($data, function (&$item) {
-      if (!$item) unset($item);
-  });
-  print_r($data);
-  // output: Array ( [0] => test [1] => haha [2] => [3] => hello [4] => [5] => good )
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$data</span> = [<span class="hljs-string">'test'</span>, <span class="hljs-string">'haha'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'good'</span>];<br><span class="hljs-title function_ invoke__">array_walk</span>(<span class="hljs-variable">$data</span>, function (&amp;<span class="hljs-variable">$item</span>) {<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$item</span>) <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$item</span>);<br>});<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$data</span>);<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$data</span> = [<span class="hljs-string">'test'</span>, <span class="hljs-string">'haha'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'good'</span>];<br><span class="hljs-title function_ invoke__">array_walk</span>(<span class="hljs-variable">$data</span>, function (&amp;<span class="hljs-variable">$item</span>) {<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable">$item</span>) <span class="hljs-keyword">unset</span>(<span class="hljs-variable">$item</span>);<br>});<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$data</span>);<br><span class="hljs-comment">// output: Array ( [0] => test [1] => haha [2] => [3] => hello [4] => [5] => good )</span><br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>上面的代码没有达到预期的效果，那我们修改下试试</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  $data = ['test', 'haha', '', 'hello', null, 'good', ''];
-  array_walk($data, function ($item, $key) use (&$data) {
-      if (!$item) unset($data[$key]);
-  });
-  print_r($data);
-  // output: Array ( [0] => test [1] => haha [3] => hello [5] => good )
-</code></pre>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$data</span> = [<span class="hljs-string">'test'</span>, <span class="hljs-string">'haha'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'good'</span>, <span class="hljs-string">''</span>];<br><span class="hljs-title function_ invoke__">array_walk</span>(<span class="hljs-variable">$data</span>, function (<span class="hljs-variable">$item</span>, <span class="hljs-variable">$key</span>) <span class="hljs-keyword">use</span> (&amp;$<span class="hljs-title">data</span>) {<br>    <span class="hljs-title">if</span> (!$<span class="hljs-title">item</span>) <span class="hljs-title">unset</span>($<span class="hljs-title">data</span>[$<span class="hljs-title">key</span>]);<br>});<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$data</span>);<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$data</span> = [<span class="hljs-string">'test'</span>, <span class="hljs-string">'haha'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'good'</span>, <span class="hljs-string">''</span>];<br><span class="hljs-title function_ invoke__">array_walk</span>(<span class="hljs-variable">$data</span>, function (<span class="hljs-variable">$item</span>, <span class="hljs-variable">$key</span>) <span class="hljs-keyword">use</span> (&amp;$<span class="hljs-title">data</span>) {<br>    <span class="hljs-title">if</span> (!$<span class="hljs-title">item</span>) <span class="hljs-title">unset</span>($<span class="hljs-title">data</span>[$<span class="hljs-title">key</span>]);<br>});<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-variable">$data</span>);<br><span class="hljs-comment">// output: Array ( [0] => test [1] => haha [3] => hello [5] => good )</span><br></code></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>虽然达到了预期，但PHP给我们提供了更优雅的解决办法</p>
-<pre class=" language-lang-php"><code class="language-lang-php">  $data = ['test', 'haha', '', 'hello', null, 'good', ''];
-  print_r(array_filter($data));
-  // output: Array ( [0] => test [1] => haha [3] => hello [5] => good )
-</code></pre>
-</li>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$data</span> = [<span class="hljs-string">'test'</span>, <span class="hljs-string">'haha'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'good'</span>, <span class="hljs-string">''</span>];<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-title function_ invoke__">array_filter</span>(<span class="hljs-variable">$data</span>));<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-variable">$data</span> = [<span class="hljs-string">'test'</span>, <span class="hljs-string">'haha'</span>, <span class="hljs-string">''</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'good'</span>, <span class="hljs-string">''</span>];<br><span class="hljs-title function_ invoke__">print_r</span>(<span class="hljs-title function_ invoke__">array_filter</span>(<span class="hljs-variable">$data</span>));<br><span class="hljs-comment">// output: Array ( [0] => test [1] => haha [3] => hello [5] => good )</span><br></code></pre></td></tr></tbody></table></figure></li>
 </ul>
 
             </div>
@@ -1747,8 +1717,7 @@ h3:hover {
                         
                             在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。
 下面演示下，在test方法执行后自动执行afterTest方法
-trait A{
-    public function __call($method, $args
+12345678910111213141516171819202122232425262728293
                         
                     </div>
                     <div class="publish-info">
@@ -1808,10 +1777,7 @@ trait A{
                     <div class="summary block-with-text">
                         
                             在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。
-$arr = ['id' => null, 'name' => 'test', 'age' => null];
-
-$time1 = microtime(true);
-$t
+12345678910111213141516171819202122$arr = ['id' =&gt; null, 'name' =&gt; 'test', 'age
                         
                     </div>
                     <div class="publish-info">
@@ -2108,7 +2074,7 @@ $t
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">35.7k</span>&nbsp;
+        class="white-color">51.3k</span>&nbsp;
       
       
       
@@ -2182,7 +2148,7 @@ $t
         <a href="http://beian.miit.gov.cn" target="_blank">
           <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          蜀ICP备2022000541号-1
+          川公网安备51011202000905 蜀ICP备2022000541号
         </a>
       </span>
       
