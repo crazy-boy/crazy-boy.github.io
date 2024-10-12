@@ -904,93 +904,6 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/php-yii2-notes.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Yii2使用笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Yii2使用笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 安装Yii2第三方扩展
-方法一：composer安装123php composer.phar require php-amqplib/php-amqplib或者在composer.json文件的require里添加"php-amqpl
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2021-05-27
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/PHP/" class="post-category">
-                  PHP
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Yii2/">
-              <span class="chip bg-color">Yii2</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/php-composer.html">
             <div class="card-image">
 
@@ -1708,6 +1621,118 @@ __call()
         <div class="card">
           <!-- 推荐文章置顶模块效果开始 -->
           
+          <div class="placetop">推荐文章</div>
+          <style>
+            .placetop {
+              z-index: 99;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 80px;
+              height: 30px;
+              line-height: 30px;
+              border-bottom-right-radius: 8px;
+              background-color: #039be5;
+              text-align: center;
+              font-size: 15px;
+              color: #fff;
+              font-weight: 400 !important;
+              opacity: 0.95;
+            }
+
+            body.dark .placetop {
+              opacity: 0.75;
+            }
+          </style>
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/mysql-deal-miss-handle.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/7.jpg" class="responsive-img"
+                alt="MySQL脚本执行中，预防误处理数据的方法">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                MySQL脚本执行中，预防误处理数据的方法
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：
+
+1、先测试   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/MySQL/" class="post-category">
+                  MySQL
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/MySQL/">
+              <span class="chip bg-color">MySQL</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
           <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/php-ini-config.html">
             <div class="card-image">
@@ -2069,15 +2094,22 @@ safe_mode_exec_dir 设置安全模式下脚本可执行的目录，如果要通�
       </script>
       
       <br>
-      
       <span id="icp">
-        <a href="http://beian.miit.gov.cn" target="_blank">
-          <img src="/medias/icp.png"
+        
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51011202000905" target="_blank">
+            <img src="/medias/icp.png"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
-          川公网安备51011202000905 蜀ICP备2022000541号
+          川公网安备51011202000905
         </a>
+        
+        &nbsp;&nbsp;&nbsp;
+        
+        <a href="http://beian.miit.gov.cn" target="_blank">
+          蜀ICP备2022000541号
+        </a>
+        
       </span>
-      
+
     </div>
     <div class="col s12 m3 l3 social-link social-statis">
     <a href="https://github.com/crazy-boy" class="tooltipped" target="_blank" data-tooltip="Github：https://github.com/crazy-boy" data-position="top" data-delay="50">
