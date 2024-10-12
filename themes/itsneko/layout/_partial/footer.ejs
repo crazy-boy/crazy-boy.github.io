@@ -99,15 +99,22 @@
       </script>
       <% } %>
       <br>
-      <% if (theme.icp.enable) { %>
       <span id="icp">
-        <a href="<%- url_for(theme.icp.url) %>" target="_blank">
-          <img src="<%- theme.jsDelivr.url %><%- url_for('/medias/icp.png') %>"
+        <% if (theme.beian.enable) { %>
+        <a href="<%- url_for(theme.beian.url) %>" target="_blank">
+            <img src="<%- theme.jsDelivr.url %><%- url_for('/medias/icp.png') %>"
             style="vertical-align: text-bottom;width: 16px;height: 16px;" />
+          <%= theme.beian.text %>
+        </a>
+        <% } %>
+        &nbsp;&nbsp;&nbsp;
+        <% if (theme.icp.enable) { %>
+        <a href="<%- url_for(theme.icp.url) %>" target="_blank">
           <%= theme.icp.text %>
         </a>
+        <% } %>
       </span>
-      <% } %>
+
     </div>
     <div class="col s12 m3 l3 social-link <%- socialClass %>"><%- partial('_partial/social-link') %></div>
   </div>

@@ -3920,3 +3920,7 @@ nav,
 {
   background-color: #039be5;
 }
+
+td.gutter {
+    display: none;
+}

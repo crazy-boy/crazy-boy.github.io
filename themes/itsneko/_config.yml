@@ -588,7 +588,13 @@ banner:
 icp:
   enable: true
   url: http://beian.miit.gov.cn # 备案链接
-  text: 川公网安备51011202000905 蜀ICP备2022000541号 # 备案信息
+  text: 蜀ICP备2022000541号 # 备案信息
+
+#公安备案
+beian:
+  enable: true
+  url: https://beian.mps.gov.cn/#/query/webSearch?code=51011202000905 # 备案链接
+  text: 川公网安备51011202000905 # 备案信息
 
 # CDN访问加速
 # 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
