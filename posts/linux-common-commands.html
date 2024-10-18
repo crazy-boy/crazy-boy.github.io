@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux常用命令, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Linux常用命令, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1095,7 +1095,7 @@ h3:hover {
 </ol>
 </li>
 <li><p>查看系统环境</p>
- <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">[root@VM_0_7_centos ~]# cat /etc/redhat-release <br>CentOS Linux release 7.6.1810 (Core) <br>[root@VM_0_7_centos ~]# uname -a<br>Linux VM_0_7_centos 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux<br></code></pre></td></tr></tbody></table></figure>
+ <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@VM_0_7_centos ~]# cat /etc/redhat-release </span><br><span class="line">CentOS Linux release 7.6.1810 (Core) </span><br><span class="line">[root@VM_0_7_centos ~]# uname -a</span><br><span class="line">Linux VM_0_7_centos 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></tbody></table></figure>
 <p> 从上述结果可以看出：系统为CentOS 7.6 内核为3.10.0-957.27.2.el7.x86_64</p>
 </li>
 </ul>
@@ -1104,7 +1104,7 @@ h3:hover {
 <li>实时查看日志最后100行的内容： <code>tail -f -n 100 xx.log</code></li>
 <li>查询最后100行的内容：<code>tail -n 100 xx.log</code></li>
 <li>查询100行之后的所有内容：<code>tail -n +100 xx.log</code></li>
-<li>查询头10行的内容：<code>head -n 10 xx.log</code></li>
+<li>查看文件的前10行：<code>head -n 10 xx.log</code></li>
 <li>查询除最后100行外的内容：<code>head -n -100 xx.log</code></li>
 <li>根据关键字查询日志：<code>cat -n xx.log |grep "charge"</code>   可以得到关键字日志的行号和内容</li>
 <li>根据关键字查询日志并获取最后5行：<code>grep 'charge' xx.log |tail -n 5</code></li>
@@ -1671,7 +1671,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1724,11 +1724,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1822a0ce.html">
+                <a href="/posts/jquery-note.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="CSS笔记">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Jquery笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1739,17 +1739,14 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          CSS笔记
+                          Jquery笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}
-
-如果css希望两个标签对齐，可以用position来处理，如：.cntck{position
+                            jquery获取json的长度1234567//一维：var JsonTemp = {'id':5,'name':'lilei'};  length = JsonTemp.length;//二维：var JsonTemp = [{"name
                         
                     </div>
                     <div class="publish-info">
@@ -1771,8 +1768,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/Jquery/">
+                        <span class="chip bg-color">Jquery</span>
                     </a>
                     
                 </div>
@@ -1901,8 +1898,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2116,7 +2111,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

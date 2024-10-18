@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux下curl命令, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Linux下curl命令, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    287
+                    253
                 </div>
                 
 
@@ -1074,15 +1074,15 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs 1c">curl https:<span class="hljs-comment"><code class="language-hljs 1c">curl https:<span class="hljs-comment">//www.baidu.com</span><br></code></pre></td></tr></tbody></table></figure>
+                <h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:<span class="comment">//www.baidu.com</span></span><br></pre></td></tr></tbody></table></figure>
 <p>上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。</p>
-<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="d：使用-d参数向服务器发送POST请求的数据体"><a href="#d：使用-d参数向服务器发送POST请求的数据体" class="headerlink" title="-d：使用-d参数向服务器发送POST请求的数据体"></a>-d：使用-d参数向服务器发送POST请求的数据体</h4><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs awk">curl -d <span class="hljs-string">'login=admin＆password=123'</span> -X POST https:<span class="hljs-regexp">//</span>www.aa.com<span class="hljs-regexp"><code class="language-hljs awk">curl -d <span class="hljs-string">'login=admin＆password=123'</span> -X POST https:<span class="hljs-regexp">//</span>www.aa.com<span class="hljs-regexp">/admin/</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><h4 id="d：使用-d参数向服务器发送POST请求的数据体"><a href="#d：使用-d参数向服务器发送POST请求的数据体" class="headerlink" title="-d：使用-d参数向服务器发送POST请求的数据体"></a>-d：使用-d参数向服务器发送POST请求的数据体</h4><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d <span class="string">'login=admin＆password=123'</span> -X POST https:<span class="regexp">//</span>www.aa.com<span class="regexp">/admin/</span></span><br></pre></td></tr></tbody></table></figure>
 <p>上方的命令向服务器发送（POST）了login=admin＆password=123。但是使用-d参数以后，HTTP 请求会自动加上标头Content-Type : application/x-www-form-urlencoded。并且会自动将请求转为 POST 方法，因此可以省略-X POST。</p>
-<figure class="highlight scilab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs scilab">curl -d <span class="hljs-string">'{"</span>login<span class="hljs-string">": "</span>admin<span class="hljs-string">", "</span>pass<span class="hljs-string">": "</span><span class="hljs-number">123</span><span class="hljs-string">"}'</span> -X <span class="hljs-string">'Content-Type: application/json'</span> https:<span class="hljs-comment"><code class="language-hljs scilab">curl -d <span class="hljs-string">'{"</span>login<span class="hljs-string">": "</span>admin<span class="hljs-string">", "</span>pass<span class="hljs-string">": "</span><span class="hljs-number">123</span><span class="hljs-string">"}'</span> -X <span class="hljs-string">'Content-Type: application/json'</span> https:<span class="hljs-comment">//www.aa.com/admin</span><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight scilab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d <span class="string">'{"</span>login<span class="string">": "</span>admin<span class="string">", "</span>pass<span class="string">": "</span><span class="number">123</span><span class="string">"}'</span> -X <span class="string">'Content-Type: application/json'</span> https:<span class="comment">//www.aa.com/admin</span></span><br></pre></td></tr></tbody></table></figure>
 <p>上方的命令添加了HTTP请求标头：Content-Type:application/json并使用-d参数向服务器发送（POST）了json数据。</p>
-<h4 id="H：设置-HTTP头信息"><a href="#H：设置-HTTP头信息" class="headerlink" title="-H：设置 HTTP头信息"></a>-H：设置 HTTP头信息</h4><figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs 1c">curl -H 'Token: xxxx' https:<span class="hljs-comment"><code class="language-hljs 1c">curl -H 'Token: xxxx' https:<span class="hljs-comment">//www.aa.com/</span><br></code></pre></td></tr></tbody></table></figure>
+<h4 id="H：设置-HTTP头信息"><a href="#H：设置-HTTP头信息" class="headerlink" title="-H：设置 HTTP头信息"></a>-H：设置 HTTP头信息</h4><figure class="highlight 1c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H 'Token: xxxx' https:<span class="comment">//www.aa.com/</span></span><br></pre></td></tr></tbody></table></figure>
 <p>使用-H参数设置Token为xxxx向服务器发送了GET请求。</p>
-<h4 id="X：可以指定HTTP请求方法"><a href="#X：可以指定HTTP请求方法" class="headerlink" title="-X：可以指定HTTP请求方法"></a>-X：可以指定HTTP请求方法</h4><figure class="highlight stata"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs stata">curl -X <span class="hljs-keyword">POST</span> https:<span class="hljs-comment"><code class="language-hljs stata">curl -X <span class="hljs-keyword">POST</span> https:<span class="hljs-comment">//www.aa.com/</span><br></code></pre></td></tr></tbody></table></figure>
+<h4 id="X：可以指定HTTP请求方法"><a href="#X：可以指定HTTP请求方法" class="headerlink" title="-X：可以指定HTTP请求方法"></a>-X：可以指定HTTP请求方法</h4><figure class="highlight stata"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X <span class="keyword">POST</span> https:<span class="comment">//www.aa.com/</span></span><br></pre></td></tr></tbody></table></figure>
 <p>上方的命令向服务器发送了POST请求。</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://www.typeboom.com/archives/107/">https://www.typeboom.com/archives/107/</a></p>
 
@@ -1633,7 +1633,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1860,8 +1860,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2074,7 +2072,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

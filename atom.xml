@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2024-10-11T01:57:00.972Z</updated>
+  <updated>2024-10-17T05:38:00.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux命令行中的快捷键</title>
+    <link href="https://crazy-boy.com/posts/linux-short-cut-keys.html"/>
+    <id>https://crazy-boy.com/posts/linux-short-cut-keys.html</id>
+    <published>2024-10-17T05:38:00.000Z</published>
+    <updated>2024-10-17T05:38:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux下如何实现与Internet时间同步</title>
     <link href="https://crazy-boy.com/posts/38c1.html"/>
     <id>https://crazy-boy.com/posts/38c1.html</id>
     <published>2024-07-04T02:48:00.000Z</published>
-    <updated>2024-10-11T01:57:00.972Z</updated>
+    <updated>2024-10-15T08:36:39.200Z</updated>
     
     
       
@@ -129,7 +154,7 @@
     <link href="https://crazy-boy.com/posts/high-concurrent-experience.html"/>
     <id>https://crazy-boy.com/posts/high-concurrent-experience.html</id>
     <published>2024-05-21T03:19:18.128Z</published>
-    <updated>2024-05-21T03:19:18.128Z</updated>
+    <updated>2024-10-18T01:57:25.679Z</updated>
     
     
       
@@ -146,6 +171,85 @@
     
     
     <category term="高并发" scheme="https://crazy-boy.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux搜索关键词前后几行</title>
+    <link href="https://crazy-boy.com/posts/linux-grep-few-lines.html"/>
+    <id>https://crazy-boy.com/posts/linux-grep-few-lines.html</id>
+    <published>2023-06-21T02:05:00.000Z</published>
+    <updated>2023-06-21T02:05:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="grep" scheme="https://crazy-boy.com/tags/grep/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP任务加锁</title>
+    <link href="https://crazy-boy.com/posts/php-task-lock.html"/>
+    <id>https://crazy-boy.com/posts/php-task-lock.html</id>
+    <published>2023-05-23T10:27:00.000Z</published>
+    <updated>2023-05-23T10:27:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="lock" scheme="https://crazy-boy.com/tags/lock/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux中&quot;&gt;&quot;和&quot;&gt;&gt;&quot;的区别</title>
+    <link href="https://crazy-boy.com/posts/linux-add-content.html"/>
+    <id>https://crazy-boy.com/posts/linux-add-content.html</id>
+    <published>2023-03-17T03:31:00.000Z</published>
+    <updated>2023-03-17T03:31:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
     
   </entry>
   
@@ -254,7 +358,7 @@
     <link href="https://crazy-boy.com/posts/dead-lock.html"/>
     <id>https://crazy-boy.com/posts/dead-lock.html</id>
     <published>2022-08-02T08:21:54.000Z</published>
-    <updated>2024-05-21T03:19:18.124Z</updated>
+    <updated>2024-10-18T01:55:59.907Z</updated>
     
     
       
@@ -279,7 +383,7 @@
     <link href="https://crazy-boy.com/posts/pooling-technology.html"/>
     <id>https://crazy-boy.com/posts/pooling-technology.html</id>
     <published>2022-08-02T02:30:20.000Z</published>
-    <updated>2024-05-21T03:19:18.124Z</updated>
+    <updated>2024-10-18T01:55:59.898Z</updated>
     
     
       
@@ -304,7 +408,7 @@
     <link href="https://crazy-boy.com/posts/thread-safe.html"/>
     <id>https://crazy-boy.com/posts/thread-safe.html</id>
     <published>2022-08-01T04:31:24.000Z</published>
-    <updated>2024-05-21T03:19:18.125Z</updated>
+    <updated>2024-10-18T01:55:59.852Z</updated>
     
     
       
@@ -329,7 +433,7 @@
     <link href="https://crazy-boy.com/posts/php-define-const.html"/>
     <id>https://crazy-boy.com/posts/php-define-const.html</id>
     <published>2022-07-04T16:34:14.000Z</published>
-    <updated>2024-05-21T03:19:18.104Z</updated>
+    <updated>2024-10-18T01:46:52.501Z</updated>
     
     
       
@@ -405,106 +509,6 @@
     <id>https://crazy-boy.com/posts/php-auto-run-func.html</id>
     <published>2022-06-02T13:02:57.000Z</published>
     <updated>2022-06-02T13:02:57.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中unset的一些使用</title>
-    <link href="https://crazy-boy.com/posts/php-unset.html"/>
-    <id>https://crazy-boy.com/posts/php-unset.html</id>
-    <published>2022-06-02T12:51:22.000Z</published>
-    <updated>2022-06-02T12:51:22.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中，通过&amp;改变变量的值，效率如何</title>
-    <link href="https://crazy-boy.com/posts/php-assignment.html"/>
-    <id>https://crazy-boy.com/posts/php-assignment.html</id>
-    <published>2022-06-02T12:46:42.000Z</published>
-    <updated>2022-06-02T12:46:42.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>php中，this、self、static的区别</title>
-    <link href="https://crazy-boy.com/posts/php-self-static.html"/>
-    <id>https://crazy-boy.com/posts/php-self-static.html</id>
-    <published>2022-06-02T12:28:32.000Z</published>
-    <updated>2022-06-02T12:28:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中isset与array_key_exists的性能对比</title>
-    <link href="https://crazy-boy.com/posts/php-isset-array_key_exists.html"/>
-    <id>https://crazy-boy.com/posts/php-isset-array_key_exists.html</id>
-    <published>2022-06-02T12:20:32.000Z</published>
-    <updated>2022-06-02T12:20:32.000Z</updated>
     
     
       

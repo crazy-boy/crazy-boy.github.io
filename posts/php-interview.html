@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PHP常见面试题, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="PHP常见面试题, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1099,7 +1099,7 @@ h3:hover {
 <h4 id="10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？"><a href="#10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？" class="headerlink" title="10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？"></a>10、现在编程中经常采取MVC三层结构，请问MVC分别指哪三层，有什么优点？</h4><p>MVC三层分别指：业务模型、视图、控制器，由控制器层调用模型处理数据，然后将数据映射到视图层进行显示，优点是：①可以实现代码的重用性，避免产生代码冗余；②M和V的实现代码分离，从而使同一个程序可以使用不同的表现形式</p>
 <h4 id="11、AJAX的优势是什么？"><a href="#11、AJAX的优势是什么？" class="headerlink" title="11、AJAX的优势是什么？"></a>11、AJAX的优势是什么？</h4><p>ajax是异步传输技术，可以通过javascript实现，也可以通过JQuery框架实现，实现局部刷新，减轻了服务器的压力，也提高了用户体验。</p>
 <h4 id="12、在程序的开发中，如何提高程序的运行效率？"><a href="#12、在程序的开发中，如何提高程序的运行效率？" class="headerlink" title="12、在程序的开发中，如何提高程序的运行效率？"></a>12、在程序的开发中，如何提高程序的运行效率？</h4><p>A、优化SQL语句，查询语句中尽量不使用select *，用哪个字段查哪个字段；少用子查询可用表连接代替；少用模糊查询；<br>B、数据表中创建索引；<br>C、对程序中经常用到的数据生成缓存。</p>
-<h4 id="13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。"><a href="#13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。" class="headerlink" title="13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。"></a>13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。</h4><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkemail</span>(<span class="hljs-params"><span class="hljs-variable">$email</span></span>)</span>{<br>    <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">preg_match</span>(‘/^[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+@[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z]+$/’,<span class="hljs-variable"><code class="language-hljs php"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkemail</span>(<span class="hljs-params"><span class="hljs-variable">$email</span></span>)</span>{<br>    <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">preg_match</span>(‘/^[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+@[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z-]+\.[<span class="hljs-number">0</span>-<span class="hljs-number">9</span>a-zA-Z]+$/’,<span class="hljs-variable">$email</span>)?’email格式正确‘:’email格式不正确‘;<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h4 id="13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。"><a href="#13、请用正则表达式（Regular-Expression）写一个函数验证电子邮件的格式是否正确。" class="headerlink" title="13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。"></a>13、请用正则表达式（Regular Expression）写一个函数验证电子邮件的格式是否正确。</h4><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkemail</span>(<span class="params"><span class="variable">$email</span></span>)</span>{</span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">preg_match</span>(‘/^[<span class="number">0</span>-<span class="number">9</span>a-zA-Z-]+@[<span class="number">0</span>-<span class="number">9</span>a-zA-Z-]+\.[<span class="number">0</span>-<span class="number">9</span>a-zA-Z]+$/’,<span class="variable">$email</span>)?’email格式正确‘:’email格式不正确‘;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="14、接口和抽象类的区别"><a href="#14、接口和抽象类的区别" class="headerlink" title="14、接口和抽象类的区别"></a>14、接口和抽象类的区别</h4><p>当多个同类的类要设计一个上层，通常设计为抽象类，当多个异构的类要设计一个上层，通常设计为接口。</p>
 <h4 id="15、说说数据库的索引"><a href="#15、说说数据库的索引" class="headerlink" title="15、说说数据库的索引"></a>15、说说数据库的索引</h4><p>唯一索引、主键索引、联合索引</p>
 <h4 id="16、说说redis常用的数据结构"><a href="#16、说说redis常用的数据结构" class="headerlink" title="16、说说redis常用的数据结构"></a>16、说说redis常用的数据结构</h4><p>string、list、hash、set、zset等</p>
@@ -1667,7 +1667,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1887,8 +1887,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2101,7 +2099,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

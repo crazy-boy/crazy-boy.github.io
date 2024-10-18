@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ThinkPHP5 中rule规则, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="ThinkPHP5 中rule规则, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    118
+                    68
                 </div>
                 
 
@@ -1074,8 +1074,8 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>rule规则<br></p><figure class="highlight scala"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre class=" language-hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Item</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">\think\Validate</span></span>{<br>	<span class="hljs-keyword">protected</span> $rule = [<br>		['mobile|手机号', 'require|length:<span class="hljs-number">11</span>', '手机号必填|手机号格式不正确'],<br>		…<br>	];<br><br>	<span class="hljs-keyword"><code class="language-hljs scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Item</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">\think\Validate</span></span>{<br>	<span class="hljs-keyword">protected</span> $rule = [<br>		['mobile|手机号', 'require|length:<span class="hljs-number">11</span>', '手机号必填|手机号格式不正确'],<br>		…<br>	];<br><br>	<span class="hljs-keyword">protected</span> $scene = [<br>		'add'=>['mobile','name'…],<br>		…<br>	];<br>	<br>}<br><br></code></pre></td></tr></tbody></table></figure><p></p>
-<p>添加自定义校验<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$rule</span> = [<br>	[<span class="hljs-string">'anchor_id|关联账号'</span>, <span class="hljs-string">'require|checkAnchor'</span>],<br>];<br><br><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnchor</span>(<span class="hljs-params"><span class="hljs-variable">$value</span></span>)</span>{<br>	…<br>	<span class="hljs-keyword">if</span> (<span class="hljs-variable">$error</span> = <span class="hljs-variable">$server</span>-&gt;<span class="hljs-title function_ invoke__">getError</span>()) {<br>		<span class="hljs-title function_ invoke__">extract</span>(<span class="hljs-variable">$error</span>);<br>		<span class="hljs-comment">/**</span><br><span class="hljs-comment">		 * <span class="hljs-doctag">@var</span> $msg</span><br><span class="hljs-comment">		 */</span><br>		<span class="hljs-keyword">return</span> <span class="hljs-variable">$msg</span>;<br>	}<br>	<span class="hljs-keyword">return</span> <span class="hljs-literal"><code class="language-hljs php"><span class="hljs-variable">$rule</span> = [<br>	[<span class="hljs-string">'anchor_id|关联账号'</span>, <span class="hljs-string">'require|checkAnchor'</span>],<br>];<br><br><span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAnchor</span>(<span class="hljs-params"><span class="hljs-variable">$value</span></span>)</span>{<br>	…<br>	<span class="hljs-keyword">if</span> (<span class="hljs-variable">$error</span> = <span class="hljs-variable">$server</span>-&gt;<span class="hljs-title function_ invoke__">getError</span>()) {<br>		<span class="hljs-title function_ invoke__">extract</span>(<span class="hljs-variable">$error</span>);<br>		<span class="hljs-comment">/**</span><br><span class="hljs-comment">		 * <span class="hljs-doctag">@var</span> $msg</span><br><span class="hljs-comment">		 */</span><br>		<span class="hljs-keyword">return</span> <span class="hljs-variable">$msg</span>;<br>	}<br>	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>}<br></code></pre></td></tr></tbody></table></figure><p></p>
+                <p>rule规则<br></p><figure class="highlight scala"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">\think\Validate</span></span>{</span><br><span class="line">	<span class="keyword">protected</span> $rule = [</span><br><span class="line">		['mobile|手机号', 'require|length:<span class="number">11</span>', '手机号必填|手机号格式不正确'],</span><br><span class="line">		…</span><br><span class="line">	];</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> $scene = [</span><br><span class="line">		'add'=&gt;['mobile','name'…],</span><br><span class="line">		…</span><br><span class="line">	];</span><br><span class="line">	</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>添加自定义校验<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rule</span> = [</span><br><span class="line">	[<span class="string">'anchor_id|关联账号'</span>, <span class="string">'require|checkAnchor'</span>],</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">checkAnchor</span>(<span class="params"><span class="variable">$value</span></span>)</span>{</span><br><span class="line">	…</span><br><span class="line">	<span class="keyword">if</span> (<span class="variable">$error</span> = <span class="variable">$server</span>-&gt;<span class="title function_ invoke__">getError</span>()) {</span><br><span class="line">		<span class="title function_ invoke__">extract</span>(<span class="variable">$error</span>);</span><br><span class="line">		<span class="comment">/**</span></span><br><span class="line"><span class="comment">		 * <span class="doctag">@var</span> $msg</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$msg</span>;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
 
             </div>
             <hr/>
@@ -1624,7 +1624,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1844,8 +1844,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2058,7 +2056,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

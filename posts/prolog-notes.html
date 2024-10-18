@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Prolog笔记, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Prolog笔记, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    341
+                    294
                 </div>
                 
 
@@ -1077,14 +1077,14 @@ h3:hover {
                 <h2 id="1-加载脚本"><a href="#1-加载脚本" class="headerlink" title="1. 加载脚本"></a>1. 加载脚本</h2><p><code>?- ['E:/SWI-Prolog/test/friend.pl'].       %true</code></p>
 <h2 id="2-教程"><a href="#2-教程" class="headerlink" title="2. 教程"></a>2. 教程</h2><p><a target="_blank" rel="noopener" href="https://riptutorial.com/zh-CN/prolog">https://riptutorial.com/zh-CN/prolog</a></p>
 <h2 id="3-简单的计算求解："><a href="#3-简单的计算求解：" class="headerlink" title="3. 简单的计算求解："></a>3. 简单的计算求解：</h2><p><code>?- X is 3*7.       %X = 21</code></p>
-<h2 id="4-CLP（约束逻辑编程）库的使用"><a href="#4-CLP（约束逻辑编程）库的使用" class="headerlink" title="4. CLP（约束逻辑编程）库的使用"></a>4. CLP（约束逻辑编程）库的使用</h2><p>求解方程，CLP只能处理整数运算<br>    </p><figure class="highlight ruby"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs ruby"><span class="hljs-string">?-</span> use_module(library(clpfd)).<br><span class="hljs-string">?-</span> Y <span class="hljs-comment">#= 3+4.                    %Y = 7.</span><br><span class="hljs-string">?-</span> <span class="hljs-number">5</span> <span class="hljs-comment"><code class="language-hljs ruby"><span class="hljs-string">?-</span> use_module(library(clpfd)).<br><span class="hljs-string">?-</span> Y <span class="hljs-comment">#= 3+4.                    %Y = 7.</span><br><span class="hljs-string">?-</span> <span class="hljs-number">5</span> <span class="hljs-comment">#= 4+W.                    %W = 1.</span><br></code></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="4-CLP（约束逻辑编程）库的使用"><a href="#4-CLP（约束逻辑编程）库的使用" class="headerlink" title="4. CLP（约束逻辑编程）库的使用"></a>4. CLP（约束逻辑编程）库的使用</h2><p>求解方程，CLP只能处理整数运算<br>    </p><figure class="highlight ruby"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">?-</span> use_module(library(clpfd)).</span><br><span class="line"><span class="string">?-</span> Y <span class="comment">#= 3+4.                    %Y = 7.</span></span><br><span class="line"><span class="string">?-</span> <span class="number">5</span> <span class="comment">#= 4+W.                    %W = 1.</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="5-单行注释"><a href="#5-单行注释" class="headerlink" title="5. 单行注释"></a>5. 单行注释</h2><p>使用”%”</p>
 <h2 id="6-知识库"><a href="#6-知识库" class="headerlink" title="6. 知识库"></a>6. 知识库</h2><p>事实 + 规则 = 知识库。<br>事实是我们对这个世界直接观察的结果。规则是关于现实世界的逻辑推论。</p>
 <h2 id="7-合一（unification）"><a href="#7-合一（unification）" class="headerlink" title="7. 合一（unification）"></a>7. 合一（unification）</h2><p>找出那些使规则匹配的值。<br>合一有时候不是唯一的，可以通过“;”来进行追问，有时候我们可能不满足于一个答案。</p>
-<h2 id="8-列表-元组"><a href="#8-列表-元组" class="headerlink" title="8. 列表/元组"></a>8. 列表/元组</h2><p>程序 = 算法 + 数据结构。      列表是变长的容器，元组是定长的容器。<br>    </p><figure class="highlight gcode"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs gcode">?- <span class="hljs-comment">(1,2,3)</span> = <span class="hljs-comment">(1,2,3)</span>.               <span class="hljs-meta">%</span>元组<br>yes<br><br>?- [A,B,C] = [A,B,C].               <span class="hljs-meta"><code class="language-hljs gcode">?- <span class="hljs-comment">(1,2,3)</span> = <span class="hljs-comment">(1,2,3)</span>.               <span class="hljs-meta">%</span>元组<br>yes<br><br>?- [A,B,C] = [A,B,C].               <span class="hljs-meta">%</span>列表<br>yes<br></code></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="8-列表-元组"><a href="#8-列表-元组" class="headerlink" title="8. 列表/元组"></a>8. 列表/元组</h2><p>程序 = 算法 + 数据结构。      列表是变长的容器，元组是定长的容器。<br>    </p><figure class="highlight gcode"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">?- <span class="comment">(1,2,3)</span> = <span class="comment">(1,2,3)</span>.               <span class="meta">%</span>元组</span><br><span class="line">yes</span><br><span class="line"></span><br><span class="line">?- [A,B,C] = [A,B,C].               <span class="meta">%</span>列表</span><br><span class="line">yes</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="9-内置谓词"><a href="#9-内置谓词" class="headerlink" title="9. 内置谓词"></a>9. 内置谓词</h2><h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><p>获取列表的长度   <code>?- length([1,2,3],L).      %L = 3.</code></p>
-<h3 id="append"><a href="#append" class="headerlink" title="append"></a>append</h3><p>可以用来合并两个列表<br>    </p><figure class="highlight inform7"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs inform7">?- append(<span class="hljs-comment">[1]</span>,<span class="hljs-comment">[2]</span>,What).      %What = <span class="hljs-comment">[1, 2]</span>.<br>?- append(<span class="hljs-comment">[1]</span>,W,<span class="hljs-comment">[1,2,3]</span>).      %W = <span class="hljs-comment"><code class="language-hljs inform7">?- append(<span class="hljs-comment">[1]</span>,<span class="hljs-comment">[2]</span>,What).      %What = <span class="hljs-comment">[1, 2]</span>.<br>?- append(<span class="hljs-comment">[1]</span>,W,<span class="hljs-comment">[1,2,3]</span>).      %W = <span class="hljs-comment">[2, 3]</span>.<br></code></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="member"><a href="#member" class="headerlink" title="member"></a>member</h3><p>检查某一个值是否在一个列表内<br>    </p><figure class="highlight ruby"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs ruby"><span class="hljs-string">?-</span> member(<span class="hljs-number">1</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]).      %<span class="hljs-literal">true</span>.<br><span class="hljs-string">?-</span>  member(<span class="hljs-number">3</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]).      %<span class="hljs-literal"><code class="language-hljs ruby"><span class="hljs-string">?-</span> member(<span class="hljs-number">1</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]).      %<span class="hljs-literal">true</span>.<br><span class="hljs-string">?-</span>  member(<span class="hljs-number">3</span>,[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]).      %<span class="hljs-literal">false</span>.<br></code></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="append"><a href="#append" class="headerlink" title="append"></a>append</h3><p>可以用来合并两个列表<br>    </p><figure class="highlight inform7"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?- append(<span class="comment">[1]</span>,<span class="comment">[2]</span>,What).      %What = <span class="comment">[1, 2]</span>.</span><br><span class="line">?- append(<span class="comment">[1]</span>,W,<span class="comment">[1,2,3]</span>).      %W = <span class="comment">[2, 3]</span>.</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="member"><a href="#member" class="headerlink" title="member"></a>member</h3><p>检查某一个值是否在一个列表内<br>    </p><figure class="highlight ruby"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">?-</span> member(<span class="number">1</span>,[<span class="number">1</span>,<span class="number">2</span>]).      %<span class="literal">true</span>.</span><br><span class="line"><span class="string">?-</span>  member(<span class="number">3</span>,[<span class="number">1</span>,<span class="number">2</span>]).      %<span class="literal">false</span>.</span><br></pre></td></tr></tbody></table></figure><p></p>
 
             </div>
             <hr/>
@@ -1633,7 +1633,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1853,8 +1853,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2067,7 +2065,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

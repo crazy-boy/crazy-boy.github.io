@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SystemD, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="SystemD, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1061,7 +1061,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    367
+                    326
                 </div>
                 
 
@@ -1082,7 +1082,7 @@ h3:hover {
 <p>通过 systemctl 接口，可以启动/停止“单元”（unit），最常用的单元是“服务单元”（service），即系统守护程序。其他单元还有套接字单元（network socket）、定时器单元（timer）等等。</p>
 <p>服务单元会有一个服务描述文件，里面设置启动该服务需要知道的信息，比如 sshd 的服务描述是“在多用户模式下，等待网络可用后，运行 SSH 服务器。” 修改服务描述文件以后，必须重新启动服务，修改才会生效。</p>
 <h2 id="服务描述文件"><a href="#服务描述文件" class="headerlink" title="服务描述文件"></a>服务描述文件</h2><p>下面是一个服务描述文件的示例。它有很多设置，但是常用的就是那么几个。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre class=" language-hljs bash">[Unit]<br>Description=OpenBSD Secure Shell server<br>Documentation=man:sshd(8) man:sshd_config(5)<br>After=network.target auditd.service<br>ConditionPathExists=!/etc/ssh/sshd_not_to_be_run<br><br>[Service]<br>EnvironmentFile=-/etc/default/ssh<br>ExecStartPre=/usr/sbin/sshd -t<br>ExecStart=/usr/sbin/sshd -D <span class="hljs-variable">$SSHD_OPTS</span><br>ExecReload=/usr/sbin/sshd -t<br>ExecReload=/bin/kill -HUP <span class="hljs-variable"><code class="language-hljs bash">[Unit]<br>Description=OpenBSD Secure Shell server<br>Documentation=man:sshd(8) man:sshd_config(5)<br>After=network.target auditd.service<br>ConditionPathExists=!/etc/ssh/sshd_not_to_be_run<br><br>[Service]<br>EnvironmentFile=-/etc/default/ssh<br>ExecStartPre=/usr/sbin/sshd -t<br>ExecStart=/usr/sbin/sshd -D <span class="hljs-variable">$SSHD_OPTS</span><br>ExecReload=/usr/sbin/sshd -t<br>ExecReload=/bin/kill -HUP <span class="hljs-variable">$MAINPID</span><br>KillMode=process<br>Restart=on-failure<br>RestartPreventExitStatus=255<br>Type=notify<br>RuntimeDirectory=sshd<br>RuntimeDirectoryMode=0755<br><br>[Install]<br>WantedBy=multi-user.target<br>Alias=sshd.service<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=OpenBSD Secure Shell server</span><br><span class="line">Documentation=man:sshd(8) man:sshd_config(5)</span><br><span class="line">After=network.target auditd.service</span><br><span class="line">ConditionPathExists=!/etc/ssh/sshd_not_to_be_run</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">EnvironmentFile=-/etc/default/ssh</span><br><span class="line">ExecStartPre=/usr/sbin/sshd -t</span><br><span class="line">ExecStart=/usr/sbin/sshd -D <span class="variable">$SSHD_OPTS</span></span><br><span class="line">ExecReload=/usr/sbin/sshd -t</span><br><span class="line">ExecReload=/bin/kill -HUP <span class="variable">$MAINPID</span></span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartPreventExitStatus=255</span><br><span class="line">Type=notify</span><br><span class="line">RuntimeDirectory=sshd</span><br><span class="line">RuntimeDirectoryMode=0755</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">Alias=sshd.service</span><br></pre></td></tr></tbody></table></figure>
 <p>网上有一些<a target="_blank" rel="noopener" href="https://mysystemd.talos.sh/">描述文件生成器</a>，可以使用。</p>
 <p>系统的单元描述文件，一般放在目录<code>/etc/systemd/system</code>。用户的单元描述文件放在目录<code>/etc/systemd/user</code>。命令<code>systemctl status xxx.service</code>会显示单元描述文件的位置。</p>
 
@@ -1637,7 +1637,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1713,7 +1713,8 @@ h3:hover {
                     <div class="summary block-with-text">
                         
                             简介在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。
-一、安装ntp1[root@pb ~][root@pb ~]# yum install -y ntpda
+一、安装ntp1[root@pb ~]# yum install -y ntpdate
+二、同步时间12
                         
                     </div>
                     <div class="publish-info">
@@ -1866,8 +1867,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2090,7 +2089,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    367
+                    326
                 </div>
                 
 
@@ -2111,7 +2110,7 @@ h3:hover {
 <p>通过 systemctl 接口，可以启动/停止“单元”（unit），最常用的单元是“服务单元”（service），即系统守护程序。其他单元还有套接字单元（network socket）、定时器单元（timer）等等。</p>
 <p>服务单元会有一个服务描述文件，里面设置启动该服务需要知道的信息，比如 sshd 的服务描述是“在多用户模式下，等待网络可用后，运行 SSH 服务器。” 修改服务描述文件以后，必须重新启动服务，修改才会生效。</p>
 <h2 id="服务描述文件"><a href="#服务描述文件" class="headerlink" title="服务描述文件"></a>服务描述文件</h2><p>下面是一个服务描述文件的示例。它有很多设置，但是常用的就是那么几个。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre class=" language-hljs bash">[Unit]<br>Description=OpenBSD Secure Shell server<br>Documentation=man:sshd(8) man:sshd_config(5)<br>After=network.target auditd.service<br>ConditionPathExists=!/etc/ssh/sshd_not_to_be_run<br><br>[Service]<br>EnvironmentFile=-/etc/default/ssh<br>ExecStartPre=/usr/sbin/sshd -t<br>ExecStart=/usr/sbin/sshd -D <span class="hljs-variable">$SSHD_OPTS</span><br>ExecReload=/usr/sbin/sshd -t<br>ExecReload=/bin/kill -HUP <span class="hljs-variable"><code class="language-hljs bash">[Unit]<br>Description=OpenBSD Secure Shell server<br>Documentation=man:sshd(8) man:sshd_config(5)<br>After=network.target auditd.service<br>ConditionPathExists=!/etc/ssh/sshd_not_to_be_run<br><br>[Service]<br>EnvironmentFile=-/etc/default/ssh<br>ExecStartPre=/usr/sbin/sshd -t<br>ExecStart=/usr/sbin/sshd -D <span class="hljs-variable">$SSHD_OPTS</span><br>ExecReload=/usr/sbin/sshd -t<br>ExecReload=/bin/kill -HUP <span class="hljs-variable">$MAINPID</span><br>KillMode=process<br>Restart=on-failure<br>RestartPreventExitStatus=255<br>Type=notify<br>RuntimeDirectory=sshd<br>RuntimeDirectoryMode=0755<br><br>[Install]<br>WantedBy=multi-user.target<br>Alias=sshd.service<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=OpenBSD Secure Shell server</span><br><span class="line">Documentation=man:sshd(8) man:sshd_config(5)</span><br><span class="line">After=network.target auditd.service</span><br><span class="line">ConditionPathExists=!/etc/ssh/sshd_not_to_be_run</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">EnvironmentFile=-/etc/default/ssh</span><br><span class="line">ExecStartPre=/usr/sbin/sshd -t</span><br><span class="line">ExecStart=/usr/sbin/sshd -D <span class="variable">$SSHD_OPTS</span></span><br><span class="line">ExecReload=/usr/sbin/sshd -t</span><br><span class="line">ExecReload=/bin/kill -HUP <span class="variable">$MAINPID</span></span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartPreventExitStatus=255</span><br><span class="line">Type=notify</span><br><span class="line">RuntimeDirectory=sshd</span><br><span class="line">RuntimeDirectoryMode=0755</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">Alias=sshd.service</span><br></pre></td></tr></tbody></table></figure>
 <p>网上有一些<a target="_blank" rel="noopener" href="https://mysystemd.talos.sh/">描述文件生成器</a>，可以使用。</p>
 <p>系统的单元描述文件，一般放在目录<code>/etc/systemd/system</code>。用户的单元描述文件放在目录<code>/etc/systemd/user</code>。命令<code>systemctl status xxx.service</code>会显示单元描述文件的位置。</p>
 
@@ -2666,7 +2665,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -2742,7 +2741,8 @@ h3:hover {
                     <div class="summary block-with-text">
                         
                             简介在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。
-一、安装ntp1[root@pb ~][root@pb ~]# yum install -y ntpda
+一、安装ntp1[root@pb ~]# yum install -y ntpdate
+二、同步时间12
                         
                     </div>
                     <div class="publish-info">
@@ -2895,8 +2895,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -3124,7 +3122,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

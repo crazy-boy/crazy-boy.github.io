@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux下如何实现与Internet时间同步, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Linux下如何实现与Internet时间同步, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1061,14 +1061,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    530
+                    411
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -1078,14 +1078,14 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。</p>
-<h3 id="一、安装ntp"><a href="#一、安装ntp" class="headerlink" title="一、安装ntp"></a>一、安装ntp</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash">[root@pb ~]<span class="hljs-comment"><code class="language-hljs bash">[root@pb ~]<span class="hljs-comment"># yum install -y ntpdate</span><br></code></pre></td></tr></tbody></table></figure>
-<h2 id="二、同步时间"><a href="#二、同步时间" class="headerlink" title="二、同步时间"></a>二、同步时间</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs bash">// 方式一、使用域名连接，要经过DNS解析，速度慢。<br>[root@pb ~]<span class="hljs-comment"># ntpdate pool.ntp.org</span><br>// 方式二、使用IP连接，超级快。<br>[root@pb ~]<span class="hljs-comment"><code class="language-hljs bash">// 方式一、使用域名连接，要经过DNS解析，速度慢。<br>[root@pb ~]<span class="hljs-comment"># ntpdate pool.ntp.org</span><br>// 方式二、使用IP连接，超级快。<br>[root@pb ~]<span class="hljs-comment"># ntpdate 120.24.81.91</span><br></code></pre></td></tr></tbody></table></figure>
+                <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。</p>
+<h3 id="一、安装ntp"><a href="#一、安装ntp" class="headerlink" title="一、安装ntp"></a>一、安装ntp</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@pb ~]<span class="comment"># yum install -y ntpdate</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="二、同步时间"><a href="#二、同步时间" class="headerlink" title="二、同步时间"></a>二、同步时间</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 方式一、使用域名连接，要经过DNS解析，速度慢。</span><br><span class="line">[root@pb ~]<span class="comment"># ntpdate pool.ntp.org</span></span><br><span class="line">// 方式二、使用IP连接，超级快。</span><br><span class="line">[root@pb ~]<span class="comment"># ntpdate 120.24.81.91</span></span><br></pre></td></tr></tbody></table></figure>
 <p><a target="_blank" rel="noopener" href="http://www.pool.ntp.org是NTP的官方网站,在这上面我们可以找到离我们国家的NTP">http://www.pool.ntp.org是NTP的官方网站,在这上面我们可以找到离我们国家的NTP</a> Server cn.pool.ntp.org.它有3个服务器地址：<br>服务器一： 1.cn.pool.ntp.org<br>服务器二： 2.asia.pool.ntp.org<br>服务器三： 3.asia.pool.ntp.org<br>（直接用域名有时有问题，可以先Ping出他们的IP，然后用IP地址同步）</p>
-<p>// 出现以下信息说明成功<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><code class="language-hljs bash">Feb 21:23:06 ntpdate[62910]: step time server 182.92.12.11 offset -40.589470 sec<br></code></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"><a href="#三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖" class="headerlink" title="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"></a>三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖</h3><p>// 显示hardwareclock系统硬件时间<br></p><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"># hwclock</span><br></code></pre></td></tr></tbody></table></figure><br>// 将系统时间写入到系统硬件当中<br><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"><code class="language-hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"># hwclock</span><br></code></pre></td></tr></tbody></table></figure><br>// 将系统时间写入到系统硬件当中<br><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"># hwclock -w</span><br></code></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="四、设定计划任务同步网络时间"><a href="#四、设定计划任务同步网络时间" class="headerlink" title="四、设定计划任务同步网络时间"></a>四、设定计划任务同步网络时间</h3><h4 id="方式1：写在-etc-crontab里"><a href="#方式1：写在-etc-crontab里" class="headerlink" title="方式1：写在/etc/crontab里"></a>方式1：写在/etc/crontab里</h4><p>代码:<br></p><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs basic"><span class="hljs-symbol">11 </span>* * * root ntpdate <span class="hljs-number">210.72</span>.<span class="hljs-number">145.44</span><br></code></pre></td></tr></tbody></table></figure><br>每天11点与中国国家授时中心同步时间<br>每天11点与中国国家授时中心同步时间<br>当然前提是<br><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> install ntpdate<br></code></pre></td></tr></tbody></table></figure><br>代码也可是<br><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol"><code class="language-hljs basic"><span class="hljs-symbol">11 </span>* * * root ntpdate <span class="hljs-number">210.72</span>.<span class="hljs-number">145.44</span><br></code></pre></td></tr></tbody></table></figure><br>每天11点与中国国家授时中心同步时间<br>每天11点与中国国家授时中心同步时间<br>当然前提是<br><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> install ntpdate<br></code></pre></td></tr></tbody></table></figure><br>代码也可是<br><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">11 </span>* * * root ntpdate us.pool.ntp.org<br></code></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="方式2：使用命令crontab-e"><a href="#方式2：使用命令crontab-e" class="headerlink" title="方式2：使用命令crontab -e"></a>方式2：使用命令crontab -e</h4><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs nginx"><span class="hljs-attribute">crontab</span> -e<br><span class="hljs-number">10</span> <span class="hljs-number">5</span> * * * root ntpdate us.pool.ntp.org;<span class="hljs-attribute"><code class="language-hljs nginx"><span class="hljs-attribute">crontab</span> -e<br><span class="hljs-number">10</span> <span class="hljs-number">5</span> * * * root ntpdate us.pool.ntp.org;<span class="hljs-attribute">hwclock</span> -w<br></code></pre></td></tr></tbody></table></figure>
+<p> 出现以下信息说明成功<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Feb 21:23:06 ntpdate[62910]: step time server 182.92.12.11 offset -40.589470 sec</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"><a href="#三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖" class="headerlink" title="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"></a>三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖</h3><p>// 显示hardwareclock系统硬件时间<br></p><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@pb</span> ~]<span class="meta"># hwclock</span></span><br></pre></td></tr></tbody></table></figure><br>// 将系统时间写入到系统硬件当中<br><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@pb</span> ~]<span class="meta"># hwclock -w</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="四、设定计划任务同步网络时间"><a href="#四、设定计划任务同步网络时间" class="headerlink" title="四、设定计划任务同步网络时间"></a>四、设定计划任务同步网络时间</h3><h4 id="方式1：写在-etc-crontab里"><a href="#方式1：写在-etc-crontab里" class="headerlink" title="方式1：写在/etc/crontab里"></a>方式1：写在/etc/crontab里</h4><p>代码:<br></p><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">11 </span>* * * root ntpdate <span class="number">210.72</span>.<span class="number">145.44</span></span><br></pre></td></tr></tbody></table></figure><br>每天11点与中国国家授时中心同步时间<br>每天11点与中国国家授时中心同步时间<br>当然前提是<br><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> install ntpdate</span><br></pre></td></tr></tbody></table></figure><br>代码也可是<br><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">11 </span>* * * root ntpdate us.pool.ntp.org</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="方式2：使用命令crontab-e"><a href="#方式2：使用命令crontab-e" class="headerlink" title="方式2：使用命令crontab -e"></a>方式2：使用命令crontab -e</h4><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">crontab</span> -e</span><br><span class="line"><span class="number">10</span> <span class="number">5</span> * * * root ntpdate us.pool.ntp.org;<span class="attribute">hwclock</span> -w</span><br></pre></td></tr></tbody></table></figure>
 <p>这样每天5:10自动进行网络校时，并同时更新BIOS的时间</p>
 
             </div>
@@ -1639,7 +1639,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1690,14 +1690,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/38c1.html">
+                <a href="/posts/linux-short-cut-keys.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Linux下如何实现与Internet时间同步">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Linux命令行中的快捷键">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1708,43 +1707,42 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Linux下如何实现与Internet时间同步
+                          Linux命令行中的快捷键
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简介在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。
-一、安装ntp1[root@pb ~][root@pb ~]# yum install -y ntpda
+                            Linux 命令行中的快捷键非常丰富，可以大大提高程序员的工作效率。下面将详细介绍一些常用的快捷键，并分类说明：
+移动光标
+Ctrl+A: 将光标移动到行首
+Ctrl+E: 将光标移动到行尾
+Ctrl+B: 光标向左移动一个字符
+Ctrl+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-10-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ntpdate/" class="post-category">
-                                    ntpdate
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/ntpdate/">
-                        <span class="chip bg-color">ntpdate</span>
                     </a>
                     
                 </div>
@@ -1869,8 +1867,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2093,14 +2089,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    530
+                    411
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -2110,14 +2106,14 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。</p>
-<h3 id="一、安装ntp"><a href="#一、安装ntp" class="headerlink" title="一、安装ntp"></a>一、安装ntp</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash">[root@pb ~]<span class="hljs-comment"><code class="language-hljs bash">[root@pb ~]<span class="hljs-comment"># yum install -y ntpdate</span><br></code></pre></td></tr></tbody></table></figure>
-<h2 id="二、同步时间"><a href="#二、同步时间" class="headerlink" title="二、同步时间"></a>二、同步时间</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs bash">// 方式一、使用域名连接，要经过DNS解析，速度慢。<br>[root@pb ~]<span class="hljs-comment"># ntpdate pool.ntp.org</span><br>// 方式二、使用IP连接，超级快。<br>[root@pb ~]<span class="hljs-comment"><code class="language-hljs bash">// 方式一、使用域名连接，要经过DNS解析，速度慢。<br>[root@pb ~]<span class="hljs-comment"># ntpdate pool.ntp.org</span><br>// 方式二、使用IP连接，超级快。<br>[root@pb ~]<span class="hljs-comment"># ntpdate 120.24.81.91</span><br></code></pre></td></tr></tbody></table></figure>
+                <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。</p>
+<h3 id="一、安装ntp"><a href="#一、安装ntp" class="headerlink" title="一、安装ntp"></a>一、安装ntp</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@pb ~]<span class="comment"># yum install -y ntpdate</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="二、同步时间"><a href="#二、同步时间" class="headerlink" title="二、同步时间"></a>二、同步时间</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 方式一、使用域名连接，要经过DNS解析，速度慢。</span><br><span class="line">[root@pb ~]<span class="comment"># ntpdate pool.ntp.org</span></span><br><span class="line">// 方式二、使用IP连接，超级快。</span><br><span class="line">[root@pb ~]<span class="comment"># ntpdate 120.24.81.91</span></span><br></pre></td></tr></tbody></table></figure>
 <p><a target="_blank" rel="noopener" href="http://www.pool.ntp.org是NTP的官方网站,在这上面我们可以找到离我们国家的NTP">http://www.pool.ntp.org是NTP的官方网站,在这上面我们可以找到离我们国家的NTP</a> Server cn.pool.ntp.org.它有3个服务器地址：<br>服务器一： 1.cn.pool.ntp.org<br>服务器二： 2.asia.pool.ntp.org<br>服务器三： 3.asia.pool.ntp.org<br>（直接用域名有时有问题，可以先Ping出他们的IP，然后用IP地址同步）</p>
-<p>// 出现以下信息说明成功<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><code class="language-hljs bash">Feb 21:23:06 ntpdate[62910]: step time server 182.92.12.11 offset -40.589470 sec<br></code></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"><a href="#三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖" class="headerlink" title="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"></a>三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖</h3><p>// 显示hardwareclock系统硬件时间<br></p><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"># hwclock</span><br></code></pre></td></tr></tbody></table></figure><br>// 将系统时间写入到系统硬件当中<br><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"><code class="language-hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"># hwclock</span><br></code></pre></td></tr></tbody></table></figure><br>// 将系统时间写入到系统硬件当中<br><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs autoit">[root<span class="hljs-symbol">@pb</span> ~]<span class="hljs-meta"># hwclock -w</span><br></code></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="四、设定计划任务同步网络时间"><a href="#四、设定计划任务同步网络时间" class="headerlink" title="四、设定计划任务同步网络时间"></a>四、设定计划任务同步网络时间</h3><h4 id="方式1：写在-etc-crontab里"><a href="#方式1：写在-etc-crontab里" class="headerlink" title="方式1：写在/etc/crontab里"></a>方式1：写在/etc/crontab里</h4><p>代码:<br></p><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs basic"><span class="hljs-symbol">11 </span>* * * root ntpdate <span class="hljs-number">210.72</span>.<span class="hljs-number">145.44</span><br></code></pre></td></tr></tbody></table></figure><br>每天11点与中国国家授时中心同步时间<br>每天11点与中国国家授时中心同步时间<br>当然前提是<br><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> install ntpdate<br></code></pre></td></tr></tbody></table></figure><br>代码也可是<br><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol"><code class="language-hljs basic"><span class="hljs-symbol">11 </span>* * * root ntpdate <span class="hljs-number">210.72</span>.<span class="hljs-number">145.44</span><br></code></pre></td></tr></tbody></table></figure><br>每天11点与中国国家授时中心同步时间<br>每天11点与中国国家授时中心同步时间<br>当然前提是<br><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">apt-<span class="hljs-built_in">get</span> install ntpdate<br></code></pre></td></tr></tbody></table></figure><br>代码也可是<br><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">11 </span>* * * root ntpdate us.pool.ntp.org<br></code></pre></td></tr></tbody></table></figure><p></p>
-<h4 id="方式2：使用命令crontab-e"><a href="#方式2：使用命令crontab-e" class="headerlink" title="方式2：使用命令crontab -e"></a>方式2：使用命令crontab -e</h4><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs nginx"><span class="hljs-attribute">crontab</span> -e<br><span class="hljs-number">10</span> <span class="hljs-number">5</span> * * * root ntpdate us.pool.ntp.org;<span class="hljs-attribute"><code class="language-hljs nginx"><span class="hljs-attribute">crontab</span> -e<br><span class="hljs-number">10</span> <span class="hljs-number">5</span> * * * root ntpdate us.pool.ntp.org;<span class="hljs-attribute">hwclock</span> -w<br></code></pre></td></tr></tbody></table></figure>
+<p> 出现以下信息说明成功<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Feb 21:23:06 ntpdate[62910]: step time server 182.92.12.11 offset -40.589470 sec</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"><a href="#三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖" class="headerlink" title="三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖"></a>三、将系统时间写入到系统硬件当中，避免重启服务器时间覆盖</h3><p>// 显示hardwareclock系统硬件时间<br></p><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@pb</span> ~]<span class="meta"># hwclock</span></span><br></pre></td></tr></tbody></table></figure><br>// 将系统时间写入到系统硬件当中<br><figure class="highlight autoit"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@pb</span> ~]<span class="meta"># hwclock -w</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="四、设定计划任务同步网络时间"><a href="#四、设定计划任务同步网络时间" class="headerlink" title="四、设定计划任务同步网络时间"></a>四、设定计划任务同步网络时间</h3><h4 id="方式1：写在-etc-crontab里"><a href="#方式1：写在-etc-crontab里" class="headerlink" title="方式1：写在/etc/crontab里"></a>方式1：写在/etc/crontab里</h4><p>代码:<br></p><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">11 </span>* * * root ntpdate <span class="number">210.72</span>.<span class="number">145.44</span></span><br></pre></td></tr></tbody></table></figure><br>每天11点与中国国家授时中心同步时间<br>每天11点与中国国家授时中心同步时间<br>当然前提是<br><figure class="highlight routeros"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="built_in">get</span> install ntpdate</span><br></pre></td></tr></tbody></table></figure><br>代码也可是<br><figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">11 </span>* * * root ntpdate us.pool.ntp.org</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="方式2：使用命令crontab-e"><a href="#方式2：使用命令crontab-e" class="headerlink" title="方式2：使用命令crontab -e"></a>方式2：使用命令crontab -e</h4><figure class="highlight nginx"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">crontab</span> -e</span><br><span class="line"><span class="number">10</span> <span class="number">5</span> * * * root ntpdate us.pool.ntp.org;<span class="attribute">hwclock</span> -w</span><br></pre></td></tr></tbody></table></figure>
 <p>这样每天5:10自动进行网络校时，并同时更新BIOS的时间</p>
 
             </div>
@@ -2671,7 +2667,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -2722,14 +2718,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/38c1.html">
+                <a href="/posts/linux-short-cut-keys.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Linux下如何实现与Internet时间同步">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Linux命令行中的快捷键">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2740,43 +2735,42 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Linux下如何实现与Internet时间同步
+                          Linux命令行中的快捷键
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简介在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。
-一、安装ntp1[root@pb ~][root@pb ~]# yum install -y ntpda
+                            Linux 命令行中的快捷键非常丰富，可以大大提高程序员的工作效率。下面将详细介绍一些常用的快捷键，并分类说明：
+移动光标
+Ctrl+A: 将光标移动到行首
+Ctrl+E: 将光标移动到行尾
+Ctrl+B: 光标向左移动一个字符
+Ctrl+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-10-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ntpdate/" class="post-category">
-                                    ntpdate
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Linux/">
                         <span class="chip bg-color">Linux</span>
-                    </a>
-                    
-                    <a href="/tags/ntpdate/">
-                        <span class="chip bg-color">ntpdate</span>
                     </a>
                     
                 </div>
@@ -2901,8 +2895,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -3130,7 +3122,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

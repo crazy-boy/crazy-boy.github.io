@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Windows下快速拆分txt文件, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Windows下快速拆分txt文件, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    361
+                    267
                 </div>
                 
 
@@ -1077,8 +1077,8 @@ h3:hover {
                 <p>有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。</p>
 <p>现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件<br><img src="/images/split_txt_1.png" alt=""></p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1、在文件所在目录打开git-bash；"><a href="#1、在文件所在目录打开git-bash；" class="headerlink" title="1、在文件所在目录打开git bash；"></a>1、在文件所在目录打开git bash；</h3><h3 id="2、创建一个文件夹"><a href="#2、创建一个文件夹" class="headerlink" title="2、创建一个文件夹"></a>2、创建一个文件夹</h3><p><img src="/images/split_txt_2.png" alt=""></p>
-<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><span class="hljs-built_in">split</span> -l 5 -d -a 1 a.txt tmp/m_ &amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in"><code class="language-hljs bash"><span class="hljs-built_in">split</span> -l 5 -d -a 1 a.txt tmp/m_ &amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in">mv</span>  {} {}.txt<br></code></pre></td></tr></tbody></table></figure>
-<p>命令分解：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs bash">-l 5 ：按行分割，每个文件5行<br>-d ：添加数字后缀，如00,01<br>-a 1 : 用一位数据来顺序命名(从0开始)<br>tmp/ ：拆分后的文件放在tmp目录下<br>m_ ：拆分后的文件名前缀<br>&amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in"><code class="language-hljs bash">-l 5 ：按行分割，每个文件5行<br>-d ：添加数字后缀，如00,01<br>-a 1 : 用一位数据来顺序命名(从0开始)<br>tmp/ ：拆分后的文件放在tmp目录下<br>m_ ：拆分后的文件名前缀<br>&amp;&amp; <span class="hljs-built_in">cd</span> tmp/ &amp;&amp; <span class="hljs-built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="hljs-built_in">mv</span>  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)<br></code></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="3、执行命令"><a href="#3、执行命令" class="headerlink" title="3、执行命令"></a>3、执行命令</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">split</span> -l 5 -d -a 1 a.txt tmp/m_ &amp;&amp; <span class="built_in">cd</span> tmp/ &amp;&amp; <span class="built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="built_in">mv</span>  {} {}.txt</span><br></pre></td></tr></tbody></table></figure>
+<p>命令分解：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-l 5 ：按行分割，每个文件5行</span><br><span class="line">-d ：添加数字后缀，如00,01</span><br><span class="line">-a 1 : 用一位数据来顺序命名(从0开始)</span><br><span class="line">tmp/ ：拆分后的文件放在tmp目录下</span><br><span class="line">m_ ：拆分后的文件名前缀</span><br><span class="line">&amp;&amp; <span class="built_in">cd</span> tmp/ &amp;&amp; <span class="built_in">ls</span>|grep m_|xargs -n1 -i{} <span class="built_in">mv</span>  {} {}.txt ：进入tmp目录，对拆分后的文件添加扩展名txt(默认生成的文件是没有扩展名的)</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="4、在tmp目录下就看到生成的文件了"><a href="#4、在tmp目录下就看到生成的文件了" class="headerlink" title="4、在tmp目录下就看到生成的文件了"></a>4、在tmp目录下就看到生成的文件了</h3><p><img src="/images/split_txt_3.png" alt=""></p>
 <p>注：对xlsx文件拆分有问题</p>
 
@@ -1629,7 +1629,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1682,7 +1682,7 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/a1b63ab8.html">
+                <a href="/posts/php-assign-array-values.html">
                     <div class="card-image">
                         
                         
@@ -1742,7 +1742,7 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/28294742.html">
+                <a href="/posts/php-unusual-functions.html">
                     <div class="card-image">
                         
                         
@@ -1848,8 +1848,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2063,7 +2061,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

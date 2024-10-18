@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式——原型模式, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="设计模式——原型模式, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    538
+                    330
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -1076,7 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>  将一个对象作为原型，对其进行复制、克隆，产生一个和原对象类似的新对象。<br>  <img src="/images/prototype-pattern-1.png" alt=""></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下原型模式的代码实现</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-comment">// 定义了一个原型</span><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Prototype</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$v</span> = <span class="hljs-string">'clone'</span>.PHP_EOL;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'create'</span>.PHP_EOL;<br>    }<br>    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcretePrototype1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Prototype</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>{<br><br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"><span class="hljs-variable">$param</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;v = <span class="hljs-variable">$param</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcretePrototype2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Prototype</span></span>{<br>    <span class="hljs-comment">//当外部使用clone关键字进行对象克隆时，直接就会进入这个魔术方法中。</span><br>    <span class="hljs-comment">//在这个魔术方法里面我们可以对属性进行处理，特别是针对引用属性进行一些独特的处理。</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;v = <span class="hljs-string">'clone 2'</span>;<br>    }<br>}<br><br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$p</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcretePrototype1</span>();<br><span class="hljs-variable">$p</span>-&gt;<span class="hljs-title function_ invoke__">init</span>(<span class="hljs-string">'hello'</span>);<br><span class="hljs-variable">$p1</span> = <span class="hljs-keyword">clone</span> <span class="hljs-variable">$p</span>;    <span class="hljs-comment">// ConcretePrototype1的__construct不会被执行</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$p</span>-&gt;v.<span class="hljs-string">'=='</span>.<span class="hljs-variable">$p1</span>-&gt;v;     <span class="hljs-comment">// output: create hello==hello</span><br><br><br><span class="hljs-variable">$p</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcretePrototype2</span>();<br><span class="hljs-variable">$p2</span> = <span class="hljs-keyword">clone</span> <span class="hljs-variable">$p</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$p</span>-&gt;v.<span class="hljs-string">'=='</span>.<span class="hljs-variable">$p2</span>-&gt;v;     <span class="hljs-comment">// output: create clone ==clone 2</span><br><br><span class="hljs-comment">// 浅复制：将一个对象复制后，基本数据类型的变量都会重新创建，而引用类型，指向的还是原对象所指向的。</span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-comment">// 定义了一个原型</span><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Prototype</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$v</span> = <span class="hljs-string">'clone'</span>.PHP_EOL;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">'create'</span>.PHP_EOL;<br>    }<br>    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcretePrototype1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Prototype</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>{<br><br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"><span class="hljs-variable">$param</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;v = <span class="hljs-variable">$param</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcretePrototype2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Prototype</span></span>{<br>    <span class="hljs-comment">//当外部使用clone关键字进行对象克隆时，直接就会进入这个魔术方法中。</span><br>    <span class="hljs-comment">//在这个魔术方法里面我们可以对属性进行处理，特别是针对引用属性进行一些独特的处理。</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__clone</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;v = <span class="hljs-string">'clone 2'</span>;<br>    }<br>}<br><br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$p</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcretePrototype1</span>();<br><span class="hljs-variable">$p</span>-&gt;<span class="hljs-title function_ invoke__">init</span>(<span class="hljs-string">'hello'</span>);<br><span class="hljs-variable">$p1</span> = <span class="hljs-keyword">clone</span> <span class="hljs-variable">$p</span>;    <span class="hljs-comment">// ConcretePrototype1的__construct不会被执行</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$p</span>-&gt;v.<span class="hljs-string">'=='</span>.<span class="hljs-variable">$p1</span>-&gt;v;     <span class="hljs-comment">// output: create hello==hello</span><br><br><br><span class="hljs-variable">$p</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcretePrototype2</span>();<br><span class="hljs-variable">$p2</span> = <span class="hljs-keyword">clone</span> <span class="hljs-variable">$p</span>;<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$p</span>-&gt;v.<span class="hljs-string">'=='</span>.<span class="hljs-variable">$p2</span>-&gt;v;     <span class="hljs-comment">// output: create clone ==clone 2</span><br><br><span class="hljs-comment">// 浅复制：将一个对象复制后，基本数据类型的变量都会重新创建，而引用类型，指向的还是原对象所指向的。</span><br><span class="hljs-comment">// 深复制：将一个对象复制后，不论是基本数据类型还有引用类型，都是重新创建的。简单来说，就是深复制进行了完全彻底的复制，而浅复制不彻底。</span><br><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义了一个原型</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Prototype</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$v</span> = <span class="string">'clone'</span>.PHP_EOL;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'create'</span>.PHP_EOL;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span>(<span class="params"></span>)</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcretePrototype1</span> <span class="keyword">extends</span> <span class="title">Prototype</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span>(<span class="params"></span>)</span>{</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"><span class="variable">$param</span></span>)</span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;v = <span class="variable">$param</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConcretePrototype2</span> <span class="keyword">extends</span> <span class="title">Prototype</span></span>{</span><br><span class="line">    <span class="comment">//当外部使用clone关键字进行对象克隆时，直接就会进入这个魔术方法中。</span></span><br><span class="line">    <span class="comment">//在这个魔术方法里面我们可以对属性进行处理，特别是针对引用属性进行一些独特的处理。</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;v = <span class="string">'clone 2'</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="variable">$p</span> = <span class="keyword">new</span> <span class="title class_">ConcretePrototype1</span>();</span><br><span class="line"><span class="variable">$p</span>-&gt;<span class="title function_ invoke__">init</span>(<span class="string">'hello'</span>);</span><br><span class="line"><span class="variable">$p1</span> = <span class="keyword">clone</span> <span class="variable">$p</span>;    <span class="comment">// ConcretePrototype1的__construct不会被执行</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$p</span>-&gt;v.<span class="string">'=='</span>.<span class="variable">$p1</span>-&gt;v;     <span class="comment">// output: create hello==hello</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">$p</span> = <span class="keyword">new</span> <span class="title class_">ConcretePrototype2</span>();</span><br><span class="line"><span class="variable">$p2</span> = <span class="keyword">clone</span> <span class="variable">$p</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$p</span>-&gt;v.<span class="string">'=='</span>.<span class="variable">$p2</span>-&gt;v;     <span class="comment">// output: create clone ==clone 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 浅复制：将一个对象复制后，基本数据类型的变量都会重新创建，而引用类型，指向的还是原对象所指向的。</span></span><br><span class="line"><span class="comment">// 深复制：将一个对象复制后，不论是基本数据类型还有引用类型，都是重新创建的。简单来说，就是深复制进行了完全彻底的复制，而浅复制不彻底。</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>  特点：减少创建对象时的开销</p>
 
             </div>
@@ -1626,7 +1626,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1679,11 +1679,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/command-pattern.html">
+                <a href="/posts/singleton-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——命令模式">
+                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——单例模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1694,15 +1694,14 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——命令模式
+                          设计模式——单例模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下命令模式的代码实现
-1234567891011121314151617181920212223242526272829303132333435363738394041// 创建接口Commandinterface Comma
+                            说明单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。单例模式适用于经常被访问的对象，或是创建和销毁需要调用大量资源和时间的对象，使用单例模式可以避免频繁创建和销毁对
                         
                     </div>
                     <div class="publish-info">
@@ -1739,11 +1738,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/singleton-pattern.html">
+                <a href="/posts/command-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——单例模式">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="设计模式——命令模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1754,14 +1753,15 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——单例模式
+                          设计模式——命令模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。单例模式适用于经常被访问的对象，或是创建和销毁需要调用大量资源和时间的对象，使用单例模式可以避免频繁创建和销毁对
+                            说明示例下面看下命令模式的代码实现
+1234567891011121314151617181920212223242526272829303132333435363738394041// 创建接口Commandinterface Comma
                         
                     </div>
                     <div class="publish-info">
@@ -1845,8 +1845,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2060,7 +2058,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

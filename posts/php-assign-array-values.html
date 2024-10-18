@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="代码规范建议, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="PHP中数组内容依次赋值给变量, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>代码规范建议 | 飞奔的蜗牛</title>
+    <title>PHP中数组内容依次赋值给变量 | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -733,12 +733,12 @@ class="themespring" -->
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">代码规范建议</h1>
+                    <h1 class="description center-align post-title">PHP中数组内容依次赋值给变量</h1>
                 </div>
             </div>
         </div>
@@ -856,7 +856,7 @@ class="themespring" -->
 <div class="row">
     
     
-        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="代码规范">
+        <div id="main-content" class="col s12 m12 l9 suibis" data-spmid="PHP">
             <style>
     #switchspring {
         bottom: 223px!important;
@@ -1023,8 +1023,8 @@ h3:hover {
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                <span class="chip bg-color">代码规范</span>
+                            <a href="/tags/PHP/">
+                                <span class="chip bg-color">PHP</span>
                             </a>
                         
                     </div>
@@ -1035,8 +1035,8 @@ h3:hover {
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                编程
+                            <a href="/categories/PHP/" class="post-category">
+                                PHP
                             </a>
                         
                     </div>
@@ -1048,7 +1048,7 @@ h3:hover {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-28
+                    2022-05-08
                 </div>
                 
 
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    335
+                    314
                 </div>
                 
 
@@ -1074,17 +1074,11 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-参数规范"><a href="#1-参数规范" class="headerlink" title="1. 参数规范"></a>1. 参数规范</h2><p> 在函数/方法里，未设置默认值的参数应放在设置默认值的参数前，如：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>(<span class="hljs-variable">$age</span> = 21, <span class="hljs-variable">$id</span>, <span class="hljs-variable"><code class="language-hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>(<span class="hljs-variable">$age</span> = 21, <span class="hljs-variable">$id</span>, <span class="hljs-variable">$options</span> = []){<br>     print_r(func_get_args());<br> }<br></code></pre></td></tr></tbody></table></figure><p></p>
-<p> 上述代码在IDE中会对$age=21，提示“Optional parameter is provided before required”，应改为：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>(<span class="hljs-variable">$id</span>, <span class="hljs-variable">$age</span> = 21, <span class="hljs-variable"><code class="language-hljs bash"><span class="hljs-keyword">function</span> <span class="hljs-built_in">test</span>(<span class="hljs-variable">$id</span>, <span class="hljs-variable">$age</span> = 21, <span class="hljs-variable">$options</span> = []){<br>     print_r(func_get_args());<br> }<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="2-命名规范"><a href="#2-命名规范" class="headerlink" title="2. 命名规范"></a>2. 命名规范</h2><p> 常用的四种命名格式：驼峰、帕斯卡、蛇形、串形，主要是为了解决多个单词之间的空格问题。</p>
-<ul>
-<li>驼峰命名（Camel Case），又叫小驼峰，除了第一个单词，其他单词首字母大写：<br>原始：<code>last login time</code><br>驼峰：<code>lastLoginTime</code></li>
-<li>帕斯卡（Pascal Case），又叫大驼峰，跟驼峰命名很像，只不过所有单词首字母都需要大写：<br>原始：<code>last login time</code><br>帕斯卡：<code>LastLoginTime</code></li>
-<li>蛇形（Snake Case），全由小写字母和下划线组成，是指用下划线(_)作用单词间的分隔符：<br>原始：<code>last login time</code><br>蛇形：<code>last_login_time</code></li>
-<li>串行（Kebab Case），又叫脊柱命名法（spinal case），是指用短横线(-)作用单词间的分隔符：<br>原始：<code>last login time</code><br>串行：<code>last-login-time</code><br>一般而言，函数名或方法名采用小驼峰，类名采用大驼峰，数据库字段名采用蛇形。</li>
-</ul>
-<h3 id="3-二次确认"><a href="#3-二次确认" class="headerlink" title="3. 二次确认"></a>3. 二次确认</h3><p> 不可撤销的高危操作需二次确认，如删除、批量推送</p>
+                <p>在日常开发过程中，经常需要把数组中的内容依次赋值给变量，可以使用list、[]、extract来处理。</p>
+<h3 id="1-list-var1-var2…-arr"><a href="#1-list-var1-var2…-arr" class="headerlink" title="1. list($var1,$var2…) = $arr;"></a>1. list($var1,$var2…) = $arr;</h3><p>   或者[$var1,$var2…] = $arr;<br>   将数组中的值赋给一些变量<br>   该函数只能用于索引数组，且数字索引从0开始。<br>   如果对应的数字下标，则该变量赋值为null</p>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">list</span>(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>) = [<span class="string">'Jone'</span>, <span class="string">'Jam'</span>, <span class="string">'Kav'</span>];</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>);       <span class="comment">//output：string(4) "Jone" string(3) "Jam" string(3) "Kav"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">list</span>(<span class="variable">$a</span>, <span class="variable">$b</span>) = [<span class="string">'Jone'</span>, <span class="string">'Jam'</span>, <span class="string">'Kav'</span>];</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span>, <span class="variable">$b</span>);           <span class="comment">//output：string(4) "Jone" string(3) "Jam"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">list</span>(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>) = [<span class="number">2</span> =&gt; <span class="string">'Jone'</span>, <span class="number">3</span> =&gt; <span class="string">'Jam'</span>, <span class="number">4</span> =&gt; <span class="string">'Kav'</span>];</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>);       <span class="comment">//output：NULL NULL string(4) "Jone"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">list</span>(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>) = [<span class="string">'id'</span> =&gt; <span class="number">4</span>, <span class="number">2</span> =&gt; <span class="string">'Jam'</span>, <span class="string">'name'</span> =&gt; <span class="string">'Kav'</span>];</span><br><span class="line"><span class="title function_ invoke__">var_dump</span>(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>);       <span class="comment">//output：NULL NULL string(3) "Jam"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>   list()如果需要跳过某些值<br></p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$info</span> = [<span class="string">'coffee'</span>, <span class="string">'brown'</span>, <span class="string">'caffeine'</span>];</span><br><span class="line">[,<span class="variable">$a</span>,] = <span class="variable">$info</span>;</span><br><span class="line">var_dump(<span class="variable">$a</span>);	<span class="regexp">//</span> string(<span class="number">5</span>) <span class="string">"brown"</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="2-extract-array-extract-rules-prefix"><a href="#2-extract-array-extract-rules-prefix" class="headerlink" title="2. extract(array,extract_rules,prefix);"></a>2. extract(array,extract_rules,prefix);</h3><p>   从数组中将变量导入到当前的符号表<br>   该函数使用数组键名作为变量名，使用数组键值作为变量值，进行依次赋值<br></p><figure class="highlight awk"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">extract([<span class="string">'id'</span> =&gt; <span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'Hoj'</span>]);</span><br><span class="line">/**</span><br><span class="line"> * 在IDE中会提示错误，加上注释即可</span><br><span class="line"> * @var <span class="variable">$id</span></span><br><span class="line"> * @var <span class="variable">$name</span></span><br><span class="line"> */</span><br><span class="line">var_dump(<span class="variable">$id</span>, <span class="variable">$name</span>);       <span class="regexp">//</span>output：int(<span class="number">3</span>) string(<span class="number">3</span>) <span class="string">"Hoj"</span></span><br><span class="line"></span><br><span class="line">extract([<span class="number">3</span>, <span class="string">'name'</span> =&gt; <span class="string">'Hoj'</span>]);</span><br><span class="line">var_dump(<span class="variable">$name</span>);            <span class="regexp">//</span>output：string(<span class="number">3</span>) <span class="string">"Hoj"</span></span><br></pre></td></tr></tbody></table></figure><br>总结：一般索引数组用list，关联数组用extract。<p></p>
 
             </div>
             <hr/>
@@ -1110,7 +1104,7 @@ h3:hover {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://crazy-boy.com/posts/6541028b.html">https://crazy-boy.com/posts/6541028b.html</a>
+                    <a href="https://crazy-boy.com/posts/php-assign-array-values.html">https://crazy-boy.com/posts/php-assign-array-values.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1148,8 +1142,8 @@ h3:hover {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
-                                    <span class="chip bg-color">代码规范</span>
+                                <a href="/tags/PHP/">
+                                    <span class="chip bg-color">PHP</span>
                                 </a>
                             
                         </div>
@@ -1633,7 +1627,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1686,11 +1680,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/5081417f.html">
+                <a href="/posts/thinkphp-where.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="性能测试——ab.exe">
+                        <img src="/medias/banner/0.jpg" class="responsive-img" alt="ThinkPHP5框架where条件中含有or的使用方法">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1701,81 +1695,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          性能测试——ab.exe
+                          ThinkPHP5框架where条件中含有or的使用方法
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ab.exe是apache server下的一个性能检测小组件，使用方便简单。使用方法：
-1. 找到ab.exe的位置在电脑中找到ab.exe的位置，一般在Apache文件下的bin目录中，我这里的目录路径为：D:\software\php
+                            1. 直接whereOr12$list = Db::name('tb')-&gt;where(['status'=&gt;1,'admin_id'=&gt;5])-&gt;whereOr(['type'=&gt;1,'step'=&gt;2
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
-                                    测试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/ab-exe/">
-                        <span class="chip bg-color">ab.exe</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/phpstorm-show-history.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="phpStorm查找指定文件的修改历史">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          phpStorm查找指定文件的修改历史
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            打开需要查找的文件，对着文件右击选择Local History=&gt;Show History
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-27
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1791,8 +1724,69 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/phpStorm/">
-                        <span class="chip bg-color">phpStorm</span>
+                    <a href="/tags/ThinkPHP/">
+                        <span class="chip bg-color">ThinkPHP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/windows-quick-split-file.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="Windows下快速拆分txt文件">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          Windows下快速拆分txt文件
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            有时候，需要把一个大的txt文件拆分为多个小文件，并行处理文件里的内容，来提高工作效率。下面介绍一下在windows下的拆分方法。
+现在有个a.txt文件，里面有若干行内容，现要拆分为多个小文件
+操作步骤1、在文件所在目录打开git bas
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Windows/" class="post-category">
+                                    Windows
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
                     </a>
                     
                 </div>
@@ -1854,8 +1848,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -1876,7 +1868,7 @@ h3:hover {
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         
         
-        <div class="toc-widget" data-spmid="代码规范">
+        <div class="toc-widget" data-spmid="PHP">
             <div class="toc-title">
                 <i class="far fa-list-alt"></i>
                 &nbsp;&nbsp;目录
@@ -1892,7 +1884,7 @@ h3:hover {
 
     
     
-<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="代码规范">
+<div id="floating-toc-btn" class="hide-on-med-and-down" data-spmid="PHP">
     <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
@@ -2068,7 +2060,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       
