@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PHP中isset与array_key_exists的性能对比, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="PHP中isset与array_key_exists的性能对比, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    171
+                    124
                 </div>
                 
 
@@ -1076,7 +1076,7 @@ h3:hover {
             <div id="articleContent">
                 <div class="note info">前言：在开发中，之前判断数组中的键是否存在，我一直使用isset；今天看到有同事大量使用array_key_exists，闲来没事就测试了一下它们的性能。</div>
 
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">3242</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'test'</span>, <span class="hljs-string">'age'</span> =&gt; <span class="hljs-literal">null</span>];<br><br><span class="hljs-variable">$time1</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp</span> = <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$arr</span>[<span class="hljs-string">'age'</span>]);<br>}<br><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable">$time1</span>;<br><br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-variable">$time2</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp1</span> = <span class="hljs-title function_ invoke__">array_key_exists</span>(<span class="hljs-string">'age'</span>, <span class="hljs-variable">$arr</span>);<br>}<br><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable"><code class="language-hljs php"><span class="hljs-variable">$arr</span> = [<span class="hljs-string">'id'</span> =&gt; <span class="hljs-number">3242</span>, <span class="hljs-string">'name'</span> =&gt; <span class="hljs-string">'test'</span>, <span class="hljs-string">'age'</span> =&gt; <span class="hljs-literal">null</span>];<br><br><span class="hljs-variable">$time1</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp</span> = <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$arr</span>[<span class="hljs-string">'age'</span>]);<br>}<br><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable">$time1</span>;<br><br><span class="hljs-keyword">echo</span> PHP_EOL;<br><span class="hljs-variable">$time2</span> = <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>);<br><span class="hljs-keyword">for</span> (<span class="hljs-variable">$i</span> = <span class="hljs-number">0</span>; <span class="hljs-variable">$i</span> &lt; <span class="hljs-number">100000000</span>; <span class="hljs-variable">$i</span>++) {<br>    <span class="hljs-variable">$tmp1</span> = <span class="hljs-title function_ invoke__">array_key_exists</span>(<span class="hljs-string">'age'</span>, <span class="hljs-variable">$arr</span>);<br>}<br><br><span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">microtime</span>(<span class="hljs-literal">true</span>) - <span class="hljs-variable">$time2</span>;<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$arr</span> = [<span class="string">'id'</span> =&gt; <span class="number">3242</span>, <span class="string">'name'</span> =&gt; <span class="string">'test'</span>, <span class="string">'age'</span> =&gt; <span class="literal">null</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable">$time1</span> = <span class="title function_ invoke__">microtime</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="number">100000000</span>; <span class="variable">$i</span>++) {</span><br><span class="line">    <span class="variable">$tmp</span> = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'age'</span>]);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">microtime</span>(<span class="literal">true</span>) - <span class="variable">$time1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> PHP_EOL;</span><br><span class="line"><span class="variable">$time2</span> = <span class="title function_ invoke__">microtime</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="number">100000000</span>; <span class="variable">$i</span>++) {</span><br><span class="line">    <span class="variable">$tmp1</span> = <span class="title function_ invoke__">array_key_exists</span>(<span class="string">'age'</span>, <span class="variable">$arr</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">microtime</span>(<span class="literal">true</span>) - <span class="variable">$time2</span>;</span><br></pre></td></tr></tbody></table></figure>
 <p>上面的代码运行结果为：<code><br>2.1061670780182<br>3.1671521663666
 </code></p>
 <p>经测试：isset的效率要高于array_key_exists。</p>
@@ -1628,7 +1628,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1851,8 +1851,6 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2065,7 +2063,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

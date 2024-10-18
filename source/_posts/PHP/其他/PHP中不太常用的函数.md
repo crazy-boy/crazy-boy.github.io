@@ -1,8 +1,8 @@
 ---
 title: PHP中不太常用的函数
 tags: [PHP]
-categories: PHP
-abbrlink: '28294742'
+categories: [PHP]
+abbrlink: 'php-unusual-functions'
 date: 2022-05-08 16:28:55
 updated: 2022-05-08 16:28:55
 ---

@@ -1,7 +1,7 @@
 ---
 title: PHP运维笔记
 tags: [运维]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-operate-note'
 date: 2019-03-20 17:37:00
 updated: 2019-03-20 17:40:00

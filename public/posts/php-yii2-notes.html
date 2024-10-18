@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Yii2使用笔记, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Yii2使用笔记, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    147
+                    106
                 </div>
                 
 
@@ -1075,8 +1075,8 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="1-安装Yii2第三方扩展"><a href="#1-安装Yii2第三方扩展" class="headerlink" title="1. 安装Yii2第三方扩展"></a>1. 安装Yii2第三方扩展</h3><ul>
-<li>方法一：composer安装<figure class="highlight armasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class=" language-hljs armasm"><span class="hljs-symbol">php</span> composer.phar <span class="hljs-meta">require</span> php-amqplib/php-amqplib<br>或者<br>在composer.json文件的<span class="hljs-meta">require</span>里添加<span class="hljs-string">"php-amqplib/php-amqplib"</span>: <span class="hljs-string"><code class="language-hljs armasm"><span class="hljs-symbol">php</span> composer.phar <span class="hljs-meta">require</span> php-amqplib/php-amqplib<br>或者<br>在composer.json文件的<span class="hljs-meta">require</span>里添加<span class="hljs-string">"php-amqplib/php-amqplib"</span>: <span class="hljs-string">"~2.7"</span>，然后执行composer update<br></code></pre></td></tr></tbody></table></figure></li>
-<li>方法二：手动添加<br>1、拷贝php-amqplib扩展到vendor目录下，<br>2、在vendor/yiisoft/extensions.php里添加如下配置项： <figure class="highlight smali"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre class=" language-hljs smali">'php-amqplib/php-amqplib' =&gt;<br>  <span class="hljs-built_in"> array </span>(<br>      'name' =&gt; 'php-amqplib/php-amqplib',<br>      'version' =&gt; '2.4.5.0',<br>      'alias' =&gt;<br>        <span class="hljs-built_in"><code class="language-hljs smali">'php-amqplib/php-amqplib' =&gt;<br>  <span class="hljs-built_in"> array </span>(<br>      'name' =&gt; 'php-amqplib/php-amqplib',<br>      'version' =&gt; '2.4.5.0',<br>      'alias' =&gt;<br>        <span class="hljs-built_in"> array </span>(<br>            '@PhpAmqpLib' => $vendorDir . '/php-amqplib/php-amqplib/PhpAmqpLib',<br>         ),<br>   ), <br></code></pre></td></tr></tbody></table></figure>
+<li>方法一：composer安装<figure class="highlight armasm"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">php</span> composer.phar <span class="meta">require</span> php-amqplib/php-amqplib</span><br><span class="line">或者</span><br><span class="line">在composer.json文件的<span class="meta">require</span>里添加<span class="string">"php-amqplib/php-amqplib"</span>: <span class="string">"~2.7"</span>，然后执行composer update</span><br></pre></td></tr></tbody></table></figure></li>
+<li>方法二：手动添加<br>1、拷贝php-amqplib扩展到vendor目录下，<br>2、在vendor/yiisoft/extensions.php里添加如下配置项： <figure class="highlight smali"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">'php-amqplib/php-amqplib' =&gt;</span><br><span class="line">  <span class="built_in"> array </span>(</span><br><span class="line">      'name' =&gt; 'php-amqplib/php-amqplib',</span><br><span class="line">      'version' =&gt; '2.4.5.0',</span><br><span class="line">      'alias' =&gt;</span><br><span class="line">        <span class="built_in"> array </span>(</span><br><span class="line">            '@PhpAmqpLib' =&gt; $vendorDir . '/php-amqplib/php-amqplib/PhpAmqpLib',</span><br><span class="line">         ),</span><br><span class="line">   ), </span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 
@@ -1627,7 +1627,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1851,8 +1851,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2065,7 +2063,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

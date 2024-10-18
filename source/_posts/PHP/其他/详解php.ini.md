@@ -1,7 +1,7 @@
 ---
 title: 详解php.ini
 tags: [PHP]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-ini-config'
 date: 2020-07-12 19:44:25
 updated: 2020-07-12 19:44:25

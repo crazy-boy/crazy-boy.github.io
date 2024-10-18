@@ -1,7 +1,7 @@
 ---
 title: JS点击复制指定内容
 tags: [JavaScript]
-categories: 前端
+categories: [前端]
 abbrlink: 'js-copy-object'
 date: 2019-07-02 19:41:00
 updated: 2019-07-02 19:45:00

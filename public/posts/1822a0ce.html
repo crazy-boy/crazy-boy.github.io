@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS笔记, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="CSS笔记, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1628,7 +1628,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1681,6 +1681,66 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/posts/mysql-notes.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="MySQL笔记">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          MySQL笔记
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. mysql根据汉字首字母排序的方法12-- utf8_general_ci编码select * from tname order by convert(name using gbk);
+2. 删除表数据的时候，如果表使用了别名应该这样
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MySQL/" class="post-category">
+                                    MySQL
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/posts/jquery-note.html">
                     <div class="card-image">
                         
@@ -1707,9 +1767,9 @@ h3:hover {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1727,69 +1787,6 @@ h3:hover {
                     
                     <a href="/tags/Jquery/">
                         <span class="chip bg-color">Jquery</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/linux-common-commands.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="Linux常用命令">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          Linux常用命令
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            本人编程多年，一直对Linux操作不熟练，主要原因是命令不熟悉，为方便记忆，现罗列一些常用的命令：
-操作文件
-创建文件夹：mkdir dir
-删除文件夹：rm -rf dir   -r向下递归，-f强制删除
-创建文件：touch a.txt
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Linux/" class="post-category">
-                                    Linux
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -1850,8 +1847,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2065,7 +2060,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

@@ -1,7 +1,7 @@
 ---
 title: CSS笔记
 tags: [CSS]
-categories: 前端
+categories: [前端]
 abbrlink: 1822a0ce
 date: 2018-06-04 11:19:00
 updated: 2018-06-04 11:43:00

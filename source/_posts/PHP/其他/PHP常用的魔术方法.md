@@ -1,7 +1,7 @@
 ---
 title: PHP常用的魔术方法
 tags: [魔术方法]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-magic-methods'
 date: 2020-08-22 10:36:25
 updated: 2020-08-22 10:36:25

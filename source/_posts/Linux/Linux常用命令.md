@@ -41,7 +41,7 @@ updated: 2022-06-06 19:35:00
  - 实时查看日志最后100行的内容： `tail -f -n 100 xx.log`
  - 查询最后100行的内容：`tail -n 100 xx.log`
  - 查询100行之后的所有内容：`tail -n +100 xx.log`
- - 查询头10行的内容：`head -n 10 xx.log`
+ - 查看文件的前10行：`head -n 10 xx.log`
  - 查询除最后100行外的内容：`head -n -100 xx.log`
  - 根据关键字查询日志：`cat -n xx.log |grep "charge"`   可以得到关键字日志的行号和内容
  - 根据关键字查询日志并获取最后5行：`grep 'charge' xx.log |tail -n 5`

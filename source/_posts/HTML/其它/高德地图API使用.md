@@ -1,7 +1,7 @@
 ---
 title: 高德地图API使用
 tags: [高德地图]
-categories: 第三方
+categories: [第三方]
 abbrlink: 'amap-api'
 date: 2018-06-05 09:44:00
 updated: 2018-06-05 14:07:00

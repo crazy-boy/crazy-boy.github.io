@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL笔记, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="MySQL笔记, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    906
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -1074,26 +1074,26 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs pgsql"><span class="hljs-comment">-- utf8_general_ci编码</span><br><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> tname <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> convert(<span class="hljs-type">name</span> <span class="hljs-keyword"><code class="language-hljs pgsql"><span class="hljs-comment">-- utf8_general_ci编码</span><br><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> tname <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> convert(<span class="hljs-type">name</span> <span class="hljs-keyword">using</span> gbk);<br></code></pre></td></tr></tbody></table></figure>
+                <h3 id="1-mysql根据汉字首字母排序的方法"><a href="#1-mysql根据汉字首字母排序的方法" class="headerlink" title="1. mysql根据汉字首字母排序的方法"></a>1. mysql根据汉字首字母排序的方法</h3><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- utf8_general_ci编码</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> tname <span class="keyword">order</span> <span class="keyword">by</span> convert(<span class="type">name</span> <span class="keyword">using</span> gbk);</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="2-删除表数据的时候，如果表使用了别名"><a href="#2-删除表数据的时候，如果表使用了别名" class="headerlink" title="2. 删除表数据的时候，如果表使用了别名"></a>2. 删除表数据的时候，如果表使用了别名</h3><p>应该这样写：<code>DELETE a FROM table a;</code></p>
 <h3 id="3-不使用缓存执行某个查询sql"><a href="#3-不使用缓存执行某个查询sql" class="headerlink" title="3. 不使用缓存执行某个查询sql"></a>3. 不使用缓存执行某个查询sql</h3><p><code>SELECT SQL_NO_CACHE xx, xx from tb;</code></p>
 <h3 id="4-MySql中Blob与Text的区别"><a href="#4-MySql中Blob与Text的区别" class="headerlink" title="4. MySql中Blob与Text的区别"></a>4. MySql中Blob与Text的区别</h3><p>BLOB列被视为二进制字符串，TEXT列被视为非二进制字符串。</p>
 <h3 id="5-MyISAM和InnoDB的区别"><a href="#5-MyISAM和InnoDB的区别" class="headerlink" title="5. MyISAM和InnoDB的区别"></a>5. MyISAM和InnoDB的区别</h3><p>Innodb 支持事务处理与外键和行级锁；<br>MyISAM类型的表强调的是性能，其执行速度比InnoDB类型更快。</p>
 <h3 id="6-数据库恢复"><a href="#6-数据库恢复" class="headerlink" title="6. 数据库恢复"></a>6. 数据库恢复</h3><p>是指通过技术手段将保存在数据库中丢失的电子数据进行抢救和恢复的技术。</p>
 <h3 id="7-mysql删除自定义函数："><a href="#7-mysql删除自定义函数：" class="headerlink" title="7. mysql删除自定义函数："></a>7. mysql删除自定义函数：</h3><p><code>DROP FUNCTION IF EXISTS `函数名`;</code></p>
-<h3 id="8-插入数据："><a href="#8-插入数据：" class="headerlink" title="8. 插入数据："></a>8. 插入数据：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">value</span> (val1,val2,val3……);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">values</span> (val1,val2,val3……);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb <span class="hljs-keyword">set</span> field1<span class="hljs-operator">=</span>val1,field2<span class="hljs-operator">=</span>val2,field3<span class="hljs-operator">=</span>val3;<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">values</span> (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);<br><span class="hljs-keyword">insert</span> ignore <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">values</span> (val1,val2,val3……);		<span class="hljs-operator">/</span><span class="hljs-operator"><code class="language-hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">value</span> (val1,val2,val3……);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">values</span> (val1,val2,val3……);<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb <span class="hljs-keyword">set</span> field1<span class="hljs-operator">=</span>val1,field2<span class="hljs-operator">=</span>val2,field3<span class="hljs-operator">=</span>val3;<br><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">values</span> (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);<br><span class="hljs-keyword">insert</span> ignore <span class="hljs-keyword">into</span> tb (field1,field2,field3……) <span class="hljs-keyword">values</span> (val1,val2,val3……);		<span class="hljs-operator">/</span><span class="hljs-operator">/</span>使用ignore关键字忽略错误<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="9-查询数据库中每个表的记录数："><a href="#9-查询数据库中每个表的记录数：" class="headerlink" title="9. 查询数据库中每个表的记录数："></a>9. 查询数据库中每个表的记录数：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs sql">use information_schema;<br><span class="hljs-keyword">select</span> table_name,table_rows <span class="hljs-keyword">from</span> tables <span class="hljs-keyword">where</span> TABLE_SCHEMA <span class="hljs-operator">=</span> <span class="hljs-string">'dataBase'</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> table_rows <span class="hljs-keyword"><code class="language-hljs sql">use information_schema;<br><span class="hljs-keyword">select</span> table_name,table_rows <span class="hljs-keyword">from</span> tables <span class="hljs-keyword">where</span> TABLE_SCHEMA <span class="hljs-operator">=</span> <span class="hljs-string">'dataBase'</span> <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> table_rows <span class="hljs-keyword">desc</span>;  <br></code></pre></td></tr></tbody></table></figure>
-<h3 id="10-mysql查询主键字段名："><a href="#10-mysql查询主键字段名：" class="headerlink" title="10. mysql查询主键字段名："></a>10. mysql查询主键字段名：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` <span class="hljs-keyword">WHERE</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">'表名'</span> <span class="hljs-keyword">AND</span> constraint_name<span class="hljs-operator">=</span><span class="hljs-string"><code class="language-hljs sql"><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` <span class="hljs-keyword">WHERE</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">'表名'</span> <span class="hljs-keyword">AND</span> constraint_name<span class="hljs-operator">=</span><span class="hljs-string">'PRIMARY'</span>;<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="11-mysql查询所有字段名："><a href="#11-mysql查询所有字段名：" class="headerlink" title="11. mysql查询所有字段名："></a>11. mysql查询所有字段名：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> information_schema.columns <span class="hljs-keyword">WHERE</span> table_name<span class="hljs-operator">=</span><span class="hljs-string"><code class="language-hljs sql"><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">FROM</span> information_schema.columns <span class="hljs-keyword">WHERE</span> table_name<span class="hljs-operator">=</span><span class="hljs-string">'表名'</span>;<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="12、null的问题："><a href="#12、null的问题：" class="headerlink" title="12、null的问题："></a>12、null的问题：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">update</span> t_classroom <span class="hljs-keyword">set</span> building_name<span class="hljs-operator">=</span><span class="hljs-keyword">null</span> <span class="hljs-keyword">where</span> build_id <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword"><code class="language-hljs sql"><span class="hljs-keyword">update</span> t_classroom <span class="hljs-keyword">set</span> building_name<span class="hljs-operator">=</span><span class="hljs-keyword">null</span> <span class="hljs-keyword">where</span> build_id <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">null</span>;<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="13、获取指定字段的默认值："><a href="#13、获取指定字段的默认值：" class="headerlink" title="13、获取指定字段的默认值："></a>13、获取指定字段的默认值：</h3><p>DEFAULT(col_name)<br></p><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">DEFAULT</span>(sort) <span class="hljs-keyword">from</span> t_node_school limit <span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">DEFAULT</span>(sort) <span class="hljs-keyword">from</span> t_node_school limit <span class="hljs-number">1</span>;<br></code></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="8-插入数据："><a href="#8-插入数据：" class="headerlink" title="8. 插入数据："></a>8. 插入数据：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb (field1,field2,field3……) <span class="keyword">value</span> (val1,val2,val3……);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb (field1,field2,field3……) <span class="keyword">values</span> (val1,val2,val3……);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb <span class="keyword">set</span> field1<span class="operator">=</span>val1,field2<span class="operator">=</span>val2,field3<span class="operator">=</span>val3;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb (field1,field2,field3……) <span class="keyword">values</span> (val11,val12,val13……),(val21,val22,val23……),(val31,val32,val33……);</span><br><span class="line"><span class="keyword">insert</span> ignore <span class="keyword">into</span> tb (field1,field2,field3……) <span class="keyword">values</span> (val1,val2,val3……);		<span class="operator">/</span><span class="operator">/</span>使用ignore关键字忽略错误</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="9-查询数据库中每个表的记录数："><a href="#9-查询数据库中每个表的记录数：" class="headerlink" title="9. 查询数据库中每个表的记录数："></a>9. 查询数据库中每个表的记录数：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use information_schema;</span><br><span class="line"><span class="keyword">select</span> table_name,table_rows <span class="keyword">from</span> tables <span class="keyword">where</span> TABLE_SCHEMA <span class="operator">=</span> <span class="string">'dataBase'</span> <span class="keyword">order</span> <span class="keyword">by</span> table_rows <span class="keyword">desc</span>;  </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="10-mysql查询主键字段名："><a href="#10-mysql查询主键字段名：" class="headerlink" title="10. mysql查询主键字段名："></a>10. mysql查询主键字段名：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">FROM</span> INFORMATION_SCHEMA.`KEY_COLUMN_USAGE` <span class="keyword">WHERE</span> table_name<span class="operator">=</span><span class="string">'表名'</span> <span class="keyword">AND</span> constraint_name<span class="operator">=</span><span class="string">'PRIMARY'</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="11-mysql查询所有字段名："><a href="#11-mysql查询所有字段名：" class="headerlink" title="11. mysql查询所有字段名："></a>11. mysql查询所有字段名：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">FROM</span> information_schema.columns <span class="keyword">WHERE</span> table_name<span class="operator">=</span><span class="string">'表名'</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="12、null的问题："><a href="#12、null的问题：" class="headerlink" title="12、null的问题："></a>12、null的问题：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> t_classroom <span class="keyword">set</span> building_name<span class="operator">=</span><span class="keyword">null</span> <span class="keyword">where</span> build_id <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">null</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="13、获取指定字段的默认值："><a href="#13、获取指定字段的默认值：" class="headerlink" title="13、获取指定字段的默认值："></a>13、获取指定字段的默认值：</h3><p>DEFAULT(col_name)<br></p><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">DEFAULT</span>(sort) <span class="keyword">from</span> t_node_school limit <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h3 id="14、mysql重命名表名："><a href="#14、mysql重命名表名：" class="headerlink" title="14、mysql重命名表名："></a>14、mysql重命名表名：</h3><p><code>alter table tb1 rename to tb2;</code><br>或者<br><code>rename tb1 to tb2;</code></p>
 <h3 id="15、null字段排序问题："><a href="#15、null字段排序问题：" class="headerlink" title="15、null字段排序问题："></a>15、null字段排序问题：</h3><p>设排序字段为sort，使用order by sort desc实现降序时，sort为null的数据会排在最后面；<br>但是使用order by sort升序时，sort为null的数据会排在最前面，如果想将sort为null的数据排在后面，就需要加is null。<br>如：<code>select * from t_grade order by sort is null, sort, create_time desc;</code></p>
 <h3 id="16、主键设置规则"><a href="#16、主键设置规则" class="headerlink" title="16、主键设置规则"></a>16、主键设置规则</h3><p> 主键的值不可更新，未来可能会变更的字段不能设置为主键；<br> 主键的值不可为空，且不能重复；</p>
-<h3 id="17、查看某个表的所有列："><a href="#17、查看某个表的所有列：" class="headerlink" title="17、查看某个表的所有列："></a>17、查看某个表的所有列：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">show</span> columns <span class="hljs-keyword">from</span> tableName;  或者  <span class="hljs-keyword">describe</span> tableName; <span class="hljs-operator">/</span><span class="hljs-operator"><code class="language-hljs sql"><span class="hljs-keyword">show</span> columns <span class="hljs-keyword">from</span> tableName;  或者  <span class="hljs-keyword">describe</span> tableName; <span class="hljs-operator">/</span><span class="hljs-operator">/</span>可以用来生成数据字典<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="18、下划线”-”通配符-匹配一个字符"><a href="#18、下划线”-”通配符-匹配一个字符" class="headerlink" title="18、下划线”_”通配符 匹配一个字符"></a>18、下划线”_”通配符 匹配一个字符</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">select</span> field1,field2 <span class="hljs-keyword">from</span> tableName <span class="hljs-keyword">where</span> field3 <span class="hljs-keyword"><code class="language-hljs sql"><span class="hljs-keyword">select</span> field1,field2 <span class="hljs-keyword">from</span> tableName <span class="hljs-keyword">where</span> field3 <span class="hljs-keyword">like</span> "_xx";<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h3> <figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-keyword">select</span> weekday("2021-11-10")<span class="hljs-operator">+</span><span class="hljs-number">1</span> week;      <br><span class="hljs-comment"><code class="language-hljs sql"><span class="hljs-keyword">select</span> weekday("2021-11-10")<span class="hljs-operator">+</span><span class="hljs-number">1</span> week;      <br><span class="hljs-comment">-- 2021年11月10日是星期三</span><br></code></pre></td></tr></tbody></table></figure>
-<h3 id="20、单条SQL语句完成多种数据统计"><a href="#20、单条SQL语句完成多种数据统计" class="headerlink" title="20、单条SQL语句完成多种数据统计"></a>20、单条SQL语句完成多种数据统计</h3> <figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><span class="hljs-comment">-- 现需分别统计wl_student_score_logs表中exam_id为5的change_score增加量和减少量</span><br><span class="hljs-keyword">select</span><br><span class="hljs-built_in">sum</span>( if( change_score <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, change_score, <span class="hljs-number">0</span>)) <span class="hljs-keyword">as</span> increase_score,<br><span class="hljs-built_in">sum</span>( if( change_score  <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span>, change_score, <span class="hljs-number">0</span>)) <span class="hljs-keyword">as</span> reduce_score<br><span class="hljs-keyword">from</span> wl_student_score_logs <span class="hljs-keyword">where</span> exam_id<span class="hljs-operator">=</span><span class="hljs-number"><code class="language-hljs sql"><span class="hljs-comment">-- 现需分别统计wl_student_score_logs表中exam_id为5的change_score增加量和减少量</span><br><span class="hljs-keyword">select</span><br><span class="hljs-built_in">sum</span>( if( change_score <span class="hljs-operator">&gt;</span> <span class="hljs-number">0</span>, change_score, <span class="hljs-number">0</span>)) <span class="hljs-keyword">as</span> increase_score,<br><span class="hljs-built_in">sum</span>( if( change_score  <span class="hljs-operator">&lt;</span> <span class="hljs-number">0</span>, change_score, <span class="hljs-number">0</span>)) <span class="hljs-keyword">as</span> reduce_score<br><span class="hljs-keyword">from</span> wl_student_score_logs <span class="hljs-keyword">where</span> exam_id<span class="hljs-operator">=</span><span class="hljs-number">5</span>;<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="17、查看某个表的所有列："><a href="#17、查看某个表的所有列：" class="headerlink" title="17、查看某个表的所有列："></a>17、查看某个表的所有列：</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> columns <span class="keyword">from</span> tableName;  或者  <span class="keyword">describe</span> tableName; <span class="operator">/</span><span class="operator">/</span>可以用来生成数据字典</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="18、下划线”-”通配符-匹配一个字符"><a href="#18、下划线”-”通配符-匹配一个字符" class="headerlink" title="18、下划线”_”通配符 匹配一个字符"></a>18、下划线”_”通配符 匹配一个字符</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> field1,field2 <span class="keyword">from</span> tableName <span class="keyword">where</span> field3 <span class="keyword">like</span> "_xx";</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="19、日期转星期"><a href="#19、日期转星期" class="headerlink" title="19、日期转星期"></a>19、日期转星期</h3> <figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> weekday("2021-11-10")<span class="operator">+</span><span class="number">1</span> week;      </span><br><span class="line"><span class="comment">-- 2021年11月10日是星期三</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="20、单条SQL语句完成多种数据统计"><a href="#20、单条SQL语句完成多种数据统计" class="headerlink" title="20、单条SQL语句完成多种数据统计"></a>20、单条SQL语句完成多种数据统计</h3> <figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 现需分别统计wl_student_score_logs表中exam_id为5的change_score增加量和减少量</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="built_in">sum</span>( if( change_score <span class="operator">&gt;</span> <span class="number">0</span>, change_score, <span class="number">0</span>)) <span class="keyword">as</span> increase_score,</span><br><span class="line"><span class="built_in">sum</span>( if( change_score  <span class="operator">&lt;</span> <span class="number">0</span>, change_score, <span class="number">0</span>)) <span class="keyword">as</span> reduce_score</span><br><span class="line"><span class="keyword">from</span> wl_student_score_logs <span class="keyword">where</span> exam_id<span class="operator">=</span><span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="21、truncate、drop-和-delete-的区别"><a href="#21、truncate、drop-和-delete-的区别" class="headerlink" title="21、truncate、drop 和 delete 的区别"></a>21、truncate、drop 和 delete 的区别</h3><pre><code>1. 执行速度：drop &gt; truncate &gt; detele；
 2. delete 和 truncate 只删除表数据，而 drop 会删除表数据和表结构以及表的索引、约束和触发器；
 3. delete 可以加 where 条件实现部分数据删除，而 truncate 和 drop 不能加 where 条件是整体删除；
@@ -1651,7 +1651,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1764,11 +1764,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/jquery-note.html">
+                <a href="/posts/1822a0ce.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Jquery笔记">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="CSS笔记">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1779,14 +1779,17 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Jquery笔记
+                          CSS笔记
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            jquery获取json的长度1234567//一维：var JsonTemp = {'id':5,'name':'lilei'};  length = JsonTemp.length;//二维：var JsonTemp = [{"name
+                            
+如果希望css样式不被覆盖，可以在后面加上!important，如：.cntck{ margin-right: 5px!important;}
+
+如果css希望两个标签对齐，可以用position来处理，如：.cntck{position
                         
                     </div>
                     <div class="publish-info">
@@ -1808,8 +1811,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jquery/">
-                        <span class="chip bg-color">Jquery</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
@@ -1870,8 +1873,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2085,7 +2086,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

@@ -1,8 +1,8 @@
 ---
 title: 性能测试——ab.exe
 tags: [ab.exe]
-categories: 测试
-abbrlink: 5081417f
+categories: [测试]
+abbrlink: 'performance-test'
 date: 2022-05-06 17:28:37
 updated: 2022-05-06 17:28:37
 ---

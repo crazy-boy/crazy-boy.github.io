@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: PHP, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="分类: PHP, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -831,6 +831,96 @@ class="themespring" -->
     
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
+                    <a href="/posts/php-task-lock.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="PHP任务加锁">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              PHP任务加锁
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在PHP中，有时候我们需要设置定时任务，同一时间只有一个任务在执行。这就需要使用互斥锁来控制，下面介绍下实现方式：
+使用 flock 函数实现文件锁以下是一个示例：12345678$fp = fopen('/tmp/lock.txt', '
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/PHP/">
+                            <span class="chip bg-color">PHP</span>
+                        </a>
+                        
+                        <a href="/tags/lock/">
+                            <span class="chip bg-color">lock</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
@@ -1965,7 +2055,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/a1b63ab8.html" target="_blank">
+                    <a href="/posts/php-assign-array-values.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
@@ -2018,91 +2108,6 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
                             
                                 在日常开发过程中，经常需要把数组中的内容依次赋值给变量，可以使用list、[]、extract来处理。
 1. list($var1,$var2…) = $arr;   或者[$var1,$var2…] = $arr;   将数组中的值赋给一
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/PHP/">
-                            <span class="chip bg-color">PHP</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
-                    <a href="/posts/28294742.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/3.jpg" class="responsive-img" alt="PHP中不太常用的函数">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              PHP中不太常用的函数
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1. constant()   返回常量的值123456define('DEV','test');var_dump(constant('DEV'));       //string(4) "test"     等同于var_dump(DEV
                             
                         </div>
                         <div class="publish-info">
@@ -2251,7 +2256,7 @@ static和self很接近，唯一区别在于：self调用的是本身代码片段
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

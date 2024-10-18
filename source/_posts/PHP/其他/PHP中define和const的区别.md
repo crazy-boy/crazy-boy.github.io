@@ -2,7 +2,7 @@
 title: PHP中define和const的区别
 abbrlink: 'php-define-const'
 tags:  [define与const]
-categories:  PHP
+categories:  [PHP]
 date: 2022-07-05 00:34:14
 ---
 

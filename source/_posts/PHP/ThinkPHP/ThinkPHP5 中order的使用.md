@@ -1,7 +1,7 @@
 ---
 title: ThinkPHP5 中order的使用
 tags: [ThinkPHP]
-categories: PHP
+categories: [PHP]
 abbrlink: 'thinkphp-order'
 date: 2022-05-06 20:49:19
 updated: 2022-05-06 20:49:19

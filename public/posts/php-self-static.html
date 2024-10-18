@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="php中，this、self、static的区别, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="php中，this、self、static的区别, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    234
+                    177
                 </div>
                 
 
@@ -1080,7 +1080,7 @@ h3:hover {
 <li>static和self很接近，唯一区别在于：self调用的是本身代码片段的这个类；而static调用的是从堆内存中提取出来的，即访问的是当前实例化的那个类。</li>
 </ul>
 <p>下面看下测试代码：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Jams'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">26</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>-&gt;name . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">self</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInfo</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">static</span>::<span class="hljs-variable">$age</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Kiv'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">20</span>;<br>}<br><br>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>())-&gt;<span class="hljs-title function_ invoke__">start</span>();<br>B::<span class="hljs-title function_ invoke__">getAge</span>();<br>B::<span class="hljs-title function_ invoke__"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Jams'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">26</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>-&gt;name . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-variable language_">$this</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAge</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">self</span>::<span class="hljs-variable">$age</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInfo</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">get_called_class</span>() . <span class="hljs-string">'==&gt;'</span> . <span class="hljs-built_in">static</span>::<span class="hljs-variable">$age</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">'Kiv'</span>;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-built_in">static</span> <span class="hljs-variable">$age</span> = <span class="hljs-number">20</span>;<br>}<br><br>(<span class="hljs-keyword">new</span> <span class="hljs-title function_ invoke__">B</span>())-&gt;<span class="hljs-title function_ invoke__">start</span>();<br>B::<span class="hljs-title function_ invoke__">getAge</span>();<br>B::<span class="hljs-title function_ invoke__">getInfo</span>();<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$name</span> = <span class="string">'Jams'</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="built_in">static</span> <span class="variable">$age</span> = <span class="number">26</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="keyword">echo</span> <span class="title function_ invoke__">get_called_class</span>() . <span class="string">'==&gt;'</span> . <span class="variable language_">$this</span>-&gt;name . <span class="string">'==&gt;'</span> . <span class="variable language_">$this</span>::<span class="variable">$age</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getAge</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="keyword">echo</span> <span class="title function_ invoke__">get_called_class</span>() . <span class="string">'==&gt;'</span> . <span class="built_in">self</span>::<span class="variable">$age</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="keyword">echo</span> <span class="title function_ invoke__">get_called_class</span>() . <span class="string">'==&gt;'</span> . <span class="built_in">static</span>::<span class="variable">$age</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$name</span> = <span class="string">'Kiv'</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="built_in">static</span> <span class="variable">$age</span> = <span class="number">20</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">(<span class="keyword">new</span> <span class="title function_ invoke__">B</span>())-&gt;<span class="title function_ invoke__">start</span>();</span><br><span class="line">B::<span class="title function_ invoke__">getAge</span>();</span><br><span class="line">B::<span class="title function_ invoke__">getInfo</span>();</span><br></pre></td></tr></tbody></table></figure>
 <p>输出结果为：<code><br>B==&gt;Kiv==&gt;20<br>B==&gt;26<br>B==&gt;20
 </code></p>
 
@@ -1631,7 +1631,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1853,8 +1853,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2067,7 +2065,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

@@ -1,7 +1,7 @@
 ---
 title: PHP中，通过&改变变量的值，效率如何
 tags: [PHP笔记]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-assignment'
 date: 2022-06-02 20:46:42
 updated: 2022-06-02 20:46:42

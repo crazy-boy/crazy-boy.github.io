@@ -1,7 +1,7 @@
 ---
 title: PHP常用的算法
 tags: [算法]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-common-algorithm'
 date: 2022-01-12 09:41:25
 updated: 2022-01-12 09:41:25

@@ -5,7 +5,7 @@
 # Site
 title: 飞奔的蜗牛
 #subtitle: '键舞人生'
-description: 这里是网站描述
+description: 编程界的懒人，偶尔写写。    #网站的描述
 keywords: [编码人生]  #网站的关键词
 author: Crazy Boy
 language: zh-CN
@@ -61,9 +61,9 @@ highlight:
   enable: false
   line_number: true
   auto_detect: true
-  tab_replace: 
+  tab_replace:
   wrap: true
-  hljs: true
+  hljs: false
 prism_plugin:
   mode: preprocess   # realtime/preprocess
   theme: tomorrow
@@ -73,7 +73,7 @@ prismjs:
   enable: false
   preprocess: true
   line_number: true
-  tab_replace: 
+  tab_replace:
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -136,9 +136,9 @@ search:
 postInfo:
   date: true
   update: false
-  wordCount: false # 设置文章字数统计为 true.
+  wordCount: true # 设置文章字数统计为 true.
   totalCount: false # 设置站点文章总字数统计为 true.
-  min2read: false # 阅读时长.
+  min2read: true # 阅读时长.
   readCount: true # 阅读次数.
 
 #添加 RSS 订阅支持
@@ -153,6 +153,6 @@ feed:
   order_by: -date
 
 abbrlink:
-	alg: crc16   #算法： crc16(default) and crc32
+  alg: crc16   #算法： crc16(default) and crc32
   rep: hex     #进制： dec(default) and hex: dec 
 

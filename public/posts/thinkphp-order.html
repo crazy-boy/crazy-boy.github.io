@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ThinkPHP5 中order的使用, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="ThinkPHP5 中order的使用, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    167
+                    133
                 </div>
                 
 
@@ -1074,9 +1074,9 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。<br>下面这个查询没有得到预期的结果：<br></p><figure class="highlight livescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs livescript"> $<span class="hljs-keyword">list</span> = Db::name<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'tb'</span>)</span>-&gt;</span>where<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>])</span>-&gt;</span>order<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'create_time'</span>=&gt;SORT_DESC])</span>-&gt;</span>field<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id,name'</span>)</span>-&gt;</span>select();<br><span class="hljs-regexp"><code class="language-hljs livescript"> $<span class="hljs-keyword">list</span> = Db::name<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'tb'</span>)</span>-&gt;</span>where<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'status'</span>=&gt;<span class="hljs-number">1</span>])</span>-&gt;</span>order<span class="hljs-function"><span class="hljs-params">([<span class="hljs-string">'create_time'</span>=&gt;SORT_DESC])</span>-&gt;</span>field<span class="hljs-function"><span class="hljs-params">(<span class="hljs-string">'id,name'</span>)</span>-&gt;</span>select();<br><span class="hljs-regexp">// 输出sql为：select id,name from tb where status=1 order by create_time;</span><br></code></pre></td></tr></tbody></table></figure><p></p>
+                <p>之前一直在使用Yii2，在查询排序时习惯了使用 SORT_DESC | SORT_ASC，今天在使用的时候发现了问题，记录一下。<br>下面这个查询没有得到预期的结果：<br></p><figure class="highlight livescript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> $<span class="keyword">list</span> = Db::name<span class="function"><span class="params">(<span class="string">'tb'</span>)</span>-&gt;</span>where<span class="function"><span class="params">([<span class="string">'status'</span>=&gt;<span class="number">1</span>])</span>-&gt;</span>order<span class="function"><span class="params">([<span class="string">'create_time'</span>=&gt;SORT_DESC])</span>-&gt;</span>field<span class="function"><span class="params">(<span class="string">'id,name'</span>)</span>-&gt;</span>select();</span><br><span class="line"><span class="regexp">// 输出sql为：select id,name from tb where status=1 order by create_time;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>问题在于SORT_DESC=3、SORT_ASC=4，这不符合thinkphp中order方法的传参规则，<br>可以这样使用：</p>
-<figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs stylus"><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id'</span>,<span class="hljs-string">'desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">([<span class="hljs-string">'id'</span>=&gt;<span class="hljs-string">'desc'</span>,<span class="hljs-string">'create_time'</span>=&gt;<span class="hljs-string">'asc'</span>])</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string"><code class="language-hljs stylus"><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id'</span>,<span class="hljs-string">'desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id desc'</span>)</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">([<span class="hljs-string">'id'</span>=&gt;<span class="hljs-string">'desc'</span>,<span class="hljs-string">'create_time'</span>=&gt;<span class="hljs-string">'asc'</span>])</span></span><br><span class="hljs-function"><span class="hljs-title">order</span><span class="hljs-params">(<span class="hljs-string">'id,create_time desc'</span>)</span></span><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">order</span><span class="params">(<span class="string">'id'</span>,<span class="string">'desc'</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">order</span><span class="params">(<span class="string">'id desc'</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">order</span><span class="params">([<span class="string">'id'</span>=&gt;<span class="string">'desc'</span>,<span class="string">'create_time'</span>=&gt;<span class="string">'asc'</span>])</span></span></span><br><span class="line"><span class="function"><span class="title">order</span><span class="params">(<span class="string">'id,create_time desc'</span>)</span></span></span><br></pre></td></tr></tbody></table></figure>
 
             </div>
             <hr/>
@@ -1625,7 +1625,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1678,7 +1678,7 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/28294742.html">
+                <a href="/posts/php-unusual-functions.html">
                     <div class="card-image">
                         
                         
@@ -1737,7 +1737,7 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/5081417f.html">
+                <a href="/posts/performance-test.html">
                     <div class="card-image">
                         
                         
@@ -1844,8 +1844,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2059,7 +2057,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

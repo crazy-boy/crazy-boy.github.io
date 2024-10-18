@@ -1,7 +1,7 @@
 ---
 title: Yii2使用笔记
 tags: [Yii2]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-yii2-notes'
 date: 2021-05-27 15:52:24
 updated: 2021-05-27 15:52:24

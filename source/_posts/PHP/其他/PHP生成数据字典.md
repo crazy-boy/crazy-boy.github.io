@@ -1,7 +1,7 @@
 ---
 title: PHP生成数据字典
 tags: [数据字典]
-categories: PHP
+categories: [PHP]
 abbrlink: 'make-dictionary-by-php'
 date: 2018-06-21 22:37:00
 updated: 2018-06-21 22:37:00

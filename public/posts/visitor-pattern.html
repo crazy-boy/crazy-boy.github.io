@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式——访问者模式, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="设计模式——访问者模式, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    155
+                    90
                 </div>
                 
 
@@ -1075,7 +1075,7 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下访问者模式的代码实现</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Visitor</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visit</span>(<span class="hljs-params">Subject <span class="hljs-variable">$sub</span></span>)</span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyVisitor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Visitor</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visit</span>(<span class="hljs-params">Subject <span class="hljs-variable">$sub</span></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"visit the subject："</span> . <span class="hljs-variable">$sub</span>-&gt;<span class="hljs-title function_ invoke__">getSubject</span>();<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Subject</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span>(<span class="hljs-params">Visitor <span class="hljs-variable">$visitor</span></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubject</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span></span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MySubject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Subject</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span>(<span class="hljs-params">Visitor <span class="hljs-variable">$visitor</span></span>)</span>{<br>        <span class="hljs-variable">$visitor</span>-&gt;<span class="hljs-title function_ invoke__">visit</span>(<span class="hljs-variable">$this</span>);<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubject</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"love"</span>;<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$visitor</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyVisitor</span>();<br><span class="hljs-variable">$sub</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MySubject</span>();<br><span class="hljs-variable">$sub</span>-&gt;<span class="hljs-title function_ invoke__">accept</span>(<span class="hljs-variable">$visitor</span>);<br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Visitor</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visit</span>(<span class="hljs-params">Subject <span class="hljs-variable">$sub</span></span>)</span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyVisitor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Visitor</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visit</span>(<span class="hljs-params">Subject <span class="hljs-variable">$sub</span></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">"visit the subject："</span> . <span class="hljs-variable">$sub</span>-&gt;<span class="hljs-title function_ invoke__">getSubject</span>();<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Subject</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span>(<span class="hljs-params">Visitor <span class="hljs-variable">$visitor</span></span>)</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubject</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span></span>;<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MySubject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Subject</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span>(<span class="hljs-params">Visitor <span class="hljs-variable">$visitor</span></span>)</span>{<br>        <span class="hljs-variable">$visitor</span>-&gt;<span class="hljs-title function_ invoke__">visit</span>(<span class="hljs-variable">$this</span>);<br>    }<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSubject</span>(<span class="hljs-params"></span>): <span class="hljs-title">string</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">"love"</span>;<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$visitor</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyVisitor</span>();<br><span class="hljs-variable">$sub</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MySubject</span>();<br><span class="hljs-variable">$sub</span>-&gt;<span class="hljs-title function_ invoke__">accept</span>(<span class="hljs-variable">$visitor</span>);<br><span class="hljs-comment">// output:  visit the subject：love</span><br><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Visitor</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">visit</span>(<span class="params">Subject <span class="variable">$sub</span></span>)</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyVisitor</span> <span class="keyword">implements</span> <span class="title">Visitor</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">visit</span>(<span class="params">Subject <span class="variable">$sub</span></span>)</span>{</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"visit the subject："</span> . <span class="variable">$sub</span>-&gt;<span class="title function_ invoke__">getSubject</span>();</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Subject</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">accept</span>(<span class="params">Visitor <span class="variable">$visitor</span></span>)</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getSubject</span>(<span class="params"></span>): <span class="title">string</span></span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySubject</span> <span class="keyword">implements</span> <span class="title">Subject</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">accept</span>(<span class="params">Visitor <span class="variable">$visitor</span></span>)</span>{</span><br><span class="line">        <span class="variable">$visitor</span>-&gt;<span class="title function_ invoke__">visit</span>(<span class="variable">$this</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getSubject</span>(<span class="params"></span>): <span class="title">string</span></span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"love"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="variable">$visitor</span> = <span class="keyword">new</span> <span class="title class_">MyVisitor</span>();</span><br><span class="line"><span class="variable">$sub</span> = <span class="keyword">new</span> <span class="title class_">MySubject</span>();</span><br><span class="line"><span class="variable">$sub</span>-&gt;<span class="title function_ invoke__">accept</span>(<span class="variable">$visitor</span>);</span><br><span class="line"><span class="comment">// output:  visit the subject：love</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
             </div>
             <hr/>
@@ -1624,7 +1624,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1677,11 +1677,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/interpreter-pattern.html">
+                <a href="/posts/observer-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——解释器模式">
+                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——观察者模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1692,15 +1692,15 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——解释器模式
+                          设计模式——观察者模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下解释器模式的代码实现
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647interface Expres
+                            说明示例下面看下观察者模式的代码实现
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
                         
                     </div>
                     <div class="publish-info">
@@ -1737,11 +1737,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/chain-of-responsibility-pattern.html">
+                <a href="/posts/interpreter-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——责任链模式">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——解释器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1752,15 +1752,15 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——责任链模式
+                          设计模式——解释器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下责任链模式的代码实现
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748interface Hand
+                            说明示例下面看下解释器模式的代码实现
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647interface Expres
                         
                     </div>
                     <div class="publish-info">
@@ -1844,8 +1844,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2059,7 +2057,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

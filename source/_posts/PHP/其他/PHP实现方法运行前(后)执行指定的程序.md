@@ -1,7 +1,7 @@
 ---
 title: PHP实现方法运行前(后)执行指定的程序
 tags: [PHP笔记]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-auto-run-func'
 date: 2022-06-02 21:02:57
 updated: 2022-06-02 21:02:57

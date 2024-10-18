@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式——责任链模式, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="设计模式——责任链模式, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    214
+                    117
                 </div>
                 
 
@@ -1075,7 +1075,7 @@ h3:hover {
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面看下责任链模式的代码实现</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre class=" language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Handler</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">operation</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractHandler</span></span>{<br>    <span class="hljs-keyword">private</span> ?Handler <span class="hljs-variable">$handler</span>=<span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHandler</span>(<span class="hljs-params"></span>): ?<span class="hljs-title">Handler</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;handler;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHandler</span>(<span class="hljs-params">Handler <span class="hljs-variable">$handler</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;handler = <span class="hljs-variable">$handler</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyHandler</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Handler</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;name = <span class="hljs-variable">$name</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">operation</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-variable language_">$this</span>-&gt;name . <span class="hljs-string">' deal!'</span> . PHP_EOL;<br>        <span class="hljs-keyword">if</span> ((<span class="hljs-variable">$handler</span>=<span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">getHandler</span>()) != <span class="hljs-literal">null</span>){<br>            <span class="hljs-variable">$handler</span>-&gt;<span class="hljs-title function_ invoke__">operation</span>();<br>        }<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$h1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyHandler</span>(<span class="hljs-string">"h1"</span>);<br><span class="hljs-variable">$h2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyHandler</span>(<span class="hljs-string">"h2"</span>);<br><span class="hljs-variable">$h3</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyHandler</span>(<span class="hljs-string">"h3"</span>);<br><br><span class="hljs-variable">$h1</span>-&gt;<span class="hljs-title function_ invoke__">setHandler</span>(<span class="hljs-variable">$h2</span>);<br><span class="hljs-variable">$h2</span>-&gt;<span class="hljs-title function_ invoke__">setHandler</span>(<span class="hljs-variable">$h3</span>);<br><br><span class="hljs-variable">$h1</span>-&gt;<span class="hljs-title function_ invoke__">operation</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * h1 deal! h2 deal! h3 deal!</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"><code class="language-hljs php"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Handler</span></span>{<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">operation</span>(<span class="hljs-params"></span>)</span>;<br>}<br><br><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractHandler</span></span>{<br>    <span class="hljs-keyword">private</span> ?Handler <span class="hljs-variable">$handler</span>=<span class="hljs-literal">null</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getHandler</span>(<span class="hljs-params"></span>): ?<span class="hljs-title">Handler</span></span>{<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;handler;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setHandler</span>(<span class="hljs-params">Handler <span class="hljs-variable">$handler</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;handler = <span class="hljs-variable">$handler</span>;<br>    }<br>}<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyHandler</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractHandler</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Handler</span></span>{<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span>;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> <span class="hljs-variable">$name</span></span>)</span>{<br>        <span class="hljs-variable language_">$this</span>-&gt;name = <span class="hljs-variable">$name</span>;<br>    }<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">operation</span>(<span class="hljs-params"></span>)</span>{<br>        <span class="hljs-keyword">echo</span> <span class="hljs-variable language_">$this</span>-&gt;name . <span class="hljs-string">' deal!'</span> . PHP_EOL;<br>        <span class="hljs-keyword">if</span> ((<span class="hljs-variable">$handler</span>=<span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">getHandler</span>()) != <span class="hljs-literal">null</span>){<br>            <span class="hljs-variable">$handler</span>-&gt;<span class="hljs-title function_ invoke__">operation</span>();<br>        }<br>    }<br>}<br><br><br><span class="hljs-comment">// 调用</span><br><span class="hljs-variable">$h1</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyHandler</span>(<span class="hljs-string">"h1"</span>);<br><span class="hljs-variable">$h2</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyHandler</span>(<span class="hljs-string">"h2"</span>);<br><span class="hljs-variable">$h3</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MyHandler</span>(<span class="hljs-string">"h3"</span>);<br><br><span class="hljs-variable">$h1</span>-&gt;<span class="hljs-title function_ invoke__">setHandler</span>(<span class="hljs-variable">$h2</span>);<br><span class="hljs-variable">$h2</span>-&gt;<span class="hljs-title function_ invoke__">setHandler</span>(<span class="hljs-variable">$h3</span>);<br><br><span class="hljs-variable">$h1</span>-&gt;<span class="hljs-title function_ invoke__">operation</span>();<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * output:</span><br><span class="hljs-comment"> * h1 deal! h2 deal! h3 deal!</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> */</span><br><br><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Handler</span></span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">operation</span>(<span class="params"></span>)</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractHandler</span></span>{</span><br><span class="line">    <span class="keyword">private</span> ?Handler <span class="variable">$handler</span>=<span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getHandler</span>(<span class="params"></span>): ?<span class="title">Handler</span></span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;handler;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setHandler</span>(<span class="params">Handler <span class="variable">$handler</span></span>)</span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;handler = <span class="variable">$handler</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHandler</span> <span class="keyword">extends</span> <span class="title">AbstractHandler</span> <span class="keyword">implements</span> <span class="title">Handler</span></span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">string</span> <span class="variable">$name</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$name</span></span>)</span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;name = <span class="variable">$name</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">operation</span>(<span class="params"></span>)</span>{</span><br><span class="line">        <span class="keyword">echo</span> <span class="variable language_">$this</span>-&gt;name . <span class="string">' deal!'</span> . PHP_EOL;</span><br><span class="line">        <span class="keyword">if</span> ((<span class="variable">$handler</span>=<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">getHandler</span>()) != <span class="literal">null</span>){</span><br><span class="line">            <span class="variable">$handler</span>-&gt;<span class="title function_ invoke__">operation</span>();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="variable">$h1</span> = <span class="keyword">new</span> <span class="title class_">MyHandler</span>(<span class="string">"h1"</span>);</span><br><span class="line"><span class="variable">$h2</span> = <span class="keyword">new</span> <span class="title class_">MyHandler</span>(<span class="string">"h2"</span>);</span><br><span class="line"><span class="variable">$h3</span> = <span class="keyword">new</span> <span class="title class_">MyHandler</span>(<span class="string">"h3"</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$h1</span>-&gt;<span class="title function_ invoke__">setHandler</span>(<span class="variable">$h2</span>);</span><br><span class="line"><span class="variable">$h2</span>-&gt;<span class="title function_ invoke__">setHandler</span>(<span class="variable">$h3</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$h1</span>-&gt;<span class="title function_ invoke__">operation</span>();</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * output:</span></span><br><span class="line"><span class="comment"> * h1 deal! h2 deal! h3 deal!</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3>
             </div>
             <hr/>
@@ -1624,7 +1624,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1677,11 +1677,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/visitor-pattern.html">
+                <a href="/posts/interpreter-pattern.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——访问者模式">
+                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——解释器模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1692,15 +1692,15 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——访问者模式
+                          设计模式——解释器模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下访问者模式的代码实现
-12345678910111213141516171819202122232425262728293031interface Visitor{    public function visit(Subj
+                            说明示例下面看下解释器模式的代码实现
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647interface Expres
                         
                     </div>
                     <div class="publish-info">
@@ -1737,11 +1737,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/iterator-pattern.html">
+                <a href="/posts/design-patterns.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——迭代器模式">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="软件的设计模式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1752,15 +1752,15 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          设计模式——迭代器模式
+                          软件的设计模式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            说明示例下面看下代码实现
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758
+                            设计模式的六大原则
+总原则：开闭原则（Open Close Principle）开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，而是要扩展原有代码，实现一个热插拔的效果。所以一句话概括就是：为了使程序的
                         
                     </div>
                     <div class="publish-info">
@@ -1844,8 +1844,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2059,7 +2057,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

@@ -1,7 +1,7 @@
 ---
 title: Hexo使用笔记
 tags: [Hexo]
-categories: 其他
+categories: [其他]
 abbrlink: 'hexo-notes'
 date: 2018-06-09 15:12:00
 updated: 2022-05-08 11:20:00

@@ -1,7 +1,7 @@
 ---
 title: windows下批处理
 tags: [PHP]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-bat'
 date: 2022-03-02 13:22:05
 updated: 2022-03-02 13:22:05

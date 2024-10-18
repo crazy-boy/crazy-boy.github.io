@@ -1,7 +1,7 @@
 ---
 title: Notepad++常用操作
 tags: [Notepad++]
-categories: 其他
+categories: [其他]
 abbrlink: 'notepad++-notes'
 date: 2020-08-29 10:11:15
 updated: 2020-08-29 10:11:15

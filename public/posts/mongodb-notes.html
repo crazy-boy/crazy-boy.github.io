@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="MongoDB笔记, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="MongoDB笔记, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    295
+                    214
                 </div>
                 
 
@@ -1076,26 +1076,26 @@ h3:hover {
             <div id="articleContent">
                 <h3 id="常用脚本"><a href="#常用脚本" class="headerlink" title="常用脚本"></a>常用脚本</h3><ol>
 <li><p>修改字段名</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:<span class="hljs-literal"><code class="language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:<span class="hljs-literal">true</span>})<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(<span class="string">'集合名'</span>).<span class="keyword">update</span>({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:<span class="literal">true</span>})</span><br></pre></td></tr></tbody></table></figure>
 <p><code>{multi:true}</code>表示 对该集合的所有数据生效</p>
 </li>
 <li><p>新增字段</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$<span class="hljs-keyword">set</span>: {"字段名1": "", "字段名2": ""...}}, {multi:<span class="hljs-literal"><code class="language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({}, {$<span class="hljs-keyword">set</span>: {"字段名1": "", "字段名2": ""...}}, {multi:<span class="hljs-literal">true</span>})<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(<span class="string">'集合名'</span>).<span class="keyword">update</span>({}, {$<span class="keyword">set</span>: {"字段名1": "", "字段名2": ""...}}, {multi:<span class="literal">true</span>})</span><br></pre></td></tr></tbody></table></figure>
 <p><code>{multi:true}</code>表示 对该集合的所有数据生效</p>
 </li>
 <li><p>更新某个字段的值，使其与另一个字段的值相同</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).find().forEach(<br>	<span class="hljs-keyword">function</span>(item){<br>		db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword"><code class="language-hljs sql">db.getCollection(<span class="hljs-string">'集合名'</span>).find().forEach(<br>	<span class="hljs-keyword">function</span>(item){<br>		db.getCollection(<span class="hljs-string">'集合名'</span>).<span class="hljs-keyword">update</span>({"_id":item._id}, {"$set":{"字段名A":item.字段名B}}, {})<br>	}<br>)<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection(<span class="string">'集合名'</span>).find().forEach(</span><br><span class="line">	<span class="keyword">function</span>(item){</span><br><span class="line">		db.getCollection(<span class="string">'集合名'</span>).<span class="keyword">update</span>({"_id":item._id}, {"$set":{"字段名A":item.字段名B}}, {})</span><br><span class="line">	}</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>创建集合</p>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><code class="language-hljs sql">db.createCollection("集合名");<br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createCollection("集合名");</span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ol>
 <ol>
-<li>创建索引<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs sql"><code class="language-hljs sql">db.getCollection("集合名").createIndex({<br>    "字段名": NumberInt("1"),<br>    "字段名": NumberInt("-1"),<br>	……<br>    "字段名": NumberInt("1")<br>}, {<br>    name: "索引名"<br>});<br></code></pre></td></tr></tbody></table></figure>
+<li>创建索引<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection("集合名").createIndex({</span><br><span class="line">    "字段名": NumberInt("1"),</span><br><span class="line">    "字段名": NumberInt("-1"),</span><br><span class="line">	……</span><br><span class="line">    "字段名": NumberInt("1")</span><br><span class="line">}, {</span><br><span class="line">    name: "索引名"</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
 1：升序，-1：降序</li>
 </ol>
 <ol>
-<li>插入数据<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs sql">db.getCollection("集合名").<span class="hljs-keyword">insert</span>({<br>	"字段1": 值<span class="hljs-number">1</span>,<br>	"字段2": 值<span class="hljs-number"><code class="language-hljs sql">db.getCollection("集合名").<span class="hljs-keyword">insert</span>({<br>	"字段1": 值<span class="hljs-number">1</span>,<br>	"字段2": 值<span class="hljs-number">2</span>,<br>	……<br>    "字段n": 值n<br>});<br></code></pre></td></tr></tbody></table></figure></li>
+<li>插入数据<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.getCollection("集合名").<span class="keyword">insert</span>({</span><br><span class="line">	"字段1": 值<span class="number">1</span>,</span><br><span class="line">	"字段2": 值<span class="number">2</span>,</span><br><span class="line">	……</span><br><span class="line">    "字段n": 值n</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure></li>
 </ol>
 
             </div>
@@ -1645,7 +1645,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1866,8 +1866,6 @@ h3:hover {
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -2080,7 +2078,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

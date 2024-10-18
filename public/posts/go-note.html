@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Go语言基础, 这里是网站关键词">
-    <meta name="description" content="这里是网站描述">
+    <meta name="keywords" content="Go语言基础, 编码人生">
+    <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -364,7 +364,7 @@ class="themespring" -->
         <div class="logo-name">飞奔的蜗牛</div>
         <div class="logo-desc">
             
-            这里是网站描述
+            编程界的懒人，偶尔写写。
             
         </div>
     </div>
@@ -1078,7 +1078,7 @@ h3:hover {
 <h3 id="执行go文件"><a href="#执行go文件" class="headerlink" title="执行go文件"></a>执行go文件</h3><p><code>E:\Go_WorkSpace&gt;go run test.go</code></p>
 <h3 id="把go程序编译成exe文件"><a href="#把go程序编译成exe文件" class="headerlink" title="把go程序编译成exe文件"></a>把go程序编译成exe文件</h3><p><code>E:\Go_WorkSpace&gt;go build test.go</code></p>
 <h3 id="打印内容"><a href="#打印内容" class="headerlink" title="打印内容"></a>打印内容</h3><p><code>fmt.Printf("Hello,World!")</code></p>
-<h3 id="switch语句中，多个case共用一组执行语句"><a href="#switch语句中，多个case共用一组执行语句" class="headerlink" title="switch语句中，多个case共用一组执行语句"></a>switch语句中，多个case共用一组执行语句</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">switch A{<br>	case a,b,c:<br>		...<br>	case d:<br>		...<br>	default :<br>		...<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="switch语句中，多个case共用一组执行语句"><a href="#switch语句中，多个case共用一组执行语句" class="headerlink" title="switch语句中，多个case共用一组执行语句"></a>switch语句中，多个case共用一组执行语句</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch A{</span><br><span class="line">	case a,b,c:</span><br><span class="line">		...</span><br><span class="line">	case d:</span><br><span class="line">		...</span><br><span class="line">	default :</span><br><span class="line">		...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="GoLand使用"><a href="#GoLand使用" class="headerlink" title="GoLand使用"></a>GoLand使用</h3><p>新部署项目后，需通过<code>go mod download</code> 下载第三方依赖包，如果报错，需设置Go Modules中的Proxy为：<code>https://goproxy.cn</code></p>
 <h3 id="GoLand使用下载第三方依赖包"><a href="#GoLand使用下载第三方依赖包" class="headerlink" title="GoLand使用下载第三方依赖包"></a>GoLand使用下载第三方依赖包</h3><p>1、 IDE-》setting-》Go-》Go Modules中，设置代理：<a target="_blank" rel="noopener" href="https://goproxy.cn">https://goproxy.cn</a><br><img src="/images/goland_1.png" alt=""><br>2、项目中，创建go.mod文件，包含需要引入的依赖包，<br>如：导入 gin：require github.com/gin-gonic/gin latest<br>在Terminal上，运行go mod download即可，系统会自动将版本号回填到go.mod中<br><img src="/images/goland_2.png" alt=""></p>
 
@@ -1629,7 +1629,7 @@ h3:hover {
         avatar: '/medias/robot.png',
         pageSize: '16',
         lang: 'zh-cn',
-        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下QQ邮箱可好，会得到及时回复哦~）',    
+        placeholder: '评论前记得点击下方机器人验证按钮~ （客官留下邮箱可好，会得到及时回复哦~）',    
 
         adminEmailMd5: '',
 
@@ -1704,7 +1704,7 @@ h3:hover {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                             产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：1&lt;link rel="canonical" href=&lt;link rel="canonical" href="主页
+                             产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：1&lt;link rel="canonical" href="主页url"/&gt;Google 等搜索引擎最终都会只收录 c
                         
                     </div>
                     <div class="publish-info">
@@ -1852,8 +1852,6 @@ h3:hover {
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
@@ -2067,7 +2065,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">51.3k</span>&nbsp;
+        class="white-color">43.1k</span>&nbsp;
       
       
       

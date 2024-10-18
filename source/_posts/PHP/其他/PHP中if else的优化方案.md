@@ -1,7 +1,7 @@
 ---
 title: PHP中if else的优化方案
 tags: [PHP笔记]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-if-else'
 date: 2022-10-18 22:52:19
 updated: 2022-10-18 22:52:19

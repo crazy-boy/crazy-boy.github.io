@@ -1,7 +1,7 @@
 ---
 title: PHP中isset与array_key_exists的性能对比
 tags: [PHP笔记]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-isset-array_key_exists'
 date: 2022-06-02 20:20:32
 updated: 2022-06-02 20:20:32

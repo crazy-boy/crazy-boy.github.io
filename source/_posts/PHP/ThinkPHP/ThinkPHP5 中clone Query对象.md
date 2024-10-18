@@ -1,7 +1,7 @@
 ---
 title: ThinkPHP5 中clone Query对象
 tags: [ThinkPHP]
-categories: PHP
+categories: [PHP]
 abbrlink: 'thinkphp-clone-query'
 date: 2022-04-26 21:18:26
 updated: 2022-04-26 21:18:26

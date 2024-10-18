@@ -1,7 +1,7 @@
 ---
 title: Html网页内容转为pdf文件
 tags: [HTML]
-categories: HTML
+categories: [HTML]
 abbrlink: 'html-to-pdf'
 date: 2021-09-26 15:12:00
 updated: 2021-09-26 15:12:00

@@ -2,7 +2,7 @@
 title: 这是随笔文章模板
 abbrlink: 'essay-demo'
 tags: [随笔]
-categories: 随笔
+categories: [随笔]
 mathjax: true
 date: 2020-01-04 00:34:14
 img: medias/toc-banner/aticalmode.jpg

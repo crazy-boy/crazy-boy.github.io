@@ -3924,3 +3924,7 @@ nav,
 td.gutter {
     display: none;
 }
+
+.line .title {
+    font-size: inherit;
+}

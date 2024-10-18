@@ -1,7 +1,7 @@
 ---
 title: 利用JQuery进行md5加密
 tags: [Jquery]
-categories: 前端
+categories: [前端]
 abbrlink: 'jquery-md5'
 date: 2016-07-02 11:12:00
 updated: 2016-07-02 11:12:00

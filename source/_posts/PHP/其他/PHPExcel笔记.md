@@ -1,7 +1,7 @@
 ---
 title: PHPExcel笔记
 tags: [PHPExcel]
-categories: PHP
+categories: [PHP]
 abbrlink: 'php-excel'
 date: 2018-11-06 11:55:00
 updated: 2022-05-11 17:03:22

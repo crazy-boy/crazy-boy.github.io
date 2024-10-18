@@ -1,7 +1,7 @@
 ---
 title: phpStorm使用笔记
 tags: [phpStorm]
-categories: PHP
+categories: [PHP]
 abbrlink: 'phpstorm-notes'
 date: 2022-05-12 17:17:55
 updated: 2022-10-18 17:17:55

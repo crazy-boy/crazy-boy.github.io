@@ -1,7 +1,7 @@
 ---
 title: centos7安装mysql5.0版本教程
 tags: [mysql]
-categories: Linux
+categories: [Linux]
 abbrlink: 'install-mysql-on-linux'
 date: 2019-10-12 00:05:36
 updated: 2019-10-12 00:05:36

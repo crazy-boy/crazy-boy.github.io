@@ -1,8 +1,8 @@
 ---
 title: PHP中数组内容依次赋值给变量
 tags: [PHP]
-categories: PHP
-abbrlink: a1b63ab8
+categories: [PHP]
+abbrlink: 'php-assign-array-values'
 date: 2022-05-08 16:59:22
 updated: 2022-05-08 16:59:22
 ---

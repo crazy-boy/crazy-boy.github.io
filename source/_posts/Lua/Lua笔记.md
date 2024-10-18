@@ -1,7 +1,7 @@
 ---
 title: Lua笔记
 tags: [Lua]
-categories: Lua
+categories: [Lua]
 abbrlink: 'lua-notes'
 date: 2022-11-13 23:02:00
 updated: 2022-11-13 23:02:00
