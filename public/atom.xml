@@ -175,6 +175,37 @@
   </entry>
   
   <entry>
+    <title>Linux如何排查cpu过高的原因</title>
+    <link href="https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html"/>
+    <id>https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html</id>
+    <published>2023-10-22T08:29:00.000Z</published>
+    <updated>2023-10-22T08:29:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/Linux/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="运维" scheme="https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+    <category term="cpu" scheme="https://crazy-boy.com/tags/cpu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux搜索关键词前后几行</title>
     <link href="https://crazy-boy.com/posts/linux-grep-few-lines.html"/>
     <id>https://crazy-boy.com/posts/linux-grep-few-lines.html</id>
@@ -500,31 +531,6 @@
     
     
     <category term="设计模式" scheme="https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP实现方法运行前(后)执行指定的程序</title>
-    <link href="https://crazy-boy.com/posts/php-auto-run-func.html"/>
-    <id>https://crazy-boy.com/posts/php-auto-run-func.html</id>
-    <published>2022-06-02T13:02:57.000Z</published>
-    <updated>2022-06-02T13:02:57.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
