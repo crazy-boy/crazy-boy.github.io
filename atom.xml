@@ -44,6 +44,62 @@
   </entry>
   
   <entry>
+    <title>滑动窗口算法</title>
+    <link href="https://crazy-boy.com/posts/sliding-window.html"/>
+    <id>https://crazy-boy.com/posts/sliding-window.html</id>
+    <published>2024-11-13T05:39:12.000Z</published>
+    <updated>2024-11-13T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="算法" scheme="https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="滑动窗口" scheme="https://crazy-boy.com/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP实现熔断机制</title>
+    <link href="https://crazy-boy.com/posts/php-circuit-breaker.html"/>
+    <id>https://crazy-boy.com/posts/php-circuit-breaker.html</id>
+    <published>2024-11-13T05:39:12.000Z</published>
+    <updated>2024-11-13T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="熔断" scheme="https://crazy-boy.com/tags/%E7%86%94%E6%96%AD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux命令行中的快捷键</title>
     <link href="https://crazy-boy.com/posts/linux-short-cut-keys.html"/>
     <id>https://crazy-boy.com/posts/linux-short-cut-keys.html</id>
@@ -483,56 +539,6 @@
     
     
     <category term="线程安全" scheme="https://crazy-boy.com/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中define和const的区别</title>
-    <link href="https://crazy-boy.com/posts/php-define-const.html"/>
-    <id>https://crazy-boy.com/posts/php-define-const.html</id>
-    <published>2022-07-04T16:34:14.000Z</published>
-    <updated>2024-10-18T01:46:52.501Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="define与const" scheme="https://crazy-boy.com/tags/define%E4%B8%8Econst/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下curl命令</title>
-    <link href="https://crazy-boy.com/posts/linux-curl.html"/>
-    <id>https://crazy-boy.com/posts/linux-curl.html</id>
-    <published>2022-07-04T02:42:39.000Z</published>
-    <updated>2022-07-04T02:42:39.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
-    
-    
-    <category term="curl" scheme="https://crazy-boy.com/tags/curl/"/>
     
   </entry>
   

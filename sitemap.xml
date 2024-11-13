@@ -9,6 +9,20 @@
   </url>
   
   <url>
+    <loc>https://crazy-boy.com/posts/sliding-window.html</loc>
+    
+    <lastmod>2024-11-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/posts/php-circuit-breaker.html</loc>
+    
+    <lastmod>2024-11-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://crazy-boy.com/posts/architecture-notes.html</loc>
     
     <lastmod>2024-10-18</lastmod>
@@ -156,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/contact/index.html</loc>
+    <loc>https://crazy-boy.com/collection/index.html</loc>
     
     <lastmod>2024-05-21</lastmod>
     
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/collection/index.html</loc>
+    <loc>https://crazy-boy.com/contact/index.html</loc>
     
     <lastmod>2024-05-21</lastmod>
     
@@ -380,14 +394,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/posts/singleton-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
     
     <lastmod>2022-05-19</lastmod>
     
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/singleton-pattern.html</loc>
     
     <lastmod>2022-05-19</lastmod>
     
@@ -492,14 +506,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/posts/chain-of-responsibility-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
     
     <lastmod>2022-05-19</lastmod>
     
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
+    <loc>https://crazy-boy.com/posts/chain-of-responsibility-pattern.html</loc>
     
     <lastmod>2022-05-19</lastmod>
     
@@ -1087,14 +1101,14 @@
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
+    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
     
     <lastmod>2018-06-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
+    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
     
     <lastmod>2018-06-04</lastmod>
     
@@ -1138,7 +1152,7 @@
 
   <url>
     <loc>https://crazy-boy.com/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1146,630 +1160,644 @@
   
   <url>
     <loc>https://crazy-boy.com/tags/Docker/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Git/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/GitBook/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Goframe/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/Go/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Hexo/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/Linux/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/Cron/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/curl/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/PHP/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/ntpdate/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/nodejs/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/rz-sz/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/Cacti/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/cpu/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/grep/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/SystemD/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/mysql/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/xargs/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/tags/Go/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Lua/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/MongoDB/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/tags/Linux/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/DOS%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/tags/Cron/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/MySQL/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/tags/PHP/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/curl/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/ntpdate/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/Cacti/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/nodejs/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/rz-sz/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/cpu/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/SystemD/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/grep/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/mysql/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/xargs/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Markdown/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/JSON/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/binlog/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E7%B4%A2%E5%BC%95/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/tags/MongoDB/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Excel/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/MySQL/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/DOS%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/JSON/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/binlog/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E7%B4%A2%E5%BC%95/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E8%81%94%E8%A1%A8%E6%9F%A5%E8%AF%A2/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E8%81%9A%E7%B0%87%E7%B4%A2%E5%BC%95/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Oracle/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/R/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Prolog/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/R/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Redis/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/SEO/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E4%BA%91%E9%97%AA%E4%BB%98/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/tags/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E6%AD%BB%E9%94%81/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E6%9D%82%E8%B0%88/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E4%B9%A6%E7%B1%8D/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/ab-exe/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/Notepad/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/JavaScript/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/JQuery/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/Jquery/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/CSS/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/HTML/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E8%B7%A8%E5%9F%9F/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/ThinkPHP/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/composer/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/trait/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/PHPExcel/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/define%E4%B8%8Econst/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/elasticsearch/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/lock/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E7%86%94%E6%96%AD/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/Notepad/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/CSS/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/JQuery/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/Jquery/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/JavaScript/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/HTML/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E8%B7%A8%E5%9F%9F/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E9%AB%98%E5%BE%B7%E5%9C%B0%E5%9B%BE/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/composer/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/ThinkPHP/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/trait/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/PHPExcel/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/define%E4%B8%8Econst/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/elasticsearch/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/lock/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/%E5%8A%A0%E8%A7%A3%E5%AF%86/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E9%9D%A2%E8%AF%95/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/Yii2/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/phpStorm/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/xdebug/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/RPC/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/phpStorm/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/xdebug/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/PHP%E5%87%BD%E6%95%B0/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/tags/Windows/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E7%9B%AE%E6%A0%87%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E8%81%8C%E5%9C%BA%E4%B9%8B%E9%81%93/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/tags/Windows/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1778,231 +1806,245 @@
   
   <url>
     <loc>https://crazy-boy.com/categories/Docker/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Git/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Go/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/Cron/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/Linux/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/ntpdate/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/SystemD/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/xargs/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Lua/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/categories/MongoDB/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/categories/Cron/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/categories/MySQL/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/categories/Linux/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/ntpdate/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/SystemD/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/xargs/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Markdown/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://crazy-boy.com/categories/Linux/%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <loc>https://crazy-boy.com/categories/MongoDB/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Office/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/MySQL/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/Linux/%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Oracle/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/R%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Prolog/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/R%E8%AF%AD%E8%A8%80/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Redis/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E4%BA%A7%E5%93%81/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E6%9E%B6%E6%9E%84/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E7%AC%AC%E4%B8%89%E6%96%B9/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/HTML/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/PHP/</loc>
-    <lastmod>2024-10-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy-boy.com/categories/phpStorm/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/Windows/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy-boy.com/categories/phpStorm/</loc>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://crazy-boy.com/categories/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2024-10-25</lastmod>
+    <lastmod>2024-11-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
