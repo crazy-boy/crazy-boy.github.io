@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>+020224-10-23T07:44:02.000Z</updated>
+  <updated>2024-11-13T05:39:12.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>phpStorm配置xdebug</title>
-    <link href="https://crazy-boy.com/posts/phpstorm-setting-xdebug.html"/>
-    <id>https://crazy-boy.com/posts/phpstorm-setting-xdebug.html</id>
-    <published>+020224-10-23T07:44:02.000Z</published>
-    <updated>+020224-10-23T07:44:02.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="phpStorm" scheme="https://crazy-boy.com/categories/phpStorm/"/>
-    
-    
-    <category term="phpStorm" scheme="https://crazy-boy.com/tags/phpStorm/"/>
-    
-    <category term="xdebug" scheme="https://crazy-boy.com/tags/xdebug/"/>
-    
-  </entry>
   
   <entry>
     <title>滑动窗口算法</title>
@@ -96,6 +69,33 @@
     <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
     
     <category term="熔断" scheme="https://crazy-boy.com/tags/%E7%86%94%E6%96%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>phpStorm配置xdebug</title>
+    <link href="https://crazy-boy.com/posts/phpstorm-setting-xdebug.html"/>
+    <id>https://crazy-boy.com/posts/phpstorm-setting-xdebug.html</id>
+    <published>2024-10-23T07:44:02.000Z</published>
+    <updated>2024-10-23T07:44:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="phpStorm" scheme="https://crazy-boy.com/categories/phpStorm/"/>
+    
+    
+    <category term="phpStorm" scheme="https://crazy-boy.com/tags/phpStorm/"/>
+    
+    <category term="xdebug" scheme="https://crazy-boy.com/tags/xdebug/"/>
     
   </entry>
   
@@ -258,6 +258,33 @@
   </entry>
   
   <entry>
+    <title>Nginx 日志</title>
+    <link href="https://crazy-boy.com/posts/nginx-logs.html"/>
+    <id>https://crazy-boy.com/posts/nginx-logs.html</id>
+    <published>2024-02-15T01:40:25.000Z</published>
+    <updated>2024-02-15T01:40:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Nginx" scheme="https://crazy-boy.com/tags/Nginx/"/>
+    
+    <category term="日志" scheme="https://crazy-boy.com/tags/%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux如何排查cpu过高的原因</title>
     <link href="https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html"/>
     <id>https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html</id>
@@ -285,6 +312,33 @@
     <category term="运维" scheme="https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/"/>
     
     <category term="cpu" scheme="https://crazy-boy.com/tags/cpu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Linux后台运行指定程序的几种方法</title>
+    <link href="https://crazy-boy.com/posts/program-run-in-background.html"/>
+    <id>https://crazy-boy.com/posts/program-run-in-background.html</id>
+    <published>2023-07-15T01:40:25.000Z</published>
+    <updated>2023-07-15T01:40:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="后台运行" scheme="https://crazy-boy.com/tags/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/"/>
     
   </entry>
   
@@ -489,56 +543,6 @@
     
     
     <category term="死锁" scheme="https://crazy-boy.com/tags/%E6%AD%BB%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>池化技术</title>
-    <link href="https://crazy-boy.com/posts/pooling-technology.html"/>
-    <id>https://crazy-boy.com/posts/pooling-technology.html</id>
-    <published>2022-08-02T02:30:20.000Z</published>
-    <updated>2024-10-18T01:55:59.898Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="池化技术" scheme="https://crazy-boy.com/tags/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线程安全</title>
-    <link href="https://crazy-boy.com/posts/thread-safe.html"/>
-    <id>https://crazy-boy.com/posts/thread-safe.html</id>
-    <published>2022-08-01T04:31:24.000Z</published>
-    <updated>2024-10-18T01:55:59.852Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="线程安全" scheme="https://crazy-boy.com/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
