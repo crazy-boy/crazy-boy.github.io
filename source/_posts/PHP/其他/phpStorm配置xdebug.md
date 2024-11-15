@@ -3,8 +3,8 @@ title: phpStorm配置xdebug
 tags: [phpStorm,xdebug]
 categories: [phpStorm]
 abbrlink: 'phpstorm-setting-xdebug'
-date: 20224-10-23 15:44:02
-updated: 20224-10-23 15:44:02
+date: 2024-10-23 15:44:02
+updated: 2024-10-23 15:44:02
 ---
 <div class="note info">在php开发中，经常遇到一些奇怪的问题，一时半会儿排查不出原因；这时候就需要进行断点调试，xdebug就是常用的一种断点调试工具，下面介绍下如何设置的。</div>
 

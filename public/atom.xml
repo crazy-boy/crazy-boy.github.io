@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>+020224-10-23T07:44:02.000Z</updated>
+  <updated>2024-11-13T05:39:12.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -17,11 +17,67 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>滑动窗口算法</title>
+    <link href="https://crazy-boy.com/posts/sliding-window.html"/>
+    <id>https://crazy-boy.com/posts/sliding-window.html</id>
+    <published>2024-11-13T05:39:12.000Z</published>
+    <updated>2024-11-13T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="算法" scheme="https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="滑动窗口" scheme="https://crazy-boy.com/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP实现熔断机制</title>
+    <link href="https://crazy-boy.com/posts/php-circuit-breaker.html"/>
+    <id>https://crazy-boy.com/posts/php-circuit-breaker.html</id>
+    <published>2024-11-13T05:39:12.000Z</published>
+    <updated>2024-11-13T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="熔断" scheme="https://crazy-boy.com/tags/%E7%86%94%E6%96%AD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>phpStorm配置xdebug</title>
     <link href="https://crazy-boy.com/posts/phpstorm-setting-xdebug.html"/>
     <id>https://crazy-boy.com/posts/phpstorm-setting-xdebug.html</id>
-    <published>+020224-10-23T07:44:02.000Z</published>
-    <updated>+020224-10-23T07:44:02.000Z</updated>
+    <published>2024-10-23T07:44:02.000Z</published>
+    <updated>2024-10-23T07:44:02.000Z</updated>
     
     
       
@@ -202,6 +258,33 @@
   </entry>
   
   <entry>
+    <title>Nginx 日志</title>
+    <link href="https://crazy-boy.com/posts/nginx-logs.html"/>
+    <id>https://crazy-boy.com/posts/nginx-logs.html</id>
+    <published>2024-02-15T01:40:25.000Z</published>
+    <updated>2024-02-15T01:40:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Nginx" scheme="https://crazy-boy.com/tags/Nginx/"/>
+    
+    <category term="日志" scheme="https://crazy-boy.com/tags/%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux如何排查cpu过高的原因</title>
     <link href="https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html"/>
     <id>https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html</id>
@@ -229,6 +312,60 @@
     <category term="运维" scheme="https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/"/>
     
     <category term="cpu" scheme="https://crazy-boy.com/tags/cpu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux tee 命令详解</title>
+    <link href="https://crazy-boy.com/posts/linux-tee.html"/>
+    <id>https://crazy-boy.com/posts/linux-tee.html</id>
+    <published>2023-10-06T05:52:43.000Z</published>
+    <updated>2023-10-06T05:52:43.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="tee" scheme="https://crazy-boy.com/tags/tee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Linux后台运行指定程序的几种方法</title>
+    <link href="https://crazy-boy.com/posts/program-run-in-background.html"/>
+    <id>https://crazy-boy.com/posts/program-run-in-background.html</id>
+    <published>2023-07-15T01:40:25.000Z</published>
+    <updated>2023-07-15T01:40:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="后台运行" scheme="https://crazy-boy.com/tags/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/"/>
     
   </entry>
   
@@ -283,6 +420,31 @@
     <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
     
     <category term="lock" scheme="https://crazy-boy.com/tags/lock/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis中set、setex、setnx的用法和区别</title>
+    <link href="https://crazy-boy.com/posts/redis-set-note.html"/>
+    <id>https://crazy-boy.com/posts/redis-set-note.html</id>
+    <published>2023-05-16T04:38:00.000Z</published>
+    <updated>2023-05-16T04:38:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/categories/Redis/"/>
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/tags/Redis/"/>
     
   </entry>
   
@@ -383,156 +545,6 @@
     
     
     <category term="Windows" scheme="https://crazy-boy.com/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022-08-24杂谈</title>
-    <link href="https://crazy-boy.com/posts/20220824-happy.html"/>
-    <id>https://crazy-boy.com/posts/20220824-happy.html</id>
-    <published>2022-08-23T23:54:29.000Z</published>
-    <updated>2022-08-23T23:54:29.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="随笔" scheme="https://crazy-boy.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="杂谈" scheme="https://crazy-boy.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>死锁</title>
-    <link href="https://crazy-boy.com/posts/dead-lock.html"/>
-    <id>https://crazy-boy.com/posts/dead-lock.html</id>
-    <published>2022-08-02T08:21:54.000Z</published>
-    <updated>2024-10-18T01:55:59.907Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="死锁" scheme="https://crazy-boy.com/tags/%E6%AD%BB%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>池化技术</title>
-    <link href="https://crazy-boy.com/posts/pooling-technology.html"/>
-    <id>https://crazy-boy.com/posts/pooling-technology.html</id>
-    <published>2022-08-02T02:30:20.000Z</published>
-    <updated>2024-10-18T01:55:59.898Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="池化技术" scheme="https://crazy-boy.com/tags/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线程安全</title>
-    <link href="https://crazy-boy.com/posts/thread-safe.html"/>
-    <id>https://crazy-boy.com/posts/thread-safe.html</id>
-    <published>2022-08-01T04:31:24.000Z</published>
-    <updated>2024-10-18T01:55:59.852Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="线程安全" scheme="https://crazy-boy.com/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP中define和const的区别</title>
-    <link href="https://crazy-boy.com/posts/php-define-const.html"/>
-    <id>https://crazy-boy.com/posts/php-define-const.html</id>
-    <published>2022-07-04T16:34:14.000Z</published>
-    <updated>2024-10-18T01:46:52.501Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="define与const" scheme="https://crazy-boy.com/tags/define%E4%B8%8Econst/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下curl命令</title>
-    <link href="https://crazy-boy.com/posts/linux-curl.html"/>
-    <id>https://crazy-boy.com/posts/linux-curl.html</id>
-    <published>2022-07-04T02:42:39.000Z</published>
-    <updated>2022-07-04T02:42:39.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
-    
-    
-    <category term="curl" scheme="https://crazy-boy.com/tags/curl/"/>
     
   </entry>
   

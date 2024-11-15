@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/sliding-window.html</loc>
+    <lastmod>2024-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/php-circuit-breaker.html</loc>
+    <lastmod>2024-11-13</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/phpstorm-setting-xdebug.html</loc>
-    <lastmod>+020224-10-23</lastmod>
+    <lastmod>2024-10-23</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/architecture-notes.html</loc>
@@ -73,8 +81,20 @@
     <lastmod>2024-05-21</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/nginx-logs.html</loc>
+    <lastmod>2024-02-15</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html</loc>
     <lastmod>2023-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/linux-tee.html</loc>
+    <lastmod>2023-10-06</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/program-run-in-background.html</loc>
+    <lastmod>2023-07-15</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/linux-grep-few-lines.html</loc>
@@ -83,6 +103,10 @@
   <url>
     <loc>https://crazy-boy.com/posts/php-task-lock.html</loc>
     <lastmod>2023-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/redis-set-note.html</loc>
+    <lastmod>2023-05-16</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/linux-add-content.html</loc>
@@ -569,11 +593,11 @@
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
+    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/1822a0ce.html</loc>
+    <loc>https://crazy-boy.com/posts/jquery-note.html</loc>
     <lastmod>2018-06-04</lastmod>
   </url>
   <url>

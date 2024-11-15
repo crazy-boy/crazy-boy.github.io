@@ -1,3 +1,5 @@
+https://crazy-boy.com/posts/sliding-window.html
+https://crazy-boy.com/posts/php-circuit-breaker.html
 https://crazy-boy.com/posts/phpstorm-setting-xdebug.html
 https://crazy-boy.com/posts/linux-short-cut-keys.html
 https://crazy-boy.com/posts/38c1.html
@@ -5,9 +7,13 @@ https://crazy-boy.com/posts/2b4a.html
 https://crazy-boy.com/posts/85ed.html
 https://crazy-boy.com/posts/9c77.html
 https://crazy-boy.com/posts/high-concurrent-experience.html
+https://crazy-boy.com/posts/nginx-logs.html
 https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html
+https://crazy-boy.com/posts/linux-tee.html
+https://crazy-boy.com/posts/program-run-in-background.html
 https://crazy-boy.com/posts/linux-grep-few-lines.html
 https://crazy-boy.com/posts/php-task-lock.html
+https://crazy-boy.com/posts/redis-set-note.html
 https://crazy-boy.com/posts/linux-add-content.html
 https://crazy-boy.com/posts/lua-notes.html
 https://crazy-boy.com/posts/php-if-else.html
@@ -92,9 +98,3 @@ https://crazy-boy.com/posts/yii2-rabbitmq.html
 https://crazy-boy.com/posts/php-composer.html
 https://crazy-boy.com/posts/common-sql.html
 https://crazy-boy.com/posts/soft-system-design.html
-https://crazy-boy.com/posts/network-command-on-linux.html
-https://crazy-boy.com/posts/business-model-of-union-pay.html
-https://crazy-boy.com/posts/notepad++-notes.html
-https://crazy-boy.com/posts/php-magic-methods.html
-https://crazy-boy.com/posts/db-3nf.html
-https://crazy-boy.com/posts/mysql-deal-miss-handle.html
