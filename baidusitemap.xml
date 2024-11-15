@@ -89,6 +89,10 @@
     <lastmod>2023-10-22</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/linux-tee.html</loc>
+    <lastmod>2023-10-06</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/program-run-in-background.html</loc>
     <lastmod>2023-07-15</lastmod>
   </url>
@@ -99,6 +103,10 @@
   <url>
     <loc>https://crazy-boy.com/posts/php-task-lock.html</loc>
     <lastmod>2023-05-23</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/redis-set-note.html</loc>
+    <lastmod>2023-05-16</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/linux-add-content.html</loc>
@@ -169,11 +177,11 @@
     <lastmod>2022-05-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/flyweight-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/mediator-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/mediator-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/flyweight-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -213,10 +221,6 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/composite-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/state-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
@@ -229,11 +233,15 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/observer-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/composite-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/decorator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/observer-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -245,19 +253,19 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/adapter-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/chain-of-responsibility-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/iterator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/adapter-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>

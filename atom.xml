@@ -316,6 +316,33 @@
   </entry>
   
   <entry>
+    <title>Linux tee 命令详解</title>
+    <link href="https://crazy-boy.com/posts/linux-tee.html"/>
+    <id>https://crazy-boy.com/posts/linux-tee.html</id>
+    <published>2023-10-06T05:52:43.000Z</published>
+    <updated>2023-10-06T05:52:43.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    
+    <category term="tee" scheme="https://crazy-boy.com/tags/tee/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在Linux后台运行指定程序的几种方法</title>
     <link href="https://crazy-boy.com/posts/program-run-in-background.html"/>
     <id>https://crazy-boy.com/posts/program-run-in-background.html</id>
@@ -393,6 +420,31 @@
     <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
     
     <category term="lock" scheme="https://crazy-boy.com/tags/lock/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis中set、setex、setnx的用法和区别</title>
+    <link href="https://crazy-boy.com/posts/redis-set-note.html"/>
+    <id>https://crazy-boy.com/posts/redis-set-note.html</id>
+    <published>2023-05-16T04:38:00.000Z</published>
+    <updated>2023-05-16T04:38:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/categories/Redis/"/>
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/tags/Redis/"/>
     
   </entry>
   
@@ -493,56 +545,6 @@
     
     
     <category term="Windows" scheme="https://crazy-boy.com/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022-08-24杂谈</title>
-    <link href="https://crazy-boy.com/posts/20220824-happy.html"/>
-    <id>https://crazy-boy.com/posts/20220824-happy.html</id>
-    <published>2022-08-23T23:54:29.000Z</published>
-    <updated>2022-08-23T23:54:29.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="随笔" scheme="https://crazy-boy.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="杂谈" scheme="https://crazy-boy.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>死锁</title>
-    <link href="https://crazy-boy.com/posts/dead-lock.html"/>
-    <id>https://crazy-boy.com/posts/dead-lock.html</id>
-    <published>2022-08-02T08:21:54.000Z</published>
-    <updated>2024-10-18T01:55:59.907Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="其他" scheme="https://crazy-boy.com/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-    <category term="死锁" scheme="https://crazy-boy.com/tags/%E6%AD%BB%E9%94%81/"/>
     
   </entry>
   
