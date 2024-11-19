@@ -81,6 +81,30 @@
     <lastmod>2024-05-21</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/rainbow-table-attack.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/birthday-attack.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/md5-algorithm.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/sha256-algorithm.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/hash-algorithm.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/hash-collision-attack.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/nginx-logs.html</loc>
     <lastmod>2024-02-15</lastmod>
   </url>
@@ -177,19 +201,19 @@
     <lastmod>2022-05-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/mediator-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/flyweight-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/proxy-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/mediator-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/singleton-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/proxy-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -205,15 +229,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/factory-method-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -221,11 +241,15 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/state-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/bridge-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/strategy-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/state-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
