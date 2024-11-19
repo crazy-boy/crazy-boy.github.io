@@ -258,11 +258,11 @@
   </entry>
   
   <entry>
-    <title>Nginx 日志</title>
-    <link href="https://crazy-boy.com/posts/nginx-logs.html"/>
-    <id>https://crazy-boy.com/posts/nginx-logs.html</id>
-    <published>2024-02-15T01:40:25.000Z</published>
-    <updated>2024-02-15T01:40:25.000Z</updated>
+    <title>彩虹表攻击</title>
+    <link href="https://crazy-boy.com/posts/rainbow-table-attack.html"/>
+    <id>https://crazy-boy.com/posts/rainbow-table-attack.html</id>
+    <published>2024-03-18T05:40:00.000Z</published>
+    <updated>2024-03-18T05:40:00.000Z</updated>
     
     
       
@@ -275,21 +275,23 @@
     
     
     
-    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Nginx" scheme="https://crazy-boy.com/tags/Nginx/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
     
-    <category term="日志" scheme="https://crazy-boy.com/tags/%E6%97%A5%E5%BF%97/"/>
+    <category term="彩虹表" scheme="https://crazy-boy.com/tags/%E5%BD%A9%E8%99%B9%E8%A1%A8/"/>
+    
+    <category term="攻击" scheme="https://crazy-boy.com/tags/%E6%94%BB%E5%87%BB/"/>
     
   </entry>
   
   <entry>
-    <title>Linux如何排查cpu过高的原因</title>
-    <link href="https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html"/>
-    <id>https://crazy-boy.com/posts/linux-high-cpu-troubleshoot.html</id>
-    <published>2023-10-22T08:29:00.000Z</published>
-    <updated>2023-10-22T08:29:00.000Z</updated>
+    <title>深入理解生日攻击</title>
+    <link href="https://crazy-boy.com/posts/birthday-attack.html"/>
+    <id>https://crazy-boy.com/posts/birthday-attack.html</id>
+    <published>2024-03-18T04:25:00.000Z</published>
+    <updated>2024-03-18T04:25:00.000Z</updated>
     
     
       
@@ -302,25 +304,21 @@
     
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
-    
-    <category term="运维" scheme="https://crazy-boy.com/categories/Linux/%E8%BF%90%E7%BB%B4/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
     
-    <category term="运维" scheme="https://crazy-boy.com/tags/%E8%BF%90%E7%BB%B4/"/>
-    
-    <category term="cpu" scheme="https://crazy-boy.com/tags/cpu/"/>
+    <category term="生日攻击" scheme="https://crazy-boy.com/tags/%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/"/>
     
   </entry>
   
   <entry>
-    <title>Linux tee 命令详解</title>
-    <link href="https://crazy-boy.com/posts/linux-tee.html"/>
-    <id>https://crazy-boy.com/posts/linux-tee.html</id>
-    <published>2023-10-06T05:52:43.000Z</published>
-    <updated>2023-10-06T05:52:43.000Z</updated>
+    <title>MD5：一种常见的哈希函数</title>
+    <link href="https://crazy-boy.com/posts/md5-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/md5-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -333,21 +331,21 @@
     
     
     
-    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    <category term="MD5" scheme="https://crazy-boy.com/tags/MD5/"/>
     
-    <category term="tee" scheme="https://crazy-boy.com/tags/tee/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
   <entry>
-    <title>在Linux后台运行指定程序的几种方法</title>
-    <link href="https://crazy-boy.com/posts/program-run-in-background.html"/>
-    <id>https://crazy-boy.com/posts/program-run-in-background.html</id>
-    <published>2023-07-15T01:40:25.000Z</published>
-    <updated>2023-07-15T01:40:25.000Z</updated>
+    <title>SHA-1：一种已被淘汰的哈希算法</title>
+    <link href="https://crazy-boy.com/posts/sha1-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/sha1-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -360,21 +358,23 @@
     
     
     
-    <category term="运维" scheme="https://crazy-boy.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
     
-    <category term="后台运行" scheme="https://crazy-boy.com/tags/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C/"/>
+    <category term="SHA-1" scheme="https://crazy-boy.com/tags/SHA-1/"/>
+    
+    <category term="哈希算法" scheme="https://crazy-boy.com/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>Linux搜索关键词前后几行</title>
-    <link href="https://crazy-boy.com/posts/linux-grep-few-lines.html"/>
-    <id>https://crazy-boy.com/posts/linux-grep-few-lines.html</id>
-    <published>2023-06-21T02:05:00.000Z</published>
-    <updated>2023-06-21T02:05:00.000Z</updated>
+    <title>SHA-512：更安全的哈希算法</title>
+    <link href="https://crazy-boy.com/posts/sha512-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/sha512-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -387,21 +387,23 @@
     
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
     
-    <category term="grep" scheme="https://crazy-boy.com/tags/grep/"/>
+    <category term="哈希算法" scheme="https://crazy-boy.com/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="sha512" scheme="https://crazy-boy.com/tags/sha512/"/>
     
   </entry>
   
   <entry>
-    <title>PHP任务加锁</title>
-    <link href="https://crazy-boy.com/posts/php-task-lock.html"/>
-    <id>https://crazy-boy.com/posts/php-task-lock.html</id>
-    <published>2023-05-23T10:27:00.000Z</published>
-    <updated>2023-05-23T10:27:00.000Z</updated>
+    <title>SHA-256：更安全的哈希算法</title>
+    <link href="https://crazy-boy.com/posts/sha256-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/sha256-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -414,21 +416,21 @@
     
     
     
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
     
-    <category term="lock" scheme="https://crazy-boy.com/tags/lock/"/>
+    <category term="sha256" scheme="https://crazy-boy.com/tags/sha256/"/>
     
   </entry>
   
   <entry>
-    <title>Redis中set、setex、setnx的用法和区别</title>
-    <link href="https://crazy-boy.com/posts/redis-set-note.html"/>
-    <id>https://crazy-boy.com/posts/redis-set-note.html</id>
-    <published>2023-05-16T04:38:00.000Z</published>
-    <updated>2023-05-16T04:38:00.000Z</updated>
+    <title>SHA-3：更安全、更现代的哈希函数</title>
+    <link href="https://crazy-boy.com/posts/sha3-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/sha3-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -441,19 +443,23 @@
     
     
     
-    <category term="Redis" scheme="https://crazy-boy.com/categories/Redis/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Redis" scheme="https://crazy-boy.com/tags/Redis/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="哈希算法" scheme="https://crazy-boy.com/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="sha3" scheme="https://crazy-boy.com/tags/sha3/"/>
     
   </entry>
   
   <entry>
-    <title>Linux中&quot;&gt;&quot;和&quot;&gt;&gt;&quot;的区别</title>
-    <link href="https://crazy-boy.com/posts/linux-add-content.html"/>
-    <id>https://crazy-boy.com/posts/linux-add-content.html</id>
-    <published>2023-03-17T03:31:00.000Z</published>
-    <updated>2023-03-17T03:31:00.000Z</updated>
+    <title>侧信道攻击：从旁门窥探密码世界的秘密</title>
+    <link href="https://crazy-boy.com/posts/side-channel-attack.html"/>
+    <id>https://crazy-boy.com/posts/side-channel-attack.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -466,19 +472,29 @@
     
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/categories/Linux/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="侧信道攻击" scheme="https://crazy-boy.com/tags/%E4%BE%A7%E4%BF%A1%E9%81%93%E6%94%BB%E5%87%BB/"/>
+    
+    <category term="时序攻击" scheme="https://crazy-boy.com/tags/%E6%97%B6%E5%BA%8F%E6%94%BB%E5%87%BB/"/>
+    
+    <category term="功率分析攻击" scheme="https://crazy-boy.com/tags/%E5%8A%9F%E7%8E%87%E5%88%86%E6%9E%90%E6%94%BB%E5%87%BB/"/>
+    
+    <category term="电磁辐射攻击" scheme="https://crazy-boy.com/tags/%E7%94%B5%E7%A3%81%E8%BE%90%E5%B0%84%E6%94%BB%E5%87%BB/"/>
+    
+    <category term="密码学" scheme="https://crazy-boy.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
-    <title>Lua笔记</title>
-    <link href="https://crazy-boy.com/posts/lua-notes.html"/>
-    <id>https://crazy-boy.com/posts/lua-notes.html</id>
-    <published>2022-11-13T15:02:00.000Z</published>
-    <updated>2022-11-13T15:02:00.000Z</updated>
+    <title>哈希算法：数据世界的指纹</title>
+    <link href="https://crazy-boy.com/posts/hash-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/hash-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -491,19 +507,21 @@
     
     
     
-    <category term="Lua" scheme="https://crazy-boy.com/categories/Lua/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Lua" scheme="https://crazy-boy.com/tags/Lua/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="哈希算法" scheme="https://crazy-boy.com/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
-    <title>PHP中if else的优化方案</title>
-    <link href="https://crazy-boy.com/posts/php-if-else.html"/>
-    <id>https://crazy-boy.com/posts/php-if-else.html</id>
-    <published>2022-10-18T14:52:19.000Z</published>
-    <updated>2022-10-18T14:52:19.000Z</updated>
+    <title>恒定时间算法：抵御时序攻击的坚盾</title>
+    <link href="https://crazy-boy.com/posts/constant-time-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/constant-time-algorithm.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -516,19 +534,27 @@
     
     
     
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="PHP笔记" scheme="https://crazy-boy.com/tags/PHP%E7%AC%94%E8%AE%B0/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="时序攻击" scheme="https://crazy-boy.com/tags/%E6%97%B6%E5%BA%8F%E6%94%BB%E5%87%BB/"/>
+    
+    <category term="密码学" scheme="https://crazy-boy.com/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="恒定时间算法" scheme="https://crazy-boy.com/tags/%E6%81%92%E5%AE%9A%E6%97%B6%E9%97%B4%E7%AE%97%E6%B3%95/"/>
+    
+    <category term="hash_equals" scheme="https://crazy-boy.com/tags/hash-equals/"/>
     
   </entry>
   
   <entry>
-    <title>Windows下如何将桌面位置移到其他地方</title>
-    <link href="https://crazy-boy.com/posts/windows-move-desktop.html"/>
-    <id>https://crazy-boy.com/posts/windows-move-desktop.html</id>
-    <published>2022-08-29T03:06:15.000Z</published>
-    <updated>2022-08-29T03:06:15.000Z</updated>
+    <title>散列碰撞攻击的原理</title>
+    <link href="https://crazy-boy.com/posts/hash-collision-attack.html"/>
+    <id>https://crazy-boy.com/posts/hash-collision-attack.html</id>
+    <published>2024-03-18T02:25:00.000Z</published>
+    <updated>2024-03-18T02:25:00.000Z</updated>
     
     
       
@@ -541,10 +567,14 @@
     
     
     
-    <category term="Windows" scheme="https://crazy-boy.com/categories/Windows/"/>
+    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
     
     
-    <category term="Windows" scheme="https://crazy-boy.com/tags/Windows/"/>
+    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="哈希" scheme="https://crazy-boy.com/tags/%E5%93%88%E5%B8%8C/"/>
+    
+    <category term="散列碰撞" scheme="https://crazy-boy.com/tags/%E6%95%A3%E5%88%97%E7%A2%B0%E6%92%9E/"/>
     
   </entry>
   
