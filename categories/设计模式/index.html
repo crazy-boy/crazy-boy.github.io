@@ -1010,92 +1010,6 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/state-pattern.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——状态模式">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              设计模式——状态模式
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                说明示例下面看下状态模式的代码实现
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                            <span class="chip bg-color">设计模式</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
                     <a href="/posts/strategy-pattern.html" target="_blank">
                         <div class="card-image tag-image">
                             
@@ -1182,11 +1096,11 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/bridge-pattern.html" target="_blank">
+                    <a href="/posts/state-pattern.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——桥接模式">
+                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="设计模式——状态模式">
                             
                             
                             <!-- 福袋按钮 -->
@@ -1226,14 +1140,15 @@ class="themespring" -->
                                   }
                                 </style>
                               </span>
-                              设计模式——桥接模式
+                              设计模式——状态模式
                             </span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                说明  桥接模式就是把事物和其具体实现分开，使他们可以各自独立的变化。桥接的用意是：将抽象化与实现化解耦，使得二者可以独立变化，像我们常用的JDBC桥DriverManager一样，JDBC进行连接数据库的时候，在各个数据库之间进行切换，基
+                                说明示例下面看下状态模式的代码实现
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555
                             
                         </div>
                         <div class="publish-info">
@@ -1353,11 +1268,11 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/facade-pattern.html" target="_blank">
+                    <a href="/posts/bridge-pattern.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——外观模式">
+                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——桥接模式">
                             
                             
                             <!-- 福袋按钮 -->
@@ -1397,14 +1312,14 @@ class="themespring" -->
                                   }
                                 </style>
                               </span>
-                              设计模式——外观模式
+                              设计模式——桥接模式
                             </span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                说明  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的
+                                说明  桥接模式就是把事物和其具体实现分开，使他们可以各自独立的变化。桥接的用意是：将抽象化与实现化解耦，使得二者可以独立变化，像我们常用的JDBC桥DriverManager一样，JDBC进行连接数据库的时候，在各个数据库之间进行切换，基
                             
                         </div>
                         <div class="publish-info">
@@ -1492,6 +1407,91 @@ class="themespring" -->
                                 说明  创建一个工厂接口和创建多个工厂实现类，这样一旦需要增加新的功能，直接增加新的工厂类就可以了，不需要修改之前的代码。
 示例下面看下工厂方法模式的代码实现
 1234567891011121314151617181920212223242
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                            <span class="chip bg-color">设计模式</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
+                    <a href="/posts/facade-pattern.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/3.jpg" class="responsive-img" alt="设计模式——外观模式">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              设计模式——外观模式
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                说明  外观模式是为了解决类与类之家的依赖关系的，像spring一样，可以将类和类之间的关系配置到配置文件中，而外观模式就是将他们的关系放在一个Facade类中，降低了类类之间的耦合度，该模式中没有涉及到接口，看下类图：（我们以一个计算机的
                             
                         </div>
                         <div class="publish-info">
@@ -1784,6 +1784,91 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
+                    <a href="/posts/singleton-pattern.html" target="_blank">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——单例模式">
+                            
+                            
+                            <!-- 福袋按钮 -->
+                            <div class="caishendeng">        
+                                <div class="caishenxian fudaixian">
+                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                                </div>              
+                            </div>
+                            <!-- 圣诞按钮 -->
+                            <div class="shengdandeng">        
+                                <div class="shengdanxianyou">
+                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
+                                </div>              
+                            </div>
+
+                            <span class="card-title">
+                              <!-- 文章卡片hover线条效果 -->
+                              <span class="titlesline">
+                                <style>
+                                  .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #f2eb00;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                  }
+                                  body.dark .titlesline {
+                                    filter: brightness(.7);
+                                  }
+                                  article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                  }
+                                  article .card-image:hover .titlesline {
+                                    width: 36px;
+                                  }
+                                </style>
+                              </span>
+                              设计模式——单例模式
+                            </span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                说明单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。单例模式适用于经常被访问的对象，或是创建和销毁需要调用大量资源和时间的对象，使用单例模式可以避免频繁创建和销毁对
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                                    设计模式
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+                            <span class="chip bg-color">设计模式</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4">
+                <div class="card">
                     <a href="/posts/proxy-pattern.html" target="_blank">
                         <div class="card-image tag-image">
                             
@@ -1869,11 +1954,11 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/singleton-pattern.html" target="_blank">
+                    <a href="/posts/flyweight-pattern.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/banner/5.jpg" class="responsive-img" alt="设计模式——单例模式">
+                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——享元模式">
                             
                             
                             <!-- 福袋按钮 -->
@@ -1913,14 +1998,14 @@ class="themespring" -->
                                   }
                                 </style>
                               </span>
-                              设计模式——单例模式
+                              设计模式——享元模式
                             </span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                说明单例对象（Singleton）是一种常用的设计模式。在Java应用中，单例对象能保证在一个JVM中，该对象只有一个实例存在。单例模式适用于经常被访问的对象，或是创建和销毁需要调用大量资源和时间的对象，使用单例模式可以避免频繁创建和销毁对
+                                说明  享元模式的主要目的是实现对象的共享，即共享池，当系统中对象多的时候可以减少内存的开销，通常与工厂模式一起使用。  FlyWeightFactory负责创建和管理享元单元，当一个客户端请求时，工厂需要检查当前对象池中是否有符合条件的对
                             
                         </div>
                         <div class="publish-info">
@@ -2007,91 +2092,6 @@ class="themespring" -->
                             
                                 说明示例下面看下中介者模式的代码实现
 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
-                                    设计模式
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                            <span class="chip bg-color">设计模式</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4">
-                <div class="card">
-                    <a href="/posts/flyweight-pattern.html" target="_blank">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="设计模式——享元模式">
-                            
-                            
-                            <!-- 福袋按钮 -->
-                            <div class="caishendeng">        
-                                <div class="caishenxian fudaixian">
-                                    <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                                </div>              
-                            </div>
-                            <!-- 圣诞按钮 -->
-                            <div class="shengdandeng">        
-                                <div class="shengdanxianyou">
-                                    <img class="shengdanpic sdlala" src="/medias/christmas-img/shengdanren3.png" />
-                                </div>              
-                            </div>
-
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: #f2eb00;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              设计模式——享元模式
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                说明  享元模式的主要目的是实现对象的共享，即共享池，当系统中对象多的时候可以减少内存的开销，通常与工厂模式一起使用。  FlyWeightFactory负责创建和管理享元单元，当一个客户端请求时，工厂需要检查当前对象池中是否有符合条件的对
                             
                         </div>
                         <div class="publish-info">
@@ -2240,7 +2240,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">53.6k</span>&nbsp;
+        class="white-color">60.9k</span>&nbsp;
       
       
       
