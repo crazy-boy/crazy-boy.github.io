@@ -1145,6 +1145,229 @@ class="themespring" -->
         <div class="card">
           <!-- 推荐文章置顶模块效果开始 -->
           
+          <div class="placetop">推荐文章</div>
+          <style>
+            .placetop {
+              z-index: 99;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 80px;
+              height: 30px;
+              line-height: 30px;
+              border-bottom-right-radius: 8px;
+              background-color: #039be5;
+              text-align: center;
+              font-size: 15px;
+              color: #fff;
+              font-weight: 400 !important;
+              opacity: 0.95;
+            }
+
+            body.dark .placetop {
+              opacity: 0.75;
+            }
+          </style>
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/high-concurrent-experience.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="记一次高并发迭代之路！！">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                记一次高并发迭代之路！！
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              前因2020年之初，新冠肺炎突然来势汹汹，在全国人民的团结努力下，抗疫战进入了僵持阶段，2月24日我公司一复工，就接到了成都市XX区领导的需求，需要在一周内开发上线一个针对全区师生(10万人左右)疫情每日打卡平台。
+分析其实就是需要做一个用
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-05-21
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E6%9E%B6%E6%9E%84/" class="post-category">
+                  架构
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/">
+              <span class="chip bg-color">高并发</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <div class="placetop">推荐文章</div>
+          <style>
+            .placetop {
+              z-index: 99;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 80px;
+              height: 30px;
+              line-height: 30px;
+              border-bottom-right-radius: 8px;
+              background-color: #039be5;
+              text-align: center;
+              font-size: 15px;
+              color: #fff;
+              font-weight: 400 !important;
+              opacity: 0.95;
+            }
+
+            body.dark .placetop {
+              opacity: 0.75;
+            }
+          </style>
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/mysql-deal-miss-handle.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/7.jpg" class="responsive-img"
+                alt="MySQL脚本执行中，预防误处理数据的方法">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                MySQL脚本执行中，预防误处理数据的方法
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              在工作中，有时需要通过数据库脚本来变更生产数据，但稍有疏忽，就会误删数据、或者变更过多数据；为防预防这类情况的发生，根据我个人的工作经验，总结了以下几点方法：
+
+1、先测试   脚本写好之后，先在测试环境执行一遍，一方面可以看看脚本是否有语
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2020-08-05
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/MySQL/" class="post-category">
+                  MySQL
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/MySQL/">
+              <span class="chip bg-color">MySQL</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
           <!-- 推荐文章置顶模块效果结束 -->
           <a href="/posts/laravel-tips.html">
             <div class="card-image">
@@ -2064,190 +2287,6 @@ HM
         </div>
       </div>
       
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/phpstorm-setting-xdebug.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/3.jpg" class="responsive-img"
-                alt="phpStorm配置xdebug">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                phpStorm配置xdebug
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              在php开发中，经常遇到一些奇怪的问题，一时半会儿排查不出原因；这时候就需要进行断点调试，xdebug就是常用的一种断点调试工具，下面介绍下如何设置的。
-
-xdebug设置
-开启xdebug扩展，并配置php.ini，重启php123456
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-10-23
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/phpStorm/" class="post-category">
-                  phpStorm
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/phpStorm/">
-              <span class="chip bg-color">phpStorm</span>
-            </a>
-            
-            <a href="/tags/xdebug/">
-              <span class="chip bg-color">xdebug</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/linux-short-cut-keys.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Linux命令行中的快捷键">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Linux命令行中的快捷键
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              Linux 命令行中的快捷键非常丰富，可以大大提高程序员的工作效率。下面将详细介绍一些常用的快捷键，并分类说明：
-移动光标
-Ctrl+A: 将光标移动到行首
-Ctrl+E: 将光标移动到行尾
-Ctrl+B: 光标向左移动一个字符
-Ctrl+
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-10-17
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Linux/" class="post-category">
-                  Linux
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
     </div>
   </article>
   <!-- 所有文章卡片结束 -->
@@ -2366,7 +2405,7 @@ Ctrl+
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">75.4k</span>&nbsp;
+        class="white-color">76.2k</span>&nbsp;
       
       
       
