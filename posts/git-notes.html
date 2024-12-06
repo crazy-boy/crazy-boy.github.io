@@ -1057,14 +1057,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    351
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -1078,6 +1078,65 @@ h3:hover {
 <h3 id="文件忽略"><a href="#文件忽略" class="headerlink" title="文件忽略"></a>文件忽略</h3><p>软件项目使用git提交远程仓库时，如果需要忽略某些文件(如缓存文件、框架核心文件)的变更，可以在项目的根目录下创建.gitignore文件，并罗列需忽略的文件或者文件夹。</p>
 <p>如下为PHP Yii2下的.gitignore文件内容：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.idea/</span><br><span class="line">.project</span><br><span class="line">.settings</span><br><span class="line">/vendor</span><br><span class="line">assets/</span><br><span class="line">/runtime</span><br><span class="line">/Runtime</span><br><span class="line">/upload</span><br></pre></td></tr></tbody></table></figure><br>但有时候忽略文件不起作用，其原因是：git设置本地忽略时，必须保证远程仓库分支上没有这个要忽略的文件；否则本地的ignore将不起作用。<br>解决方式：删除要忽略的文件并提交远程仓库，ignore该文件。<p></p>
 <h3 id="git设置"><a href="#git设置" class="headerlink" title="git设置"></a>git设置</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> .git/config</span><br><span class="line">git remote set-url origin ssh地址</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="当尝试将-feature-v20-分支合并到-develop-分支时，出现大量冲突，希望将-develop-分支的代码直接替换为-feature-v20-分支的代码，可以考虑以下几种方法："><a href="#当尝试将-feature-v20-分支合并到-develop-分支时，出现大量冲突，希望将-develop-分支的代码直接替换为-feature-v20-分支的代码，可以考虑以下几种方法：" class="headerlink" title="当尝试将 feature/v20 分支合并到 develop 分支时，出现大量冲突，希望将 develop 分支的代码直接替换为 feature/v20 分支的代码，可以考虑以下几种方法："></a>当尝试将 feature/v20 分支合并到 develop 分支时，出现大量冲突，希望将 develop 分支的代码直接替换为 feature/v20 分支的代码，可以考虑以下几种方法：</h3><h4 id="1-强制重置-develop-分支"><a href="#1-强制重置-develop-分支" class="headerlink" title="1. 强制重置 develop 分支"></a>1. <strong>强制重置 develop 分支</strong></h4><ul>
+<li><strong>警告：</strong> 这会丢失 develop 分支上的所有未提交的更改。请谨慎操作，并确保你已经备份了重要的数据。</li>
+<li><strong>步骤：</strong><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop</span><br><span class="line">git reset --hard feature/v20</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>git checkout develop</code>: 切换到 develop 分支。</li>
+<li><code>git reset --hard feature/v20</code>: 将 develop 分支的 HEAD 指针强制重置到 feature/v20 分支的最新提交，丢弃 develop 分支上的所有本地更改。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-重新创建-develop-分支"><a href="#2-重新创建-develop-分支" class="headerlink" title="2. 重新创建 develop 分支"></a>2. <strong>重新创建 develop 分支</strong></h4><ul>
+<li><strong>步骤：</strong><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -D develop  <span class="comment"># 删除现有的 develop 分支</span></span><br><span class="line">git checkout feature/v20  <span class="comment"># 切换到 feature/v20 分支</span></span><br><span class="line">git branch develop/v20  <span class="comment"># 基于 feature/v20 分支创建一个新的 develop 分支</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>首先删除旧的 develop 分支，然后基于 feature/v20 分支创建一个新的 develop 分支，这样 develop 分支的代码就和 feature/v20 分支完全一致了。</li>
+</ul>
+</li>
+</ul>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li><strong>强制重置或重新创建分支是比较极端的操作</strong>，会丢失数据。在执行之前，请务必确认你已经备份了重要的代码。</li>
+<li><strong>如果 develop 分支已经被推送到了远程仓库</strong>，那么强制重置会造成历史记录的混乱。建议在本地进行操作，然后再将新的 develop 分支推送到远程。</li>
+<li><strong>如果 develop 分支上有其他开发者正在协作</strong>，强制重置可能会导致他们的工作丢失。在执行操作之前，请与团队成员进行沟通。</li>
+</ul>
+<h4 id="其他建议"><a href="#其他建议" class="headerlink" title="其他建议"></a>其他建议</h4><ul>
+<li><strong>仔细分析冲突：</strong> 在强制重置之前，可以仔细查看冲突的文件，了解冲突的原因。</li>
+<li><strong>利用 <code>git diff</code> 命令</strong> 比较两个分支之间的差异，帮助你更好地理解代码的变化。</li>
+<li><strong>考虑使用 <code>git mergetool</code></strong> 来可视化地解决冲突。</li>
+<li><strong>如果可能，尝试重新创建 feature 分支</strong>，并确保在开发过程中及时合并最新的 develop 分支，以减少冲突发生的频率。</li>
+</ul>
+<h3 id="Git-pull-报错-“Please-commit-your-changes-or-stash-them-before-you-can-merge”-的解决方法"><a href="#Git-pull-报错-“Please-commit-your-changes-or-stash-them-before-you-can-merge”-的解决方法" class="headerlink" title="Git pull 报错 “Please, commit your changes or stash them before you can merge” 的解决方法"></a>Git pull 报错 “Please, commit your changes or stash them before you can merge” 的解决方法</h3><h4 id="出现这个错误的原因："><a href="#出现这个错误的原因：" class="headerlink" title="出现这个错误的原因："></a>出现这个错误的原因：</h4><p>当你执行 <code>git pull</code> 命令时，Git 会尝试将远程仓库的最新更改合并到你的本地分支。但是，如果你在本地分支上有一些未提交的修改，Git 就会拒绝合并，因为这可能会导致冲突。所以，Git 会提示你：请先提交你的修改或者将它们暂存起来，然后再进行合并。</p>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><h5 id="1-提交你的修改"><a href="#1-提交你的修改" class="headerlink" title="1. 提交你的修改"></a>1. <strong>提交你的修改</strong></h5><ul>
+<li><strong>查看修改:</strong> 使用 <code>git status</code> 命令查看你有哪些未提交的修改。</li>
+<li><strong>暂存修改:</strong> 使用 <code>git add &lt;文件名&gt;</code> 或 <code>git add .</code> 将修改暂存。</li>
+<li><strong>提交修改:</strong> 使用 <code>git commit -m "你的提交信息"</code> 将暂存的修改提交。</li>
+<li><strong>拉取远程分支:</strong> 提交完后，再执行 <code>git pull</code>。</li>
+</ul>
+<h5 id="2-暂存你的修改"><a href="#2-暂存你的修改" class="headerlink" title="2. 暂存你的修改"></a>2. <strong>暂存你的修改</strong></h5><ul>
+<li><strong>暂存修改:</strong> 使用 <code>git stash</code> 命令将当前工作区的所有修改暂存起来。</li>
+<li><strong>拉取远程分支:</strong> 执行 <code>git pull</code>。</li>
+<li><strong>恢复暂存的修改:</strong> 如果想恢复暂存的修改，可以使用 <code>git stash pop</code>。</li>
+</ul>
+<h5 id="详细解释："><a href="#详细解释：" class="headerlink" title="详细解释："></a>详细解释：</h5><ul>
+<li><strong>git status:</strong> 查看你当前的工作区状态，哪些文件被修改了，哪些文件被暂存了。</li>
+<li><strong>git add:</strong> 将你修改的文件添加到暂存区。</li>
+<li><strong>git commit:</strong> 将暂存区的文件提交到本地仓库。</li>
+<li><strong>git pull:</strong> 从远程仓库拉取最新的代码，并合并到本地分支。</li>
+<li><strong>git stash:</strong> 将当前工作区的所有修改暂存起来，但不提交。</li>
+<li><strong>git stash pop:</strong> 应用最新的 stash，并将它从 stash 栈中删除。</li>
+</ul>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>当遇到这个错误时，<strong>最安全的做法是先提交你的本地修改</strong>，然后再执行 <code>git pull</code>。如果你不想立即提交，也可以使用 <code>git stash</code> 将修改暂存起来。</p>
+<p><strong>选择哪种方法取决于你的具体情况：</strong></p>
+<ul>
+<li><strong>如果你想保留这些修改:</strong> 提交或暂存。</li>
+<li><strong>如果你不想保留这些修改:</strong> 可以直接丢弃这些修改，然后执行 <code>git pull</code>。</li>
+</ul>
+<p><strong>注意:</strong></p>
+<ul>
+<li><strong>强制覆盖本地修改:</strong> 如果确定要丢弃本地修改，可以使用 <code>git fetch</code> 和 <code>git reset --hard origin/master</code> (假设远程分支是 master)，但这会覆盖你所有的本地修改，请谨慎操作。</li>
+<li><strong>解决冲突:</strong> 如果在 <code>git pull</code> 的过程中出现冲突，你需要手动解决冲突，然后使用 <code>git add</code> 和 <code>git commit</code> 来提交解决后的结果。</li>
+</ul>
+
             </div>
             <hr/>
 
@@ -2065,7 +2124,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">69.8k</span>&nbsp;
+        class="white-color">75.4k</span>&nbsp;
       
       
       
