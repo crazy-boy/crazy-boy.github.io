@@ -45,9 +45,15 @@ $(function () {
     }
     // 复制
     $('.code-area .fa-copy').on('click', function () {
+        var codeElement = $(this).siblings('pre')/*.find('code')*/[0];
+        if (!codeElement) {
+            console.error('Code element not found');
+            return;
+        }
+
         var selection = window.getSelection()
         var range = document.createRange()
-        range.selectNodeContents($(this).siblings('pre').find('code')[0])
+        range.selectNodeContents(codeElement);
         selection.removeAllRanges()
         selection.addRange(range)
         var text = selection.toString()

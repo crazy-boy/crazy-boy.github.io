@@ -1065,14 +1065,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    18 分
                 </div>
                 
 
@@ -1125,6 +1125,8 @@ h3:hover {
 <h4 id="“shortRelativeDiffForHumans”方法"><a href="#“shortRelativeDiffForHumans”方法" class="headerlink" title="“shortRelativeDiffForHumans”方法"></a>“shortRelativeDiffForHumans”方法</h4><p>我确信您已经使用“diffForHumans”方法来获取人类可读的日期。但您知道可以使用“shortRelativeDiffForHumans”方法获取更短的版本吗？🚀<br></p><figure class="highlight scss"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"><span class="built_in">now</span>()-&gt;<span class="built_in">subDays</span>(<span class="number">5</span>)-&gt;<span class="built_in">diffForHumans</span>(); <span class="comment">// 5 days ago</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Need a shorter version? No problem</span></span><br><span class="line"><span class="built_in">now</span>()-&gt;<span class="built_in">subDays</span>(<span class="number">5</span>)-&gt;<span class="built_in">shortRelativeDiffForHumans</span>(); <span class="comment">// 5d ago</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="“finish”助手"><a href="#“finish”助手" class="headerlink" title="“finish”助手"></a>“finish”助手</h4><p>有时，您可能需要确保字符串以特定字符结尾，例如斜杠或点。 Laravel 附带了“finish”助手来执行此操作 🚀<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Str</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title class_">Str</span>::<span class="title function_ invoke__">finish</span>(<span class="string">'this/string'</span>, <span class="string">'/'</span>); <span class="comment">// this/string/</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Str</span>::<span class="title function_ invoke__">finish</span>(<span class="string">'this/string/'</span>, <span class="string">'/'</span>); <span class="comment">// this/string/</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="“hasHeader”-方法"><a href="#“hasHeader”-方法" class="headerlink" title="“hasHeader” 方法"></a>“hasHeader” 方法</h4><p>您是否曾经需要检查标头？虽然您可以手动执行此操作，但 Laravel 附带了“hasHeader”方法来执行此操作 🚀<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$request</span>-&gt;<span class="title function_ invoke__">hasHeader</span>(<span class="string">'X-Header-Name'</span>)) {</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="or与其他条件并行的问题"><a href="#or与其他条件并行的问题" class="headerlink" title="or与其他条件并行的问题"></a><code>or</code>与其他条件并行的问题</h4><p>有时候我们想写一个这样的sql：<code>select * from my_table where</code>user_id<code>= 20 and</code>birthday<code>&gt;= 20241212 and (balance&gt;0 or value&gt;0);</code></p>
+<p>如果用laravel的php代码写成这样：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$res</span> = DB::<span class="title function_ invoke__">query</span>()-&gt;<span class="title function_ invoke__">table</span>(<span class="string">'my_table'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'user_id'</span>, <span class="variable">$userId</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'birthday'</span>, <span class="string">'&gt;='</span>, <span class="variable">$dbirthday</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">whereRaw</span>(<span class="string">'balance&gt;0 or value&gt;0'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">get</span>()</span><br><span class="line">    -&gt;<span class="title function_ invoke__">toArray</span>();</span><br></pre></td></tr></tbody></table></figure><br>这是错误的，它转成sql是<code>select * from my_table where</code>user_id<code>= 20 and</code>birthday<code>&gt;= 20241212 and balance&gt;0 or value&gt;0;</code><br>那就不能得到正确的结果，其实正确的写法应该是：<br><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$res</span> = DB::<span class="title function_ invoke__">query</span>()-&gt;<span class="title function_ invoke__">table</span>(<span class="string">'my_table'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'user_id'</span>, <span class="variable">$userId</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'birthday'</span>, <span class="string">'&gt;='</span>, <span class="variable">$dbirthday</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(function (<span class="variable">$query</span>) { </span><br><span class="line">        <span class="variable">$query</span>-&gt;<span class="title function_ invoke__">where</span>(<span class="string">'balance'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">orWhere</span>(<span class="string">'value'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>);</span><br><span class="line">    })</span><br><span class="line">    -&gt;<span class="title function_ invoke__">get</span>()</span><br><span class="line">    -&gt;<span class="title function_ invoke__">toArray</span>();</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>参考：<a target="_blank" rel="noopener" href="https://github.com/OussamaMater/Laravel-Tips">https://github.com/OussamaMater/Laravel-Tips</a></p>
 
             </div>
@@ -1733,14 +1735,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/laravel-tips.html">
+                <a href="/posts/php-generics.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="Laravel建议">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="PHP 泛型：一个深入浅出的解读">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1751,20 +1752,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Laravel建议
+                          PHP 泛型：一个深入浅出的解读
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            助手方法blank()和filled()您是否知道 Laravel 附带了两个很酷的助手方法blank()和filled(),现在，您可以采用标准化方法来测试变量是否为空，无论其类型如何，甚至支持集合！1234567891011121314
+                            泛型是什么？在编程语言中，泛型（Generics）是一种在编写代码时使用类型参数的特性。它允许你定义类、接口和方法，使其能够在不丧失类型安全的情况下，适用于多种数据类型。简单来说，泛型就是一种参数化类型，使得代码具有更强的灵活性和可复用性。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1777,7 +1778,6 @@ h3:hover {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1785,12 +1785,8 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/tips/">
-                        <span class="chip bg-color">tips</span>
-                    </a>
-                    
-                    <a href="/tags/Laravel/">
-                        <span class="chip bg-color">Laravel</span>
+                    <a href="/tags/Generics/">
+                        <span class="chip bg-color">Generics</span>
                     </a>
                     
                 </div>
@@ -2140,14 +2136,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    18 分
                 </div>
                 
 
@@ -2200,6 +2196,8 @@ h3:hover {
 <h4 id="“shortRelativeDiffForHumans”方法"><a href="#“shortRelativeDiffForHumans”方法" class="headerlink" title="“shortRelativeDiffForHumans”方法"></a>“shortRelativeDiffForHumans”方法</h4><p>我确信您已经使用“diffForHumans”方法来获取人类可读的日期。但您知道可以使用“shortRelativeDiffForHumans”方法获取更短的版本吗？🚀<br></p><figure class="highlight scss"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"><span class="built_in">now</span>()-&gt;<span class="built_in">subDays</span>(<span class="number">5</span>)-&gt;<span class="built_in">diffForHumans</span>(); <span class="comment">// 5 days ago</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Need a shorter version? No problem</span></span><br><span class="line"><span class="built_in">now</span>()-&gt;<span class="built_in">subDays</span>(<span class="number">5</span>)-&gt;<span class="built_in">shortRelativeDiffForHumans</span>(); <span class="comment">// 5d ago</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="“finish”助手"><a href="#“finish”助手" class="headerlink" title="“finish”助手"></a>“finish”助手</h4><p>有时，您可能需要确保字符串以特定字符结尾，例如斜杠或点。 Laravel 附带了“finish”助手来执行此操作 🚀<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Str</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title class_">Str</span>::<span class="title function_ invoke__">finish</span>(<span class="string">'this/string'</span>, <span class="string">'/'</span>); <span class="comment">// this/string/</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Str</span>::<span class="title function_ invoke__">finish</span>(<span class="string">'this/string/'</span>, <span class="string">'/'</span>); <span class="comment">// this/string/</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="“hasHeader”-方法"><a href="#“hasHeader”-方法" class="headerlink" title="“hasHeader” 方法"></a>“hasHeader” 方法</h4><p>您是否曾经需要检查标头？虽然您可以手动执行此操作，但 Laravel 附带了“hasHeader”方法来执行此操作 🚀<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$request</span>-&gt;<span class="title function_ invoke__">hasHeader</span>(<span class="string">'X-Header-Name'</span>)) {</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="or与其他条件并行的问题"><a href="#or与其他条件并行的问题" class="headerlink" title="or与其他条件并行的问题"></a><code>or</code>与其他条件并行的问题</h4><p>有时候我们想写一个这样的sql：<code>select * from my_table where</code>user_id<code>= 20 and</code>birthday<code>&gt;= 20241212 and (balance&gt;0 or value&gt;0);</code></p>
+<p>如果用laravel的php代码写成这样：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$res</span> = DB::<span class="title function_ invoke__">query</span>()-&gt;<span class="title function_ invoke__">table</span>(<span class="string">'my_table'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'user_id'</span>, <span class="variable">$userId</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'birthday'</span>, <span class="string">'&gt;='</span>, <span class="variable">$dbirthday</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">whereRaw</span>(<span class="string">'balance&gt;0 or value&gt;0'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">get</span>()</span><br><span class="line">    -&gt;<span class="title function_ invoke__">toArray</span>();</span><br></pre></td></tr></tbody></table></figure><br>这是错误的，它转成sql是<code>select * from my_table where</code>user_id<code>= 20 and</code>birthday<code>&gt;= 20241212 and balance&gt;0 or value&gt;0;</code><br>那就不能得到正确的结果，其实正确的写法应该是：<br><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$res</span> = DB::<span class="title function_ invoke__">query</span>()-&gt;<span class="title function_ invoke__">table</span>(<span class="string">'my_table'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'user_id'</span>, <span class="variable">$userId</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'birthday'</span>, <span class="string">'&gt;='</span>, <span class="variable">$dbirthday</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(function (<span class="variable">$query</span>) { </span><br><span class="line">        <span class="variable">$query</span>-&gt;<span class="title function_ invoke__">where</span>(<span class="string">'balance'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">orWhere</span>(<span class="string">'value'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>);</span><br><span class="line">    })</span><br><span class="line">    -&gt;<span class="title function_ invoke__">get</span>()</span><br><span class="line">    -&gt;<span class="title function_ invoke__">toArray</span>();</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>参考：<a target="_blank" rel="noopener" href="https://github.com/OussamaMater/Laravel-Tips">https://github.com/OussamaMater/Laravel-Tips</a></p>
 
             </div>
@@ -2808,14 +2806,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/laravel-tips.html">
+                <a href="/posts/php-generics.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="Laravel建议">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="PHP 泛型：一个深入浅出的解读">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2826,20 +2823,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Laravel建议
+                          PHP 泛型：一个深入浅出的解读
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            助手方法blank()和filled()您是否知道 Laravel 附带了两个很酷的助手方法blank()和filled(),现在，您可以采用标准化方法来测试变量是否为空，无论其类型如何，甚至支持集合！1234567891011121314
+                            泛型是什么？在编程语言中，泛型（Generics）是一种在编写代码时使用类型参数的特性。它允许你定义类、接口和方法，使其能够在不丧失类型安全的情况下，适用于多种数据类型。简单来说，泛型就是一种参数化类型，使得代码具有更强的灵活性和可复用性。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -2852,7 +2849,6 @@ h3:hover {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -2860,12 +2856,8 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/tips/">
-                        <span class="chip bg-color">tips</span>
-                    </a>
-                    
-                    <a href="/tags/Laravel/">
-                        <span class="chip bg-color">Laravel</span>
+                    <a href="/tags/Generics/">
+                        <span class="chip bg-color">Generics</span>
                     </a>
                     
                 </div>
@@ -3215,14 +3207,14 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    18 分
                 </div>
                 
 
@@ -3275,6 +3267,8 @@ h3:hover {
 <h4 id="“shortRelativeDiffForHumans”方法"><a href="#“shortRelativeDiffForHumans”方法" class="headerlink" title="“shortRelativeDiffForHumans”方法"></a>“shortRelativeDiffForHumans”方法</h4><p>我确信您已经使用“diffForHumans”方法来获取人类可读的日期。但您知道可以使用“shortRelativeDiffForHumans”方法获取更短的版本吗？🚀<br></p><figure class="highlight scss"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"><span class="built_in">now</span>()-&gt;<span class="built_in">subDays</span>(<span class="number">5</span>)-&gt;<span class="built_in">diffForHumans</span>(); <span class="comment">// 5 days ago</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Need a shorter version? No problem</span></span><br><span class="line"><span class="built_in">now</span>()-&gt;<span class="built_in">subDays</span>(<span class="number">5</span>)-&gt;<span class="built_in">shortRelativeDiffForHumans</span>(); <span class="comment">// 5d ago</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="“finish”助手"><a href="#“finish”助手" class="headerlink" title="“finish”助手"></a>“finish”助手</h4><p>有时，您可能需要确保字符串以特定字符结尾，例如斜杠或点。 Laravel 附带了“finish”助手来执行此操作 🚀<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Str</span>;</span><br><span class="line"> </span><br><span class="line"><span class="title class_">Str</span>::<span class="title function_ invoke__">finish</span>(<span class="string">'this/string'</span>, <span class="string">'/'</span>); <span class="comment">// this/string/</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Str</span>::<span class="title function_ invoke__">finish</span>(<span class="string">'this/string/'</span>, <span class="string">'/'</span>); <span class="comment">// this/string/</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <h4 id="“hasHeader”-方法"><a href="#“hasHeader”-方法" class="headerlink" title="“hasHeader” 方法"></a>“hasHeader” 方法</h4><p>您是否曾经需要检查标头？虽然您可以手动执行此操作，但 Laravel 附带了“hasHeader”方法来执行此操作 🚀<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$request</span>-&gt;<span class="title function_ invoke__">hasHeader</span>(<span class="string">'X-Header-Name'</span>)) {</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h4 id="or与其他条件并行的问题"><a href="#or与其他条件并行的问题" class="headerlink" title="or与其他条件并行的问题"></a><code>or</code>与其他条件并行的问题</h4><p>有时候我们想写一个这样的sql：<code>select * from my_table where</code>user_id<code>= 20 and</code>birthday<code>&gt;= 20241212 and (balance&gt;0 or value&gt;0);</code></p>
+<p>如果用laravel的php代码写成这样：<br></p><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$res</span> = DB::<span class="title function_ invoke__">query</span>()-&gt;<span class="title function_ invoke__">table</span>(<span class="string">'my_table'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'user_id'</span>, <span class="variable">$userId</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'birthday'</span>, <span class="string">'&gt;='</span>, <span class="variable">$dbirthday</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">whereRaw</span>(<span class="string">'balance&gt;0 or value&gt;0'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">get</span>()</span><br><span class="line">    -&gt;<span class="title function_ invoke__">toArray</span>();</span><br></pre></td></tr></tbody></table></figure><br>这是错误的，它转成sql是<code>select * from my_table where</code>user_id<code>= 20 and</code>birthday<code>&gt;= 20241212 and balance&gt;0 or value&gt;0;</code><br>那就不能得到正确的结果，其实正确的写法应该是：<br><figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$res</span> = DB::<span class="title function_ invoke__">query</span>()-&gt;<span class="title function_ invoke__">table</span>(<span class="string">'my_table'</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'user_id'</span>, <span class="variable">$userId</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(<span class="string">'birthday'</span>, <span class="string">'&gt;='</span>, <span class="variable">$dbirthday</span>)</span><br><span class="line">    -&gt;<span class="title function_ invoke__">where</span>(function (<span class="variable">$query</span>) { </span><br><span class="line">        <span class="variable">$query</span>-&gt;<span class="title function_ invoke__">where</span>(<span class="string">'balance'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>)</span><br><span class="line">            -&gt;<span class="title function_ invoke__">orWhere</span>(<span class="string">'value'</span>, <span class="string">'&gt;'</span>, <span class="number">0</span>);</span><br><span class="line">    })</span><br><span class="line">    -&gt;<span class="title function_ invoke__">get</span>()</span><br><span class="line">    -&gt;<span class="title function_ invoke__">toArray</span>();</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>参考：<a target="_blank" rel="noopener" href="https://github.com/OussamaMater/Laravel-Tips">https://github.com/OussamaMater/Laravel-Tips</a></p>
 
             </div>
@@ -3883,14 +3877,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/laravel-tips.html">
+                <a href="/posts/php-generics.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/3.jpg" class="responsive-img" alt="Laravel建议">
+                        <img src="/medias/banner/1.jpg" class="responsive-img" alt="PHP 泛型：一个深入浅出的解读">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -3901,20 +3894,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Laravel建议
+                          PHP 泛型：一个深入浅出的解读
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            助手方法blank()和filled()您是否知道 Laravel 附带了两个很酷的助手方法blank()和filled(),现在，您可以采用标准化方法来测试变量是否为空，无论其类型如何，甚至支持集合！1234567891011121314
+                            泛型是什么？在编程语言中，泛型（Generics）是一种在编写代码时使用类型参数的特性。它允许你定义类、接口和方法，使其能够在不丧失类型安全的情况下，适用于多种数据类型。简单来说，泛型就是一种参数化类型，使得代码具有更强的灵活性和可复用性。
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-12
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -3927,7 +3920,6 @@ h3:hover {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -3935,12 +3927,8 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/tips/">
-                        <span class="chip bg-color">tips</span>
-                    </a>
-                    
-                    <a href="/tags/Laravel/">
-                        <span class="chip bg-color">Laravel</span>
+                    <a href="/tags/Generics/">
+                        <span class="chip bg-color">Generics</span>
                     </a>
                     
                 </div>
@@ -4305,7 +4293,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">76.2k</span>&nbsp;
+        class="white-color">79.4k</span>&nbsp;
       
       
       

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://crazy-boy.com/posts/php-generics.html</loc>
+    <lastmod>2024-12-12</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/laravel-tips.html</loc>
     <lastmod>2024-12-06</lastmod>
   </url>
@@ -17,7 +21,19 @@
     <lastmod>2024-11-28</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/less-ten-multiply-two.html</loc>
+    <lastmod>2024-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/game-design-stricter-for-poor.html</loc>
+    <lastmod>2024-11-21</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/boyer-moore.html</loc>
+    <lastmod>2024-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/luhn-algorithm.html</loc>
     <lastmod>2024-11-21</lastmod>
   </url>
   <url>
@@ -137,11 +153,11 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/md5-algorithm.html</loc>
+    <loc>https://crazy-boy.com/posts/rijndael.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/rijndael.html</loc>
+    <loc>https://crazy-boy.com/posts/md5-algorithm.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -153,15 +169,11 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/sha3-algorithm.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/sha256-algorithm.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/bcrypt.html</loc>
+    <loc>https://crazy-boy.com/posts/sha3-algorithm.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -170,6 +182,10 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/side-channel-attack.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/bcrypt.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -193,11 +209,11 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/zero-trust.html</loc>
+    <loc>https://crazy-boy.com/posts/white-box-cryptography.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/white-box-cryptography.html</loc>
+    <loc>https://crazy-boy.com/posts/zero-trust.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -313,11 +329,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/proxy-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/flyweight-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/flyweight-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/proxy-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -325,11 +341,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/command-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/command-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/prototype-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -357,11 +373,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/strategy-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/simple-factory-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/simple-factory-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/strategy-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -377,11 +393,11 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/interpreter-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/interpreter-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>

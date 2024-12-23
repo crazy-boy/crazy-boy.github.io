@@ -56,3 +56,49 @@
         transform: translate(0, 0.5px) rotate(1.5deg);
     }
 }
+
+
+
+/* 设置代码块的背景颜色和文本颜色 */
+pre {
+    background-color: #2d2d2d; /* 深色背景 */
+    color: #f8f8f2; /* 浅色文本 */
+    padding: 10px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    overflow: auto; /* 允许滚动条 */
+    /*white-space: pre-wrap; !* 自动换行 *!*/
+    white-space: pre; /* 保留空格和换行符 */
+    /*overflow-x: auto; !* 水平滚动条 *!*/
+}
+
+/* 设置代码块内的代码样式 */
+pre code {
+    display: block;
+    line-height: 1.5; /* 行高 */
+    font-family: 'Courier New', Courier, monospace; /* 等宽字体 */
+    font-size: 14px; /* 字体大小 */
+}
+
+/* 设置代码块的边框 */
+pre {
+    border: 1px solid #4d4d4d; /* 边框颜色 */
+}
+
+/* 设置代码块的阴影效果 */
+pre {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+}
+
+/* 设置代码高亮效果 */
+pre .highlight {
+    background-color: #49483e; /* 高亮背景颜色 */
+}
+
+/* 设置代码块的行号 */
+pre .line-number {
+    color: #75715e; /* 行号颜色 */
+    display: inline-block;
+    width: 30px; /* 行号宽度 */
+    text-align: right; /* 行号对齐方式 */
+    margin-right: 10px; /* 行号与代码之间的距离 */
+}

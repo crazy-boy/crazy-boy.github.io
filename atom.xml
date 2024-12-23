@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2024-12-06T01:39:25.000Z</updated>
+  <updated>2024-12-12T01:39:25.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PHP 泛型：一个深入浅出的解读</title>
+    <link href="https://crazy-boy.com/posts/php-generics.html"/>
+    <id>https://crazy-boy.com/posts/php-generics.html</id>
+    <published>2024-12-12T01:39:25.000Z</published>
+    <updated>2024-12-12T01:39:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="Generics" scheme="https://crazy-boy.com/tags/Generics/"/>
+    
+  </entry>
   
   <entry>
     <title>Laravel建议</title>
@@ -100,6 +127,58 @@
   </entry>
   
   <entry>
+    <title>证明：如果一个小于10的数乘以2后的结果大于9，则结果减去9等于将乘积的各位数字相加</title>
+    <link href="https://crazy-boy.com/posts/less-ten-multiply-two.html"/>
+    <id>https://crazy-boy.com/posts/less-ten-multiply-two.html</id>
+    <published>2024-11-21T05:39:12.000Z</published>
+    <updated>2024-11-21T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何隐蔽地对白嫖用户设置更严格的活动限制</title>
+    <link href="https://crazy-boy.com/posts/game-design-stricter-for-poor.html"/>
+    <id>https://crazy-boy.com/posts/game-design-stricter-for-poor.html</id>
+    <published>2024-11-21T05:39:12.000Z</published>
+    <updated>2024-11-21T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="游戏设计" scheme="https://crazy-boy.com/categories/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="design" scheme="https://crazy-boy.com/tags/design/"/>
+    
+    <category term="白嫖" scheme="https://crazy-boy.com/tags/%E7%99%BD%E5%AB%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Boyer-Moore算法</title>
     <link href="https://crazy-boy.com/posts/boyer-moore.html"/>
     <id>https://crazy-boy.com/posts/boyer-moore.html</id>
@@ -125,6 +204,33 @@
     <category term="算法" scheme="https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/"/>
     
     <category term="Boyer-Moore" scheme="https://crazy-boy.com/tags/Boyer-Moore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Luhn算法详解</title>
+    <link href="https://crazy-boy.com/posts/luhn-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/luhn-algorithm.html</id>
+    <published>2024-11-21T05:39:12.000Z</published>
+    <updated>2024-11-21T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
+    
+    <category term="Luhn算法" scheme="https://crazy-boy.com/tags/Luhn%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -449,116 +555,6 @@
     <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
     
     <category term="Cron" scheme="https://crazy-boy.com/tags/Cron/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次高并发迭代之路！！</title>
-    <link href="https://crazy-boy.com/posts/high-concurrent-experience.html"/>
-    <id>https://crazy-boy.com/posts/high-concurrent-experience.html</id>
-    <published>2024-05-21T03:19:18.128Z</published>
-    <updated>2024-10-18T01:57:25.679Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="架构" scheme="https://crazy-boy.com/categories/%E6%9E%B6%E6%9E%84/"/>
-    
-    
-    <category term="高并发" scheme="https://crazy-boy.com/tags/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Keccak算法：SHA-3标准的基石</title>
-    <link href="https://crazy-boy.com/posts/keccak.html"/>
-    <id>https://crazy-boy.com/posts/keccak.html</id>
-    <published>2024-03-21T02:25:00.000Z</published>
-    <updated>2024-03-21T02:25:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="Keccak算法" scheme="https://crazy-boy.com/tags/Keccak%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="SHA-3" scheme="https://crazy-boy.com/tags/SHA-3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>彩虹表攻击</title>
-    <link href="https://crazy-boy.com/posts/rainbow-table-attack.html"/>
-    <id>https://crazy-boy.com/posts/rainbow-table-attack.html</id>
-    <published>2024-03-18T05:40:00.000Z</published>
-    <updated>2024-03-18T05:40:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="彩虹表" scheme="https://crazy-boy.com/tags/%E5%BD%A9%E8%99%B9%E8%A1%A8/"/>
-    
-    <category term="攻击" scheme="https://crazy-boy.com/tags/%E6%94%BB%E5%87%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解生日攻击</title>
-    <link href="https://crazy-boy.com/posts/birthday-attack.html"/>
-    <id>https://crazy-boy.com/posts/birthday-attack.html</id>
-    <published>2024-03-18T04:25:00.000Z</published>
-    <updated>2024-03-18T04:25:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="生日攻击" scheme="https://crazy-boy.com/tags/%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/"/>
     
   </entry>
   

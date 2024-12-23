@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: Jquery, 编码人生">
+    <meta name="keywords" content="标签: JQuery, 编码人生">
     <meta name="description" content="编程界的懒人，偶尔写写。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: Jquery | 飞奔的蜗牛</title>
+    <title>标签: JQuery | 飞奔的蜗牛</title>
     
     <script>
         // 隐藏
@@ -791,13 +791,13 @@ class="themespring" -->
         <div class="row tags-posts">
             
             
-            <div class="article tag-post col s12 m6 l4" data-tags="Jquery">
+            <div class="article tag-post col s12 m6 l4" data-tags="JQuery">
                 <div class="card">
-                    <a href="/posts/jquery-note.html">
+                    <a href="/posts/jquery-obj.html">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="Jquery笔记">
+                            <img src="/medias/banner/7.jpg" class="responsive-img" alt="JQuery面向对象写法">
                             
                             <span class="card-title">
                               <!-- 文章卡片hover线条效果 -->
@@ -823,71 +823,14 @@ class="themespring" -->
                                   }
                                 </style>
                               </span>
-                              Jquery笔记
+                              JQuery面向对象写法
                             </span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-06-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Jquery">
-                <div class="card">
-                    <a href="/posts/jquery-md5.html">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/banner/2.jpg" class="responsive-img" alt="利用JQuery进行md5加密">
-                            
-                            <span class="card-title">
-                              <!-- 文章卡片hover线条效果 -->
-                              <span class="titlesline">
-                                <style>
-                                  .titlesline {
-                                    width: 0px;
-                                    height: 4px;
-                                    background-color: pink;
-                                    border-radius: 2px;
-                                    position: absolute;
-                                    top: 10px;
-                                    left: 24px;
-                                  }
-                                  body.dark .titlesline {
-                                    filter: brightness(.7);
-                                  }
-                                  article .card .titlesline {
-                                    transition: all 0.36s ease;
-                                  }
-                                  article .card-image:hover .titlesline {
-                                    width: 36px;
-                                  }
-                                </style>
-                              </span>
-                              利用JQuery进行md5加密
-                            </span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2016-07-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-04-19
                             </span>
                             <span class="publish-author">
                                 
@@ -996,7 +939,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">76.2k</span>&nbsp;
+        class="white-color">79.4k</span>&nbsp;
       
       
       
@@ -1433,6 +1376,65 @@ $(function () {
                 qingdanTab.addClass("erjiitems")
             } else if (nowUrl.indexOf("musics") >= 0) {
                 musicTab.addClass("aitems")
+                qingdanTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("gallery") >= 0) {
+                galleryTab.addClass("aitems")
+                qingdanTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("essay") >= 0) {
+                essayTab.addClass("aitems")
+                qingdanTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("books") >= 0) {
+                booksTab.addClass("aitems")
+                qingdanTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("tiktok") >= 0) {
+                tiktokTab.addClass("aitems")
+                qingdanTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("contact") >= 0) {
+                contactTab.addClass("aitems")
+            } else if (nowUrl.indexOf("about") >= 0) {
+                aboutTab.addClass("aitems")
+            } else if (nowUrl.indexOf("friends") >= 0) {
+                friendsTab.addClass("aitems")
+                linksTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("collection") >= 0) {
+                collectionTab.addClass("aitems")
+                linksTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("project") >= 0) {
+                projectTab.addClass("aitems")
+                linksTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("donate") >= 0) {
+                donateTab.addClass("aitems")
+                linksTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("olympus") >= 0) {
+                olympusTab.addClass("aitems")
+                linksTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("lakers-championship") >= 0) {
+                lakersTab.addClass("aitems")
+                linksTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("hotreview") >= 0) {
+                hotreviewTab.addClass("aitems")
+                labTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("ticktack") >= 0) {
+                ticktackTab.addClass("aitems")
+                labTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("friendcircle") >= 0) {
+                friendcircleTab.addClass("aitems")
+                labTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("chromedragon") >= 0) {
+                chromedragonTab.addClass("aitems")
+                labTab.addClass("erjiitems")
+            } else if (nowUrl.indexOf("vote") >= 0) {
+                voteTab.addClass("aitems")
+                labTab.addClass("erjiitems")
+            } 
+            else {
+                homeTab.addClass("aitems")
+            }
+        });
+    </script>
+</body>
+</html>
+ab.addClass("aitems")
                 qingdanTab.addClass("erjiitems")
             } else if (nowUrl.indexOf("gallery") >= 0) {
                 galleryTab.addClass("aitems")
