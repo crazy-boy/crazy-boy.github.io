@@ -48,7 +48,9 @@ update personnel set status=1 where id=256;
 （1）将满足条件的数据导出，借助excel/Notepad++等工具进行批量补全sql语句；
 （2）在数据库中使用concat函数进行sql拼接，如：
 ```sql
-select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') from t_bracelet_person_relation where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;
+select CONCAT('delete from t_bracelet_person_relation where person_id=',person_id,' and mac_id="',mac_id,'";') 
+from t_bracelet_person_relation
+where mac_id in ('C9B1EC032CB3','FCBA0EB1DA09') and status=0;
 ```
 
 ### 4、有条件处理

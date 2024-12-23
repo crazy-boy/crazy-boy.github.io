@@ -1,6 +1,6 @@
 ---
 title: rabbitMQ+yii2实现远程过程调用(RPC)
-tags: [RPC]
+tags: [RPC,Yii2]
 categories: [PHP]
 abbrlink: 'yii2-rabbitmq'
 date: 2021-05-27 15:52:24
