@@ -98,9 +98,9 @@
   </entry>
   
   <entry>
-    <title>堆：一种特殊的树形数据结构</title>
-    <link href="https://crazy-boy.com/posts/heap.html"/>
-    <id>https://crazy-boy.com/posts/heap.html</id>
+    <title>斐波那契堆：一种高效的优先队列</title>
+    <link href="https://crazy-boy.com/posts/fibonacci-heap.html"/>
+    <id>https://crazy-boy.com/posts/fibonacci-heap.html</id>
     <published>2024-12-24T01:39:25.000Z</published>
     <updated>2024-12-24T01:39:25.000Z</updated>
     
@@ -125,9 +125,9 @@
   </entry>
   
   <entry>
-    <title>斐波那契堆：一种高效的优先队列</title>
-    <link href="https://crazy-boy.com/posts/fibonacci-heap.html"/>
-    <id>https://crazy-boy.com/posts/fibonacci-heap.html</id>
+    <title>堆：一种特殊的树形数据结构</title>
+    <link href="https://crazy-boy.com/posts/heap.html"/>
+    <id>https://crazy-boy.com/posts/heap.html</id>
     <published>2024-12-24T01:39:25.000Z</published>
     <updated>2024-12-24T01:39:25.000Z</updated>
     
