@@ -126,9 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 7.2.0">
+<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -818,13 +818,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/hash-algorithm.html">
+          <a href="/posts/rainbow-table-attack.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="哈希算法：数据世界的指纹">
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="彩虹表攻击">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -833,7 +833,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                哈希算法：数据世界的指纹
+                彩虹表攻击
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -867,8 +867,568 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              什么是哈希算法？哈希算法，也被称为散列算法，是一种将任意长度的输入（比如文本、文件等）通过一个函数计算后，得到一个固定长度的输出（称为哈希值或摘要）的算法。这个输出通常是一个比输入小的字符串，且通常是十六进制的字符串。
-形象地说，哈希算法就
+              什么是彩虹表？彩虹表是一种预先计算好的哈希值表。它通过对大量的密码进行哈希计算，并将结果存储在一个特殊的结构中，从而加速密码破解过程。
+彩虹表的基本结构
+链条： 彩虹表由许多链条组成，每条链条包含多个哈希值。
+归约函数： 一个用于将哈希值缩
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/%E5%BD%A9%E8%99%B9%E8%A1%A8/">
+              <span class="chip bg-color">彩虹表</span>
+            </a>
+            
+            <a href="/tags/%E6%94%BB%E5%87%BB/">
+              <span class="chip bg-color">攻击</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/birthday-attack.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/7.jpg" class="responsive-img"
+                alt="深入理解生日攻击">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                深入理解生日攻击
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              生日攻击的本质生日攻击，顾名思义，源自一个看似悖论的概率问题：在一个班级里，需要多少人才能保证至少两个人生日相同？答案出乎意料地小。这正是生日攻击的数学基础。
+在密码学中，生日攻击利用了以下原理：
+
+有限的哈希值空间： 任何哈希函数的输出都
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB/">
+              <span class="chip bg-color">生日攻击</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/codes-obfuscation.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="混淆技术：让代码变得难以理解">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                混淆技术：让代码变得难以理解
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              什么是混淆技术？混淆技术，简单来说就是将计算机程序的代码，转换成一种功能上等价，但是难于阅读和理解的形式的行为。混淆后的代码，虽然执行结果与原代码一致，但其内部逻辑变得复杂难懂，增加了逆向分析的难度，从而保护代码的知识产权。
+混淆技术的原理
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E4%BB%A3%E7%A0%81/" class="post-category">
+                  代码
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%B7%B7%E6%B7%86%E6%8A%80%E6%9C%AF/">
+              <span class="chip bg-color">混淆技术</span>
+            </a>
+            
+            <a href="/tags/%E4%BB%A3%E7%A0%81/">
+              <span class="chip bg-color">代码</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/argon2.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/7.jpg" class="responsive-img"
+                alt="Argon2：密码哈希的新星">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                Argon2：密码哈希的新星
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              什么是 Argon2？Argon2 是在 2015 年密码哈希竞赛中胜出的密钥推导函数 (KDF)。它被设计为一种高效、安全且可抵抗各种攻击的密码哈希算法。相较于之前的算法（如 bcrypt），Argon2 在安全性、性能和灵活性方面都有显
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/Argon2/">
+              <span class="chip bg-color">Argon2</span>
+            </a>
+            
+            <a href="/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">
+              <span class="chip bg-color">哈希算法</span>
+            </a>
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/md5-algorithm.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/7.jpg" class="responsive-img"
+                alt="MD5：一种常见的哈希函数">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                MD5：一种常见的哈希函数
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              MD5是什么？MD5（Message-Digest Algorithm 5）是一种被广泛使用的密码学哈希函数。它可以将任意长度的数据输入，经过一系列复杂的运算，输出一个固定长度的128位（16字节）的哈希值。这个哈希值通常用一个32位的十六
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/MD5/">
+              <span class="chip bg-color">MD5</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/rijndael.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="Rijndael算法：AES加密标准的核心">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                Rijndael算法：AES加密标准的核心
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              Rijndael是什么？Rijndael 是一种对称密钥分组加密算法，它在 2001 年被美国国家标准与技术研究院 (NIST) 选中为高级加密标准 (AES)。AES 已经成为当今世界上应用最广泛的加密算法之一，广泛用于保护敏感数据。
+R
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/Rijndael%E7%AE%97%E6%B3%95/">
+              <span class="chip bg-color">Rijndael算法</span>
+            </a>
+            
+            <a href="/tags/%E6%96%AD%E8%A8%80/">
+              <span class="chip bg-color">断言</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/sha1-algorithm.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/2.jpg" class="responsive-img"
+                alt="SHA-1：一种已被淘汰的哈希算法">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                SHA-1：一种已被淘汰的哈希算法
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              SHA-1是什么？SHA-1（Secure Hash Algorithm 1，安全散列算法1）是一种密码散列函数，可以将任意长度的数据转换为固定长度的160位（20字节）的哈希值。这个哈希值通常被称为消息摘要。
+SHA-1的工作原理SHA-
               
             </div>
             <div class="publish-info">
@@ -899,6 +1459,10 @@ class="themespring" -->
               <span class="chip bg-color">安全</span>
             </a>
             
+            <a href="/tags/SHA-1/">
+              <span class="chip bg-color">SHA-1</span>
+            </a>
+            
           </div>
           
         </div>
@@ -909,13 +1473,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/constant-time-algorithm.html">
+          <a href="/posts/saml.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="恒定时间算法：抵御时序攻击的坚盾">
+                alt="SAML（安全断言标记语言）详解">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -924,7 +1488,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                恒定时间算法：抵御时序攻击的坚盾
+                SAML（安全断言标记语言）详解
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -958,9 +1522,7 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              什么是恒定时间算法？恒定时间算法（Constant-time algorithm）是指算法的运行时间与输入数据的内容无关，始终保持一致。换句话说，无论输入数据是什么，算法的执行时间都是固定的。
-为什么需要恒定时间算法？
-抵御时序攻击： 时序
+              SAML 是什么？SAML（Security Assertion Markup Language） 是一种基于 XML 的开放标准，用于在不同服务提供商之间交换身份验证和授权数据。简单来说，它提供了一种方法，让用户只需登录一次，即可访问多个
               
             </div>
             <div class="publish-info">
@@ -987,20 +1549,12 @@ class="themespring" -->
               <span class="chip bg-color">安全</span>
             </a>
             
-            <a href="/tags/%E6%97%B6%E5%BA%8F%E6%94%BB%E5%87%BB/">
-              <span class="chip bg-color">时序攻击</span>
+            <a href="/tags/%E6%96%AD%E8%A8%80/">
+              <span class="chip bg-color">断言</span>
             </a>
             
-            <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">
-              <span class="chip bg-color">密码学</span>
-            </a>
-            
-            <a href="/tags/%E6%81%92%E5%AE%9A%E6%97%B6%E9%97%B4%E7%AE%97%E6%B3%95/">
-              <span class="chip bg-color">恒定时间算法</span>
-            </a>
-            
-            <a href="/tags/hash-equals/">
-              <span class="chip bg-color">hash_equals</span>
+            <a href="/tags/SAML/">
+              <span class="chip bg-color">SAML</span>
             </a>
             
           </div>
@@ -1013,497 +1567,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/hash-collision-attack.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/7.jpg" class="responsive-img"
-                alt="散列碰撞攻击的原理">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                散列碰撞攻击的原理
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              散列碰撞指的是，对于不同的输入数据，通过散列函数计算得到的哈希值却相同的情况。而散列碰撞攻击，就是利用这种碰撞特性，对系统进行攻击。
-散列函数与碰撞
-散列函数：是一种将任意长度的输入数据映射成固定长度的输出（即哈希值）的函数。
-散列碰撞：当
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
-                  安全
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/">
-              <span class="chip bg-color">安全</span>
-            </a>
-            
-            <a href="/tags/%E5%93%88%E5%B8%8C/">
-              <span class="chip bg-color">哈希</span>
-            </a>
-            
-            <a href="/tags/%E6%95%A3%E5%88%97%E7%A2%B0%E6%92%9E/">
-              <span class="chip bg-color">散列碰撞</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/digital-rights-management.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="数字版权管理（DRM）详解">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                数字版权管理（DRM）详解
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是DRM？数字版权管理（Digital Rights Management，简称DRM）是一系列技术和服务，旨在保护数字内容的版权，防止未经授权的复制、分发和使用。DRM通过加密、数字签名等技术手段，对数字内容进行保护，并限制其使用方式
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
-                  安全
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/">
-              <span class="chip bg-color">安全</span>
-            </a>
-            
-            <a href="/tags/%E6%95%B0%E5%AD%97%E7%89%88%E6%9D%83%E7%AE%A1%E7%90%86/">
-              <span class="chip bg-color">数字版权管理</span>
-            </a>
-            
-            <a href="/tags/DRM/">
-              <span class="chip bg-color">DRM</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/timing-attack.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="时序攻击：窃取密码的隐形杀手">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                时序攻击：窃取密码的隐形杀手
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是时序攻击？时序攻击是一种利用系统在处理不同数据时所花费的时间差异来获取敏感信息的攻击方式。简单来说，攻击者通过精确测量系统在执行不同操作时所花费的时间，来推断出一些敏感信息，比如密码。
-时序攻击的原理
-不同输入，不同时间： 计算机在处
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
-                  安全
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/">
-              <span class="chip bg-color">安全</span>
-            </a>
-            
-            <a href="/tags/%E6%97%B6%E5%BA%8F%E6%94%BB%E5%87%BB/">
-              <span class="chip bg-color">时序攻击</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/white-box-cryptography.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="白盒密码学：在透明环境下保护密钥">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                白盒密码学：在透明环境下保护密钥
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是白盒密码学？白盒密码学是一种特殊的密码学技术，旨在保护密钥在完全暴露的环境中不被提取。想象一下，攻击者不仅知道你的加密算法，还能看到你的代码、内存、甚至硬件的每一个细节，这种极端的环境就被称为“白盒”环境。白盒密码学就是要在这个环境下
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
-                  安全
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E6%B7%B7%E6%B7%86%E6%8A%80%E6%9C%AF/">
-              <span class="chip bg-color">混淆技术</span>
-            </a>
-            
-            <a href="/tags/%E6%95%B0%E5%AD%97%E7%89%88%E6%9D%83%E7%AE%A1%E7%90%86/">
-              <span class="chip bg-color">数字版权管理</span>
-            </a>
-            
-            <a href="/tags/DRM/">
-              <span class="chip bg-color">DRM</span>
-            </a>
-            
-            <a href="/tags/%E7%99%BD%E7%9B%92%E5%AF%86%E7%A0%81%E5%AD%A6/">
-              <span class="chip bg-color">白盒密码学</span>
-            </a>
-            
-            <a href="/tags/%E5%AF%86%E9%92%A5%E4%BF%9D%E6%8A%A4/">
-              <span class="chip bg-color">密钥保护</span>
-            </a>
-            
-            <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91%E5%AE%89%E5%85%A8/">
-              <span class="chip bg-color">物联网安全</span>
-            </a>
-            
-            <a href="/tags/%E6%9F%A5%E6%89%BE%E8%A1%A8/">
-              <span class="chip bg-color">查找表</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/zero-trust.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="零信任架构：构建更安全的数字世界">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                零信任架构：构建更安全的数字世界
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是零信任架构？零信任架构是一种全新的安全理念，它摒弃了传统的“城堡与护城河”式的网络安全模型，转而采用“永不信任，始终验证”的原则。无论用户、设备还是服务，在访问网络资源之前，都必须经过严格的身份验证和授权。
-传统网络安全模型 vs. 
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
-                  安全
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/">
-              <span class="chip bg-color">安全</span>
-            </a>
-            
-            <a href="/tags/%E9%9B%B6%E4%BF%A1%E4%BB%BB%E6%9E%B6%E6%9E%84/">
-              <span class="chip bg-color">零信任架构</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/why-array-start-with-0.html">
+          <a href="/posts/sha256-algorithm.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/3.jpg" class="responsive-img"
-                alt="为什么数组通常从0开始编号？">
+                alt="SHA-256：更安全的哈希算法">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1512,7 +1582,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                为什么数组通常从0开始编号？
+                SHA-256：更安全的哈希算法
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1546,13 +1616,8 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              这是一个非常好的问题，很多初学者都会对此感到疑惑。
-主要原因如下：
-
-内存地址的直接映射：
-
-计算机的内存是一块连续的地址空间。当我们定义一个数组时，编译器会在内存中为它分配一块连续的内存区域。
-数组的第一个元素的内存地址就是数组的起始地址
+              什么是SHA-256？SHA-256（Secure Hash Algorithm 256）是一种密码学哈希函数。它可以将任意长度的数据转换为一个固定长度的256位（32字节）的哈希值。这个哈希值通常用一个64位的十六进制数来表示。
+SHA-
               
             </div>
             <div class="publish-info">
@@ -1563,8 +1628,8 @@ class="themespring" -->
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                  数据结构
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
                 </a>
                 
                 
@@ -1575,8 +1640,12 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/%E6%95%B0%E7%BB%84/">
-              <span class="chip bg-color">数组</span>
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/sha256/">
+              <span class="chip bg-color">sha256</span>
             </a>
             
           </div>
@@ -1589,290 +1658,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/lookup-table.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="查找表：快速高效的数据检索工具">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                查找表：快速高效的数据检索工具
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              查找表，顾名思义，就是用来查找数据的表格。它是一种非常常见且高效的数据结构，尤其在需要频繁查找特定数据的情况下。
-查找表的结构一个简单的查找表通常包含两列：
-
-键（Key）： 唯一标识一条记录的字段。
-值（Value）： 与键相关联的数据。
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E6%95%B0%E6%8D%AE%E6%A3%80%E7%B4%A2/" class="post-category">
-                  数据检索
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E6%9F%A5%E6%89%BE%E8%A1%A8/">
-              <span class="chip bg-color">查找表</span>
-            </a>
-            
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E6%A3%80%E7%B4%A2/">
-              <span class="chip bg-color">数据检索</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/supervisor.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="PHP中，Supervisor的使用详解">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                PHP中，Supervisor的使用详解
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是Supervisor？Supervisor是一个进程管理工具，它可以帮助你管理和监控多个进程。在PHP开发中，Supervisor常用于：
-
-管理多个PHP-FPM进程: 确保PHP应用程序始终运行，并在发生崩溃时自动重启。
-监控进程
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/php/" class="post-category">
-                  php
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/php/">
-              <span class="chip bg-color">php</span>
-            </a>
-            
-            <a href="/tags/supervisor/">
-              <span class="chip bg-color">supervisor</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/nginx-logs.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="Nginx 日志">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Nginx 日志
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是Nginx 日志？Nginx 日志是 Nginx 服务器运行过程中产生的记录文件，它详细记录了服务器的各项活动，包括客户端请求、服务器响应、错误信息等。通过分析日志，我们可以了解服务器的运行状态、性能瓶颈、安全问题等，从而进行优化和维
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-02-15
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E8%BF%90%E7%BB%B4/" class="post-category">
-                  运维
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Nginx/">
-              <span class="chip bg-color">Nginx</span>
-            </a>
-            
-            <a href="/tags/%E6%97%A5%E5%BF%97/">
-              <span class="chip bg-color">日志</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/linux-high-cpu-troubleshoot.html">
+          <a href="/posts/sha3-algorithm.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Linux如何排查cpu过高的原因">
+                alt="SHA-3：更安全、更现代的哈希函数">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1881,7 +1673,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                Linux如何排查cpu过高的原因
+                SHA-3：更安全、更现代的哈希函数
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1915,25 +1707,19 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              要排查 Linux 上 CPU 过高的原因，可以按照以下步骤进行：
-
-使用系统监控工具：使用像 top、htop 或 glances 等系统监控工具来查看当前 CPU 使用情况。这将给我们一个快速的概述，了解哪些进程或服务占用了大量 CPU
+              什么是SHA-3？SHA-3（Secure Hash Algorithm 3，安全散列算法3）是美国国家标准与技术研究所（NIST）发布的第三代加密散列函数标准。它在SHA-1和SHA-2算法出现安全问题后，通过公开竞赛选出的新一代算法。S
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2023-10-22
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/Linux/" class="post-category">
-                  Linux
-                </a>
-                
-                <a href="/categories/Linux/%E8%BF%90%E7%BB%B4/" class="post-category">
-                  运维
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
                 </a>
                 
                 
@@ -1944,16 +1730,207 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
+            <a href="/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">
+              <span class="chip bg-color">哈希算法</span>
             </a>
             
-            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-              <span class="chip bg-color">运维</span>
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
             </a>
             
-            <a href="/tags/cpu/">
-              <span class="chip bg-color">cpu</span>
+            <a href="/tags/sha3/">
+              <span class="chip bg-color">sha3</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/sha512-algorithm.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="SHA-512：更安全的哈希算法">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                SHA-512：更安全的哈希算法
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              SHA-512是什么？SHA-512（Secure Hash Algorithm 512）是一种密码散列函数，是SHA-2算法家族中的一个成员。它可以将任意长度的数据转换为一个固定长度的512位（64字节）的消息摘要。这个摘要通常被称为哈希
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">
+              <span class="chip bg-color">哈希算法</span>
+            </a>
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/sha512/">
+              <span class="chip bg-color">sha512</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/bcrypt.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="bcrypt：一种安全的密码哈希函数">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                bcrypt：一种安全的密码哈希函数
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              bcrypt是什么？bcrypt是一种基于Blowfish加密算法的密码哈希函数。它被广泛应用于存储用户密码，因其安全性高、易用性强而受到青睐。
+bcrypt的工作原理bcrypt的工作原理可以概括为以下几点：
+
+加盐： 在对密码进行哈希计
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-03-18
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
+                  安全
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95/">
+              <span class="chip bg-color">哈希算法</span>
+            </a>
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">安全</span>
+            </a>
+            
+            <a href="/tags/bcrypt/">
+              <span class="chip bg-color">bcrypt</span>
             </a>
             
           </div>
@@ -1978,7 +1955,7 @@ class="themespring" -->
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">4 / 16</div>
+            <div class="center-align b-text-gray">4 / 17</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -2080,7 +2057,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">79.4k</span>&nbsp;
+        class="white-color">90.2k</span>&nbsp;
       
       
       
