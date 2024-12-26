@@ -44,6 +44,33 @@
   </entry>
   
   <entry>
+    <title>矩阵快速幂：高效计算矩阵高次幂</title>
+    <link href="https://crazy-boy.com/posts/matrix-fast-power.html"/>
+    <id>https://crazy-boy.com/posts/matrix-fast-power.html</id>
+    <published>2024-12-26T05:39:12.000Z</published>
+    <updated>2024-12-26T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="矩阵快速幂" scheme="https://crazy-boy.com/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+  </entry>
+  
+  <entry>
     <title>黄金分割：自然与艺术中的完美比例</title>
     <link href="https://crazy-boy.com/posts/golden-ratio.html"/>
     <id>https://crazy-boy.com/posts/golden-ratio.html</id>
@@ -67,6 +94,33 @@
     <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
     <category term="黄金分割" scheme="https://crazy-boy.com/tags/%E9%BB%84%E9%87%91%E5%88%86%E5%89%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX 语法：轻松编写数学公式</title>
+    <link href="https://crazy-boy.com/posts/latex-math.html"/>
+    <id>https://crazy-boy.com/posts/latex-math.html</id>
+    <published>2024-12-26T05:39:12.000Z</published>
+    <updated>2024-12-26T05:39:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="数学公式" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
+    
+    <category term="LaTeX" scheme="https://crazy-boy.com/tags/LaTeX/"/>
     
   </entry>
   
@@ -507,60 +561,6 @@
     <category term="算法" scheme="https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/"/>
     
     <category term="Boyer-Moore" scheme="https://crazy-boy.com/tags/Boyer-Moore/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Luhn算法详解</title>
-    <link href="https://crazy-boy.com/posts/luhn-algorithm.html"/>
-    <id>https://crazy-boy.com/posts/luhn-algorithm.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="算法" scheme="https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="Luhn算法" scheme="https://crazy-boy.com/tags/Luhn%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何评判一段程序的好坏：复杂度分析</title>
-    <link href="https://crazy-boy.com/posts/complexity-analysis.html"/>
-    <id>https://crazy-boy.com/posts/complexity-analysis.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="算法" scheme="https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="复杂度分析" scheme="https://crazy-boy.com/tags/%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
