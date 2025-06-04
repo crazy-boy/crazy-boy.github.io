@@ -6,7 +6,7 @@
   <link href="https://crazy-boy.com/atom.xml" rel="self"/>
   
   <link href="https://crazy-boy.com/"/>
-  <updated>2024-12-26T05:39:12.000Z</updated>
+  <updated>2025-05-23T07:05:14.000Z</updated>
   <id>https://crazy-boy.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>斐波那契数列：自然界中的数学之美</title>
-    <link href="https://crazy-boy.com/posts/fibonacci-sequence.html"/>
-    <id>https://crazy-boy.com/posts/fibonacci-sequence.html</id>
-    <published>2024-12-26T05:39:12.000Z</published>
-    <updated>2024-12-26T05:39:12.000Z</updated>
+    <title>Git Commit Message 的最佳实践</title>
+    <link href="https://crazy-boy.com/posts/git-commit-message-best-practices.html"/>
+    <id>https://crazy-boy.com/posts/git-commit-message-best-practices.html</id>
+    <published>2025-05-23T07:05:14.000Z</published>
+    <updated>2025-05-23T07:05:14.000Z</updated>
     
     
       
@@ -34,21 +34,21 @@
     
     
     
-    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="Git" scheme="https://crazy-boy.com/categories/Git/"/>
     
     
-    <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    <category term="Git" scheme="https://crazy-boy.com/tags/Git/"/>
     
-    <category term="斐波那契数列" scheme="https://crazy-boy.com/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/"/>
+    <category term="Commit" scheme="https://crazy-boy.com/tags/Commit/"/>
     
   </entry>
   
   <entry>
-    <title>矩阵快速幂：高效计算矩阵高次幂</title>
-    <link href="https://crazy-boy.com/posts/matrix-fast-power.html"/>
-    <id>https://crazy-boy.com/posts/matrix-fast-power.html</id>
-    <published>2024-12-26T05:39:12.000Z</published>
-    <updated>2024-12-26T05:39:12.000Z</updated>
+    <title>Git解决本地未跟踪文件的问题</title>
+    <link href="https://crazy-boy.com/posts/git-pull-untracked-files.html"/>
+    <id>https://crazy-boy.com/posts/git-pull-untracked-files.html</id>
+    <published>2025-05-23T07:05:14.000Z</published>
+    <updated>2025-05-23T07:05:14.000Z</updated>
     
     
       
@@ -61,21 +61,19 @@
     
     
     
-    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="Git" scheme="https://crazy-boy.com/categories/Git/"/>
     
     
-    <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-    <category term="矩阵快速幂" scheme="https://crazy-boy.com/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    <category term="Git" scheme="https://crazy-boy.com/tags/Git/"/>
     
   </entry>
   
   <entry>
-    <title>黄金分割：自然与艺术中的完美比例</title>
-    <link href="https://crazy-boy.com/posts/golden-ratio.html"/>
-    <id>https://crazy-boy.com/posts/golden-ratio.html</id>
-    <published>2024-12-26T05:39:12.000Z</published>
-    <updated>2024-12-26T05:39:12.000Z</updated>
+    <title>实时定位追踪系统（RTLS）详解</title>
+    <link href="https://crazy-boy.com/posts/rtls-detailed-analysis.html"/>
+    <id>https://crazy-boy.com/posts/rtls-detailed-analysis.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
     
     
       
@@ -88,21 +86,23 @@
     
     
     
-    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="实时定位" scheme="https://crazy-boy.com/categories/%E5%AE%9E%E6%97%B6%E5%AE%9A%E4%BD%8D/"/>
     
     
-    <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    <category term="实时定位" scheme="https://crazy-boy.com/tags/%E5%AE%9E%E6%97%B6%E5%AE%9A%E4%BD%8D/"/>
     
-    <category term="黄金分割" scheme="https://crazy-boy.com/tags/%E9%BB%84%E9%87%91%E5%88%86%E5%89%B2/"/>
+    <category term="追踪系统" scheme="https://crazy-boy.com/tags/%E8%BF%BD%E8%B8%AA%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="RTLS" scheme="https://crazy-boy.com/tags/RTLS/"/>
     
   </entry>
   
   <entry>
-    <title>LaTeX 语法：轻松编写数学公式</title>
-    <link href="https://crazy-boy.com/posts/latex-math.html"/>
-    <id>https://crazy-boy.com/posts/latex-math.html</id>
-    <published>2024-12-26T05:39:12.000Z</published>
-    <updated>2024-12-26T05:39:12.000Z</updated>
+    <title>导航系统如何感知红绿灯变化？技术解析</title>
+    <link href="https://crazy-boy.com/posts/navigation-system-traffic-light-sensing.html"/>
+    <id>https://crazy-boy.com/posts/navigation-system-traffic-light-sensing.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
     
     
       
@@ -115,21 +115,21 @@
     
     
     
-    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="导航系统" scheme="https://crazy-boy.com/categories/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/"/>
     
     
-    <category term="数学公式" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
+    <category term="导航系统" scheme="https://crazy-boy.com/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="LaTeX" scheme="https://crazy-boy.com/tags/LaTeX/"/>
+    <category term="红绿灯感知" scheme="https://crazy-boy.com/tags/%E7%BA%A2%E7%BB%BF%E7%81%AF%E6%84%9F%E7%9F%A5/"/>
     
   </entry>
   
   <entry>
-    <title>PHP 中，二维地图坐标的表示方法</title>
-    <link href="https://crazy-boy.com/posts/php-2d-coordinate.html"/>
-    <id>https://crazy-boy.com/posts/php-2d-coordinate.html</id>
-    <published>2024-12-24T01:39:25.000Z</published>
-    <updated>2024-12-24T01:39:25.000Z</updated>
+    <title>下棋机器人技术解析</title>
+    <link href="https://crazy-boy.com/posts/chess-robot-technology-analysis.html"/>
+    <id>https://crazy-boy.com/posts/chess-robot-technology-analysis.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
     
     
       
@@ -142,21 +142,376 @@
     
     
     
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
+    <category term="AI" scheme="https://crazy-boy.com/categories/AI/"/>
     
+    
+    <category term="下棋机器人" scheme="https://crazy-boy.com/tags/%E4%B8%8B%E6%A3%8B%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>点餐牌震动闪灯提醒系统分析与设计方案</title>
+    <link href="https://crazy-boy.com/posts/order-reminder-device-analysis-design.html"/>
+    <id>https://crazy-boy.com/posts/order-reminder-device-analysis-design.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="点餐牌" scheme="https://crazy-boy.com/tags/%E7%82%B9%E9%A4%90%E7%89%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>烟雾报警器工作原理及技术分析</title>
+    <link href="https://crazy-boy.com/posts/smoke-alarm-technology-analysis.html"/>
+    <id>https://crazy-boy.com/posts/smoke-alarm-technology-analysis.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="硬件技术" scheme="https://crazy-boy.com/categories/%E7%A1%AC%E4%BB%B6%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="烟雾报警器" scheme="https://crazy-boy.com/tags/%E7%83%9F%E9%9B%BE%E6%8A%A5%E8%AD%A6%E5%99%A8/"/>
+    
+    <category term="技术分析" scheme="https://crazy-boy.com/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/"/>
+    
+    <category term="安全设备" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电子镣铐（Electronic Shackles）详解</title>
+    <link href="https://crazy-boy.com/posts/electronic-shackles.html"/>
+    <id>https://crazy-boy.com/posts/electronic-shackles.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="物联网" scheme="https://crazy-boy.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+    <category term="实时定位" scheme="https://crazy-boy.com/tags/%E5%AE%9E%E6%97%B6%E5%AE%9A%E4%BD%8D/"/>
+    
+    <category term="电子镣铐" scheme="https://crazy-boy.com/tags/%E7%94%B5%E5%AD%90%E9%95%A3%E9%93%90/"/>
+    
+    <category term="物联网" scheme="https://crazy-boy.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>共享单车的核心技术解析</title>
+    <link href="https://crazy-boy.com/posts/shared-bicycle-core-tech.html"/>
+    <id>https://crazy-boy.com/posts/shared-bicycle-core-tech.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="物联网" scheme="https://crazy-boy.com/categories/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+    <category term="物联网" scheme="https://crazy-boy.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    <category term="共享单车" scheme="https://crazy-boy.com/tags/%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电影密钥技术解析：从授权到防盗的完整体系</title>
+    <link href="https://crazy-boy.com/posts/film-key-technology.html"/>
+    <id>https://crazy-boy.com/posts/film-key-technology.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密钥技术" scheme="https://crazy-boy.com/categories/%E5%AF%86%E9%92%A5%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="密钥技术" scheme="https://crazy-boy.com/tags/%E5%AF%86%E9%92%A5%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="电影" scheme="https://crazy-boy.com/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+    <category term="防盗" scheme="https://crazy-boy.com/tags/%E9%98%B2%E7%9B%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电影票房统计与反作弊体系解析</title>
+    <link href="https://crazy-boy.com/posts/film-box-office.html"/>
+    <id>https://crazy-boy.com/posts/film-box-office.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="电影票房" scheme="https://crazy-boy.com/categories/%E7%94%B5%E5%BD%B1%E7%A5%A8%E6%88%BF/"/>
+    
+    
+    <category term="电影票房" scheme="https://crazy-boy.com/tags/%E7%94%B5%E5%BD%B1%E7%A5%A8%E6%88%BF/"/>
+    
+    <category term="反作弊" scheme="https://crazy-boy.com/tags/%E5%8F%8D%E4%BD%9C%E5%BC%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红外成像原理及人体检测技术解析</title>
+    <link href="https://crazy-boy.com/posts/red-thermal-imaging.html"/>
+    <id>https://crazy-boy.com/posts/red-thermal-imaging.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="红外成像" scheme="https://crazy-boy.com/categories/%E7%BA%A2%E5%A4%96%E6%88%90%E5%83%8F/"/>
+    
+    
+    <category term="红外成像" scheme="https://crazy-boy.com/tags/%E7%BA%A2%E5%A4%96%E6%88%90%E5%83%8F/"/>
+    
+    <category term="人像检测" scheme="https://crazy-boy.com/tags/%E4%BA%BA%E5%83%8F%E6%A3%80%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>萝卜快跑（Robotaxi）关键技术分析</title>
+    <link href="https://crazy-boy.com/posts/robotaxi-key-technologies.html"/>
+    <id>https://crazy-boy.com/posts/robotaxi-key-technologies.html</id>
+    <published>2025-05-22T03:03:12.000Z</published>
+    <updated>2025-05-22T03:03:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="AI" scheme="https://crazy-boy.com/categories/AI/"/>
+    
+    
+    <category term="萝卜快跑" scheme="https://crazy-boy.com/tags/%E8%90%9D%E5%8D%9C%E5%BF%AB%E8%B7%91/"/>
+    
+    <category term="智能交通" scheme="https://crazy-boy.com/tags/%E6%99%BA%E8%83%BD%E4%BA%A4%E9%80%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 生成列</title>
+    <link href="https://crazy-boy.com/posts/generated-columns.html"/>
+    <id>https://crazy-boy.com/posts/generated-columns.html</id>
+    <published>2025-04-24T06:09:20.000Z</published>
+    <updated>2025-04-24T06:09:20.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
+    
+    <category term="生成列" scheme="https://crazy-boy.com/tags/%E7%94%9F%E6%88%90%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Canal：MySQL 实时数据同步的核心解决方案</title>
+    <link href="https://crazy-boy.com/posts/canal-mysql-data-sync.html"/>
+    <id>https://crazy-boy.com/posts/canal-mysql-data-sync.html</id>
+    <published>2025-04-11T09:24:02.000Z</published>
+    <updated>2025-04-11T09:24:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
+    
+    <category term="Canal" scheme="https://crazy-boy.com/tags/Canal/"/>
+    
+    <category term="数据同步" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>熔断机制（Circuit Breaker）详解</title>
+    <link href="https://crazy-boy.com/posts/circuit-breaker.html"/>
+    <id>https://crazy-boy.com/posts/circuit-breaker.html</id>
+    <published>2025-04-11T09:24:02.000Z</published>
+    <updated>2025-04-11T09:24:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="熔断机制" scheme="https://crazy-boy.com/tags/%E7%86%94%E6%96%AD%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>限流算法</title>
+    <link href="https://crazy-boy.com/posts/rate-limiting-algorithm.html"/>
+    <id>https://crazy-boy.com/posts/rate-limiting-algorithm.html</id>
+    <published>2025-04-11T09:24:02.000Z</published>
+    <updated>2025-04-11T09:24:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="限流" scheme="https://crazy-boy.com/tags/%E9%99%90%E6%B5%81/"/>
+    
+    <category term="高访问" scheme="https://crazy-boy.com/tags/%E9%AB%98%E8%AE%BF%E9%97%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于Redis的实时排行榜系统设计与实现</title>
+    <link href="https://crazy-boy.com/posts/real-time-leaderboard-system.html"/>
+    <id>https://crazy-boy.com/posts/real-time-leaderboard-system.html</id>
+    <published>2025-02-21T03:32:02.000Z</published>
+    <updated>2025-02-21T03:32:02.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="系统设计" scheme="https://crazy-boy.com/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+    <category term="Redis" scheme="https://crazy-boy.com/tags/Redis/"/>
     
     <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
     
-    <category term="2D" scheme="https://crazy-boy.com/tags/2D/"/>
+    <category term="排行榜" scheme="https://crazy-boy.com/tags/%E6%8E%92%E8%A1%8C%E6%A6%9C/"/>
     
   </entry>
   
   <entry>
-    <title>堆：一种特殊的树形数据结构</title>
-    <link href="https://crazy-boy.com/posts/heap.html"/>
-    <id>https://crazy-boy.com/posts/heap.html</id>
-    <published>2024-12-24T01:39:25.000Z</published>
-    <updated>2024-12-24T01:39:25.000Z</updated>
+    <title>Linux环境下MySQL数据库导入导出完整指南</title>
+    <link href="https://crazy-boy.com/posts/b820.html"/>
+    <id>https://crazy-boy.com/posts/b820.html</id>
+    <published>2025-02-21T01:23:00.000Z</published>
+    <updated>2025-02-21T01:23:00.000Z</updated>
     
     
       
@@ -169,21 +524,21 @@
     
     
     
-    <category term="数据结构" scheme="https://crazy-boy.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="MySQL" scheme="https://crazy-boy.com/categories/MySQL/"/>
     
     
-    <category term="heap" scheme="https://crazy-boy.com/tags/heap/"/>
+    <category term="MySQL" scheme="https://crazy-boy.com/tags/MySQL/"/>
     
-    <category term="数据结构" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="Linux" scheme="https://crazy-boy.com/tags/Linux/"/>
     
   </entry>
   
   <entry>
-    <title>斐波那契堆：一种高效的优先队列</title>
-    <link href="https://crazy-boy.com/posts/fibonacci-heap.html"/>
-    <id>https://crazy-boy.com/posts/fibonacci-heap.html</id>
-    <published>2024-12-24T01:39:25.000Z</published>
-    <updated>2024-12-24T01:39:25.000Z</updated>
+    <title>redis中，如何批量删除匹配特定模式的键</title>
+    <link href="https://crazy-boy.com/posts/be86.html"/>
+    <id>https://crazy-boy.com/posts/be86.html</id>
+    <published>2025-01-26T01:23:00.000Z</published>
+    <updated>2025-01-26T01:23:00.000Z</updated>
     
     
       
@@ -196,371 +551,10 @@
     
     
     
-    <category term="数据结构" scheme="https://crazy-boy.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="Redis" scheme="https://crazy-boy.com/categories/Redis/"/>
     
     
-    <category term="heap" scheme="https://crazy-boy.com/tags/heap/"/>
-    
-    <category term="数据结构" scheme="https://crazy-boy.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 解决旅行商问题</title>
-    <link href="https://crazy-boy.com/posts/php-2d-tsp-solution.html"/>
-    <id>https://crazy-boy.com/posts/php-2d-tsp-solution.html</id>
-    <published>2024-12-24T01:39:25.000Z</published>
-    <updated>2024-12-24T01:39:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="2D" scheme="https://crazy-boy.com/tags/2D/"/>
-    
-    <category term="旅行商问题" scheme="https://crazy-boy.com/tags/%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/"/>
-    
-    <category term="最短路径" scheme="https://crazy-boy.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 解决最短路径问题</title>
-    <link href="https://crazy-boy.com/posts/php-2d-shortest-route.html"/>
-    <id>https://crazy-boy.com/posts/php-2d-shortest-route.html</id>
-    <published>2024-12-24T01:39:25.000Z</published>
-    <updated>2024-12-24T01:39:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="2D" scheme="https://crazy-boy.com/tags/2D/"/>
-    
-    <category term="最短路径" scheme="https://crazy-boy.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP SplQueue 类使用指南</title>
-    <link href="https://crazy-boy.com/posts/php-splqueue-guide.html"/>
-    <id>https://crazy-boy.com/posts/php-splqueue-guide.html</id>
-    <published>2024-12-23T01:39:25.000Z</published>
-    <updated>2024-12-23T01:39:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="SplQueue" scheme="https://crazy-boy.com/tags/SplQueue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP 泛型：一个深入浅出的解读</title>
-    <link href="https://crazy-boy.com/posts/php-generics.html"/>
-    <id>https://crazy-boy.com/posts/php-generics.html</id>
-    <published>2024-12-12T01:39:25.000Z</published>
-    <updated>2024-12-12T01:39:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="Generics" scheme="https://crazy-boy.com/tags/Generics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Laravel建议</title>
-    <link href="https://crazy-boy.com/posts/laravel-tips.html"/>
-    <id>https://crazy-boy.com/posts/laravel-tips.html</id>
-    <published>2024-12-06T01:39:25.000Z</published>
-    <updated>2024-12-06T01:39:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="tips" scheme="https://crazy-boy.com/tags/tips/"/>
-    
-    <category term="Laravel" scheme="https://crazy-boy.com/tags/Laravel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP建议</title>
-    <link href="https://crazy-boy.com/posts/php-tips.html"/>
-    <id>https://crazy-boy.com/posts/php-tips.html</id>
-    <published>2024-12-06T01:39:25.000Z</published>
-    <updated>2024-12-06T01:39:25.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/categories/PHP/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="tips" scheme="https://crazy-boy.com/tags/tips/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HMAC算法：保障数据完整性和真实性</title>
-    <link href="https://crazy-boy.com/posts/hmac.html"/>
-    <id>https://crazy-boy.com/posts/hmac.html</id>
-    <published>2024-11-28T02:25:00.000Z</published>
-    <updated>2024-11-28T02:25:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/categories/%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="安全" scheme="https://crazy-boy.com/tags/%E5%AE%89%E5%85%A8/"/>
-    
-    <category term="HMAC算法" scheme="https://crazy-boy.com/tags/HMAC%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>证明：如果一个小于10的数乘以2后的结果大于9，则结果减去9等于将乘积的各位数字相加</title>
-    <link href="https://crazy-boy.com/posts/less-ten-multiply-two.html"/>
-    <id>https://crazy-boy.com/posts/less-ten-multiply-two.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="数学" scheme="https://crazy-boy.com/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="数学" scheme="https://crazy-boy.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何定义并识别白嫖用户</title>
-    <link href="https://crazy-boy.com/posts/game-design-how-to-identify-poor.html"/>
-    <id>https://crazy-boy.com/posts/game-design-how-to-identify-poor.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="游戏设计" scheme="https://crazy-boy.com/categories/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="design" scheme="https://crazy-boy.com/tags/design/"/>
-    
-    <category term="白嫖" scheme="https://crazy-boy.com/tags/%E7%99%BD%E5%AB%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何提升三消游戏的爽度</title>
-    <link href="https://crazy-boy.com/posts/game-design-improve-experience.html"/>
-    <id>https://crazy-boy.com/posts/game-design-improve-experience.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="游戏设计" scheme="https://crazy-boy.com/categories/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="design" scheme="https://crazy-boy.com/tags/design/"/>
-    
-    <category term="游戏爽度" scheme="https://crazy-boy.com/tags/%E6%B8%B8%E6%88%8F%E7%88%BD%E5%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何绘画出游戏玩家的画像</title>
-    <link href="https://crazy-boy.com/posts/game-design-draw-players-portrait.html"/>
-    <id>https://crazy-boy.com/posts/game-design-draw-players-portrait.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="游戏设计" scheme="https://crazy-boy.com/categories/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="design" scheme="https://crazy-boy.com/tags/design/"/>
-    
-    <category term="游戏" scheme="https://crazy-boy.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何隐蔽地对白嫖用户设置更严格的活动限制</title>
-    <link href="https://crazy-boy.com/posts/game-design-stricter-for-poor.html"/>
-    <id>https://crazy-boy.com/posts/game-design-stricter-for-poor.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="游戏设计" scheme="https://crazy-boy.com/categories/%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-    <category term="design" scheme="https://crazy-boy.com/tags/design/"/>
-    
-    <category term="白嫖" scheme="https://crazy-boy.com/tags/%E7%99%BD%E5%AB%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Boyer-Moore算法</title>
-    <link href="https://crazy-boy.com/posts/boyer-moore.html"/>
-    <id>https://crazy-boy.com/posts/boyer-moore.html</id>
-    <published>2024-11-21T05:39:12.000Z</published>
-    <updated>2024-11-21T05:39:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="算法" scheme="https://crazy-boy.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="PHP" scheme="https://crazy-boy.com/tags/PHP/"/>
-    
-    <category term="算法" scheme="https://crazy-boy.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="Boyer-Moore" scheme="https://crazy-boy.com/tags/Boyer-Moore/"/>
+    <category term="Redis" scheme="https://crazy-boy.com/tags/Redis/"/>
     
   </entry>
   

@@ -126,9 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -818,13 +818,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/manacher-algorithm.html">
+          <a href="/posts/matrix-fast-power.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="马拉车算法（Manacher&#39;s Algorithm）详解">
+                alt="矩阵快速幂：高效计算矩阵高次幂">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -833,7 +833,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                马拉车算法（Manacher&#39;s Algorithm）详解
+                矩阵快速幂：高效计算矩阵高次幂
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -867,19 +867,20 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              什么是马拉车算法？马拉车算法是一种高效查找一个字符串的最长回文子串的线性时间复杂度算法。它通过巧妙的预处理和动态规划，避免了大量的重复计算，使得算法的效率得到了极大的提升。注：回文（Palindrome）是指正读和反读都一样的字符串，即左右
+              矩阵快速幂是一种用于高效计算大幂次矩阵的算法。它利用分治思想，将矩阵的幂次运算分解为多个较小的矩阵乘法，从而大幅提升计算效率。矩阵快速幂在许多算法中都有应用，例如斐波那契数列的高效计算。
+矩阵快速幂的基本思想假设我们要计算 $ A^n $，
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-11-21
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-26
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                  算法
+                <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                  数学
                 </a>
                 
                 
@@ -890,16 +891,12 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/PHP/">
-              <span class="chip bg-color">PHP</span>
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+              <span class="chip bg-color">数学</span>
             </a>
             
-            <a href="/tags/%E9%A9%AC%E6%8B%89%E8%BD%A6%E7%AE%97%E6%B3%95/">
-              <span class="chip bg-color">马拉车算法</span>
-            </a>
-            
-            <a href="/tags/Manacher/">
-              <span class="chip bg-color">Manacher</span>
+            <a href="/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/">
+              <span class="chip bg-color">矩阵快速幂</span>
             </a>
             
           </div>
@@ -912,101 +909,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/finite-state-machine.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="状态机：一种优雅的解决方案">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                状态机：一种优雅的解决方案
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              什么是状态机？状态机是一种数学模型，用于描述一个对象在不同状态之间的转换。在软件开发中，状态机被广泛用于表示对象的生命周期，例如订单的状态（待支付、已支付、已发货）、用户的状态（未激活、激活、禁用）等。
-为什么使用状态机？
-清晰的业务逻辑：
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-11-21
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="post-category">
-                  系统设计
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E7%8A%B6%E6%80%81%E6%9C%BA/">
-              <span class="chip bg-color">状态机</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/anti-corruption-layer.html">
+          <a href="/posts/golden-ratio.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="软件设计中的防腐层：保护你的系统">
+                alt="黄金分割：自然与艺术中的完美比例">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1015,7 +924,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                软件设计中的防腐层：保护你的系统
+                黄金分割：自然与艺术中的完美比例
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1049,19 +958,20 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              什么是防腐层？在软件设计中，尤其是领域驱动设计（DDD）中，防腐层（Anti-corruption Layer，ACL）是一种重要的模式，用于隔离系统不同的部分，防止一个部分的变化影响到其他部分。它就像一个翻译官，将不同领域模型之间的差异进
+              什么是黄金分割？黄金分割（Golden Ratio），又称黄金比例、黄金数，是数学中的一个重要常数，通常用希腊字母 φ（phi）表示，约为 1.618。这个比例被认为是视觉上最和谐、最美的比例，在自然界和艺术设计中广泛存在。
+黄金分割的数学
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-11-21
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-26
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="post-category">
-                  系统设计
+                <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                  数学
                 </a>
                 
                 
@@ -1072,12 +982,12 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/%E9%98%B2%E8%85%90%E5%B1%82/">
-              <span class="chip bg-color">防腐层</span>
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">
+              <span class="chip bg-color">数学</span>
             </a>
             
-            <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/">
-              <span class="chip bg-color">软件设计</span>
+            <a href="/tags/%E9%BB%84%E9%87%91%E5%88%86%E5%89%B2/">
+              <span class="chip bg-color">黄金分割</span>
             </a>
             
           </div>
@@ -1090,13 +1000,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/sliding-window.html">
+          <a href="/posts/matrix.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/7.jpg" class="responsive-img"
-                alt="滑动窗口算法">
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="矩阵">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1105,7 +1015,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                滑动窗口算法
+                矩阵
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1139,22 +1049,300 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              什么是滑动窗口算法？滑动窗口算法的核心思想是：维护一个固定大小的窗口，随着数据的不断输入，窗口不断向后滑动，从而达到对数据流进行局部统计或计算的目的。
-应用场景
-字符串处理: 查找最长无重复子串、字符串的排列等。
-数组处理: 寻找数组中满足
+              在编程中，矩阵是一种重要的数据结构，通常用于表示二维数组或表。矩阵广泛应用于图像处理、机器学习、物理模拟等领域。在 PHP 中，可以使用数组来表示和操作矩阵。以下是一些基本的矩阵操作示例，包括创建矩阵、矩阵加法、矩阵乘法等。
+1. 创建矩阵
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-11-13
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-26
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                  算法
+                <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                  数据结构
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+              <span class="chip bg-color">数据结构</span>
+            </a>
+            
+            <a href="/tags/%E7%9F%A9%E9%98%B5/">
+              <span class="chip bg-color">矩阵</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/latex-math.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/3.jpg" class="responsive-img"
+                alt="LaTeX 语法：轻松编写数学公式">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                LaTeX 语法：轻松编写数学公式
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              LaTeX 是一种强大的排版系统，特别擅长处理数学公式。它使用一系列的命令和符号来表示各种数学表达式，使得我们在文档中可以优雅地呈现复杂的数学内容。
+基本结构数学公式可以分为行内公式和独立公式。
+
+行内公式： 用 ... 包裹，公式嵌入在文
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-26
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-category">
+                  数学
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">
+              <span class="chip bg-color">数学公式</span>
+            </a>
+            
+            <a href="/tags/LaTeX/">
+              <span class="chip bg-color">LaTeX</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/monad-in-functional-programming.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="Monad：深入理解函数式编程中的“容器”">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                Monad：深入理解函数式编程中的“容器”
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              Monad是什么？Monad 是函数式编程中一个非常抽象的概念，常常被描述为一种“容器”。它提供了一种方式来封装计算，并控制这些计算的顺序和组合。
+形象比喻：
+想象一个盒子（Monad），里面装了一个值。这个盒子有一些特殊的属性：
+
+包装值
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                  编程
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/Monad/">
+              <span class="chip bg-color">Monad</span>
+            </a>
+            
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+              <span class="chip bg-color">函数式编程</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/closure.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/3.jpg" class="responsive-img"
+                alt="PHP 闭包（Closure）详解">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                PHP 闭包（Closure）详解
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              什么是闭包？闭包（Closure）是匿名函数的一种特殊类型，它可以访问其创建时的词法作用域。简单来说，闭包就是一个可以在其创建的环境中访问变量和函数的函数。
+闭包的特性
+匿名函数： 没有明确的函数名。
+词法作用域： 可以访问其创建时的变量。
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                  编程
                 </a>
                 
                 
@@ -1169,12 +1357,8 @@ class="themespring" -->
               <span class="chip bg-color">PHP</span>
             </a>
             
-            <a href="/tags/%E7%AE%97%E6%B3%95/">
-              <span class="chip bg-color">算法</span>
-            </a>
-            
-            <a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">
-              <span class="chip bg-color">滑动窗口</span>
+            <a href="/tags/%E9%97%AD%E5%8C%85/">
+              <span class="chip bg-color">闭包</span>
             </a>
             
           </div>
@@ -1187,13 +1371,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/php-circuit-breaker.html">
+          <a href="/posts/functional-programming.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="PHP实现熔断机制">
+                alt="函数式编程：一种编程范式">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1202,7 +1386,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                PHP实现熔断机制
+                函数式编程：一种编程范式
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1236,21 +1420,194 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              什么是熔断机制？熔断机制是一种应对系统故障、防止级联故障的保护机制。当某个服务出现故障时，通过熔断机制，可以快速隔离故障服务，防止故障蔓延到整个系统，从而保证系统的稳定性。
-熔断机制的核心要素
-快速失败： 当服务不可用时，立即返回错误，防止
+              什么是函数式编程？函数式编程（Functional Programming，简称FP）是一种编程范式，它将计算视为函数的评估，并强调应用和组合函数来构建程序。与命令式编程（Imperative Programming）不同，函数式编程更关注
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-11-13
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="post-category">
-                  系统设计
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                  编程
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+              <span class="chip bg-color">函数式编程</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/function-currying.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="函数柯里化（Currying）">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                函数柯里化（Currying）
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              什么是函数柯里化？函数柯里化是一种将多参数函数转换为一系列单参数函数的技术。简单来说，就是把接受多个参数的函数变成一系列只接受一个参数的函数，并且每个函数返回另一个接受余下参数的函数。
+形象比喻：
+想象一个做三明治的函数，它需要三个参数：面
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                  编程
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/">
+              <span class="chip bg-color">函数柯里化</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/anonymous-functions.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="匿名函数（Anonymous Functions）">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                匿名函数（Anonymous Functions）
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              什么是匿名函数？匿名函数，也称为闭包（Closure），是一种没有明确名称的函数。它可以像普通函数一样被调用，但通常被赋值给变量或作为参数传递给其他函数。
+匿名函数的语法123$anonymousFunction = function(参数
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                  编程
                 </a>
                 
                 
@@ -1265,8 +1622,12 @@ class="themespring" -->
               <span class="chip bg-color">PHP</span>
             </a>
             
-            <a href="/tags/%E7%86%94%E6%96%AD/">
-              <span class="chip bg-color">熔断</span>
+            <a href="/tags/%E9%97%AD%E5%8C%85/">
+              <span class="chip bg-color">闭包</span>
+            </a>
+            
+            <a href="/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/">
+              <span class="chip bg-color">匿名函数</span>
             </a>
             
           </div>
@@ -1279,13 +1640,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/phpstorm-setting-xdebug.html">
+          <a href="/posts/highorder-functions.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/3.jpg" class="responsive-img"
-                alt="phpStorm配置xdebug">
+                alt="高阶函数：提升代码表达力与复用性">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1294,7 +1655,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                phpStorm配置xdebug
+                高阶函数：提升代码表达力与复用性
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1328,22 +1689,20 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              在php开发中，经常遇到一些奇怪的问题，一时半会儿排查不出原因；这时候就需要进行断点调试，xdebug就是常用的一种断点调试工具，下面介绍下如何设置的。
-
-xdebug设置
-开启xdebug扩展，并配置php.ini，重启php123456
+              什么是高阶函数？在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，高阶函数就是操作函数的函数。
+PHP 中的高阶函数示例1. 回调函数回调函数是最常见的应用
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-10-23
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/phpStorm/" class="post-category">
-                  phpStorm
+                <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                  编程
                 </a>
                 
                 
@@ -1354,12 +1713,16 @@ xdebug设置
           
           <div class="card-action article-tags">
             
-            <a href="/tags/phpStorm/">
-              <span class="chip bg-color">phpStorm</span>
+            <a href="/tags/PHP/">
+              <span class="chip bg-color">PHP</span>
             </a>
             
-            <a href="/tags/xdebug/">
-              <span class="chip bg-color">xdebug</span>
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+              <span class="chip bg-color">函数式编程</span>
+            </a>
+            
+            <a href="/tags/%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/">
+              <span class="chip bg-color">高阶函数</span>
             </a>
             
           </div>
@@ -1372,287 +1735,13 @@ xdebug设置
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/linux-short-cut-keys.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Linux命令行中的快捷键">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Linux命令行中的快捷键
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              Linux 命令行中的快捷键非常丰富，可以大大提高程序员的工作效率。下面将详细介绍一些常用的快捷键，并分类说明：
-移动光标
-Ctrl+A: 将光标移动到行首
-Ctrl+E: 将光标移动到行尾
-Ctrl+B: 光标向左移动一个字符
-Ctrl+
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-10-17
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Linux/" class="post-category">
-                  Linux
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/38c1.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Linux下如何实现与Internet时间同步">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Linux下如何实现与Internet时间同步
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              简介在项目中，有时候需要修改服务器时间来模拟某些场景，或者校准服务器时间；那么如何在Linux系统下实现与Internet时间同步呢。
-一、安装ntp1[root@pb ~]# yum install -y ntpdate
-二、同步时间12
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-07-04
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/ntpdate/" class="post-category">
-                  ntpdate
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
-            </a>
-            
-            <a href="/tags/ntpdate/">
-              <span class="chip bg-color">ntpdate</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/2b4a.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/3.jpg" class="responsive-img"
-                alt="SystemD">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                SystemD
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              SystemD简介SystemD 是 Linux 的系统管理器，它的主要接口是 systemctl（即用户执行的命令）。
-通过 systemctl 接口，可以启动/停止“单元”（unit），最常用的单元是“服务单元”（service），即系
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/SystemD/" class="post-category">
-                  SystemD
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
-            </a>
-            
-            <a href="/tags/SystemD/">
-              <span class="chip bg-color">SystemD</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/85ed.html">
+          <a href="/posts/php-2d-coordinate.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="xargs 命令">
+                alt="PHP 中，二维地图坐标的表示方法">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1661,7 +1750,7 @@ Ctrl+
                 </div>
               </div>
               <span class="card-title">
-                xargs 命令
+                PHP 中，二维地图坐标的表示方法
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1695,21 +1784,21 @@ Ctrl+
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              xargs 命令简介xargs 用于将标准输入（stdin），转成其后命令的字符串参数。它通常跟管道命令（|）结合使用。
-1$ {{command1}} | xargs {{command2}}
-上面是 xargs 的用法。正常情况下，第一
+              在PHP中，二维地图的坐标可以通过不同的方法来表示，最常见的方式是使用二维数组或对象来存储坐标信息。
+使用二维数组表示二维地图的坐标二维数组是一种简单直观的方式来表示地图的坐标，每个元素代表地图上的一个点或单元格。
+123456789101
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/xargs/" class="post-category">
-                  xargs
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
                 </a>
                 
                 
@@ -1720,12 +1809,12 @@ Ctrl+
           
           <div class="card-action article-tags">
             
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
+            <a href="/tags/PHP/">
+              <span class="chip bg-color">PHP</span>
             </a>
             
-            <a href="/tags/xargs/">
-              <span class="chip bg-color">xargs</span>
+            <a href="/tags/2D/">
+              <span class="chip bg-color">2D</span>
             </a>
             
           </div>
@@ -1738,13 +1827,13 @@ Ctrl+
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/9c77.html">
+          <a href="/posts/fibonacci-heap.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/4.jpg" class="responsive-img"
-                alt="Linux Cron定时任务">
+              <img src="/medias/banner/3.jpg" class="responsive-img"
+                alt="斐波那契堆：一种高效的优先队列">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1753,7 +1842,7 @@ Ctrl+
                 </div>
               </div>
               <span class="card-title">
-                Linux Cron定时任务
+                斐波那契堆：一种高效的优先队列
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1787,21 +1876,21 @@ Ctrl+
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              简介Cron 是一个用来执行定时任务的工具，可以在指定的时间自动执行重复性任务。
-它的核心是 cron 守护进程，名为 crond。它在后台每分钟运行一次，检查是否有需要在指定时间执行的计划任务。
-下面命令可以查看 cron 守护进程，是否
+              斐波那契堆是什么？斐波那契堆是一种特殊的堆数据结构，它在插入、删除最小值、合并等操作上具有非常优秀的均摊时间复杂度。与传统的二项堆相比，斐波那契堆在某些操作上表现得更加高效。
+斐波那契堆的结构
+最小堆的集合: 斐波那契堆实际上是一组最小堆的
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
+                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/Cron/" class="post-category">
-                  Cron
+                <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                  数据结构
                 </a>
                 
                 
@@ -1812,108 +1901,12 @@ Ctrl+
           
           <div class="card-action article-tags">
             
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
+            <a href="/tags/heap/">
+              <span class="chip bg-color">heap</span>
             </a>
             
-            <a href="/tags/Cron/">
-              <span class="chip bg-color">Cron</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/keccak.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/4.jpg" class="responsive-img"
-                alt="Keccak算法：SHA-3标准的基石">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Keccak算法：SHA-3标准的基石
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              Keccak是什么？Keccak是一种被选定为SHA-3标准的单向散列函数算法。它以其高效、安全、灵活的设计而著称，成为了众多密码学应用的基石。
-Keccak的特点
-海绵结构: Keccak采用了独特的“海绵结构”，这种结构由吸收和挤压两个
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%AE%89%E5%85%A8/" class="post-category">
-                  安全
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/">
-              <span class="chip bg-color">安全</span>
-            </a>
-            
-            <a href="/tags/Keccak%E7%AE%97%E6%B3%95/">
-              <span class="chip bg-color">Keccak算法</span>
-            </a>
-            
-            <a href="/tags/SHA-3/">
-              <span class="chip bg-color">SHA-3</span>
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+              <span class="chip bg-color">数据结构</span>
             </a>
             
           </div>
@@ -1938,7 +1931,7 @@ Keccak的特点
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">3 / 17</div>
+            <div class="center-align b-text-gray">3 / 21</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -2040,7 +2033,7 @@ Keccak的特点
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">90.2k</span>&nbsp;
+        class="white-color">129k</span>&nbsp;
       
       
       

@@ -126,9 +126,9 @@
             s.parentNode.insertBefore(bp, s);
         })();
     </script>
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 7.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="飞奔的蜗牛" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -818,13 +818,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/install-cacti-on-linux.html">
+          <a href="/posts/btree-and-b+tree.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="Linux下安装Cacti">
+                alt="B树与B+树">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -833,7 +833,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                Linux下安装Cacti
+                B树与B+树
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -867,105 +867,13 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              1、安装rrdtoolyum install rrdtool rrdtool-perl -y
-2、安装配置net-snmp
-(1)、安装net-snmpyum install net-snmp net-snmp-libs net-snmp-
+              B+Tree对比BTree的优点
+磁盘读写代价更低一般来说B+Tree比BTree更适合实现外存的索引结构，因为存储引擎的设计专家巧妙的利用了外存（磁盘）的存储结构，即磁盘的最小存储单位是扇区（sector），而操作系统的块（block）通
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-09-23
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Linux/" class="post-category">
-                  Linux
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Cacti/">
-              <span class="chip bg-color">Cacti</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/use-mysql-on-linux.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/4.jpg" class="responsive-img"
-                alt="Linux下操作MySQL">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Linux下操作MySQL
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 登录MySQL数据库mysql -uroot -p
-2. 退出MySQLquit或者exit
-3. 查看MySQL版本(四种方法)
-在终端下执行： mysql -V
-
-在help中查找 mysql --help | grep Dist
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-09-23
+                <i class="far fa-clock fa-fw icon-date"></i>2022-03-21
               </span>
               <span class="publish-author">
                 
@@ -983,8 +891,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/Linux/">
-              <span class="chip bg-color">Linux</span>
+            <a href="/tags/MySQL/">
+              <span class="chip bg-color">MySQL</span>
             </a>
             
           </div>
@@ -997,13 +905,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/js-copy-object.html">
+          <a href="/posts/windows-screen-shot.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="JS点击复制指定内容">
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="Windows下电脑截图">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1012,7 +920,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                JS点击复制指定内容
+                Windows下电脑截图
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1046,13 +954,359 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              点击按钮，复制指定文本框内容，代码如下：
-1234567891011&lt;script type="text/javascript"&gt;function copy(){    var str = document.getElement
+              1、QQ截图：ctrl+alt+A2、花式截图：Win+shift+S  可截任意形状3、微信截图：Alt+A4、浏览器截图：Ctrl+shift+X5、WPS截图：Ctrl+Alt+X 
+
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-07-02
+                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/Windows/" class="post-category">
+                  Windows
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/Windows/">
+              <span class="chip bg-color">Windows</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-interview.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="PHP常见面试题">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                PHP常见面试题
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              1、什么是面向对象？主要特征是什么？面向对象是程序的一种设计方式，它利于提高程序的重用性，使程序结构更加清晰。主要特征：封装、继承、多态。
+2、session 与 cookie 的区别和联系，请从协议，产生的原因与作用说明?A、http无状
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E9%9D%A2%E8%AF%95/">
+              <span class="chip bg-color">面试</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-bat.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/5.jpg" class="responsive-img"
+                alt="windows下批处理">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                windows下批处理
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              因工作需要，需要按条件删除指定表中大批量数据，故用php做了个站点页面处理程序，每页处理500条数据，处理后sleep(5)，跳转下一页；但程序运行中可能出现超时页面挂掉的情况，为了减少个人的工作量，就借助windows的任务计划程序，设置
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-03-02
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/PHP/">
+              <span class="chip bg-color">PHP</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-some-my-functions.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/5.jpg" class="responsive-img"
+                alt="自己封装的一些常用的PHP函数">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                自己封装的一些常用的PHP函数
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              1. 将字符串每隔n位显示一个指定字符1234567891011/** * 将字符串每隔n位显示一个指定字符 * @param string $str   原始字符串 * @param int $n        间隔位数 * @param
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/PHP%E5%87%BD%E6%95%B0/">
+              <span class="chip bg-color">PHP函数</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/normal-rgb.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/5.jpg" class="responsive-img"
+                alt="常见颜色值">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                常见颜色值
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              RGB(255,255,255)：白色   #FFFFFFRGB(0,0,0)：黑色  #000000RGB(255,0,0)：红色  #FF0000
+
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-02-25
               </span>
               <span class="publish-author">
                 
@@ -1070,8 +1324,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/JavaScript/">
-              <span class="chip bg-color">JavaScript</span>
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+              <span class="chip bg-color">前端</span>
             </a>
             
           </div>
@@ -1084,105 +1338,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/rz-on-linux.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/4.jpg" class="responsive-img"
-                alt="Linux中rz的使用">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Linux中rz的使用
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              我们常常需要在客户端和服务器(windows和linux)之间互传文件，这就可以使用rz(sz)命令。
-
-如果服务器不支持rz命令，需安装：
- 1sudo yum -y install lrzsz
-
-从客户端上传文件(可多选)到服务器：
- 
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-07-02
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Linux/" class="post-category">
-                  Linux
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/rz-sz/">
-              <span class="chip bg-color">rz/sz</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/mysql-errors.html">
+          <a href="/posts/cross-domain.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="MySQL常见报错问题">
+                alt="跨域问题">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1191,7 +1353,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                MySQL常见报错问题
+                跨域问题
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1225,24 +1387,20 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              
-[Err] 1066 - Not unique table/alias: ‘s’
-原因：SQL语句中存在多个表的别名为’s’
-
-
-
+              存在原因浏览器的同源策略，一个源表示协议、端口、域名都相同，否则就形成跨域。
+解决办法  A. 服务器响应头：header(“Access-Control-Allow-Origin:*”);  B. iframe实现跨域  C. jsonp
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
+                <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/MySQL/" class="post-category">
-                  MySQL
+                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                  前端
                 </a>
                 
                 
@@ -1253,8 +1411,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/MySQL/">
-              <span class="chip bg-color">MySQL</span>
+            <a href="/tags/%E8%B7%A8%E5%9F%9F/">
+              <span class="chip bg-color">跨域</span>
             </a>
             
           </div>
@@ -1267,13 +1425,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/php-operate-note.html">
+          <a href="/posts/anchoring-effect.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="PHP运维笔记">
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="锚定效应">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1282,7 +1440,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                PHP运维笔记
+                锚定效应
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1316,21 +1474,20 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              1. 常见命令查看PHP扩展：`php -m`
-查看扩展的版本信息：`php -ri 扩展名`  如：`php -ri redis`
+              沉锚效应，心理学名词，指的是人们在对某人某事做出判断时，易受第一印象或第一信息支配，就像沉入海底的锚一样把人们的思想固定在某处。
 
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
+                <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/PHP/" class="post-category">
-                  PHP
+                <a href="/categories/%E4%BA%A7%E5%93%81/" class="post-category">
+                  产品
                 </a>
                 
                 
@@ -1341,8 +1498,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/%E8%BF%90%E7%BB%B4/">
-              <span class="chip bg-color">运维</span>
+            <a href="/tags/%E9%94%9A%E5%AE%9A%E6%95%88%E5%BA%94/">
+              <span class="chip bg-color">锚定效应</span>
             </a>
             
           </div>
@@ -1355,449 +1512,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/markdown-note.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="Markdown笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Markdown笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              
-解决有序列表排序失败的问题，格式如下：123456781.[空格]测试文字1 [Tab]-[空格]测试文字1-1 [Tab]-[空格]测试文字1-2 2.[空格]测试文字2 [Tab]-[空格]测试文字2-1 [Tab][Tab]-[空格
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-01-31
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Markdown/" class="post-category">
-                  Markdown
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Markdown/">
-              <span class="chip bg-color">Markdown</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/prolog-notes.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="Prolog笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Prolog笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 加载脚本?- ['E:/SWI-Prolog/test/friend.pl'].       %true
-2. 教程https://riptutorial.com/zh-CN/prolog
-3. 简单的计算求解：?- X is 3*7
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-01-31
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Prolog/" class="post-category">
-                  Prolog
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Prolog/">
-              <span class="chip bg-color">Prolog</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/php-excel.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="PHPExcel笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                PHPExcel笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 设置字体和样式123$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('A1')-&gt;applyFromArray(['font'=&gt;['bold'=&gt;true]]);			
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/PHP/" class="post-category">
-                  PHP
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/PHPExcel/">
-              <span class="chip bg-color">PHPExcel</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/mysql-custom-functions.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="MySQL自定义函数">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                MySQL自定义函数
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数
-
-1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-09-05
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/MySQL/" class="post-category">
-                  MySQL
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/MySQL/">
-              <span class="chip bg-color">MySQL</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/make-dictionary-by-php.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="PHP生成数据字典">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                PHP生成数据字典
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              通过php代码生成MySQL数据字典，代码如下：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-21
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/PHP/" class="post-category">
-                  PHP
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/">
-              <span class="chip bg-color">数据字典</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/oracle-note.html">
+          <a href="/posts/php-common-algorithm.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Oracle笔记">
+                alt="PHP常用的算法">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1806,7 +1527,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                Oracle笔记
+                PHP常用的算法
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1840,21 +1561,21 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              1. 强制并行处理/*+ monitor parallel(8)*/
-2. plsql查看sql性能F5
-3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：1234567891011121314
+              冒泡排序
+时间复杂度：O(N^2)
+代码实现12345678910111213141516function bubbleSort($arr){    $n = count($arr);    for ($i=0; $i&lt;$n-1; $
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
+                <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/Oracle/" class="post-category">
-                  Oracle
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
                 </a>
                 
                 
@@ -1865,8 +1586,275 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/Oracle/">
-              <span class="chip bg-color">Oracle</span>
+            <a href="/tags/%E7%AE%97%E6%B3%95/">
+              <span class="chip bg-color">算法</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/mongodb-notes.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="MongoDB笔记">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                MongoDB笔记
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              常用脚本
+修改字段名
+1db.getCollection('集合名').update({}, {$rename: {"修改前字段名1": "修改后字段名1", "修改前字段名2": "修改后字段名2"...}}, {multi:true})
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/MongoDB/" class="post-category">
+                  MongoDB
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/MongoDB/">
+              <span class="chip bg-color">MongoDB</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/target-management.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="目标管理">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                目标管理
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              目标管理向上管理向下负责激励团队
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86/" class="post-category">
+                  技术管理
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E7%9B%AE%E6%A0%87%E7%AE%A1%E7%90%86/">
+              <span class="chip bg-color">目标管理</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/wx-msg-push.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/7.jpg" class="responsive-img"
+                alt="微信公众号消息推送">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                微信公众号消息推送
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              1、公众号模板消息推送
+需在公众号的IP白名单中添加IP
+启用服务器配置
+
+报错ridinvalid weapp pagepath说明公众号关联的小程序没有这个界面，可以不设置pagepath
+
+
+
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2021-12-31
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E7%AC%AC%E4%B8%89%E6%96%B9/" class="post-category">
+                  第三方
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81/">
+              <span class="chip bg-color">消息推送</span>
             </a>
             
           </div>
@@ -1891,7 +1879,7 @@ class="themespring" -->
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">15 / 17</div>
+            <div class="center-align b-text-gray">15 / 21</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1993,7 +1981,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">90.2k</span>&nbsp;
+        class="white-color">129k</span>&nbsp;
       
       
       
