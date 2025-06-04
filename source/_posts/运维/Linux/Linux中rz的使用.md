@@ -1,7 +1,7 @@
 ---
 title: Linux中rz的使用
 tags: [rz/sz]
-categories: Linux
+categories: [Linux]
 abbrlink: 'rz-on-linux'
 date: 2019-07-02 19:20:00
 updated: 2019-07-02 19:20:00
