@@ -1082,9 +1082,105 @@ h3:hover {
 <hr>
 <p><strong>1. Commit Message 结构</strong><br>推荐采用 Conventional Commits 规范，格式如下：<br></p><figure class="highlight fortran"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">type</span>&gt;[<span class="keyword">optional</span> scope]: &lt;description&gt;</span><br><span class="line"></span><br><span class="line">[<span class="keyword">optional</span> body]</span><br><span class="line"></span><br><span class="line">[<span class="keyword">optional</span> footer(s)]</span><br></pre></td></tr></tbody></table></figure><br><strong>示例</strong><br><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">feat(auth): <span class="keyword">add</span> <span class="keyword">user</span> <span class="keyword">login</span> API</span><br><span class="line"></span><br><span class="line">- Implement JWT-based authentication</span><br><span class="line">- <span class="keyword">Add</span> <span class="keyword">login</span> endpoint `/api/auth/<span class="keyword">login</span>`</span><br><span class="line">- <span class="keyword">Update</span> README <span class="keyword">with</span> API docs</span><br><span class="line"></span><br><span class="line">fix: resolve memory leak <span class="keyword">in</span> image processing</span><br><span class="line"></span><br><span class="line">The previous implementation caused OOM errors <span class="keyword">when</span> processing <span class="keyword">large</span> images.</span><br><span class="line">This fix uses a streaming approach <span class="keyword">to</span> reduce memory <span class="keyword">usage</span>.</span><br><span class="line"></span><br><span class="line">BREAKING CHANGE: The `processImage` <span class="keyword">function</span> now requires a callback.</span><br></pre></td></tr></tbody></table></figure><p></p>
 <hr>
-<p><strong>2. Commit Message 各部分说明</strong><br>| 部分 | 说明 | 示例 |<br>|———|———|———|<br>| type | 提交的类型，通常使用以下几种：<br> - <code>feat</code> (新功能)<br> - <code>fix</code> (Bug 修复)<br> - <code>docs</code> (文档更新)<br> - <code>style</code> (代码格式化，不影响逻辑)<br> - <code>refactor</code> (代码重构，既不是新功能也不是 Bug 修复)<br> - <code>test</code> (测试相关)<br> - <code>chore</code> (构建过程或辅助工具的变动)<br> - <code>perf</code> (性能优化)<br> - <code>revert</code> (回滚之前的提交) | <code>feat: add user login</code> |<br>| scope <em>(可选)</em> | 影响的范围（可选），如模块名、文件名等 | <code>(auth)</code> <code>(api)</code> |<br>| description | 简短描述本次提交的内容（现在时态，首字母小写） | <code>add user login API</code> |<br>| body <em>(可选)</em> | 详细说明变更内容（可多行） | <code>- 改进点1&lt;br&gt;- 改进点2</code> |<br>| footer <em>(可选)</em> | 重大变更、Breaking Changes 或关联的 Issue | <code>BREAKING CHANGE: ...</code> 或 <code>Closes #123</code> |</p>
+<p><strong>2. Commit Message 各部分说明</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>提交的类型，通常使用以下几种：<br> - <code>feat</code> (新功能)<br> - <code>fix</code> (Bug 修复)<br> - <code>docs</code> (文档更新)<br> - <code>style</code> (代码格式化，不影响逻辑)<br> - <code>refactor</code> (代码重构，既不是新功能也不是 Bug 修复)<br> - <code>test</code> (测试相关)<br> - <code>chore</code> (构建过程或辅助工具的变动)<br> - <code>perf</code> (性能优化)<br> - <code>revert</code> (回滚之前的提交)</td>
+<td><code>feat: add user login</code></td>
+</tr>
+<tr>
+<td>scope <em>(可选)</em></td>
+<td>影响的范围（可选），如模块名、文件名等</td>
+<td><code>(auth)</code> <code>(api)</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>简短描述本次提交的内容（现在时态，首字母小写）</td>
+<td><code>add user login API</code></td>
+</tr>
+<tr>
+<td>body <em>(可选)</em></td>
+<td>详细说明变更内容（可多行）</td>
+<td><code>- 改进点1&lt;br&gt;- 改进点2</code></td>
+</tr>
+<tr>
+<td>footer <em>(可选)</em></td>
+<td>重大变更、Breaking Changes 或关联的 Issue</td>
+<td><code>BREAKING CHANGE: ...</code> 或 <code>Closes #123</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
-<p><strong>3. 常见 Commit Type 示例</strong><br>| Type | 说明 | 示例 |<br>|———|———|———|<br>| <code>feat</code> | 新增功能 | <code>feat: add dark mode</code> |<br>| <code>fix</code> | Bug 修复 | <code>fix: correct login validation</code> |<br>| <code>docs</code> | 文档更新 | <code>docs: update README.md</code> |<br>| <code>style</code> | 代码格式化（不影响逻辑） | <code>style: format code with Prettier</code> |<br>| <code>refactor</code> | 代码重构（非新功能/非 Bug 修复） | <code>refactor: optimize database queries</code> |<br>| <code>test</code> | 测试相关 | <code>test: add unit tests for utils</code> |<br>| <code>chore</code> | 构建/工具变更 | <code>chore: update dependencies</code> |<br>| <code>perf</code> | 性能优化 | <code>perf: improve rendering speed</code> |<br>| <code>revert</code> | 回滚提交 | <code>revert: revert "feat: add user login"</code> |</p>
+<p><strong>3. 常见 Commit Type 示例</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feat</code></td>
+<td>新增功能</td>
+<td><code>feat: add dark mode</code></td>
+</tr>
+<tr>
+<td><code>fix</code></td>
+<td>Bug 修复</td>
+<td><code>fix: correct login validation</code></td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>文档更新</td>
+<td><code>docs: update README.md</code></td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td>代码格式化（不影响逻辑）</td>
+<td><code>style: format code with Prettier</code></td>
+</tr>
+<tr>
+<td><code>refactor</code></td>
+<td>代码重构（非新功能/非 Bug 修复）</td>
+<td><code>refactor: optimize database queries</code></td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>测试相关</td>
+<td><code>test: add unit tests for utils</code></td>
+</tr>
+<tr>
+<td><code>chore</code></td>
+<td>构建/工具变更</td>
+<td><code>chore: update dependencies</code></td>
+</tr>
+<tr>
+<td><code>perf</code></td>
+<td>性能优化</td>
+<td><code>perf: improve rendering speed</code></td>
+</tr>
+<tr>
+<td><code>revert</code></td>
+<td>回滚提交</td>
+<td><code>revert: revert "feat: add user login"</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <p><strong>4. 不好的 Commit Message 示例</strong><br>❌ 模糊不清<br></p><figure class="highlight vim"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> code</span><br><span class="line"><span class="keyword">fix</span> bug</span><br></pre></td></tr></tbody></table></figure><br>✅ 改进后<br><figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fix</span><span class="params">(auth)</span></span>: correct login validation error</span><br><span class="line"><span class="function"><span class="title">feat</span><span class="params">(api)</span></span>: add user registration endpoint</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>❌ 缺少类型<br></p><figure class="highlight arcade"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add <span class="keyword">new</span> <span class="built_in">feature</span></span><br></pre></td></tr></tbody></table></figure><br>✅ 改进后<br><figure class="highlight crmsh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feat: implement <span class="keyword">user</span> <span class="title">profile</span> page</span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -1703,14 +1799,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/git-commit-message-best-practices.html">
+                <a href="/posts/git-merge-failed-reset-branch.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Git Commit Message 的最佳实践">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="Git合并代码失败，如何重置分支">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1721,20 +1816,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Git Commit Message 的最佳实践
+                          Git合并代码失败，如何重置分支
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在 Git 中，一个好的 commit message 应该清晰、简洁，并能准确描述本次提交的内容。良好的 commit 规范有助于团队协作、代码审查（Code Review）以及后续的版本维护。以下是 Git Commit Message
+                            如果在项目上，你希望将 feature/v30 分支的代码合并到 develop 分支，但当前 develop 分支存在未提交的修改（已暂存和未暂存的文件）。以下是安全处理步骤和直接基于 feature/v30 创建新 develop 分支
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-06-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1747,16 +1842,11 @@ h3:hover {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Git/">
                         <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                    <a href="/tags/Commit/">
-                        <span class="chip bg-color">Commit</span>
                     </a>
                     
                 </div>
@@ -2120,9 +2210,105 @@ h3:hover {
 <hr>
 <p><strong>1. Commit Message 结构</strong><br>推荐采用 Conventional Commits 规范，格式如下：<br></p><figure class="highlight fortran"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">type</span>&gt;[<span class="keyword">optional</span> scope]: &lt;description&gt;</span><br><span class="line"></span><br><span class="line">[<span class="keyword">optional</span> body]</span><br><span class="line"></span><br><span class="line">[<span class="keyword">optional</span> footer(s)]</span><br></pre></td></tr></tbody></table></figure><br><strong>示例</strong><br><figure class="highlight pgsql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">feat(auth): <span class="keyword">add</span> <span class="keyword">user</span> <span class="keyword">login</span> API</span><br><span class="line"></span><br><span class="line">- Implement JWT-based authentication</span><br><span class="line">- <span class="keyword">Add</span> <span class="keyword">login</span> endpoint `/api/auth/<span class="keyword">login</span>`</span><br><span class="line">- <span class="keyword">Update</span> README <span class="keyword">with</span> API docs</span><br><span class="line"></span><br><span class="line">fix: resolve memory leak <span class="keyword">in</span> image processing</span><br><span class="line"></span><br><span class="line">The previous implementation caused OOM errors <span class="keyword">when</span> processing <span class="keyword">large</span> images.</span><br><span class="line">This fix uses a streaming approach <span class="keyword">to</span> reduce memory <span class="keyword">usage</span>.</span><br><span class="line"></span><br><span class="line">BREAKING CHANGE: The `processImage` <span class="keyword">function</span> now requires a callback.</span><br></pre></td></tr></tbody></table></figure><p></p>
 <hr>
-<p><strong>2. Commit Message 各部分说明</strong><br>| 部分 | 说明 | 示例 |<br>|———|———|———|<br>| type | 提交的类型，通常使用以下几种：<br> - <code>feat</code> (新功能)<br> - <code>fix</code> (Bug 修复)<br> - <code>docs</code> (文档更新)<br> - <code>style</code> (代码格式化，不影响逻辑)<br> - <code>refactor</code> (代码重构，既不是新功能也不是 Bug 修复)<br> - <code>test</code> (测试相关)<br> - <code>chore</code> (构建过程或辅助工具的变动)<br> - <code>perf</code> (性能优化)<br> - <code>revert</code> (回滚之前的提交) | <code>feat: add user login</code> |<br>| scope <em>(可选)</em> | 影响的范围（可选），如模块名、文件名等 | <code>(auth)</code> <code>(api)</code> |<br>| description | 简短描述本次提交的内容（现在时态，首字母小写） | <code>add user login API</code> |<br>| body <em>(可选)</em> | 详细说明变更内容（可多行） | <code>- 改进点1&lt;br&gt;- 改进点2</code> |<br>| footer <em>(可选)</em> | 重大变更、Breaking Changes 或关联的 Issue | <code>BREAKING CHANGE: ...</code> 或 <code>Closes #123</code> |</p>
+<p><strong>2. Commit Message 各部分说明</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>部分</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>提交的类型，通常使用以下几种：<br> - <code>feat</code> (新功能)<br> - <code>fix</code> (Bug 修复)<br> - <code>docs</code> (文档更新)<br> - <code>style</code> (代码格式化，不影响逻辑)<br> - <code>refactor</code> (代码重构，既不是新功能也不是 Bug 修复)<br> - <code>test</code> (测试相关)<br> - <code>chore</code> (构建过程或辅助工具的变动)<br> - <code>perf</code> (性能优化)<br> - <code>revert</code> (回滚之前的提交)</td>
+<td><code>feat: add user login</code></td>
+</tr>
+<tr>
+<td>scope <em>(可选)</em></td>
+<td>影响的范围（可选），如模块名、文件名等</td>
+<td><code>(auth)</code> <code>(api)</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>简短描述本次提交的内容（现在时态，首字母小写）</td>
+<td><code>add user login API</code></td>
+</tr>
+<tr>
+<td>body <em>(可选)</em></td>
+<td>详细说明变更内容（可多行）</td>
+<td><code>- 改进点1&lt;br&gt;- 改进点2</code></td>
+</tr>
+<tr>
+<td>footer <em>(可选)</em></td>
+<td>重大变更、Breaking Changes 或关联的 Issue</td>
+<td><code>BREAKING CHANGE: ...</code> 或 <code>Closes #123</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
-<p><strong>3. 常见 Commit Type 示例</strong><br>| Type | 说明 | 示例 |<br>|———|———|———|<br>| <code>feat</code> | 新增功能 | <code>feat: add dark mode</code> |<br>| <code>fix</code> | Bug 修复 | <code>fix: correct login validation</code> |<br>| <code>docs</code> | 文档更新 | <code>docs: update README.md</code> |<br>| <code>style</code> | 代码格式化（不影响逻辑） | <code>style: format code with Prettier</code> |<br>| <code>refactor</code> | 代码重构（非新功能/非 Bug 修复） | <code>refactor: optimize database queries</code> |<br>| <code>test</code> | 测试相关 | <code>test: add unit tests for utils</code> |<br>| <code>chore</code> | 构建/工具变更 | <code>chore: update dependencies</code> |<br>| <code>perf</code> | 性能优化 | <code>perf: improve rendering speed</code> |<br>| <code>revert</code> | 回滚提交 | <code>revert: revert "feat: add user login"</code> |</p>
+<p><strong>3. 常见 Commit Type 示例</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feat</code></td>
+<td>新增功能</td>
+<td><code>feat: add dark mode</code></td>
+</tr>
+<tr>
+<td><code>fix</code></td>
+<td>Bug 修复</td>
+<td><code>fix: correct login validation</code></td>
+</tr>
+<tr>
+<td><code>docs</code></td>
+<td>文档更新</td>
+<td><code>docs: update README.md</code></td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td>代码格式化（不影响逻辑）</td>
+<td><code>style: format code with Prettier</code></td>
+</tr>
+<tr>
+<td><code>refactor</code></td>
+<td>代码重构（非新功能/非 Bug 修复）</td>
+<td><code>refactor: optimize database queries</code></td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>测试相关</td>
+<td><code>test: add unit tests for utils</code></td>
+</tr>
+<tr>
+<td><code>chore</code></td>
+<td>构建/工具变更</td>
+<td><code>chore: update dependencies</code></td>
+</tr>
+<tr>
+<td><code>perf</code></td>
+<td>性能优化</td>
+<td><code>perf: improve rendering speed</code></td>
+</tr>
+<tr>
+<td><code>revert</code></td>
+<td>回滚提交</td>
+<td><code>revert: revert "feat: add user login"</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 <p><strong>4. 不好的 Commit Message 示例</strong><br>❌ 模糊不清<br></p><figure class="highlight vim"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> code</span><br><span class="line"><span class="keyword">fix</span> bug</span><br></pre></td></tr></tbody></table></figure><br>✅ 改进后<br><figure class="highlight stylus"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fix</span><span class="params">(auth)</span></span>: correct login validation error</span><br><span class="line"><span class="function"><span class="title">feat</span><span class="params">(api)</span></span>: add user registration endpoint</span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>❌ 缺少类型<br></p><figure class="highlight arcade"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add <span class="keyword">new</span> <span class="built_in">feature</span></span><br></pre></td></tr></tbody></table></figure><br>✅ 改进后<br><figure class="highlight crmsh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feat: implement <span class="keyword">user</span> <span class="title">profile</span> page</span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -2741,14 +2927,13 @@ h3:hover {
         
         <div class="article col s12 m6">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/git-commit-message-best-practices.html">
+                <a href="/posts/git-merge-failed-reset-branch.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/2.jpg" class="responsive-img" alt="Git Commit Message 的最佳实践">
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="Git合并代码失败，如何重置分支">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2759,20 +2944,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Git Commit Message 的最佳实践
+                          Git合并代码失败，如何重置分支
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在 Git 中，一个好的 commit message 应该清晰、简洁，并能准确描述本次提交的内容。良好的 commit 规范有助于团队协作、代码审查（Code Review）以及后续的版本维护。以下是 Git Commit Message
+                            如果在项目上，你希望将 feature/v30 分支的代码合并到 develop 分支，但当前 develop 分支存在未提交的修改（已暂存和未暂存的文件）。以下是安全处理步骤和直接基于 feature/v30 创建新 develop 分支
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-06-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -2785,16 +2970,11 @@ h3:hover {
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/Git/">
                         <span class="chip bg-color">Git</span>
-                    </a>
-                    
-                    <a href="/tags/Commit/">
-                        <span class="chip bg-color">Commit</span>
                     </a>
                     
                 </div>
@@ -3142,7 +3322,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">129k</span>&nbsp;
+        class="white-color">169.5k</span>&nbsp;
       
       
       
