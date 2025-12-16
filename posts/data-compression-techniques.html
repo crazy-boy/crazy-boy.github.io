@@ -1775,11 +1775,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/parquet-data-format.html">
+                <a href="/posts/dictionary-and-run-length-encoding.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="Parquet 数据格式">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="字典编码和游程编码">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1790,17 +1790,18 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          Parquet 数据格式
+                          字典编码和游程编码
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. Parquet 是什么？Apache Parquet 是一种开源的、列式存储的、为大规模数据分析而设计的文件格式。
-它与我们熟悉的 CSV、JSON 等行式存储格式有根本性的不同。让我们通过一个比喻来理解：
+                            字典编码和游程编码这两种都是非常经典和常用的无损数据压缩技术。
 
-行式存储（如 CSV、J
+1. 字典编码核心思想字典编码的基本思想是：用一种较短的“代码”来替换数据中频繁出现的、较长的“短语”。这些“短语”和其对应的“代码”被存储在一个“字典”中。
+
+压缩时：扫描
                         
                     </div>
                     <div class="publish-info">
@@ -1811,8 +1812,8 @@ h3:hover {
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
-                                    数据分析
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    数据压缩技术
                                 </a>
                             
                             
@@ -1822,8 +1823,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/">
-                        <span class="chip bg-color">数据存储</span>
+                    <a href="/tags/%E5%AD%97%E5%85%B8%E7%BC%96%E7%A0%81/">
+                        <span class="chip bg-color">字典编码</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B8%B8%E7%A8%8B%E7%BC%96%E7%A0%81/">
+                        <span class="chip bg-color">游程编码</span>
                     </a>
                     
                 </div>

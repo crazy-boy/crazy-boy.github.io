@@ -9,15 +9,19 @@
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/minimax-alpha-beta.html</loc>
+    <lastmod>2025-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/fuzzy-logic.html</loc>
+    <lastmod>2025-11-20</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/monte-carlo-tree-search-mcts.html</loc>
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/sat-convex-polygon-collision-detection.html</loc>
-    <lastmod>2025-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/state-and-frame-sync.html</loc>
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
@@ -29,15 +33,7 @@
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/weighted-random.html</loc>
-    <lastmod>2025-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/minimax-alpha-beta.html</loc>
-    <lastmod>2025-11-20</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/reservoir-sampling.html</loc>
+    <loc>https://crazy-boy.com/posts/state-and-frame-sync.html</loc>
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
@@ -45,15 +41,19 @@
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/fuzzy-logic.html</loc>
+    <loc>https://crazy-boy.com/posts/weighted-random.html</loc>
     <lastmod>2025-11-20</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/dictionary-and-run-length-encoding.html</loc>
-    <lastmod>2025-10-16</lastmod>
+    <loc>https://crazy-boy.com/posts/reservoir-sampling.html</loc>
+    <lastmod>2025-11-20</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/parquet-data-format.html</loc>
+    <lastmod>2025-10-16</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/dictionary-and-run-length-encoding.html</loc>
     <lastmod>2025-10-16</lastmod>
   </url>
   <url>
@@ -145,22 +145,6 @@
     <lastmod>2025-06-22</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/glicko2-system-dynamic-player-skill-evaluation.html</loc>
-    <lastmod>2025-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/glicko-system.html</loc>
-    <lastmod>2025-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/pvp-matching-mechanism-design.html</loc>
-    <lastmod>2025-06-21</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/rtp-analysis.html</loc>
-    <lastmod>2025-06-21</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/elo-system-competitive-gaming.html</loc>
     <lastmod>2025-06-21</lastmod>
   </url>
@@ -170,6 +154,22 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/gmv-value.html</loc>
+    <lastmod>2025-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/glicko2-system-dynamic-player-skill-evaluation.html</loc>
+    <lastmod>2025-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/pvp-matching-mechanism-design.html</loc>
+    <lastmod>2025-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/glicko-system.html</loc>
+    <lastmod>2025-06-21</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/rtp-analysis.html</loc>
     <lastmod>2025-06-21</lastmod>
   </url>
   <url>
@@ -213,11 +213,11 @@
     <lastmod>2025-05-22</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/smoke-alarm-technology-analysis.html</loc>
+    <loc>https://crazy-boy.com/posts/electronic-shackles.html</loc>
     <lastmod>2025-05-22</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/electronic-shackles.html</loc>
+    <loc>https://crazy-boy.com/posts/smoke-alarm-technology-analysis.html</loc>
     <lastmod>2025-05-22</lastmod>
   </url>
   <url>
@@ -237,11 +237,11 @@
     <lastmod>2025-05-22</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/remote-control-evolution.html</loc>
+    <loc>https://crazy-boy.com/posts/voice-control-how-it-works.html</loc>
     <lastmod>2025-05-22</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/voice-control-how-it-works.html</loc>
+    <loc>https://crazy-boy.com/posts/remote-control-evolution.html</loc>
     <lastmod>2025-05-22</lastmod>
   </url>
   <url>
@@ -277,11 +277,11 @@
     <lastmod>2024-12-26</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/dynamic-programming-php.html</loc>
+    <loc>https://crazy-boy.com/posts/dynamic-programming-state-transition-equation.html</loc>
     <lastmod>2024-12-26</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/dynamic-programming-state-transition-equation.html</loc>
+    <loc>https://crazy-boy.com/posts/dynamic-programming-php.html</loc>
     <lastmod>2024-12-26</lastmod>
   </url>
   <url>
@@ -305,7 +305,7 @@
     <lastmod>2024-12-26</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/anonymous-functions.html</loc>
+    <loc>https://crazy-boy.com/posts/closure.html</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
@@ -313,7 +313,7 @@
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/highorder-functions.html</loc>
+    <loc>https://crazy-boy.com/posts/function-currying.html</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
@@ -321,11 +321,11 @@
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/function-currying.html</loc>
+    <loc>https://crazy-boy.com/posts/anonymous-functions.html</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/closure.html</loc>
+    <loc>https://crazy-boy.com/posts/highorder-functions.html</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
@@ -333,11 +333,11 @@
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/fibonacci-heap.html</loc>
+    <loc>https://crazy-boy.com/posts/heap.html</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/heap.html</loc>
+    <loc>https://crazy-boy.com/posts/fibonacci-heap.html</loc>
     <lastmod>2024-12-24</lastmod>
   </url>
   <url>
@@ -381,6 +381,10 @@
     <lastmod>2024-11-21</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/game-design-how-to-identify-poor.html</loc>
+    <lastmod>2024-11-21</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/game-design-improve-experience.html</loc>
     <lastmod>2024-11-21</lastmod>
   </url>
@@ -401,6 +405,10 @@
     <lastmod>2024-11-21</lastmod>
   </url>
   <url>
+    <loc>https://crazy-boy.com/posts/luhn-algorithm.html</loc>
+    <lastmod>2024-11-21</lastmod>
+  </url>
+  <url>
     <loc>https://crazy-boy.com/posts/complexity-analysis.html</loc>
     <lastmod>2024-11-21</lastmod>
   </url>
@@ -409,19 +417,11 @@
     <lastmod>2024-11-21</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/anti-corruption-layer.html</loc>
-    <lastmod>2024-11-21</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/finite-state-machine.html</loc>
     <lastmod>2024-11-21</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/game-design-how-to-identify-poor.html</loc>
-    <lastmod>2024-11-21</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/luhn-algorithm.html</loc>
+    <loc>https://crazy-boy.com/posts/anti-corruption-layer.html</loc>
     <lastmod>2024-11-21</lastmod>
   </url>
   <url>
@@ -513,19 +513,11 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/argon2.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/rijndael.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/saml.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/codes-obfuscation.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/argon2.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -533,11 +525,27 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/sha256-algorithm.html</loc>
+    <loc>https://crazy-boy.com/posts/saml.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/rijndael.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/sha1-algorithm.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/sha256-algorithm.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/sha512-algorithm.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/sha3-algorithm.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -553,15 +561,11 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/sha3-algorithm.html</loc>
+    <loc>https://crazy-boy.com/posts/symmetric-encryption.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/constant-time-algorithm.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/sha512-algorithm.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -573,11 +577,11 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/white-box-cryptography.html</loc>
+    <loc>https://crazy-boy.com/posts/timing-attack.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/timing-attack.html</loc>
+    <loc>https://crazy-boy.com/posts/white-box-cryptography.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -589,15 +593,15 @@
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/symmetric-encryption.html</loc>
+    <loc>https://crazy-boy.com/posts/cryptography-jargon.html</loc>
+    <lastmod>2024-03-18</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/cryptography.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/cryptography-symmetric-encryption.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/cryptography-jargon.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -606,10 +610,6 @@
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/asymmetric-encryption.html</loc>
-    <lastmod>2024-03-18</lastmod>
-  </url>
-  <url>
-    <loc>https://crazy-boy.com/posts/cryptography.html</loc>
     <lastmod>2024-03-18</lastmod>
   </url>
   <url>
@@ -757,10 +757,6 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/memento-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
@@ -769,7 +765,7 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/template-method-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/facade-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -777,11 +773,15 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/state-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/template-method-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
     <loc>https://crazy-boy.com/posts/strategy-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/state-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -793,7 +793,7 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/decorator-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -801,7 +801,7 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/decorator-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/visitor-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
@@ -809,19 +809,19 @@
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/iterator-pattern.html</loc>
-    <lastmod>2022-05-19</lastmod>
-  </url>
-  <url>
     <loc>https://crazy-boy.com/posts/chain-of-responsibility-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/adapter-pattern.html</loc>
+    <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
-    <loc>https://crazy-boy.com/posts/design-patterns.html</loc>
+    <loc>https://crazy-boy.com/posts/iterator-pattern.html</loc>
+    <lastmod>2022-05-19</lastmod>
+  </url>
+  <url>
+    <loc>https://crazy-boy.com/posts/adapter-pattern.html</loc>
     <lastmod>2022-05-19</lastmod>
   </url>
   <url>
