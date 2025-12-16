@@ -834,7 +834,7 @@ class="themespring" -->
             
             <div class="article tag-post col s12 m6 l4">
                 <div class="card">
-                    <a href="/posts/be86.html" target="_blank">
+                    <a href="/posts/redis-batch-delete-keys.html" target="_blank">
                         <div class="card-image tag-image">
                             
                             
@@ -885,13 +885,9 @@ class="themespring" -->
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                在 redis-cli 中，我们可以使用批量删除命令来删除匹配特定模式的键。以下是步骤：
-
-使用 KEYS 命令找到要删除的键。
-使用 xargs 和 DEL 命令批量删除这些键。
-
-以下是完整的命令：
-123redis-cli --sca
+                                在 redis-cli 中，我们可以使用批量删除命令来删除匹配特定模式的键(本文以KEYS "*monitor_log*"为例)。
+在 Redis CLI 中删除所有包含 monitor_log 的 key，有几种方法：
+方法1：使用 KE
                             
                         </div>
                         <div class="publish-info">
@@ -1190,7 +1186,7 @@ class="themespring" -->
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">169.5k</span>&nbsp;
+        class="white-color">230.8k</span>&nbsp;
       
       
       

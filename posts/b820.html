@@ -1837,7 +1837,7 @@ Redis ZSET：存储组合分数实现实时排序（时间复杂度O(logN)）
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/be86.html">
+                <a href="/posts/redis-batch-delete-keys.html">
                     <div class="card-image">
                         
                         
@@ -1859,13 +1859,9 @@ Redis ZSET：存储组合分数实现实时排序（时间复杂度O(logN)）
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在 redis-cli 中，我们可以使用批量删除命令来删除匹配特定模式的键。以下是步骤：
-
-使用 KEYS 命令找到要删除的键。
-使用 xargs 和 DEL 命令批量删除这些键。
-
-以下是完整的命令：
-123redis-cli --sca
+                            在 redis-cli 中，我们可以使用批量删除命令来删除匹配特定模式的键(本文以KEYS "*monitor_log*"为例)。
+在 Redis CLI 中删除所有包含 monitor_log 的 key，有几种方法：
+方法1：使用 KE
                         
                     </div>
                     <div class="publish-info">
@@ -2947,7 +2943,7 @@ Redis ZSET：存储组合分数实现实时排序（时间复杂度O(logN)）
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/be86.html">
+                <a href="/posts/redis-batch-delete-keys.html">
                     <div class="card-image">
                         
                         
@@ -2969,13 +2965,9 @@ Redis ZSET：存储组合分数实现实时排序（时间复杂度O(logN)）
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在 redis-cli 中，我们可以使用批量删除命令来删除匹配特定模式的键。以下是步骤：
-
-使用 KEYS 命令找到要删除的键。
-使用 xargs 和 DEL 命令批量删除这些键。
-
-以下是完整的命令：
-123redis-cli --sca
+                            在 redis-cli 中，我们可以使用批量删除命令来删除匹配特定模式的键(本文以KEYS "*monitor_log*"为例)。
+在 Redis CLI 中删除所有包含 monitor_log 的 key，有几种方法：
+方法1：使用 KE
                         
                     </div>
                     <div class="publish-info">
@@ -3286,7 +3278,7 @@ Redis ZSET：存储组合分数实现实时排序（时间复杂度O(logN)）
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">169.5k</span>&nbsp;
+        class="white-color">230.8k</span>&nbsp;
       
       
       
