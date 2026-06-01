@@ -1057,7 +1057,7 @@ h3:hover {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    223
+                    254
                 </div>
                 
 
@@ -1074,11 +1074,10 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>如果在项目上，你希望将 <code>feature/xx</code> 分支的代码合并到 <code>develop</code> 分支，但提示有冲突。以下是完整的解决流程示例：</p>
+                <p>如果在项目上，你希望将 <code>feature/xx</code> 分支的代码合并到 <code>develop</code> 分支，但提示有Git合并冲突。以下是完整的解决流程示例：</p>
 <hr>
-<p><img src="/images/resolve-merge-conflicts_1.png" alt=""></p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 查看冲突文件</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 打开冲突文件并解决</span></span><br><span class="line">code app/Services/Match/Match3/Match3Config.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 在编辑器中解决冲突后保存</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 标记为已解决</span></span><br><span class="line">git add app/Services/Match/Match3/Match3Config.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 检查是否还有其他冲突文件</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 完成合并</span></span><br><span class="line">git commit -m <span class="string">"Resolve merge conflicts from develop branch"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 推送到远程</span></span><br><span class="line">git push origin HEAD</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="如果冲突涉及多个文件"><a href="#如果冲突涉及多个文件" class="headerlink" title="如果冲突涉及多个文件**"></a>如果冲突涉及多个文件**</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看所有冲突文件</span></span><br><span class="line">git diff --name-only --diff-filter=U</span><br><span class="line"></span><br><span class="line"><span class="comment"># 批量解决后一次性提交</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Resolve all merge conflicts"</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/images/resolve-merge-conflicts_1.png" alt></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 查看冲突文件</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 逐个查看冲突部分，并手动解决</span></span><br><span class="line">git diff app/Services/Activities/BaseActivity.php</span><br><span class="line">sudo vi app/Services/Activities/BaseActivity.php</span><br><span class="line"></span><br><span class="line">git diff app/Services/Activities/ShiningShoppingSpree/SSSService.php</span><br><span class="line">sudo vi app/Services/Activities/ShiningShoppingSpree/SSSService.php</span><br><span class="line"></span><br><span class="line">git diff app/Services/Activities/Tetris/TetrisService.php</span><br><span class="line">sudo vi app/Services/Activities/Tetris/TetrisService.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或用工具解决：git mergetool</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 批量标记为已解决，并一次性提交</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Resolve all merge conflicts"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 推送本地提交</span></span><br><span class="line"><span class="comment"># 确认冲突解决后，推送121个本地提交</span></span><br><span class="line">git push origin develop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果因为远程有更新被拒绝，先拉取最新：</span></span><br><span class="line">git pull origin develop</span><br><span class="line"><span class="comment"># 可能又会产生新冲突，重复第一步解决冲突，直到成功推送。</span></span><br></pre></td></tr></tbody></table></figure>
 <p>记住：解决冲突时要仔细检查代码逻辑，确保合并后的代码能正常工作。如果不确定，可以请同事帮忙审查。</p>
 
             </div>
@@ -1681,11 +1680,11 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/data-compression-techniques.html">
+                <a href="/posts/parquet-data-format.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="数据压缩技术">
+                        <img src="/medias/banner/5.jpg" class="responsive-img" alt="Parquet 数据格式">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1696,15 +1695,17 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          数据压缩技术
+                          Parquet 数据格式
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据压缩是计算机科学和信息技术中的一个基础且重要的领域，它关乎如何更高效地存储和传输数据。
-一、 核心概念：什么是数据压缩？数据压缩是指通过特定的算法和编码技术，减少原始数据所占用的存储空间或传输带宽的过程。其核心思想是消除数据中的冗余信息
+                            1. Parquet 是什么？Apache Parquet 是一种开源的、列式存储的、为大规模数据分析而设计的文件格式。
+它与我们熟悉的 CSV、JSON 等行式存储格式有根本性的不同。让我们通过一个比喻来理解：
+
+行式存储（如 CSV、J
                         
                     </div>
                     <div class="publish-info">
@@ -1715,8 +1716,8 @@ h3:hover {
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    数据压缩技术
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-category">
+                                    数据分析
                                 </a>
                             
                             
@@ -1726,8 +1727,8 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9/">
-                        <span class="chip bg-color">数据压缩</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/">
+                        <span class="chip bg-color">数据存储</span>
                     </a>
                     
                 </div>
@@ -2060,7 +2061,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">230.8k</span>&nbsp;
+        class="white-color">392k</span>&nbsp;
       
       
       

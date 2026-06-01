@@ -7,7 +7,7 @@ date: 2025-10-14 09:54:37
 updated: 2025-10-14 09:54:37
 ---
 
-如果在项目上，你希望将 `feature/xx` 分支的代码合并到 `develop` 分支，但提示有冲突。以下是完整的解决流程示例：
+如果在项目上，你希望将 `feature/xx` 分支的代码合并到 `develop` 分支，但提示有Git合并冲突。以下是完整的解决流程示例：
 
 ---
 ![](/images/resolve-merge-conflicts_1.png)
@@ -16,31 +16,29 @@ updated: 2025-10-14 09:54:37
 # 1. 查看冲突文件
 git status
 
-# 2. 打开冲突文件并解决
-code app/Services/Match/Match3/Match3Config.php
+# 2. 逐个查看冲突部分，并手动解决
+git diff app/Services/Activities/BaseActivity.php
+sudo vi app/Services/Activities/BaseActivity.php
 
-# 3. 在编辑器中解决冲突后保存
+git diff app/Services/Activities/ShiningShoppingSpree/SSSService.php
+sudo vi app/Services/Activities/ShiningShoppingSpree/SSSService.php
 
-# 4. 标记为已解决
-git add app/Services/Match/Match3/Match3Config.php
+git diff app/Services/Activities/Tetris/TetrisService.php
+sudo vi app/Services/Activities/Tetris/TetrisService.php
 
-# 5. 检查是否还有其他冲突文件
-git status
+# 或用工具解决：git mergetool
 
-# 6. 完成合并
-git commit -m "Resolve merge conflicts from develop branch"
-
-# 7. 推送到远程
-git push origin HEAD
-```
-
-#### 如果冲突涉及多个文件**
-```bash
-# 查看所有冲突文件
-git diff --name-only --diff-filter=U
-
-# 批量解决后一次性提交
+# 3. 批量标记为已解决，并一次性提交
 git add .
 git commit -m "Resolve all merge conflicts"
+
+# 7. 推送本地提交
+# 确认冲突解决后，推送121个本地提交
+git push origin develop
+
+# 如果因为远程有更新被拒绝，先拉取最新：
+git pull origin develop
+# 可能又会产生新冲突，重复第一步解决冲突，直到成功推送。
 ```
+
 记住：解决冲突时要仔细检查代码逻辑，确保合并后的代码能正常工作。如果不确定，可以请同事帮忙审查。

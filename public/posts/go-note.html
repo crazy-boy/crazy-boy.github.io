@@ -1080,7 +1080,7 @@ h3:hover {
 <h3 id="打印内容"><a href="#打印内容" class="headerlink" title="打印内容"></a>打印内容</h3><p><code>fmt.Printf("Hello,World!")</code></p>
 <h3 id="switch语句中，多个case共用一组执行语句"><a href="#switch语句中，多个case共用一组执行语句" class="headerlink" title="switch语句中，多个case共用一组执行语句"></a>switch语句中，多个case共用一组执行语句</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch A{</span><br><span class="line">	case a,b,c:</span><br><span class="line">		...</span><br><span class="line">	case d:</span><br><span class="line">		...</span><br><span class="line">	default :</span><br><span class="line">		...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="GoLand使用"><a href="#GoLand使用" class="headerlink" title="GoLand使用"></a>GoLand使用</h3><p>新部署项目后，需通过<code>go mod download</code> 下载第三方依赖包，如果报错，需设置Go Modules中的Proxy为：<code>https://goproxy.cn</code></p>
-<h3 id="GoLand使用下载第三方依赖包"><a href="#GoLand使用下载第三方依赖包" class="headerlink" title="GoLand使用下载第三方依赖包"></a>GoLand使用下载第三方依赖包</h3><p>1、 IDE-》setting-》Go-》Go Modules中，设置代理：<a target="_blank" rel="noopener" href="https://goproxy.cn">https://goproxy.cn</a><br><img src="/images/goland_1.png" alt=""><br>2、项目中，创建go.mod文件，包含需要引入的依赖包，<br>如：导入 gin：require github.com/gin-gonic/gin latest<br>在Terminal上，运行go mod download即可，系统会自动将版本号回填到go.mod中<br><img src="/images/goland_2.png" alt=""></p>
+<h3 id="GoLand使用下载第三方依赖包"><a href="#GoLand使用下载第三方依赖包" class="headerlink" title="GoLand使用下载第三方依赖包"></a>GoLand使用下载第三方依赖包</h3><p>1、 IDE-》setting-》Go-》Go Modules中，设置代理：<a target="_blank" rel="noopener" href="https://goproxy.cn">https://goproxy.cn</a><br><img src="/images/goland_1.png" alt><br>2、项目中，创建go.mod文件，包含需要引入的依赖包，<br>如：导入 gin：require github.com/gin-gonic/gin latest<br>在Terminal上，运行go mod download即可，系统会自动将版本号回填到go.mod中<br><img src="/images/goland_2.png" alt></p>
 
             </div>
             <hr/>
@@ -2065,7 +2065,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">230.8k</span>&nbsp;
+        class="white-color">392k</span>&nbsp;
       
       
       

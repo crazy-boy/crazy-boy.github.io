@@ -1082,7 +1082,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="什么是高阶函数？"><a href="#什么是高阶函数？" class="headerlink" title="什么是高阶函数？"></a>什么是高阶函数？</h3><p>在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，<strong>高阶函数就是操作函数的函数</strong>。<br><img src="/images/highorder-functions_1.jpg" alt=""></p>
+                <h3 id="什么是高阶函数？"><a href="#什么是高阶函数？" class="headerlink" title="什么是高阶函数？"></a>什么是高阶函数？</h3><p>在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，<strong>高阶函数就是操作函数的函数</strong>。<br><img src="/images/highorder-functions_1.jpg" alt></p>
 <h3 id="PHP-中的高阶函数示例"><a href="#PHP-中的高阶函数示例" class="headerlink" title="PHP 中的高阶函数示例"></a>PHP 中的高阶函数示例</h3><h4 id="1-回调函数"><a href="#1-回调函数" class="headerlink" title="1. 回调函数"></a>1. <strong>回调函数</strong></h4><p>回调函数是最常见的应用场景之一。它将一个函数作为参数传递给另一个函数，在特定的条件下被调用。</p>
 <figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_callback_function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Hello from callback!"</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call_with_callback</span>(<span class="params"><span class="variable">$callback</span></span>) </span>{</span><br><span class="line">    <span class="variable">$callback</span>();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">call_with_callback</span>(<span class="string">'my_callback_function'</span>); <span class="comment">// 输出：Hello from callback!</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="2-数组函数"><a href="#2-数组函数" class="headerlink" title="2. 数组函数"></a>2. <strong>数组函数</strong></h4><p>PHP 提供了许多内置的数组函数，它们接受回调函数作为参数，对数组元素进行操作。</p>
@@ -1758,12 +1758,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">闭包</span>
-                    </a>
-                    
                     <a href="/tags/PHP/">
                         <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%97%AD%E5%8C%85/">
+                        <span class="chip bg-color">闭包</span>
                     </a>
                     
                     <a href="/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/">
@@ -1781,11 +1781,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/php-2d-coordinate.html">
+                <a href="/posts/php-splqueue-guide.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP 中，二维地图坐标的表示方法">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP SplQueue 类使用指南">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -1796,21 +1796,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          PHP 中，二维地图坐标的表示方法
+                          PHP SplQueue 类使用指南
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在PHP中，二维地图的坐标可以通过不同的方法来表示，最常见的方式是使用二维数组或对象来存储坐标信息。
-使用二维数组表示二维地图的坐标二维数组是一种简单直观的方式来表示地图的坐标，每个元素代表地图上的一个点或单元格。
-123456789101
+                            什么是 SplQueue？SplQueue 是 PHP 标准库 (SPL) 提供的一个类，用于实现队列这种数据结构。队列遵循先进先出的原则（FIFO：First In, First Out），即先进入队列的元素会先被取出。
+为什么使用 Sp
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-23
                             </span>
                         <span class="publish-author">
                             
@@ -1831,8 +1830,8 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/2D/">
-                        <span class="chip bg-color">2D</span>
+                    <a href="/tags/SplQueue/">
+                        <span class="chip bg-color">SplQueue</span>
                     </a>
                     
                 </div>
@@ -2136,7 +2135,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="什么是高阶函数？"><a href="#什么是高阶函数？" class="headerlink" title="什么是高阶函数？"></a>什么是高阶函数？</h3><p>在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，<strong>高阶函数就是操作函数的函数</strong>。<br><img src="/images/highorder-functions_1.jpg" alt=""></p>
+                <h3 id="什么是高阶函数？"><a href="#什么是高阶函数？" class="headerlink" title="什么是高阶函数？"></a>什么是高阶函数？</h3><p>在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，<strong>高阶函数就是操作函数的函数</strong>。<br><img src="/images/highorder-functions_1.jpg" alt></p>
 <h3 id="PHP-中的高阶函数示例"><a href="#PHP-中的高阶函数示例" class="headerlink" title="PHP 中的高阶函数示例"></a>PHP 中的高阶函数示例</h3><h4 id="1-回调函数"><a href="#1-回调函数" class="headerlink" title="1. 回调函数"></a>1. <strong>回调函数</strong></h4><p>回调函数是最常见的应用场景之一。它将一个函数作为参数传递给另一个函数，在特定的条件下被调用。</p>
 <figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_callback_function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Hello from callback!"</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call_with_callback</span>(<span class="params"><span class="variable">$callback</span></span>) </span>{</span><br><span class="line">    <span class="variable">$callback</span>();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">call_with_callback</span>(<span class="string">'my_callback_function'</span>); <span class="comment">// 输出：Hello from callback!</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="2-数组函数"><a href="#2-数组函数" class="headerlink" title="2. 数组函数"></a>2. <strong>数组函数</strong></h4><p>PHP 提供了许多内置的数组函数，它们接受回调函数作为参数，对数组元素进行操作。</p>
@@ -2812,12 +2811,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">闭包</span>
-                    </a>
-                    
                     <a href="/tags/PHP/">
                         <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%97%AD%E5%8C%85/">
+                        <span class="chip bg-color">闭包</span>
                     </a>
                     
                     <a href="/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/">
@@ -2835,11 +2834,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/php-2d-coordinate.html">
+                <a href="/posts/php-splqueue-guide.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP 中，二维地图坐标的表示方法">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP SplQueue 类使用指南">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -2850,21 +2849,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          PHP 中，二维地图坐标的表示方法
+                          PHP SplQueue 类使用指南
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在PHP中，二维地图的坐标可以通过不同的方法来表示，最常见的方式是使用二维数组或对象来存储坐标信息。
-使用二维数组表示二维地图的坐标二维数组是一种简单直观的方式来表示地图的坐标，每个元素代表地图上的一个点或单元格。
-123456789101
+                            什么是 SplQueue？SplQueue 是 PHP 标准库 (SPL) 提供的一个类，用于实现队列这种数据结构。队列遵循先进先出的原则（FIFO：First In, First Out），即先进入队列的元素会先被取出。
+为什么使用 Sp
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-23
                             </span>
                         <span class="publish-author">
                             
@@ -2885,8 +2883,8 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/2D/">
-                        <span class="chip bg-color">2D</span>
+                    <a href="/tags/SplQueue/">
+                        <span class="chip bg-color">SplQueue</span>
                     </a>
                     
                 </div>
@@ -3190,7 +3188,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="什么是高阶函数？"><a href="#什么是高阶函数？" class="headerlink" title="什么是高阶函数？"></a>什么是高阶函数？</h3><p>在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，<strong>高阶函数就是操作函数的函数</strong>。<br><img src="/images/highorder-functions_1.jpg" alt=""></p>
+                <h3 id="什么是高阶函数？"><a href="#什么是高阶函数？" class="headerlink" title="什么是高阶函数？"></a>什么是高阶函数？</h3><p>在编程中，函数是一段可复用的代码块。而高阶函数则是一种更高级的概念，它将函数本身作为参数进行传递，或者将函数作为返回值返回。换句话说，<strong>高阶函数就是操作函数的函数</strong>。<br><img src="/images/highorder-functions_1.jpg" alt></p>
 <h3 id="PHP-中的高阶函数示例"><a href="#PHP-中的高阶函数示例" class="headerlink" title="PHP 中的高阶函数示例"></a>PHP 中的高阶函数示例</h3><h4 id="1-回调函数"><a href="#1-回调函数" class="headerlink" title="1. 回调函数"></a>1. <strong>回调函数</strong></h4><p>回调函数是最常见的应用场景之一。它将一个函数作为参数传递给另一个函数，在特定的条件下被调用。</p>
 <figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_callback_function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"Hello from callback!"</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call_with_callback</span>(<span class="params"><span class="variable">$callback</span></span>) </span>{</span><br><span class="line">    <span class="variable">$callback</span>();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">call_with_callback</span>(<span class="string">'my_callback_function'</span>); <span class="comment">// 输出：Hello from callback!</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="2-数组函数"><a href="#2-数组函数" class="headerlink" title="2. 数组函数"></a>2. <strong>数组函数</strong></h4><p>PHP 提供了许多内置的数组函数，它们接受回调函数作为参数，对数组元素进行操作。</p>
@@ -3866,12 +3864,12 @@ h3:hover {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%97%AD%E5%8C%85/">
-                        <span class="chip bg-color">闭包</span>
-                    </a>
-                    
                     <a href="/tags/PHP/">
                         <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%97%AD%E5%8C%85/">
+                        <span class="chip bg-color">闭包</span>
                     </a>
                     
                     <a href="/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0/">
@@ -3889,11 +3887,11 @@ h3:hover {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/php-2d-coordinate.html">
+                <a href="/posts/php-splqueue-guide.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP 中，二维地图坐标的表示方法">
+                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP SplQueue 类使用指南">
                         
                         <!-- 福袋按钮 -->
                         <div class="caishendeng">        
@@ -3904,21 +3902,20 @@ h3:hover {
                         <span class="card-title">
                           <!-- 文章卡片hover线条效果 -->
                           <span class="titlesline"></span>
-                          PHP 中，二维地图坐标的表示方法
+                          PHP SplQueue 类使用指南
                         </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在PHP中，二维地图的坐标可以通过不同的方法来表示，最常见的方式是使用二维数组或对象来存储坐标信息。
-使用二维数组表示二维地图的坐标二维数组是一种简单直观的方式来表示地图的坐标，每个元素代表地图上的一个点或单元格。
-123456789101
+                            什么是 SplQueue？SplQueue 是 PHP 标准库 (SPL) 提供的一个类，用于实现队列这种数据结构。队列遵循先进先出的原则（FIFO：First In, First Out），即先进入队列的元素会先被取出。
+为什么使用 Sp
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-23
                             </span>
                         <span class="publish-author">
                             
@@ -3939,8 +3936,8 @@ h3:hover {
                         <span class="chip bg-color">PHP</span>
                     </a>
                     
-                    <a href="/tags/2D/">
-                        <span class="chip bg-color">2D</span>
+                    <a href="/tags/SplQueue/">
+                        <span class="chip bg-color">SplQueue</span>
                     </a>
                     
                 </div>
@@ -4242,7 +4239,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">230.8k</span>&nbsp;
+        class="white-color">392k</span>&nbsp;
       
       
       

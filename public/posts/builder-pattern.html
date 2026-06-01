@@ -1074,7 +1074,7 @@ h3:hover {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：<br><img src="/images/builder-pattern-1.jpg" alt=""></p>
+                <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：<br><img src="/images/builder-pattern-1.jpg" alt></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>下面讲解下设计模式的代码实现</p>
 <ol>
 <li>创建产品类<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span></span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$parts</span> = [];</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$part</span></span>): <span class="title">void</span></span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;parts[] = <span class="variable">$part</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>):<span class="title">void</span></span>{</span><br><span class="line">        <span class="title function_ invoke__">print_r</span>(<span class="variable">$this</span>-&gt;parts);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
@@ -2078,7 +2078,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">230.8k</span>&nbsp;
+        class="white-color">392k</span>&nbsp;
       
       
       
