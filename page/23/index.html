@@ -818,13 +818,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/prolog-notes.html">
+          <a href="/posts/php-if-else.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="Prolog笔记">
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="PHP中if else的优化方案">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -833,7 +833,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                Prolog笔记
+                PHP中if else的优化方案
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -867,100 +867,16 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              1. 加载脚本?- ['E:/SWI-Prolog/test/friend.pl'].       %true
-2. 教程https://riptutorial.com/zh-CN/prolog
-3. 简单的计算求解：?- X is 3*7
+              前言：在项目开发中，经常会遇到多个复杂if else的情况，下面说说这种情况的优化方案。
+
+提前return 让正常流程走主干，非正常流程提前return，去除不必要的else，适用于函数参数校验。
+
+优化前12345if (conditi
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2019-01-31
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Prolog/" class="post-category">
-                  Prolog
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Prolog/">
-              <span class="chip bg-color">Prolog</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/php-excel.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/5.jpg" class="responsive-img"
-                alt="PHPExcel笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                PHPExcel笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 设置字体和样式123$objPHPExcel-&gt;getActiveSheet()-&gt;getStyle('A1')-&gt;applyFromArray(['font'=&gt;['bold'=&gt;true]]);			
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-11-06
+                <i class="far fa-clock fa-fw icon-date"></i>2022-10-18
               </span>
               <span class="publish-author">
                 
@@ -978,8 +894,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/PHPExcel/">
-              <span class="chip bg-color">PHPExcel</span>
+            <a href="/tags/PHP%E7%AC%94%E8%AE%B0/">
+              <span class="chip bg-color">PHP笔记</span>
             </a>
             
           </div>
@@ -992,13 +908,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/mysql-custom-functions.html">
+          <a href="/posts/windows-move-desktop.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="MySQL自定义函数">
+              <img src="/medias/banner/0.jpg" class="responsive-img"
+                alt="Windows下如何将桌面位置移到其他地方">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1007,7 +923,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                MySQL自定义函数
+                Windows下如何将桌面位置移到其他地方
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1041,21 +957,23 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              有时候要对MySQL数据进行批量处理，仅仅依靠已有的内置函数是不够的，这个时候就需要添加一些自定义的函数了，下面列举一些常用的自定义函数
+              一般windows系统的桌面都是放在C盘里的，如果桌面内容过多就会导致C盘空间不足。为了保证电脑的干净整洁，除了需要定期清理桌面内容，其实我们还可以把桌面移动到其他地方。
 
-1. 批量处理字符串，将”FEEED305904B”转为”FE:EE:D3:05:90:4B”格式：
+
+在”快速访问”里找到桌面
+右键”属性”，在”位置”栏点击”移动”
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-09-05
+                <i class="far fa-clock fa-fw icon-date"></i>2022-08-29
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/MySQL/" class="post-category">
-                  MySQL
+                <a href="/categories/Windows/" class="post-category">
+                  Windows
                 </a>
                 
                 
@@ -1066,8 +984,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/MySQL/">
-              <span class="chip bg-color">MySQL</span>
+            <a href="/tags/Windows/">
+              <span class="chip bg-color">Windows</span>
             </a>
             
           </div>
@@ -1080,13 +998,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/make-dictionary-by-php.html">
+          <a href="/posts/20220824-happy.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="PHP生成数据字典">
+              <img src="/medias/banner/2.jpg" class="responsive-img"
+                alt="2022-08-24杂谈">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1095,7 +1013,7 @@ class="themespring" -->
                 </div>
               </div>
               <span class="card-title">
-                PHP生成数据字典
+                2022-08-24杂谈
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1129,13 +1047,367 @@ class="themespring" -->
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              通过php代码生成MySQL数据字典，代码如下：
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152
+              一大早被雨声惊醒了，哈哈，现在只能用汪洙的《四喜》来形容此刻的心情了——真是久旱逢甘霖呀！只是，这一场雨来得有点晚。。
+
+
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-21
+                <i class="far fa-clock fa-fw icon-date"></i>2022-08-24
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E9%9A%8F%E7%AC%94/" class="post-category">
+                  随笔
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%9D%82%E8%B0%88/">
+              <span class="chip bg-color">杂谈</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/20251024-sad.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="2025-10-24杂谈">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                2025-10-24杂谈
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              前几天，发现一个bug，我简单排查核对了一下需求文档，认为不是策划的问题，是前端的问题，结果后来前端排查了一下，发现是我这边把配置项写错了。总结：1. 在工作中，出现了问题，先排查是不是自己的问题，不要急于甩锅；2. 做完的内容需认真检查测
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-08-24
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E6%88%90%E9%95%BF/" class="post-category">
+                  工程师的成长
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%9D%82%E8%B0%88/">
+              <span class="chip bg-color">杂谈</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/pooling-technology.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/5.jpg" class="responsive-img"
+                alt="池化技术">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                池化技术
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              概念池化技术指的是提前准备一些资源，在需要时可以重复使用这些预先准备的资源。池化技术的优点主要有两个：提前准备和重复利用。常见的池化技术的应用有：线程池、内存池、数据库连接池、HttpClient 连接池等。
+
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-08-02
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                  其他
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E6%B1%A0%E5%8C%96%E6%8A%80%E6%9C%AF/">
+              <span class="chip bg-color">池化技术</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/thread-safe.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/3.jpg" class="responsive-img"
+                alt="线程安全">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                线程安全
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              概念线程安全是指某个方法或某段代码，在多线程中能够正确的执行，不会出现数据不一致或数据污染的情况，我们把这样的程序称之为线程安全的，反之则为非线程安全的。
+产生原因导致线程安全问题的因素有以下 5 个：
+
+多线程抢占式执行导致线程安全问题的
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-08-01
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
+                  其他
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/">
+              <span class="chip bg-color">线程安全</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-define-const.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/6.jpg" class="responsive-img"
+                alt="PHP中define和const的区别">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                PHP中define和const的区别
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              在PHP中，定义常量有两种方式： const、define；下面详细说下它们的区别：
+
+
+
+1、const是表达式赋值定义一个常量，而define是一个函数，它接受三个参数
+2、const对定义的常量大小写敏感，而define可以通过函数的
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-07-05
               </span>
               <span class="publish-author">
                 
@@ -1153,8 +1425,8 @@ class="themespring" -->
           
           <div class="card-action article-tags">
             
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%AD%97%E5%85%B8/">
-              <span class="chip bg-color">数据字典</span>
+            <a href="/tags/define%E4%B8%8Econst/">
+              <span class="chip bg-color">define与const</span>
             </a>
             
           </div>
@@ -1167,459 +1439,13 @@ class="themespring" -->
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/heartbeat.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/7.jpg" class="responsive-img"
-                alt="心跳包机制">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                心跳包机制
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              
-心跳包机制：主要也就是用于长连接的保活和断线处理。
-
-
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
-                  其他
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/%E5%BF%83%E8%B7%B3%E5%8C%85/">
-              <span class="chip bg-color">心跳包</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/oracle-note.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Oracle笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Oracle笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              1. 强制并行处理/*+ monitor parallel(8)*/
-2. plsql查看sql性能F5
-3. 在oracle中有时候需要进行MySQL中的find_in_set查询，故封装了如下函数：1234567891011121314
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Oracle/" class="post-category">
-                  Oracle
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Oracle/">
-              <span class="chip bg-color">Oracle</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/javascript-notes.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/1.jpg" class="responsive-img"
-                alt="JavaScript笔记">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                JavaScript笔记
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              如果想获取ajax里的function返回值，可用同步ajax。JavaScript不定参数1234567891011121314151617&lt;html&gt;&lt;head&gt;&lt;title&gt;JavaScript不定
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                  前端
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/JavaScript/">
-              <span class="chip bg-color">JavaScript</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/excel-tips.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/2.jpg" class="responsive-img"
-                alt="Excel使用小技巧">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                Excel使用小技巧
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              
-excel固定第一行：选择第二行，点击视图里的冻结窗口即可。
-
-excel分列： 如将某一列的数据由C4159D5953D8转为C4:15:9D:59:53:D8格式： 公式为：=left(A1,2) &amp; ":" &amp; mi
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/Office/" class="post-category">
-                  Office
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/Excel/">
-              <span class="chip bg-color">Excel</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/r-notes.html">
-            <div class="card-image">
-
-              
-              
-              <img src="/medias/banner/7.jpg" class="responsive-img"
-                alt="R语言学习">
-              
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
-              <span class="card-title">
-                R语言学习
-                <!-- 文章卡片hover线条效果 -->
-                <span class="titlesline">
-                  <style>
-                    .titlesline {
-                      width: 0px;
-                      height: 4px;
-                      background-color: #fadca6;
-                      border-radius: 2px;
-                      position: absolute;
-                      top: 10px;
-                      left: 24px;
-                    }
-
-                    body.dark .titlesline {
-                      filter: brightness(.7);
-                    }
-
-                    article .card .titlesline {
-                      transition: all 0.36s ease;
-                    }
-
-                    article .card-image:hover .titlesline {
-                      width: 36px;
-                    }
-                  </style>
-                </span>
-              </span>
-            </div>
-          </a>
-
-          <div class="card-content article-content">
-            <div class="summary block-with-text">
-              
-              之前断断续续看了一些R语言的视频，一直没什么效果，看来还得做笔记：
-
-&lt;- 是赋值的意思
-向量是下标以1开始的
-区分大小写
-路径：C://a.txt
-round：四舍五入
-
-
-              
-            </div>
-            <div class="publish-info">
-              <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-19
-              </span>
-              <span class="publish-author">
-                
-                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                
-                <a href="/categories/R%E8%AF%AD%E8%A8%80/" class="post-category">
-                  R语言
-                </a>
-                
-                
-              </span>
-            </div>
-          </div>
-
-          
-          <div class="card-action article-tags">
-            
-            <a href="/tags/R/">
-              <span class="chip bg-color">R</span>
-            </a>
-            
-          </div>
-          
-        </div>
-      </div>
-      
-      <div class="article col s12 m6 l4">
-        <div class="card">
-          <!-- 推荐文章置顶模块效果开始 -->
-          
-          <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/seo-weight-transfer.html">
+          <a href="/posts/linux-curl.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/6.jpg" class="responsive-img"
-                alt="SEO——权重转移">
+                alt="Linux下curl命令">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1628,7 +1454,7 @@ round：四舍五入
                 </div>
               </div>
               <span class="card-title">
-                SEO——权重转移
+                Linux下curl命令
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1662,19 +1488,21 @@ round：四舍五入
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-               产品列表存在多页，或者文章内容过多存在多页时，为了SEO考虑，避免权重流失，内容重复，可以通过下面的方法优化：1&lt;link rel="canonical" href="主页url"/&gt;Google 等搜索引擎最终都会只收录 c
+              格式1curl https://www.baidu.com
+上面命令向www.baidu.com发出 GET 请求，服务器返回的内容会在命令行输出。
+常用参数-d：使用-d参数向服务器发送POST请求的数据体1curl -d 'login=
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
+                <i class="far fa-clock fa-fw icon-date"></i>2022-07-04
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
-                  其他
+                <a href="/categories/Linux/" class="post-category">
+                  Linux
                 </a>
                 
                 
@@ -1685,8 +1513,8 @@ round：四舍五入
           
           <div class="card-action article-tags">
             
-            <a href="/tags/SEO/">
-              <span class="chip bg-color">SEO</span>
+            <a href="/tags/curl/">
+              <span class="chip bg-color">curl</span>
             </a>
             
           </div>
@@ -1699,13 +1527,13 @@ round：四舍五入
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/go-note.html">
+          <a href="/posts/builder-pattern.html">
             <div class="card-image">
 
               
               
-              <img src="/medias/banner/7.jpg" class="responsive-img"
-                alt="Go语言基础">
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="设计模式——建造者模式">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1714,7 +1542,7 @@ round：四舍五入
                 </div>
               </div>
               <span class="card-title">
-                Go语言基础
+                设计模式——建造者模式
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1748,22 +1576,22 @@ round：四舍五入
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              自学Go语言的过程漫长而坎坷，先记录一些基础知识。
-执行go文件E:\Go_WorkSpace&gt;go run test.go
-把go程序编译成exe文件E:\Go_WorkSpace&gt;go build test.go
-打印内容f
+              说明将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。首先看下关系图：
+示例下面讲解下设计模式的代码实现
+
+创建产品类123456789class Product{    private $parts = [];  
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
+                <i class="far fa-clock fa-fw icon-date"></i>2022-06-06
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/Go/" class="post-category">
-                  Go
+                <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-category">
+                  设计模式
                 </a>
                 
                 
@@ -1774,8 +1602,8 @@ round：四舍五入
           
           <div class="card-action article-tags">
             
-            <a href="/tags/Go/">
-              <span class="chip bg-color">Go</span>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+              <span class="chip bg-color">设计模式</span>
             </a>
             
           </div>
@@ -1788,13 +1616,13 @@ round：四舍五入
           <!-- 推荐文章置顶模块效果开始 -->
           
           <!-- 推荐文章置顶模块效果结束 -->
-          <a href="/posts/gitbook-note.html">
+          <a href="/posts/php-auto-run-func.html">
             <div class="card-image">
 
               
               
               <img src="/medias/banner/0.jpg" class="responsive-img"
-                alt="GitBook使用笔记">
+                alt="PHP实现方法运行前(后)执行指定的程序">
               
               <!-- 福袋按钮 -->
               <div class="caishendeng">
@@ -1803,7 +1631,7 @@ round：四舍五入
                 </div>
               </div>
               <span class="card-title">
-                GitBook使用笔记
+                PHP实现方法运行前(后)执行指定的程序
                 <!-- 文章卡片hover线条效果 -->
                 <span class="titlesline">
                   <style>
@@ -1837,24 +1665,21 @@ round：四舍五入
           <div class="card-content article-content">
             <div class="summary block-with-text">
               
-              使用GitBook来写书还是比较方便的，可以部署在github上的，总的来说，不太复杂。现记录一些常用的操作，方便大家参考。
-
-
-常用命令
-编译文件生成网页        gitbook build
-启动服务        gitbook 
+              在PHP中，利用__call()，可实现方法运行前/后执行指定的程序片段。
+下面演示下，在test方法执行后自动执行afterTest方法
+12345678910111213141516171819202122232425262728293
               
             </div>
             <div class="publish-info">
               <span class="publish-date">
-                <i class="far fa-clock fa-fw icon-date"></i>2018-06-09
+                <i class="far fa-clock fa-fw icon-date"></i>2022-06-02
               </span>
               <span class="publish-author">
                 
                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                 
-                <a href="/categories/%E5%85%B6%E4%BB%96/" class="post-category">
-                  其他
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
                 </a>
                 
                 
@@ -1865,8 +1690,185 @@ round：四舍五入
           
           <div class="card-action article-tags">
             
-            <a href="/tags/GitBook/">
-              <span class="chip bg-color">GitBook</span>
+            <a href="/tags/PHP%E7%AC%94%E8%AE%B0/">
+              <span class="chip bg-color">PHP笔记</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-unset.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/4.jpg" class="responsive-img"
+                alt="PHP中unset的一些使用">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                PHP中unset的一些使用
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              前言：在PHP开发中，经常使用到unset来释放掉给定的变量；但有时候会有些问题，本文记录下。
+
+
+如果需要去掉数组中的某些key，直接unset即可
+123$arr = ['id' =&gt; 5, 'name' =&gt; '张三', 
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-06-02
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/PHP%E7%AC%94%E8%AE%B0/">
+              <span class="chip bg-color">PHP笔记</span>
+            </a>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="article col s12 m6 l4">
+        <div class="card">
+          <!-- 推荐文章置顶模块效果开始 -->
+          
+          <!-- 推荐文章置顶模块效果结束 -->
+          <a href="/posts/php-assignment.html">
+            <div class="card-image">
+
+              
+              
+              <img src="/medias/banner/2.jpg" class="responsive-img"
+                alt="PHP中，通过&amp;改变变量的值，效率如何">
+              
+              <!-- 福袋按钮 -->
+              <div class="caishendeng">
+                <div class="caishenxian fudaixian">
+                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                </div>
+              </div>
+              <span class="card-title">
+                PHP中，通过&amp;改变变量的值，效率如何
+                <!-- 文章卡片hover线条效果 -->
+                <span class="titlesline">
+                  <style>
+                    .titlesline {
+                      width: 0px;
+                      height: 4px;
+                      background-color: #fadca6;
+                      border-radius: 2px;
+                      position: absolute;
+                      top: 10px;
+                      left: 24px;
+                    }
+
+                    body.dark .titlesline {
+                      filter: brightness(.7);
+                    }
+
+                    article .card .titlesline {
+                      transition: all 0.36s ease;
+                    }
+
+                    article .card-image:hover .titlesline {
+                      width: 36px;
+                    }
+                  </style>
+                </span>
+              </span>
+            </div>
+          </a>
+
+          <div class="card-content article-content">
+            <div class="summary block-with-text">
+              
+              在PHP中，通过&amp;改变变量的值，效率如何呢，下面来测试一下。
+12345678910111213141516171819202122$arr = ['id' =&gt; null, 'name' =&gt; 'test', 'age
+              
+            </div>
+            <div class="publish-info">
+              <span class="publish-date">
+                <i class="far fa-clock fa-fw icon-date"></i>2022-06-02
+              </span>
+              <span class="publish-author">
+                
+                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                
+                <a href="/categories/PHP/" class="post-category">
+                  PHP
+                </a>
+                
+                
+              </span>
+            </div>
+          </div>
+
+          
+          <div class="card-action article-tags">
+            
+            <a href="/tags/PHP%E7%AC%94%E8%AE%B0/">
+              <span class="chip bg-color">PHP笔记</span>
             </a>
             
           </div>
@@ -1891,7 +1893,7 @@ round：四舍五入
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">23 / 25</div>
+            <div class="center-align b-text-gray">23 / 34</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -1993,7 +1995,7 @@ round：四舍五入
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">230.8k</span>&nbsp;
+        class="white-color">392k</span>&nbsp;
       
       
       

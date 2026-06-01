@@ -1094,15 +1094,15 @@ h3:hover {
 <li><strong>求第k大/小元素：</strong> 利用堆可以高效地求取无序数组中的第k大/小元素。</li>
 </ul>
 <h3 id="堆的实现"><a href="#堆的实现" class="headerlink" title="堆的实现"></a>堆的实现</h3><p>堆通常用数组来实现，数组的下标从1开始。对于一个节点i，其左子节点的下标为2i，右子节点的下标为2i+1，父节点的下标为i/2。</p>
-<p><img src="/images/heap_max-heap-1.webp" alt=""><br><img src="/images/heap_max-heap-2.webp" alt=""><br><img src="/images/heap_min-heap-1.webp" alt=""><br><img src="/images/heap_min-heap-2.webp" alt=""></p>
+<p><img src="/images/heap_max-heap-1.webp" alt><br><img src="/images/heap_max-heap-2.webp" alt><br><img src="/images/heap_min-heap-1.webp" alt><br><img src="/images/heap_min-heap-2.webp" alt></p>
 <h3 id="堆的操作"><a href="#堆的操作" class="headerlink" title="堆的操作"></a>堆的操作</h3><ul>
 <li><strong>插入：</strong> 将新元素插入到堆的末尾，然后向上调整（heapify up）直到满足堆序性。</li>
 <li><strong>删除：</strong> 将堆顶元素与最后一个元素交换，然后向下调整（heapify down）直到满足堆序性。</li>
 <li><strong>查找最小/最大值：</strong> 堆顶元素就是最小/最大值。</li>
 </ul>
-<p><img src="/images/heap_2.png" alt=""></p>
+<p><img src="/images/heap_2.png" alt></p>
 <h3 id="斐波那契堆"><a href="#斐波那契堆" class="headerlink" title="斐波那契堆"></a>斐波那契堆</h3><p>斐波那契堆是一种更为复杂但高效的堆数据结构。它在某些操作上具有更好的摊还时间复杂度，如插入、删除最小值等。斐波那契堆由一组最小堆序的有根树组成，每个树的根节点通过双向循环链表连接起来。</p>
-<p><img src="/images/heap_Fibonacci-Heap.png" alt=""></p>
+<p><img src="/images/heap_Fibonacci-Heap.png" alt></p>
 <h3 id="堆的代码实现（php）"><a href="#堆的代码实现（php）" class="headerlink" title="堆的代码实现（php）"></a>堆的代码实现（php）</h3><ul>
 <li><p>最小堆（Min-Heap）</p>
 <figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinHeap</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$heap</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>) </span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap = [];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">insert</span>(<span class="params"><span class="variable">$value</span></span>) </span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap[] = <span class="variable">$value</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">heapifyUp</span>(<span class="title function_ invoke__">count</span>(<span class="variable">$this</span>-&gt;heap) - <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">extractMin</span>(<span class="params"></span>) </span>{</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="variable language_">$this</span>-&gt;heap)) {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">UnderflowException</span>(<span class="string">"Heap is empty"</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="variable">$min</span> = <span class="variable language_">$this</span>-&gt;heap[<span class="number">0</span>];</span><br><span class="line">        <span class="variable">$last</span> = <span class="title function_ invoke__">array_pop</span>(<span class="variable">$this</span>-&gt;heap);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="variable language_">$this</span>-&gt;heap)) {</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;heap[<span class="number">0</span>] = <span class="variable">$last</span>;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">heapifyDown</span>(<span class="number">0</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$min</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">heapifyUp</span>(<span class="params"><span class="variable">$index</span></span>) </span>{</span><br><span class="line">        <span class="keyword">while</span> (<span class="variable">$index</span> &gt; <span class="number">0</span>) {</span><br><span class="line">            <span class="variable">$parentIndex</span> = (<span class="keyword">int</span>)((<span class="variable">$index</span> - <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;heap[<span class="variable">$index</span>] &gt;= <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$parentIndex</span>]) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">swap</span>(<span class="variable">$index</span>, <span class="variable">$parentIndex</span>);</span><br><span class="line">            <span class="variable">$index</span> = <span class="variable">$parentIndex</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">heapifyDown</span>(<span class="params"><span class="variable">$index</span></span>) </span>{</span><br><span class="line">        <span class="variable">$size</span> = <span class="title function_ invoke__">count</span>(<span class="variable">$this</span>-&gt;heap);</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) {</span><br><span class="line">            <span class="variable">$leftChildIndex</span> = <span class="number">2</span> * <span class="variable">$index</span> + <span class="number">1</span>;</span><br><span class="line">            <span class="variable">$rightChildIndex</span> = <span class="number">2</span> * <span class="variable">$index</span> + <span class="number">2</span>;</span><br><span class="line">            <span class="variable">$smallest</span> = <span class="variable">$index</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$leftChildIndex</span> &lt; <span class="variable">$size</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$leftChildIndex</span>] &lt; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$smallest</span>]) {</span><br><span class="line">                <span class="variable">$smallest</span> = <span class="variable">$leftChildIndex</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$rightChildIndex</span> &lt; <span class="variable">$size</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$rightChildIndex</span>] &lt; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$smallest</span>]) {</span><br><span class="line">                <span class="variable">$smallest</span> = <span class="variable">$rightChildIndex</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$smallest</span> === <span class="variable">$index</span>) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">swap</span>(<span class="variable">$index</span>, <span class="variable">$smallest</span>);</span><br><span class="line">            <span class="variable">$index</span> = <span class="variable">$smallest</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params"><span class="variable">$i</span>, <span class="variable">$j</span></span>) </span>{</span><br><span class="line">        <span class="variable">$temp</span> = <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$i</span>];</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$i</span>] = <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$j</span>];</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$j</span>] = <span class="variable">$temp</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例使用</span></span><br><span class="line"><span class="variable">$minHeap</span> = <span class="keyword">new</span> <span class="title class_">MinHeap</span>();</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">10</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">3</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">2</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">extractMin</span>(); <span class="comment">// 输出 2</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">extractMin</span>(); <span class="comment">// 输出 3</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1749,71 +1749,6 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/php-2d-coordinate.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP 中，二维地图坐标的表示方法">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          PHP 中，二维地图坐标的表示方法
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            在PHP中，二维地图的坐标可以通过不同的方法来表示，最常见的方式是使用二维数组或对象来存储坐标信息。
-使用二维数组表示二维地图的坐标二维数组是一种简单直观的方式来表示地图的坐标，每个元素代表地图上的一个点或单元格。
-123456789101
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/PHP/">
-                        <span class="chip bg-color">PHP</span>
-                    </a>
-                    
-                    <a href="/tags/2D/">
-                        <span class="chip bg-color">2D</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/posts/fibonacci-heap.html">
                     <div class="card-image">
                         
@@ -1842,9 +1777,9 @@ h3:hover {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1866,6 +1801,77 @@ h3:hover {
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                         <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/php-2d-tsp-solution.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="PHP 解决旅行商问题">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          PHP 解决旅行商问题
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如果需要在二维地图上找到一条路径，使得从起点到终点经过所有有奖励的点，并且路径最短，可以考虑使用图搜索算法如A*算法或Dijkstra算法的变种。这类问题通常称为“旅行商问题”（TSP, Traveling Salesman Problem
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PHP/">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/2D/">
+                        <span class="chip bg-color">2D</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">旅行商问题</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+                        <span class="chip bg-color">最短路径</span>
                     </a>
                     
                 </div>
@@ -2181,15 +2187,15 @@ h3:hover {
 <li><strong>求第k大/小元素：</strong> 利用堆可以高效地求取无序数组中的第k大/小元素。</li>
 </ul>
 <h3 id="堆的实现"><a href="#堆的实现" class="headerlink" title="堆的实现"></a>堆的实现</h3><p>堆通常用数组来实现，数组的下标从1开始。对于一个节点i，其左子节点的下标为2i，右子节点的下标为2i+1，父节点的下标为i/2。</p>
-<p><img src="/images/heap_max-heap-1.webp" alt=""><br><img src="/images/heap_max-heap-2.webp" alt=""><br><img src="/images/heap_min-heap-1.webp" alt=""><br><img src="/images/heap_min-heap-2.webp" alt=""></p>
+<p><img src="/images/heap_max-heap-1.webp" alt><br><img src="/images/heap_max-heap-2.webp" alt><br><img src="/images/heap_min-heap-1.webp" alt><br><img src="/images/heap_min-heap-2.webp" alt></p>
 <h3 id="堆的操作"><a href="#堆的操作" class="headerlink" title="堆的操作"></a>堆的操作</h3><ul>
 <li><strong>插入：</strong> 将新元素插入到堆的末尾，然后向上调整（heapify up）直到满足堆序性。</li>
 <li><strong>删除：</strong> 将堆顶元素与最后一个元素交换，然后向下调整（heapify down）直到满足堆序性。</li>
 <li><strong>查找最小/最大值：</strong> 堆顶元素就是最小/最大值。</li>
 </ul>
-<p><img src="/images/heap_2.png" alt=""></p>
+<p><img src="/images/heap_2.png" alt></p>
 <h3 id="斐波那契堆"><a href="#斐波那契堆" class="headerlink" title="斐波那契堆"></a>斐波那契堆</h3><p>斐波那契堆是一种更为复杂但高效的堆数据结构。它在某些操作上具有更好的摊还时间复杂度，如插入、删除最小值等。斐波那契堆由一组最小堆序的有根树组成，每个树的根节点通过双向循环链表连接起来。</p>
-<p><img src="/images/heap_Fibonacci-Heap.png" alt=""></p>
+<p><img src="/images/heap_Fibonacci-Heap.png" alt></p>
 <h3 id="堆的代码实现（php）"><a href="#堆的代码实现（php）" class="headerlink" title="堆的代码实现（php）"></a>堆的代码实现（php）</h3><ul>
 <li><p>最小堆（Min-Heap）</p>
 <figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinHeap</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$heap</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>) </span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap = [];</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">insert</span>(<span class="params"><span class="variable">$value</span></span>) </span>{</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap[] = <span class="variable">$value</span>;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">heapifyUp</span>(<span class="title function_ invoke__">count</span>(<span class="variable">$this</span>-&gt;heap) - <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">extractMin</span>(<span class="params"></span>) </span>{</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="variable language_">$this</span>-&gt;heap)) {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">UnderflowException</span>(<span class="string">"Heap is empty"</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="variable">$min</span> = <span class="variable language_">$this</span>-&gt;heap[<span class="number">0</span>];</span><br><span class="line">        <span class="variable">$last</span> = <span class="title function_ invoke__">array_pop</span>(<span class="variable">$this</span>-&gt;heap);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="variable language_">$this</span>-&gt;heap)) {</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;heap[<span class="number">0</span>] = <span class="variable">$last</span>;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">heapifyDown</span>(<span class="number">0</span>);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$min</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">heapifyUp</span>(<span class="params"><span class="variable">$index</span></span>) </span>{</span><br><span class="line">        <span class="keyword">while</span> (<span class="variable">$index</span> &gt; <span class="number">0</span>) {</span><br><span class="line">            <span class="variable">$parentIndex</span> = (<span class="keyword">int</span>)((<span class="variable">$index</span> - <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;heap[<span class="variable">$index</span>] &gt;= <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$parentIndex</span>]) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">swap</span>(<span class="variable">$index</span>, <span class="variable">$parentIndex</span>);</span><br><span class="line">            <span class="variable">$index</span> = <span class="variable">$parentIndex</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">heapifyDown</span>(<span class="params"><span class="variable">$index</span></span>) </span>{</span><br><span class="line">        <span class="variable">$size</span> = <span class="title function_ invoke__">count</span>(<span class="variable">$this</span>-&gt;heap);</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) {</span><br><span class="line">            <span class="variable">$leftChildIndex</span> = <span class="number">2</span> * <span class="variable">$index</span> + <span class="number">1</span>;</span><br><span class="line">            <span class="variable">$rightChildIndex</span> = <span class="number">2</span> * <span class="variable">$index</span> + <span class="number">2</span>;</span><br><span class="line">            <span class="variable">$smallest</span> = <span class="variable">$index</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$leftChildIndex</span> &lt; <span class="variable">$size</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$leftChildIndex</span>] &lt; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$smallest</span>]) {</span><br><span class="line">                <span class="variable">$smallest</span> = <span class="variable">$leftChildIndex</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$rightChildIndex</span> &lt; <span class="variable">$size</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$rightChildIndex</span>] &lt; <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$smallest</span>]) {</span><br><span class="line">                <span class="variable">$smallest</span> = <span class="variable">$rightChildIndex</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$smallest</span> === <span class="variable">$index</span>) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">swap</span>(<span class="variable">$index</span>, <span class="variable">$smallest</span>);</span><br><span class="line">            <span class="variable">$index</span> = <span class="variable">$smallest</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params"><span class="variable">$i</span>, <span class="variable">$j</span></span>) </span>{</span><br><span class="line">        <span class="variable">$temp</span> = <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$i</span>];</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$i</span>] = <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$j</span>];</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;heap[<span class="variable">$j</span>] = <span class="variable">$temp</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 示例使用</span></span><br><span class="line"><span class="variable">$minHeap</span> = <span class="keyword">new</span> <span class="title class_">MinHeap</span>();</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">10</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">5</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">3</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">2</span>);</span><br><span class="line"><span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">insert</span>(<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">extractMin</span>(); <span class="comment">// 输出 2</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$minHeap</span>-&gt;<span class="title function_ invoke__">extractMin</span>(); <span class="comment">// 输出 3</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></tbody></table></figure>
@@ -2836,71 +2842,6 @@ h3:hover {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/php-2d-coordinate.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/banner/6.jpg" class="responsive-img" alt="PHP 中，二维地图坐标的表示方法">
-                        
-                        <!-- 福袋按钮 -->
-                        <div class="caishendeng">        
-                            <div class="caishenxian wenzhangxian">
-                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                            </div>              
-                        </div>
-                        <span class="card-title">
-                          <!-- 文章卡片hover线条效果 -->
-                          <span class="titlesline"></span>
-                          PHP 中，二维地图坐标的表示方法
-                        </span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            在PHP中，二维地图的坐标可以通过不同的方法来表示，最常见的方式是使用二维数组或对象来存储坐标信息。
-使用二维数组表示二维地图的坐标二维数组是一种简单直观的方式来表示地图的坐标，每个元素代表地图上的一个点或单元格。
-123456789101
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/PHP/" class="post-category">
-                                    PHP
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/PHP/">
-                        <span class="chip bg-color">PHP</span>
-                    </a>
-                    
-                    <a href="/tags/2D/">
-                        <span class="chip bg-color">2D</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/posts/fibonacci-heap.html">
                     <div class="card-image">
                         
@@ -2929,9 +2870,9 @@ h3:hover {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -2953,6 +2894,77 @@ h3:hover {
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
                         <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/php-2d-tsp-solution.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/banner/7.jpg" class="responsive-img" alt="PHP 解决旅行商问题">
+                        
+                        <!-- 福袋按钮 -->
+                        <div class="caishendeng">        
+                            <div class="caishenxian wenzhangxian">
+                                <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
+                            </div>              
+                        </div>
+                        <span class="card-title">
+                          <!-- 文章卡片hover线条效果 -->
+                          <span class="titlesline"></span>
+                          PHP 解决旅行商问题
+                        </span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如果需要在二维地图上找到一条路径，使得从起点到终点经过所有有奖励的点，并且路径最短，可以考虑使用图搜索算法如A*算法或Dijkstra算法的变种。这类问题通常称为“旅行商问题”（TSP, Traveling Salesman Problem
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-12-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/PHP/">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                    <a href="/tags/2D/">
+                        <span class="chip bg-color">2D</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%97%85%E8%A1%8C%E5%95%86%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">旅行商问题</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/">
+                        <span class="chip bg-color">最短路径</span>
                     </a>
                     
                 </div>
@@ -3240,7 +3252,7 @@ h3:hover {
 
       
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color">230.8k</span>&nbsp;
+        class="white-color">392k</span>&nbsp;
       
       
       
