@@ -125,3 +125,91 @@ git remote set-url origin ssh地址
 * **强制覆盖本地修改:** 如果确定要丢弃本地修改，可以使用 `git fetch` 和 `git reset --hard origin/master` (假设远程分支是 master)，但这会覆盖你所有的本地修改，请谨慎操作。
 * **解决冲突:** 如果在 `git pull` 的过程中出现冲突，你需要手动解决冲突，然后使用 `git add` 和 `git commit` 来提交解决后的结果。
 
+
+
+
+2. ​直接基于 feature/v30 创建新 develop 分支​
+   git checkout feature/v30             # 切换到feature/v30分支
+   git branch -D develop                # 强制删除本地develop分支（谨慎！）
+   git checkout -b develop              # 基于feature/v30创建新的develop分支
+
+删除远程 develop 分支 	git push origin --delete develop
+
+3. ​强制推送到远程（如果需要）​​
+   git push origin develop --force      # 强制覆盖远程develop分支（确保团队知晓！）
+
+sudo -s
+git checkout develop -f
+git branch
+git pull
+git status
+git pull origin develop
+
+
+git stash  # 保存当前更改
+git checkout -f master
+git branch -D develop  # 强制删除本地 develop 分支
+git checkout -b develop  # 从当前分支创建并切换到 develop 分支
+git branch -a
+
+# 1. 首先中止当前的合并（如果正处于冲突状态）
+git merge --abort
+
+# 2. 重新执行合并，但指定在遇到冲突时全部使用 feature/v87 的代码
+git merge -X theirs origin/feature/v87
+
+
+git reset HEAD
+
+git checkout master
+git  branch -D develop
+git pull
+git checkout develop
+
+
+
+
+
+
+
+git  远程有代码未拉下来导致代码无法提交，怎么办  提示为：Updates were rejected because the tip of your current branch is behind its remote counterpart.
+
+
+这个错误表明你的本地分支 `feature/v28` 比远程分支 `feature/v28` 落后（`non-fast-forward`），Git 默认不允许直接覆盖远程代码，所以拒绝推送。
+
+**解决方法**
+**1. 先拉取远程代码并合并（推荐）**
+```bash
+git pull origin feature/v28
+```
+• 如果没有冲突，Git 会自动合并远程代码到本地。
+
+• 如果有冲突，Git 会提示你手动解决冲突，然后 `git add` 和 `git commit` 合并后的代码。
+
+
+**2. 再次尝试推送**
+```bash
+git push origin feature/v28
+```
+
+---
+
+**3. 如果不想合并（强制覆盖远程分支，慎用！）**
+如果你确定远程分支的代码不需要保留，可以强制推送（会覆盖远程分支）：
+```bash
+git push origin feature/v28 --force
+# 或更安全的强制推送（推荐）
+git push origin feature/v28 --force-with-lease
+```
+⚠️ 注意：强制推送会覆盖远程分支，可能导致其他人的代码丢失，仅在你完全确定远程分支不需要保留时使用！
+
+---
+
+**总结**
+| 情况 | 解决方案 |
+|------|----------|
+| 远程有更新，你想合并 | `git pull origin feature/v28` → 解决冲突 → `git push origin feature/v28` |
+| 远程有更新，但你不想合并（强制覆盖） | `git push origin feature/v28 --force-with-lease`（谨慎使用） |
+| 远程没有更新，但 Git 仍然报错 | 可能是缓存问题，尝试 `git fetch` + `git rebase` |
+
+推荐做法：先 `git pull` 合并远程代码，再 `git push`，避免覆盖他人代码。

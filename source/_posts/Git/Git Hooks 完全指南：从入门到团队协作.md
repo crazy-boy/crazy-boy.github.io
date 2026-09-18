@@ -23,13 +23,26 @@ Git Hooks 是 Git 内置的**钩子脚本机制**。每当特定事件（如 `co
 
 ## 二、钩子的存放与构成
 
-每个 Git 仓库都有一个隐藏的钩子目录：
+每个 Git 仓库都有一个隐藏的钩子目录。进入项目根目录后，可以这样查看：
+
 ```bash
-cd your-project
+cd /your/project/path
 ls -la .git/hooks/
 ```
 
 初始状态下，你会看到一堆以 `.sample` 结尾的示例脚本（如 `pre-commit.sample`）。这些示例是用 Shell 脚本写的，但你也可以使用 Python、Ruby、Node.js 等任何你熟悉的语言——只要脚本具有可执行权限（`chmod +x`）且以适当的 shebang 开头。
+
+### 创建钩子的两种方式
+
+**方式一：复制示例模板**
+```bash
+cp .git/hooks/pre-commit.sample .git/hooks/pre-commit
+```
+
+**方式二：直接创建新文件**
+```bash
+vim .git/hooks/pre-commit
+```
 
 > ⚠️ 注意：`.git/hooks/` 目录不会被版本控制，因此团队其他成员不会自动获得你的钩子。这是下文将要讨论的痛点之一。
 
@@ -37,15 +50,15 @@ ls -la .git/hooks/
 
 ## 三、常用钩子速查表
 
-| 钩子名称         | 触发时机                   | 典型用途                                                   |
-|----------------|---------------------------|------------------------------------------------------------|
-| `pre-commit`   | `git commit` 执行之前       | 运行代码检查（lint）、单元测试、删除调试语句、自动格式化        |
-| `prepare-commit-msg` | 启动提交信息编辑器之前 | 自动填充提交信息模板，添加修改文件列表等                       |
-| `commit-msg`   | 用户输入提交信息之后         | 校验提交信息的格式（如约定式提交 Conventional Commits）       |
-| `post-commit`  | `git commit` 完成之后       | 发送通知、更新文档、触发后续构建                              |
-| `pre-rebase`   | `git rebase` 执行之前       | 禁止对已推送的分支进行 rebase                                |
-| `pre-push`     | `git push` 执行之前         | 运行集成测试、检查是否遗漏提交                               |
-| `post-checkout`| `git checkout` / `switch` 后 | 自动安装依赖、刷新环境变量                                  |
+| 钩子名称               | 触发时机                     | 典型用途                                                   |
+|----------------------|-----------------------------|------------------------------------------------------------|
+| `pre-commit`         | `git commit` 执行之前         | 运行代码检查（lint）、单元测试、删除调试语句、自动格式化        |
+| `prepare-commit-msg` | 启动提交信息编辑器之前         | 自动填充提交信息模板，添加修改文件列表等                       |
+| `commit-msg`         | 用户输入提交信息之后           | 校验提交信息的格式（如约定式提交 Conventional Commits）       |
+| `post-commit`        | `git commit` 完成之后         | 发送通知、更新文档、触发后续构建                              |
+| `pre-rebase`         | `git rebase` 执行之前         | 禁止对已推送的分支进行 rebase                                |
+| `pre-push`           | `git push` 执行之前           | 运行集成测试、检查是否遗漏提交                               |
+| `post-checkout`      | `git checkout` / `switch` 后  | 自动安装依赖、刷新环境变量                                  |
 
 ---
 
@@ -53,7 +66,7 @@ ls -la .git/hooks/
 
 以 `pre-commit` 为例，我们编写一个简单的检查脚本，防止代码中残留 `console.log`。
 
-### 步骤 1：创建钩子文件
+### 步骤 1：创建钩子文件并赋予执行权限
 ```bash
 touch .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
@@ -91,6 +104,17 @@ exit 0
 ```
 
 现在，任何包含 `console.log` 的提交都会被拦下。如果你想强制提交（例如临时调试），可以使用 `git commit --no-verify` 跳过所有钩子。
+
+### 简单测试示例
+
+创建一个测试钩子，确认钩子机制是否生效：
+```bash
+echo '#!/bin/bash
+echo "🎉 钩子执行成功！"
+exit 0' > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+git commit -m "测试钩子"   # 会看到 "🎉 钩子执行成功！"
+```
 
 ---
 
@@ -145,6 +169,7 @@ ln -sf ../../.githooks/pre-commit .git/hooks/pre-commit
 ln -sf ../../.githooks/commit-msg .git/hooks/commit-msg
 chmod +x .git/hooks/*
 ```
+
 缺点：每次新成员加入都需要手动运行安装脚本。
 
 ### 6.3 使用 `core.hooksPath` 指定钩子目录（Git 2.9+）
@@ -209,7 +234,6 @@ module.exports = {
 
 ### 步骤 3：配置 lint-staged
 ```json
-// package.json
 {
   "lint-staged": {
     "*.{js,ts,vue}": ["eslint --fix", "prettier --write", "git add"]
@@ -258,6 +282,12 @@ git config --get core.hooksPath   # 如果输出配置的路径，则使用该�
 3. **提供友好的错误信息**：当钩子拦截时，明确告知开发者如何修复（例如列出允许的 type 列表、给出正确示例）。
 4. **不要完全依赖钩子**：钩子可以被 `--no-verify` 跳过，因此 CI 服务器上的检查仍然是必要的最后防线。
 5. **版本控制钩子脚本**：如果使用自定义 shell 脚本，请将脚本放在项目内（如 `scripts/githooks/`），并通过 `core.hooksPath` 或配置脚本安装。
+
+### 注意事项
+- 钩子文件必须可执行（`chmod +x`）。
+- 钩子以非零退出码（`exit 1`）表示失败，会中止 Git 操作。
+- 钩子不会随项目传播（`.git/hooks` 不被版本控制）。
+- 如需团队共享钩子，可考虑使用 Husky 或 git-template。
 
 ---
 
