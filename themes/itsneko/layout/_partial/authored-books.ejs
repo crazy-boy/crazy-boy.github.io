@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="<%- url_for('/css/crypto-book.css') %>">
+<section class="authored-books" aria-labelledby="authored-books-title">
+  <div class="book-section-title"><span>MY BOOKS</span><h2 id="authored-books-title">我的作品</h2><p>把零散的知识写成书，按自己的节奏慢慢读。</p></div>
+  <div class="authored-book-grid">
+    <% (site.data.book_catalog || []).forEach(book => { %>
+    <a class="authored-book-card" href="<%- url_for(book.url) %>">
+      <div class="authored-book-cover" aria-hidden="true"><small><%= book.label %></small><strong><%= book.shortTitle %></strong><span><%= book.subtitle %></span></div>
+      <div class="authored-book-info"><span class="book-eyebrow">在线阅读</span><h3><%= book.title %></h3><p><%= book.description %></p><small><%= book.author %> · <%= book.entries.length - 1 %> 篇</small><span class="authored-book-link">查看目录 →</span></div>
+    </a>
+    <% }); %>
+  </div>
+</section>

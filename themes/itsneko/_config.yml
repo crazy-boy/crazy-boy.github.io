@@ -19,7 +19,7 @@ menu:
         url: /musics
       - name: 相册
         url: /gallery
-      - name: 书单
+      - name: 书架
         url: /books
       - name: 关于
         url: /about

@@ -1,0 +1,25 @@
+<% const book = site.data.book_catalog.find(b => b.id === page.book);
+const entries = book.entries, current = entries.findIndex(e => e.id === page.book_id);
+const home = entries[current].kind === 'home';
+const previous = current > 1 ? entries[current - 1] : null, next = entries[current + 1]; %>
+<link rel="stylesheet" href="<%- url_for('/css/crypto-book.css') %>">
+<main class="crypto-book">
+  <div class="book-trail"><a href="<%- url_for('/') %>">首页</a><span>/</span><a href="<%- url_for('/books/') %>">书架</a><span>/</span><a href="<%- url_for(book.url) %>"><%= book.shortTitle %></a><span>/</span><span><%= home ? '全书目录' : page.title %></span></div>
+  <% if (home) { %>
+  <header class="book-hero">
+    <div class="book-cover" aria-hidden="true"><span><%= book.label %></span><strong><%= book.shortTitle %></strong><p><%= book.subtitle %></p><div class="book-symbol">{ ··· }</div><small><%= book.author %></small></div>
+    <div class="book-intro"><span class="book-eyebrow">在线阅读 · 从原理到实践</span><h1><%= book.title %></h1><p><%= book.description %></p><div class="book-meta">作者：<%= book.author %><span><%= entries.filter(e => e.kind === 'chapter').length %> 章</span><span><%= entries.length - 1 %> 篇</span></div><a class="book-start" href="<%- url_for(entries[1].url) %>">开始阅读 →</a><a class="book-secondary" href="#book-contents">浏览目录 ↓</a></div>
+  </header>
+  <section class="book-contents" id="book-contents"><div class="book-section-title"><span>CONTENTS</span><h2>全书目录</h2><p>按顺序阅读，也可以从感兴趣的章节开始。</p></div>
+  <% entries.slice(1).forEach(entry => { %>
+    <a class="book-entry book-<%= entry.kind %>" href="<%- url_for(entry.url) %>"><%= entry.title %><span aria-hidden="true">→</span></a>
+  <% }); %></section>
+  <% } else { %>
+  <div class="book-reading-layout">
+    <aside class="book-sidebar"><details open><summary>全书目录</summary><div class="book-sidebar-links"><a href="<%- url_for(book.url) %>">书籍首页</a><% entries.slice(1).forEach(entry => { %><a class="<%= entry.id === page.book_id ? 'is-current' : '' %> <%= entry.kind === 'part' ? 'is-part' : '' %>" href="<%- url_for(entry.url) %>" <%- entry.id === page.book_id ? 'aria-current="page"' : '' %>><%= entry.title %></a><% }); %></div></details></aside>
+    <article class="book-article"><header><a class="book-eyebrow" href="<%- url_for(book.url) %>"><%= book.title %></a><h1><%= page.title %></h1><p class="book-meta">第 <%= current %> / <%= entries.length - 1 %> 篇 · <%= book.author %></p></header><div id="articleContent" class="book-prose"><%- page.content %></div>
+      <nav class="book-pagination" aria-label="章节导航"><% if (previous) { %><a rel="prev" href="<%- url_for(previous.url) %>"><small>← 上一篇</small><%= previous.title %></a><% } else { %><a href="<%- url_for(book.url) %>">← 返回目录</a><% } %><% if (next) { %><a rel="next" href="<%- url_for(next.url) %>"><small>下一篇 →</small><%= next.title %></a><% } else { %><a href="<%- url_for(book.url) %>">已读至全书末尾 · 返回目录 →</a><% } %></nav>
+    </article>
+  </div>
+  <% } %>
+</main>

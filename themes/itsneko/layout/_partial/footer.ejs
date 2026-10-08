@@ -30,7 +30,7 @@
 
       <% if (theme.postInfo.totalCount) { %>
       &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数: &nbsp;<span
-        class="white-color"><%= totalcount(site) %></span>&nbsp;
+        class="white-color"><%= cached_totalcount(site) %></span>&nbsp;
       <% } %>
       <% let socialClass = '' %>
       <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>

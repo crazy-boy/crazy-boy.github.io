@@ -29,7 +29,8 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: 
+skip_render:
+  - "posts/*.html"
   - "README.md"
   - "todolist/**"
   - "sitenavigation/**"
@@ -130,7 +131,7 @@ deploy:
 
 search:
   path: search.xml
-  field: post
+  field: all
 
 # 字数统计 
 postInfo:

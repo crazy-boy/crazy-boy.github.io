@@ -5,8 +5,12 @@
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server"
+    "deploy": "npm run build && hexo deploy",
+    "server": "hexo server",
+    "books": "node tools/prepare-books.cjs",
+    "prebuild": "npm run books",
+    "preserver": "npm run books",
+    "check:books": "node tools/check-books.cjs"
   },
   "hexo": {
     "version": "7.2.0"

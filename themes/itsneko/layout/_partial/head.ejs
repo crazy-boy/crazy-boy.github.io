@@ -1,5 +1,8 @@
 <%
     var title = page.title;
+    if (page.book && page.book_order === 0) {
+        title = site.data.book_catalog.find(book => book.id === page.book).title;
+    }
 
     // tags, categories, about pages title
     if (title == 'tags') {

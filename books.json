@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cryptography",
+    "title": "密码学：守护数字世界的秘密",
+    "shortTitle": "密码学",
+    "subtitle": "守护数字世界的秘密",
+    "label": "CRYPTOGRAPHY",
+    "author": "Crazy Boy",
+    "description": "从凯撒的密信到现代加密，从生活中的 HTTPS 到量子时代的挑战。循着六个部分、十四章的路线，走进密码学的世界。",
+    "source": "source/books/cryptography"
+  }
+]
