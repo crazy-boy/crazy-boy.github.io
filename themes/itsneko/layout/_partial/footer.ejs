@@ -9,7 +9,7 @@
   }
 </style>
 <footer class="page-footer bg-color">
-  <%if(theme.music.enable&&theme.music.fixed){ %>
+  <%if(theme.music.enable && theme.music.fixed && !page.book && page.layout !== 'musics'){ %>
   <%- partial('_widget/music') %>
   <% } %>
 

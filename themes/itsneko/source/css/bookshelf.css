@@ -1,0 +1,25 @@
+/* Authored books use the original shelf's raised cards and 3D covers. */
+.authored-books.shelf-authored { margin: 0; padding: 0; background: transparent; }
+.miaoshus { padding: 20px; margin: 0 auto 12px; border: 1px dashed var(--site-line); border-radius: var(--site-radius); color: var(--site-muted); line-height: 1.9; }
+.miaoshus .title { color: var(--site-ink); font-size: 26px; font-weight: 650; margin-bottom: 8px; }
+#book .content { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 20px; padding: 16px; text-align: left; }
+#book .content li { list-style: none; padding: 22px; border: 1px solid var(--site-line); border-radius: var(--site-radius); background: var(--site-paper); box-shadow: var(--site-shadow); transition: transform .25s; }
+#book .info { display: flex; align-items: flex-start; gap: 28px; line-height: 1.8; }
+#book .info > div { min-width: 0; }
+#book .info h3 { font-size: 20px; margin: 0 0 12px; }
+#book .info h3 a { color: var(--site-ink); }
+#book .info p { font-size: 14px; color: var(--site-muted); margin: 6px 0; }
+#book .book-container { display: flex; align-items: center; justify-content: center; perspective: 600px; flex-shrink: 0; padding: 5px 12px 12px 0; }
+#book .book { position: relative; width: 100px; height: 150px; transform-style: preserve-3d; transform: rotateY(-30deg); transition: transform .6s; }
+#book .book::before { content: ''; position: absolute; left: 0; top: 2px; width: 23px; height: 146px; transform: translateX(84.5px) rotateY(90deg); background: repeating-linear-gradient(90deg,#fff 0 2px,#e7e9e3 2px 3px); }
+#book .book::after { content: ''; position: absolute; inset: 0; transform: translateZ(-12.5px); background: #19483e; border-radius: 0 3px 3px 0; }
+#book .book-cover-face { position: absolute; inset: 0; transform: translateZ(12.5px); border-radius: 0 3px 3px 0; box-shadow: 5px 5px 18px #193f3830; background: linear-gradient(145deg,#19483e,#102c29); color: #f1e6c8; padding: 12px; display: flex; flex-direction: column; justify-content: space-around; }
+#book .book-cover-face small { font-size: 7px; overflow-wrap: anywhere; letter-spacing: .05em; }
+#book .book-cover-face strong { font-size: 23px; }
+#book .book-cover-face span { font-size: 10px; }
+#book li:hover .book, #book .book-container:focus-visible .book { transform: rotateY(0); }
+#book .description { color: var(--site-muted); font-size: 14px; line-height: 1.9; padding-top: 20px; margin: 20px 0 0; border-top: 1px solid var(--site-line); }
+#book .book-reading-actions { gap: 10px; }
+#book .book-progress-note { padding: 0 16px 16px; }
+@media(max-width:600px) { #book .content { grid-template-columns: minmax(0,1fr); padding: 0; } #book .info { flex-direction: column; gap: 18px; } #book .book-container { align-self: center; } }
+#book .content { min-height: 0!important; }

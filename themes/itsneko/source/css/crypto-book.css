@@ -1,8 +1,8 @@
 .crypto-book {
-  --book-ink:#233c37;
-  --book-muted:#64766f;
+  --book-ink:var(--site-ink);
+  --book-muted:var(--site-muted);
   --book-paper:#fff;
-  --book-line:#dce8e1;
+  --book-line:var(--site-line);
   max-width:1200px;
   margin:0 auto;
   padding:100px 28px 64px;
@@ -24,7 +24,7 @@
   grid-template-columns:260px 1fr;
   gap:64px;
   padding:48px;
-  background:#edf5ef;
+  background:var(--site-soft);
   border-radius:18px;
   align-items:center;
 }
@@ -86,8 +86,8 @@
   display:inline-block;
   margin-top:24px;
   padding:12px 24px;
-  border-radius:6px;
-  background:#255d49;
+  border-radius:var(--site-radius-sm);
+  background:var(--site-accent);
   color:white!important;
   font-weight:600;
 }
@@ -113,38 +113,6 @@
 }
 .book-section-title p {
   color:var(--book-muted);
-}
-.book-entry {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:10px 14px;
-  border-radius:5px;
-  line-height:1.7;
-}
-.book-entry:hover,.book-sidebar-links a:hover {
-  background:#edf5ef;
-  color:#255d49;
-}
-.book-entry>span {
-  color:#7e998a;
-}
-.book-part {
-  font-size:20px;
-  font-weight:700;
-  margin-top:30px;
-  padding-top:22px;
-  border-top:1px solid var(--book-line);
-}
-.book-chapter {
-  font-size:16px;
-  font-weight:600;
-  margin-top:10px;
-}
-.book-section {
-  padding-left:30px;
-  font-size:14px;
-  color:var(--book-muted)!important;
 }
 .book-reading-layout {
   display:grid;
@@ -182,13 +150,10 @@
   font-weight:700;
   border-left:3px solid #347854;
 }
-.book-sidebar-links .is-part {
-  font-weight:700;
-  margin-top:12px;
-}
+
 .book-article {
   background:var(--book-paper);
-  padding:38px 44px;
+  padding:var(--site-space-lg) 44px;
   border-radius:12px;
   border:1px solid var(--book-line);
   min-width:0;
@@ -227,7 +192,7 @@
   line-height:1.6;
   background:#f3f6f4;
   padding:12px;
-  border-radius:6px;
+  border-radius:var(--site-radius-sm);
 }
 .book-prose table {
   display:block;
@@ -259,7 +224,7 @@
   flex:1;
   padding:14px;
   border:1px solid var(--book-line);
-  border-radius:6px;
+  border-radius:var(--site-radius-sm);
   font-size:14px;
 }
 .book-pagination a:last-child {
@@ -271,7 +236,7 @@
   margin-bottom:5px;
 }
 .dark .crypto-book {
-  --book-ink:#dce8e1;
+  --book-ink:var(--site-line);
   --book-muted:#a0b6ac;
   --book-paper:#24332e;
   --book-line:#40534a;
@@ -328,12 +293,8 @@
   .book-article h1 {
     font-size:25px;
   }
-  .book-part {
-    font-size:18px;
-  }
-  .book-section {
-    padding-left:18px;
-  }
+
+
   .book-pagination {
     flex-direction:column;
   }
@@ -346,7 +307,7 @@
   padding:30px;
   background:#fff;
   border-radius:12px;
-  color:#233c37;
+  color:var(--site-ink);
   text-align:left;
 }
 .authored-book-grid {
@@ -359,8 +320,8 @@
   display:flex;
   gap:28px;
   padding:24px;
-  background:#edf5ef;
-  border:1px solid #dce8e1;
+  background:var(--site-soft);
+  border:1px solid var(--site-line);
   border-radius:10px;
   color:inherit;
 }
@@ -398,16 +359,16 @@
 .authored-book-info p {
   font-size:14px;
   line-height:1.9;
-  color:#64766f;
+  color:var(--site-muted);
 }
 .authored-book-info small {
-  color:#64766f;
+  color:var(--site-muted);
 }
 .authored-book-link {
   display:block;
   margin-top:18px;
   font-weight:600;
-  color:#255d49;
+  color:var(--site-accent);
 }
 .book-prose blockquote {
   border-left:3px solid #81af92;
@@ -440,7 +401,7 @@
 }
 .dark .authored-books {
   background:#24332e;
-  color:#dce8e1;
+  color:var(--site-line);
 }
 .dark .authored-book-card {
   background:#243b31;
@@ -452,13 +413,11 @@
 .dark .authored-book-link {
   color:#8bbf9e;
 }
-.dark .book-entry:hover,.dark .book-sidebar-links a:hover {
+ .dark .book-sidebar-links a:hover {
   background:#314e3c;
-  color:#dce8e1;
+  color:var(--site-line);
 }
-.dark .book-section {
-  color:#b6cabe!important;
-}
+
 .dark .book-prose a {
   color:#8bbf9e;
 }
@@ -514,6 +473,30 @@
   white-space:nowrap;
   font-size:40px;
 }
-.book-reading-page #switchspring {
-  display:none;
+
+/* Nested book navigation and local reading progress */
+.crypto-book .book-toc-tree { list-style: none; padding: 0; margin: 0; }
+.crypto-book .book-toc-tree li { list-style: none; margin: 0; }
+.crypto-book .book-toc-tree .book-toc-tree { padding-left: 14px; border-left: 1px solid var(--book-line); margin-left: 8px; }
+.book-toc-group > summary { cursor: pointer; padding: 12px 8px; font-weight: 600; line-height: 1.7; }
+.book-toc-tree a { display: block; padding: 9px 12px; line-height: 1.7; border-radius: 5px; }
+.book-toc-tree a:hover { background: var(--site-soft); }
+.book-toc-tree .book-toc-intro { font-size: 13px; color: var(--book-muted); }
+.book-toc-tree .is-current { background: #e3f0e7; color: #205c43; border-left: 3px solid #347854; }
+.book-sidebar .book-toc-group > summary { font-size: 13px; padding: 9px 6px; }
+.book-sidebar .book-sidebar-links { overflow-x: hidden; }
+.book-reading-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 18px; }
+.book-reading-actions .authored-book-link { margin-top: 0; }
+.book-reading-actions small { flex-basis: 100%; color: var(--site-muted); line-height: 1.8; }
+.book-resume { display: inline-block; padding: 9px 16px; border-radius: 5px; background: var(--site-accent); color: #fff!important; font-size: 14px; }
+.book-resume[hidden] { display: none!important; }
+.book-progress-note { margin-top: 20px; font-size: 12px; color: var(--site-muted); }
+.authored-book-info { min-width: 0; }
+.authored-book-cover { color: #f1e6c8!important; }
+.dark .book-toc-tree a:hover { background: #314e3c; }
+.dark .book-reading-actions small, .dark .book-progress-note { color: #a0b6ac; }
+.book-toc-group summary:focus-visible, .book-toc-shell summary:focus-visible { outline: 3px solid #4b8b6d; outline-offset: 2px; }
+@media (max-width: 800px) {
+  .book-sidebar .book-sidebar-links { max-height: 55vh; }
+  .book-toc-group > summary { font-size: 15px; }
 }

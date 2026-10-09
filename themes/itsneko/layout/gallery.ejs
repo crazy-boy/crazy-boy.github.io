@@ -7,12 +7,6 @@
         bottom: 83px;
     }
     @media only screen and (max-width: 601px) {
-        #switchspring {
-            bottom: 178px!important;
-        }
-    }
-    #switchspring {
-        bottom: 223px;
     }
 </style>
 <!-- 增加相册显示的特效样式 -->
@@ -153,12 +147,6 @@
     <div class="container chip-container">
         <div class="card">
             <div class="card-content">
-                <!-- 福袋按钮 -->
-                <div class="caishendeng">        
-                    <div class="guguxian">
-                        <img class="caishenpic gugus" src="/medias/spring-img/caishen.png" />
-                    </div>              
-                </div>
                 <div class="tag-title center-align">
                     <div class="miaoshus">
                         <div class="title center-align">“ <%- theme.gallery.title %> ”</div>
@@ -178,12 +166,6 @@
                                         
                                         <img src="/medias/loading.svg" data-src="<%- photo.cover %>" class="responsive-img" alt="img"+<%- i %> />
                                         <div class="biaotiss">
-                                            <!-- 福袋按钮 -->
-                                            <div class="caishendeng">        
-                                                <div class="caishenxian xiangcesd">
-                                                    <img class="caishenpic lions" src="/medias/spring-img/lion.png" />
-                                                </div>              
-                                            </div>
                                             “ <%- photo.name %> ”<br>“ <%- photo.date %> ”
                                         </div>
                                     </a>
@@ -198,31 +180,7 @@
         </div>
 
         <!-- 评论板块 -->
-        <div class="card">
-            <% if (theme.gitalk && theme.gitalk.enable) { %>
-            <%- partial('_partial/gitalk') %>
-            <% } %>
-
-            <% if (theme.gitment.enable) { %>
-            <%- partial('_partial/gitment') %>
-            <% } %>
-
-            <% if (theme.disqus.enable) { %>
-            <%- partial('_partial/disqus') %>
-            <% } %>
-
-            <% if (theme.livere && theme.livere.enable) { %>
-            <%- partial('_partial/livere') %>
-            <% } %>
-
-            <% if (theme.valine && theme.valine.enable) { %>
-            <%- partial('_partial/valine') %>
-            <% } %>
-			
-			<% if (theme.minivaline && theme.minivaline.enable) { %>
-            <%- partial('_partial/minivaline') %>
-            <% } %>
-        </div>
+        
 
     </div>
     

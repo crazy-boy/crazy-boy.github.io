@@ -1,0 +1,8 @@
+.comments-title { font-size:22px; margin:0 0 12px; }
+.comments-hint { color:var(--site-muted); font-size:14px; }
+#vcomments .vheader, #vcomments .roboter, #vcomments .robotxian, #vcomments .roboterbb, #vcomments .vpower, #vcomments .vicon, #vcomments .vpreview { display:none!important; }
+body #vcomments textarea { background:none!important; color:var(--site-ink); min-height:130px; font:16px/1.8 var(--site-font); }
+#vcomments .vwrap { border:1px solid var(--site-line); border-radius:var(--site-radius-sm); }
+#vcomments .vsubmit { background:var(--site-accent); color:#fff; border:0; border-radius:var(--site-radius-sm); padding:10px 20px; }
+#vcomments .vcontent { color:var(--site-ink); line-height:1.8; }
+#vcomments .vcontent img { max-width:100%; }

@@ -22,6 +22,6 @@ for(const book of catalog){
  }
 }
 const shelf=fs.readFileSync(path.join(output,'books/index.html'),'utf8');
-assert(shelf.includes('我的作品')&&shelf.includes('博主的书单'),'Shelf must preserve both sections');
+assert(shelf.includes('我的作品') && !shelf.includes('duokan.com/book/'), 'Shelf should show authored books without legacy recommendations');
 for(const book of catalog)assert(shelf.includes('href="'+book.url+'"'),'Missing shelf entry');
 console.log('PASS: '+count+' unique book pages; directory links, sequential navigation and bookshelf.');

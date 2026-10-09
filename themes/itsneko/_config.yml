@@ -1,52 +1,32 @@
 # main menu navigation url and icon
 # 配置菜单导航的名称、路径和图标icon.
 menu:
-  Index:
+  首页:
     url: /
-  Archives:
-    url: javascript:;
+  文章:
+    url: 'javascript:;'
     children:
+      - name: 文章归档
+        url: /archives/
       - name: 分类
-        url: /categories
+        url: /categories/
       - name: 标签
-        url: /tags
-      - name: 日历
-        url: /archives
-  Mine:
-    url: javascript:;
+        url: /tags/
+  我的作品:
+    url: /books/
+  生活:
+    url: 'javascript:;'
     children:
       - name: 音乐
-        url: /musics
+        url: /musics/
       - name: 相册
-        url: /gallery
-      - name: 书架
-        url: /books
-      - name: 关于
-        url: /about
-  Other:
-    url: javascript:;
-    children:
-      - name: 留言板
-        url: /contact
+        url: /gallery/
       - name: 时间轮
-        url: /ticktack
-
-  # 二级菜单写法如下
-  #Medias:
-  #  icon: fas fa-list
-  #  children:
-  #    - name: Musics
-  #      url: /musics
-  #      icon: fas fa-music
-  #    - name: Movies
-  #      url: /movies
-  #      icon: fas fa-film
-  #    - name: Books
-  #      url: /books
-  #      icon: fas fa-book
-  #    - name: Galleries
-  #      url: /galleries
-  #      icon: fas fa-image
+        url: /ticktack/
+  关于:
+    url: /about/
+  留言:
+    url: /contact/
 
 # Website start time.
 # 站点运行开始时间.
@@ -94,7 +74,7 @@ music:
   theme: '#42b983'
   loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
-  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
+  preload: 'none' # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: true # 列表默认折叠
   hideLrc: false # 隐藏歌词
@@ -210,7 +190,7 @@ clicklove:
 profile:
   avatar: /medias/avatar.jpg
   career: 飞奔的蜗牛
-  introduction: '你好，这里是个人工作生活杂谈'
+  introduction: '记录技术实践，也整理值得慢慢读的知识。'
 
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.

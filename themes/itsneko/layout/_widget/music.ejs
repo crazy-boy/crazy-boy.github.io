@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.aplayer) %>">
-<style>
+<div class="lazy-music <%= theme.music.fixed ? 'lazy-music-fixed' : '' %>" data-music-css="<%- url_for(theme.libs.css.aplayer) %>" data-music-js="<%- url_for(theme.libs.js.aplayer) %>"><button type="button" class="site-button" data-load-music>加载音乐</button><span class="music-status" role="status"></span><template><style>
     .aplayer .aplayer-lrc p {
         <%if(theme.music.hideLrc){%>
         display: none;
@@ -57,5 +56,5 @@
     </div>
 </div>
 
-<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.aplayer) %>"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+</template></div>
+<script src="<%- url_for('/js/lazy-music.js') %>" defer></script>

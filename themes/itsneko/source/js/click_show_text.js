@@ -1,32 +1,9 @@
-var a_idx = 0;
-jQuery(document).ready(function ($) {
-    $("body").click(function (e) {
-        var a = new Array("来康康", "爱了爱了", "真不错");
-        var $i = $("<span/>").text(a[a_idx]);
-        a_idx = (a_idx + 1) % a.length;
-        var x = e.pageX,
-            y = e.pageY;
-        $i.css({
-            "z-index": 5,
-            "top": y - 20,
-            "left": x,
-            "position": "absolute",
-            "font-weight": "400",
-            "color": "linear-gradient(to bottom, green, pink)"
-        });
-        $("body").append($i);
-        $i.animate({
-                "top": y - 180,
-                "opacity": 0
-            },
-            3000,
-            function () {
-                $i.remove();
-            });
-    });
-    setTimeout('delay()', 1000);
-});
-
-function delay() {
-    $(".buryit").removeAttr("onclick");
-}
+(() => {
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(pointer: coarse)').matches)return;
+  const words=['慢慢读','有点收获','保持好奇']; let last=0,index=0;
+  document.addEventListener('click',event=>{
+    if(event.target.closest('a,button,input,textarea,select,label,.modal,.lazy-music')||Date.now()-last<800)return;
+    last=Date.now(); const hint=document.createElement('span'); hint.className='click-note';hint.textContent=words[index++%words.length];hint.setAttribute('aria-hidden','true');
+    hint.style.left=Math.max(12,Math.min(event.clientX,innerWidth-100))+'px';hint.style.top=Math.max(20,event.clientY-20)+'px';document.body.append(hint);setTimeout(()=>hint.remove(),1100);
+  });
+})();

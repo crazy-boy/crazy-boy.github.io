@@ -16,9 +16,6 @@
   }
 
   @media only screen and (max-width: 601px) {
-    #switchspring {
-      bottom: 178px !important;
-    }
   }
 
   .miaoshus {
@@ -48,10 +45,6 @@
   .im0now {
     color: #e96900;
     font-size: 20px !important;
-  }
-
-  #switchspring {
-    bottom: 223px;
   }
 
   .HotDate {
@@ -189,12 +182,6 @@
 <main class="content">
   <div class="container">
     <div class="card">
-      <!-- 福袋按钮 -->
-      <div class="caishendeng">
-        <div class="guguxian">
-          <img class="caishenpic gugus" src="/medias/spring-img/shanzi.png" />
-        </div>
-      </div>
       <div class="card-content">
         <div class="tag-title center-align">
           <div class="miaoshus">
@@ -254,47 +241,13 @@
             <div class="sc"></div>
           </div>
         </div>
-        <script>
-          // 获取几个时钟的dom
-          var hr = document.querySelector(".hr");
-          var mn = document.querySelector(".mn");
-          var sc = document.querySelector(".sc");
-          var time = document.querySelector(".time_wrap1");
-          //根据当前时间初始化表盘时钟
-          var date = new Date();
-          var hour = date.getHours();
-          var min = date.getMinutes();
-          var sec = date.getSeconds();
-          var i = sec;
-          setInterval(() => {
-            hour = date.getHours();
-            hr.style.transform = `rotateZ(${hour * 30 + min / 2}deg)`;
-            mn.style.transform = `rotateZ(${min * 6}deg)`;
-            sc.style.transform = `rotateZ(${sec * 6}deg)`;
 
-            i++;
-            min = min + parseInt(i / 60);
-            sec++;
-            if (i === 60) i = 0;
-
-            var startTime = new Date("2019-9-1"); // 开始时间
-            var endTime = new Date(); // 结束时间
-            var usedTime = endTime - startTime; // 相差的毫秒数
-            var days = Math.floor(usedTime / (24 * 3600 * 1000)); // 计算出天数
-            var leavel = usedTime % (24 * 3600 * 1000); // 计算天数后剩余的时间
-            var hours = Math.floor(leavel / (3600 * 1000)); // 计算剩余的小时数
-            var leavel2 = leavel % (3600 * 1000); // 计算剩余小时后剩余的毫秒数
-            var minutes = Math.floor(leavel2 / (60 * 1000)); // 计算剩余的分钟数
-            var level3 = leavel2 - minutes * 60 * 1000;
-            var seconds = Math.floor(level3 / 1000);
-          }, 1000);
-        </script>
       </div>
       <!-- 倒计时模块 -->
       <div class="card-content">
         <div class="biaotis">
           <span>距离</span>
-          <span class="zhuti">2023</span>
+          <span class="zhuti" id="countdown-year"></span>
           <span>仅有</span>
         </div>
         <div id="CountMsg" class="HotDate">
@@ -303,62 +256,11 @@
           <span id="t_m">00分</span>
           <span id="t_s">00秒</span>
         </div>
-        <script type="text/javascript">
-          function getRTime() {
-            var EndTime = new Date('2023/01/01 00:00:00'); //截止时间
-            var NowTime = new Date();
-            var t = EndTime.getTime() - NowTime.getTime();
-
-            //累减
-            // var d=Math.floor(t/1000/60/60/24);
-            // t-=d*(1000*60*60*24);
-            // var h=Math.floor(t/1000/60/60);
-            // t-=h*60*60*1000;
-            // var m=Math.floor(t/1000/60);
-            // t-=m*60*1000;
-            // var s=Math.floor(t/1000);
-
-            //累加
-            var d = Math.floor(t / 1000 / 60 / 60 / 24);
-            var h = Math.floor(t / 1000 / 60 / 60 % 24);
-            var m = Math.floor(t / 1000 / 60 % 60);
-            var s = Math.floor(t / 1000 % 60);
-
-            document.getElementById("t_d").innerHTML = d + "天";
-            document.getElementById("t_h").innerHTML = h + "时";
-            document.getElementById("t_m").innerHTML = m + "分";
-            document.getElementById("t_s").innerHTML = s + "秒";
-          }
-          setInterval(getRTime, 1000);
-        </script>
+        <script src="<%- url_for('/js/ticktack.js') %>" defer></script>
 
       </div>
     </div>
     <!-- 评论模块 -->
-    <div class="card">
-      <% if (theme.gitalk && theme.gitalk.enable) { %>
-      <%- partial('_partial/gitalk') %>
-      <% } %>
-
-      <% if (theme.gitment.enable) { %>
-      <%- partial('_partial/gitment') %>
-      <% } %>
-
-      <% if (theme.disqus.enable) { %>
-      <%- partial('_partial/disqus') %>
-      <% } %>
-
-      <% if (theme.livere && theme.livere.enable) { %>
-      <%- partial('_partial/livere') %>
-      <% } %>
-
-      <% if (theme.valine && theme.valine.enable) { %>
-      <%- partial('_partial/valine') %>
-      <% } %>
-
-      <% if (theme.minivaline && theme.minivaline.enable) { %>
-      <%- partial('_partial/minivaline') %>
-      <% } %>
-    </div>
+    
   </div>
 </main>

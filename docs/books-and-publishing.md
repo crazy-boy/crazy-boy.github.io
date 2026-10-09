@@ -12,7 +12,7 @@
 ## 文件组织
 
 普通博文在 source/_posts/；书籍在 source/books/<book-id>/。
-source/books/index.md 是总书架；原有推荐书单保留。
+source/books/index.md 是总书架；使用原书单的立体封面卡片展示自己的作品，不再展示旧推荐书目。
 books.json 登记每本书的信息。source/_data/book_catalog.json 是生成的目录，不手动编辑。
 公共书籍布局：themes/itsneko/layout/book-reader.ejs。
 书籍样式：themes/itsneko/source/css/crypto-book.css。
@@ -54,4 +54,23 @@ book_kind: chapter
 5. Actions 页面运行 Build and deploy blog，并检查线上书架和原文章。
 6. 出错时可把 Pages 来源改回原来的 master 分支根目录；旧 master 不会被本工作流改动。
 
-未在本次本地开发中推送或修改 GitHub 设置。首次线上 Actions 运行需要单独确认。
+当前仓库已启用 GitHub Actions 发布，日常提交并推送 hexo 分支即可。
+
+
+## 目录与继续阅读
+
+- 目录按 part → chapter → section 分层，点击三角箭头或标题展开；导言通过分组内的链接进入。
+- 阅读页自动展开当前章节所在分组，电脑显示侧栏，手机默认收起全书目录。
+- 阅读章节后，书架和书籍首页会显示“继续阅读”，返回上次章节的正文位置。
+- 每本书独立保存进度，保存在当前浏览器本地，不跨设备同步；清除浏览器网站数据会重置。
+- 禁用本地存储时仍能正常阅读和展开目录，但不会保存进度。
+
+
+## 样式与交互维护
+
+- 公共颜色、字体、间距、按钮和搜索样式：themes/itsneko/source/css/site-ui.css。
+- 书架立体封面与卡片：themes/itsneko/source/css/bookshelf.css；书籍正文：crypto-book.css；博文目录：post-toc.css。
+- 音乐点击后加载播放器，书籍阅读页不加载音乐。关于页歌曲同样需点击加载。
+- 搜索首次输入关键词时加载 search.xml，支持全部、博文、书籍筛选；书籍元数据来自自动目录。
+- 时间轮倒计时按访问者本地时间计算下一年元旦，跨年自动更新。
+- 博文目录只渲染一次，桌面使用 sticky 侧栏；保留原文标题锚点，手机隐藏侧栏。

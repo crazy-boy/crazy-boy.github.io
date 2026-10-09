@@ -22,7 +22,7 @@
         font-family: 'Architects Daughter', cursive;
         font-size: 18px;
     }
-    
+
     .musictitle {
         font-family: 'Architects Daughter', cursive;
         font-size: 20px;
@@ -43,7 +43,7 @@
     @media only screen and (max-width: 600px) {
         .about-cover {
             height: 64vh;
-        }   
+        }
     }
 </style>
 <style>
@@ -53,13 +53,7 @@
             margin: 14px 0px!important;
         }
     }
-    #switchspring {
-        bottom: 243px;
-    }
     @media only screen and (max-width: 601px) {
-        #switchspring {
-            bottom: 178px!important;
-        }
     }
     .swbk {
         position: relative;
@@ -157,14 +151,8 @@
 <main class="content">
     <div class="container">
         <div class="card musis">
-        
+
         <div class="musictitle center-align">
-            <!-- 福袋按钮 -->
-            <div class="caishendeng">        
-                <div class="guguxian">
-                    <img class="caishenpic gugus" src="/medias/spring-img/tang.png" />
-                </div>              
-            </div>
             这里是博主的歌单
         </div>
         <hr>
@@ -173,34 +161,26 @@
             <div class="wyya">
                 <!--<p><i style="border-bottom: 1px solid #ad7a86;">网易云音乐</i></p>-->
                 <div class="swbk">
-                    <!-- 福袋按钮 -->
-                    <div class="caishendeng">        
-                        <div class="caishenxian">
-                            <img class="caishenpic lions" src="/medias/spring-img/gugu.png" />
-                        </div>              
-                    </div>
                     <div class="label" style="color: rgb(178, 143, 206);">
-                        <!-- 小帽子 -->
-                        <img class="labelmz" src="/medias/spring-img/maozi.png" />
                         <span>我的音乐场</span></div>
                     <p>未完成让很多东西看起来很伟大很完美。包括文学作品，也有婚姻爱情。很多东西如果停止了追，就失去了意义，魅力也随之而去。</p>
-                </div>   
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-                <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+                </div>
+
+
                 <!-- require MetingJS -->
-                <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-                <meting-js style="margin-top: 1.5rem;width: auto;height: auto;"
+
+                <div class="lazy-music" data-music-css="<%- url_for(theme.libs.css.aplayer) %>" data-music-js="<%- url_for(theme.libs.js.aplayer) %>"><button type="button" class="site-button" data-load-music>加载音乐</button><span class="music-status" role="status"></span><template><meting-js style="margin-top: 1.5rem;width: auto;height: auto;"
                     server="netease"
                     type="playlist"
                     id="3155294100"
                     order= "random"
                     theme="#ad7a86"
                     loop="all"
-                    autoplay="false"
+                    autoplay="false" preload="none"
                     storageName="aplayer-setting"
                     hideLrc= "false"
                     >
-                </meting-js>
+                </meting-js></template></div>
                 <style>
                         .aplayer{
                             margin: 1.5rem 0;
@@ -208,7 +188,7 @@
                         ol li:before {
                             display: none;
                         }
-                        
+
                 </style>
             </div>
 
@@ -216,21 +196,15 @@
             <!--<div class="baozang">
               <p><i style="border-bottom: 1px solid #ad7a86;">QQ音乐</i></p>
               <div class="swbk">
-                  <div class="caishendeng">
-                      <div class="caishenxian">
-                          <img class="caishenpic lions" src="/medias/spring-img/lion.png" />
-                      </div>              
-                  </div>
-                  
+
                   <div class="label" style="color: rgb(188, 159, 119);">
-                      <img class="labelmz" src="/medias/spring-img/maozi.png" />
-                     
+
                       <span>我的音乐场</span></div>
                   <p>未完成让很多东西看起来很伟大很完美。包括文学作品，也有婚姻爱情。很多东西如果停止了追，就失去了意义，魅力也随之而去。</p>
               </div>
-              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-              <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-              <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+
+
               <meting-js style="margin-top: 1.5rem;width: auto;height: auto;"
                         server="tencent"
                         type="playlist"
@@ -240,7 +214,7 @@
                         loop="all"
                         autoplay="false"
                         storageName="aplayer-setting"
-                        hideLrc= "false"                      
+                        hideLrc= "false"
                         >
               </meting-js>
               <style>
@@ -277,11 +251,13 @@
             <% if (theme.valine && theme.valine.enable) { %>
             <%- partial('_partial/valine') %>
             <% } %>
-			
+
 			<% if (theme.minivaline && theme.minivaline.enable) { %>
             <%- partial('_partial/minivaline') %>
             <% } %>
-        
+
 
     </div>
 </main>
+
+<script src="<%- url_for('/js/lazy-music.js') %>" defer></script>

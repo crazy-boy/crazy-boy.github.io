@@ -1,0 +1,106 @@
+:root {
+  --site-ink: #233c37;
+  --site-muted: #64766f;
+  --site-accent: #255d49;
+  --site-soft: #edf5ef;
+  --site-line: #dce8e1;
+  --site-paper: #fff;
+  --site-radius-sm: 6px;
+  --site-space-sm: 12px;
+  --site-space-md: 24px;
+  --site-space-lg: 38px;
+}
+body.dark {
+  --site-ink: #dce8e1;
+  --site-muted: #a0b6ac;
+  --site-accent: #306c52;
+  --site-soft: #243b31;
+  --site-line: #40534a;
+  --site-paper: #24332e;
+}
+.site-button, .book-start, .book-resume {
+  border: 0; border-radius: var(--site-radius-sm); background: var(--site-accent);
+  color: #fff; padding: 10px 18px; cursor: pointer; font: inherit;
+}
+.site-button:focus-visible { outline: 3px solid #81af92; outline-offset: 3px; }
+.site-button:disabled { opacity: .65; cursor: wait; }
+.site-button[hidden] { display: none; }
+.lazy-music-fixed { position: fixed; bottom: 12px; left: 12px; z-index: 990; }
+.music-status { display: block; font-size: 12px; background: var(--site-paper); color: var(--site-ink); }
+#searchInput { margin: 6px 0 12px; font-size: 16px; }
+.search-filters { display: flex; gap: var(--site-space-sm); flex-wrap: wrap; margin-bottom: var(--site-space-sm); }
+.search-filters button { background: var(--site-soft); color: var(--site-ink); }
+.search-filters button[aria-pressed="true"] { background: var(--site-accent); color: white; }
+.search-status, .search-result-meta { color: var(--site-muted); font-size: 13px; line-height: 1.8; }
+#searchResult li { padding: var(--site-space-sm) 0; border-bottom: 1px solid var(--site-line); }
+#searchResult .search-result-title { color: var(--site-ink); font-weight: 600; }
+#searchResult .search-result { color: var(--site-muted); overflow-wrap: anywhere; }
+#searchResult mark { background: #fff0b4; color: #233c37; }
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] { opacity: 1!important; transform: none!important; }
+}
+
+/* Shared typography and surfaces. Keep icon and code fonts independent. */
+:root {
+  --site-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --site-code-font: "Cascadia Code", Consolas, "SFMono-Regular", monospace;
+  --site-radius: 14px;
+  --site-shadow: 0 8px 28px rgb(35 60 55 / 6%);
+  --site-background: #f4f6f3;
+}
+body.dark { --site-background: #192722; --site-shadow: 0 8px 28px rgb(0 0 0 / 12%); }
+html { font-size: 15px; }
+body { font-family: var(--site-font); background: var(--site-background); color: var(--site-ink); -webkit-font-smoothing: antialiased; }
+body h1, body h2, body h3, body h4, body h5, body h6,
+body .title, body .description, body .subtitle, body .brand-logo span, body .logo-name,
+body .dream-title, body .dream-text, body .book-meta { font-family: var(--site-font)!important; }
+body h1, body h2, body h3, body h4 { font-weight: 650; line-height: 1.5; }
+body .brand-logo .waves-effect { font-style: normal; font-size: 22px; font-weight: 650; letter-spacing: .02em; color: #f1e6c8; }
+body .bg-color, body #headNav:not(.nav-transparent) { background: #19483e!important; }
+body .card, body .book-article, body .book-contents, body .book-sidebar {
+  background: var(--site-paper); border: 1px solid var(--site-line); border-radius: var(--site-radius); box-shadow: var(--site-shadow);
+}
+body .card .card-content { padding: var(--site-space-md); }
+body #articleContent { font-family: var(--site-font); font-size: 16px; line-height: 1.95; }
+body #articleContent p { margin: 0 0 1.3em; }
+body #articleContent h2 { font-size: 26px; margin: 1.8em 0 .8em; }
+body #articleContent h3 { font-size: 22px; margin: 1.5em 0 .7em; }
+body #articleContent h4 { font-size: 18px; }
+body pre, body code, body pre code, body .highlight { font-family: var(--site-code-font); }
+body .book-prose pre, body .book-prose .highlight { background: var(--site-soft); color: var(--site-ink); }
+body .book-start, body .book-resume, body .site-button { border-radius: var(--site-radius-sm); font-weight: 600; text-decoration: none; }
+body .modal { border-radius: var(--site-radius); background: var(--site-paper); color: var(--site-ink); }
+body #searchModal { max-width: 840px; }
+body .book-intro h1 { letter-spacing: -.02em; }
+body .book-hero { background: var(--site-soft); border: 1px solid var(--site-line); }
+body .book-reading-actions small, body .book-progress-note { color: var(--site-muted); }
+body .crypto-book { --book-ink: var(--site-ink); --book-muted: var(--site-muted); --book-paper: var(--site-paper); --book-line: var(--site-line); }
+@media(max-width:600px) {
+  body .card .card-content { padding: 18px; }
+  body #articleContent { font-size: 16px; line-height: 1.9; }
+  body #articleContent h2 { font-size: 23px; }
+  body #articleContent h3 { font-size: 20px; }
+  body .book-intro h1 { font-size: 27px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body .book, body .card { transition: none!important; animation: none!important; }
+}
+body #searchModal { background: var(--site-paper); color: var(--site-ink); }
+body #searchModal label { color: var(--site-muted); }
+body #searchInput { color: var(--site-ink); }
+body.dark { background: var(--site-background)!important; color: var(--site-ink); }
+body.dark #artDetail, body.dark .card { background: var(--site-paper)!important; }
+body.dark #articleContent { color: var(--site-ink); }
+body .brand-logo span { font-family:"华文行楷","STXingkai","KaiTi","STKaiti",cursive!important; font-weight:400; font-size:30px; letter-spacing:2px; }
+.editorial-page { max-width:900px; }
+.editorial-page h1 { font-size:30px; margin:0 0 24px; }
+.editorial-page h2 { font-size:22px; margin:32px 0 12px; }
+.editorial-page p { font-size:16px; line-height:1.95; color:var(--site-muted); }
+.editorial-page .editorial-lead { font-size:19px; color:var(--site-ink); }
+.editorial-page a { color:var(--site-accent); text-decoration:underline; }
+.click-note { position:fixed; pointer-events:none; z-index:1000; color:#48896c; font:14px var(--site-font); animation:click-note-rise 1.1s ease-out forwards; }
+@keyframes click-note-rise { to { transform:translateY(-35px); opacity:0; } }
+body .brand-logo a { white-space:nowrap; }
+body .brand-logo span.smallwidth { font-family:var(--site-font)!important; font-size:22px; letter-spacing:1px; }
+@font-face { font-family:SiteBrand; src:url('/fonts/site-brand.woff2') format('woff2'); font-display:swap; }
+body .brand-logo span.bigwidth { font-family:SiteBrand,"KaiTi",cursive!important; }

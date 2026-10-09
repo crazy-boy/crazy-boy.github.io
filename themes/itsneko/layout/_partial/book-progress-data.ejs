@@ -1,0 +1,2 @@
+<script type="application/json" id="book-reading-catalog"><%- JSON.stringify(books.map(book => ({ id: book.id, entries: book.entries.filter(entry => entry.kind !== 'home').map(entry => ({ id: entry.id, title: entry.title, url: url_for(entry.url) })) }))).replace(/</g, '\\u003c') %></script>
+<script src="<%- url_for('/js/book-reading.js') %>" defer></script>

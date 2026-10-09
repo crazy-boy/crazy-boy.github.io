@@ -21,9 +21,6 @@
     body.dark .dashang td a {
         color: #039be5;
     }
-    #switchspring {
-        bottom: 223px;
-    }
     .tangguo {
         vertical-align: middle;
         width: 34px;
@@ -32,9 +29,6 @@
         text-align: center;
     }
     @media only screen and (max-width: 601px) {
-        #switchspring {
-            bottom: 178px!important;
-        }
     }
 </style>
 
@@ -151,41 +145,19 @@
 <main class="content">
     <div class="container">
         <div class="card">
-            <!-- 福袋按钮 -->
-            <div class="caishendeng">        
-                <div class="guguxian">
-                    <img class="caishenpic gugus" src="/medias/spring-img/tang.png" />
-                </div>              
-            </div>
-            
+
             <div class="card-content">
                 <div class="swbk">
-                    <!-- 福袋按钮 -->
-                    <div class="caishendeng">        
-                        <div class="caishenxian">
-                            <img class="caishenpic lions" src="/medias/spring-img/gugu.png" />
-                        </div>              
-                    </div>
-                    
+
                     <div class="label" style="color: rgb(178, 143, 206);">
-                      <!-- 小帽子 -->
-                      <img class="labelmz" src="/medias/spring-img/maozi.png" />
                       <span>买个馒头吃吧</span></div>
-                    <p>如果你觉得本博客还不错的话，欢迎赞赏一下，感谢支持哦~
+                    <p>如果这里的内容对你有帮助，可以自愿支持后续写作。感谢阅读。
                     </p>
                 </div>
 
                 <!-- 二维码模块 -->
                 <div class="swbk">
-                    <!-- 福袋按钮 -->
-                    <div class="caishendeng">        
-                        <div class="caishenxian">
-                            <img class="caishenpic huadengpic" src="/medias/spring-img/jiaozi.png" />
-                        </div>              
-                    </div>    
                     <div class="label" style="color: rgb(134, 193, 102);">
-                        <!-- 小帽子 -->
-                        <img class="labelmz" src="/medias/spring-img/maozi.png" />
                         <span>支付宝（左），微信（右）</span></div>
                     <p>
                         <style>
@@ -206,23 +178,23 @@
                                     margin: 2px auto;
                                     width: 310px;
                                 }
-                            } 
+                            }
                             @media only screen and (max-width: 380px) {
                                 .xiangjipic {
                                     width: 270px;
                                 }
-                            } 
+                            }
                             @media only screen and (max-width: 361px) {
                                 .xiangjipic {
                                     width: 222px;
                                 }
-                            } 
+                            }
                             @media only screen and (min-width: 1000px) and (max-width: 1130px) {
                                 .xiangjipic {
                                     margin: 2px 20px;
                                 }
                             }
-                            
+
                         </style>
                         <div class="xiangjipicss col s12 m6 l4">
                             <img src="/medias/reward/alipay.jpg" class="xiangjipic" title="支付宝，谢谢支持" alt="支付宝，谢谢支持" />
@@ -233,16 +205,8 @@
                 </div>
 
                 <div class="swbk">
-                    <!-- 福袋按钮 -->
-                    <div class="caishendeng">        
-                        <div class="caishenxian">
-                            <img class="caishenpic huadengpic" src="/medias/spring-img/huadeng.png" />
-                        </div>              
-                    </div>
-                    
+
                     <div class="label" style="color: rgb(251, 150, 110);">
-                        <!-- 小帽子 -->
-                        <img class="labelmz" src="/medias/spring-img/maozi.png" />
                         <span>打赏记录</span></div>
                     <p>
                         打赏规则：1 软妹币 = 1000 糖果 （打赏时可在支付页面填写自己的网址，博客名，备注信息哦，再次感谢支持）
@@ -267,32 +231,8 @@
                 <% } %>
             </div>
         </div>
-      
+
         <!-- 评论模块 -->
-        <div class="card">
-            <% if (theme.gitalk && theme.gitalk.enable) { %>
-            <%- partial('_partial/gitalk') %>
-            <% } %>
-
-            <% if (theme.gitment.enable) { %>
-            <%- partial('_partial/gitment') %>
-            <% } %>
-
-            <% if (theme.disqus.enable) { %>
-            <%- partial('_partial/disqus') %>
-            <% } %>
-
-            <% if (theme.livere && theme.livere.enable) { %>
-            <%- partial('_partial/livere') %>
-            <% } %>
-
-            <% if (theme.valine && theme.valine.enable) { %>
-            <%- partial('_partial/valine') %>
-            <% } %>
-			
-			<% if (theme.minivaline && theme.minivaline.enable) { %>
-            <%- partial('_partial/minivaline') %>
-            <% } %>
-        </div>
+        
     </div>
 </main>

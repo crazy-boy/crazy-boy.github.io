@@ -3928,3 +3928,7 @@ td.gutter {
 .line .title {
     font-size: inherit;
 }
+/* Navigation state follows the destination instead of the menu position. */
+.nav-menu a.is-active > span { border-bottom: 2px solid currentColor; padding-bottom: 5px; }
+.mobile-menu-list a.is-active { color: #26a69a; font-weight: 700; }
+.nav-menu .nav-item:focus-within > .sub-nav { display: block!important; }

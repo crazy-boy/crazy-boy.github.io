@@ -13,13 +13,6 @@
 
 <style>
   @media only screen and (max-width: 601px) {
-    #switchspring {
-      bottom: 178px !important;
-    }
-  }
-
-  #switchspring {
-    bottom: 232px;
   }
 
   .hurens {
@@ -129,11 +122,6 @@
         <div class="dream">
           <div class="row rows">
             <div class="notices col l12 offset-l2 m12 offset-m1 s12 offset-s1">
-              <div class="caishendeng">
-                <div class="caishenxian">
-                  <img class="caishenpic" src="/medias/spring-img/caishen.png" />
-                </div>
-              </div>
               <!-- 全局通知公告播报栏开始 -->
               <style>
                 .notices {
@@ -162,9 +150,9 @@
               </style>
               <!-- 公告文字栏开始 -->
               <div class="textsst">
-                <p>作者：Crazy boy，一个努力、对未来又不那么自信的大龄程序员。</p>
-                <p>下载：我的项目源码已经上传github仓库，欢迎<code>Star~</code></p>
-                <p>赞赏：感谢各位的喜爱，也欢迎大家的赞赏，赞赏二维码见该页面：<a href="https://crazy-boy.com/donate/" target="_blank">赞赏博主~</a></p>
+                <p>这里记录技术实践、问题复盘，以及学习过程中逐渐想明白的事。</p>
+                <p>代码和项目整理在 <a href="https://github.com/crazy-boy" target="_blank" rel="noopener">GitHub</a>，欢迎交流。</p>
+                <p>较完整的主题会整理成书，放在 <a href="/books/">我的作品</a> 中持续更新。</p>
                 <p>联系：怎样联系我，留言：<a href="https://crazy-boy.com/contact/" target="_blank">留言板</a>
                   ，邮箱：<code>pengbing945@protonmail.com</code>，QQ: <code>1489249823</code></p>
               </div>
@@ -284,12 +272,6 @@
               <img src="<%- theme.jsDelivr.url %><%- url_for(featureimg) %>" class="responsive-img"
                 alt="<%= post.title %>">
               <% } %>
-              <!-- 福袋按钮 -->
-              <div class="caishendeng">
-                <div class="caishenxian fudaixian">
-                  <img class="caishenpic lala" src="/medias/spring-img/fish.png" />
-                </div>
-              </div>
               <span class="card-title">
                 <%= post.title %>
                 <!-- 文章卡片hover线条效果 -->

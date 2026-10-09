@@ -58,11 +58,11 @@ $(function () {
     });
 
     /*初始化瀑布流布局*/
-    $('#articles').masonry({
+    if ($.fn.masonry) $('#articles').masonry({
         itemSelector: '.article'
     });
 
-    AOS.init({
+    if (window.AOS) AOS.init({
         easing: 'ease-in-out-sine',
         duration: 700,
         delay: 100
@@ -213,28 +213,6 @@ function switchNightMode() {
 };
 // 网站全局深色模式设置结束
 
-// 网站主题切换模式开始
-// 中国节日按钮切换
-function switchSpringThemes() {
-    var body = document.body;
-    var weiletree = document.getElementById('weletree');
-    if(body.classList.contains('themechris')){
-        document.body.classList.remove('themechris');
-        localStorage.setItem('themechris','0');
-        document.body.classList.add('themespring');
-        localStorage.setItem('themespring','1');
-        return;
-    }
-    if(body.classList.contains('themespring')){
-    document.body.classList.remove('themespring');
-    localStorage.setItem('themespring','0');
-    return;
-    } else {
-    document.body.classList.add('themespring');
-    localStorage.setItem('themespring','1');
-    return;
-    }
-};
-// 网站主题切换模式结束
+
  
 console.log("恭喜你喜提彩蛋！欢迎常来本博客逛逛~");

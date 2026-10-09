@@ -1,0 +1,16 @@
+<% const containsCurrent = node => node.entry.id === currentId || node.children.some(containsCurrent); %>
+<ul class="book-toc-tree">
+<% nodes.forEach(node => { const entry = node.entry; %>
+  <li>
+  <% if (node.children.length) { %>
+    <details class="book-toc-group" <%- containsCurrent(node) ? 'open' : '' %>>
+      <summary><%= entry.title %></summary>
+      <a class="book-toc-intro <%= entry.id === currentId ? 'is-current' : '' %>" href="<%- url_for(entry.url) %>" <%- entry.id === currentId ? 'aria-current="page"' : '' %>><%= '导言' %></a>
+      <%- partial('_partial/book-toc', { nodes: node.children, currentId }) %>
+    </details>
+  <% } else { %>
+    <a class="<%= entry.id === currentId ? 'is-current' : '' %>" href="<%- url_for(entry.url) %>" <%- entry.id === currentId ? 'aria-current="page"' : '' %>><%= entry.title %></a>
+  <% } %>
+  </li>
+<% }); %>
+</ul>
