@@ -1,0 +1,12 @@
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  directory = "netlify/functions/"
+  node_bundler = "esbuild"
+  external_node_modules = ["@waline/vercel"]
+  included_files = [
+    "node_modules/@waline/vercel/**",
+    "!node_modules/@mathjax/**",
+    "!node_modules/@mdit/plugin-mathjax/**"
+  ]

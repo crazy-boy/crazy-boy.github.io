@@ -1,0 +1,7 @@
+<% if (is_post() || page.layout === 'contact') { %>
+<link rel="stylesheet" href="<%- url_for('/css/comments.css') %>">
+<section class="card" id="site-comments" aria-label="留言" data-server-url="<%= theme.waline.serverURL || '' %>" data-site-url="<%= config.url %>">
+  <div class="card-content"><h2 class="comments-title">留言</h2><p class="comments-hint">想法、疑问或勘误，都可以写在这里。留言会公开显示。</p><p id="comments-status" role="status">正在准备留言区…</p><div id="waline"></div><button id="comments-retry" class="site-button" type="button" hidden>重新加载</button><noscript>请启用 JavaScript 后使用留言功能。</noscript></div>
+</section>
+<script type="module" src="<%- url_for('/js/site-comments.js') %>"></script>
+<% } %>

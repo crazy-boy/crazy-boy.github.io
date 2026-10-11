@@ -45,7 +45,7 @@
     }
     .photo:nth-child(odd) {
         transform: rotateZ(-5deg);
-    }    
+    }
     .photo:nth-child(even) {
         transform: rotateZ(5deg);
     }
@@ -73,7 +73,7 @@
         left: 15px;
         position: absolute;
         top: 50%;
-    /*    transform: translateX(-200px); 
+    /*    transform: translateX(-200px);
         transition-delay: 0.2s;    */
     }
     .my-gallery .photo img {
@@ -108,13 +108,13 @@
         }
         .img-item a:hover img{
             opacity: 0.8;
-        }   
+        }
         .biaotiss {
             font-family: MV Boli;
-        }   
+        }
         .miaoshus .title {
         font-family: MV Boli;
-    } 
+    }
     .my-gallery .row  .photo[data-spmid="./特辑-十年一梦-回顾湖人2019-2020赛季夺冠之旅"],
     .my-gallery .row  .photo[data-spmid="./盘点-詹姆斯总决赛数据排名"],
     .my-gallery .row  .photo[data-spmid="./知名摄影师最爱的24张科比图集"]
@@ -127,12 +127,12 @@
             transform: translateX(200px);
         }
         .text_des p{
-            transform: translateX(-200px); 
+            transform: translateX(-200px);
             transition-delay: 0.2s;
         }
         .animate-text {
             opacity: 0;
-            transition: all 0.6s ease-in-out; 
+            transition: all 0.6s ease-in-out;
         }
     }
     /*小屏幕下(桌面类)的样式*/
@@ -150,7 +150,7 @@
                 <div class="tag-title center-align">
                     <div class="miaoshus">
                         <div class="title center-align">“ <%- theme.gallery.title %> ”</div>
-                        “ 日子过的好快，还好我都记录下来了。 ”                      
+                        “ 日子过的好快，还好我都记录下来了。 ”
                     </div>
                 </div>
                 <div class="my-gallery">
@@ -163,13 +163,13 @@
                             <div class="photo col s12 m6 l4" data-spmid="./<%- photo.url_name %>">
                                 <div class="img-item">
                                     <a href="./<%- photo.url_name %>" target="_blank">
-                                        
+
                                         <img src="/medias/loading.svg" data-src="<%- photo.cover %>" class="responsive-img" alt="img"+<%- i %> />
                                         <div class="biaotiss">
                                             “ <%- photo.name %> ”<br>“ <%- photo.date %> ”
                                         </div>
                                     </a>
-                                </div>                              
+                                </div>
                             </div>
                             <% } %>
                         <% } %>
@@ -180,10 +180,10 @@
         </div>
 
         <!-- 评论板块 -->
-        
+
 
     </div>
-    
+
     <script>
         start()
             $(window).on('scroll', function(){

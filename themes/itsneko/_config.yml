@@ -298,7 +298,7 @@ livere:
 # To use it, activate the configuration item and set appId and appKey.
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
-  enable: true
+  enable: false
   appId: jygVc7kCct35AgO5DeO7G7xs-gzGzoHsz
   appKey: kXHEdworb9xXQzVob33wuXEu
   notify: false
@@ -591,3 +591,8 @@ jsDelivr:
 aplayer:
   meting: true
   enable: true
+
+# Waline: fill in the deployed service URL before publishing comments.
+waline:
+  enable: true
+  serverURL: "https://crazy-boy-comments.netlify.app/.netlify/functions/comment"
