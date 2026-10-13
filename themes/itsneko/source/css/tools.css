@@ -1,0 +1,19 @@
+.tools-page{padding-top:24px;padding-bottom:40px;color:var(--site-ink,#304c45)}
+.tools-heading,.tool-card,.tool-guide{padding:32px!important;border:1px solid rgba(40,100,80,.1)}
+.tools-heading h1,.tool-guide h1{font-size:32px;line-height:1.4;margin:12px 0 18px}
+.tools-heading p,.tool-card p,.tool-guide p{line-height:1.9}
+.tool-meta{font-size:14px;opacity:.75}
+.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.tool-card{display:flex;flex-direction:column;margin:0!important}
+.tool-label{font-family:var(--site-code-font);font-size:14px;letter-spacing:.08em;color:var(--site-accent,#23816a)}
+.tool-card h2{font-size:25px;line-height:1.5;margin:16px 0 10px}.tool-card h2 a{color:inherit}
+.tool-card ul{padding-left:20px;margin:12px 0 28px;line-height:2}.tool-card ul li{list-style:disc!important}
+.tool-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:auto;font-size:14px}
+.tool-actions a.tool-download{display:inline-flex;padding:11px 18px;background:#205c4f;color:#fff!important;border-radius:8px;line-height:1.6;text-decoration:none}
+.tool-actions a:focus-visible{outline:2px solid #348d77;outline-offset:4px}.tool-download:hover{background:#174a3e!important}
+.tool-guide{max-width:880px;margin:0 auto!important}
+.tool-guide-content{margin-top:32px;border-top:1px solid rgba(100,140,120,.2);font-size:16px;line-height:1.95}
+.tool-guide-content h2{font-size:23px;margin:32px 0 16px}.tool-guide-content ol,.tool-guide-content ul{padding-left:24px}.tool-guide-content ul li{list-style:disc!important}
+.tool-guide-content table{display:block;overflow:auto;width:100%}
+.tool-checksum{border-top:1px solid rgba(100,140,120,.2);margin-top:28px;padding-top:20px;font-size:13px}.tool-checksum summary{cursor:pointer}.tool-checksum code{overflow-wrap:anywhere}
+@media(max-width:600px){.tool-grid{grid-template-columns:1fr;gap:18px}.tools-heading,.tool-card,.tool-guide{padding:24px!important}.tools-heading h1,.tool-guide h1{font-size:27px}.tool-card h2{font-size:23px}}

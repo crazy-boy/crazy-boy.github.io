@@ -2,10 +2,13 @@
 <link rel="stylesheet" href="<%- url_for('/css/categories.css') %>">
 <% const categories = site.categories.toArray().sort((a,b) => b.length-a.length || a.name.localeCompare(b.name)); const maxCount = Math.max(1,...categories.map(c=>c.length)); %>
 <main class="content"><div class="container category-directory">
-<section class="card"><div class="card-content"><span class="book-eyebrow">EXPLORE</span><h1>按主题阅读</h1><p class="category-summary"><%= categories.length %> 个分类 · 从感兴趣的主题开始。</p>
+<section class="card"><div class="card-content"><span class="book-eyebrow">EXPLORE</span><h1>文章目录</h1><p class="category-summary"><%= categories.length %> 个分类 · 按主题探索，也可以按时间查找。</p>
+<nav class="directory-links" aria-label="目录阅读方式"><a href="#category-filter">按主题</a><a href="#article-timeline">按时间</a></nav>
 <label for="category-filter">查找分类</label><input id="category-filter" type="search" placeholder="输入分类名称"><div class="category-grid"><% categories.forEach(category => { %><a class="category-tile" href="<%- url_for(category.path) %>"><strong><%= category.name %></strong><span><%= category.length %> 篇文章 <span aria-hidden="true">→</span></span></a><% }); %></div></div></section>
 <section class="card"><div class="card-content"><h2>文章主题分布</h2><p class="category-summary">文章数量最多的 12 个分类。文章可能属于多个分类，数量不等于总文章数。</p>
 <div class="category-ranking"><% categories.slice(0,12).forEach(category => { %><a href="<%- url_for(category.path) %>" class="category-rank"><span><%= category.name %></span><span class="category-bar" aria-hidden="true"><i style="width:<%= category.length/maxCount*100 %>%"></i></span><strong><%= category.length %> 篇</strong></a><% }); %></div>
-</div></section></div></main>
+</div></section>
+<%- partial('_partial/article-timeline') %>
+</div></main>
 
 <script>document.getElementById('category-filter').addEventListener('input',function(){const term=this.value.trim().toLowerCase();document.querySelectorAll('.category-tile').forEach(tile=>{tile.hidden=!tile.querySelector('strong').textContent.toLowerCase().includes(term);});});</script>

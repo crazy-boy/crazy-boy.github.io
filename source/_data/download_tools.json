@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sql-diff",
+    "name": "SQL 差异更新工具",
+    "label": "SQL",
+    "summary": "比对两份 SQL 文件，生成表结构与数据的差异更新脚本。",
+    "filename": "diff_tool.exe",
+    "features": [
+      "表结构与数据比对",
+      "支持排除表和忽略字段",
+      "生成 result.sql"
+    ],
+    "bytes": 13108930,
+    "size": "12.5 MB",
+    "sha256": "3d03337a1a63d77c565610a4a3848bf442ac6a9dad63d3afb59e32319f89fcf8",
+    "url": "/tools/sql-diff/",
+    "download": "/downloads/sql-diff/diff_tool.exe",
+    "readme": "/downloads/sql-diff/readme.md"
+  },
+  {
+    "id": "json-diff",
+    "name": "JSON 差异比对工具",
+    "label": "JSON",
+    "summary": "粘贴内容或打开文件，查看两份 JSON 的结构、值与文本差异。",
+    "filename": "json_diff_tool.exe",
+    "features": [
+      "严格值、语义值、原文三种模式",
+      "差异定位与路径复制",
+      "支持搜索与仅显示差异"
+    ],
+    "bytes": 13125076,
+    "size": "12.5 MB",
+    "sha256": "d81dcd7a016981090ccabee7a0ffa147da379cd58641128a1f86095ba4a17daa",
+    "url": "/tools/json-diff/",
+    "download": "/downloads/json-diff/json_diff_tool.exe",
+    "readme": "/downloads/json-diff/readme.md"
+  }
+]

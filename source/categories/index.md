@@ -1,5 +1,5 @@
 ---
-title: 文章分类
+title: 文章目录
 date: 2020-08-17 18:23:38
 type: "categories"
 layout: "categories"

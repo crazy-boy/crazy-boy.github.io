@@ -1,0 +1,9 @@
+<%- partial('_partial/bg-cover') %>
+<link rel="stylesheet" href="<%- url_for('/css/tools.css') %>">
+<% const tool = site.data.download_tools.find(item => item.id === page.tool_id); %>
+<main class="content"><div class="container tools-page"><article class="card tool-guide">
+<a href="<%- url_for('/tools/') %>" class="tool-back">← 全部工具</a><h1><%= tool.name %></h1><p><%= tool.summary %></p><p class="tool-meta">Windows 10 / 11 · 64 位 · <%= tool.size %></p>
+<div class="tool-actions"><a class="tool-download" href="<%- url_for(tool.download) %>" download>下载 EXE</a><a href="<%- url_for(tool.readme) %>" download>下载说明</a></div>
+<div class="tool-guide-content"><%- page.content %></div>
+<details class="tool-checksum"><summary>文件校验信息</summary><p>SHA-256 · <%= tool.filename %></p><code><%= tool.sha256 %></code></details>
+</article></div></main>

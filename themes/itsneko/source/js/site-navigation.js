@@ -13,7 +13,7 @@
     if (parent) parent.classList.add('is-active');
   });
   if (current.startsWith('/posts/')) {
-    document.querySelectorAll('.nav-menu a[href="/archives/"], .mobile-menu-list a[href="/archives/"]').forEach(link => {
+    document.querySelectorAll('.nav-menu a[href="/categories/"], .mobile-menu-list a[href="/categories/"]').forEach(link => {
       link.closest('.nav-item, .m-nav-item').querySelector(':scope > a').classList.add('is-active');
     });
   }

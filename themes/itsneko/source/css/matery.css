@@ -100,14 +100,14 @@ body {
 #rewardModal .reward-title {
     padding: 0px 52px;
     text-align: left;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 
 .frind-ship .title h1 {
     font-size: 1.2rem;
     font-weight: 400;
     border-bottom: 1px solid #fff!important;
-} 
+}
 .card .card-content p {
     font-size: 0.9rem;
 }
@@ -253,7 +253,7 @@ code {
     right: 46px;
     line-height: 0;
     font-weight: bold;
-    font-family: normal;
+    font-family: var(--site-font);
     z-index: 1;
     filter: invert(50%);
     cursor: pointer;
@@ -422,14 +422,14 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     font-size: 2rem;
-    font-family: MV Boli;
+    font-family: var(--site-font);
     font-weight: 700;
 }
 header .brand-logo .logo-span img {
   vertical-align: middle;
 }
 
-.v[data-class=v] .vcards .vcard .vcontent.expand:before, 
+.v[data-class=v] .vcards .vcard .vcontent.expand:before,
 .v[data-class=v] .vcards .vcard .vcontent.expand:after {
   z-index: 0!important;
 }
@@ -455,7 +455,7 @@ header .side-nav .mobile-head .logo-name {
     margin-top: -30px;
     padding-left: 10px;
     font-size: 1.5rem;
-    font-family: MV Boli!important;
+    font-family: var(--site-font);
 }
 
 header .side-nav .mobile-head .logo-desc {
@@ -465,12 +465,9 @@ header .side-nav .mobile-head .logo-desc {
     font-size: 0.8rem;
     line-height: 1.3rem;
     color: #e3e3e3;
-    font-family: MV Boli!important;
+    font-family: var(--site-font);
 }
-@font-face {
-    font-family:'MV Boli';
-    src:url('../font1/mvboli.ttf');
-}
+
 
 header .side-nav .menu-list li {
     padding: 0;
@@ -712,7 +709,7 @@ header .go-back i {
     line-height: 1.85em;
     margin-bottom: 20px;
     position: relative;
-    font-family: MV Boli;
+    font-family: var(--site-font);
 }
 
 .bg-cover .description {
@@ -725,7 +722,7 @@ header .go-back i {
 .bg-cover .post-title {
     margin: 0 auto;
     font-size: 2.3rem;
-    font-family: "Linux Biolinum","Noto Serif SC",Helvetica,Arial,Menlo,Monaco,monospace,sans-serif;
+    font-family: var(--site-font);
     font-weight: 400;
 }
 
@@ -749,13 +746,13 @@ header .go-back i {
     margin-bottom: 20px;
     font-size: 1.22rem;
     font-weight: 400;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 
 .dream .text {
     opacity: .8;
     font-size: 1.1rem;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 
 .music-player,
@@ -1210,7 +1207,7 @@ body.dark .v[data-class=v] .vbtn {
 }
 .v[data-class=v] .vicon+.vicon {
     margin-left: 15px!important;
-} 
+}
 body.dark .aplayer.aplayer-fixed .aplayer-miniswitcher {
     background-color: #282c34;
 }
@@ -1470,7 +1467,7 @@ thead {
     color: #3C4858;
     font-size: 1.4rem;
     font-weight: 400;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 .friends-container .tag-title {
     font-size: 1.4rem!important;
@@ -1738,7 +1735,7 @@ body.dark ol li:before {
     .ziwojieshao {
         padding: 0!important;
     }
-}    
+}
 
 @media only screen and (min-width: 900px) {
     .cd-timeline-img {
@@ -1935,7 +1932,7 @@ body.dark ol li:before {
     font-size: 1.8rem;
     font-weight: 500;
     color: #3C4858;
-    font-family: MV Boli;
+    font-family: var(--site-font);
 }
 
 .profile .author .career {
@@ -1943,7 +1940,7 @@ body.dark ol li:before {
     font-size: 1rem;
     font-weight: 400;
     color: #777;
-    font-family: MV Boli;
+    font-family: var(--site-font);
 }
 
 #aboutme .profile .social-link {
@@ -1954,7 +1951,7 @@ body.dark ol li:before {
     margin: 1.5rem auto 3rem;
     max-width: 600px;
     color: #999;
-    font-family: MV Boli;
+    font-family: var(--site-font);
 }
 body.dark .post-charts {
     background-color: #fff;
@@ -1966,16 +1963,16 @@ body.dark .post-charts .title {
 }
 .ziwojieshao {
     padding: 0 118px;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 .ziwojieshao ol {
     padding-left: 6px;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 .ziwojieshao ol li, .ziwojieshao p {
     font-size: 1.38rem!important;
     line-height: 1.6;
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 .ziwojieshao p a {
     color: #42b983!important;
@@ -1991,7 +1988,7 @@ body.dark .post-charts .title {
 .frind-ship .title p,
 .post-statis .statis
 {
-    font-family: 'Architects Daughter', cursive!important;
+    font-family: var(--site-font);
 }
 
 .frind-ship .title p {
@@ -2410,7 +2407,7 @@ body.dark #searchModal {
     color: #333;
     opacity: 0.75;
     font-size: 0.9rem;
-}    
+}
 body.dark .vheader input::-webkit-input-placeholder,
 body.dark .vedit textarea::-webkit-input-placeholder
 {
@@ -2442,7 +2439,7 @@ body.dark .vedit textarea::-webkit-input-placeholder
     font-size: 19px;
     color: #060606;
     font-weight: 400;
-    font-family: 'Source Sans Pro',"Noto Serif SC",Helvetica,Arial,Menlo,Monaco,monospace,sans-serif;      
+    font-family: var(--site-font);
 }
 #switchUser {
     margin: 0px 12px;
@@ -2629,12 +2626,12 @@ body.dark .erjiitems
   .brand-logo .bigwidth {
     display: none;
   }
-} 
+}
 @media only screen and (min-width: 761px) {
   .brand-logo .smallwidth {
     display: none;
   }
-} 
+}
 /* .fab {
     margin-right: 0.5rem;
 } */
@@ -2681,7 +2678,7 @@ body.dark hr
 }
 
 /* 深色模式设置 */
-/* 字体颜色变灰白色 */ 
+/* 字体颜色变灰白色 */
 body.dark .fas,
 body.dark .title,
 body.dark .row .text,
@@ -2846,41 +2843,41 @@ body.dark .v[data-class=v] .vcards
     background-color: #000;
 }
 body.themespring .shoucangtou,
-body.themechris .shoucangtou 
+body.themechris .shoucangtou
 {
     border: 1px solid #000;
 }
 @media only screen and (min-width: 1100px) {
     body.themechris .phonetreeindex {
         display: none!important;
-    }  
+    }
     .phonetreeindex {
         display: none!important;
-    }  
+    }
 }
 @media only screen and (max-width: 1100px) {
     body.themechris .phonetreeindex {
         display: block!important;
-    }  
+    }
     .phonetreeindex img {
         filter: brightness(1)!important;
-    }           
+    }
 }
 @media only screen and (max-width: 1100px) {
     body.themechris .bigphonetree {
         display: none!important;
-    }  
+    }
     .bigphonetree {
         display: none!important;
-    }  
+    }
 }
 @media only screen and (min-width: 1101px) {
     body.themechris .bigphonetree {
         display: block!important;
-    }  
+    }
     .bigphonetree img {
         filter: brightness(1)!important;
-    }           
+    }
 }
 
 .weilerela {
@@ -3093,7 +3090,7 @@ body.themechris .textsst .col {
 
 /* 春节网站主题切换模式开始 */
 /* 春节按钮switchspring */
-#switchspring { 
+#switchspring {
     background: #dc8f03;
     width: 38px;
     height: 38px;
@@ -3356,7 +3353,7 @@ body.themechris .mohuxiaoguo {
     bottom: 0;
     left: 0;
     background: linear-gradient(0deg,#fff,transparent);
-} 
+}
 .blackimg {
     display: none;
 }
@@ -3480,7 +3477,7 @@ ol{
     list-style: none;  /* 隐藏原来的 1. 2. 等序号样式 */
     counter-reset: ol-li;
   }
-  
+
   ol li:before {
       display: block;
       float: left;
@@ -3745,19 +3742,19 @@ hr:hover::before{
     font-size: 25px;
     text-align: center;
     margin: 0 auto;
-    font-family: 华文行楷;
+    font-family: var(--site-font);
 }
 .poem-wrap p {
     width: 70%;
     margin: auto;
     line-height: 30px;
     color: #797979;
-    font-family: "Linux Biolinum", "Noto Serif SC", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+    font-family: var(--site-font);
 }
 .poem-wrap p:nth-of-type(2) {
     font-size: 18px;
     margin: 15px auto;
-    font-family: 华文行楷;
+    font-family: var(--site-font);
 }
 body.dark .notice {
     background: 0 0;
@@ -3786,7 +3783,7 @@ body.dark .notice {
     border-radius: 8px;
 }
 /* 文章分类书本样式 */
-.fudaixian, 
+.fudaixian,
 .caishenxian,
 .guguxian,
 .shengdanxian
@@ -3869,7 +3866,7 @@ article .card-image:hover .titlesline {
   .yjdiv {
     flex-wrap: wrap;
   }
-} 
+}
 
 /* 屏蔽垂直滚动条 */
 html { overflow-x: hidden; overflow-y: auto; }
@@ -3877,11 +3874,11 @@ html { overflow-x: hidden; overflow-y: auto; }
 /* 特定日子网站全局变灰，用以纪念css，原理：加filter属性 */
 html.gray {
     filter: grayscale(100%);
-    -webkit-filter: grayscale(100%); 
-    -moz-filter: grayscale(100%);  
-    -ms-filter: grayscale(100%); 
-    -o-filter: grayscale(100%); 
-    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); 
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
 }
 
@@ -3915,7 +3912,7 @@ html.gray {
 /* 网站标题栏和footer栏背景颜色 */
 nav,
 .page-footer,
-.nav-menu li .sub-nav, 
+.nav-menu li .sub-nav,
 .menus_item_child:before
 {
   background-color: #039be5;

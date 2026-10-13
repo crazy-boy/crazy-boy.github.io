@@ -1,0 +1,7 @@
+<%- partial('_partial/bg-cover') %>
+<link rel="stylesheet" href="<%- url_for('/css/tools.css') %>">
+<main class="content"><div class="container tools-page">
+<header class="card tools-heading"><span class="book-eyebrow">TOOLS</span><h1>工具下载</h1><p>把重复的工作交给工具，把时间留给值得思考的事。</p><p class="tool-meta">Windows 10 / 11 · 64 位 · 本地运行</p></header>
+<div class="tool-grid"><% site.data.download_tools.forEach(tool => { %>
+<article class="card tool-card"><span class="tool-label"><%= tool.label %></span><h2><a href="<%- url_for(tool.url) %>"><%= tool.name %></a></h2><p><%= tool.summary %></p><ul><% tool.features.forEach(feature => { %><li><%= feature %></li><% }) %></ul><div class="tool-actions"><a class="tool-download" href="<%- url_for(tool.download) %>" download>下载 EXE · <%= tool.size %></a><a href="<%- url_for(tool.url) %>">使用说明 →</a></div></article>
+<% }) %></div></div></main>

@@ -187,4 +187,8 @@
         })();
     </script>
 <link rel="stylesheet" href="<%- url_for('/css/site-ui.css') %>">
+<% if (is_post() || page.book) { %>
+<link rel="stylesheet" href="<%- url_for('/css/code-blocks.css') %>">
+<script defer src="<%- url_for('/js/code-blocks.js') %>"></script>
+<% } %>
 </head>

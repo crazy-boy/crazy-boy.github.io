@@ -1,0 +1,23 @@
+/* One scroll container for Highlight.js, Prism and plain fenced code. */
+#articleContent, .book-article, .post-reading-layout #main-content { min-width:0; }
+#articleContent figure.highlight { max-width:100%; overflow:auto; margin:1.5em 0; }
+#articleContent .site-code { min-width:0; max-width:100%; width:100%; box-sizing:border-box; overflow:hidden; margin:1.5em 0; border:1px solid #344653; border-radius:12px; background:#18252d; color:#e3edf1; box-shadow:none; }
+#articleContent .site-code-toolbar { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 14px; background:#22343e; border-bottom:1px solid #344653; font:12px/1.5 var(--site-font); letter-spacing:.06em; color:#bed0d8; }
+.site-code-actions { display:flex; gap:8px; flex-shrink:0; }
+#articleContent .site-code button { background:transparent; color:#e3edf1; border:1px solid #607582; padding:5px 10px; border-radius:6px; cursor:pointer; font:13px/1.5 var(--site-font); }
+#articleContent .site-code button:hover, #articleContent .site-code button[aria-pressed=true] { background:#35515e; border-color:#8bb7c6; }
+#articleContent .site-code :focus-visible { outline:2px solid #9cd5dc; outline-offset:-3px; }
+body #articleContent .site-code pre { display:block; box-sizing:border-box; width:100%; min-width:0; max-width:100%; max-height:600px; padding:18px 20px!important; margin:0!important; overflow:auto; background:#18252d!important; color:#e3edf1!important; border:0; border-radius:0; box-shadow:none; font:400 14px/1.8 var(--site-code-font)!important; white-space:pre!important; word-break:normal; overflow-wrap:normal; tab-size:4; text-shadow:none; }
+body #articleContent .site-code pre code { display:block; width:max-content; min-width:100%; padding:0; margin:0; background:transparent!important; color:inherit!important; font:inherit!important; white-space:inherit!important; text-shadow:none; border:0; position:static; }
+body #articleContent .site-code.is-wrapped pre, body #articleContent .site-code.is-wrapped pre code { width:100%; white-space:pre-wrap!important; overflow-wrap:anywhere; }
+.site-code-status { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+#articleContent .site-code .keyword, #articleContent .site-code .operator, #articleContent .site-code .tag { color:#b6c7ff; }
+#articleContent .site-code .string, #articleContent .site-code .attr-value { color:#b6deae; }
+#articleContent .site-code .number, #articleContent .site-code .boolean, #articleContent .site-code .literal { color:#f2c18c; }
+#articleContent .site-code .comment, #articleContent .site-code .prolog { color:#9eafb9; font-style:italic; }
+#articleContent .site-code .function, #articleContent .site-code .title { color:#88d5de; }
+#articleContent .site-code .token { background:transparent; text-shadow:none; }
+body #articleContent :not(pre)>code { font-size:.9em; padding:.15em .35em; border-radius:4px; background:var(--site-soft); color:var(--site-ink); overflow-wrap:anywhere; }
+@media(max-width:600px) { body #articleContent .site-code pre { padding:14px!important; font-size:13px!important; } #articleContent .site-code-toolbar { padding:9px 10px; } }
+
+#articleContent .site-code pre span { font-family:inherit!important; font-size:inherit; line-height:inherit; font-weight:inherit; }

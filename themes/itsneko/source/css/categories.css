@@ -15,3 +15,27 @@
 .category-grid { max-height:560px; overflow:auto; padding:2px; }
 .category-tile[hidden] { display:none; }
 #category-filter { color:var(--site-ink); }
+
+.category-directory .directory-links {
+  display:flex; flex-wrap:wrap; gap:6px; width:fit-content; max-width:100%; height:auto;
+  margin:20px 0 24px; padding:5px; line-height:normal; color:var(--site-ink);
+  background:var(--site-soft); border:1px solid var(--site-line); border-radius:12px; box-shadow:none;
+}
+.category-directory .directory-links a {
+  display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:8px 20px;
+  border:0; border-radius:8px; background:transparent; color:var(--site-ink);
+  font:500 15px/1.5 var(--site-font); text-decoration:none; transition:background .15s ease,color .15s ease;
+}
+.category-directory .directory-links a:hover { background:var(--site-paper); color:var(--site-accent); }
+.category-directory .directory-links a:focus-visible { background:var(--site-paper); outline:2px solid var(--site-accent); outline-offset:1px; }
+@media(prefers-reduced-motion:reduce) { .category-directory .directory-links a { transition:none; } }
+#article-timeline, #category-filter { scroll-margin-top:100px; }
+.article-year { border-top:1px solid var(--site-line); }
+.article-year summary { display:list-item; padding:18px 4px; cursor:pointer; color:var(--site-ink); }
+.article-year summary span { margin-left:16px; color:var(--site-muted); font-size:14px; }
+.article-timeline-list { margin:0 0 20px; padding:0; list-style:none; }
+.article-timeline-list li { display:flex; align-items:baseline; gap:18px; padding:10px 4px; }
+.article-timeline-list time { flex:0 0 48px; color:var(--site-muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.article-timeline-list a { color:var(--site-ink); line-height:1.7; overflow-wrap:anywhere; min-width:0; }
+.article-timeline-list a:hover { color:var(--site-accent); text-decoration:underline; }
+.article-year summary:focus-visible, .directory-links a:focus-visible { outline:2px solid var(--site-accent); outline-offset:3px; }

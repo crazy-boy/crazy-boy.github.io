@@ -1,0 +1,20 @@
+<%
+const timelinePosts = site.posts.sort('date', -1).toArray().filter(post => !post.book);
+const timelineYears = new Map();
+timelinePosts.forEach(post => {
+  const year = post.date.format('YYYY');
+  if (!timelineYears.has(year)) timelineYears.set(year, []);
+  timelineYears.get(year).push(post);
+});
+%>
+<section class="card" id="article-timeline"><div class="card-content">
+<h2>按时间阅读</h2><p class="category-summary">共 <%= timelinePosts.length %> 篇文章，按发布时间从近到远排列。展开年份查看文章。</p>
+<% let yearIndex = 0; timelineYears.forEach((posts, year) => { %>
+<details class="article-year" <%- yearIndex++ === 0 ? 'open' : '' %>>
+<summary><strong><%= year %> 年</strong><span><%= posts.length %> 篇</span></summary>
+<ul class="article-timeline-list"><% posts.forEach(post => { %>
+<li><time datetime="<%= post.date.format('YYYY-MM-DD') %>"><%= post.date.format('MM-DD') %></time><a href="<%- url_for(post.path) %>"><%= post.title || '未命名文章' %></a></li>
+<% }); %></ul></details>
+<% }); %>
+<% if (!timelinePosts.length) { %><p class="category-summary">还没有文章。</p><% } %>
+</div></section>

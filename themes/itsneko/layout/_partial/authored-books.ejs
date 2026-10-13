@@ -8,6 +8,6 @@
 <div class="book-reading-actions"><a class="authored-book-link" href="<%- url_for(book.url) %>">查看目录 →</a><a class="book-resume" data-book-resume="<%= book.id %>" hidden>继续阅读 →</a><small data-book-progress-label></small></div>
 </div></div><p class="description"><%= book.description %></p></li>
 <% }); %>
-</ul><p class="book-progress-note">阅读进度仅保存在当前浏览器，清除浏览器数据后会重置。</p></div></div>
+</ul></div></div>
 </section>
 <%- partial('_partial/book-progress-data', { books: site.data.book_catalog || [] }) %>
