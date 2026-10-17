@@ -10,7 +10,7 @@
 </div>
 <% if (showArticleToc) { %>
 <% if (theme.toc.showToggleBtn) { %>
-<div id="floating-toc-btn" class="hide-on-med-and-down"><button type="button" class="btn-floating bg-color" aria-label="收起文章目录" aria-controls="toc-aside" aria-expanded="true"><i class="fas fa-list-ul" aria-hidden="true"></i></button></div>
+<div id="floating-toc-btn" class="article-toc-control"><button type="button" class="btn-floating bg-color" aria-label="切换文章目录" aria-controls="toc-aside" aria-expanded="true"><i class="fas fa-list-ul" aria-hidden="true"></i></button></div>
 <% } %>
 <script src="<%- url_for('/js/article-toc.js') %>" defer></script>
 <% } %>

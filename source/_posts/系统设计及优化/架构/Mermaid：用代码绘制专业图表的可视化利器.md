@@ -184,17 +184,19 @@ mermaid.render('dynamic-chart', config, (svgCode) => {
 ```
 
 ### 6.2 甘特图项目规划
+> 时间轴仅为绘图示例，以 2000 年为示意起点，不代表技术预测或实际项目排期；示例月份按 30 天折算。
+
 ```mermaid
 gantt
     title 产品研发里程碑
     dateFormat  YYYY-MM-DD
     section 核心开发
-    需求分析       :done,    des1, 20XX-01-01, 7d
-    架构设计       :active,  des2, 20XX-01-08, 5d
-    模块开发       :         des3, 20XX-01-13, 14d
+    需求分析       :done,    des1, 2000-01-01, 7d
+    架构设计       :active,  des2, 2000-01-08, 5d
+    模块开发       :         des3, 2000-01-13, 14d
     section 测试验证
-    单元测试       :         test1, 20XX-01-27, 5d
-    集成测试       :         test2, 20XX-01-31, 7d
+    单元测试       :         test1, 2000-01-27, 5d
+    集成测试       :         test2, 2000-01-31, 7d
 ```
 
 ---

@@ -4,7 +4,7 @@
   const layout = document.querySelector('.post-reading-layout'), button = document.querySelector('#floating-toc-btn button');
   const headings = Array.from(document.getElementById('articleContent').querySelectorAll(container.dataset.headings));
   if (!headings.length) { layout.classList.add('toc-collapsed'); if(button)button.parentElement.hidden=true; return; }
-  const list = document.createElement('ol'); list.className = 'toc-list';
+  const list = document.createElement('ul'); list.className = 'toc-list';
   const minLevel = Math.min(...headings.map(h=>Number(h.tagName[1])));
   const links = headings.map((heading,index) => {
     if (!heading.id) heading.id = 'toc-heading-' + index;
@@ -28,9 +28,20 @@
   window.addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(update);},{passive:true});
   window.addEventListener('resize',update);
   update();
+  const mobile = window.matchMedia('(max-width: 992px)');
+  function syncButton() {
+    const open=mobile.matches ? layout.classList.contains('toc-mobile-open') : !layout.classList.contains('toc-collapsed');
+    if(button){button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'收起文章目录':'展开文章目录');}
+  }
+  function closeMobile(){layout.classList.remove('toc-mobile-open');syncButton();}
+  mobile.addEventListener('change',()=>{closeMobile();update();});
   if(button)button.addEventListener('click',()=>{
-    const collapsed=layout.classList.toggle('toc-collapsed');
-    button.setAttribute('aria-expanded',String(!collapsed));button.setAttribute('aria-label',collapsed?'展开文章目录':'收起文章目录');
-    window.dispatchEvent(new Event('resize'));
+    if(mobile.matches)layout.classList.toggle('toc-mobile-open');
+    else layout.classList.toggle('toc-collapsed');
+    syncButton();window.dispatchEvent(new Event('resize'));
   });
+  links.forEach(link=>link.addEventListener('click',()=>{if(mobile.matches)closeMobile();}));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMobile();});
+  document.addEventListener('click',event=>{if(mobile.matches && !event.target.closest('#toc-aside, #floating-toc-btn'))closeMobile();});
+  syncButton();
 })();

@@ -6,7 +6,7 @@ tags:
 categories:
   - ntpdate
 abbr link: linux-ntpdate
-updated: '024-07-04 10:48:00'
+updated: '2024-07-04 10:48:00'
 abbrlink: 38c1
 date: 2024-07-04 10:48:00
 ---

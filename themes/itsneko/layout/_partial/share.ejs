@@ -1,14 +1,6 @@
-<link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for('/libs/share/css/share.min.css') %>">
-<div id="article-share">
-
-    <% if (theme.sharejs.enable) { %>
-    <div class="social-share" data-sites="<%- theme.sharejs.sites %>" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="<%- theme.jsDelivr.url %><%- url_for('/libs/share/js/social-share.min.js') %>"></script>
-    <% } %>
-
-    <% if (theme.addthis.enable) { %>
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%- theme.addthis.pubid %>"></script>
-    <div class="addthis_inline_share_toolbox"></div>
-    <% } %>
-
+<div id="article-share" class="article-share" data-share-url="<%= full_url_for(page.path) %>" data-share-title="<%= page.title %>" aria-label="分享文章">
+  <button type="button" class="share-button" data-copy-link><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg>复制链接</button>
+  <button type="button" class="share-button" data-native-share hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m-4 4 4-4 4 4M5 12v8h14v-8"/></svg>系统分享</button>
+  <p class="share-status" role="status" aria-live="polite"></p>
 </div>
+<script src="<%- url_for('/js/article-share.js') %>" defer></script>

@@ -7,7 +7,7 @@
 <style>
   /* 主页背景图 */
   .bg-cover {
-    background-image: url("/medias/banner/001.JPG") !important;
+    background-image: url("/medias/banner/home.webp") !important;
   }
 </style>
 
@@ -28,18 +28,18 @@
 <main class="content">
   <% if (page.current === 1
             && ((theme.dream.enable || theme.music.enable)
-                    || theme.video.enable || theme.recommend.enable)) { %>
+)) { %>
   <div id="indexCard" class="index-card">
     <div class="container ">
       <% if (theme.dream.enable) { %>
       <section class="card home-quote-card"><%- partial('_widget/dream') %></section>
       <% } %>
-      <% if (theme.video.enable) { %><section class="card"><%- partial('_widget/video') %></section><% } %>
       <section class="card home-intro"><div class="home-intro-body">
-        <p class="home-intro-lead">把经历写成文字，让思考留下回声。</p>
+        <h1 class="home-intro-lead">把经历写成文字，让思考留下回声。</h1>
         <p>这里记录技术实践、问题复盘，以及学习过程中逐渐想明白的事。</p>
         <p>较完整的主题整理在<a href="/books/">我的作品</a>，日常的小程序放在<a href="/tools/">工具下载</a>。</p>
         <p>代码与项目收录在 <a href="https://github.com/crazy-boy" target="_blank" rel="noopener">GitHub</a>，欢迎交流。</p>
+        <nav class="home-topic-links" aria-label="精选阅读路线"><% site.data.reading_topics.forEach(topic => { %><a href="<%- url_for('/topics/#' + topic.id) %>"><%= topic.title %></a><% }); %></nav>
         <div class="home-contact"><a href="/contact/">留言板 ↗</a><a href="mailto:pengbing945@protonmail.com">pengbing945@protonmail.com</a><span>QQ · 1489249823</span></div>
       </div></section>
     </div>
@@ -149,7 +149,7 @@
               <% if (post.summary && post.summary.length > 0) { %>
               <%- post.summary %>
               <% } else { %>
-              <%- strip_html(post.content).substring(0, 120) %>
+              <%- site_summary(post, 120) %>
               <% } %>
             </div>
             <div class="publish-info">

@@ -8,40 +8,33 @@
     "deploy": "npm run build && hexo deploy",
     "server": "hexo server",
     "books": "node tools/prepare-books.cjs",
-    "prebuild": "npm run books",
+    "prebuild": "npm run check:content && npm run books",
     "preserver": "npm run books",
-    "check:books": "node tools/check-books.cjs"
+    "check:books": "node tools/check-books.cjs",
+    "check:content": "node tools/check-content.cjs",
+    "check:site": "node tools/check-site.cjs"
   },
   "hexo": {
     "version": "7.2.0"
   },
   "dependencies": {
+    "cheerio": "1.1.2",
     "hexo": "^7.2.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
-    "hexo-baidu-url-submit": "0.0.6",
-    "hexo-deployer-cos-enhanced": "^1.0.1",
     "hexo-deployer-git": "^4.0.0",
-    "hexo-filter-github-emojis": "^3.0.5",
     "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-baidu-sitemap": "^0.1.9",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-feed": "^3.0.0",
-    "hexo-generator-index": "^2.0.0",
     "hexo-generator-index-pin-top": "^0.2.2",
-    "hexo-generator-search": "^2.4.3",
     "hexo-generator-sitemap": "^2.1.0",
     "hexo-generator-tag": "^1.0.0",
-    "hexo-lazyload-image": "^1.0.9",
     "hexo-permalink-pinyin": "^1.1.0",
-    "hexo-prism-plugin": "^2.3.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-kramed": "^0.1.4",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^2.0.0",
-    "hexo-tag-aplayer": "^3.0.4",
-    "hexo-theme-webstack": "^2.0.0",
     "hexo-wordcount": "^6.0.1",
-    "save": "^2.4.0"
+    "mathjax": "3.2.2",
+    "mermaid": "11.12.0"
   }
 }

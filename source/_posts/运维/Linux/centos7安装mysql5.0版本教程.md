@@ -1,11 +1,13 @@
 ---
-title: centos7安装mysql5.0版本教程
+title: CentOS 7 安装 MySQL 5.7（历史环境笔记）
 tags: [mysql]
 categories: [Linux]
 abbrlink: 'install-mysql-on-linux'
 date: 2019-10-12 00:05:36
 updated: 2019-10-12 00:05:36
 ---
+
+> 本文记录 2019 年的 CentOS 7 与 MySQL 5.7.27 安装过程，仅供维护历史环境时参考。新项目请根据当前系统与数据库版本的官方文档安装。
 
 ### 1. 下载mysql bundle.tar包
 上传  mysql bundle.tar包到服务器

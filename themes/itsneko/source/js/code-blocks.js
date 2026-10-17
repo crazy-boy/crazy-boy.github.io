@@ -3,7 +3,7 @@
   if (!article) return;
   const blocks = [...article.querySelectorAll('figure.highlight, pre')].filter(node => !node.matches('pre') || !node.closest('figure.highlight'));
   blocks.forEach((node, index) => {
-    if (node.closest('.site-code')) return;
+    if (node.closest('.site-code') || node.classList.contains('mermaid-source')) return;
     const pre = node.matches('pre') ? node : node.querySelector('td.code pre');
     if (!pre) return;
     const languageClass = [...node.classList, ...pre.classList, ...(pre.querySelector('code')?.classList || [])].find(name => name.startsWith('language-'));

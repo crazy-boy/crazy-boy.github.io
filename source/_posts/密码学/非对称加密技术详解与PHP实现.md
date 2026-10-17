@@ -2,7 +2,7 @@
 title: 非对称加密技术详解与PHP实现
 tags: [非对称加密,密码学]
 categories: [密码学]
-abbrlink: 'symmetric-encryption'
+abbrlink: 'asymmetric-encryption-php'
 date: 2024-03-18 10:25:00
 updated: 2024-03-18 10:25:00
 ---

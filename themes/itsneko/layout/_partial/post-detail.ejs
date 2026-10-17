@@ -141,12 +141,6 @@ h3:hover {
     <div class="card">
 
         <div class="card-content article-info">
-            <!-- 圣诞按钮 -->
-            <div class="shengdandeng">
-                <div class="shengdanxian" style="left: 50%;">
-                    <img class="shengdanpic fudai" src="/medias/christmas-img/shengdanren4.png" />
-                </div>
-            </div>
             <div class="row tag-cate">
                 <div class="col s7">
                     <% if (page.tags && page.tags.length) { %>
@@ -221,6 +215,7 @@ h3:hover {
             </div>
             <hr/>
 
+            <%- partial('_partial/related-reading') %>
             <%- partial('_partial/reprint-statement') %>
 
             <div class="tag_share" style="display: block;">
@@ -249,28 +244,8 @@ h3:hover {
         </div>
     </div>
 
-    <% if (theme.gitalk && theme.gitalk.enable) { %>
-        <%- partial('_partial/gitalk') %>
-    <% } %>
-
-    <% if (theme.gitment.enable) { %>
-        <%- partial('_partial/gitment') %>
-    <% } %>
-
-    <% if (theme.disqus.enable) { %>
-        <%- partial('_partial/disqus') %>
-    <% } %>
-
-    <% if (theme.livere && theme.livere.enable) { %>
-    <%- partial('_partial/livere') %>
-    <% } %>
-
     <% if (theme.waline && theme.waline.enable) { %>
         <%- partial('_partial/waline') %>
-    <% } %>
-
-    <% if (theme.minivaline && theme.minivaline.enable) { %>
-        <%- partial('_partial/minivaline') %>
     <% } %>
 
     <%- partial('_partial/prev-next') %>

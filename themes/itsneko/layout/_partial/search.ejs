@@ -14,4 +14,4 @@
   </div>
 </div>
 <script type="application/json" id="searchBooks"><%- JSON.stringify((site.data.book_catalog || []).map(book => ({title: book.title, url: url_for(book.url)}))).replace(/</g, '\u003c') %></script>
-<script src="<%- url_for('/js/search.js') %>" defer data-search-index="<%- url_for('search.xml') %>" data-post-prefix="<%- url_for('/posts/') %>"></script>
+<script src="<%- url_for('/js/search.js') %>" defer data-search-index="<%- url_for('search/posts.json') %>" data-search-books="<%- url_for('search/books.json') %>" data-post-prefix="<%- url_for('/posts/') %>"></script>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">飞奔的蜗牛</title>
+  <rect x="3" y="3" width="90" height="90" rx="25" fill="#f6efdc"/>
+  <path d="M17 71c10-8 26-7 41-9l8-16c2-5 7-8 12-5 5 3 6 9 6 15v9c0 9-16 13-37 13-14 0-25-2-30-7Z" fill="#245d4d"/>
+  <path d="m73 43-2-13m8 11 5-12" fill="none" stroke="#245d4d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="71" cy="29" r="3.3" fill="#245d4d"/>
+  <circle cx="85" cy="28" r="3.3" fill="#245d4d"/>
+  <circle cx="42" cy="47" r="23" fill="#e4b96e" stroke="#245d4d" stroke-width="4"/>
+  <path d="M43 60c-13 0-20-14-12-24 8-10 25-3 23 9-1 8-12 11-16 5-3-4 0-9 5-8" fill="none" stroke="#245d4d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M10 45h5m-8 9h8m-4 9h7" fill="none" stroke="#c78e3f" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

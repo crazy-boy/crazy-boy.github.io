@@ -1,0 +1,6 @@
+[
+  {"id":"backend","title":"PHP 与后端开发","intro":"从语言机制到异步任务，围绕日常后端开发中的具体问题展开。","posts":["php-memory-leak","laravel-job-guide","laravel-progressbar-guide","design-patterns"]},
+  {"id":"database","title":"MySQL 与缓存","intro":"先读索引和执行计划，再看优化与缓存选型，把问题定位和方案选择连起来。","posts":["mysql-index","mysql-explain1","mysql-optimization","mysql-json-notes","cache-eviction-strategy","redis-set-note"]},
+  {"id":"engineering","title":"架构与工程实践","intro":"从真实的并发问题出发，理解数据库同步、排行榜与系统设计中的取舍。","posts":["high-concurrent-experience","canal-mysql-data-sync","real-time-leaderboard-system","dead-lock"]},
+  {"id":"security","title":"安全与密码学","intro":"先建立基础概念，再理解密码哈希与量子计算带来的问题；系统阅读可进入密码学书籍。","posts":["cryptography","cryptography-jargon","argon2","shor"],"book":"/books/cryptography/"}
+]

@@ -178,7 +178,7 @@ $(function () {
 
 // 模仿知乎卡片样式的超链接
 $(function () {
-    NProgress.done();
+    if (window.NProgress) NProgress.done();
     //增加 LinkCard 的 js 代码
     var LinkCards=document.getElementsByClassName('LinkCard');
     if(LinkCards.length != 0){
@@ -198,18 +198,9 @@ $(function () {
 
 // 网站全局深色模式设置开始
 function switchNightMode() {
-    var body = document.body;
-    if(body.classList.contains('dark')){
-      document.body.classList.remove('dark');
-      localStorage.setItem('dark','0');
-      $('#nightMode').removeClass("fa-lightbulb-o").addClass("fa-moon-o");
-      return;
-    } else {
-      document.body.classList.add('dark');
-      localStorage.setItem('dark','1');
-      $('#nightMode').removeClass("fa-moon-o").addClass("fa-lightbulb-o");
-      return;
-    }
+    const dark = document.body.classList.toggle('dark');
+    localStorage.setItem('dark', dark ? '1' : '0');
+    document.getElementById('sma').setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式');
 };
 // 网站全局深色模式设置结束
 

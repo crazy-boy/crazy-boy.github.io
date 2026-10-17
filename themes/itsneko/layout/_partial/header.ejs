@@ -5,12 +5,12 @@
             <div class="brand-logo">
                 <a href="<%- url_for() %>" class="waves-effect waves-light">
                     <% if (theme.logo !== undefined && theme.logo.length > 0) { %>
-                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="LOGO">
+                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="<%= config.title %>" width="44" height="44">
                     <% } %>
                     <!-- 大屏幕下logo字体 -->
-                    <span class="bigwidth">飞奔的蜗牛</span>
+                    <span class="bigwidth"><%= config.title %></span>
                     <!-- 小屏幕下logo字体 -->
-                    <span class="smallwidth">crazy boy</span>
+                    <span class="smallwidth"><%= config.title %></span>
                 </a>
             </div>
             <%- partial('_partial/navigation') %>

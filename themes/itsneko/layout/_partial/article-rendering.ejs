@@ -1,0 +1,2 @@
+<% const content = page.content || ''; const diagrams = content.includes('class="mermaid-source"'); const math = /type="math\/tex|\$[^\s$][^\n$]+\$/.test(content) || page.mathjax; %>
+<% if (diagrams || math) { %><script defer src="<%- url_for('/js/article-rendering.js') %>" data-mermaid="<%- url_for('/vendor/mermaid/mermaid.esm.min.mjs') %>" data-mathjax="<%- url_for('/vendor/mathjax/tex-svg.js') %>" data-diagrams="<%= Boolean(diagrams) %>" data-math="<%= Boolean(math) %>"></script><% } %>

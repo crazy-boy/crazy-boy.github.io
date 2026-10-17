@@ -3472,38 +3472,6 @@ body.dark .mohuxiaoguo {
     font-size: 1.5rem!important;
 }
 
-/* 美化ol标签 */
-ol{
-    list-style: none;  /* 隐藏原来的 1. 2. 等序号样式 */
-    counter-reset: ol-li;
-  }
-
-  ol li:before {
-      display: block;
-      float: left;
-      width: 19px;   /* 宽度和高度需要根据自己的字体大小进行修正 */
-      height: 19px;
-      line-height: 19px;
-      margin: 4px 12px 0 0;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 300;
-      font-style: normal;
-      background-color: #49b1f5;
-      border-radius: 50%;
-      text-align: center;
-      content: counter(ol-li);
-      counter-increment: ol-li;
-      transition: all 1s;
-  }
-  ol li:hover::before{
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-}
-
 /* 美化hr换行符标签 */
 /* 美化 hr 样式 */
 hr {

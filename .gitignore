@@ -7,3 +7,6 @@ db.json
 .deploy_git/
 .book-build.log
 .book-qa/
+
+# Recoverable local cleanup archive
+.cleanup-backup/

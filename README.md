@@ -4,10 +4,30 @@
 - 博客  欢迎大家阅读和支持，博主博客: <a href="https://crazy-boy.com/" target="_blank">飞奔的蜗牛</a>
 - 作者  crazy-boy，一个开始掉发的中年程序猿~
 - 基于  itsNeko开源博客
-- 赞赏  如果你觉得本博客还可以，欢迎大家的赞赏，赞赏二维码见页面：<a href="https://crazy-boy/donate/" target="_blank">赞赏博主~</a>
+- 赞赏  如果你觉得本博客还可以，欢迎大家的赞赏，赞赏二维码见页面：<a href="https://crazy-boy.com/donate/" target="_blank">赞赏博主~</a>
 
 
 ### 怎样联系博主
 - 留言：前往博客留言: <a href="https://crazy-boy.com/" target="_blank">飞奔的蜗牛</a>
 - 邮箱：pengbing945@protonmail.com
 - QQ：1489249823
+
+### 本地维护
+
+本项目统一使用 npm，以 `package-lock.json` 为依赖版本依据。
+
+```powershell
+npm ci
+npm run server
+```
+
+发布前检查：
+
+```powershell
+npm run clean
+npm run build
+npm run check:site
+npm run check:books
+```
+
+站点默认由 `.github/workflows/pages.yml` 构建部署。`npm run deploy` 保留为手动 Git 部署入口，需要明确准备发布时使用。

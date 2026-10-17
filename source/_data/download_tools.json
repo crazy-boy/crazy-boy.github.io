@@ -1,38 +1,38 @@
 [
   {
-    "id": "sql-diff",
-    "name": "SQL 差异更新工具",
-    "label": "SQL",
-    "summary": "比对两份 SQL 文件，生成表结构与数据的差异更新脚本。",
+    "id": "diff-tool",
+    "name": "Diff Tool 差异比对工具",
+    "label": "DIFF",
+    "summary": "在统一窗口中比对 SQL、JSON、INI / 键值配置和普通文本。",
     "filename": "diff_tool.exe",
     "features": [
-      "表结构与数据比对",
-      "支持排除表和忽略字段",
-      "生成 result.sql"
+      "SQL 差异更新脚本生成",
+      "JSON 严格值、语义值、原文比对",
+      "INI / 键值配置与逐行文本比对"
     ],
-    "bytes": 13108930,
-    "size": "12.5 MB",
-    "sha256": "3d03337a1a63d77c565610a4a3848bf442ac6a9dad63d3afb59e32319f89fcf8",
-    "url": "/tools/sql-diff/",
-    "download": "/downloads/sql-diff/diff_tool.exe",
-    "readme": "/downloads/sql-diff/readme.md"
+    "url": "/tools/diff-tool/",
+    "download": "/tools/diff-tool/diff_tool.exe",
+    "readme": "/tools/diff-tool/README.md",
+    "bytes": 11515864,
+    "size": "11.0 MB",
+    "sha256": "29789f43431407cc9e11dde61fd74fccf399aa71887508c287e8e6f5b9e42c65"
   },
   {
-    "id": "json-diff",
-    "name": "JSON 差异比对工具",
-    "label": "JSON",
-    "summary": "粘贴内容或打开文件，查看两份 JSON 的结构、值与文本差异。",
-    "filename": "json_diff_tool.exe",
+    "id": "morrow",
+    "name": "Morrow 任务管理工具",
+    "label": "TODO",
+    "summary": "轻量级 Windows 任务面板，支持快捷添加、截止时间、提醒和系统托盘。",
+    "filename": "Morrow.exe",
     "features": [
-      "严格值、语义值、原文三种模式",
-      "差异定位与路径复制",
-      "支持搜索与仅显示差异"
+      "Ctrl+Shift+M 快速显示或隐藏",
+      "任务筛选、搜索与周期提醒",
+      "可选办公聊天任务识别，确认后加入"
     ],
-    "bytes": 13125076,
-    "size": "12.5 MB",
-    "sha256": "d81dcd7a016981090ccabee7a0ffa147da379cd58641128a1f86095ba4a17daa",
-    "url": "/tools/json-diff/",
-    "download": "/downloads/json-diff/json_diff_tool.exe",
-    "readme": "/downloads/json-diff/readme.md"
+    "url": "/tools/morrow/",
+    "download": "/tools/morrow/Morrow.exe",
+    "readme": "/tools/morrow/README.md",
+    "bytes": 96256,
+    "size": "94.0 KB",
+    "sha256": "d82061bdd6ffa0a73ca74f7bbd135039156f371ce19ba4375727931cc7768c77"
   }
 ]

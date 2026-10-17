@@ -1,0 +1,7 @@
+<%- partial('_partial/bg-cover') %>
+<link rel="stylesheet" href="<%- url_for('/css/tools.css') %>">
+<main class="content"><div class="container tools-page">
+<header class="card tools-heading"><span class="book-eyebrow">READING PATHS</span><h1>专题阅读</h1><p>从一个具体问题出发，沿着主题把知识连起来。每个专题按建议顺序选取文章，也可以前往<a href="<%- url_for('/categories/') %>">全部文章目录</a>。</p></header>
+<div class="tool-grid"><% site.data.reading_topics.forEach(topic => { %>
+<section class="card tool-card" id="<%= topic.id %>"><h2><%= topic.title %></h2><p><%= topic.intro %></p><ol class="topic-reading-list"><% topic.posts.forEach(id => { const post = site.posts.toArray().find(post => String(post.abbrlink) === id); if(post) { %><li><a href="<%- url_for(post.path) %>"><%= post.title %></a></li><% } }); %></ol><% if(topic.book) { %><a href="<%- url_for(topic.book) %>">系统阅读：密码学书籍 →</a><% } %></section>
+<% }); %></div></div></main>
