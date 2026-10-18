@@ -18,12 +18,14 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
-      - name: Build from a clean cache
-        run: |
-          npm run clean
-          npm run build
-          npm run check:books
-          npm run check:site
+      - name: Clean Hexo cache
+        run: npm run clean
+      - name: Build blog
+        run: npm run build
+      - name: Check book pages
+        run: npm run check:books
+      - name: Check site links and downloads
+        run: npm run check:site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

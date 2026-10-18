@@ -34,3 +34,9 @@
 - 清理插件后检查是否有自有脚本依赖其间接依赖；需要的解析器等应显式声明。一次只保留一套首页生成器、代码高亮链路和同类运行组件。
 - 批量清理前核对引用，优先可恢复归档；本项目 .cleanup-backup/ 为忽略目录，不参与发布。不要将备份作为源码重新引入。
 - `.gitignore` 不能取消已有文件的跟踪。清理依赖时先用 `git ls-files node_modules` 检查；本项目已取消跟踪 21,380 个依赖文件，保留本地安装，不要重新加入 Git。使用 `git rm --cached` 的索引变更会暂存，交付时明确尚未提交。
+
+## GitHub Pages 部署排查
+
+- 源码推送到 `hexo` 分支触发 `.github/workflows/pages.yml`，依次安装、clean、build、check:books、check:site，通过后才上传产物并部署 Pages。任一步失败都会让线上保留旧版本；先查对应提交的 Actions 状态和失败步骤，再判断缓存。
+- Windows 文件系统通常不区分大小写，GitHub 的 Linux runner 区分。资源引用须与 Git 中的文件名逐字一致，例如相册实际文件为 `.jpg` 时不能引用 `.JPG`。`check:site` 已加入静态资源逐段大小写检查，并覆盖懒加载图片的 `data-src`；不要为让发布通过而关闭断链校验。
+- 构建和校验在工作流中保留独立步骤，便于定位失败。修复后执行 build、check:books 和 check:site；本地通过不等于远端已经发布成功，推送和线上验证按用户授权执行。

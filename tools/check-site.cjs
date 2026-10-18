@@ -2,6 +2,17 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),cheerio=require('cheerio');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'public');
 const walk=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);
+// Windows existsSync ignores case; static assets must also resolve on Linux.
+const directories=new Map();
+function assertAssetCase(file){
+ if(file.endsWith('.html'))return; // Hexo taxonomy routes can differ only by case.
+ let dir=out;
+ for(const part of path.relative(out,file).split(path.sep)){
+  if(!directories.has(dir))directories.set(dir,fs.readdirSync(dir));
+  assert(directories.get(dir).includes(part),'Asset path case mismatch: '+path.relative(out,file));
+  dir=path.join(dir,part);
+ }
+}
 let count=0,diagrams=0,math=0;
 for(const file of walk(out).filter(f=>f.endsWith('.html'))){
  const html=fs.readFileSync(file,'utf8');if(!html.includes('/css/site-ui.css'))continue;
@@ -13,11 +24,11 @@ for(const file of walk(out).filter(f=>f.endsWith('.html'))){
  $('script[type="application/ld+json"]').each((i,e)=>{const json=JSON.parse($(e).html());assert(json.headline && json.datePublished && json.url===canonical,'Invalid article schema: '+file);});
  if($('pre.mermaid-source').length){diagrams++;assert($('script[src$="article-rendering.js"]').attr('data-diagrams')==='true','Missing diagrams loader: '+file);}
  if($('script[type^="math/tex"]').length){math++;assert($('script[src$="article-rendering.js"]').attr('data-math')==='true','Missing math loader: '+file);}
- $('a[href],script[src],link[href],img[src]').each((i,e)=>{const raw=$(e).attr('href')||$(e).attr('src');if(!raw||/^(#|mailto:|tel:|javascript:|data:)/.test(raw))return;
+ $('a[href],script[src],link[href],img[src],img[data-src]').each((i,e)=>{const raw=$(e).attr('href')||$(e).attr('data-src')||$(e).attr('src');if(!raw||/^(#|mailto:|tel:|javascript:|data:)/.test(raw))return;
   if (/^https?:/.test(raw) && !raw.startsWith('https://crazy-boy.com/') && !raw.startsWith('http://crazy-boy.com/')) return;
   const url=new URL(raw,'https://crazy-boy.com/'+path.relative(out,file).replaceAll('\\','/'));if(url.origin!=='https://crazy-boy.com')return;
   let target=path.join(out,decodeURIComponent(url.pathname));if(fs.existsSync(target)&&fs.statSync(target).isDirectory())target=path.join(target,'index.html');
-  assert(fs.existsSync(target),'Broken link '+raw+' in '+path.relative(out,file));
+  assert(fs.existsSync(target),'Broken link '+raw+' in '+path.relative(out,file));assertAssetCase(target);
  });count++;
 }
 for(const type of ['posts','books']){const records=JSON.parse(fs.readFileSync(path.join(out,'search',type+'.json'),'utf8'));assert(records.length>0,'Empty search: '+type);for(const item of records)assert(fs.existsSync(path.join(out,decodeURIComponent(item.url),'index.html'))||fs.existsSync(path.join(out,decodeURIComponent(item.url))),'Broken search record: '+item.url);}
