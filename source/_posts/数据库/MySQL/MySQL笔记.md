@@ -4,7 +4,7 @@ tags: [MySQL]
 categories: MySQL
 abbrlink: 'mysql-notes'
 date: 2018-06-04 11:19:00
-updated: 2021-10-11 19:10:00
+updated: 2026-10-20 09:00:00
 ---
 
 ### 1. mysql根据汉字首字母排序的方法
@@ -122,3 +122,69 @@ from wl_student_score_logs where exam_id=5;
     
 ### 23、生成批量清空指定数据库的语句
     `select CONCAT('TRUNCATE TABLE ',table_schema,'.',TABLE_NAME, ';') 清空语句 from INFORMATION_SCHEMA.TABLES where table_schema ='库名';`    
+
+
+## 查询基础补充
+
+### COUNT(列名) 会忽略 NULL
+
+```sql
+SELECT COUNT(*) AS row_count,
+       COUNT(phone) AS phone_count
+FROM users;
+```
+
+`COUNT(*)` 统计满足条件的行，`COUNT(phone)` 统计其中 `phone` 不为 `NULL` 的行。空字符串并不是 `NULL`，仍会计入后者。计数规则不意味着某一种写法在所有查询中都更快。参考 [MySQL 聚合函数](https://dev.mysql.com/doc/refman/8.4/en/aggregate-functions.html)。
+
+### SELECT 常见子句的书写顺序
+
+```sql
+SELECT user_id, COUNT(*) AS order_count
+FROM orders
+WHERE status = 'paid'
+GROUP BY user_id
+HAVING order_count >= 2
+ORDER BY order_count DESC, user_id
+LIMIT 20;
+```
+
+常见的书写次序是 `SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY → LIMIT`，但可选子句不必全部出现。这是语法顺序，不代表优化器实际按这个顺序执行。
+
+`WHERE` 筛选分组前的行，`HAVING` 筛选分组或聚合后的结果。MySQL 支持在 `GROUP BY`、`HAVING`、`ORDER BY` 中引用 SELECT 列别名，同一查询块的 `WHERE` 不能直接使用该列别名；这并不是 MySQL 5.7.5 才新增的能力。别名不宜与原列重名，以免产生歧义。
+
+`GROUP BY` 可以不带 `HAVING`；聚合查询也可以只有 `HAVING` 而没有显式 `GROUP BY`：
+
+```sql
+SELECT COUNT(*) AS total FROM orders HAVING total > 0;
+```
+
+MySQL 5.7.5 的变化包括默认启用 `ONLY_FULL_GROUP_BY`、改进函数依赖判断，以及解除开启该模式时 HAVING 引用 SELECT 别名的旧限制。别名支持本身并非这一版才全面加入，应区分具体子句和 SQL 模式。参考 [MySQL 列别名规则](https://dev.mysql.com/doc/refman/8.4/en/problems-with-alias.html) 和 [MySQL 5.7 SQL 模式说明](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html)。
+
+### 单表 DELETE 的 ORDER BY 和 LIMIT
+
+```sql
+-- 示例：只适用于已确认条件和表结构的业务环境。
+DELETE FROM access_logs
+WHERE created_at < '2025-01-01'
+ORDER BY id
+LIMIT 1000;
+```
+
+这是单表 DELETE 语法，可用于每次删除一批匹配记录。`LIMIT` 限制本次删除行数，不表示最多只扫描或锁住这么多行；扫描成本还要看条件和索引。分批循环时还要明确终止条件、事务大小及失败重试方式。
+
+多表 DELETE 不能照搬这里的 `ORDER BY`、`LIMIT`。参考 [MySQL DELETE 文档](https://dev.mysql.com/doc/refman/8.4/en/delete.html)。
+
+### 使用 utf8mb4 保存 emoji
+
+```sql
+CREATE TABLE message_notes (
+    id BIGINT NOT NULL PRIMARY KEY,
+    content VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+```
+
+`utf8mb4` 能表示包括四字节字符在内的 Unicode 字符，适合保存 emoji；旧的 `utf8mb3` 无法覆盖全部字符。还要确保客户端连接字符集、驱动和目标列配置一致，不能只改数据库默认字符集就认为现有列已经转换。
+
+一些 emoji 由多个 Unicode 码点组成，字符计数与用户看到的图形数量未必相同。排序规则影响比较与排序，不等于字符集的可表示范围。参考 [MySQL utf8mb4 字符集](https://dev.mysql.com/doc/refman/8.4/en/charset-unicode-utf8mb4.html)。
+
+延伸阅读：[IN 与 EXISTS 的语义和性能](/posts/mysql-in-exists.html)、[DECIMAL 类型](/posts/mysql-decimal.html)、[聚簇索引与二级索引](/posts/mysql-clustered-index.html)。
